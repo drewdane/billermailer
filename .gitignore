@@ -1,0 +1,16 @@
+# Node
+node_modules/
+
+# Generated data (DO NOT COMMIT)
+data/input/
+data/output/
+
+# Logs
+*.log
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+.vscode/
