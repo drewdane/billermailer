@@ -1,0 +1,35 @@
+AccountCode,billingName,BestMatch,Score,Alt2,Alt2Score,Alt3,Alt3Score
+Encompass Wichita Falls,Encompass Health Rehabilitation Hospital of Wichita Falls ,Encompass Health Wichita Falls ,0.868,Encompass Health Dallas,0.739,Encompass Health Abilene,0.596
+Carlyle at Stonebridge Park Southlake,The Carlyle at Stonebridge Park,Carlyle at Stonebridge Park,0.844,Heritage at Turner Park,0.5,Discovery Village at Southlake,0.478
+Encompass Arlington,Encompass Health Rehabilitation Hospital of Arlington ,Encompass Health Arlington ,0.844,Encompass Health Abilene,0.651,Texas Health Arlington ,0.634
+College Park Rehabilitation and Care Center,College Park Rehabilitation and Care Center,Willow Park Rehabilitation Care Center,0.84,Renaissance Park Multi Care Center,0.597,College Park Nursing & Rehab (Weatherford),0.518
+Encompass Abilene,Encompass Health Rehabilitation Hospital of Abilene ,Encompass Health Abilene,0.829,Encompass Health Cityview ,0.619,Encompass Health Arlington ,0.605
+Encompass Health Waco,Encompass Health Rehabilitation Hospital of Waco ,Encompass Health Dallas,0.818,Encompass Health Arlington ,0.809,Encompass Health Abilene,0.8
+Texas Health Huguley,Texas Health Huguley Hospital ,Texas Health Azle,0.811,Texas Health Alliance  ,0.732,Texas Health Arlington ,0.667
+Hilltop Park Rehab & Care Center,Hilltop Park Rehabilitation & Care Center,Willow Park Rehabilitation Care Center,0.806,Hilltop Park Weatherford  ,0.586,Renaissance Park Multi Care Center,0.559
+Encompass Health Richardson,Encompass Health Rehabilitation Hospital of Richardson ,Encompass Health Arlington ,0.792,Encompass Health Wichita Falls ,0.772,Encompass Health Dallas,0.76
+Texas Health Cleburne,Texas Health Harris Methodist Hospital Cleburne ,Texas Health Azle,0.789,Texas Health Alliance  ,0.714,Texas Health Arlington ,0.698
+North Pointe Nursing & Rehab,North Pointe Nursing & Rehabilitation ,Southwest Nursing & Rehab,0.772,Marine Creek Nursing & Rehab,0.733,La Dora Nursing and Rehab,0.727
+Richland Hills Rehab,Richland Hills Rehabilitation and Healthcare Center ,Richland Hills Healthcare and Rehab,0.727,Arden Place of Richland Hills ,0.571,Emerald Hills Rehab and Healthcare,0.556
+Broadway Cityview,Broadway Cityview,Watermark at Broadway Cityview,0.723,Vantage at Cityview,0.611,Encompass Health Cityview ,0.571
+Encompass San Angelo,"Shannon Rehabilitation Hospital, affiliate of Encompass Health ",Encompass Health Arlington ,0.696,Encompass Health Abilene,0.682,Encompass Health Dallas,0.512
+Texas Rehab Fort Worth,Texas Rehabilitation Hospital of Fort Worth ,Encompass Health Fort Worth,0.694,Texas Rehab of Keller,0.651,LifeCare Hospital of Fort Worth ,0.642
+Encompass Plano,Encompass Health Rehabilitation Hospital of Plano ,Encompass Health Arlington ,0.683,Encompass Health Abilene,0.667,Encompass Health Dallas,0.632
+Baylor Hospital Voucher,Baylor Scott & White All Saints Medical Center ,Valor Hospice,0.667,Harbor Hospice,0.595,Baylor Rehab Hospital    6601 Harris Pkwy,0.59
+THR Alliance,Texas Health Harris Methodist Hospital Alliance ,Texas Health Alliance  ,0.667,Three Oaks Hospice,0.533,Harbor Hospice,0.462
+Lifecare Haltom City,Life Care Center of Haltom ,Life Care Center of Haltom,0.652,Encompass Health Cityview ,0.578,Encompass Health Mid-Cities,0.553
+Renaissance Park,Renaissance Park Multi Care Center ,Renaissance Park Multi Care Center,0.64,Heritage at Turner Park,0.462,Private Pay ,0.444
+HEB Hospital,Texas Health Harris Methodist Hurst-Euless-Bedford ,Harbor Hospice,0.615,Three Oaks Hospice,0.533,Pathway Hospice,0.519
+Harris Southlake,Texas Health Harris Methodist Hospital Southlake ,Harrison at Heritage,0.611,Discovery Village at Southlake,0.522,Mira Vista Court,0.438
+Harris Southwest,Texas Health Harris Methodist Hospital Southwest Fort Worth ,Harrison at Heritage,0.611,Kindred FWSW (Southwest)   7800 Oakmont,0.471,Mira Vista Court,0.438
+Mirabella Asst Living(pp unless Auth by Admin),Mirabella Assisted Living & Memory Care ,Mirabella Assisted Living,0.6,Colonial Garden Assisted Living & Memory Care,0.457,Discovery Village at Alliance Town Center   **Using Private Pay Pricing**,0.393
+Kindred Arlington,Kindred Hospital Tarrant County - Arlington ,Texas Health Arlington ,0.564,Encompass Health Arlington ,0.558,Heritage Oaks of Arlington ,0.512
+James L West,James L. West Center for Dementia Care,James L West Alzheimer's Center,0.558,Legend Oaks - Ft. Worth,0.375,Legend Oaks - Euless,0.267
+Harris Clearfork,Texas Health Clearfork ,Hilltop Park Weatherford  ,0.5,Harrison at Heritage,0.5,Azle Manor,0.462
+Stayton,The Stayton at Museum Way,Stayton at Museum Way ,0.5,Ready2Go Transportation,0.4,Pathway Hospice,0.364
+Baylor Institute Rehab SW,Baylor Rehab Institute Southwest,La Dora Nursing and Rehab,0.48,Baylor Rehab Hospital    6601 Harris Pkwy,0.476,Fort Worth Center of Rehab,0.471
+Harris Downtown,Texas Health Harris Methodist Hospital Fort Worth ,Harrison at Heritage,0.457,Heritage Oaks of Arlington ,0.39,Ron Turpin,0.32
+THR Denton,Texas Health Presbyterian Hospital Denton ,Texas Health Arlington ,0.438,Garden Terrace,0.417,Fort Worth Center of Rehab,0.389
+Clear Sky,ClearSky Rehabilitation Hospital of Weatherford ,Lodge at Bear Creek,0.429,Clear Sky Rehab Hospital of Weatherford,0.375,Valor Hospice,0.364
+tp,TripPortal,Ron Turpin,0.333,Liberty Hospice ,0.235,Three Oaks Hospice,0.2
+CTT Comp,CTT Comp,Vitas Healthcare Corporation,0.278,Trinity Terrace,0.087,Liberty Hospice ,0.087
