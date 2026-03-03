@@ -61,6 +61,53 @@ function inTimeWindow(d, startHHMM, endHHMM) {
   return mins >= start || mins < end; // overnight window
 }
 
+function isInTimeWindow(dt, startHHMM, endHHMM) {
+  const s = String(startHHMM || "").trim();
+  const e = String(endHHMM || "").trim();
+  if (!s || !e) return false;
+
+  const [sh, sm] = s.split(":").map(n => parseInt(n, 10));
+  const [eh, em] = e.split(":").map(n => parseInt(n, 10));
+  if (!Number.isFinite(sh) || !Number.isFinite(sm) || !Number.isFinite(eh) || !Number.isFinite(em)) return false;
+
+  const mins = dt.getHours() * 60 + dt.getMinutes();
+  const start = sh * 60 + sm;
+  const end = eh * 60 + em;
+
+  // handles overnight windows (e.g., 19:00 -> 07:00)
+  if (start <= end) return mins >= start && mins < end;
+  return mins >= start || mins < end;
+}
+
+// BM v1: hardcoded holiday list (can move to config later)
+function isHolidayDate(dt) {
+  const y = dt.getFullYear();
+  const m = dt.getMonth() + 1; // 1-12
+  const d = dt.getDate();
+
+  // Minimal “big ones” (adjust with Stacie later)
+  const fixed = new Set([
+    `${y}-01-01`, // New Year's Day
+    `${y}-07-04`, // Independence Day
+    `${y}-11-11`, // Veterans Day
+    `${y}-12-25`, // Christmas Day
+  ]);
+
+  const key = `${y}-${String(m).padStart(2,"0")}-${String(d).padStart(2,"0")}`;
+  if (fixed.has(key)) return true;
+
+  // Optional: add Thanksgiving (4th Thu of Nov)
+  if (m === 11 && dt.getDay() === 4) {
+    // 4th Thursday
+    const first = new Date(y, 10, 1);
+    const offset = (4 - first.getDay() + 7) % 7;
+    const fourthThu = 1 + offset + 21;
+    if (d === fourthThu) return true;
+  }
+
+  return false;
+}
+
 /**
  * Trip-side overrides (temporary BM shape while inputs are messy):
  *
@@ -171,7 +218,7 @@ function deadheadCharge(rateRow, tripMilesRounded, overrides) {
       details: { source: "dh_flat_fee" }
     };
   }
-
+  
   const start = num(rateRow.dh_start_miles);
   if (start > 0 && tripMilesRounded < start) {
     return {
@@ -204,11 +251,26 @@ function deadheadCharge(rateRow, tripMilesRounded, overrides) {
   if (tier === 2 && r2 > 0) { rate = r2; rateSource = "dh_rate_tier2"; }
   if (tier === 3 && r3 > 0) { rate = r3; rateSource = "dh_rate_tier3"; }
 
-  // fallback if chosen tier rate missing
+  // fallback if chosen tier rate missing: fall back DOWNWARD (3->2->1)
   if (rate <= 0) {
-    if (r3 > 0) { rate = r3; rateSource = "dh_rate_tier3(fallback)"; }
-    else if (r2 > 0) { rate = r2; rateSource = "dh_rate_tier2(fallback)"; }
-    else { rate = r1; rateSource = "dh_rate_tier1(fallback)"; }
+    if (tier === 3) {
+      if (r2 > 0) { rate = r2; rateSource = "dh_rate_tier2(fallback)"; }
+      else { rate = r1; rateSource = "dh_rate_tier1(fallback)"; }
+    } else if (tier === 2) {
+      rate = r1;
+      rateSource = "dh_rate_tier1(fallback)";
+    } else {
+      // tier 1 and r1 is 0
+      rate = 0;
+      rateSource = "dh_rate_tier1(missing)";
+    }
+  }
+  if (rate <= 0) {
+    return {
+      amount: 0,
+      mode: "per_mile",
+      details: { reason: "no_rate_configured", tier, rateSource }
+    };
   }
 
   const amount = dhMiles * rate;
@@ -447,38 +509,58 @@ function priceTrip(trip, rateRow, opts = {}) {
   if (overrides.addDeadhead) {
     const dh = deadheadCharge(rateRow, milesRounded, overrides);
     if (dh.amount > 0) {
-      accessories.push({ code: "DH", amount: dh.amount, meta: dh.details, mode: dh.mode });
+      accessories.push({ code: "DH", amount: dh.amount, meta: dh.details });
     } else {
-      // DH selected but computed 0: still useful to flag why
-      if (dh.details?.reason) flags.push(`DH_ZERO:${dh.details.reason}`);
+      // Only flag truly actionable issues (not normal "0" outcomes)
+      const r = dh.details?.reason;
+      if (r === "no_rate_configured" || r === "flat_selected_but_missing" || r === "invalid_config") {
+        flags.push(`DH:${r}`);
+      }
+      // else: silent (below threshold / no miles is normal noise)
     }
   }
 
-    // ---- Calendar surcharges (override-first for BM v1) ----
-  // Uses ScheduledPickupTime as anchor (per your decision)
-  const sched = parseLocalDate(trip.ScheduledPickupTime);
+    // ---- Calendar surcharges (automatic) ----
+    // Uses ScheduledPickupTime as anchor (per your decision)
+    const sched = parseLocalDate(trip.ScheduledPickupTime);
+    if (sched) {
+      const dow = sched.getDay(); // 0=Sun..6=Sat
 
-  // These are boolean toggles Stacie can apply now.
-  const addHOL = isTruthy(trip.AddHOL);
-  const addWKND = isTruthy(trip.AddWKND);
-  const add3S = isTruthy(trip.Add3S);
-  const addAH  = isTruthy(trip.AddAH);
+      const regSat = isTruthy(rateRow.regular_includes_sat);
+      const regSun = isTruthy(rateRow.regular_includes_sun);
 
-  // Rates come from account sheet (v2 names)
-  const holRate = num(rateRow.holiday_rate);
-  const wkndRate = num(rateRow.weekend_rate);
-  const ahRate = num(rateRow.after_hours_rate);
-  const s3Rate = num(rateRow.third_shift_rate);
+      const isSat = dow === 6;
+      const isSun = dow === 0;
 
-  // 3S supersedes AH (your impression)
-  if (addHOL && holRate > 0) accessories.push({ code: "HOL", amount: holRate });
-  if (addWKND && wkndRate > 0) accessories.push({ code: "WKND", amount: wkndRate });
+      const isWeekend =
+        (isSat && !regSat) ||
+        (isSun && !regSun);
 
-  if (add3S && s3Rate > 0) {
-    accessories.push({ code: "3S", amount: s3Rate });
-  } else if (addAH && ahRate > 0) {
-    accessories.push({ code: "AH", amount: ahRate });
-  }
+      const isHoliday = isHolidayDate(sched); // implement below
+
+      const holUsesAh = isTruthy(rateRow.holiday_uses_after_hours);
+
+      const holRate = num(rateRow.holiday_rate);
+      const wkndRate = num(rateRow.weekend_rate);
+      const ahRate = num(rateRow.after_hours_rate);
+      const s3Rate = num(rateRow.third_shift_rate);
+
+      const in3S = isInTimeWindow(sched, rateRow.third_shift_start, rateRow.third_shift_end);
+      const inAH = !in3S && isInTimeWindow(sched, rateRow.after_hours_start, rateRow.after_hours_end);
+
+      // Holiday charge (or use AH on holidays if configured)
+      if (isHoliday) {
+        if (holUsesAh && ahRate > 0) accessories.push({ code: "AH", amount: ahRate, meta: { reason: "HOL_uses_AH" } });
+        else if (holRate > 0) accessories.push({ code: "HOL", amount: holRate });
+      }
+
+      // Weekend charge
+      if (isWeekend && wkndRate > 0) accessories.push({ code: "WKND", amount: wkndRate });
+
+      // Time-of-day charge (3S supersedes AH)
+      if (in3S && s3Rate > 0) accessories.push({ code: "3S", amount: s3Rate });
+      else if (inAH && ahRate > 0) accessories.push({ code: "AH", amount: ahRate });
+    }
 
   const accessoriesTotal = accessories.reduce((sum, a) => sum + num(a.amount), 0);
   const total = base + mileage + accessoriesTotal;
