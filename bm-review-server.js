@@ -73,6 +73,7 @@ const HTML = `<!doctype html>
     <div id="tableWrap"></div>
   </div>
 
+<script src="/renderRows.js"></script>
 <script>
 let INDEX=null;
 let current = { acct:null, period:null };
@@ -161,106 +162,15 @@ async function openSet(acct, period){
   renderRows();
 }
 
-function renderRows(){
-  const q = (document.getElementById("search").value||"").toLowerCase().trim();
-  const rows = ITEMS.filter(r=>{
-    if(!q) return true;
-    const hay = (r.FirstName+" "+r.LastName+" "+r.PickupName+" "+r.DropoffName+" "+r.PickupCity+" "+r.DropoffCity+" "+r.Mobility+" "+r.RideStatus+" "+r.Comments+" "+r.Comments1).toLowerCase();
-    return hay.includes(q);
-  });
-
-  const wrap = document.getElementById("tableWrap");
-  wrap.innerHTML = "";
-  const table = document.createElement("table");
-  table.innerHTML = "<thead><tr>" +
-    "<th>Date</th><th>Pickup</th><th>Dropoff</th><th>Rider</th><th>Mobi</th><th>Status</th><th>Miles</th><th>Action</th><th>Modifier</th><th>Note</th>" +
-  "</tr></thead>";
-  const tb = document.createElement("tbody");
-
-  for(const r of rows){
-    const tr = document.createElement("tr");
-    if(r.Action==="EXCLUDE") tr.className="row-exclude";
-
-    tr.innerHTML =
-      "<td>"+esc(r.RideDateISO||"")+"</td>" +
-      "<td><b>"+esc(r.PickupName||"")+"</b><div>"+esc(r.PickupCity||"")+"</div></td>" +
-      "<td><b>"+esc(r.DropoffName||"")+"</b><div>"+esc(r.DropoffCity||"")+"</div></td>" +
-      "<td>"+esc((r.FirstName||"")+" "+(r.LastName||""))+"</td>" +
-      "<td>"+esc(r.Mobility||"")+"</td>" +
-      "<td>"+esc(r.RideStatus||"")+"</td>" +
-      "<td>"+esc(r.DirectMileage||"")+"</td>";
-
-    const action = document.createElement("select");
-    ["INCLUDE","EXCLUDE","MODIFY","MOVE"].forEach(v=>{
-      const opt=document.createElement("option");
-      opt.value=v; opt.text=v;
-      if(r.Action===v) opt.selected=true;
-      action.appendChild(opt);
-    });
-    action.onchange = () => {
-      r.Action = action.value;
-      if (r.Action !== "MODIFY") r.Modifier = "NONE";
-      if (r.Action !== "MOVE") r.MoveToAccountCode = "";
-      renderRows();
-    };
-
-    const mod = document.createElement("select");
-    ["NONE","HALF","FREE"].forEach(v=>{
-      const opt=document.createElement("option");
-      opt.value=v; opt.text=v;
-      if(r.Modifier===v) opt.selected=true;
-      mod.appendChild(opt);
-    });
-    mod.onchange=()=>{ r.Modifier=mod.value; if(r.Action!=="MODIFY" && r.Modifier!=="NONE"){ r.Action="MODIFY"; } };
-
-    // Build account options (AccountCode keys from INDEX)
-    const acctOptions = Object.keys((INDEX && INDEX.facilities) ? INDEX.facilities : {}).sort();
-
-    const moveTo = document.createElement("select");
-    const blank = document.createElement("option");
-    blank.value = "";
-    blank.text = "(select account)";
-    moveTo.appendChild(blank);
-
-    for (const ac of acctOptions) {
-      const opt = document.createElement("option");
-      opt.value = ac;
-      opt.text = ac; // AccountCode is the billing key
-      if ((r.MoveToAccountCode || "") === ac) opt.selected = true;
-      moveTo.appendChild(opt);
-    }
-    moveTo.onchange = () => { r.MoveToAccountCode = moveTo.value; };
-
-    // Only show if Action=MOVE
-    moveTo.style.display = (r.Action === "MOVE") ? "inline-block" : "none";
-
-    const note = document.createElement("input");
-    note.value = r.Note || "";
-    note.style.width="220px";
-    note.oninput=()=>{ r.Note = note.value; };
-
-    const tdA=document.createElement("td"); tdA.appendChild(action);
-    const tdM=document.createElement("td"); tdM.appendChild(mod);
-    const tdMove = document.createElement("td");
-    tdMove.appendChild(moveTo);
-    const tdN=document.createElement("td"); tdN.appendChild(note);
-    tr.appendChild(tdA); tr.appendChild(tdM); tr.appendChild(tdMove); tr.appendChild(tdN);
-    tb.appendChild(tr);
-  }
-
-  table.appendChild(tb);
-  wrap.appendChild(table);
-}
-
 async function save(){
   const overrides = {};
   for(const r of ITEMS){
     overrides[r.LineId] = {
-    Action: r.Action,
-    Modifier: r.Modifier,
-    Note: r.Note,
-    MoveToAccountCode: r.MoveToAccountCode || ""
-  };
+      Action: r.Action,
+      Modifier: r.Modifier,
+      Note: r.Note,
+      MoveToAccountCode: r.MoveToAccountCode || ""
+    };
   }
   const resp = await fetch("/api/overrides", {
     method:"POST",
@@ -272,6 +182,12 @@ async function save(){
   setTimeout(()=>msg.textContent="", 1500);
 }
 
+function toggleDetails(id) {
+  const row = document.getElementById("detail_" + id);
+  if (!row) return;
+  row.style.display = row.style.display === "none" ? "" : "none";
+}
+
 loadIndex();
 </script>
 </body>
@@ -281,8 +197,14 @@ const server = http.createServer((req, res) => {
   try {
     const u = url.parse(req.url, true);
 
+    if (u.pathname === "/renderRows.js") {
+      const p = path.resolve(process.cwd(), "src", "review", "renderRows.js");
+      return send(res, 200, fs.readFileSync(p, "utf8"), "application/javascript; charset=utf-8");
+    }
+
     if (u.pathname === "/") return send(res, 200, HTML, "text/html; charset=utf-8");
 
+    
     if (u.pathname === "/api/index") {
       const p = safeJoin("index.json");
       if (!fs.existsSync(p)) {

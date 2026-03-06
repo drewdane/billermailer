@@ -17,6 +17,7 @@ const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
 const { parse } = require("csv-parse/sync");
+const { combinedComments, notesPreview } = require("./src/utils/notes");
 
 function arg(name, fallback = null) {
   const idx = process.argv.indexOf(name);
@@ -24,7 +25,7 @@ function arg(name, fallback = null) {
   return process.argv[idx + 1] ?? fallback;
 }
 
-const inPath = arg("--in", "bm_harvest.csv");
+const inPath = arg("--in", "data\\output\\bm_harvest_latest.csv");
 const outDir = arg("--outDir", "data\\output\\review");
 
 function normalizeHeader(h) {
@@ -183,12 +184,42 @@ for (const r of records) {
     continue;
   }
 
-  const enriched = { ...r, RideDateISO: iso };
-  enriched.LineId = computeLineId(enriched);
-  enriched.Action = "INCLUDE"; // INCLUDE | EXCLUDE | MODIFY | MOVE
-  enriched.Modifier = "NONE";  // NONE | HALF | FREE
-  enriched.Note = "";
-  enriched.MoveToAccountCode = ""; // when Action=MOVE
+  const notesFull = combinedComments(r);
+
+  const enriched = {
+    ...r,
+    RideDateISO: iso,
+    LineId: computeLineId({ ...r, RideDateISO: iso }),
+
+    // keep legacy top-level review fields so current UI does not break
+    Action: "INCLUDE",        // INCLUDE | EXCLUDE | MODIFY | MOVE
+    Modifier: "NONE",         // NONE | HALF | FREE
+    Note: "",
+    MoveToAccountCode: "",    // when Action=MOVE
+
+    // new note fields for compact/expanded review UI
+    notesFull,
+    notesPreview: notesPreview(notesFull),
+
+    // future-friendly review object
+    review: {
+      Action: "INCLUDE",
+      Modifier: "NONE",
+      Note: "",
+      MoveToAccountCode: "",
+
+      AddHazmat: false,
+      AddO2: false,
+      AddBari: false,
+      AddWait: false,
+      WaitTotalMinutes: 0,
+      AddDeadhead: false,
+      DeadheadMiles: 0,
+
+      MatchToQuote: false,
+      QuoteAmount: 0
+    }
+  };
 
   const pKey = periodKeyFor(iso, cfg);
 
