@@ -39,9 +39,10 @@ function renderRows() {
       "<th style='width:180px'>Drop-off</th>" +
       "<th style='width:55px'>Mi</th>" +
       "<th>Notes</th>" +
-      "<th style='width:70px'>HZ</th>" +
-      "<th style='width:70px'>O2</th>" +
-      "<th style='width:70px'>BARI</th>" +
+      "<th style='width:90px'>HZ</th>" +
+      "<th style='width:90px'>O2</th>" +
+      "<th style='width:90px'>BARI</th>" +
+      "<th style='width:90px'>DH</th>" +
       "<th style='width:160px'>Override</th>" +
       "<th style='width:90px'>Total</th>" +
     "</tr></thead>";
@@ -54,11 +55,32 @@ function renderRows() {
     return td;
   }
 
+  function fmtMoney(n) {
+    return "$" + Number(n || 0).toFixed(2);
+  }
+
   function tripShapeLabel(r) {
     if (r.pricing && r.pricing.badge) return r.pricing.badge;
     return r.TripShape === "ROUND_TRIP" ? "RT"
       : r.TripShape === "MULTI_STOP" ? "MS"
       : "1W";
+  }
+
+  function rowAccessoryTotal(r) {
+    const charges = r.availableCharges || {};
+    let total = 0;
+    if (r.review?.AddHazmat) total += Number(charges.hazmat || 0);
+    if (r.review?.AddO2) total += Number(charges.o2 || 0);
+    if (r.review?.AddBari) total += Number(charges.bari || 0);
+    if (r.review?.AddDeadhead) total += Number(r.deadheadCharge || 0);
+    return total;
+  }
+
+  function rowDisplayTotal(r) {
+    if (r.review?.MatchToQuote) {
+      return Number(r.review?.QuoteAmount || 0);
+    }
+    return Number(r.pricing?.total || 0) + rowAccessoryTotal(r);
   }
 
   for (const r of rows) {
@@ -82,11 +104,6 @@ function renderRows() {
 
     const tr = document.createElement("tr");
     if ((r.Action || "INCLUDE") === "EXCLUDE") tr.className = "row-exclude";
-
-    const total =
-      r.pricing && typeof r.pricing.total === "number"
-        ? "$" + r.pricing.total.toFixed(2)
-        : "";
 
     // Date
     tr.appendChild(makeCell(esc(r.RideDateISO || "")));
@@ -144,9 +161,8 @@ function renderRows() {
     const hzCb = document.createElement("input");
     hzCb.type = "checkbox";
     hzCb.checked = !!r.review.AddHazmat;
-    hzCb.onchange = () => { r.review.AddHazmat = hzCb.checked; };
     hzLabel.appendChild(hzCb);
-    hzLabel.appendChild(document.createTextNode(" $—"));
+    hzLabel.appendChild(document.createTextNode(" " + fmtMoney(r.availableCharges?.hazmat || 0)));
     hzTd.appendChild(hzLabel);
     tr.appendChild(hzTd);
 
@@ -157,9 +173,8 @@ function renderRows() {
     const o2Cb = document.createElement("input");
     o2Cb.type = "checkbox";
     o2Cb.checked = !!r.review.AddO2;
-    o2Cb.onchange = () => { r.review.AddO2 = o2Cb.checked; };
     o2Label.appendChild(o2Cb);
-    o2Label.appendChild(document.createTextNode(" $—"));
+    o2Label.appendChild(document.createTextNode(" " + fmtMoney(r.availableCharges?.o2 || 0)));
     o2Td.appendChild(o2Label);
     tr.appendChild(o2Td);
 
@@ -170,11 +185,22 @@ function renderRows() {
     const bariCb = document.createElement("input");
     bariCb.type = "checkbox";
     bariCb.checked = !!r.review.AddBari;
-    bariCb.onchange = () => { r.review.AddBari = bariCb.checked; };
     bariLabel.appendChild(bariCb);
-    bariLabel.appendChild(document.createTextNode(" $—"));
+    bariLabel.appendChild(document.createTextNode(" " + fmtMoney(r.availableCharges?.bari || 0)));
     bariTd.appendChild(bariLabel);
     tr.appendChild(bariTd);
+
+    // Deadhead
+    const dhTd = makeCell();
+    const dhLabel = document.createElement("label");
+    dhLabel.style.whiteSpace = "nowrap";
+    const dhCb = document.createElement("input");
+    dhCb.type = "checkbox";
+    dhCb.checked = !!r.review.AddDeadhead;
+    dhLabel.appendChild(dhCb);
+    dhLabel.appendChild(document.createTextNode(" " + fmtMoney(r.deadheadCharge || 0)));
+    dhTd.appendChild(dhLabel);
+    tr.appendChild(dhTd);
 
     // Override
     const overrideTd = makeCell();
@@ -182,10 +208,6 @@ function renderRows() {
     const overrideCb = document.createElement("input");
     overrideCb.type = "checkbox";
     overrideCb.checked = !!r.review.MatchToQuote;
-    overrideCb.onchange = () => {
-      r.review.MatchToQuote = overrideCb.checked;
-      overrideInput.disabled = !overrideCb.checked;
-    };
     overrideTd.appendChild(overrideCb);
     overrideTd.appendChild(document.createTextNode(" $"));
 
@@ -195,14 +217,54 @@ function renderRows() {
     overrideInput.style.width = "82px";
     overrideInput.value = r.review.QuoteAmount || "";
     overrideInput.disabled = !r.review.MatchToQuote;
-    overrideInput.oninput = () => {
-      r.review.QuoteAmount = Number(overrideInput.value || 0);
-    };
     overrideTd.appendChild(overrideInput);
     tr.appendChild(overrideTd);
 
     // Total
-    tr.appendChild(makeCell("<b>" + esc(total) + "</b>"));
+    const totalTd = makeCell("<b>" + esc(fmtMoney(rowDisplayTotal(r))) + "</b>");
+    tr.appendChild(totalTd);
+
+    function refreshRowTotal() {
+      totalTd.innerHTML = "<b>" + esc(fmtMoney(rowDisplayTotal(r))) + "</b>";
+    }
+
+    hzCb.onchange = () => {
+      r.review.AddHazmat = hzCb.checked;
+      refreshRowTotal();
+    };
+
+    o2Cb.onchange = () => {
+      r.review.AddO2 = o2Cb.checked;
+      refreshRowTotal();
+    };
+
+    bariCb.onchange = () => {
+      r.review.AddBari = bariCb.checked;
+      refreshRowTotal();
+    };
+
+    dhCb.onchange = () => {
+      r.review.AddDeadhead = dhCb.checked;
+      refreshRowTotal();
+    };
+
+    overrideCb.onchange = () => {
+      r.review.MatchToQuote = overrideCb.checked;
+      overrideInput.disabled = !overrideCb.checked;
+      refreshRowTotal();
+    };
+
+    overrideInput.oninput = () => {
+      r.review.QuoteAmount = Number(overrideInput.value || 0);
+      refreshRowTotal();
+    };
+
+    overrideInput.onkeydown = (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        overrideInput.blur();
+      }
+    };
 
     // Row click toggles details (but not when clicking inputs/labels/buttons)
     tr.style.cursor = "pointer";
@@ -219,7 +281,7 @@ function renderRows() {
     detailRow.style.display = "none";
 
     const detailCell = document.createElement("td");
-    detailCell.colSpan = 12;
+    detailCell.colSpan = 13;
 
     const detailBox = document.createElement("div");
     detailBox.style.padding = "12px";
@@ -229,7 +291,7 @@ function renderRows() {
     const base = Number((r.pricing && r.pricing.base) || 0);
     const mileage = Number((r.pricing && r.pricing.mileage) || 0);
     const cancelFee = Number((r.pricing && r.pricing.cancelFee) || 0);
-    const grandTotal = Number((r.pricing && r.pricing.total) || 0);
+    const grandTotal = Number(rowDisplayTotal(r));
 
     const legsHtml = Array.isArray(r.legs) && r.legs.length
       ? r.legs.map((leg, idx) => {
@@ -252,7 +314,7 @@ function renderRows() {
           );
         }).join("")
       : "";
-    
+
     detailBox.innerHTML =
       "<div style='display:grid; grid-template-columns: 220px 1fr 1fr 1fr; gap:16px'>" +
 
@@ -261,6 +323,7 @@ function renderRows() {
           "<div>Base: $" + base.toFixed(2) + "</div>" +
           "<div>Mileage: $" + mileage.toFixed(2) + "</div>" +
           "<div>Cancel Fee: $" + cancelFee.toFixed(2) + "</div>" +
+          "<div>Accessories: $" + rowAccessoryTotal(r).toFixed(2) + "</div>" +
           "<div style='margin-top:6px'><b>Total: $" + grandTotal.toFixed(2) + "</b></div>" +
         "</div>" +
 
@@ -293,7 +356,7 @@ function renderRows() {
             "</div>" +
           "</div>"
         : "");
-
+    
     detailCell.appendChild(detailBox);
     detailRow.appendChild(detailCell);
     tb.appendChild(detailRow);

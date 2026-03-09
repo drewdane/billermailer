@@ -231,25 +231,47 @@ async function openSet(acct, period){
   ITEMS = await (await fetch("/api/items?acct="+encodeURIComponent(acct)+"&period="+encodeURIComponent(period))).json();
   OVERRIDES = await (await fetch("/api/overrides?acct="+encodeURIComponent(acct)+"&period="+encodeURIComponent(period))).json();
 
-  for(const it of ITEMS){
+    for(const it of ITEMS){
     const o = (OVERRIDES.overrides||{})[it.LineId];
-    if(o){
-      it.Action = o.Action ?? it.Action;
-      it.Modifier = o.Modifier ?? it.Modifier;
-      it.Note = o.Note ?? it.Note;
-    }
+    if(!o) continue;
+
+    it.Action = o.Action ?? it.Action;
+    it.Modifier = o.Modifier ?? it.Modifier;
+    it.Note = o.Note ?? it.Note;
+    it.MoveToAccountCode = o.MoveToAccountCode ?? it.MoveToAccountCode;
+
+    if (!it.review) it.review = {};
+    it.review.Action = o.Action ?? it.review.Action ?? "INCLUDE";
+    it.review.Modifier = o.Modifier ?? it.review.Modifier ?? "NONE";
+    it.review.Note = o.Note ?? it.review.Note ?? "";
+    it.review.MoveToAccountCode = o.MoveToAccountCode ?? it.review.MoveToAccountCode ?? "";
+
+    it.review.AddHazmat = !!o.AddHazmat;
+    it.review.AddO2 = !!o.AddO2;
+    it.review.AddBari = !!o.AddBari;
+    it.review.AddDeadhead = !!o.AddDeadhead;
+    it.review.MatchToQuote = !!o.MatchToQuote;
+    it.review.QuoteAmount = Number(o.QuoteAmount || 0);
   }
+
   renderRows();
 }
 
 async function save(){
   const overrides = {};
   for(const r of ITEMS){
-    overrides[r.LineId] = {
+        overrides[r.LineId] = {
       Action: r.Action,
       Modifier: r.Modifier,
       Note: r.Note,
-      MoveToAccountCode: r.MoveToAccountCode || ""
+      MoveToAccountCode: r.MoveToAccountCode || "",
+
+      AddHazmat: !!r.review?.AddHazmat,
+      AddO2: !!r.review?.AddO2,
+      AddBari: !!r.review?.AddBari,
+      AddDeadhead: !!r.review?.AddDeadhead,
+      MatchToQuote: !!r.review?.MatchToQuote,
+      QuoteAmount: Number(r.review?.QuoteAmount || 0),
     };
   }
   const resp = await fetch("/api/overrides", {

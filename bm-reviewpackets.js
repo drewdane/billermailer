@@ -8,6 +8,7 @@ const { groupTrips } = require("./src/review/groupTrips");
 const { loadRateSheet, makeRateLookup } = require("./src/review/loadRateSheet");
 const { priceGroupedTrip } = require("./src/review/priceGroupedTrip");
 const { ratesPath: defaultRatesPath, buildPricingContext } = require("./src/orgs/CTT/pricing/pricingContext");
+const { computeAvailableCharges, computeDeadheadCharge } = require("./src/review/reviewAdjustments");
 
 function billingClassFor(row) {
   const code = String(row.AccountCode || "").trim().toLowerCase();
@@ -201,13 +202,16 @@ for (const r of groupedTrips) {
   const rateRow = rateLookupFn(pricingInput);
   const pricingContext = buildPricingContext(pricingInput);
   const pricing = priceGroupedTrip(pricingInput, rateRow, pricingContext);
+  const availableCharges = computeAvailableCharges(pricingInput, rateRow || {});
+  const deadheadCharge = computeDeadheadCharge(pricingInput, rateRow || {});
 
-  const enriched = {
+   const enriched = {
     ...pricingInput,
     RideDateISO: iso,
     LineId: r.LineId || computeLineId({ ...r, RideDateISO: iso }),
-
     pricing,
+    availableCharges,
+    deadheadCharge,
 
     Action: "INCLUDE",
     Modifier: "NONE",
