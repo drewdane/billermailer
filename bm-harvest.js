@@ -8,7 +8,6 @@
 // - Skip only:
 //    1) rows missing RideDate
 //    2) rows missing BOTH AccountCode and AccountName
-//    3) rows where AccountName OR AccountCode is exactly "Private Pay"
 // - DO NOT filter by RideStatus (status is carried through as data).
 //
 // Usage:
@@ -86,12 +85,7 @@ function hasValue(v) {
 }
 
 function isSkipAccount(row) {
-  const code = String(row["AccountCode"] ?? "").trim();
-  const name = String(row["AccountName"] ?? "").trim();
-  return (
-    code === "Private Pay" || name === "Private Pay" ||
-    code === "CTT Comp"   || name === "CTT Comp"
-  );
+  return false;
 }
 
 function validateRow(row) {

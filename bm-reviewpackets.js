@@ -1,23 +1,22 @@
 // bm-reviewpackets.js
-// Build per-facility/per-period review packets from bm_harvest.csv
-//
-// Usage:
-//   node bm-reviewpackets.js --in data\output\bm_harvest_jan_2026.csv --outDir data\output\review
-//
-// This creates:
-//   outDir/
-//     config.json (if missing)
-//     index.json
-//     <AccountCode>/
-//       <PeriodKey>/
-//         items.json
-//         overrides.json (created if missing)
-
 const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
 const { parse } = require("csv-parse/sync");
 const { combinedComments, notesPreview } = require("./src/utils/notes");
+const { groupTrips } = require("./src/review/groupTrips");
+const { loadRateSheet, makeRateLookup } = require("./src/review/loadRateSheet");
+const { priceGroupedTrip } = require("./src/review/priceGroupedTrip");
+const { ratesPath: defaultRatesPath, buildPricingContext } = require("./src/orgs/CTT/pricing/pricingContext");
+
+function billingClassFor(row) {
+  const code = String(row.AccountCode || "").trim().toLowerCase();
+  const name = String(row.AccountName || "").trim().toLowerCase();
+
+  if (code === "private pay" || name === "private pay") return "PRIVATE_PAY";
+  if (code === "ctt comp" || name === "ctt comp") return "COMP";
+  return "FACILITY";
+}
 
 function arg(name, fallback = null) {
   const idx = process.argv.indexOf(name);
@@ -25,7 +24,8 @@ function arg(name, fallback = null) {
   return process.argv[idx + 1] ?? fallback;
 }
 
-const inPath = arg("--in", "data\\output\\bm_harvest_latest.csv");
+const inPath = arg("--in", "bm_harvest.csv");
+const ratesPath = arg("--rates", defaultRatesPath);
 const outDir = arg("--outDir", "data\\output\\review");
 
 function normalizeHeader(h) {
@@ -160,6 +160,10 @@ const records = parse(raw, {
   relax_column_count: true,
 });
 
+const groupedTrips = groupTrips(records);
+const rateRows = loadRateSheet(ratesPath);
+const rateLookupFn = makeRateLookup(rateRows);
+
 let badDate = 0;
 let missingAccount = 0;
 
@@ -167,10 +171,12 @@ const index = {
   generatedAt: new Date().toISOString(),
   inputFile: path.resolve(inPath),
   periodMode: cfg.period.mode,
-  facilities: {}, // AccountCode -> { AccountName, periods: { periodKey: { count } } }
+  facilities: {},
 };
 
-for (const r of records) {
+const packets = {};
+
+for (const r of groupedTrips) {
   const acctCode = String(r.AccountCode ?? "").trim();
   const acctName = String(r.AccountName ?? "").trim();
   if (!hasValue(acctCode)) {
@@ -178,7 +184,7 @@ for (const r of records) {
     continue;
   }
 
-  const iso = rideDateToISO(r.RideDate);
+  const iso = rideDateToISO(r.RideDate) || String(r.RideDateISO || "").trim();
   if (!iso) {
     badDate++;
     continue;
@@ -186,22 +192,31 @@ for (const r of records) {
 
   const notesFull = combinedComments(r);
 
-  const enriched = {
+  const billingClass = billingClassFor(r);
+  const pricingInput = {
     ...r,
+    BillingClass: billingClass,
+  };
+
+  const rateRow = rateLookupFn(pricingInput);
+  const pricingContext = buildPricingContext(pricingInput);
+  const pricing = priceGroupedTrip(pricingInput, rateRow, pricingContext);
+
+  const enriched = {
+    ...pricingInput,
     RideDateISO: iso,
-    LineId: computeLineId({ ...r, RideDateISO: iso }),
+    LineId: r.LineId || computeLineId({ ...r, RideDateISO: iso }),
 
-    // keep legacy top-level review fields so current UI does not break
-    Action: "INCLUDE",        // INCLUDE | EXCLUDE | MODIFY | MOVE
-    Modifier: "NONE",         // NONE | HALF | FREE
+    pricing,
+
+    Action: "INCLUDE",
+    Modifier: "NONE",
     Note: "",
-    MoveToAccountCode: "",    // when Action=MOVE
+    MoveToAccountCode: "",
 
-    // new note fields for compact/expanded review UI
     notesFull,
     notesPreview: notesPreview(notesFull),
 
-    // future-friendly review object
     review: {
       Action: "INCLUDE",
       Modifier: "NONE",
@@ -223,25 +238,10 @@ for (const r of records) {
 
   const pKey = periodKeyFor(iso, cfg);
 
-  const facDir = path.join(outDir, safeSegment(acctCode));
-  const periodDir = path.join(facDir, safeSegment(pKey));
-  fs.mkdirSync(periodDir, { recursive: true });
+  if (!packets[acctCode]) packets[acctCode] = {};
+  if (!packets[acctCode][pKey]) packets[acctCode][pKey] = [];
+  packets[acctCode][pKey].push(enriched);
 
-  const itemsPath = path.join(periodDir, "items.json");
-  const overridesPath = path.join(periodDir, "overrides.json");
-
-  // append line item to items.json (load+write; fine at this scale)
-  let items = [];
-  if (fs.existsSync(itemsPath)) items = JSON.parse(fs.readFileSync(itemsPath, "utf8"));
-  items.push(enriched);
-  fs.writeFileSync(itemsPath, JSON.stringify(items, null, 2), "utf8");
-
-  // create overrides.json if missing
-  if (!fs.existsSync(overridesPath)) {
-    fs.writeFileSync(overridesPath, JSON.stringify({ overrides: {} }, null, 2), "utf8");
-  }
-
-  // update index
   if (!index.facilities[acctCode]) {
     index.facilities[acctCode] = { AccountName: acctName, periods: {} };
   }
@@ -249,12 +249,46 @@ for (const r of records) {
   index.facilities[acctCode].periods[pKey].count += 1;
 }
 
+// write packet files once per account/period
+for (const acctCode of Object.keys(packets)) {
+  for (const pKey of Object.keys(packets[acctCode])) {
+    const facDir = path.join(outDir, safeSegment(acctCode));
+    const periodDir = path.join(facDir, safeSegment(pKey));
+    fs.mkdirSync(periodDir, { recursive: true });
+
+    const itemsPath = path.join(periodDir, "items.json");
+    const overridesPath = path.join(periodDir, "overrides.json");
+
+    fs.writeFileSync(
+      itemsPath,
+      JSON.stringify(packets[acctCode][pKey], null, 2),
+      "utf8"
+    );
+
+    if (!fs.existsSync(overridesPath)) {
+      fs.writeFileSync(
+        overridesPath,
+        JSON.stringify({ overrides: {} }, null, 2),
+        "utf8"
+      );
+    }
+  }
+}
+
 fs.writeFileSync(path.join(outDir, "index.json"), JSON.stringify(index, null, 2), "utf8");
 
+const oneWayCount = groupedTrips.filter(t => t.TripShape === "ONE_WAY").length;
+const roundTripCount = groupedTrips.filter(t => t.TripShape === "ROUND_TRIP").length;
+const multiStopCount = groupedTrips.filter(t => t.TripShape === "MULTI_STOP").length;
+
 console.log("BM review packets created.");
-console.log(`Rows read: ${records.length}`);
+console.log(`Raw legs read: ${records.length}`);
+console.log(`Grouped trips: ${groupedTrips.length}`);
 console.log(`Bad RideDate parse: ${badDate}`);
 console.log(`Missing AccountCode: ${missingAccount}`);
 console.log(`Output folder: ${path.resolve(outDir)}`);
 console.log(`Config: ${path.resolve(CONFIG_PATH)}`);
 console.log(`Index: ${path.resolve(path.join(outDir, "index.json"))}`);
+console.log(`One-way trips: ${oneWayCount}`);
+console.log(`Round trips:   ${roundTripCount}`);
+console.log(`Multi-stop:    ${multiStopCount}`);

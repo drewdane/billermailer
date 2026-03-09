@@ -2,7 +2,6 @@
 node_modules/
 
 # Generated data (DO NOT COMMIT)
-data/input/
 data/output/
 
 # Logs

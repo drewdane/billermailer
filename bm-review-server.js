@@ -43,18 +43,98 @@ const HTML = `<!doctype html>
   <meta charset="utf-8"/>
   <title>BM Review</title>
   <style>
-    body{font-family:system-ui,Segoe UI,Arial;margin:0;display:flex;height:100vh}
-    #left{width:340px;border-right:1px solid #ddd;padding:12px;overflow:auto}
-    #main{flex:1;padding:12px;overflow:auto}
-    .fac{padding:8px;border:1px solid #ddd;border-radius:10px;margin:8px 0}
-    .pill{display:inline-block;padding:2px 8px;border:1px solid #ccc;border-radius:999px;margin-left:6px;font-size:12px;color:#555}
-    table{border-collapse:collapse;width:100%}
-    th,td{border:1px solid #ddd;padding:6px;font-size:12px;vertical-align:top}
-    th{position:sticky;top:0;background:#fff;z-index:2}
-    select,input{font-size:12px}
-    .row-exclude{opacity:0.45}
-    .toolbar{display:flex;gap:10px;align-items:center;margin:8px 0;flex-wrap:wrap}
-    button{padding:8px 10px;border:1px solid #ccc;border-radius:10px;background:#fff;cursor:pointer}
+    body{
+      font-family:system-ui,Segoe UI,Arial;
+      margin:0;
+      display:flex;
+      height:100vh;
+      background:#fafbff;
+      color:#111827;
+    }
+
+    #left{
+      width:340px;
+      border-right:1px solid #d6d8ea;
+      padding:12px;
+      overflow:auto;
+      background:#e4e4f0;
+    }
+
+    #main{
+      flex:1;
+      padding:12px;
+      overflow:auto;
+      background:#fafbff;
+    }
+
+    .fac{
+      padding:8px;
+      border:1px solid #d6d8ea;
+      border-radius:10px;
+      margin:8px 0;
+      background:#ffffff;
+      box-shadow:0 1px 2px rgba(0,0,0,0.04);
+    }
+
+    .pill{
+      display:inline-block;
+      padding:2px 6px;
+      border-radius:6px;
+      background:#e4e4f0;
+      font-size:12px;
+      color:#64748b;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+    }
+
+    th,td{
+      border-bottom:1px solid #e4e4f0;
+      padding:6px 8px;
+      vertical-align:top;
+    }
+
+    th{
+      position:sticky;
+      top:0;
+      background:#e4e4f0;
+      z-index:2;
+      font-weight:600;
+    }
+
+    tr:hover{
+      background:#f1f2fb;
+    }
+
+    .row-exclude td{
+      text-decoration:line-through;
+      color:#64748b;
+      background:#f3f4fa;
+    }
+
+    button{
+      padding:6px 10px;
+      border:1px solid #d6d8ea;
+      border-radius:8px;
+      background:#ffffff;
+      cursor:pointer;
+    }
+
+    button:hover{
+      background:#f1f2fb;
+    }
+
+    input[type="number"]{
+      border:1px solid #d6d8ea;
+      border-radius:6px;
+      padding:2px 4px;
+    }
+
+    input[type="checkbox"]{
+      transform:scale(1.1);
+    }
   </style>
 </head>
 <body>
