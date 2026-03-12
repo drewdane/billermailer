@@ -118,7 +118,28 @@ function computeDeadheadCharge(groupedTrip, rateRow) {
   return dhMiles * rate;
 }
 
+function computeWaitCharge(waitMinutesInput, rateRow = {}) {
+  const waitMinutes = money(waitMinutesInput);
+  if (waitMinutes <= 0) return 0;
+
+  const rate = money(rateRow["wait_rate"]);
+  if (rate <= 0) return 0;
+
+  const blockMin = money(rateRow["wait_block_min"]);
+  const graceMin = money(rateRow["wait_grace_min"]);
+
+  const chargedMinutes = Math.max(0, waitMinutes - graceMin);
+  if (chargedMinutes <= 0) return 0;
+
+  if (blockMin > 0) {
+    return Math.ceil(chargedMinutes / blockMin) * rate;
+  }
+
+  return rate;
+}
+
 module.exports = {
   computeAvailableCharges,
   computeDeadheadCharge,
+  computeWaitCharge,
 };

@@ -67,6 +67,32 @@ const HTML = `<!doctype html>
       background:#fafbff;
     }
 
+        #mainHeader{
+      position:sticky;
+      top:0;
+      z-index:5;
+      background:#fafbff;
+      padding-bottom:10px;
+      border-bottom:1px solid #d6d8ea;
+    }
+
+    .toolbar{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:8px;
+    }
+
+    .toolbar input[type="text"],
+    .toolbar input:not([type]),
+    .toolbar select{
+      padding:7px 10px;
+      border:1px solid #d6d8ea;
+      border-radius:10px;
+      background:#fff;
+    }
+
     .fac{
       padding:8px;
       border:1px solid #d6d8ea;
@@ -98,7 +124,7 @@ const HTML = `<!doctype html>
 
     th{
       position:sticky;
-      top:0;
+      top:96px;
       background:#e4e4f0;
       z-index:2;
       font-weight:600;
@@ -142,15 +168,33 @@ const HTML = `<!doctype html>
     <h3 style="margin:6px 0">Facilities</h3>
     <div id="facList">Loading…</div>
   </div>
-  <div id="main">
-    <h2 style="margin:6px 0">BM Review</h2>
-    <div id="status" style="color:#666;margin-bottom:8px">Select a facility + period.</div>
-    <div class="toolbar" id="toolbar" style="display:none">
-      <button onclick="save()">Save</button>
-      <span id="saveMsg" style="color:#666"></span>
-      <input id="search" placeholder="Search…" oninput="renderRows()" style="padding:7px;border:1px solid #ccc;border-radius:10px;min-width:240px"/>
-    </div>
-    <div id="tableWrap"></div>
+    <div id="main">
+      <div id="mainHeader">
+        <h2 style="margin:6px 0">BM Review</h2>
+        <div id="status" style="color:#666;margin-bottom:8px">Select a facility + period.</div>
+
+        <div class="toolbar" id="toolbar" style="display:none">
+          <input
+            id="search"
+            placeholder="Search…"
+            oninput="renderRows()"
+            style="min-width:240px"
+          />
+
+          <label style="display:flex;align-items:center;gap:6px;color:#374151">
+            <span>Invoice Type</span>
+            <select id="invoiceType">
+              <option value="single">Single invoice</option>
+              <option value="trip">Individual invoices</option>
+            </select>
+          </label>
+
+          <button onclick="save()">Save</button>
+          <span id="saveMsg" style="color:#666"></span>
+        </div>
+      </div>
+
+      <div id="tableWrap"></div>
   </div>
 
 <script src="/renderRows.js"></script>
@@ -158,7 +202,7 @@ const HTML = `<!doctype html>
 let INDEX=null;
 let current = { acct:null, period:null };
 let ITEMS=[];
-let OVERRIDES={ overrides:{} };
+let OVERRIDES={ invoiceType:"single", overrides:{} };
 
 function esc(s){ return String(s??"").replace(/[&<>"]/g, c=>({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;" }[c])); }
 
@@ -250,9 +294,15 @@ async function openSet(acct, period){
     it.review.AddO2 = !!o.AddO2;
     it.review.AddBari = !!o.AddBari;
     it.review.AddDeadhead = !!o.AddDeadhead;
+    it.review.AddWait = !!o.AddWait;
+    it.review.WaitTotalMinutes = Number(o.WaitTotalMinutes || 0);
     it.review.MatchToQuote = !!o.MatchToQuote;
     it.review.QuoteAmount = Number(o.QuoteAmount || 0);
   }
+
+    const invoiceTypeEl = document.getElementById("invoiceType");
+    invoiceTypeEl.value = OVERRIDES.invoiceType || "single";
+    document.getElementById("invoiceType").value = OVERRIDES.invoiceType || "single";
 
   renderRows();
 }
@@ -270,6 +320,8 @@ async function save(){
       AddO2: !!r.review?.AddO2,
       AddBari: !!r.review?.AddBari,
       AddDeadhead: !!r.review?.AddDeadhead,
+      AddWait: !!r.review?.AddWait,
+      WaitTotalMinutes: Number(r.review?.WaitTotalMinutes || 0),
       MatchToQuote: !!r.review?.MatchToQuote,
       QuoteAmount: Number(r.review?.QuoteAmount || 0),
     };
@@ -341,9 +393,10 @@ const server = http.createServer((req, res) => {
         const payload = JSON.parse(body || "{}");
         const acct = payload.acct;
         const period = payload.period;
+        const invoiceType = payload.invoiceType || "single";
         const overrides = payload.overrides || {};
         const p = safeJoin(acct, period, "overrides.json");
-        writeJson(p, { overrides });
+        writeJson(p, { invoiceType, overrides });
         send(res, 200, JSON.stringify({ ok: true }), "application/json");
       });
       return;

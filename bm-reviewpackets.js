@@ -8,7 +8,7 @@ const { groupTrips } = require("./src/review/groupTrips");
 const { loadRateSheet, makeRateLookup } = require("./src/review/loadRateSheet");
 const { priceGroupedTrip } = require("./src/review/priceGroupedTrip");
 const { ratesPath: defaultRatesPath, buildPricingContext } = require("./src/orgs/CTT/pricing/pricingContext");
-const { computeAvailableCharges, computeDeadheadCharge } = require("./src/review/reviewAdjustments");
+const { computeAvailableCharges, computeDeadheadCharge, computeWaitCharge } = require("./src/review/reviewAdjustments");
 
 function billingClassFor(row) {
   const code = String(row.AccountCode || "").trim().toLowerCase();
@@ -136,6 +136,14 @@ function periodKeyBiweekly(isoDate, anchorIso) {
   return `${start}_to_${end}`; // explicit, no ambiguity
 }
 
+function buildWaitConfig(rateRow = {}) {
+  return {
+    wait_rate: rateRow["wait_rate"] ?? "",
+    wait_block_min: rateRow["wait_block_min"] ?? "",
+    wait_grace_min: rateRow["wait_grace_min"] ?? "",
+  };
+}
+
 function periodKeyFor(isoDate, cfg) {
   const mode = cfg.period?.mode ?? "biweekly";
   if (mode === "semi_monthly") return periodKeySemiMonthly(isoDate);
@@ -214,6 +222,7 @@ for (const r of groupedTrips) {
   const pricing = priceGroupedTrip(pricingInput, rateRow, pricingContext);
   const availableCharges = computeAvailableCharges(pricingInput, rateRow || {});
   const deadheadCharge = computeDeadheadCharge(pricingInput, rateRow || {});
+  const waitConfig = buildWaitConfig(rateRow || {});
 
    const enriched = {
     ...pricingInput,
@@ -222,6 +231,7 @@ for (const r of groupedTrips) {
     pricing,
     availableCharges,
     deadheadCharge,
+    waitConfig,
 
     Action: "INCLUDE",
     Modifier: "NONE",
