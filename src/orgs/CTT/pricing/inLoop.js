@@ -28,6 +28,9 @@ const DEFINITELY_IN_LOOP_ZIPS = new Set([
   "76116",
   "76117",
   "76119",
+  "76132",
+  "76133",
+  "76134",
 ]);
 
 const MIXED_ZIPS = new Set([
@@ -36,12 +39,6 @@ const MIXED_ZIPS = new Set([
   "76118",
   "76137",
   "76180",
-]);
-
-const REVIEW_ZIPS = new Set([
-  "76132",
-  "76133",
-  "76134",
 ]);
 
 const IN_LOOP_CITY_HINTS = new Set([
@@ -76,7 +73,6 @@ function isDefinitelyInLoopStop(stop) {
 
 function isAmbiguousStop(stop) {
   if (MIXED_ZIPS.has(stop.zip)) return true;
-  if (REVIEW_ZIPS.has(stop.zip)) return true;
   return false;
 }
 

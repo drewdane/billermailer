@@ -162,6 +162,16 @@ const records = parse(raw, {
 });
 
 const groupedTrips = groupTrips(records);
+
+const allIsos = groupedTrips
+  .map((r) => rideDateToISO(r.RideDate) || String(r.RideDateISO || "").trim())
+  .filter(Boolean)
+  .sort();
+
+const batchStart = allIsos[0] || "unknown_start";
+const batchEnd = allIsos[allIsos.length - 1] || "unknown_end";
+const batchPeriodKey = `${batchStart}_to_${batchEnd}`;
+
 const rateRows = loadRateSheet(ratesPath);
 const rateLookupFn = makeRateLookup(rateRows);
 
@@ -171,7 +181,7 @@ let missingAccount = 0;
 const index = {
   generatedAt: new Date().toISOString(),
   inputFile: path.resolve(inPath),
-  periodMode: cfg.period.mode,
+  periodMode: "import_batch",
   facilities: {},
 };
 
@@ -240,7 +250,7 @@ for (const r of groupedTrips) {
     }
   };
 
-  const pKey = periodKeyFor(iso, cfg);
+  const pKey = batchPeriodKey;
 
   if (!packets[acctCode]) packets[acctCode] = {};
   if (!packets[acctCode][pKey]) packets[acctCode][pKey] = [];

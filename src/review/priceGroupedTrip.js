@@ -20,7 +20,7 @@ function classifyStatus(statusRaw) {
   return { kind: "UNKNOWN" };
 }
 
-function mapMobilityToTripType(mobilityRaw) {
+function mapMobilityToTripType(mobilityRaw, groupedTrip) {
   const raw = String(mobilityRaw || "").trim().toUpperCase();
   const flags = [];
 
@@ -46,13 +46,26 @@ function mapMobilityToTripType(mobilityRaw) {
     return { tripType: "NEEDWC", flags };
   }
 
-  if (raw === "WC" || raw.includes("WHEEL")) {
-    flags.push("MOBILITY_WC_GENERIC");
-    return { tripType: "WC", flags };
+  // Band-aid fix for lack of HASWC and NEEDWC tags in data dump
+  if (String(raw).toUpperCase() === "WC") {           // Not a permanent solution
+    if (groupedTrip.BillingClass === "PRIVATE_PAY") {
+      flags.push("MOBILITY_WC_GENERIC_ASSUMED_HASWC");
+      return { tripType: "HASWC", flags };
+    }
+    if (groupedTrip.TripShape === "ROUND_TRIP") {
+      flags.push("MOBILITY_WC_GENERIC_ASSUMED_HASWC");
+      return { tripType: "HASWC", flags };
+    }
+    if (groupedTrip.TripShape === "ONE_WAY") {
+      flags.push("MOBILITY_WC_GENERIC_ASSUMED_NEEDWC");
+      return { tripType: "NEEDWC", flags };
+    }
+    flags.push("MOBILITY_WC_GENERIC_ASSUMED_HASWC");
+    return { tripType: "HASWC", flags };
   }
 
   flags.push(`MOBILITY_UNKNOWN:${raw}`);
-  return { tripType: null, flags };
+  return { tripType: null, flags };                   // Not a permanent solution
 }
 
 function getLegs(groupedTrip) {
@@ -75,7 +88,7 @@ function roundTripMilesRounded(legs) {
 function priceGroupedTrip(groupedTrip, rateRow, opts = {}) {
   const flags = [];
   const status = classifyStatus(groupedTrip.RideStatus);
-  const { tripType, flags: mobilityFlags } = mapMobilityToTripType(groupedTrip.Mobility);
+  const { tripType, flags: mobilityFlags } = mapMobilityToTripType(groupedTrip.Mobility, groupedTrip);
   flags.push(...mobilityFlags);
 
   if (!rateRow) {

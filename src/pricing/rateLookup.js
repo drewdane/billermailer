@@ -8,6 +8,16 @@ function num(v) {
   return Number.isFinite(x) ? x : 0;
 }
 
+function num(v) {
+  const cleaned = String(v ?? "")
+    .replace(/\$/g, "")
+    .replace(/,/g, "")
+    .trim();
+
+  const n = Number(cleaned || 0);
+  return Number.isFinite(n) ? n : 0;
+}
+
 function hasRate(v) {
   return num(v) > 0;
 }
