@@ -58,8 +58,8 @@ try {
 } catch {}
 
 console.log("Building review packets...");
-run(`node bm-reviewpackets.js --in data/output/bm_harvest_latest.csv --outDir data/output/review`);
+run(`node bm-reviewpackets.js --in data/output/bm_harvest_latest.csv --outDir data/review`);
 
 console.log("Launching review server...");
 openBrowser("http://localhost:8787");
-run(`node bm-review-server.js --dir data/output/review`);
+run(`node bm-review-server.js --dir data/review`);

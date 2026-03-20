@@ -1,7 +1,7 @@
 // bm-review-server.js
 // Local review UI for Stacie: Include / Exclude / Modify + notes.
 // Run:
-//   node bm-review-server.js --dir "C:\Users\Drew\BillerMailer\data\output\review"
+//   node bm-review-server.js --dir "C:\Users\Drew\BillerMailer\data\review"
 // Then open:
 //   http://localhost:8787
 

@@ -1,0 +1,6 @@
+{
+  "period": {
+    "mode": "biweekly",
+    "biweekly_anchor_iso": "2026-01-01"
+  }
+}
