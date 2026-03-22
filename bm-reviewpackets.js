@@ -9,6 +9,7 @@ const { loadRateSheet, makeRateLookup } = require("./src/review/loadRateSheet");
 const { priceGroupedTrip } = require("./src/review/priceGroupedTrip");
 const { ratesPath: defaultRatesPath, buildPricingContext } = require("./src/orgs/CTT/pricing/pricingContext");
 const { computeAvailableCharges, computeDeadheadCharge, computeWaitCharge } = require("./src/review/reviewAdjustments");
+const { num } = require("./src/pricing/rateLookup");
 
 function billingClassFor(row) {
   const code = String(row.AccountCode || "").trim().toLowerCase();
@@ -232,6 +233,13 @@ for (const r of groupedTrips) {
     availableCharges,
     deadheadCharge,
     waitConfig,
+
+    availableWcAccessories: {
+      needwc_1w: num(rateRow?.needwc_1w),
+      needwc_rt: num(rateRow?.needwc_rt),
+      recl_1w: num(rateRow?.recl_1w),
+      recl_rt: num(rateRow?.recl_rt),
+    },
 
     Action: "INCLUDE",
     Modifier: "NONE",

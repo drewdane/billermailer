@@ -87,7 +87,17 @@
         "perMileSource": "mile_rate_0_30",
         "legCount": 1,
         "additionalStopCount": 0,
-        "rateRowId": null
+        "rateRowId": null,
+        "needwcApplied": false,
+        "reclApplied": false,
+        "accessoryTotal": 0,
+        "rawMobility": "STR",
+        "normalizedAccessories": {
+          "NeedWC": false,
+          "RECL": false
+        },
+        "needwcColumnTried": "needwc_1w",
+        "needwcValue": 10
       }
     },
     "availableCharges": {
@@ -100,6 +110,12 @@
       "wait_rate": "$25.00",
       "wait_block_min": "30",
       "wait_grace_min": ""
+    },
+    "availableWcAccessories": {
+      "needwc_1w": 10,
+      "needwc_rt": 20,
+      "recl_1w": 10,
+      "recl_rt": 20
     },
     "Action": "INCLUDE",
     "Modifier": "NONE",
@@ -209,7 +225,17 @@
         "perMileSource": "mile_rate_0_30",
         "legCount": 1,
         "additionalStopCount": 0,
-        "rateRowId": null
+        "rateRowId": null,
+        "needwcApplied": false,
+        "reclApplied": false,
+        "accessoryTotal": 0,
+        "rawMobility": "STR",
+        "normalizedAccessories": {
+          "NeedWC": false,
+          "RECL": false
+        },
+        "needwcColumnTried": "needwc_1w",
+        "needwcValue": 10
       }
     },
     "availableCharges": {
@@ -222,6 +248,12 @@
       "wait_rate": "$25.00",
       "wait_block_min": "30",
       "wait_grace_min": ""
+    },
+    "availableWcAccessories": {
+      "needwc_1w": 10,
+      "needwc_rt": 20,
+      "recl_1w": 10,
+      "recl_rt": 20
     },
     "Action": "INCLUDE",
     "Modifier": "NONE",

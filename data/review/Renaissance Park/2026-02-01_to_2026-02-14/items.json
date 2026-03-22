@@ -109,20 +109,30 @@
       "cancelFee": 0,
       "total": 85,
       "flags": [
-        "MOBILITY_WC_GENERIC_ASSUMED_HASWC"
+        "DEFAULTED_HASWC_FROM_WC_ROUND_TRIP"
       ],
       "audit": {
         "tripShape": "ROUND_TRIP",
-        "tripType": "HASWC",
+        "tripType": "WC",
         "milesRounded": 5,
         "includedMiles": 0,
         "billableMiles": 5,
-        "baseKey": "base_rt_haswc",
+        "baseKey": "base_rt_wc",
         "perMileRate": 3,
         "perMileSource": "mile_rate_0_30",
         "legCount": 2,
         "additionalStopCount": 0,
-        "rateRowId": null
+        "rateRowId": null,
+        "needwcApplied": false,
+        "reclApplied": false,
+        "accessoryTotal": 0,
+        "rawMobility": "WC",
+        "normalizedAccessories": {
+          "NeedWC": false,
+          "RECL": false
+        },
+        "needwcColumnTried": "needwc_rt",
+        "needwcValue": 20
       }
     },
     "availableCharges": {
@@ -135,6 +145,12 @@
       "wait_rate": "$20.00",
       "wait_block_min": "60",
       "wait_grace_min": ""
+    },
+    "availableWcAccessories": {
+      "needwc_1w": 10,
+      "needwc_rt": 20,
+      "recl_1w": 20,
+      "recl_rt": 40
     },
     "Action": "INCLUDE",
     "Modifier": "NONE",
@@ -266,20 +282,30 @@
       "cancelFee": 0,
       "total": 82,
       "flags": [
-        "MOBILITY_WC_GENERIC_ASSUMED_HASWC"
+        "DEFAULTED_HASWC_FROM_WC_ROUND_TRIP"
       ],
       "audit": {
         "tripShape": "ROUND_TRIP",
-        "tripType": "HASWC",
+        "tripType": "WC",
         "milesRounded": 4,
         "includedMiles": 0,
         "billableMiles": 4,
-        "baseKey": "base_rt_haswc",
+        "baseKey": "base_rt_wc",
         "perMileRate": 3,
         "perMileSource": "mile_rate_0_30",
         "legCount": 2,
         "additionalStopCount": 0,
-        "rateRowId": null
+        "rateRowId": null,
+        "needwcApplied": false,
+        "reclApplied": false,
+        "accessoryTotal": 0,
+        "rawMobility": "WC",
+        "normalizedAccessories": {
+          "NeedWC": false,
+          "RECL": false
+        },
+        "needwcColumnTried": "needwc_rt",
+        "needwcValue": 20
       }
     },
     "availableCharges": {
@@ -292,6 +318,12 @@
       "wait_rate": "$20.00",
       "wait_block_min": "60",
       "wait_grace_min": ""
+    },
+    "availableWcAccessories": {
+      "needwc_1w": 10,
+      "needwc_rt": 20,
+      "recl_1w": 20,
+      "recl_rt": 40
     },
     "Action": "INCLUDE",
     "Modifier": "NONE",
@@ -401,7 +433,17 @@
         "perMileSource": "mile_rate_0_30",
         "legCount": 1,
         "additionalStopCount": 0,
-        "rateRowId": null
+        "rateRowId": null,
+        "needwcApplied": false,
+        "reclApplied": false,
+        "accessoryTotal": 0,
+        "rawMobility": "STR",
+        "normalizedAccessories": {
+          "NeedWC": false,
+          "RECL": false
+        },
+        "needwcColumnTried": "needwc_1w",
+        "needwcValue": 10
       }
     },
     "availableCharges": {
@@ -414,6 +456,12 @@
       "wait_rate": "$20.00",
       "wait_block_min": "60",
       "wait_grace_min": ""
+    },
+    "availableWcAccessories": {
+      "needwc_1w": 10,
+      "needwc_rt": 20,
+      "recl_1w": 20,
+      "recl_rt": 40
     },
     "Action": "INCLUDE",
     "Modifier": "NONE",
@@ -545,20 +593,30 @@
       "cancelFee": 0,
       "total": 82,
       "flags": [
-        "MOBILITY_WC_GENERIC_ASSUMED_HASWC"
+        "DEFAULTED_HASWC_FROM_WC_ROUND_TRIP"
       ],
       "audit": {
         "tripShape": "ROUND_TRIP",
-        "tripType": "HASWC",
+        "tripType": "WC",
         "milesRounded": 4,
         "includedMiles": 0,
         "billableMiles": 4,
-        "baseKey": "base_rt_haswc",
+        "baseKey": "base_rt_wc",
         "perMileRate": 3,
         "perMileSource": "mile_rate_0_30",
         "legCount": 2,
         "additionalStopCount": 0,
-        "rateRowId": null
+        "rateRowId": null,
+        "needwcApplied": false,
+        "reclApplied": false,
+        "accessoryTotal": 0,
+        "rawMobility": "WC",
+        "normalizedAccessories": {
+          "NeedWC": false,
+          "RECL": false
+        },
+        "needwcColumnTried": "needwc_rt",
+        "needwcValue": 20
       }
     },
     "availableCharges": {
@@ -571,6 +629,12 @@
       "wait_rate": "$20.00",
       "wait_block_min": "60",
       "wait_grace_min": ""
+    },
+    "availableWcAccessories": {
+      "needwc_1w": 10,
+      "needwc_rt": 20,
+      "recl_1w": 20,
+      "recl_rt": 40
     },
     "Action": "INCLUDE",
     "Modifier": "NONE",
@@ -680,7 +744,17 @@
         "perMileSource": "mile_rate_0_30",
         "legCount": 1,
         "additionalStopCount": 0,
-        "rateRowId": null
+        "rateRowId": null,
+        "needwcApplied": false,
+        "reclApplied": false,
+        "accessoryTotal": 0,
+        "rawMobility": "STR",
+        "normalizedAccessories": {
+          "NeedWC": false,
+          "RECL": false
+        },
+        "needwcColumnTried": "needwc_1w",
+        "needwcValue": 10
       }
     },
     "availableCharges": {
@@ -693,6 +767,12 @@
       "wait_rate": "$20.00",
       "wait_block_min": "60",
       "wait_grace_min": ""
+    },
+    "availableWcAccessories": {
+      "needwc_1w": 10,
+      "needwc_rt": 20,
+      "recl_1w": 20,
+      "recl_rt": 40
     },
     "Action": "INCLUDE",
     "Modifier": "NONE",
@@ -802,7 +882,17 @@
         "perMileSource": "mile_rate_0_30",
         "legCount": 1,
         "additionalStopCount": 0,
-        "rateRowId": null
+        "rateRowId": null,
+        "needwcApplied": false,
+        "reclApplied": false,
+        "accessoryTotal": 0,
+        "rawMobility": "STR",
+        "normalizedAccessories": {
+          "NeedWC": false,
+          "RECL": false
+        },
+        "needwcColumnTried": "needwc_1w",
+        "needwcValue": 10
       }
     },
     "availableCharges": {
@@ -815,6 +905,12 @@
       "wait_rate": "$20.00",
       "wait_block_min": "60",
       "wait_grace_min": ""
+    },
+    "availableWcAccessories": {
+      "needwc_1w": 10,
+      "needwc_rt": 20,
+      "recl_1w": 20,
+      "recl_rt": 40
     },
     "Action": "INCLUDE",
     "Modifier": "NONE",
@@ -924,7 +1020,17 @@
         "perMileSource": "mile_rate_0_30",
         "legCount": 1,
         "additionalStopCount": 0,
-        "rateRowId": null
+        "rateRowId": null,
+        "needwcApplied": false,
+        "reclApplied": false,
+        "accessoryTotal": 0,
+        "rawMobility": "STR",
+        "normalizedAccessories": {
+          "NeedWC": false,
+          "RECL": false
+        },
+        "needwcColumnTried": "needwc_1w",
+        "needwcValue": 10
       }
     },
     "availableCharges": {
@@ -937,6 +1043,12 @@
       "wait_rate": "$20.00",
       "wait_block_min": "60",
       "wait_grace_min": ""
+    },
+    "availableWcAccessories": {
+      "needwc_1w": 10,
+      "needwc_rt": 20,
+      "recl_1w": 20,
+      "recl_rt": 40
     },
     "Action": "INCLUDE",
     "Modifier": "NONE",
@@ -1068,20 +1180,30 @@
       "cancelFee": 0,
       "total": 82,
       "flags": [
-        "MOBILITY_WC_GENERIC_ASSUMED_HASWC"
+        "DEFAULTED_HASWC_FROM_WC_ROUND_TRIP"
       ],
       "audit": {
         "tripShape": "ROUND_TRIP",
-        "tripType": "HASWC",
+        "tripType": "WC",
         "milesRounded": 4,
         "includedMiles": 0,
         "billableMiles": 4,
-        "baseKey": "base_rt_haswc",
+        "baseKey": "base_rt_wc",
         "perMileRate": 3,
         "perMileSource": "mile_rate_0_30",
         "legCount": 2,
         "additionalStopCount": 0,
-        "rateRowId": null
+        "rateRowId": null,
+        "needwcApplied": false,
+        "reclApplied": false,
+        "accessoryTotal": 0,
+        "rawMobility": "WC",
+        "normalizedAccessories": {
+          "NeedWC": false,
+          "RECL": false
+        },
+        "needwcColumnTried": "needwc_rt",
+        "needwcValue": 20
       }
     },
     "availableCharges": {
@@ -1094,6 +1216,12 @@
       "wait_rate": "$20.00",
       "wait_block_min": "60",
       "wait_grace_min": ""
+    },
+    "availableWcAccessories": {
+      "needwc_1w": 10,
+      "needwc_rt": 20,
+      "recl_1w": 20,
+      "recl_rt": 40
     },
     "Action": "INCLUDE",
     "Modifier": "NONE",

@@ -39,12 +39,7 @@ function renderRows() {
       "<th style='width:180px'>Drop-off</th>" +
       "<th style='width:55px'>Mi</th>" +
       "<th>Notes</th>" +
-      "<th style='width:90px'>HZ</th>" +
-      "<th style='width:90px'>O2</th>" +
-      "<th style='width:90px'>BARI</th>" +
-      "<th style='width:90px'>DH</th>" +
-      "<th style='width:140px'>WAIT</th>" +
-      "<th style='width:160px'>Override</th>" +
+      "<th style='width:520px'>Adjustments</th>" +
       "<th style='width:90px'>Total</th>" +
     "</tr></thead>";
 
@@ -105,27 +100,74 @@ function renderRows() {
     return rate;
   }
 
-  function rowAccessoryTotal(r) {
-    const charges = r.availableCharges || {};
-    let total = 0;
-    if (r.review?.AddHazmat) total += Number(charges.hazmat || 0);
-    if (r.review?.AddO2) total += Number(charges.o2 || 0);
-    if (r.review?.AddBari) total += Number(charges.bari || 0);
-    if (r.review?.AddDeadhead) total += Number(r.deadheadCharge || 0);
-    total += computeWaitCharge(r);
-    return total;
+  function pricedAccessoryAmount(r, code) {
+    const lines = Array.isArray(r.pricing?.accessories) ? r.pricing.accessories : [];
+    const hit = lines.find((x) => String(x.code || "").toUpperCase() === String(code).toUpperCase());
+    return Number(hit?.amount || 0);
   }
+
+    function wcAccessoryState(r) {
+      const shape = String(r.TripShape || "").toUpperCase();
+      const isRt = shape === "ROUND_TRIP" || shape === "MULTI_STOP";
+
+      const src = r.availableWcAccessories || {};
+
+      const needwcAmount = Number(isRt ? (src.needwc_rt || 0) : (src.needwc_1w || 0));
+      const reclAmount = Number(isRt ? (src.recl_rt || 0) : (src.recl_1w || 0));
+
+      let addNeedWC = !!r.review?.AddNeedWC;
+      let addRECL = !!r.review?.AddRECL;
+
+      if (addNeedWC && addRECL) {
+        addNeedWC = false;
+      }
+
+      return {
+        needwcAmount,
+        reclAmount,
+        addNeedWC,
+        addRECL
+      };
+    }
+
+  function baseTripTotal(r) {
+    return Number(r.pricing?.base || 0)
+      + Number(r.pricing?.mileage || 0)
+      + Number(r.pricing?.cancelFee || 0);
+  }
+
+    function rowAccessoryTotal(r) {
+      const charges = r.availableCharges || {};
+      const wcState = wcAccessoryState(r);
+      let total = 0;
+
+      if (r.review?.AddNeedWC) total += wcState.needwcAmount;
+      if (r.review?.AddRECL) total += wcState.reclAmount;
+
+      if (r.review?.AddHazmat) total += Number(charges.hazmat || 0);
+      if (r.review?.AddO2) total += Number(charges.o2 || 0);
+      if (r.review?.AddBari) total += Number(charges.bari || 0);
+      if (r.review?.AddDeadhead) total += Number(r.deadheadCharge || 0);
+
+      total += computeWaitCharge(r);
+      return total;
+    }
 
   function rowDisplayTotal(r) {
     if (r.review?.MatchToQuote) {
       return Number(r.review?.QuoteAmount || 0);
     }
-    return Number(r.pricing?.total || 0) + rowAccessoryTotal(r);
+    return baseTripTotal(r) + rowAccessoryTotal(r);
   }
 
   for (const r of rows) {
+    const defaultNeedWC = pricedAccessoryAmount(r, "NeedWC") > 0;
+    const defaultRECL = pricedAccessoryAmount(r, "RECL") > 0;
+
     if (!r.review) {
       r.review = {
+        AddNeedWC: defaultNeedWC,
+        AddRECL: defaultRECL,
         AddHazmat: false,
         AddO2: false,
         AddBari: false,
@@ -140,6 +182,9 @@ function renderRows() {
         Note: r.Note || "",
         MoveToAccountCode: r.MoveToAccountCode || ""
       };
+    } else {
+      if (typeof r.review.AddNeedWC !== "boolean") r.review.AddNeedWC = defaultNeedWC;
+      if (typeof r.review.AddRECL !== "boolean") r.review.AddRECL = defaultRECL;
     }
 
     const tr = document.createElement("tr");
@@ -194,86 +239,103 @@ function renderRows() {
     notesTd.title = String(r.notesFull || "");
     tr.appendChild(notesTd);
 
-    // HZ
-    const hzTd = makeCell();
-    const hzLabel = document.createElement("label");
-    hzLabel.style.whiteSpace = "nowrap";
-    const hzCb = document.createElement("input");
-    hzCb.type = "checkbox";
-    hzCb.checked = !!r.review.AddHazmat;
-    hzLabel.appendChild(hzCb);
-    hzLabel.appendChild(document.createTextNode(" " + fmtMoney(r.availableCharges?.hazmat || 0)));
-    hzTd.appendChild(hzLabel);
-    tr.appendChild(hzTd);
+    // Adjustments
+    const adjTd = makeCell();
+    adjTd.style.whiteSpace = "normal";
 
-    // O2
-    const o2Td = makeCell();
-    const o2Label = document.createElement("label");
-    o2Label.style.whiteSpace = "nowrap";
-    const o2Cb = document.createElement("input");
-    o2Cb.type = "checkbox";
-    o2Cb.checked = !!r.review.AddO2;
-    o2Label.appendChild(o2Cb);
-    o2Label.appendChild(document.createTextNode(" " + fmtMoney(r.availableCharges?.o2 || 0)));
-    o2Td.appendChild(o2Label);
-    tr.appendChild(o2Td);
+    function makeCheckMoney(labelText, checked, amountText) {
+      const label = document.createElement("label");
+      label.style.whiteSpace = "nowrap";
+      label.style.display = "inline-flex";
+      label.style.alignItems = "center";
+      label.style.gap = "4px";
+      label.style.marginRight = "12px";
+      label.style.marginBottom = "4px";
 
-    // BARI
-    const bariTd = makeCell();
-    const bariLabel = document.createElement("label");
-    bariLabel.style.whiteSpace = "nowrap";
-    const bariCb = document.createElement("input");
-    bariCb.type = "checkbox";
-    bariCb.checked = !!r.review.AddBari;
-    bariLabel.appendChild(bariCb);
-    bariLabel.appendChild(document.createTextNode(" " + fmtMoney(r.availableCharges?.bari || 0)));
-    bariTd.appendChild(bariLabel);
-    tr.appendChild(bariTd);
+      const cb = document.createElement("input");
+      cb.type = "checkbox";
+      cb.checked = !!checked;
 
-    // Deadhead
-    const dhTd = makeCell();
-    const dhLabel = document.createElement("label");
-    dhLabel.style.whiteSpace = "nowrap";
-    const dhCb = document.createElement("input");
-    dhCb.type = "checkbox";
-    dhCb.checked = !!r.review.AddDeadhead;
-    dhLabel.appendChild(dhCb);
-    dhLabel.appendChild(document.createTextNode(" " + fmtMoney(r.deadheadCharge || 0)));
-    dhTd.appendChild(dhLabel);
-    tr.appendChild(dhTd);
+      const text = document.createElement("span");
+      text.textContent = `${labelText} ${amountText}`;
 
-    // Wait time
-    const waitTd = makeCell();
-    waitTd.style.whiteSpace = "nowrap";
+      label.appendChild(cb);
+      label.appendChild(text);
+      return { label, cb };
+    }
+
+    const adjWrap = document.createElement("div");
+    adjWrap.style.display = "flex";
+    adjWrap.style.flexWrap = "wrap";
+    adjWrap.style.alignItems = "center";
+    adjWrap.style.rowGap = "6px";
+
+    const wcState = wcAccessoryState(r);
+
+    const needwcCtl = makeCheckMoney("Need WC", wcState.addNeedWC, fmtMoney(wcState.needwcAmount));
+    const reclCtl = makeCheckMoney("RECL", wcState.addRECL, fmtMoney(wcState.reclAmount));
+    const hzCtl = makeCheckMoney("HZ", !!r.review.AddHazmat, fmtMoney(r.availableCharges?.hazmat || 0));
+    const o2Ctl = makeCheckMoney("O2", !!r.review.AddO2, fmtMoney(r.availableCharges?.o2 || 0));
+    const bariCtl = makeCheckMoney("BARI", !!r.review.AddBari, fmtMoney(r.availableCharges?.bari || 0));
+    const dhCtl = makeCheckMoney("DH", !!r.review.AddDeadhead, fmtMoney(r.deadheadCharge || 0));
+
+    adjWrap.appendChild(needwcCtl.label);
+    adjWrap.appendChild(reclCtl.label);
+    adjWrap.appendChild(hzCtl.label);
+    adjWrap.appendChild(o2Ctl.label);
+    adjWrap.appendChild(bariCtl.label);
+    adjWrap.appendChild(dhCtl.label);
+
+    const waitWrap = document.createElement("label");
+    waitWrap.style.whiteSpace = "nowrap";
+    waitWrap.style.display = "inline-flex";
+    waitWrap.style.alignItems = "center";
+    waitWrap.style.gap = "4px";
+    waitWrap.style.marginRight = "12px";
+    waitWrap.style.marginBottom = "4px";
 
     const waitCb = document.createElement("input");
     waitCb.type = "checkbox";
     waitCb.checked = !!r.review.AddWait;
-    waitTd.appendChild(waitCb);
+    waitWrap.appendChild(waitCb);
+
+    const waitText = document.createElement("span");
+    waitText.textContent = "WAIT";
+    waitWrap.appendChild(waitText);
 
     const waitMinutesInput = document.createElement("input");
     waitMinutesInput.type = "number";
     waitMinutesInput.step = "1";
-    waitMinutesInput.style.width = "52px";
-    waitMinutesInput.style.marginLeft = "6px";
+    waitMinutesInput.style.width = "56px";
     waitMinutesInput.value = r.review.WaitTotalMinutes || "";
-    waitTd.appendChild(waitMinutesInput);
+    waitWrap.appendChild(waitMinutesInput);
 
     const waitAmt = document.createElement("span");
-    waitAmt.style.marginLeft = "6px";
     waitAmt.textContent = fmtMoney(computeWaitCharge(r));
-    waitTd.appendChild(waitAmt);
+    waitWrap.appendChild(waitAmt);
 
-    tr.appendChild(waitTd);
+    adjWrap.appendChild(waitWrap);
 
-    // Override
-    const overrideTd = makeCell();
-    overrideTd.style.whiteSpace = "nowrap";
+    const overrideWrap = document.createElement("label");
+    overrideWrap.style.whiteSpace = "nowrap";
+    overrideWrap.style.display = "inline-flex";
+    overrideWrap.style.alignItems = "center";
+    overrideWrap.style.gap = "4px";
+    overrideWrap.style.marginRight = "12px";
+    overrideWrap.style.marginBottom = "4px";
+
     const overrideCb = document.createElement("input");
     overrideCb.type = "checkbox";
     overrideCb.checked = !!r.review.MatchToQuote;
-    overrideTd.appendChild(overrideCb);
-    overrideTd.appendChild(document.createTextNode(" $"));
+    overrideWrap.appendChild(overrideCb);
+
+    const overrideLabel = document.createElement("span");
+    overrideLabel.textContent = "Match";
+    overrideWrap.appendChild(overrideLabel);
+
+    const overrideDollar = document.createElement("span");
+    overrideDollar.textContent = "$";
+    overrideWrap.appendChild(overrideDollar);
 
     const overrideInput = document.createElement("input");
     overrideInput.type = "number";
@@ -281,85 +343,93 @@ function renderRows() {
     overrideInput.style.width = "82px";
     overrideInput.value = r.review.QuoteAmount || "";
     overrideInput.disabled = !r.review.MatchToQuote;
-    overrideTd.appendChild(overrideInput);
-    tr.appendChild(overrideTd);
+    overrideWrap.appendChild(overrideInput);
+
+    adjWrap.appendChild(overrideWrap);
+
+    adjTd.appendChild(adjWrap);
+    tr.appendChild(adjTd);
 
     // Total
-    const totalTd = makeCell("<b>" + esc(fmtMoney(rowDisplayTotal(r))) + "</b>");
+    const totalTd = makeCell();
+    totalTd.style.whiteSpace = "nowrap";
+
+    const totalTop = document.createElement("div");
+    totalTop.innerHTML = "<b>" + esc(fmtMoney(rowDisplayTotal(r))) + "</b>";
+    totalTd.appendChild(totalTop);
+
     tr.appendChild(totalTd);
 
     function refreshRowTotal() {
-      totalTd.innerHTML = "<b>" + esc(fmtMoney(rowDisplayTotal(r))) + "</b>";
+      totalTop.innerHTML = "<b>" + esc(fmtMoney(rowDisplayTotal(r))) + "</b>";
     }
 
-    function refreshDetailTotals() {
-      const accessoriesBox = detailBox.querySelector("[data-accessory-total]");
-      if (accessoriesBox) {
-        accessoriesBox.textContent = "$" + rowAccessoryTotal(r).toFixed(2);
-      }
-
-      const dhBox = detailBox.querySelector("[data-dh-total]");
-      if (dhBox) {
-        dhBox.textContent = "$" + computeDeadheadCharge(r).toFixed(2);
-      }
-
-      const waitBox = detailBox.querySelector("[data-wait-total]");
-      if (waitBox) {
-        waitBox.textContent = "$" + computeWaitCharge(r).toFixed(2);
-      }
-
-      const totalBox = detailBox.querySelector("[data-grand-total]");
-      if (totalBox) {
-        totalBox.textContent = "$" + rowDisplayTotal(r).toFixed(2);
+    function refreshDetailPanel() {
+      try {
+        renderDetailPanel();
+      } catch (err) {
+        console.error("refreshDetailPanel failed", err);
       }
     }
 
-    function refreshWaitUI() {
-      waitAmt.textContent = fmtMoney(computeWaitCharge(r));
-      refreshRowTotal();
-      refreshDetailTotals();
-    }
+    needwcCtl.cb.onchange = () => {
+      r.review.AddNeedWC = needwcCtl.cb.checked;
 
-    hzCb.onchange = () => {
-      r.review.AddHazmat = hzCb.checked;
+      if (needwcCtl.cb.checked) {
+        r.review.AddRECL = false;
+        reclCtl.cb.checked = false;
+      }
+
       refreshRowTotal();
-      refreshDetailTotals();
+      refreshDetailPanel();
     };
 
-    o2Cb.onchange = () => {
-      r.review.AddO2 = o2Cb.checked;
+    reclCtl.cb.onchange = () => {
+      r.review.AddRECL = reclCtl.cb.checked;
+
+      if (reclCtl.cb.checked) {
+        r.review.AddNeedWC = false;
+        needwcCtl.cb.checked = false;
+      }
+
       refreshRowTotal();
-      refreshDetailTotals();
+      refreshDetailPanel();
     };
 
-    bariCb.onchange = () => {
-      r.review.AddBari = bariCb.checked;
+    hzCtl.cb.onchange = () => {
+      r.review.AddHazmat = hzCtl.cb.checked;
       refreshRowTotal();
-      refreshDetailTotals();
+      refreshDetailPanel();
     };
 
-    dhCb.onchange = () => {
-      r.review.AddDeadhead = dhCb.checked;
+    o2Ctl.cb.onchange = () => {
+      r.review.AddO2 = o2Ctl.cb.checked;
       refreshRowTotal();
-      refreshDetailTotals();
+      refreshDetailPanel();
     };
 
-    dhCb.onchange = () => {
-      r.review.AddDeadhead = dhCb.checked;
+    bariCtl.cb.onchange = () => {
+      r.review.AddBari = bariCtl.cb.checked;
       refreshRowTotal();
-      refreshDetailTotals();
+      refreshDetailPanel();
+    };
+
+    dhCtl.cb.onchange = () => {
+      r.review.AddDeadhead = dhCtl.cb.checked;
+      refreshRowTotal();
+      refreshDetailPanel();
     };
 
     waitCb.onchange = () => {
       r.review.AddWait = waitCb.checked;
-      refreshWaitUI();
-      refreshDetailTotals();
+      refreshRowTotal();
+      refreshDetailPanel();
     };
 
     waitMinutesInput.oninput = () => {
       r.review.WaitTotalMinutes = Number(waitMinutesInput.value || 0);
-      refreshWaitUI();
-      refreshDetailTotals();
+      refreshRowTotal();
+      refreshDetailPanel();
     };
 
     waitMinutesInput.onkeydown = (e) => {
@@ -373,13 +443,13 @@ function renderRows() {
       r.review.MatchToQuote = overrideCb.checked;
       overrideInput.disabled = !overrideCb.checked;
       refreshRowTotal();
-      refreshDetailTotals();
+      refreshDetailPanel();
     };
 
     overrideInput.oninput = () => {
       r.review.QuoteAmount = Number(overrideInput.value || 0);
       refreshRowTotal();
-      refreshDetailTotals();
+      refreshDetailPanel();
     };
 
     overrideInput.onkeydown = (e) => {
@@ -404,88 +474,103 @@ function renderRows() {
     detailRow.style.display = "none";
 
     const detailCell = document.createElement("td");
-    detailCell.colSpan = 14;
+    detailCell.colSpan = 9;
 
     const detailBox = document.createElement("div");
     detailBox.style.padding = "12px";
     detailBox.style.borderTop = "1px solid #ddd";
     detailBox.style.background = "#fafafa";
 
-        const base = Number((r.pricing && r.pricing.base) || 0);
-        const mileage = Number((r.pricing && r.pricing.mileage) || 0);
-        const cancelFee = Number((r.pricing && r.pricing.cancelFee) || 0);
-        const grandTotal = Number(rowDisplayTotal(r));
+        function renderDetailPanel() {
+          const base = Number((r.pricing && r.pricing.base) || 0);
+          const mileage = Number((r.pricing && r.pricing.mileage) || 0);
+          const cancelFee = Number((r.pricing && r.pricing.cancelFee) || 0);
+          const wcStateDetail = wcAccessoryState(r);
+          const grandTotal = Number(rowDisplayTotal(r));
 
-        const chargedAccessoryLines = [];
-        if (r.review?.AddHazmat) {
-          chargedAccessoryLines.push(
-            "<div>Hazmat: $" + Number(r.availableCharges?.hazmat || 0).toFixed(2) + "</div>"
-          );
+          const chargedAccessoryLines = [];
+
+          if (r.review?.AddNeedWC) {
+            chargedAccessoryLines.push(
+              "<div>Need WC: $" + wcStateDetail.needwcAmount.toFixed(2) + "</div>"
+            );
+          }
+          if (r.review?.AddRECL) {
+            chargedAccessoryLines.push(
+              "<div>RECL: $" + wcStateDetail.reclAmount.toFixed(2) + "</div>"
+            );
+          }
+          if (r.review?.AddHazmat) {
+            chargedAccessoryLines.push(
+              "<div>Hazmat: $" + Number(r.availableCharges?.hazmat || 0).toFixed(2) + "</div>"
+            );
+          }
+          if (r.review?.AddO2) {
+            chargedAccessoryLines.push(
+              "<div>Oxygen: $" + Number(r.availableCharges?.o2 || 0).toFixed(2) + "</div>"
+            );
+          }
+          if (r.review?.AddBari) {
+            chargedAccessoryLines.push(
+              "<div>Bariatric: $" + Number(r.availableCharges?.bari || 0).toFixed(2) + "</div>"
+            );
+          }
+          if (r.review?.AddDeadhead) {
+            chargedAccessoryLines.push(
+              "<div>Deadhead: <span data-dh-total>$" + computeDeadheadCharge(r).toFixed(2) + "</span></div>"
+            );
+          }
+          if (r.review?.AddWait) {
+            chargedAccessoryLines.push(
+              "<div>Wait Time: <span data-wait-total>$" + computeWaitCharge(r).toFixed(2) + "</span></div>"
+            );
+          }
+
+          const legsHtml = Array.isArray(r.legs) && r.legs.length
+            ? r.legs.map((leg, idx) => {
+                const puName = esc(leg.PickupName || "");
+                const puAddr = esc(leg.PickupAddress1 || "");
+                const puCity = esc([leg.PickupCity, leg.PickupState, leg.PickupZip].filter(Boolean).join(" "));
+                const doName = esc(leg.DropoffName || "");
+                const doAddr = esc(leg.DropoffAddress1 || "");
+                const doCity = esc([leg.DropoffCity, leg.DropoffState, leg.DropoffZip].filter(Boolean).join(" "));
+                return (
+                  "<div>" +
+                    "<div style='margin-bottom:6px'><b>Leg " + (idx + 1) + "</b></div>" +
+                    "<div><b>Pick up:</b> " + puName + "</div>" +
+                    "<div style='color:#334155'>" + puAddr + "</div>" +
+                    "<div style='color:#334155'>" + puCity + "</div>" +
+                    "<div style='margin-top:8px'><b>Drop-off:</b> " + doName + "</div>" +
+                    "<div style='color:#334155'>" + doAddr + "</div>" +
+                    "<div style='color:#334155'>" + doCity + "</div>" +
+                  "</div>"
+                );
+              }).join("")
+            : "<div style='color:#64748b'>No leg detail available.</div>";
+
+          detailBox.innerHTML =
+            "<div style='display:grid; grid-template-columns: 240px 320px repeat(auto-fit, minmax(260px, 1fr)); gap:20px; align-items:start'>" +
+
+              "<div>" +
+                "<div style='margin-bottom:8px'><b>Pricing</b></div>" +
+                "<div>Base: $" + base.toFixed(2) + "</div>" +
+                "<div>Mileage: $" + mileage.toFixed(2) + "</div>" +
+                (cancelFee > 0 ? "<div>Cancel Fee: $" + cancelFee.toFixed(2) + "</div>" : "") +
+                chargedAccessoryLines.join("") +
+                "<div style='margin-top:6px'><b>Total: $" + grandTotal.toFixed(2) + "</b></div>" +
+              "</div>" +
+
+              "<div>" +
+                "<div style='margin-bottom:8px'><b>Notes</b></div>" +
+                "<div style='white-space:pre-line'>" + esc(r.notesFull || "") + "</div>" +
+              "</div>" +
+
+              legsHtml +
+
+            "</div>";
         }
-        if (r.review?.AddO2) {
-          chargedAccessoryLines.push(
-            "<div>Oxygen: $" + Number(r.availableCharges?.o2 || 0).toFixed(2) + "</div>"
-          );
-        }
-        if (r.review?.AddBari) {
-          chargedAccessoryLines.push(
-            "<div>Bariatric: $" + Number(r.availableCharges?.bari || 0).toFixed(2) + "</div>"
-          );
-        }
-        if (r.review?.AddDeadhead) {
-          chargedAccessoryLines.push(
-            "<div>Deadhead: <span data-dh-total>$" + computeDeadheadCharge(r).toFixed(2) + "</span></div>"
-          );
-        }
-        if (r.review?.AddWait) {
-          chargedAccessoryLines.push(
-            "<div>Wait Time: <span data-wait-total>$" + computeWaitCharge(r).toFixed(2) + "</span></div>"
-          );
-        }
 
-        const legsHtml = Array.isArray(r.legs) && r.legs.length
-          ? r.legs.map((leg, idx) => {
-              const puName = esc(leg.PickupName || "");
-              const puAddr = esc(leg.PickupAddress1 || "");
-              const puCity = esc([leg.PickupCity, leg.PickupState, leg.PickupZip].filter(Boolean).join(" "));
-              const doName = esc(leg.DropoffName || "");
-              const doAddr = esc(leg.DropoffAddress1 || "");
-              const doCity = esc([leg.DropoffCity, leg.DropoffState, leg.DropoffZip].filter(Boolean).join(" "));
-              return (
-                "<div>" +
-                  "<div style='margin-bottom:6px'><b>Leg " + (idx + 1) + "</b></div>" +
-                  "<div><b>Pick up:</b> " + puName + "</div>" +
-                  "<div style='color:#334155'>" + puAddr + "</div>" +
-                  "<div style='color:#334155'>" + puCity + "</div>" +
-                  "<div style='margin-top:8px'><b>Drop-off:</b> " + doName + "</div>" +
-                  "<div style='color:#334155'>" + doAddr + "</div>" +
-                  "<div style='color:#334155'>" + doCity + "</div>" +
-                "</div>"
-              );
-            }).join("")
-          : "<div style='color:#64748b'>No leg detail available.</div>";
-
-        detailBox.innerHTML =
-          "<div style='display:grid; grid-template-columns: 240px 320px repeat(auto-fit, minmax(260px, 1fr)); gap:20px; align-items:start'>" +
-
-            "<div>" +
-              "<div style='margin-bottom:8px'><b>Pricing</b></div>" +
-              "<div>Base: $" + base.toFixed(2) + "</div>" +
-              "<div>Mileage: $" + mileage.toFixed(2) + "</div>" +
-              "<div>Cancel Fee: $" + cancelFee.toFixed(2) + "</div>" +
-              "<div>Accessories: <span data-accessory-total>$" + rowAccessoryTotal(r).toFixed(2) + "</span></div>" +
-              chargedAccessoryLines.join("") +
-              "<div style='margin-top:6px'><b>Total: <span data-grand-total>$" + grandTotal.toFixed(2) + "</span></b></div>" +
-            "</div>" +
-
-            "<div>" +
-              "<div style='margin-bottom:8px'><b>Notes</b></div>" +
-              "<div style='white-space:pre-line'>" + esc(r.notesFull || "") + "</div>" +
-            "</div>" +
-
-            legsHtml +
-
-          "</div>";
+      renderDetailPanel();
     
     detailCell.appendChild(detailBox);
     detailRow.appendChild(detailCell);

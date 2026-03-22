@@ -11,44 +11,56 @@ function classifyStatus(statusRaw) {
   return { kind: "UNKNOWN" };
 }
 
-function mapMobilityToTripType(mobilityRaw, groupedTrip) {
+function mapMobility(mobilityRaw, groupedTrip) {
   const raw = String(mobilityRaw || "").trim().toUpperCase();
+
   const flags = [];
+  const accessories = {
+    NeedWC: false,
+    RECL: false,
+  };
 
-  if (!raw) return { tripType: null, flags: ["MOBILITY_MISSING"] };
-
-  if (raw.includes("AMBU")) return { tripType: "AMBU", flags };
-  if (raw.includes("STR")) return { tripType: "STR", flags };
-  if (raw.includes("RECL")) return { tripType: "RECL", flags };
-  if (raw.includes("HASWC")) return { tripType: "HASWC", flags };
-  if (raw.includes("NEEDWC")) return { tripType: "NEEDWC", flags };
-
-  if (raw === "WC") {
-    if (groupedTrip.BillingClass === "PRIVATE_PAY") {
-      flags.push("MOBILITY_WC_GENERIC_ASSUMED_HASWC");
-      return { tripType: "HASWC", flags };
-    }
-    if (groupedTrip.TripShape === "ROUND_TRIP") {
-      flags.push("MOBILITY_WC_GENERIC_ASSUMED_HASWC");
-      return { tripType: "HASWC", flags };
-    }
-    if (groupedTrip.TripShape === "ONE_WAY") {
-      flags.push("MOBILITY_WC_GENERIC_ASSUMED_NEEDWC");
-      return { tripType: "NEEDWC", flags };
-    }
-    return { tripType: "HASWC", flags };
+  if (!raw) {
+    return { tripType: null, accessories, flags: ["MOBILITY_MISSING"] };
   }
 
-  flags.push(`MOBILITY_UNKNOWN:${raw}`);
-  return { tripType: null, flags };
+  if (raw.includes("AMBU")) {
+    return { tripType: "AMBU", accessories, flags };
+  }
+
+  if (raw.includes("STR") || raw.includes("STRETCH")) {
+    return { tripType: "STR", accessories, flags };
+  }
+
+  if (raw === "WC" || raw.includes("WC")) {
+    const shape = String(groupedTrip.TripShape || "").trim().toUpperCase();
+
+    if (shape === "ONE_WAY") {
+      accessories.NeedWC = true;
+      flags.push("DEFAULTED_NEEDWC_FROM_WC_ONE_WAY");
+    } else if (shape === "ROUND_TRIP") {
+      flags.push("DEFAULTED_HASWC_FROM_WC_ROUND_TRIP");
+    } else {
+      flags.push("DEFAULTED_HASWC_FROM_WC_OTHER");
+    }
+
+    return { tripType: "WC", accessories, flags };
+  }
+
+  return {
+    tripType: null,
+    accessories,
+    flags: [`MOBILITY_UNKNOWN:${raw}`],
+  };
 }
 
 function normalizeTripForPricing(groupedTrip) {
   const flags = [];
 
   const status = classifyStatus(groupedTrip.RideStatus);
-  const { tripType, flags: mobilityFlags } =
-    mapMobilityToTripType(groupedTrip.Mobility, groupedTrip);
+
+  const { tripType, accessories, flags: mobilityFlags } =
+    mapMobility(groupedTrip.Mobility, groupedTrip);
 
   flags.push(...mobilityFlags);
 
@@ -68,6 +80,7 @@ function normalizeTripForPricing(groupedTrip) {
   return {
     status,
     tripType,
+    accessories,
     shape,
     legs,
     milesRounded,
