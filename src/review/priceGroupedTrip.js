@@ -6,6 +6,7 @@ const {
   resolvePerMile,
 } = require("../pricing/rateLookup");
 
+const { computeTimeBasedCharge } = require("../orgs/CTT/pricing/rules/timeBasedCharges");
 const { applySpecialPricingRules } = require("./specialPricing");
 
 function priceGroupedTrip(groupedTrip, rateRow, opts = {}) {
@@ -133,6 +134,8 @@ function priceGroupedTrip(groupedTrip, rateRow, opts = {}) {
     return specialPrice;
   }
 
+  const timeCharge = computeTimeBasedCharge(groupedTrip, rateRow);
+
   const includedMiles = num(rateRow.included_miles);
   const billableMiles = Math.max(0, milesRounded - includedMiles);
 
@@ -191,6 +194,17 @@ function priceGroupedTrip(groupedTrip, rateRow, opts = {}) {
     }
   }
 
+  // Time-based charge (Holiday / Weekend / 3rd Shift / After Hours)
+  if (timeCharge.amount > 0) {
+    accessoryLines.push({
+      code: timeCharge.kind,
+      label: timeCharge.kind.replace(/_/g, " "),
+      amount: num(timeCharge.amount),
+    });
+
+    accessoryTotal += num(timeCharge.amount);
+  }
+
   const total = base + mileage + accessoryTotal;
 
   return {
@@ -221,6 +235,9 @@ function priceGroupedTrip(groupedTrip, rateRow, opts = {}) {
       normalizedAccessories: accessories,
       needwcColumnTried: isRtBase ? "needwc_rt" : "needwc_1w",
       needwcValue: isRtBase ? num(rateRow.needwc_rt) : num(rateRow.needwc_1w),
+      timeChargeKind: timeCharge.kind,
+      timeChargeAmount: timeCharge.amount,
+      timeChargeSource: timeCharge.source,
     },
   };
 }

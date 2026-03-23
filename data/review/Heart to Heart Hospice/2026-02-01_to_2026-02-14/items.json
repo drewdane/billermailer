@@ -72,9 +72,15 @@
       "status": "Rode",
       "base": 100,
       "mileage": 115,
-      "accessories": [],
+      "accessories": [
+        {
+          "code": "AFTER_HOURS",
+          "label": "AFTER HOURS",
+          "amount": 25
+        }
+      ],
       "cancelFee": 0,
-      "total": 215,
+      "total": 240,
       "flags": [],
       "audit": {
         "tripShape": "ONE_WAY",
@@ -90,14 +96,17 @@
         "rateRowId": null,
         "needwcApplied": false,
         "reclApplied": false,
-        "accessoryTotal": 0,
+        "accessoryTotal": 25,
         "rawMobility": "STR",
         "normalizedAccessories": {
           "NeedWC": false,
           "RECL": false
         },
         "needwcColumnTried": "needwc_1w",
-        "needwcValue": 10
+        "needwcValue": 10,
+        "timeChargeKind": "AFTER_HOURS",
+        "timeChargeAmount": 25,
+        "timeChargeSource": "after_hours_rate"
       }
     },
     "availableCharges": {
@@ -126,11 +135,21 @@
         "lastDropoffInLoop": false
       }
     },
+    "deadheadConfig": {
+      "dh_flat_fee": "",
+      "dh_start_miles": "0",
+      "dh_rate_tier1": "$1.00",
+      "dh_rate_tier2": "$2.00",
+      "dh_rate_tier3": "",
+      "dh_tier2_start_miles": "31",
+      "dh_tier3_start_miles": ""
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
       "wait_grace_min": ""
     },
+    "fuelSurchargeRate": 0,
     "availableWcAccessories": {
       "needwc_1w": 10,
       "needwc_rt": 20,
@@ -151,8 +170,6 @@
       "AddBari": false,
       "AddWait": false,
       "WaitTotalMinutes": 0,
-      "AddDeadhead": false,
-      "DeadheadMiles": 0,
       "CancelOverride": "AUTO",
       "NoCharge": false,
       "MatchToQuote": false,
@@ -237,10 +254,15 @@
           "code": "NeedWC",
           "label": "Need WC",
           "amount": 10
+        },
+        {
+          "code": "AFTER_HOURS",
+          "label": "AFTER HOURS",
+          "amount": 25
         }
       ],
       "cancelFee": 0,
-      "total": 98,
+      "total": 123,
       "flags": [
         "DEFAULTED_NEEDWC_FROM_WC_ONE_WAY"
       ],
@@ -258,14 +280,17 @@
         "rateRowId": null,
         "needwcApplied": true,
         "reclApplied": false,
-        "accessoryTotal": 10,
+        "accessoryTotal": 35,
         "rawMobility": "WC",
         "normalizedAccessories": {
           "NeedWC": true,
           "RECL": false
         },
         "needwcColumnTried": "needwc_1w",
-        "needwcValue": 10
+        "needwcValue": 10,
+        "timeChargeKind": "AFTER_HOURS",
+        "timeChargeAmount": 25,
+        "timeChargeSource": "after_hours_rate"
       }
     },
     "availableCharges": {
@@ -294,11 +319,21 @@
         "lastDropoffInLoop": false
       }
     },
+    "deadheadConfig": {
+      "dh_flat_fee": "",
+      "dh_start_miles": "0",
+      "dh_rate_tier1": "$1.00",
+      "dh_rate_tier2": "$2.00",
+      "dh_rate_tier3": "",
+      "dh_tier2_start_miles": "31",
+      "dh_tier3_start_miles": ""
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
       "wait_grace_min": ""
     },
+    "fuelSurchargeRate": 0,
     "availableWcAccessories": {
       "needwc_1w": 10,
       "needwc_rt": 20,
@@ -319,8 +354,6 @@
       "AddBari": false,
       "AddWait": false,
       "WaitTotalMinutes": 0,
-      "AddDeadhead": false,
-      "DeadheadMiles": 0,
       "CancelOverride": "AUTO",
       "NoCharge": false,
       "MatchToQuote": false,
@@ -400,9 +433,15 @@
       "status": "Rode",
       "base": 100,
       "mileage": 10,
-      "accessories": [],
+      "accessories": [
+        {
+          "code": "AFTER_HOURS",
+          "label": "AFTER HOURS",
+          "amount": 25
+        }
+      ],
       "cancelFee": 0,
-      "total": 110,
+      "total": 135,
       "flags": [],
       "audit": {
         "tripShape": "ONE_WAY",
@@ -418,14 +457,17 @@
         "rateRowId": null,
         "needwcApplied": false,
         "reclApplied": false,
-        "accessoryTotal": 0,
+        "accessoryTotal": 25,
         "rawMobility": "STR",
         "normalizedAccessories": {
           "NeedWC": false,
           "RECL": false
         },
         "needwcColumnTried": "needwc_1w",
-        "needwcValue": 10
+        "needwcValue": 10,
+        "timeChargeKind": "AFTER_HOURS",
+        "timeChargeAmount": 25,
+        "timeChargeSource": "after_hours_rate"
       }
     },
     "availableCharges": {
@@ -454,11 +496,21 @@
         "lastDropoffInLoop": false
       }
     },
+    "deadheadConfig": {
+      "dh_flat_fee": "",
+      "dh_start_miles": "0",
+      "dh_rate_tier1": "$1.00",
+      "dh_rate_tier2": "$2.00",
+      "dh_rate_tier3": "",
+      "dh_tier2_start_miles": "31",
+      "dh_tier3_start_miles": ""
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
       "wait_grace_min": ""
     },
+    "fuelSurchargeRate": 0,
     "availableWcAccessories": {
       "needwc_1w": 10,
       "needwc_rt": 20,
@@ -479,8 +531,6 @@
       "AddBari": false,
       "AddWait": false,
       "WaitTotalMinutes": 0,
-      "AddDeadhead": false,
-      "DeadheadMiles": 0,
       "CancelOverride": "AUTO",
       "NoCharge": false,
       "MatchToQuote": false,

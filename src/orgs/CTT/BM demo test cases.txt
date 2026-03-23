@@ -1,0 +1,136 @@
+BM demo test cases
+1. Archie Shugart — Baylor Hospital Voucher
+
+What it demonstrates
+
+1W WC trip defaulting to Need WC
+Need WC fee applied automatically
+accessory checkbox/state matching pricing
+Baylor Voucher quoted-trip sanity check territory
+
+Expected behavior
+
+tripType = WC
+Need WC checked by default
+needwc_1w applied
+total reflects base + mileage + Need WC
+detail panel matches row total
+
+2. Francisco Gallardo — Encompass Health Cityview
+
+What it demonstrates
+
+multi-stop trip
+starts and ends at same address
+deadhead should be excluded by return-to-start rule
+good example of why DH cannot just equal trip mileage
+
+Expected behavior
+
+trip shape = MULTI_STOP
+first PU and last DO match
+deadheadCharge = 0
+deadheadMiles = 0
+deadheadDebug.reason = RETURNS_TO_START_ADDRESS
+
+3. Gary Jackson - Encompass Health Cityview 
+
+What it demonstrates
+
+cancelled trip from TM status
+cancelled state preserved in review
+good example for future No Charge override workflow
+“cancelled but waived” use case
+
+Expected behavior
+
+cancelled label/status visible
+cancellation pricing logic engaged by default
+later demo target: reviewer can set No Charge without hiding cancelled
+
+4. Alie Mae Caster — Discovery Village Southlake
+
+What it demonstrates
+
+weekend charge applied automatically
+
+Expected behavior
+
+timeChargeKind = WEEKEND
+timeChargeAmount matches weekend_rate
+review total reflects weekend surcharge
+detail panel shows weekend charge line
+
+5. Janet Morandille — Discovery Village Southlake
+
+What it demonstrates
+
+second weekend-charge validation case
+good for showing consistency across same account/rule family
+
+Expected behavior
+
+same as above:
+automatic weekend surcharge
+reflected in total and detail panel
+
+6. Baylor Voucher STR trip(s)
+
+What it demonstrates
+
+STR trip type recognized correctly
+STR base rate used
+STR 1W mileage tier used instead of generic mileage fallback
+
+Expected behavior
+
+tripType = STR
+baseKey = base_1w_str
+perMileSource = str_mile_rate_1w_0_30 or appropriate STR tier
+not generic mile_rate_0_30
+
+You didn’t name a specific rider for this one in-thread, but it’s worth keeping on the checklist because it was a real bug you fixed.
+
+7. Baylor Voucher / Private Pay quoted-comment sanity checks
+
+What it demonstrates
+
+Bill’s computed rates matching dispatcher quote patterns pretty closely
+useful for confidence-building in the demo
+
+Expected behavior
+
+Bill total is close to or matches quoted amount in comments
+especially strong for:
+Baylor Voucher
+Private Pay
+
+Again, not a single named rider here from this thread, but definitely a demo category you called out.
+
+8. Sophia Presley - Discovery Village Southlake
+
+Comments call for "double wait time"
+
+9. Deloris Peck - North Pointe
+
+3rd shift populates
+
+Best way to use this in a demo
+
+I’d walk Stacie through them in this order:
+
+Archie Shugart — automatic Need WC
+Alie Mae Caster — automatic weekend charge
+Janet Morandille — second weekend confirmation
+Francisco Gallardo — smart deadhead exclusion
+Gary Jackson — cancelled workflow / future no-charge shortcut
+one Baylor Voucher STR example — STR mileage fix
+one quote-matching Baylor/Private Pay example — trust-building
+
+That sequence shows:
+
+automatic accessories
+automatic time charges
+deadhead intelligence
+cancelled handling
+quote alignment

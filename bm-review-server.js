@@ -84,6 +84,22 @@ const HTML = `<!doctype html>
       margin-top:8px;
     }
 
+    .globalbar{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:8px;
+      padding:8px 0;
+    }
+
+    .globalbar input[type="date"]{
+      padding:7px 10px;
+      border:1px solid #d6d8ea;
+      border-radius:10px;
+      background:#fff;
+    }
+
     .toolbar input[type="text"],
     .toolbar input:not([type]),
     .toolbar select{
@@ -171,7 +187,25 @@ const HTML = `<!doctype html>
     <div id="main">
       <div id="mainHeader">
         <h2 style="margin:6px 0">BM Review</h2>
+
         <div id="status" style="color:#666;margin-bottom:8px">Select a facility + period.</div>
+
+        <div class="globalbar" id="globalBar">
+          <label style="display:flex;align-items:center;gap:6px;color:#374151">
+            <input type="checkbox" id="fuelToggle" onchange="updateFuelGlobals()" />
+            <span>Fuel SC</span>
+          </label>
+
+          <label style="display:flex;align-items:center;gap:6px;color:#374151">
+            <span>From</span>
+            <input type="date" id="fuelStart" onchange="updateFuelGlobals()" />
+          </label>
+
+          <label style="display:flex;align-items:center;gap:6px;color:#374151">
+            <span>To</span>
+            <input type="date" id="fuelEnd" onchange="updateFuelGlobals()" />
+          </label>
+        </div>
 
         <div class="toolbar" id="toolbar" style="display:none">
           <input
@@ -197,12 +231,33 @@ const HTML = `<!doctype html>
       <div id="tableWrap"></div>
   </div>
 
+<script src="/preReviewSuggestions.js"></script>
 <script src="/renderRows.js"></script>
 <script>
 let INDEX=null;
 let current = { acct:null, period:null };
 let ITEMS=[];
 let OVERRIDES={ invoiceType:"single", overrides:{} };
+
+window.BM_GLOBALS = {
+  fuelSurchargeEnabled: false,
+  fuelSurchargeStart: "",
+  fuelSurchargeEnd: ""
+};
+
+function updateFuelGlobals() {
+  const enabled = document.getElementById("fuelToggle")?.checked;
+  const start = document.getElementById("fuelStart")?.value;
+  const end = document.getElementById("fuelEnd")?.value;
+
+  window.BM_GLOBALS = {
+    fuelSurchargeEnabled: !!enabled,
+    fuelSurchargeStart: start || "",
+    fuelSurchargeEnd: end || ""
+  };
+
+  renderRows();
+}
 
 function esc(s){ return String(s??"").replace(/[&<>"]/g, c=>({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;" }[c])); }
 
@@ -294,6 +349,7 @@ async function openSet(acct, period){
     it.review.AddO2 = !!o.AddO2;
     it.review.AddBari = !!o.AddBari;
     it.review.AddDeadhead = !!o.AddDeadhead;
+    it.review.DeadheadMiles = Number(o.DeadheadMiles || 0);
     it.review.AddWait = !!o.AddWait;
     it.review.WaitTotalMinutes = Number(o.WaitTotalMinutes || 0);
     it.review.MatchToQuote = !!o.MatchToQuote;
@@ -304,7 +360,7 @@ async function openSet(acct, period){
     invoiceTypeEl.value = OVERRIDES.invoiceType || "single";
     document.getElementById("invoiceType").value = OVERRIDES.invoiceType || "single";
 
-  renderRows();
+  updateFuelGlobals();
 }
 
 async function save(){
@@ -320,6 +376,7 @@ async function save(){
       AddO2: !!r.review?.AddO2,
       AddBari: !!r.review?.AddBari,
       AddDeadhead: !!r.review?.AddDeadhead,
+      DeadheadMiles: Number(r.review?.DeadheadMiles || 0),
       AddWait: !!r.review?.AddWait,
       WaitTotalMinutes: Number(r.review?.WaitTotalMinutes || 0),
       MatchToQuote: !!r.review?.MatchToQuote,
@@ -353,6 +410,11 @@ const server = http.createServer((req, res) => {
 
     if (u.pathname === "/renderRows.js") {
       const p = path.resolve(process.cwd(), "src", "review", "renderRows.js");
+      return send(res, 200, fs.readFileSync(p, "utf8"), "application/javascript; charset=utf-8");
+    }
+
+    if (u.pathname === "/preReviewSuggestions.js") {
+      const p = path.resolve(process.cwd(), "src", "review", "preReviewSuggestions.js");
       return send(res, 200, fs.readFileSync(p, "utf8"), "application/javascript; charset=utf-8");
     }
 

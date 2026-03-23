@@ -1,4 +1,11 @@
 function renderRows() {
+    
+  const fuelState = window.BM_GLOBALS || {
+    fuelSurchargeEnabled: false,
+    fuelSurchargeStart: "",
+    fuelSurchargeEnd: ""
+  };
+
   const q = (document.getElementById("search").value || "").toLowerCase().trim();
 
   const rows = ITEMS.filter((r) => {
@@ -100,35 +107,105 @@ function renderRows() {
     return rate;
   }
 
+  function computeDeadheadChargeFromReview(r) {
+    if (!r.review?.AddDeadhead) return 0;
+
+    const miles = Number(r.review?.DeadheadMiles || 0);
+    if (miles <= 0) return 0;
+
+    const cfg = r.deadheadConfig || {};
+
+    const flatRaw = String(cfg.dh_flat_fee ?? "").trim();
+    const flatFee = moneyNum(cfg.dh_flat_fee);
+
+    if (flatRaw && flatFee > 0) {
+      return flatFee;
+    }
+
+    const startMiles = moneyNum(cfg.dh_start_miles);
+    if (startMiles > 0 && miles < startMiles) return 0;
+
+    const rate1 = moneyNum(cfg.dh_rate_tier1);
+    const rate2 = moneyNum(cfg.dh_rate_tier2);
+    const rate3 = moneyNum(cfg.dh_rate_tier3);
+
+    const tier2Start = moneyNum(cfg.dh_tier2_start_miles);
+    const tier3Start = moneyNum(cfg.dh_tier3_start_miles);
+
+    let rate = 0;
+
+    if (tier3Start > 0 && miles >= tier3Start && rate3 > 0) {
+      rate = rate3;
+    } else if (tier2Start > 0 && miles >= tier2Start && rate2 > 0) {
+      rate = rate2;
+    } else if (rate1 > 0) {
+      rate = rate1;
+    } else if (rate2 > 0) {
+      rate = rate2;
+    } else if (rate3 > 0) {
+      rate = rate3;
+    }
+
+    return miles * rate;
+  }
+
+  function fuelSurchargeAmount(r) {
+    if (!fuelState.fuelSurchargeEnabled) return 0;
+
+    const rate = Number(r.fuelSurchargeRate || 0);
+    if (rate <= 0) return 0;
+
+    const tripDate = String(r.RideDateISO || "");
+    const start = String(fuelState.fuelSurchargeStart || "");
+    const end = String(fuelState.fuelSurchargeEnd || "");
+
+    if (!tripDate || !start || !end) return 0;
+    if (tripDate < start || tripDate > end) return 0;
+
+    const loadedMiles = Number(r.pricing?.audit?.billableMiles || 0);
+    const dhMiles = r.review?.AddDeadhead ? Number(r.deadheadMiles || 0) : 0;
+
+    return rate * (loadedMiles + dhMiles);
+  }
+
   function pricedAccessoryAmount(r, code) {
     const lines = Array.isArray(r.pricing?.accessories) ? r.pricing.accessories : [];
     const hit = lines.find((x) => String(x.code || "").toUpperCase() === String(code).toUpperCase());
     return Number(hit?.amount || 0);
   }
 
-    function wcAccessoryState(r) {
-      const shape = String(r.TripShape || "").toUpperCase();
-      const isRt = shape === "ROUND_TRIP" || shape === "MULTI_STOP";
+  function automaticTimeChargeAmount(r) {
+    const lines = Array.isArray(r.pricing?.accessories) ? r.pricing.accessories : [];
+    const hit = lines.find((x) => {
+      const code = String(x.code || "").toUpperCase();
+      return code === "HOLIDAY" || code === "WEEKEND" || code === "THIRD_SHIFT" || code === "AFTER_HOURS";
+    });
+    return Number(hit?.amount || 0);
+  }
 
-      const src = r.availableWcAccessories || {};
+  function wcAccessoryState(r) {
+    const shape = String(r.TripShape || "").toUpperCase();
+    const isRt = shape === "ROUND_TRIP" || shape === "MULTI_STOP";
 
-      const needwcAmount = Number(isRt ? (src.needwc_rt || 0) : (src.needwc_1w || 0));
-      const reclAmount = Number(isRt ? (src.recl_rt || 0) : (src.recl_1w || 0));
+    const src = r.availableWcAccessories || {};
 
-      let addNeedWC = !!r.review?.AddNeedWC;
-      let addRECL = !!r.review?.AddRECL;
+    const needwcAmount = Number(isRt ? (src.needwc_rt || 0) : (src.needwc_1w || 0));
+    const reclAmount = Number(isRt ? (src.recl_rt || 0) : (src.recl_1w || 0));
 
-      if (addNeedWC && addRECL) {
-        addNeedWC = false;
-      }
+    let addNeedWC = !!r.review?.AddNeedWC;
+    let addRECL = !!r.review?.AddRECL;
 
-      return {
-        needwcAmount,
-        reclAmount,
-        addNeedWC,
-        addRECL
-      };
+    if (addNeedWC && addRECL) {
+      addNeedWC = false;
     }
+
+    return {
+      needwcAmount,
+      reclAmount,
+      addNeedWC,
+      addRECL
+    };
+  }
 
   function isCancelled(r) {
     const raw = String(r.RideStatus || "").trim().toLowerCase();
@@ -155,6 +232,7 @@ function renderRows() {
 
     const charges = r.availableCharges || {};
     const wcState = wcAccessoryState(r);
+    const suggestions = window.getPreReviewSuggestions
     let total = 0;
 
     if (r.review?.AddNeedWC) total += wcState.needwcAmount;
@@ -163,10 +241,12 @@ function renderRows() {
     if (r.review?.AddHazmat) total += Number(charges.hazmat || 0);
     if (r.review?.AddO2) total += Number(charges.o2 || 0);
     if (r.review?.AddBari) total += Number(charges.bari || 0);
-    if (r.review?.AddDeadhead) total += Number(r.deadheadCharge || 0);
 
-    total += computeWaitCharge(r);
-    return total;
+      total += computeDeadheadChargeFromReview(r);
+      total += computeWaitCharge(r);
+      total += automaticTimeChargeAmount(r);
+      total += fuelSurchargeAmount(r);
+      return total;
   }
 
   function rowDisplayTotal(r) {
@@ -185,6 +265,7 @@ function renderRows() {
     const defaultNeedWC = pricedAccessoryAmount(r, "NeedWC") > 0;
     const defaultRECL = pricedAccessoryAmount(r, "RECL") > 0;
     const defaultDeadhead = Number(r.deadheadCharge || 0) > 0;
+    const defaultDeadheadMiles = Number(r.deadheadMiles || 0);
 
     if (!r.review) {
       r.review = {
@@ -200,7 +281,7 @@ function renderRows() {
         AddWait: false,
         WaitTotalMinutes: 0,
         AddDeadhead: defaultDeadhead,
-        DeadheadMiles: 0,
+        DeadheadMiles: defaultDeadheadMiles,
         Action: r.Action || "INCLUDE",
         Modifier: r.Modifier || "NONE",
         Note: r.Note || "",
@@ -210,6 +291,7 @@ function renderRows() {
       if (typeof r.review.AddNeedWC !== "boolean") r.review.AddNeedWC = defaultNeedWC;
       if (typeof r.review.AddRECL !== "boolean") r.review.AddRECL = defaultRECL;
       if (typeof r.review.AddDeadhead !== "boolean") r.review.AddDeadhead = defaultDeadhead;
+      if (!Number.isFinite(Number(r.review.DeadheadMiles))) r.review.DeadheadMiles = defaultDeadheadMiles;
       if (!r.review.CancelOverride) r.review.CancelOverride = "AUTO";
       if (typeof r.review.NoCharge !== "boolean") r.review.NoCharge = false;
     }
@@ -217,8 +299,14 @@ function renderRows() {
     const tr = document.createElement("tr");
     if ((r.Action || "INCLUDE") === "EXCLUDE") tr.className = "row-exclude";
 
-    // Date
-    tr.appendChild(makeCell(esc(r.RideDateISO || "")));
+    // Date and time
+    tr.appendChild(makeCell(
+      "<div>" + esc(r.RideDateISO || "") + "</div>" +
+      "<div style='color:#64748b;font-size:16px;margin-top:2px'>" +
+        "PU " +
+        esc((Array.isArray(r.legs) && r.legs.length ? r.legs[0]?.ScheduledPickupTime : r.ScheduledPickupTime) || "") +
+      "</div>"
+    ));
 
     // Include
     const inclTd = makeCell();
@@ -299,12 +387,53 @@ function renderRows() {
 
     const wcState = wcAccessoryState(r);
 
+    const suggestions = window.getPreReviewSuggestions
+      ? window.getPreReviewSuggestions(r)
+      : { flags: { O2: false, RECL: false, BARI: false } };
+
+    const suggestionFlags = suggestions.flags;
+
     const needwcCtl = makeCheckMoney("Need WC", wcState.addNeedWC, fmtMoney(wcState.needwcAmount));
     const reclCtl = makeCheckMoney("RECL", wcState.addRECL, fmtMoney(wcState.reclAmount));
     const hzCtl = makeCheckMoney("HZ", !!r.review.AddHazmat, fmtMoney(r.availableCharges?.hazmat || 0));
     const o2Ctl = makeCheckMoney("O2", !!r.review.AddO2, fmtMoney(r.availableCharges?.o2 || 0));
     const bariCtl = makeCheckMoney("BARI", !!r.review.AddBari, fmtMoney(r.availableCharges?.bari || 0));
-    const dhCtl = makeCheckMoney("DH", !!r.review.AddDeadhead, fmtMoney(r.deadheadCharge || 0));
+      if (window.applySuggestionStyle) {
+        window.applySuggestionStyle(o2Ctl.label, suggestionFlags.O2, r.review.AddO2);
+        window.applySuggestionStyle(reclCtl.label, suggestionFlags.RECL, r.review.AddRECL);
+        window.applySuggestionStyle(bariCtl.label, suggestionFlags.BARI, r.review.AddBari);
+    }
+    const dhWrap = document.createElement("label");
+    dhWrap.style.whiteSpace = "nowrap";
+    dhWrap.style.display = "inline-flex";
+    dhWrap.style.alignItems = "center";
+    dhWrap.style.gap = "4px";
+    dhWrap.style.marginRight = "12px";
+    dhWrap.style.marginBottom = "4px";
+
+    const dhCb = document.createElement("input");
+    dhCb.type = "checkbox";
+    dhCb.checked = !!r.review.AddDeadhead;
+    dhWrap.appendChild(dhCb);
+
+    const dhText = document.createElement("span");
+    dhText.textContent = "DH";
+    dhWrap.appendChild(dhText);
+
+    const dhMilesInput = document.createElement("input");
+    dhMilesInput.type = "number";
+    dhMilesInput.step = "1";
+    dhMilesInput.style.width = "56px";
+    dhMilesInput.value = r.review.DeadheadMiles || "";
+    dhWrap.appendChild(dhMilesInput);
+
+    const dhMilesLabel = document.createElement("span");
+    dhMilesLabel.textContent = "mi";
+    dhWrap.appendChild(dhMilesLabel);
+
+    const dhAmt = document.createElement("span");
+    dhAmt.textContent = fmtMoney(computeDeadheadChargeFromReview(r));
+    dhWrap.appendChild(dhAmt);
     const noChargeCtl = makeCheckMoney("No Charge", !!r.review.NoCharge, "");
 
     adjWrap.appendChild(needwcCtl.label);
@@ -312,7 +441,7 @@ function renderRows() {
     adjWrap.appendChild(o2Ctl.label);
     adjWrap.appendChild(bariCtl.label);
     adjWrap.appendChild(hzCtl.label);
-    adjWrap.appendChild(dhCtl.label);
+    adjWrap.appendChild(dhWrap);
 
     const waitWrap = document.createElement("label");
     waitWrap.style.whiteSpace = "nowrap";
@@ -393,6 +522,12 @@ function renderRows() {
       totalTop.innerHTML = "<b>" + esc(fmtMoney(rowDisplayTotal(r))) + "</b>";
     }
 
+    function refreshDeadheadUI() {
+      dhAmt.textContent = fmtMoney(computeDeadheadChargeFromReview(r));
+      refreshRowTotal();
+      refreshDetailPanel();
+    }
+
     function refreshDetailPanel() {
       try {
         renderDetailPanel();
@@ -421,6 +556,10 @@ function renderRows() {
         needwcCtl.cb.checked = false;
       }
 
+      if (window.applySuggestionStyle) {
+        window.applySuggestionStyle(reclCtl.label, suggestionFlags.RECL, r.review.AddRECL);
+      }
+
       refreshRowTotal();
       refreshDetailPanel();
     };
@@ -433,20 +572,41 @@ function renderRows() {
 
     o2Ctl.cb.onchange = () => {
       r.review.AddO2 = o2Ctl.cb.checked;
+
+      if (window.applySuggestionStyle) {
+        window.applySuggestionStyle(o2Ctl.label, suggestionFlags.O2, r.review.AddO2);
+      }
+
       refreshRowTotal();
       refreshDetailPanel();
     };
 
     bariCtl.cb.onchange = () => {
       r.review.AddBari = bariCtl.cb.checked;
+
+      if (window.applySuggestionStyle) {
+        window.applySuggestionStyle(bariCtl.label, suggestionFlags.BARI, r.review.AddBari);
+      }
+
       refreshRowTotal();
       refreshDetailPanel();
     };
 
-    dhCtl.cb.onchange = () => {
-      r.review.AddDeadhead = dhCtl.cb.checked;
-      refreshRowTotal();
-      refreshDetailPanel();
+    dhCb.onchange = () => {
+      r.review.AddDeadhead = dhCb.checked;
+      refreshDeadheadUI();
+    };
+
+    dhMilesInput.oninput = () => {
+      r.review.DeadheadMiles = Number(dhMilesInput.value || 0);
+      refreshDeadheadUI();
+    };
+
+    dhMilesInput.onkeydown = (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        dhMilesInput.blur();
+      }
     };
 
     waitCb.onchange = () => {
@@ -556,7 +716,7 @@ function renderRows() {
           }
           if (r.review?.AddDeadhead) {
             chargedAccessoryLines.push(
-              "<div>Deadhead: <span data-dh-total>$" + computeDeadheadCharge(r).toFixed(2) + "</span></div>"
+              "<div>Deadhead (" + Number(r.review?.DeadheadMiles || 0).toFixed(0) + " mi): <span data-dh-total>$" + computeDeadheadChargeFromReview(r).toFixed(2) + "</span></div>"
             );
           }
           if (r.review?.AddWait) {
@@ -586,6 +746,27 @@ function renderRows() {
                 );
               }).join("")
             : "<div style='color:#64748b'>No leg detail available.</div>";
+
+          const autoTimeCharge = automaticTimeChargeAmount(r);
+          const autoTimeLine = Array.isArray(r.pricing?.accessories)
+            ? r.pricing.accessories.find((x) => {
+                const code = String(x.code || "").toUpperCase();
+                return code === "HOLIDAY" || code === "WEEKEND" || code === "THIRD_SHIFT" || code === "AFTER_HOURS";
+              })
+            : null;
+
+          if (autoTimeCharge > 0 && autoTimeLine) {
+            chargedAccessoryLines.push(
+              "<div>" + esc(String(autoTimeLine.label || "Time Charge")) + ": $" + autoTimeCharge.toFixed(2) + "</div>"
+            );
+          }
+          
+            const fuelTotal = fuelSurchargeAmount(r);
+            if (fuelTotal > 0) {
+              chargedAccessoryLines.push(
+                "<div>Fuel Surcharge: $" + fuelTotal.toFixed(2) + "</div>"
+              );
+          }
 
           detailBox.innerHTML =
             "<div style='display:grid; grid-template-columns: 240px 320px repeat(auto-fit, minmax(260px, 1fr)); gap:20px; align-items:start'>" +

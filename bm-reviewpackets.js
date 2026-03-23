@@ -227,55 +227,63 @@ for (const r of groupedTrips) {
   const deadheadCharge = Number(deadheadResult.deadheadCharge || 0);
   const waitConfig = buildWaitConfig(rateRow || {});
 
-   const enriched = {
-    ...pricingInput,
-    RideDateISO: iso,
-    LineId: r.LineId || computeLineId({ ...r, RideDateISO: iso }),
-    pricing,
-    availableCharges,
-    deadheadCharge,
-    deadheadMiles: Number(deadheadResult.deadheadMiles || 0),
-    deadheadDebug: deadheadResult,
-    waitConfig,
+  const enriched = {
+  ...pricingInput,
+  RideDateISO: iso,
+  LineId: r.LineId || computeLineId({ ...r, RideDateISO: iso }),
+  pricing,
+  availableCharges,
+  deadheadCharge,
+  deadheadMiles: Number(deadheadResult.deadheadMiles || 0),
+  deadheadDebug: deadheadResult,
+  deadheadConfig: {
+    dh_flat_fee: rateRow?.dh_flat_fee ?? "",
+    dh_start_miles: rateRow?.dh_start_miles ?? "",
+    dh_rate_tier1: rateRow?.dh_rate_tier1 ?? "",
+    dh_rate_tier2: rateRow?.dh_rate_tier2 ?? "",
+    dh_rate_tier3: rateRow?.dh_rate_tier3 ?? "",
+    dh_tier2_start_miles: rateRow?.dh_tier2_start_miles ?? "",
+    dh_tier3_start_miles: rateRow?.dh_tier3_start_miles ?? "",
+  },
+  waitConfig,
+  fuelSurchargeRate: num(rateRow?.fuel_surcharge),
 
-    availableWcAccessories: {
-      needwc_1w: num(rateRow?.needwc_1w),
-      needwc_rt: num(rateRow?.needwc_rt),
-      recl_1w: num(rateRow?.recl_1w),
-      recl_rt: num(rateRow?.recl_rt),
-    },
+  availableWcAccessories: {
+    needwc_1w: num(rateRow?.needwc_1w),
+    needwc_rt: num(rateRow?.needwc_rt),
+    recl_1w: num(rateRow?.recl_1w),
+    recl_rt: num(rateRow?.recl_rt),
+  },
 
+  Action: "INCLUDE",
+  Modifier: "NONE",
+  Note: "",
+  MoveToAccountCode: "",
+
+  notesFull,
+  notesPreview: notesPreview(notesFull),
+
+  review: {
     Action: "INCLUDE",
     Modifier: "NONE",
     Note: "",
     MoveToAccountCode: "",
 
-    notesFull,
-    notesPreview: notesPreview(notesFull),
+    AddHazmat: false,
+    AddO2: false,
+    AddBari: false,
+    AddWait: false,
+    WaitTotalMinutes: 0,
 
-    review: {
-      Action: "INCLUDE",
-      Modifier: "NONE",
-      Note: "",
-      MoveToAccountCode: "",
+    CancelOverride: "AUTO",
+    NoCharge: false,
 
-      AddHazmat: false,
-      AddO2: false,
-      AddBari: false,
-      AddWait: false,
-      WaitTotalMinutes: 0,
-      AddDeadhead: false,
-      DeadheadMiles: 0,
+    MatchToQuote: false,
+    QuoteAmount: 0
+  }
+};
 
-      CancelOverride: "AUTO",
-      NoCharge: false,
-
-      MatchToQuote: false,
-      QuoteAmount: 0
-    }
-  };
-
-  const pKey = batchPeriodKey;
+const pKey = batchPeriodKey;
 
   if (!packets[acctCode]) packets[acctCode] = {};
   if (!packets[acctCode][pKey]) packets[acctCode][pKey] = [];
