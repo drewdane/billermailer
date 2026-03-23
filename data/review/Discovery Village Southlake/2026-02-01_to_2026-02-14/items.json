@@ -106,6 +106,22 @@
       "bari": 50
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 7,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "10864 TEXAS HEALTH TRL|FORT WORTH|TX|76244",
+        "lastDropoffKey": "201 WATERMERE DRIVE|SOUTHLAKE|TX|76092",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "30",
@@ -133,6 +149,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -244,6 +262,22 @@
       "bari": 50
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 7,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1650 W COLLEGE ST|GRAPEVINE|TX|76051",
+        "lastDropoffKey": "201 WATERMERE DRIVE|SOUTHLAKE|TX|76092",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "30",
@@ -271,6 +305,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -362,6 +398,22 @@
       "bari": 50
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 7,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "201 WATERMERE DRIVE|SOUTHLAKE|TX|76092",
+        "lastDropoffKey": "4525 HERITAGE TRACE PARKWAY|KELLER|TX|76244",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "30",
@@ -389,6 +441,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -500,6 +554,22 @@
       "bari": 50
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 7,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1650 W COLLEGE ST|GRAPEVINE|TX|76051",
+        "lastDropoffKey": "201 WATERMERE DRIVE|SOUTHLAKE|TX|76092",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "30",
@@ -527,6 +597,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -638,6 +710,22 @@
       "bari": 50
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 7,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1650 W COLLEGE ST|GRAPEVINE|TX|76051",
+        "lastDropoffKey": "201 WATERMERE DRIVE|SOUTHLAKE|TX|76092",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "30",
@@ -665,6 +753,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -776,6 +866,22 @@
       "bari": 50
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 7,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1650 W COLLEGE ST|GRAPEVINE|TX|76051",
+        "lastDropoffKey": "201 WATERMERE DRIVE|SOUTHLAKE|TX|76092",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "30",
@@ -803,6 +909,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -914,6 +1022,22 @@
       "bari": 50
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 19,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "3315 CROSS TIMBERS ROAD|FLOWER MOUND|TX|75028",
+        "lastDropoffKey": "201 WATERMERE DRIVE|SOUTHLAKE|TX|76092",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "30",
@@ -941,6 +1065,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -1052,6 +1178,22 @@
       "bari": 50
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 7,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "10864 TEXAS HEALTH TRL|FORT WORTH|TX|76244",
+        "lastDropoffKey": "201 WATERMERE DRIVE|SOUTHLAKE|TX|76092",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "30",
@@ -1079,6 +1221,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -1190,6 +1334,22 @@
       "bari": 50
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 7,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1650 W COLLEGE ST|GRAPEVINE|TX|76051",
+        "lastDropoffKey": "201 WATERMERE DRIVE|SOUTHLAKE|TX|76092",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "30",
@@ -1217,6 +1377,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -1328,6 +1490,22 @@
       "bari": 50
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 10,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "3101 N TARRANT PKWY|FORT WORTH|TX|76177",
+        "lastDropoffKey": "201 WATERMERE DRIVE|SOUTHLAKE|TX|76092",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "30",
@@ -1355,6 +1533,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -1466,6 +1646,22 @@
       "bari": 50
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 7,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1650 WEST COLLEGE STREET|GRAPEVINE|TX|76051",
+        "lastDropoffKey": "201 WATERMERE DRIVE|SOUTHLAKE|TX|76092",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "30",
@@ -1493,6 +1689,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -1604,6 +1802,22 @@
       "bari": 50
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 5,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "791 SOUTH MAIN STREET|KELLER|TX|76248",
+        "lastDropoffKey": "201 WATERMERE DRIVE|SOUTHLAKE|TX|76092",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "30",
@@ -1631,6 +1845,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -1776,7 +1992,19 @@
       "o2": 20,
       "bari": 50
     },
-    "deadheadCharge": 52,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "201 WATERMERE DRIVE|SOUTHLAKE|TX|76092",
+        "lastDropoffKey": "201 WATERMERE DRIVE|SOUTHLAKE|TX|76092",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "30",
@@ -1804,6 +2032,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -1915,6 +2145,22 @@
       "bari": 50
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 7,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "10864 TEXAS HEALTH TRL|FORT WORTH|TX|76244",
+        "lastDropoffKey": "201 WATERMERE DRIVE|SOUTHLAKE|TX|76092",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "30",
@@ -1942,6 +2188,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -2061,6 +2309,22 @@
       "bari": 50
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 5,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1150 WHITLEY ROAD|KELLER|TX|76248",
+        "lastDropoffKey": "201 WATERMERE DRIVE|SOUTHLAKE|TX|76092",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "30",
@@ -2088,6 +2352,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -2199,6 +2465,22 @@
       "bari": 50
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 4,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "421 EAST STATE HIGHWAY 114|SOUTHLAKE|TX|76092",
+        "lastDropoffKey": "201 WATERMERE DRIVE|SOUTHLAKE|TX|76092",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "30",
@@ -2226,6 +2508,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -2337,6 +2621,22 @@
       "bari": 50
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 7,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1650 W COLLEGE ST|GRAPEVINE|TX|76051",
+        "lastDropoffKey": "201 WATERMERE DRIVE|SOUTHLAKE|TX|76092",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "30",
@@ -2364,6 +2664,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -2475,6 +2777,22 @@
       "bari": 50
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 5,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "421 EAST STATE HIGHWAY 114|SOUTHLAKE|TX|76092",
+        "lastDropoffKey": "201 WATERMERE DRIVE|SOUTHLAKE|TX|76092",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "30",
@@ -2502,6 +2820,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -2613,6 +2933,22 @@
       "bari": 50
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 7,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1650 W COLLEGE ST|GRAPEVINE|TX|76051",
+        "lastDropoffKey": "201 WATERMERE DRIVE|SOUTHLAKE|TX|76092",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "30",
@@ -2640,6 +2976,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -2759,6 +3097,22 @@
       "bari": 50
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 5,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "700 EAST STATE HIGHWAY 114|SOUTHLAKE|TX|76092",
+        "lastDropoffKey": "201 WATERMERE DRIVE|SOUTHLAKE|TX|76092",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "30",
@@ -2786,6 +3140,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -2897,6 +3253,22 @@
       "bari": 50
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 7,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1650 WEST COLLEGE STREET|GRAPEVINE|TX|76051",
+        "lastDropoffKey": "201 WATERMERE DRIVE|SOUTHLAKE|TX|76092",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "30",
@@ -2924,6 +3296,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -3043,6 +3417,22 @@
       "bari": 50
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 7,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1650 W COLLEGE ST|GRAPEVINE|TX|76051",
+        "lastDropoffKey": "201 WATERMERE DRIVE|SOUTHLAKE|TX|76092",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "30",
@@ -3070,6 +3460,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }

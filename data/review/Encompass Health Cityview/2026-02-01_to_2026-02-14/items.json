@@ -114,6 +114,22 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 9,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1800 PARK PLACE AVENUE|FORT WORTH|TX|76110",
+        "lastDropoffKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -141,6 +157,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -287,6 +305,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "lastDropoffKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -314,6 +344,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -460,6 +492,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "lastDropoffKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -487,6 +531,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -578,6 +624,22 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 14,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "lastDropoffKey": "11797 SOUTH FREEWAY|BURLESON|TX|76028",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -605,6 +667,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -751,6 +815,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "lastDropoffKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -778,6 +854,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -924,6 +1002,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "lastDropoffKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -951,6 +1041,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -1070,6 +1162,22 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 9,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1301 PENNSYLVANIA AVE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -1097,6 +1205,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -1243,6 +1353,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "lastDropoffKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -1270,6 +1392,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -1381,6 +1505,22 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 9,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1301 PENNSYLVANIA AVE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -1408,6 +1548,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -1519,6 +1661,22 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 1,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "6100 HARRIS PARKWAY|FORT WORTH|TX|76132",
+        "lastDropoffKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -1546,6 +1704,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -1665,6 +1825,22 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 8,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1400 8TH AVE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -1692,6 +1868,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -1803,6 +1981,22 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 9,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1301 PENNSYLVANIA AVE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -1830,6 +2024,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -1976,6 +2172,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "lastDropoffKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -2003,6 +2211,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -2181,7 +2391,19 @@
       "o2": 20,
       "bari": 0
     },
-    "deadheadCharge": 144,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "MULTI_STOP",
+        "firstPickupKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "lastDropoffKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -2209,6 +2431,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -2320,6 +2544,22 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 8,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "900 8TH AVENUE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -2347,6 +2587,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -2466,6 +2708,22 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 9,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "lastDropoffKey": "800 5TH AVENUE|FORT WORTH|TX|76104",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -2493,6 +2751,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -2639,6 +2899,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "lastDropoffKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -2666,6 +2938,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -2757,6 +3031,22 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 9,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "lastDropoffKey": "1300 WEST TERRELL AVENUE|FORT WORTH|TX|76104",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -2784,6 +3074,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -2903,6 +3195,22 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 9,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1301 PENNSYLVANIA AVE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -2930,6 +3238,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -3076,6 +3386,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "lastDropoffKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -3103,6 +3425,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -3248,7 +3572,19 @@
       "o2": 20,
       "bari": 0
     },
-    "deadheadCharge": 123,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "lastDropoffKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -3276,6 +3612,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -3387,6 +3725,22 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 1,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "6100 HARRIS PARKWAY|FORT WORTH|TX|76132",
+        "lastDropoffKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -3414,6 +3768,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -3560,6 +3916,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "lastDropoffKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -3587,6 +3955,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -3733,6 +4103,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "lastDropoffKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -3760,6 +4142,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -3906,6 +4290,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "lastDropoffKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -3933,6 +4329,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -4024,6 +4422,22 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 8,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "lastDropoffKey": "1651 WEST ROSEDALE STREET|FORT WORTH|TX|76104",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -4051,6 +4465,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -4162,6 +4578,22 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 11,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1575 SOUTH MAIN STREET|FORT WORTH|TX|76104",
+        "lastDropoffKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -4189,6 +4621,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -4278,6 +4712,22 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 1,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "6100 HARRIS PARKWAY|FORT WORTH|TX|76132",
+        "lastDropoffKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -4305,6 +4755,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -4396,6 +4848,26 @@
       "bari": 0
     },
     "deadheadCharge": 111,
+    "deadheadMiles": 37,
+    "deadheadDebug": {
+      "deadheadMiles": 37,
+      "deadheadCharge": 111,
+      "reason": "TIERED_RATE",
+      "debug": {
+        "dhMiles": 37,
+        "rate": 3,
+        "rateSource": "dh_rate_tier1",
+        "dh_start_miles": 30,
+        "dh_tier2_start_miles": 0,
+        "dh_tier3_start_miles": 0,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1310B PALUXY ROAD|GRANBURY|TX|76048",
+        "lastDropoffKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -4423,6 +4895,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -4569,6 +5043,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "lastDropoffKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -4596,6 +5082,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -4742,6 +5230,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "lastDropoffKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -4769,6 +5269,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -4915,6 +5417,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "lastDropoffKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -4942,6 +5456,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -5088,6 +5604,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "lastDropoffKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -5115,6 +5643,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -5261,6 +5791,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "lastDropoffKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -5288,6 +5830,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -5399,6 +5943,22 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 9,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1301 PENNSYLVANIA AVENUE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -5426,6 +5986,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -5537,6 +6099,22 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 1,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "6100 HARRIS PARKWAY|FORT WORTH|TX|76132",
+        "lastDropoffKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -5564,6 +6142,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -5710,6 +6290,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "lastDropoffKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -5737,6 +6329,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -5883,6 +6477,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "lastDropoffKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -5910,6 +6516,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -6056,6 +6664,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "lastDropoffKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -6083,6 +6703,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -6202,6 +6824,22 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 1,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "6100 HARRIS PARKWAY|FORT WORTH|TX|76132",
+        "lastDropoffKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -6229,6 +6867,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -6340,6 +6980,22 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 9,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1301 PENNSYLVANIA AVE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -6367,6 +7023,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -6458,6 +7116,22 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 9,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "lastDropoffKey": "800 5TH AVENUE|FORT WORTH|TX|76104",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -6485,6 +7159,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -6576,6 +7252,26 @@
       "bari": 0
     },
     "deadheadCharge": 213,
+    "deadheadMiles": 71,
+    "deadheadDebug": {
+      "deadheadMiles": 71,
+      "deadheadCharge": 213,
+      "reason": "TIERED_RATE",
+      "debug": {
+        "dhMiles": 71,
+        "rate": 3,
+        "rateSource": "dh_rate_tier1",
+        "dh_start_miles": 30,
+        "dh_tier2_start_miles": 0,
+        "dh_tier3_start_miles": 0,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "lastDropoffKey": "100 WALNUT STREET|HICO|TX|76457",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -6603,6 +7299,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -6748,7 +7446,19 @@
       "o2": 20,
       "bari": 0
     },
-    "deadheadCharge": 126,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "lastDropoffKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -6776,6 +7486,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -6922,6 +7634,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "lastDropoffKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -6949,6 +7673,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -7093,6 +7819,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "lastDropoffKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -7120,6 +7858,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -7264,6 +8004,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "lastDropoffKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -7291,6 +8043,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }

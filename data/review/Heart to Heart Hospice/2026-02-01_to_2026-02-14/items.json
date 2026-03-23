@@ -106,6 +106,26 @@
       "bari": 0
     },
     "deadheadCharge": 23,
+    "deadheadMiles": 23,
+    "deadheadDebug": {
+      "deadheadMiles": 23,
+      "deadheadCharge": 23,
+      "reason": "TIERED_RATE",
+      "debug": {
+        "dhMiles": 23,
+        "rate": 1,
+        "rateSource": "dh_rate_tier1",
+        "dh_start_miles": 0,
+        "dh_tier2_start_miles": 31,
+        "dh_tier3_start_miles": 0,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1133 BOYD ROAD|AZLE|TX|76020",
+        "lastDropoffKey": "6940 RIVER PARK CIRCLE|FORT WORTH|TX|76116",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -133,6 +153,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -252,6 +274,26 @@
       "bari": 0
     },
     "deadheadCharge": 7,
+    "deadheadMiles": 7,
+    "deadheadDebug": {
+      "deadheadMiles": 7,
+      "deadheadCharge": 7,
+      "reason": "TIERED_RATE",
+      "debug": {
+        "dhMiles": 7,
+        "rate": 1,
+        "rateSource": "dh_rate_tier1",
+        "dh_start_miles": 0,
+        "dh_tier2_start_miles": 31,
+        "dh_tier3_start_miles": 0,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1004 HARDING STREET|FORT WORTH|TX|76102",
+        "lastDropoffKey": "6940 RIVER PARK CIRCLE|FORT WORTH|TX|76116",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -279,6 +321,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -390,6 +434,26 @@
       "bari": 0
     },
     "deadheadCharge": 2,
+    "deadheadMiles": 2,
+    "deadheadDebug": {
+      "deadheadMiles": 2,
+      "deadheadCharge": 2,
+      "reason": "TIERED_RATE",
+      "debug": {
+        "dhMiles": 2,
+        "rate": 1,
+        "rateSource": "dh_rate_tier1",
+        "dh_start_miles": 0,
+        "dh_tier2_start_miles": 31,
+        "dh_tier3_start_miles": 0,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "4309 ROWAN DRIVE|FORT WORTH|TX|76116",
+        "lastDropoffKey": "6940 RIVER PARK CIRCLE|FORT WORTH|TX|76116",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -417,6 +481,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }

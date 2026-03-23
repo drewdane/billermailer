@@ -141,6 +141,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "4252 BRYANT IRVIN ROAD|FORT WORTH|TX|76109",
+        "lastDropoffKey": "4252 BRYANT IRVIN ROAD|FORT WORTH|TX|76109",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -168,6 +180,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -314,6 +328,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "4252 BRYANT IRVIN ROAD|FORT WORTH|TX|76109",
+        "lastDropoffKey": "4252 BRYANT IRVIN ROAD|FORT WORTH|TX|76109",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -341,6 +367,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -452,6 +480,22 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 2,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "7800 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "lastDropoffKey": "4252 BRYANT IRVIN ROAD|FORT WORTH|TX|76109",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -479,6 +523,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -625,6 +671,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "4252 BRYANT IRVIN ROAD|FORT WORTH|TX|76109",
+        "lastDropoffKey": "4252 BRYANT IRVIN ROAD|FORT WORTH|TX|76109",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -652,6 +710,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -763,6 +823,22 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 6,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1301 PENNSYLVANIA AVE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "4252 BRYANT IRVIN ROAD|FORT WORTH|TX|76109",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -790,6 +866,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -901,6 +979,22 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 13,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "11801 SOUTH FREEWAY|BURLESON|TX|76028",
+        "lastDropoffKey": "4252 BRYANT IRVIN ROAD|FORT WORTH|TX|76109",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -928,6 +1022,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -1039,6 +1135,22 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 6,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1400 8TH AVENUE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "4252 BRYANT IRVIN ROAD|FORT WORTH|TX|76109",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -1066,6 +1178,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -1212,6 +1326,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "4252 BRYANT IRVIN ROAD|FORT WORTH|TX|76109",
+        "lastDropoffKey": "4252 BRYANT IRVIN ROAD|FORT WORTH|TX|76109",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -1239,6 +1365,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }

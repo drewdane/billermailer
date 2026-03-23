@@ -106,6 +106,22 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 3,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "4401 BOOTH CALLOWAY ROAD|FORT WORTH|TX|76180",
+        "lastDropoffKey": "3109 KINGS COURT|RICHLAND HILLS|TX|76118",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -133,6 +149,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -244,6 +262,22 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 9,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1575 SOUTH MAIN STREET|FORT WORTH|TX|76104",
+        "lastDropoffKey": "3109 KINGS COURT|RICHLAND HILLS|TX|76118",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -271,6 +305,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }

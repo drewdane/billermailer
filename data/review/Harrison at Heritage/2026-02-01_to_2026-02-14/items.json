@@ -106,6 +106,22 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 3,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "10864 TEXAS HEALTH TRL|FORT WORTH|TX|76244",
+        "lastDropoffKey": "4600 HERITAGE TRACE PARKWAY|FORT WORTH|TX|76244",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -133,6 +149,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -244,6 +262,22 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 23,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "108 DENVER TRL|AZLE|TX|76020",
+        "lastDropoffKey": "4600 HERITAGE TRACE PARKWAY|FORT WORTH|TX|76244",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -271,6 +305,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -382,6 +418,22 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 3,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "10864 TEXAS HEALTH TRL|FORT WORTH|TX|76244",
+        "lastDropoffKey": "4600 HERITAGE TRACE PARKWAY|FORT WORTH|TX|76244",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -409,6 +461,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -520,6 +574,22 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 3,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "10864 TEXAS HEALTH TRL|FORT WORTH|TX|76244",
+        "lastDropoffKey": "4600 HERITAGE TRACE PARKWAY|FORT WORTH|TX|76244",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -547,6 +617,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -658,6 +730,22 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 3,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "10864 TEXAS HEALTH TRL|FORT WORTH|TX|76244",
+        "lastDropoffKey": "4600 HERITAGE TRACE PARKWAY|FORT WORTH|TX|76244",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -685,6 +773,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -796,6 +886,22 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 16,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1301 PENNSYLVANIA AVE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "4600 HERITAGE TRACE PARKWAY|FORT WORTH|TX|76244",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -823,6 +929,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -934,6 +1042,22 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 3,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "10864 TEXAS HEALTH TRL|FORT WORTH|TX|76244",
+        "lastDropoffKey": "4600 HERITAGE TRACE PARKWAY|FORT WORTH|TX|76244",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -961,6 +1085,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -1104,7 +1230,19 @@
       "o2": 40,
       "bari": 0
     },
-    "deadheadCharge": 33,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "4600 HERITAGE TRACE PARKWAY|FORT WORTH|TX|76244",
+        "lastDropoffKey": "4600 HERITAGE TRACE PARKWAY|FORT WORTH|TX|76244",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -1132,6 +1270,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -1243,6 +1383,22 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 19,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1600 HOSPITAL PARKWAY|BEDFORD|TX|76022",
+        "lastDropoffKey": "4600 HERITAGE TRACE PARKWAY|FORT WORTH|TX|76244",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -1270,6 +1426,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -1381,6 +1539,22 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 8,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "170 STONEBRIDGE LANE|SOUTHLAKE|TX|76092",
+        "lastDropoffKey": "4600 HERITAGE TRACE PARKWAY|FORT WORTH|TX|76244",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -1408,6 +1582,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -1519,6 +1695,22 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 3,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "10864 TEXAS HEALTH TRL|FORT WORTH|TX|76244",
+        "lastDropoffKey": "4600 HERITAGE TRACE PARKWAY|FORT WORTH|TX|76244",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$20.00",
       "wait_block_min": "60",
@@ -1546,6 +1738,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }

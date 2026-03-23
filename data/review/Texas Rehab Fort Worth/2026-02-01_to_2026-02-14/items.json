@@ -139,6 +139,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "",
       "wait_block_min": "",
@@ -166,6 +178,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -310,6 +324,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "",
       "wait_block_min": "",
@@ -337,6 +363,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -483,6 +511,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "",
       "wait_block_min": "",
@@ -510,6 +550,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -656,6 +698,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "",
       "wait_block_min": "",
@@ -683,6 +737,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -797,6 +853,26 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 1,
+    "deadheadDebug": {
+      "deadheadMiles": 1,
+      "deadheadCharge": 0,
+      "reason": "NO_DH_RATE",
+      "debug": {
+        "dhMiles": 1,
+        "rate": 0,
+        "rateSource": "",
+        "dh_start_miles": 0,
+        "dh_tier2_start_miles": 0,
+        "dh_tier3_start_miles": 0,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "1301 PENNSYLVANIA AVENUE|FORT WORTH|TX|76104",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "",
       "wait_block_min": "",
@@ -824,6 +900,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -970,6 +1048,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "",
       "wait_block_min": "",
@@ -997,6 +1087,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -1111,6 +1203,26 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 17,
+    "deadheadDebug": {
+      "deadheadMiles": 17,
+      "deadheadCharge": 0,
+      "reason": "NO_DH_RATE",
+      "debug": {
+        "dhMiles": 17,
+        "rate": 0,
+        "rateSource": "",
+        "dh_start_miles": 0,
+        "dh_tier2_start_miles": 0,
+        "dh_tier3_start_miles": 0,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "108 DENVER TRL|AZLE|TX|76020",
+        "lastDropoffKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "",
       "wait_block_min": "",
@@ -1138,6 +1250,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -1284,6 +1398,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "",
       "wait_block_min": "",
@@ -1311,6 +1437,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -1457,6 +1585,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "",
       "wait_block_min": "",
@@ -1484,6 +1624,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -1628,6 +1770,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "910 5TH AVENUE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "910 5TH AVENUE|FORT WORTH|TX|76104",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "",
       "wait_block_min": "",
@@ -1655,6 +1809,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -1801,6 +1957,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "",
       "wait_block_min": "",
@@ -1828,6 +1996,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -1972,6 +2142,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "",
       "wait_block_min": "",
@@ -1999,6 +2181,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -2145,6 +2329,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "",
       "wait_block_min": "",
@@ -2172,6 +2368,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -2286,6 +2484,20 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "NO_DIRECT_MILEAGE",
+      "debug": {
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1301 PENNSYLVANIA AVENUE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "",
       "wait_block_min": "",
@@ -2313,6 +2525,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -2457,6 +2671,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "",
       "wait_block_min": "",
@@ -2484,6 +2710,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -2630,6 +2858,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "",
       "wait_block_min": "",
@@ -2657,6 +2897,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -2768,6 +3010,26 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 9,
+    "deadheadDebug": {
+      "deadheadMiles": 9,
+      "deadheadCharge": 0,
+      "reason": "NO_DH_RATE",
+      "debug": {
+        "dhMiles": 9,
+        "rate": 0,
+        "rateSource": "",
+        "dh_start_miles": 0,
+        "dh_tier2_start_miles": 0,
+        "dh_tier3_start_miles": 0,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1301 PENNSYLVANIA AVENUE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "6701 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "",
       "wait_block_min": "",
@@ -2795,6 +3057,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -2939,6 +3203,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "",
       "wait_block_min": "",
@@ -2966,6 +3242,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -3112,6 +3390,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "",
       "wait_block_min": "",
@@ -3139,6 +3429,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -3283,6 +3575,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "",
       "wait_block_min": "",
@@ -3310,6 +3614,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -3454,6 +3760,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "",
       "wait_block_min": "",
@@ -3481,6 +3799,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -3625,6 +3945,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "",
       "wait_block_min": "",
@@ -3652,6 +3984,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -3766,6 +4100,20 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "NO_DIRECT_MILEAGE",
+      "debug": {
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1325 PENNSYLVANIA AVENUE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "",
       "wait_block_min": "",
@@ -3793,6 +4141,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -3907,6 +4257,26 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 1,
+    "deadheadDebug": {
+      "deadheadMiles": 1,
+      "deadheadCharge": 0,
+      "reason": "NO_DH_RATE",
+      "debug": {
+        "dhMiles": 1,
+        "rate": 0,
+        "rateSource": "",
+        "dh_start_miles": 0,
+        "dh_tier2_start_miles": 0,
+        "dh_tier3_start_miles": 0,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "800 5TH AVENUE|FORT WORTH|TX|76104",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "",
       "wait_block_min": "",
@@ -3934,6 +4304,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -4078,6 +4450,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "",
       "wait_block_min": "",
@@ -4105,6 +4489,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -4216,6 +4602,26 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 4,
+    "deadheadDebug": {
+      "deadheadMiles": 4,
+      "deadheadCharge": 0,
+      "reason": "NO_DH_RATE",
+      "debug": {
+        "dhMiles": 4,
+        "rate": 0,
+        "rateSource": "",
+        "dh_start_miles": 0,
+        "dh_tier2_start_miles": 0,
+        "dh_tier3_start_miles": 0,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "4401 BOOTH CALLOWAY ROAD|FORT WORTH|TX|76180",
+        "lastDropoffKey": "2936 MARKUM DR|HALTOM CITY|TX|76117",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "",
       "wait_block_min": "",
@@ -4243,6 +4649,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -4387,6 +4795,18 @@
       "bari": 0
     },
     "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "425 ALABAMA AVE|FORT WORTH|TX|76104",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "",
       "wait_block_min": "",
@@ -4414,6 +4834,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }

@@ -106,6 +106,26 @@
       "bari": 0
     },
     "deadheadCharge": 27,
+    "deadheadMiles": 27,
+    "deadheadDebug": {
+      "deadheadMiles": 27,
+      "deadheadCharge": 27,
+      "reason": "TIERED_RATE",
+      "debug": {
+        "dhMiles": 27,
+        "rate": 1,
+        "rateSource": "dh_rate_tier1",
+        "dh_start_miles": 0,
+        "dh_tier2_start_miles": 31,
+        "dh_tier3_start_miles": 0,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "3000 INTERSTATE 35|DENTON|TX|76201",
+        "lastDropoffKey": "509 BLACKJACK ROAD|VALLEY VIEW|TX|76272",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -133,6 +153,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }

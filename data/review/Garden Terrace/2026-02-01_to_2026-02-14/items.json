@@ -140,7 +140,19 @@
       "o2": 25,
       "bari": 0
     },
-    "deadheadCharge": 18,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "7500 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "lastDropoffKey": "7500 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -168,6 +180,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -313,7 +327,19 @@
       "o2": 25,
       "bari": 0
     },
-    "deadheadCharge": 18,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "7500 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "lastDropoffKey": "7500 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -341,6 +367,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -486,7 +514,19 @@
       "o2": 25,
       "bari": 0
     },
-    "deadheadCharge": 20,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "7500 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "lastDropoffKey": "7500 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -514,6 +554,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -625,6 +667,26 @@
       "bari": 0
     },
     "deadheadCharge": 9,
+    "deadheadMiles": 9,
+    "deadheadDebug": {
+      "deadheadMiles": 9,
+      "deadheadCharge": 9,
+      "reason": "TIERED_RATE",
+      "debug": {
+        "dhMiles": 9,
+        "rate": 1,
+        "rateSource": "dh_rate_tier1",
+        "dh_start_miles": 0,
+        "dh_tier2_start_miles": 31,
+        "dh_tier3_start_miles": 0,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1301 PENNSYLVANIA AVENUE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "7500 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -652,6 +714,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -797,7 +861,19 @@
       "o2": 25,
       "bari": 0
     },
-    "deadheadCharge": 2,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "7500 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "lastDropoffKey": "7500 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -825,6 +901,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }

@@ -106,6 +106,26 @@
       "bari": 0
     },
     "deadheadCharge": 28,
+    "deadheadMiles": 28,
+    "deadheadDebug": {
+      "deadheadMiles": 28,
+      "deadheadCharge": 28,
+      "reason": "TIERED_RATE",
+      "debug": {
+        "dhMiles": 28,
+        "rate": 1,
+        "rateSource": "dh_rate_tier1",
+        "dh_start_miles": 0,
+        "dh_tier2_start_miles": 0,
+        "dh_tier3_start_miles": 0,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1301 PENNSYLVANIA AVE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "703 EUREKA STREET|WEATHERFORD|TX|76086",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "",
       "wait_block_min": "",
@@ -133,6 +153,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -244,6 +266,26 @@
       "bari": 0
     },
     "deadheadCharge": 52,
+    "deadheadMiles": 52,
+    "deadheadDebug": {
+      "deadheadMiles": 52,
+      "deadheadCharge": 52,
+      "reason": "TIERED_RATE",
+      "debug": {
+        "dhMiles": 52,
+        "rate": 1,
+        "rateSource": "dh_rate_tier1",
+        "dh_start_miles": 0,
+        "dh_tier2_start_miles": 0,
+        "dh_tier3_start_miles": 0,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1650 WEST COLLEGE STREET|GRAPEVINE|TX|76051",
+        "lastDropoffKey": "703 EUREKA STREET|WEATHERFORD|TX|76086",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "",
       "wait_block_min": "",
@@ -271,6 +313,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -382,6 +426,26 @@
       "bari": 0
     },
     "deadheadCharge": 90,
+    "deadheadMiles": 90,
+    "deadheadDebug": {
+      "deadheadMiles": 90,
+      "deadheadCharge": 90,
+      "reason": "TIERED_RATE",
+      "debug": {
+        "dhMiles": 90,
+        "rate": 1,
+        "rateSource": "dh_rate_tier1",
+        "dh_start_miles": 0,
+        "dh_tier2_start_miles": 0,
+        "dh_tier3_start_miles": 0,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "5252 WEST UNIVERSITY DRIVE|MCKINNEY|TX|75071",
+        "lastDropoffKey": "703 EUREKA STREET|WEATHERFORD|TX|76086",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "",
       "wait_block_min": "",
@@ -409,6 +473,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -520,6 +586,26 @@
       "bari": 0
     },
     "deadheadCharge": 28,
+    "deadheadMiles": 28,
+    "deadheadDebug": {
+      "deadheadMiles": 28,
+      "deadheadCharge": 28,
+      "reason": "TIERED_RATE",
+      "debug": {
+        "dhMiles": 28,
+        "rate": 1,
+        "rateSource": "dh_rate_tier1",
+        "dh_start_miles": 0,
+        "dh_tier2_start_miles": 0,
+        "dh_tier3_start_miles": 0,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1301 PENNSYLVANIA AVENUE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "703 EUREKA STREET|WEATHERFORD|TX|76086",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "",
       "wait_block_min": "",
@@ -547,6 +633,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -658,6 +746,26 @@
       "bari": 0
     },
     "deadheadCharge": 28,
+    "deadheadMiles": 28,
+    "deadheadDebug": {
+      "deadheadMiles": 28,
+      "deadheadCharge": 28,
+      "reason": "TIERED_RATE",
+      "debug": {
+        "dhMiles": 28,
+        "rate": 1,
+        "rateSource": "dh_rate_tier1",
+        "dh_start_miles": 0,
+        "dh_tier2_start_miles": 0,
+        "dh_tier3_start_miles": 0,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1301 PENNSYLVANIA AVE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "703 EUREKA STREET|WEATHERFORD|TX|76086",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "",
       "wait_block_min": "",
@@ -685,6 +793,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -804,6 +914,26 @@
       "bari": 0
     },
     "deadheadCharge": 27,
+    "deadheadMiles": 27,
+    "deadheadDebug": {
+      "deadheadMiles": 27,
+      "deadheadCharge": 27,
+      "reason": "TIERED_RATE",
+      "debug": {
+        "dhMiles": 27,
+        "rate": 1,
+        "rateSource": "dh_rate_tier1",
+        "dh_start_miles": 0,
+        "dh_tier2_start_miles": 0,
+        "dh_tier3_start_miles": 0,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "5400 CLEARFORK MAIN ST|FORT WORTH|TX|76109",
+        "lastDropoffKey": "703 EUREKA STREET|WEATHERFORD|TX|76086",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "",
       "wait_block_min": "",
@@ -831,6 +961,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -942,6 +1074,26 @@
       "bari": 0
     },
     "deadheadCharge": 26,
+    "deadheadMiles": 26,
+    "deadheadDebug": {
+      "deadheadMiles": 26,
+      "deadheadCharge": 26,
+      "reason": "TIERED_RATE",
+      "debug": {
+        "dhMiles": 26,
+        "rate": 1,
+        "rateSource": "dh_rate_tier1",
+        "dh_start_miles": 0,
+        "dh_tier2_start_miles": 0,
+        "dh_tier3_start_miles": 0,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "7800 OAKMONT BOULEVARD|FORT WORTH|TX|76132",
+        "lastDropoffKey": "703 EUREKA STREET|WEATHERFORD|TX|76086",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "",
       "wait_block_min": "",
@@ -969,6 +1121,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -1088,6 +1242,26 @@
       "bari": 0
     },
     "deadheadCharge": 28,
+    "deadheadMiles": 28,
+    "deadheadDebug": {
+      "deadheadMiles": 28,
+      "deadheadCharge": 28,
+      "reason": "TIERED_RATE",
+      "debug": {
+        "dhMiles": 28,
+        "rate": 1,
+        "rateSource": "dh_rate_tier1",
+        "dh_start_miles": 0,
+        "dh_tier2_start_miles": 0,
+        "dh_tier3_start_miles": 0,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1301 PENNSYLVANIA AVE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "703 EUREKA STREET|WEATHERFORD|TX|76086",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "",
       "wait_block_min": "",
@@ -1115,6 +1289,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }

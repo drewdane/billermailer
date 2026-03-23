@@ -130,39 +130,61 @@ function renderRows() {
       };
     }
 
+  function isCancelled(r) {
+    const raw = String(r.RideStatus || "").trim().toLowerCase();
+    const tmCancelled = raw === "noshow" || raw === "ridercancel";
+
+    const override = String(r.review?.CancelOverride || "AUTO").toUpperCase();
+
+    if (override === "YES") return true;
+    if (override === "NO") return false;
+    return tmCancelled;
+  }
+  
   function baseTripTotal(r) {
+    if (isCancelled(r)) {
+      return Number(r.pricing?.cancelFee || 0);
+    }
+
     return Number(r.pricing?.base || 0)
-      + Number(r.pricing?.mileage || 0)
-      + Number(r.pricing?.cancelFee || 0);
+      + Number(r.pricing?.mileage || 0);
   }
 
-    function rowAccessoryTotal(r) {
-      const charges = r.availableCharges || {};
-      const wcState = wcAccessoryState(r);
-      let total = 0;
+  function rowAccessoryTotal(r) {
+    if (isCancelled(r)) return 0;
 
-      if (r.review?.AddNeedWC) total += wcState.needwcAmount;
-      if (r.review?.AddRECL) total += wcState.reclAmount;
+    const charges = r.availableCharges || {};
+    const wcState = wcAccessoryState(r);
+    let total = 0;
 
-      if (r.review?.AddHazmat) total += Number(charges.hazmat || 0);
-      if (r.review?.AddO2) total += Number(charges.o2 || 0);
-      if (r.review?.AddBari) total += Number(charges.bari || 0);
-      if (r.review?.AddDeadhead) total += Number(r.deadheadCharge || 0);
+    if (r.review?.AddNeedWC) total += wcState.needwcAmount;
+    if (r.review?.AddRECL) total += wcState.reclAmount;
 
-      total += computeWaitCharge(r);
-      return total;
-    }
+    if (r.review?.AddHazmat) total += Number(charges.hazmat || 0);
+    if (r.review?.AddO2) total += Number(charges.o2 || 0);
+    if (r.review?.AddBari) total += Number(charges.bari || 0);
+    if (r.review?.AddDeadhead) total += Number(r.deadheadCharge || 0);
+
+    total += computeWaitCharge(r);
+    return total;
+  }
 
   function rowDisplayTotal(r) {
     if (r.review?.MatchToQuote) {
       return Number(r.review?.QuoteAmount || 0);
     }
+
+    if (r.review?.NoCharge) {
+      return 0;
+    }
+
     return baseTripTotal(r) + rowAccessoryTotal(r);
   }
 
   for (const r of rows) {
     const defaultNeedWC = pricedAccessoryAmount(r, "NeedWC") > 0;
     const defaultRECL = pricedAccessoryAmount(r, "RECL") > 0;
+    const defaultDeadhead = Number(r.deadheadCharge || 0) > 0;
 
     if (!r.review) {
       r.review = {
@@ -171,11 +193,13 @@ function renderRows() {
         AddHazmat: false,
         AddO2: false,
         AddBari: false,
+        CancelOverride: "AUTO",
+        NoCharge: false,
         MatchToQuote: false,
         QuoteAmount: 0,
         AddWait: false,
         WaitTotalMinutes: 0,
-        AddDeadhead: false,
+        AddDeadhead: defaultDeadhead,
         DeadheadMiles: 0,
         Action: r.Action || "INCLUDE",
         Modifier: r.Modifier || "NONE",
@@ -185,6 +209,9 @@ function renderRows() {
     } else {
       if (typeof r.review.AddNeedWC !== "boolean") r.review.AddNeedWC = defaultNeedWC;
       if (typeof r.review.AddRECL !== "boolean") r.review.AddRECL = defaultRECL;
+      if (typeof r.review.AddDeadhead !== "boolean") r.review.AddDeadhead = defaultDeadhead;
+      if (!r.review.CancelOverride) r.review.CancelOverride = "AUTO";
+      if (typeof r.review.NoCharge !== "boolean") r.review.NoCharge = false;
     }
 
     const tr = document.createElement("tr");
@@ -278,12 +305,13 @@ function renderRows() {
     const o2Ctl = makeCheckMoney("O2", !!r.review.AddO2, fmtMoney(r.availableCharges?.o2 || 0));
     const bariCtl = makeCheckMoney("BARI", !!r.review.AddBari, fmtMoney(r.availableCharges?.bari || 0));
     const dhCtl = makeCheckMoney("DH", !!r.review.AddDeadhead, fmtMoney(r.deadheadCharge || 0));
+    const noChargeCtl = makeCheckMoney("No Charge", !!r.review.NoCharge, "");
 
     adjWrap.appendChild(needwcCtl.label);
     adjWrap.appendChild(reclCtl.label);
-    adjWrap.appendChild(hzCtl.label);
     adjWrap.appendChild(o2Ctl.label);
     adjWrap.appendChild(bariCtl.label);
+    adjWrap.appendChild(hzCtl.label);
     adjWrap.appendChild(dhCtl.label);
 
     const waitWrap = document.createElement("label");
@@ -315,6 +343,7 @@ function renderRows() {
     waitWrap.appendChild(waitAmt);
 
     adjWrap.appendChild(waitWrap);
+    adjWrap.appendChild(noChargeCtl.label);
 
     const overrideWrap = document.createElement("label");
     overrideWrap.style.whiteSpace = "nowrap";
@@ -439,6 +468,12 @@ function renderRows() {
       }
     };
 
+    noChargeCtl.cb.onchange = () => {
+      r.review.NoCharge = noChargeCtl.cb.checked;
+      refreshRowTotal();
+      refreshDetailPanel();
+    };
+
     overrideCb.onchange = () => {
       r.review.MatchToQuote = overrideCb.checked;
       overrideInput.disabled = !overrideCb.checked;
@@ -484,8 +519,12 @@ function renderRows() {
         function renderDetailPanel() {
           const base = Number((r.pricing && r.pricing.base) || 0);
           const mileage = Number((r.pricing && r.pricing.mileage) || 0);
-          const cancelFee = Number((r.pricing && r.pricing.cancelFee) || 0);
           const wcStateDetail = wcAccessoryState(r);
+          const cancelFee = Number((r.pricing && r.pricing.cancelFee) || 0);
+          const noChargeHtml = r.review?.NoCharge
+            ? "<div style='margin-top:6px;color:#991b1b;font-weight:600'>No Charge</div>"
+            : "";
+
           const grandTotal = Number(rowDisplayTotal(r));
 
           const chargedAccessoryLines = [];
@@ -556,6 +595,7 @@ function renderRows() {
                 "<div>Base: $" + base.toFixed(2) + "</div>" +
                 "<div>Mileage: $" + mileage.toFixed(2) + "</div>" +
                 (cancelFee > 0 ? "<div>Cancel Fee: $" + cancelFee.toFixed(2) + "</div>" : "") +
+                noChargeHtml +
                 chargedAccessoryLines.join("") +
                 "<div style='margin-top:6px'><b>Total: $" + grandTotal.toFixed(2) + "</b></div>" +
               "</div>" +

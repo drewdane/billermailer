@@ -8,7 +8,8 @@ const { groupTrips } = require("./src/review/groupTrips");
 const { loadRateSheet, makeRateLookup } = require("./src/review/loadRateSheet");
 const { priceGroupedTrip } = require("./src/review/priceGroupedTrip");
 const { ratesPath: defaultRatesPath, buildPricingContext } = require("./src/orgs/CTT/pricing/pricingContext");
-const { computeAvailableCharges, computeDeadheadCharge, computeWaitCharge } = require("./src/review/reviewAdjustments");
+const { computeAvailableCharges, computeWaitCharge } = require("./src/review/reviewAdjustments");
+const { computeDeadheadCharge } = require("./src/orgs/CTT/pricing/computeDeadheadCharge");
 const { num } = require("./src/pricing/rateLookup");
 
 function billingClassFor(row) {
@@ -222,7 +223,8 @@ for (const r of groupedTrips) {
   const pricingContext = buildPricingContext(pricingInput);
   const pricing = priceGroupedTrip(pricingInput, rateRow, pricingContext);
   const availableCharges = computeAvailableCharges(pricingInput, rateRow || {});
-  const deadheadCharge = computeDeadheadCharge(pricingInput, rateRow || {});
+  const deadheadResult = computeDeadheadCharge(pricingInput, rateRow || {});
+  const deadheadCharge = Number(deadheadResult.deadheadCharge || 0);
   const waitConfig = buildWaitConfig(rateRow || {});
 
    const enriched = {
@@ -232,6 +234,8 @@ for (const r of groupedTrips) {
     pricing,
     availableCharges,
     deadheadCharge,
+    deadheadMiles: Number(deadheadResult.deadheadMiles || 0),
+    deadheadDebug: deadheadResult,
     waitConfig,
 
     availableWcAccessories: {
@@ -262,6 +266,9 @@ for (const r of groupedTrips) {
       WaitTotalMinutes: 0,
       AddDeadhead: false,
       DeadheadMiles: 0,
+
+      CancelOverride: "AUTO",
+      NoCharge: false,
 
       MatchToQuote: false,
       QuoteAmount: 0

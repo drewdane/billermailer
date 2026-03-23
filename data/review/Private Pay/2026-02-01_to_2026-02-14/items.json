@@ -138,7 +138,19 @@
       "o2": 25,
       "bari": 55
     },
-    "deadheadCharge": 20,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "5301 IRISH MOUNTAIN DRIVE|FORT WORTH|TX|76123",
+        "lastDropoffKey": "5301 IRISH MOUNTAIN DRIVE|FORT WORTH|TX|76123",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -166,6 +178,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -309,7 +323,19 @@
       "o2": 25,
       "bari": 55
     },
-    "deadheadCharge": 220,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "116 RAVEN BEND|HUDSON OAKS|TX|76087",
+        "lastDropoffKey": "116 RAVEN BEND|HUDSON OAKS|TX|76087",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -337,6 +363,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -447,7 +475,23 @@
       "o2": 25,
       "bari": 55
     },
-    "deadheadCharge": 16,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 4,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "11801 SOUTH FREEWAY|BURLESON|TX|76028",
+        "lastDropoffKey": "138 ADAMS DRIVE|CROWLEY|TX|76036",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -475,6 +519,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -612,7 +658,19 @@
       "o2": 25,
       "bari": 55
     },
-    "deadheadCharge": 52,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "3009 MESQUITE ROAD|FORT WORTH|TX|76111",
+        "lastDropoffKey": "3009 MESQUITE ROAD|FORT WORTH|TX|76111",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -640,6 +698,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -783,7 +843,19 @@
       "o2": 25,
       "bari": 55
     },
-    "deadheadCharge": 60,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "1109 COLINA VISTA|CROWLEY|TX|76036",
+        "lastDropoffKey": "1109 COLINA VISTA|CROWLEY|TX|76036",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -811,6 +883,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -929,7 +1003,23 @@
       "o2": 25,
       "bari": 55
     },
-    "deadheadCharge": 24,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 6,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "300 SOUTH PARK BOULEVARD|GRAPEVINE|TX|76051",
+        "lastDropoffKey": "201 WATERMERE DRIVE|SOUTHLAKE|TX|76092",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -957,6 +1047,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -1067,7 +1159,23 @@
       "o2": 25,
       "bari": 55
     },
-    "deadheadCharge": 20,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 5,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1400 8TH AVENUE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "5101 CORDOVA AVENUE|FORT WORTH|TX|76132",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -1095,6 +1203,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -1234,7 +1344,19 @@
       "o2": 25,
       "bari": 55
     },
-    "deadheadCharge": 16,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "6799 GRANBURY ROAD|FORT WORTH|TX|76133",
+        "lastDropoffKey": "6799 GRANBURY ROAD|FORT WORTH|TX|76133",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -1262,6 +1384,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -1399,7 +1523,19 @@
       "o2": 25,
       "bari": 55
     },
-    "deadheadCharge": 28,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "1613 BELLE PLACE|FORT WORTH|TX|76107",
+        "lastDropoffKey": "1613 BELLE PLACE|FORT WORTH|TX|76107",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -1427,6 +1563,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -1545,7 +1683,23 @@
       "o2": 25,
       "bari": 55
     },
-    "deadheadCharge": 24,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 6,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "300 SOUTH PARK BOULEVARD|GRAPEVINE|TX|76051",
+        "lastDropoffKey": "201 WATERMERE DRIVE|SOUTHLAKE|TX|76092",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -1573,6 +1727,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -1684,6 +1840,26 @@
       "bari": 55
     },
     "deadheadCharge": 390,
+    "deadheadMiles": 78,
+    "deadheadDebug": {
+      "deadheadMiles": 78,
+      "deadheadCharge": 390,
+      "reason": "TIERED_RATE",
+      "debug": {
+        "dhMiles": 78,
+        "rate": 5,
+        "rateSource": "dh_rate_tier1",
+        "dh_start_miles": 30,
+        "dh_tier2_start_miles": 101,
+        "dh_tier3_start_miles": 0,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1301 PENNSYLVANIA AVENUE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "1910 TEXAS 108|STEPHENVILLE|TX|76401",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -1711,6 +1887,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -1799,7 +1977,23 @@
       "o2": 25,
       "bari": 55
     },
-    "deadheadCharge": 12,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 3,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1613 BELLE PLACE|FORT WORTH|TX|76107",
+        "lastDropoffKey": "1900 MISTLETOE BOULEVARD|FORT WORTH|TX|76104",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -1827,6 +2021,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -1937,7 +2133,23 @@
       "o2": 25,
       "bari": 55
     },
-    "deadheadCharge": 36,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 9,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "500 SOUTH HENDERSON STREET|FORT WORTH|TX|76104",
+        "lastDropoffKey": "5101 CORDOVA AVENUE|FORT WORTH|TX|76132",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -1965,6 +2177,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -2083,7 +2297,23 @@
       "o2": 25,
       "bari": 55
     },
-    "deadheadCharge": 24,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 6,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "300 SOUTH PARK BOULEVARD|GRAPEVINE|TX|76051",
+        "lastDropoffKey": "201 WATERMERE DRIVE|SOUTHLAKE|TX|76092",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -2111,6 +2341,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -2245,7 +2477,19 @@
       "o2": 25,
       "bari": 55
     },
-    "deadheadCharge": 160,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "2936 MARKUM DR|HALTOM CITY|TX|76117",
+        "lastDropoffKey": "2936 MARKUM DR|HALTOM CITY|TX|76117",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -2273,6 +2517,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -2383,7 +2629,23 @@
       "o2": 25,
       "bari": 55
     },
-    "deadheadCharge": 32,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 8,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "2112 FORUM PARKWAY|BEDFORD|TX|76021",
+        "lastDropoffKey": "4720 HOLIDAY LANE WEST|NORTH RICHLAND HILLS|TX|76180",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -2411,6 +2673,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -2529,7 +2793,23 @@
       "o2": 25,
       "bari": 55
     },
-    "deadheadCharge": 32,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 8,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "2112 FORUM PARKWAY|BEDFORD|TX|76021",
+        "lastDropoffKey": "4720 HOLIDAY LANE WEST|NORTH RICHLAND HILLS|TX|76180",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -2557,6 +2837,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -2675,7 +2957,23 @@
       "o2": 25,
       "bari": 55
     },
-    "deadheadCharge": 24,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 6,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "300 SOUTH PARK BOULEVARD|GRAPEVINE|TX|76051",
+        "lastDropoffKey": "201 WATERMERE DRIVE|SOUTHLAKE|TX|76092",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -2703,6 +3001,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -2842,7 +3142,19 @@
       "o2": 25,
       "bari": 55
     },
-    "deadheadCharge": 4,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "6931 RIVER PARK CIRCLE|FORT WORTH|TX|76116",
+        "lastDropoffKey": "6931 RIVER PARK CIRCLE|FORT WORTH|TX|76116",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -2870,6 +3182,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -2980,7 +3294,23 @@
       "o2": 25,
       "bari": 55
     },
-    "deadheadCharge": 88,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 22,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "508 BONNARDS PEAK ROAD|BURLESON|TX|76028",
+        "lastDropoffKey": "1111 SUMMIT AVENUE|FORT WORTH|TX|76102",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -3008,6 +3338,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -3147,7 +3479,19 @@
       "o2": 25,
       "bari": 55
     },
-    "deadheadCharge": 80,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "6799 GRANBURY ROAD|FORT WORTH|TX|76133",
+        "lastDropoffKey": "6799 GRANBURY ROAD|FORT WORTH|TX|76133",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -3175,6 +3519,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -3293,7 +3639,23 @@
       "o2": 25,
       "bari": 55
     },
-    "deadheadCharge": 12,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 3,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1650 W COLLEGE ST|GRAPEVINE|TX|76051",
+        "lastDropoffKey": "700 EAST STATE HIGHWAY 114|SOUTHLAKE|TX|76092",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -3321,6 +3683,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -3460,7 +3824,19 @@
       "o2": 25,
       "bari": 55
     },
-    "deadheadCharge": 76,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "3904 EMERALD OAKS DRIVE|FORT WORTH|TX|76117",
+        "lastDropoffKey": "3904 EMERALD OAKS DRIVE|FORT WORTH|TX|76117",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -3488,6 +3864,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -3606,7 +3984,23 @@
       "o2": 25,
       "bari": 55
     },
-    "deadheadCharge": 20,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 5,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "6100 HARRIS PKWY|FORT WORTH|TX|76132",
+        "lastDropoffKey": "4217 CUMBERLAND ROAD NORTH|FORT WORTH|TX|76116",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -3634,6 +4028,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -3771,7 +4167,19 @@
       "o2": 25,
       "bari": 55
     },
-    "deadheadCharge": 24,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "1613 BELLE PLACE|FORT WORTH|TX|76107",
+        "lastDropoffKey": "1613 BELLE PLACE|FORT WORTH|TX|76107",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -3799,6 +4207,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -3944,7 +4354,19 @@
       "o2": 25,
       "bari": 55
     },
-    "deadheadCharge": 160,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "11128 HAWKS LANDING ROAD|HASLET|TX|76052",
+        "lastDropoffKey": "11128 HAWKS LANDING ROAD|HASLET|TX|76052",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -3972,6 +4394,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -4115,7 +4539,19 @@
       "o2": 25,
       "bari": 55
     },
-    "deadheadCharge": 225,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "116 RAVEN BEND|HUDSON OAKS|TX|76087",
+        "lastDropoffKey": "116 RAVEN BEND|HUDSON OAKS|TX|76087",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -4143,6 +4579,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -4261,7 +4699,23 @@
       "o2": 25,
       "bari": 55
     },
-    "deadheadCharge": 16,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 4,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "3452 BANDERA RANCH ROAD|ROANOKE|TX|76262",
+        "lastDropoffKey": "10864 TEXAS HEALTH TRL|FORT WORTH|TX|76244",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -4289,6 +4743,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -4434,7 +4890,19 @@
       "o2": 25,
       "bari": 55
     },
-    "deadheadCharge": 175,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "2412 CRAVENS ROAD|FORT WORTH|TX|76112",
+        "lastDropoffKey": "2412 CRAVENS ROAD|FORT WORTH|TX|76112",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -4462,6 +4930,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -4580,7 +5050,23 @@
       "o2": 25,
       "bari": 55
     },
-    "deadheadCharge": 24,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 6,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "300 SOUTH PARK BOULEVARD|GRAPEVINE|TX|76051",
+        "lastDropoffKey": "201 WATERMERE DRIVE|SOUTHLAKE|TX|76092",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -4608,6 +5094,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -4726,7 +5214,23 @@
       "o2": 25,
       "bari": 55
     },
-    "deadheadCharge": 20,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 5,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1155 NORTHWEST JOHN JONES DRIVE|BURLESON|TX|76028",
+        "lastDropoffKey": "11801 SOUTH FREEWAY|BURLESON|TX|76028",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -4754,6 +5258,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -4872,7 +5378,23 @@
       "o2": 25,
       "bari": 55
     },
-    "deadheadCharge": 16,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 4,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "10864 TEXAS HEALTH TRL|FORT WORTH|TX|76244",
+        "lastDropoffKey": "3452 BANDERA RANCH ROAD|ROANOKE|TX|76262",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -4900,6 +5422,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -5039,7 +5563,19 @@
       "o2": 25,
       "bari": 55
     },
-    "deadheadCharge": 72,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "5013 HIGHLAND MEADOW DRIVE|FORT WORTH|TX|76132",
+        "lastDropoffKey": "5013 HIGHLAND MEADOW DRIVE|FORT WORTH|TX|76132",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -5067,6 +5603,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -5185,7 +5723,23 @@
       "o2": 25,
       "bari": 55
     },
-    "deadheadCharge": 20,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 5,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "11801 SOUTH FREEWAY|BURLESON|TX|76028",
+        "lastDropoffKey": "1155 NORTHWEST JOHN JONES DRIVE|BURLESON|TX|76028",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -5213,6 +5767,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -5352,7 +5908,19 @@
       "o2": 25,
       "bari": 55
     },
-    "deadheadCharge": 72,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "RETURNS_TO_START_ADDRESS",
+      "debug": {
+        "tripShape": "ROUND_TRIP",
+        "firstPickupKey": "6151 BRYANT IRVIN ROAD|FORT WORTH|TX|76132",
+        "lastDropoffKey": "6151 BRYANT IRVIN ROAD|FORT WORTH|TX|76132",
+        "returnsToStart": true
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -5380,6 +5948,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -5498,7 +6068,23 @@
       "o2": 25,
       "bari": 55
     },
-    "deadheadCharge": 24,
+    "deadheadCharge": 0,
+    "deadheadMiles": 0,
+    "deadheadDebug": {
+      "deadheadMiles": 0,
+      "deadheadCharge": 0,
+      "reason": "BELOW_THRESHOLD",
+      "debug": {
+        "dhMiles": 6,
+        "dh_start_miles": 30,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "300 SOUTH PARK BOULEVARD|GRAPEVINE|TX|76051",
+        "lastDropoffKey": "201 WATERMERE DRIVE|SOUTHLAKE|TX|76092",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -5526,6 +6112,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }

@@ -105,7 +105,27 @@
       "o2": 75,
       "bari": 55
     },
-    "deadheadCharge": 343,
+    "deadheadCharge": 245,
+    "deadheadMiles": 49,
+    "deadheadDebug": {
+      "deadheadMiles": 49,
+      "deadheadCharge": 245,
+      "reason": "TIERED_RATE",
+      "debug": {
+        "dhMiles": 49,
+        "rate": 5,
+        "rateSource": "dh_rate_tier1",
+        "dh_start_miles": 30,
+        "dh_tier2_start_miles": 101,
+        "dh_tier3_start_miles": 0,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "1400 8TH AVENUE|FORT WORTH|TX|76104",
+        "lastDropoffKey": "3351 WATERVIEW PARKWAY|RICHARDSON|TX|75080",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -133,6 +153,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }

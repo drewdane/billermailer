@@ -106,6 +106,26 @@
       "bari": 0
     },
     "deadheadCharge": 1,
+    "deadheadMiles": 1,
+    "deadheadDebug": {
+      "deadheadMiles": 1,
+      "deadheadCharge": 1,
+      "reason": "TIERED_RATE",
+      "debug": {
+        "dhMiles": 1,
+        "rate": 1,
+        "rateSource": "dh_rate_tier1",
+        "dh_start_miles": 0,
+        "dh_tier2_start_miles": 31,
+        "dh_tier3_start_miles": 0,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "10864 TEXAS HEALTH TRL|FORT WORTH|TX|76244",
+        "lastDropoffKey": "4240 GOLDEN TRIANGLE BOULEVARD|FORT WORTH|TX|76244",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -133,6 +153,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
@@ -244,6 +266,26 @@
       "bari": 0
     },
     "deadheadCharge": 1,
+    "deadheadMiles": 1,
+    "deadheadDebug": {
+      "deadheadMiles": 1,
+      "deadheadCharge": 1,
+      "reason": "TIERED_RATE",
+      "debug": {
+        "dhMiles": 1,
+        "rate": 1,
+        "rateSource": "dh_rate_tier1",
+        "dh_start_miles": 0,
+        "dh_tier2_start_miles": 31,
+        "dh_tier3_start_miles": 0,
+        "tripShape": "ONE_WAY",
+        "firstPickupKey": "10864 TEXAS HEALTH TRL|FORT WORTH|TX|76244",
+        "lastDropoffKey": "4240 GOLDEN TRIANGLE BOULEVARD|FORT WORTH|TX|76244",
+        "returnsToStart": false,
+        "firstPickupInLoop": false,
+        "lastDropoffInLoop": false
+      }
+    },
     "waitConfig": {
       "wait_rate": "$25.00",
       "wait_block_min": "30",
@@ -271,6 +313,8 @@
       "WaitTotalMinutes": 0,
       "AddDeadhead": false,
       "DeadheadMiles": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0
     }
