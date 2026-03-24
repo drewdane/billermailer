@@ -146,7 +146,14 @@ function priceGroupedTrip(groupedTrip, rateRow, opts = {}) {
     rateRow,
   });
 
-  const base = num(rateRow[bKey]);
+  const baseFromRate = num(rateRow[bKey]);
+
+  let base = baseFromRate;
+
+  if (shape === "MULTI_STOP") {
+    const legCount = Number(groupedTrip.LegCount || legs.length || 0);
+    base = (baseFromRate / 2) * legCount;
+  }
 
   const { perMile, source: perMileSource } = resolvePerMile({
     rateRow,
@@ -211,6 +218,11 @@ function priceGroupedTrip(groupedTrip, rateRow, opts = {}) {
     pricingType: "NORMAL",
     status: groupedTrip.RideStatus,
     base,
+    baseFromRate,
+    baseCalc:
+      shape === "MULTI_STOP"
+        ? "MULTI_STOP_HALF_RT_PER_LEG"
+        : "STANDARD_BASE",
     mileage,
     accessories: accessoryLines,
     cancelFee: 0,

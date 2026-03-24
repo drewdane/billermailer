@@ -71,6 +71,8 @@
       "pricingType": "NORMAL",
       "status": "Rode",
       "base": 45,
+      "baseFromRate": 45,
+      "baseCalc": "STANDARD_BASE",
       "mileage": 8,
       "accessories": [
         {

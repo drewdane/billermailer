@@ -526,6 +526,7 @@ function renderRows() {
       dhAmt.textContent = fmtMoney(computeDeadheadChargeFromReview(r));
       refreshRowTotal();
       refreshDetailPanel();
+      if (window.markDirty) window.markDirty();
     }
 
     function refreshDetailPanel() {
@@ -546,6 +547,7 @@ function renderRows() {
 
       refreshRowTotal();
       refreshDetailPanel();
+      if (window.markDirty) window.markDirty();
     };
 
     reclCtl.cb.onchange = () => {
@@ -562,12 +564,14 @@ function renderRows() {
 
       refreshRowTotal();
       refreshDetailPanel();
+      if (window.markDirty) window.markDirty();
     };
 
     hzCtl.cb.onchange = () => {
       r.review.AddHazmat = hzCtl.cb.checked;
       refreshRowTotal();
       refreshDetailPanel();
+      if (window.markDirty) window.markDirty();
     };
 
     o2Ctl.cb.onchange = () => {
@@ -579,6 +583,7 @@ function renderRows() {
 
       refreshRowTotal();
       refreshDetailPanel();
+      if (window.markDirty) window.markDirty();
     };
 
     bariCtl.cb.onchange = () => {
@@ -590,6 +595,7 @@ function renderRows() {
 
       refreshRowTotal();
       refreshDetailPanel();
+      if (window.markDirty) window.markDirty();
     };
 
     dhCb.onchange = () => {
@@ -613,12 +619,14 @@ function renderRows() {
       r.review.AddWait = waitCb.checked;
       refreshRowTotal();
       refreshDetailPanel();
+      if (window.markDirty) window.markDirty();
     };
 
     waitMinutesInput.oninput = () => {
       r.review.WaitTotalMinutes = Number(waitMinutesInput.value || 0);
       refreshRowTotal();
       refreshDetailPanel();
+      if (window.markDirty) window.markDirty();
     };
 
     waitMinutesInput.onkeydown = (e) => {
@@ -632,6 +640,7 @@ function renderRows() {
       r.review.NoCharge = noChargeCtl.cb.checked;
       refreshRowTotal();
       refreshDetailPanel();
+      if (window.markDirty) window.markDirty();
     };
 
     overrideCb.onchange = () => {
@@ -639,12 +648,14 @@ function renderRows() {
       overrideInput.disabled = !overrideCb.checked;
       refreshRowTotal();
       refreshDetailPanel();
+      if (window.markDirty) window.markDirty();
     };
 
     overrideInput.oninput = () => {
       r.review.QuoteAmount = Number(overrideInput.value || 0);
       refreshRowTotal();
       refreshDetailPanel();
+      if (window.markDirty) window.markDirty();
     };
 
     overrideInput.onkeydown = (e) => {

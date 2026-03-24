@@ -237,7 +237,8 @@ const HTML = `<!doctype html>
 let INDEX=null;
 let current = { acct:null, period:null };
 let ITEMS=[];
-let OVERRIDES={ invoiceType:"single", overrides:{} };
+let OVERRIDES={ invoiceType:"single", reviewed:false, reviewedAt:null, overrides:{} };
+let DIRTY = false;
 
 window.BM_GLOBALS = {
   fuelSurchargeEnabled: false,
@@ -260,6 +261,51 @@ function updateFuelGlobals() {
 }
 
 function esc(s){ return String(s??"").replace(/[&<>"]/g, c=>({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;" }[c])); }
+
+function markDirty() {
+  DIRTY = true;
+  renderFacilityReviewState();
+}
+
+function renderFacilityReviewState() {
+  if (!INDEX || !current.acct || !current.period) return;
+
+  const link = document.querySelector(
+    'a[data-acct="' + current.acct + '"][data-period="' + current.period + '"]'
+  );
+  if (!link) return;
+
+  const row = link.parentElement;
+  const card = row?.parentElement;
+  if (!row || !card) return;
+
+  let pill = row.querySelector(".review-state-pill");
+  if (!pill) {
+    pill = document.createElement("span");
+    pill.className = "pill review-state-pill";
+    pill.style.marginLeft = "6px";
+    row.appendChild(pill);
+  }
+
+  if (DIRTY) {
+    pill.textContent = "Unsaved Changes";
+    pill.style.background = "#fee2e2";
+    pill.style.color = "#991b1b";
+    card.style.background = "#fff7ed";
+  } else if (OVERRIDES.reviewed) {
+    pill.textContent = "Reviewed";
+    pill.style.background = "#dcfce7";
+    pill.style.color = "#166534";
+    card.style.background = "#f0fdf4";
+  } else {
+    pill.textContent = "";
+    pill.style.background = "";
+    pill.style.color = "";
+    card.style.background = "";
+  }
+}
+
+window.markDirty = markDirty;
 
 async function loadIndex(){
   const facList = document.getElementById("facList");
@@ -325,12 +371,19 @@ async function loadIndex(){
 
 async function openSet(acct, period){
   current = { acct, period };
+  DIRTY = false;
   document.getElementById("status").textContent = acct + " / " + period;
   document.getElementById("toolbar").style.display = "flex";
+  document.getElementById("invoiceType").onchange = () => {
+    markDirty();
+  };
   ITEMS = await (await fetch("/api/items?acct="+encodeURIComponent(acct)+"&period="+encodeURIComponent(period))).json();
   OVERRIDES = await (await fetch("/api/overrides?acct="+encodeURIComponent(acct)+"&period="+encodeURIComponent(period))).json();
 
-    for(const it of ITEMS){
+  OVERRIDES.reviewed = !!OVERRIDES.reviewed;
+  OVERRIDES.reviewedAt = OVERRIDES.reviewedAt || null;
+
+  for(const it of ITEMS){
     const o = (OVERRIDES.overrides||{})[it.LineId];
     if(!o) continue;
 
@@ -354,6 +407,10 @@ async function openSet(acct, period){
     it.review.WaitTotalMinutes = Number(o.WaitTotalMinutes || 0);
     it.review.MatchToQuote = !!o.MatchToQuote;
     it.review.QuoteAmount = Number(o.QuoteAmount || 0);
+    if (o.CancelOverride) it.review.CancelOverride = o.CancelOverride;
+    if (typeof o.NoCharge === "boolean") it.review.NoCharge = o.NoCharge;
+    if (typeof o.AddNeedWC === "boolean") it.review.AddNeedWC = o.AddNeedWC;
+    if (typeof o.AddRECL === "boolean") it.review.AddRECL = o.AddRECL;
   }
 
     const invoiceTypeEl = document.getElementById("invoiceType");
@@ -361,6 +418,7 @@ async function openSet(acct, period){
     document.getElementById("invoiceType").value = OVERRIDES.invoiceType || "single";
 
   updateFuelGlobals();
+  renderFacilityReviewState();
 }
 
 async function save(){
@@ -372,6 +430,11 @@ async function save(){
       Note: r.Note,
       MoveToAccountCode: r.MoveToAccountCode || "",
 
+      AddNeedWC: !!r.review?.AddNeedWC,
+      AddRECL: !!r.review?.AddRECL,
+      DeadheadMiles: Number(r.review?.DeadheadMiles || 0),
+      CancelOverride: r.review?.CancelOverride || "AUTO",
+      NoCharge: !!r.review?.NoCharge,
       AddHazmat: !!r.review?.AddHazmat,
       AddO2: !!r.review?.AddO2,
       AddBari: !!r.review?.AddBari,
@@ -386,9 +449,24 @@ async function save(){
   const resp = await fetch("/api/overrides", {
     method:"POST",
     headers:{ "Content-Type":"application/json" },
-    body: JSON.stringify({ acct: current.acct, period: current.period, overrides })
+    body: JSON.stringify({
+      acct: current.acct,
+      period: current.period,
+      invoiceType: document.getElementById("invoiceType").value || "single",
+      reviewed: true,
+      reviewedAt: new Date().toISOString(),
+      overrides
+    })
   });
   const msg = document.getElementById("saveMsg");
+
+  if (resp.ok) {
+    OVERRIDES.reviewed = true;
+    OVERRIDES.reviewedAt = new Date().toISOString();
+    DIRTY = false;
+    renderFacilityReviewState();
+  }
+
   msg.textContent = resp.ok ? "Saved." : "Save failed.";
   setTimeout(()=>msg.textContent="", 1500);
 }
@@ -456,9 +534,11 @@ const server = http.createServer((req, res) => {
         const acct = payload.acct;
         const period = payload.period;
         const invoiceType = payload.invoiceType || "single";
+        const reviewed = !!payload.reviewed;
+        const reviewedAt = payload.reviewedAt || null;
         const overrides = payload.overrides || {};
         const p = safeJoin(acct, period, "overrides.json");
-        writeJson(p, { invoiceType, overrides });
+        writeJson(p, { invoiceType, reviewed, reviewedAt, overrides });
         send(res, 200, JSON.stringify({ ok: true }), "application/json");
       });
       return;

@@ -71,6 +71,8 @@
       "pricingType": "NORMAL",
       "status": "Rode",
       "base": 115,
+      "baseFromRate": 115,
+      "baseCalc": "STANDARD_BASE",
       "mileage": 100,
       "accessories": [],
       "cancelFee": 0,
@@ -238,6 +240,8 @@
       "pricingType": "NORMAL",
       "status": "Rode",
       "base": 115,
+      "baseFromRate": 115,
+      "baseCalc": "STANDARD_BASE",
       "mileage": 75,
       "accessories": [
         {
@@ -444,6 +448,8 @@
       "pricingType": "NORMAL",
       "status": "Rode",
       "base": 110,
+      "baseFromRate": 110,
+      "baseCalc": "STANDARD_BASE",
       "mileage": 90,
       "accessories": [],
       "cancelFee": 0,
@@ -609,6 +615,8 @@
       "pricingType": "NORMAL",
       "status": "Rode",
       "base": 115,
+      "baseFromRate": 115,
+      "baseCalc": "STANDARD_BASE",
       "mileage": 40,
       "accessories": [
         {
@@ -782,6 +790,8 @@
       "pricingType": "NORMAL",
       "status": "Rode",
       "base": 115,
+      "baseFromRate": 115,
+      "baseCalc": "STANDARD_BASE",
       "mileage": 100,
       "accessories": [
         {
@@ -955,6 +965,8 @@
       "pricingType": "NORMAL",
       "status": "Rode",
       "base": 55,
+      "baseFromRate": 55,
+      "baseCalc": "STANDARD_BASE",
       "mileage": 25,
       "accessories": [
         {
@@ -1130,6 +1142,8 @@
       "pricingType": "NORMAL",
       "status": "Rode",
       "base": 115,
+      "baseFromRate": 115,
+      "baseCalc": "STANDARD_BASE",
       "mileage": 30,
       "accessories": [],
       "cancelFee": 0,
@@ -1297,6 +1311,8 @@
       "pricingType": "NORMAL",
       "status": "Rode",
       "base": 55,
+      "baseFromRate": 55,
+      "baseCalc": "STANDARD_BASE",
       "mileage": 60,
       "accessories": [
         {
@@ -1472,6 +1488,8 @@
       "pricingType": "NORMAL",
       "status": "Rode",
       "base": 55,
+      "baseFromRate": 55,
+      "baseCalc": "STANDARD_BASE",
       "mileage": 55,
       "accessories": [
         {

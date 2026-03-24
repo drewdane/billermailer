@@ -71,6 +71,8 @@
       "pricingType": "NORMAL",
       "status": "Rode",
       "base": 100,
+      "baseFromRate": 100,
+      "baseCalc": "STANDARD_BASE",
       "mileage": 115,
       "accessories": [
         {
@@ -248,6 +250,8 @@
       "pricingType": "NORMAL",
       "status": "Rode",
       "base": 60,
+      "baseFromRate": 60,
+      "baseCalc": "STANDARD_BASE",
       "mileage": 28,
       "accessories": [
         {
@@ -432,6 +436,8 @@
       "pricingType": "NORMAL",
       "status": "Rode",
       "base": 100,
+      "baseFromRate": 100,
+      "baseCalc": "STANDARD_BASE",
       "mileage": 10,
       "accessories": [
         {
