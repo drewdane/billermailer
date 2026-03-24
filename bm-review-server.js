@@ -223,7 +223,16 @@ const HTML = `<!doctype html>
             </select>
           </label>
 
+          <label style="display:flex;align-items:center;gap:6px;color:#374151">
+            <span>Output</span>
+            <select id="deliveryFormat">
+              <option value="qbo">QBO</option>
+              <option value="pdf">PDF</option>
+            </select>
+          </label>
+
           <button onclick="save()">Save</button>
+          <button id="exportBtn">Export</button>
           <span id="saveMsg" style="color:#666"></span>
         </div>
       </div>
@@ -237,7 +246,7 @@ const HTML = `<!doctype html>
 let INDEX=null;
 let current = { acct:null, period:null };
 let ITEMS=[];
-let OVERRIDES={ invoiceType:"single", reviewed:false, reviewedAt:null, overrides:{} };
+let OVERRIDES={ invoiceType:"single", deliveryFormat:"qbo", reviewed:false, reviewedAt:null, overrides:{} };
 let DIRTY = false;
 
 window.BM_GLOBALS = {
@@ -306,6 +315,28 @@ function renderFacilityReviewState() {
 }
 
 window.markDirty = markDirty;
+
+async function runExport() {
+  if (!current.acct || !current.period) return;
+
+  const invoiceType = document.getElementById("invoiceType").value || "single";
+  const deliveryFormat = document.getElementById("deliveryFormat").value || "qbo";
+
+  if (deliveryFormat !== "qbo") {
+    alert("PDF export not implemented yet");
+    return;
+  }
+
+  const exportUrl =
+    "/api/export-qbo?acct=" +
+    encodeURIComponent(current.acct) +
+    "&period=" +
+    encodeURIComponent(current.period) +
+    "&invoiceType=" +
+    encodeURIComponent(invoiceType);
+
+  window.location.href = exportUrl;
+}
 
 async function loadIndex(){
   const facList = document.getElementById("facList");
@@ -377,11 +408,16 @@ async function openSet(acct, period){
   document.getElementById("invoiceType").onchange = () => {
     markDirty();
   };
+  document.getElementById("deliveryFormat").onchange = () => {
+    markDirty();
+  };
+  document.getElementById("deliveryFormat").value = OVERRIDES.deliveryFormat || "qbo";
   ITEMS = await (await fetch("/api/items?acct="+encodeURIComponent(acct)+"&period="+encodeURIComponent(period))).json();
   OVERRIDES = await (await fetch("/api/overrides?acct="+encodeURIComponent(acct)+"&period="+encodeURIComponent(period))).json();
 
   OVERRIDES.reviewed = !!OVERRIDES.reviewed;
   OVERRIDES.reviewedAt = OVERRIDES.reviewedAt || null;
+  OVERRIDES.deliveryFormat = OVERRIDES.deliveryFormat || "qbo";
 
   for(const it of ITEMS){
     const o = (OVERRIDES.overrides||{})[it.LineId];
@@ -416,6 +452,9 @@ async function openSet(acct, period){
     const invoiceTypeEl = document.getElementById("invoiceType");
     invoiceTypeEl.value = OVERRIDES.invoiceType || "single";
     document.getElementById("invoiceType").value = OVERRIDES.invoiceType || "single";
+    document.getElementById("exportBtn").onclick = () => {
+      runExport();
+    };
 
   updateFuelGlobals();
   renderFacilityReviewState();
@@ -432,7 +471,6 @@ async function save(){
 
       AddNeedWC: !!r.review?.AddNeedWC,
       AddRECL: !!r.review?.AddRECL,
-      DeadheadMiles: Number(r.review?.DeadheadMiles || 0),
       CancelOverride: r.review?.CancelOverride || "AUTO",
       NoCharge: !!r.review?.NoCharge,
       AddHazmat: !!r.review?.AddHazmat,
@@ -453,11 +491,13 @@ async function save(){
       acct: current.acct,
       period: current.period,
       invoiceType: document.getElementById("invoiceType").value || "single",
+      deliveryFormat: document.getElementById("deliveryFormat").value || "qbo",
       reviewed: true,
       reviewedAt: new Date().toISOString(),
       overrides
     })
   });
+
   const msg = document.getElementById("saveMsg");
 
   if (resp.ok) {
@@ -534,14 +574,152 @@ const server = http.createServer((req, res) => {
         const acct = payload.acct;
         const period = payload.period;
         const invoiceType = payload.invoiceType || "single";
+        const deliveryFormat = payload.deliveryFormat || "qbo";
         const reviewed = !!payload.reviewed;
         const reviewedAt = payload.reviewedAt || null;
         const overrides = payload.overrides || {};
         const p = safeJoin(acct, period, "overrides.json");
-        writeJson(p, { invoiceType, reviewed, reviewedAt, overrides });
+        writeJson(p, { invoiceType, deliveryFormat, reviewed, reviewedAt, overrides });
         send(res, 200, JSON.stringify({ ok: true }), "application/json");
       });
       return;
+    }
+
+    if (u.pathname === "/api/export-qbo" && req.method === "GET") {
+
+      function fmtQboDate(iso) {
+        const s = String(iso || "").trim();
+        const m = s.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+        if (!m) return s;
+
+        const year = m[1];
+        const month = String(Number(m[2]));
+        const day = String(Number(m[3]));
+
+        return month + "/" + day + "/" + year;
+      }
+
+      try {
+        const acct = String(u.query.acct || "").trim();
+        const period = String(u.query.period || "").trim();
+        const invoiceType = String(u.query.invoiceType || "single").trim();
+
+        if (!acct || !period) {
+          return send(res, 400, "Missing acct/period", "text/plain; charset=utf-8");
+        }
+
+        const itemsPath = safeJoin(acct, period, "items.json");
+        const overridesPath = safeJoin(acct, period, "overrides.json");
+
+        if (!fs.existsSync(itemsPath)) {
+          return send(res, 404, "Missing items.json", "text/plain; charset=utf-8");
+        }
+
+        const rows = JSON.parse(fs.readFileSync(itemsPath, "utf8"));
+        const overrides = fs.existsSync(overridesPath)
+          ? JSON.parse(fs.readFileSync(overridesPath, "utf8"))
+          : { overrides: {} };
+
+        const { buildBillableLines } = require("./src/review/buildBillableLines");
+
+        const lines = [];
+
+        for (const r of rows) {
+          const o = overrides.overrides?.[r.LineId] || {};
+          r.review = { ...(r.review || {}), ...o };
+
+          const built = buildBillableLines(r, {});
+          lines.push(...built);
+        }
+
+        // --- GROUPING ---
+        let grouped = [];
+
+        function compactDateForDocNum(iso) {
+          const s = String(iso || "").trim();
+          const m = s.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+          if (!m) return "000000";
+          return m[2] + m[3] + m[1].slice(-2); // MMDDYY
+        }
+
+        function shortAcctCode(acct) {
+          const words = String(acct || "")
+            .replace(/[^A-Za-z0-9 ]+/g, " ")
+            .trim()
+            .split(/\s+/)
+            .filter(Boolean);
+
+          if (!words.length) return "INV";
+
+          if (words.length >= 2) {
+            return words.map(w => w[0].toUpperCase()).join("").slice(0, 6);
+          }
+
+          return words[0].toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0, 6) || "INV";
+        }
+
+        function buildInvoiceNo(acct, periodEndIso, index = null) {
+          const base = shortAcctCode(acct) + "-" + compactDateForDocNum(periodEndIso);
+
+          if (index == null) return base;
+
+          return base + "-" + String(index).padStart(2, "0");
+        }
+
+        if (invoiceType === "single") {
+          grouped = [{
+            invoiceNo: buildInvoiceNo(acct, period.split("_")[2] || "", null),
+            customer: acct,
+            lines,
+          }];
+        } else {
+          const byTrip = {};
+          for (const l of lines) {
+            const key = l.lineId;
+            if (!byTrip[key]) byTrip[key] = [];
+            byTrip[key].push(l);
+          }
+
+          grouped = Object.entries(byTrip).map(([k, v], i) => ({
+            invoiceNo: buildInvoiceNo(acct, period.split("_")[2] || "", i + 1),
+            customer: acct,
+            lines: v,
+          }));
+        }
+
+        // --- BUILD CSV ---
+        const csvRows = [
+          ["Customer", "InvoiceNo", "InvoiceDate", "DueDate", "ServiceDate", "Description", "Amount"],
+        ];
+
+        for (const inv of grouped) {
+          for (const l of inv.lines) {
+
+            const invoiceDate = fmtQboDate(period.split("_")[2] || "");
+            csvRows.push([
+              inv.customer,
+              inv.invoiceNo,
+              invoiceDate,
+              invoiceDate,
+              fmtQboDate(l.rideDateISO || ""),
+              l.lineDescription,
+              l.amount.toFixed(2),
+            ]);
+          }
+        }
+
+        const csv = csvRows.map(r => r.map(x => `"${String(x).replace(/"/g, '""')}"`).join(",")).join("\n");
+
+        res.writeHead(200, {
+          "Content-Type": "text/csv",
+          "Content-Disposition": `attachment; filename="${acct}_${period}.csv"`,
+        });
+        return res.end(csv);
+
+      } catch (err) {
+        console.error(err);
+        return send(res, 500, { error: "Export failed" });
+      }
     }
 
     send(res, 404, "not found", "text/plain; charset=utf-8");

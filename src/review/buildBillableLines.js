@@ -2,6 +2,17 @@ function money(n) {
   return Number(Number(n || 0).toFixed(2));
 }
 
+function prettyTimeChargeLabel(code) {
+  const c = String(code || "").toUpperCase();
+
+  if (c === "AFTER_HOURS") return "After Hours";
+  if (c === "THIRD_SHIFT") return "3rd Shift";
+  if (c === "WEEKEND") return "Weekend";
+  if (c === "HOLIDAY") return "Holiday";
+
+  return String(code || "");
+}
+
 function fmtDateForLine(iso) {
   if (!iso) return "";
   const [y, m, d] = String(iso).split("-");
@@ -163,6 +174,17 @@ function buildBillableLines(r, globals = {}) {
   }
 
   if (r.review?.NoCharge) {
+    addLine(
+      lines,
+      r,
+      "NO_CHARGE",
+      `No Charge - ${prefix}${route ? " - " + route : ""}`,
+      0.01
+    );
+
+    // force true zero after addLine's >0 guard
+    lines[lines.length - 1].amount = 0;
+
     return lines;
   }
 
@@ -189,7 +211,7 @@ function buildBillableLines(r, globals = {}) {
     lines,
     r,
     "BASE",
-    `Transport Base - ${prefix}${route ? " - " + route : ""}`,
+    `Transport ${prefix}${route ? " - " + route : ""}`,
     Number(r.pricing?.base || 0)
   );
 
@@ -204,12 +226,28 @@ function buildBillableLines(r, globals = {}) {
     { miles: billableMiles }
   );
 
+  const isRtBase =
+    String(r.TripShape || "").toUpperCase() === "ROUND_TRIP" ||
+    String(r.TripShape || "").toUpperCase() === "MULTI_STOP";
+
   if (r.review?.AddNeedWC) {
-    addLine(lines, r, "NEED_WC", "Need WC", accessoryAmountByCode(r, "NeedWC"));
+    addLine(
+      lines,
+      r,
+      "NEED_WC",
+      "Need WC",
+      Number(isRtBase ? r.availableWcAccessories?.needwc_rt : r.availableWcAccessories?.needwc_1w) || 0
+    );
   }
 
   if (r.review?.AddRECL) {
-    addLine(lines, r, "RECL", "Recliner", accessoryAmountByCode(r, "RECL"));
+    addLine(
+      lines,
+      r,
+      "RECL",
+      "Recliner",
+      Number(isRtBase ? r.availableWcAccessories?.recl_rt : r.availableWcAccessories?.recl_1w) || 0
+    );
   }
 
   if (r.review?.AddHazmat) {
@@ -248,7 +286,13 @@ function buildBillableLines(r, globals = {}) {
 
   const timeCharge = automaticTimeCharge(r);
   if (timeCharge && timeCharge.amount > 0) {
-    addLine(lines, r, timeCharge.code, timeCharge.label, timeCharge.amount);
+    addLine(
+      lines,
+      r,
+      timeCharge.code,
+      prettyTimeChargeLabel(timeCharge.code),
+      timeCharge.amount
+    );
   }
 
   const fuel = fuelSurchargeAmount(r, globals);
