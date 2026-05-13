@@ -448,7 +448,12 @@ function findBestNextIndex(bucketLegs, unusedIndexes, currentLeg) {
   return matches.length ? matches[0] : null;
 }
 
-function groupTrips(rawLegs) {
+function groupTrips(rawLegs, options = {}) {
+  const canGroupRoundTrip =
+    typeof options.canGroupRoundTrip === "function"
+      ? options.canGroupRoundTrip
+      : () => true;
+
   // First bucket by account + local service date + rider
   const buckets = new Map();
 
@@ -475,6 +480,12 @@ function groupTrips(rawLegs) {
         continue;
       }
 
+      if (!canGroupRoundTrip(seed)) {
+        unusedIndexes.delete(startIdx);
+        groups.push(buildGroupedTrip([seed], groups.length));
+        continue;
+      }
+
       const chain = [seed];
       unusedIndexes.delete(startIdx);
 
@@ -486,6 +497,7 @@ function groupTrips(rawLegs) {
         if (nextIdx == null) break;
 
         const nextLeg = bucketLegs[nextIdx];
+
         chain.push(nextLeg);
         unusedIndexes.delete(nextIdx);
         current = nextLeg;

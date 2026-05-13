@@ -1,0 +1,46 @@
+{
+  "invoiceType": "single",
+  "deliveryFormat": "qbo",
+  "reviewed": true,
+  "reviewedAt": "2026-03-25T21:03:33.759Z",
+  "overrides": {
+    "2026-03-03|James L West|Annabesser_Barr|50222": {
+      "Action": "INCLUDE",
+      "Modifier": "NONE",
+      "Note": "",
+      "MoveToAccountCode": "",
+      "AddNeedWC": false,
+      "AddRECL": false,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
+      "AddHazmat": false,
+      "AddO2": false,
+      "AddBari": false,
+      "AddDeadhead": false,
+      "DeadheadMiles": 2,
+      "AddWait": false,
+      "WaitTotalMinutes": 0,
+      "MatchToQuote": false,
+      "QuoteAmount": 0
+    },
+    "2026-03-05|James L West|John_Boyle|50306": {
+      "Action": "INCLUDE",
+      "Modifier": "NONE",
+      "Note": "",
+      "MoveToAccountCode": "",
+      "AddNeedWC": false,
+      "AddRECL": false,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
+      "AddHazmat": false,
+      "AddO2": false,
+      "AddBari": false,
+      "AddDeadhead": false,
+      "DeadheadMiles": 1,
+      "AddWait": false,
+      "WaitTotalMinutes": 0,
+      "MatchToQuote": false,
+      "QuoteAmount": 0
+    }
+  }
+}

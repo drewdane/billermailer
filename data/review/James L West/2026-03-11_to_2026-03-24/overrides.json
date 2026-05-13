@@ -1,0 +1,28 @@
+{
+  "invoiceType": "single",
+  "deliveryFormat": "qbo",
+  "reviewed": true,
+  "reviewedAt": "2026-04-03T17:32:20.985Z",
+  "overrides": {
+    "2026-03-24|James L West|Philip_Davis|50948": {
+      "Action": "INCLUDE",
+      "Modifier": "NONE",
+      "Note": "",
+      "MoveToAccountCode": "",
+      "AddNeedWC": false,
+      "AddRECL": false,
+      "AddHazmat": false,
+      "AddO2": false,
+      "AddBari": false,
+      "AddDeadhead": false,
+      "DeadheadMiles": 1,
+      "AddWait": false,
+      "WaitTotalMinutes": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
+      "MatchToQuote": false,
+      "QuoteAmount": 0,
+      "TripTypeOverride": ""
+    }
+  }
+}

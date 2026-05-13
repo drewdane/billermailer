@@ -171,7 +171,54 @@ const records = parse(raw, {
   relax_column_count: true,
 });
 
-const groupedTrips = groupTrips(records);
+const rateRows = loadRateSheet(ratesPath);
+const rateLookupFn = makeRateLookup(rateRows);
+
+function moneyNum(v) {
+  const cleaned = String(v ?? "")
+    .replace(/\$/g, "")
+    .replace(/,/g, "")
+    .trim();
+
+  const n = Number(cleaned || 0);
+  return Number.isFinite(n) ? n : 0;
+}
+
+function hasRoundTripRateForLeg(leg) {
+  const rawMobility = String(leg.Mobility || "").trim().toUpperCase();
+  const mobility =
+    rawMobility === "A" ? "AMBU" :
+    rawMobility === "S" ? "STR" :
+    rawMobility;
+  const rateRow = rateLookupFn({
+    ...leg,
+    Mobility: mobility,
+    BillingClass: billingClassFor(leg),
+  }) || {};
+
+  if (mobility === "AMBU") {
+    return moneyNum(rateRow.base_rt_ambu) > 0;
+  }
+
+  if (mobility === "WC") {
+    return (
+      moneyNum(rateRow.base_rt_wc) > 0 ||
+      moneyNum(rateRow.needwc_rt) > 0 ||
+      moneyNum(rateRow.recl_rt) > 0
+    );
+  }
+
+  if (mobility === "STR") {
+    return moneyNum(rateRow.base_rt_str) > 0;
+  }
+
+  // Unknown mobility: don't suppress grouping unless we know it lacks a rate.
+  return true;
+}
+
+const groupedTrips = groupTrips(records, {
+  canGroupRoundTrip: hasRoundTripRateForLeg,
+});
 
 const allIsos = groupedTrips
   .map((r) => rideDateToISO(r.RideDate) || String(r.RideDateISO || "").trim())
@@ -181,9 +228,6 @@ const allIsos = groupedTrips
 const batchStart = allIsos[0] || "unknown_start";
 const batchEnd = allIsos[allIsos.length - 1] || "unknown_end";
 const batchPeriodKey = `${batchStart}_to_${batchEnd}`;
-
-const rateRows = loadRateSheet(ratesPath);
-const rateLookupFn = makeRateLookup(rateRows);
 
 let badDate = 0;
 let missingAccount = 0;
@@ -214,8 +258,19 @@ for (const r of groupedTrips) {
   const notesFull = combinedComments(r);
 
   const billingClass = billingClassFor(r);
+
+  // Apply TripTypeOverride if present (from saved overrides)
+  const override = r.review?.TripTypeOverride || "";
+
+  let mobilityOverride = r.Mobility;
+
+  if (override === "STR") mobilityOverride = "STR";
+  else if (override === "WC") mobilityOverride = "WC";
+  else if (override === "AMBU") mobilityOverride = "AMBU";
+
   const pricingInput = {
     ...r,
+    Mobility: mobilityOverride,
     BillingClass: billingClass,
   };
 
@@ -268,6 +323,7 @@ for (const r of groupedTrips) {
     Modifier: "NONE",
     Note: "",
     MoveToAccountCode: "",
+    TripTypeOverride: "",
 
     AddHazmat: false,
     AddO2: false,

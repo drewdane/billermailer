@@ -98,7 +98,24 @@ function buildLines(item) {
   if ((item.Action || "INCLUDE") === "EXCLUDE") return lines;
 
   if (review.MatchToQuote) {
+    const base = Number(item.pricing?.base || 0);
+    const mileage = Number(item.pricing?.mileage || 0);
+    const cancelFee = Number(item.pricing?.cancelFee || 0);
+    const miles = item.DirectMileage || "";
+
+    if (base) lines.push(line(transportDescription(item), 0));
+    if (mileage) lines.push(line(`${miles} miles`, 0));
+    if (cancelFee) lines.push(line("Cancel Fee", 0));
+
+    if (review.AddHazmat) lines.push(line("Hazmat", 0));
+    if (review.AddO2) lines.push(line("Oxygen", 0));
+    if (review.AddBari) lines.push(line("Bariatric", 0));
+    if (review.AddDeadhead) lines.push(line("Deadhead", 0));
+    if (review.AddWait) lines.push(line("Wait Time", 0));
+
+    // FINAL line carries the real charge
     lines.push(line(`${transportDescription(item)} (Match to Quote)`, review.QuoteAmount || 0));
+
     return lines;
   }
 

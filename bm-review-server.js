@@ -1,10 +1,4 @@
 // bm-review-server.js
-// Local review UI for Stacie: Include / Exclude / Modify + notes.
-// Run:
-//   node bm-review-server.js --dir "C:\Users\Drew\BillerMailer\data\review"
-// Then open:
-//   http://localhost:8787
-
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
@@ -17,6 +11,8 @@ function arg(name, fallback = null) {
 }
 
 const baseDir = path.resolve(process.cwd(), arg("--dir", "data\\output\\review"));
+const batchExportDir = path.join(baseDir, "_batch_exports");
+fs.mkdirSync(batchExportDir, { recursive: true });
 
 function send(res, code, body, contentType = "application/json") {
   res.writeHead(code, { "Content-Type": contentType });
@@ -181,7 +177,17 @@ const HTML = `<!doctype html>
 </head>
 <body>
   <div id="left">
-    <h3 style="margin:6px 0">Facilities</h3>
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
+      <h3 style="margin:6px 0">Facilities</h3>
+    </div>
+
+    <div style="margin:8px 0 12px 0">
+      <label style="display:flex;align-items:center;gap:6px;color:#374151">
+        <input type="checkbox" id="selectAllReviewed" onchange="toggleAllReviewed(this.checked)" />
+        <span>Select all reviewed</span>
+      </label>
+    </div>
+
     <div id="facList">Loading…</div>
   </div>
     <div id="main">
@@ -233,6 +239,7 @@ const HTML = `<!doctype html>
 
           <button onclick="save()">Save</button>
           <button id="exportBtn">Export</button>
+          <button onclick="runBatchExport()">Batch Export</button>
           <span id="saveMsg" style="color:#666"></span>
         </div>
       </div>
@@ -241,6 +248,7 @@ const HTML = `<!doctype html>
   </div>
 
 <script src="/preReviewSuggestions.js"></script>
+<script src="/cleanLocationName.js"></script>
 <script src="/renderRows.js"></script>
 <script>
 let INDEX=null;
@@ -248,6 +256,8 @@ let current = { acct:null, period:null };
 let ITEMS=[];
 let OVERRIDES={ invoiceType:"single", deliveryFormat:"qbo", reviewed:false, reviewedAt:null, overrides:{} };
 let DIRTY = false;
+let BATCH_SELECTED = {};
+window.BM_ACCOUNT_CODES = [];
 
 window.BM_GLOBALS = {
   fuelSurchargeEnabled: false,
@@ -267,6 +277,7 @@ function updateFuelGlobals() {
   };
 
   renderRows();
+  if (window.markDirty) window.markDirty();
 }
 
 function esc(s){ return String(s??"").replace(/[&<>"]/g, c=>({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;" }[c])); }
@@ -338,9 +349,89 @@ async function runExport() {
   window.location.href = exportUrl;
 }
 
+function setBatchSelected(acct, period, checked) {
+  const key = acct + "||" + period;
+  if (checked) BATCH_SELECTED[key] = true;
+  else delete BATCH_SELECTED[key];
+}
+
+function isBatchSelected(acct, period) {
+  return !!BATCH_SELECTED[acct + "||" + period];
+}
+
+function toggleAllReviewed(checked) {
+  if (!INDEX || !INDEX.facilities) return;
+
+  if (!checked) {
+    BATCH_SELECTED = {};
+    loadIndex();
+    return;
+  }
+
+  const next = {};
+  for (const acct of Object.keys(INDEX.facilities || {})) {
+    const fac = INDEX.facilities[acct];
+    for (const period of Object.keys(fac.periods || {})) {
+      const meta = fac.periods[period] || {};
+      if (meta.reviewed) {
+        next[acct + "||" + period] = true;
+      }
+    }
+  }
+
+  BATCH_SELECTED = next;
+  loadIndex();
+}
+
+async function runBatchExport() {
+  const selected = Object.keys(BATCH_SELECTED).map((key) => {
+    const [acct, period] = key.split("||");
+    return { acct, period };
+  });
+
+  if (!selected.length) {
+    alert("Select at least one reviewed facility.");
+    return;
+  }
+
+  const resp = await fetch("/api/export-qbo-batch", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ selected })
+  });
+
+  const data = await resp.json();
+
+  if (!resp.ok) {
+    alert(data?.error || "Batch export failed");
+    return;
+  }
+
+  if (!Array.isArray(data.files) || !data.files.length) {
+    alert("No export files were generated.");
+    return;
+  }
+
+  for (const file of data.files) {
+    window.open(file.url, "_blank");
+  }
+}
+
+async function loadAccountCodes(){
+  try {
+    const resp = await fetch("/api/accounts");
+    const data = await resp.json();
+    window.BM_ACCOUNT_CODES = Array.isArray(data.accounts) ? data.accounts : [];
+  } catch (err) {
+    console.error("Failed to load account codes", err);
+    window.BM_ACCOUNT_CODES = [];
+  }
+}
+
 async function loadIndex(){
   const facList = document.getElementById("facList");
   facList.textContent = "Loading…";
+  await loadAccountCodes();
 
   try{
     const resp = await fetch("/api/index");
@@ -382,13 +473,25 @@ async function loadIndex(){
           openSet(a.dataset.acct, a.dataset.period);
         };
 
-        const pill = document.createElement("span");
-        pill.className = "pill";
-        pill.textContent = (f.periods[p].count || 0) + " trips";
+        const meta = f.periods[p] || {};
+
+        const tripPill = document.createElement("span");
+        tripPill.className = "pill";
+        tripPill.textContent = (meta.count || 0) + " trips";
+
+        const cb = document.createElement("input");
+        cb.type = "checkbox";
+        cb.style.marginLeft = "8px";
+        cb.checked = isBatchSelected(acct, p);
+        cb.disabled = !meta.reviewed;
+        cb.onchange = () => {
+          setBatchSelected(acct, p, cb.checked);
+        };
 
         row.appendChild(a);
         row.appendChild(document.createTextNode(" "));
-        row.appendChild(pill);
+        row.appendChild(tripPill);
+        row.appendChild(cb);
 
         div.appendChild(row);
       }
@@ -443,6 +546,11 @@ async function openSet(acct, period){
     it.review.WaitTotalMinutes = Number(o.WaitTotalMinutes || 0);
     it.review.MatchToQuote = !!o.MatchToQuote;
     it.review.QuoteAmount = Number(o.QuoteAmount || 0);
+    it.review.AddNeedWC = typeof o.AddNeedWC === "boolean" ? o.AddNeedWC : it.review.AddNeedWC;
+    it.review.AddRECL = typeof o.AddRECL === "boolean" ? o.AddRECL : it.review.AddRECL;
+    it.review.CancelOverride = o.CancelOverride || it.review.CancelOverride || "AUTO";
+    it.review.NoCharge = typeof o.NoCharge === "boolean" ? o.NoCharge : !!it.review.NoCharge;
+    it.review.TripTypeOverride = o.TripTypeOverride || "";
     if (o.CancelOverride) it.review.CancelOverride = o.CancelOverride;
     if (typeof o.NoCharge === "boolean") it.review.NoCharge = o.NoCharge;
     if (typeof o.AddNeedWC === "boolean") it.review.AddNeedWC = o.AddNeedWC;
@@ -451,28 +559,43 @@ async function openSet(acct, period){
 
     const invoiceTypeEl = document.getElementById("invoiceType");
     invoiceTypeEl.value = OVERRIDES.invoiceType || "single";
-    document.getElementById("invoiceType").value = OVERRIDES.invoiceType || "single";
+
+    const deliveryFormatEl = document.getElementById("deliveryFormat");
+    deliveryFormatEl.value = OVERRIDES.deliveryFormat || "qbo";
+
+    const fuelToggleEl = document.getElementById("fuelToggle");
+    const fuelStartEl = document.getElementById("fuelStart");
+    const fuelEndEl = document.getElementById("fuelEnd");
+
+    fuelToggleEl.checked = !!OVERRIDES.fuelSurchargeEnabled;
+    fuelStartEl.value = OVERRIDES.fuelSurchargeStart || "";
+    fuelEndEl.value = OVERRIDES.fuelSurchargeEnd || "";
+
+    window.BM_GLOBALS = {
+      fuelSurchargeEnabled: !!OVERRIDES.fuelSurchargeEnabled,
+      fuelSurchargeStart: OVERRIDES.fuelSurchargeStart || "",
+      fuelSurchargeEnd: OVERRIDES.fuelSurchargeEnd || ""
+    };
+
     document.getElementById("exportBtn").onclick = () => {
       runExport();
     };
 
-  updateFuelGlobals();
+  renderRows();
   renderFacilityReviewState();
 }
 
 async function save(){
   const overrides = {};
   for(const r of ITEMS){
-        overrides[r.LineId] = {
+    overrides[r.LineId] = {
       Action: r.Action,
       Modifier: r.Modifier,
       Note: r.Note,
-      MoveToAccountCode: r.MoveToAccountCode || "",
+      MoveToAccountCode: r.review?.MoveToAccountCode || "",
 
       AddNeedWC: !!r.review?.AddNeedWC,
       AddRECL: !!r.review?.AddRECL,
-      CancelOverride: r.review?.CancelOverride || "AUTO",
-      NoCharge: !!r.review?.NoCharge,
       AddHazmat: !!r.review?.AddHazmat,
       AddO2: !!r.review?.AddO2,
       AddBari: !!r.review?.AddBari,
@@ -480,10 +603,14 @@ async function save(){
       DeadheadMiles: Number(r.review?.DeadheadMiles || 0),
       AddWait: !!r.review?.AddWait,
       WaitTotalMinutes: Number(r.review?.WaitTotalMinutes || 0),
+      CancelOverride: r.review?.CancelOverride || "AUTO",
+      NoCharge: !!r.review?.NoCharge,
       MatchToQuote: !!r.review?.MatchToQuote,
       QuoteAmount: Number(r.review?.QuoteAmount || 0),
+      TripTypeOverride: r.review?.TripTypeOverride || "",
     };
   }
+
   const resp = await fetch("/api/overrides", {
     method:"POST",
     headers:{ "Content-Type":"application/json" },
@@ -494,6 +621,9 @@ async function save(){
       deliveryFormat: document.getElementById("deliveryFormat").value || "qbo",
       reviewed: true,
       reviewedAt: new Date().toISOString(),
+      fuelSurchargeEnabled: !!window.BM_GLOBALS?.fuelSurchargeEnabled,
+      fuelSurchargeStart: window.BM_GLOBALS?.fuelSurchargeStart || "",
+      fuelSurchargeEnd: window.BM_GLOBALS?.fuelSurchargeEnd || "",
       overrides
     })
   });
@@ -503,6 +633,9 @@ async function save(){
   if (resp.ok) {
     OVERRIDES.reviewed = true;
     OVERRIDES.reviewedAt = new Date().toISOString();
+    OVERRIDES.fuelSurchargeEnabled = !!window.BM_GLOBALS?.fuelSurchargeEnabled;
+    OVERRIDES.fuelSurchargeStart = window.BM_GLOBALS?.fuelSurchargeStart || "";
+    OVERRIDES.fuelSurchargeEnd = window.BM_GLOBALS?.fuelSurchargeEnd || "";
     DIRTY = false;
     renderFacilityReviewState();
   }
@@ -522,6 +655,255 @@ loadIndex();
 </body>
 </html>`;
 
+function fmtQboDate(iso) {
+  const s = String(iso || "").trim();
+  const m = s.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!m) return s;
+
+  const year = m[1];
+  const month = String(Number(m[2]));
+  const day = String(Number(m[3]));
+
+  return month + "/" + day + "/" + year;
+}
+
+function compactDateForDocNum(iso) {
+  const s = String(iso || "").trim();
+  const m = s.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!m) return "000000";
+  return m[2] + m[3] + m[1].slice(-2); // MMDDYY
+}
+
+function shortAcctCode(acct) {
+  const words = String(acct || "")
+    .replace(/[^A-Za-z0-9 ]+/g, " ")
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((w) => w.toUpperCase().replace(/[^A-Z0-9]/g, ""))
+    .filter(Boolean);
+
+  if (!words.length) return "INV";
+
+  // One-word account: use up to 8 chars.
+  if (words.length === 1) {
+    return words[0].slice(0, 8) || "INV";
+  }
+
+  // Multi-word account:
+  // first word initial + first 3 chars of each following word.
+  //
+  // Examples:
+  // Encompass Arlington -> EARL
+  // Encompass Abilene   -> EABI
+  // Texas Health Alliance -> THEAALL
+  const prefix = words[0][0] + words.slice(1).map((w) => w.slice(0, 3)).join("");
+
+  return prefix.slice(0, 8) || "INV";
+}
+
+
+
+function buildInvoiceNo(acct, periodEndIso, index = null) {
+  const base = shortAcctCode(acct) + "-" + compactDateForDocNum(periodEndIso);
+
+  if (index == null) return base;
+
+  return base + "-" + String(index).padStart(2, "0");
+}
+
+function assertNoInvoiceNoCollisions(grouped) {
+  const seen = new Map();
+
+  for (const inv of grouped || []) {
+    const invoiceNo = String(inv.invoiceNo || "").trim();
+    const customer = String(inv.customer || "").trim();
+
+    if (!invoiceNo) continue;
+
+    const prior = seen.get(invoiceNo);
+    if (prior && prior !== customer) {
+      throw new Error(
+        `Invoice number collision: ${invoiceNo} assigned to both "${prior}" and "${customer}"`
+      );
+    }
+
+    seen.set(invoiceNo, customer);
+  }
+}
+
+function csvEscape(v) {
+  return `"${String(v ?? "").replace(/"/g, '""')}"`;
+}
+
+function csvFromRows(csvRows) {
+  return csvRows.map(r => r.map(csvEscape).join(",")).join("\n");
+}
+
+function buildCsvRowsFromGrouped(grouped, period) {
+  const csvRows = [
+    ["Customer", "InvoiceNo", "InvoiceDate", "DueDate", "ServiceDate", "Description", "Amount"],
+  ];
+
+  for (const inv of grouped) {
+    for (const l of inv.lines) {
+      const invoiceDate = fmtQboDate(period.split("_")[2] || "");
+      csvRows.push([
+        inv.customer,
+        inv.invoiceNo,
+        invoiceDate,
+        invoiceDate,
+        fmtQboDate(l.rideDateISO || ""),
+        l.lineDescription,
+        Number(l.amount || 0).toFixed(2),
+      ]);
+    }
+  }
+
+  return csvRows;
+}
+
+function buildGroupedInvoicesForSet(baseDir, acct, period, invoiceType) {
+  const itemsPath = safeJoin(acct, period, "items.json");
+  const overridesPath = safeJoin(acct, period, "overrides.json");
+
+  if (!fs.existsSync(itemsPath)) {
+    throw new Error(`Missing items.json for ${acct} / ${period}`);
+  }
+
+  const rows = JSON.parse(fs.readFileSync(itemsPath, "utf8"));
+  const overrides = fs.existsSync(overridesPath)
+    ? JSON.parse(fs.readFileSync(overridesPath, "utf8"))
+    : { overrides: {} };
+
+  const effectiveInvoiceType = String(invoiceType || overrides.invoiceType || "single").trim();
+
+  const { buildBillableLines } = require("./src/review/buildBillableLines");
+  const { loadRateSheet, makeRateLookup } = require("./src/review/loadRateSheet");
+  const { priceGroupedTrip } = require("./src/review/priceGroupedTrip");
+  const { ratesPath: defaultRatesPath, buildPricingContext } = require("./src/orgs/CTT/pricing/pricingContext");
+  const { computeAvailableCharges } = require("./src/review/reviewAdjustments");
+  const { computeDeadheadCharge } = require("./src/orgs/CTT/pricing/computeDeadheadCharge");
+  const { num } = require("./src/pricing/rateLookup");
+
+  const rateRows = loadRateSheet(defaultRatesPath);
+  const rateLookupFn = makeRateLookup(rateRows);
+
+  const lines = [];
+
+  for (const r of rows) {
+    const o = overrides.overrides?.[r.LineId] || {};
+    const review = { ...(r.review || {}), ...o };
+
+    const override = review.TripTypeOverride || "";
+    let mobilityOverride = r.Mobility;
+
+    if (override === "STR") mobilityOverride = "STR";
+    else if (override === "WC") mobilityOverride = "WC";
+    else if (override === "AMBU") mobilityOverride = "AMBU";
+
+    const effectiveAccountCode =
+      String(review.MoveToAccountCode || "").trim() ||
+      String(r.AccountCode || "").trim();
+
+    const pricingInput = {
+      ...r,
+      review,
+      AccountCode: effectiveAccountCode,
+      AccountName: effectiveAccountCode,
+      Mobility: mobilityOverride,
+      BillingClass: r.BillingClass,
+    };
+
+    const rateRow = rateLookupFn(pricingInput);
+    const pricingContext = buildPricingContext(pricingInput);
+    const pricing = priceGroupedTrip(pricingInput, rateRow, pricingContext);
+    const availableCharges = computeAvailableCharges(pricingInput, rateRow || {});
+    const deadheadResult = computeDeadheadCharge(pricingInput, rateRow || {}, pricingContext);
+
+    const repricedRow = {
+      ...pricingInput,
+      pricing,
+      availableCharges,
+      deadheadCharge: Number(deadheadResult.deadheadCharge || 0),
+      deadheadMiles: Number(deadheadResult.deadheadMiles || 0),
+      deadheadDebug: deadheadResult,
+      deadheadConfig: {
+        dh_flat_fee: rateRow?.dh_flat_fee ?? "",
+        dh_start_miles: rateRow?.dh_start_miles ?? "",
+        dh_rate_tier1: rateRow?.dh_rate_tier1 ?? "",
+        dh_rate_tier2: rateRow?.dh_rate_tier2 ?? "",
+        dh_rate_tier3: rateRow?.dh_rate_tier3 ?? "",
+        dh_tier2_start_miles: rateRow?.dh_tier2_start_miles ?? "",
+        dh_tier3_start_miles: rateRow?.dh_tier3_start_miles ?? "",
+      },
+      waitConfig: {
+        wait_rate: rateRow?.wait_rate ?? "",
+        wait_block_min: rateRow?.wait_block_min ?? "",
+        wait_grace_min: rateRow?.wait_grace_min ?? "",
+      },
+      fuelSurchargeRate: num(rateRow?.fuel_surcharge),
+      availableWcAccessories: {
+        needwc_1w: num(rateRow?.needwc_1w),
+        needwc_rt: num(rateRow?.needwc_rt),
+        recl_1w: num(rateRow?.recl_1w),
+        recl_rt: num(rateRow?.recl_rt),
+      },
+    };
+
+    const exportGlobals = {
+      fuelSurchargeEnabled: !!overrides.fuelSurchargeEnabled,
+      fuelSurchargeStart: overrides.fuelSurchargeStart || "",
+      fuelSurchargeEnd: overrides.fuelSurchargeEnd || "",
+    };
+
+    const built = buildBillableLines(repricedRow, exportGlobals).map((line) => ({
+      ...line,
+      customer: effectiveAccountCode,
+    }));
+
+    lines.push(...built);
+  }
+
+  let grouped = [];
+
+  if (effectiveInvoiceType === "single") {
+    const byCustomer = {};
+
+    for (const l of lines) {
+      const customer = String(l.customer || acct).trim();
+      if (!byCustomer[customer]) byCustomer[customer] = [];
+      byCustomer[customer].push(l);
+    }
+
+    grouped = Object.entries(byCustomer).map(([customer, customerLines]) => ({
+      invoiceNo: buildInvoiceNo(customer, period.split("_")[2] || "", null),
+      customer,
+      lines: customerLines,
+    }));
+  } else {
+    const byTrip = {};
+
+    for (const l of lines) {
+      const customer = String(l.customer || acct).trim();
+      const key = customer + "||" + l.lineId;
+      if (!byTrip[key]) byTrip[key] = [];
+      byTrip[key].push(l);
+    }
+
+    grouped = Object.entries(byTrip).map(([k, v], i) => {
+      const customer = String(v[0]?.customer || acct).trim();
+      return {
+        invoiceNo: buildInvoiceNo(customer, period.split("_")[2] || "", i + 1),
+        customer,
+        lines: v,
+      };
+    });
+  }
+
+  return grouped;
+}
+
 const server = http.createServer((req, res) => {
   try {
     const u = url.parse(req.url, true);
@@ -536,9 +918,49 @@ const server = http.createServer((req, res) => {
       return send(res, 200, fs.readFileSync(p, "utf8"), "application/javascript; charset=utf-8");
     }
 
-    if (u.pathname === "/") return send(res, 200, HTML, "text/html; charset=utf-8");
+        if (u.pathname === "/cleanLocationName.js") {
+          const p = path.resolve(process.cwd(), "src", "review", "cleanLocationName.js");
 
-    
+          delete require.cache[require.resolve(p)];
+
+          const mod = require(p);
+          const cleanLocationName =
+            typeof mod === "function"
+              ? mod
+              : mod.cleanLocationName;
+
+          const js = `
+        window.cleanLocationName = ${cleanLocationName.toString()};
+        `;
+
+          return send(res, 200, js, "application/javascript; charset=utf-8");
+        }
+
+    if (u.pathname === "/") return send(res, 200, HTML, "text/html; charset=utf-8");
+        
+      if (u.pathname === "/api/accounts") {
+      const { loadRateSheet } = require("./src/review/loadRateSheet");
+      const { ratesPath: defaultRatesPath } = require("./src/orgs/CTT/pricing/pricingContext");
+
+      const rows = loadRateSheet(defaultRatesPath);
+
+      const accounts = Array.from(new Set(
+        rows
+          .map((r) =>
+            String(
+              r.AccountCode ||
+              r.account_code ||
+              r.account ||
+              r.Account ||
+              ""
+            ).trim()
+          )
+          .filter(Boolean)
+      )).sort((a, b) => a.localeCompare(b));
+
+      return send(res, 200, JSON.stringify({ accounts }), "application/json");
+    }
+
     if (u.pathname === "/api/index") {
       const p = safeJoin("index.json");
       if (!fs.existsSync(p)) {
@@ -549,7 +971,34 @@ const server = http.createServer((req, res) => {
           "text/plain; charset=utf-8"
         );
       }
-      return send(res, 200, JSON.stringify(readJson(p)), "application/json");
+
+      const index = readJson(p);
+
+      for (const acct of Object.keys(index.facilities || {})) {
+        const facility = index.facilities[acct];
+        for (const period of Object.keys(facility.periods || {})) {
+          const overridesPath = safeJoin(acct, period, "overrides.json");
+          let reviewed = false;
+          let reviewedAt = null;
+          let invoiceType = "single";
+
+          if (fs.existsSync(overridesPath)) {
+            const o = readJson(overridesPath);
+            reviewed = !!o.reviewed;
+            reviewedAt = o.reviewedAt || null;
+            invoiceType = o.invoiceType || "single";
+          }
+
+          facility.periods[period] = {
+            ...(facility.periods[period] || {}),
+            reviewed,
+            reviewedAt,
+            invoiceType
+          };
+        }
+      }
+
+      return send(res, 200, JSON.stringify(index), "application/json");
     }
 
     if (u.pathname === "/api/items") {
@@ -577,28 +1026,28 @@ const server = http.createServer((req, res) => {
         const deliveryFormat = payload.deliveryFormat || "qbo";
         const reviewed = !!payload.reviewed;
         const reviewedAt = payload.reviewedAt || null;
+        const fuelSurchargeEnabled = !!payload.fuelSurchargeEnabled;
+        const fuelSurchargeStart = payload.fuelSurchargeStart || "";
+        const fuelSurchargeEnd = payload.fuelSurchargeEnd || "";
         const overrides = payload.overrides || {};
         const p = safeJoin(acct, period, "overrides.json");
-        writeJson(p, { invoiceType, deliveryFormat, reviewed, reviewedAt, overrides });
+
+        writeJson(p, {
+          invoiceType,
+          deliveryFormat,
+          reviewed,
+          reviewedAt,
+          fuelSurchargeEnabled,
+          fuelSurchargeStart,
+          fuelSurchargeEnd,
+          overrides
+        });
         send(res, 200, JSON.stringify({ ok: true }), "application/json");
       });
       return;
     }
 
-    if (u.pathname === "/api/export-qbo" && req.method === "GET") {
-
-      function fmtQboDate(iso) {
-        const s = String(iso || "").trim();
-        const m = s.match(/^(\d{4})-(\d{2})-(\d{2})$/);
-        if (!m) return s;
-
-        const year = m[1];
-        const month = String(Number(m[2]));
-        const day = String(Number(m[3]));
-
-        return month + "/" + day + "/" + year;
-      }
-
+        if (u.pathname === "/api/export-qbo" && req.method === "GET") {
       try {
         const acct = String(u.query.acct || "").trim();
         const period = String(u.query.period || "").trim();
@@ -608,107 +1057,10 @@ const server = http.createServer((req, res) => {
           return send(res, 400, "Missing acct/period", "text/plain; charset=utf-8");
         }
 
-        const itemsPath = safeJoin(acct, period, "items.json");
-        const overridesPath = safeJoin(acct, period, "overrides.json");
-
-        if (!fs.existsSync(itemsPath)) {
-          return send(res, 404, "Missing items.json", "text/plain; charset=utf-8");
-        }
-
-        const rows = JSON.parse(fs.readFileSync(itemsPath, "utf8"));
-        const overrides = fs.existsSync(overridesPath)
-          ? JSON.parse(fs.readFileSync(overridesPath, "utf8"))
-          : { overrides: {} };
-
-        const { buildBillableLines } = require("./src/review/buildBillableLines");
-
-        const lines = [];
-
-        for (const r of rows) {
-          const o = overrides.overrides?.[r.LineId] || {};
-          r.review = { ...(r.review || {}), ...o };
-
-          const built = buildBillableLines(r, {});
-          lines.push(...built);
-        }
-
-        // --- GROUPING ---
-        let grouped = [];
-
-        function compactDateForDocNum(iso) {
-          const s = String(iso || "").trim();
-          const m = s.match(/^(\d{4})-(\d{2})-(\d{2})$/);
-          if (!m) return "000000";
-          return m[2] + m[3] + m[1].slice(-2); // MMDDYY
-        }
-
-        function shortAcctCode(acct) {
-          const words = String(acct || "")
-            .replace(/[^A-Za-z0-9 ]+/g, " ")
-            .trim()
-            .split(/\s+/)
-            .filter(Boolean);
-
-          if (!words.length) return "INV";
-
-          if (words.length >= 2) {
-            return words.map(w => w[0].toUpperCase()).join("").slice(0, 6);
-          }
-
-          return words[0].toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0, 6) || "INV";
-        }
-
-        function buildInvoiceNo(acct, periodEndIso, index = null) {
-          const base = shortAcctCode(acct) + "-" + compactDateForDocNum(periodEndIso);
-
-          if (index == null) return base;
-
-          return base + "-" + String(index).padStart(2, "0");
-        }
-
-        if (invoiceType === "single") {
-          grouped = [{
-            invoiceNo: buildInvoiceNo(acct, period.split("_")[2] || "", null),
-            customer: acct,
-            lines,
-          }];
-        } else {
-          const byTrip = {};
-          for (const l of lines) {
-            const key = l.lineId;
-            if (!byTrip[key]) byTrip[key] = [];
-            byTrip[key].push(l);
-          }
-
-          grouped = Object.entries(byTrip).map(([k, v], i) => ({
-            invoiceNo: buildInvoiceNo(acct, period.split("_")[2] || "", i + 1),
-            customer: acct,
-            lines: v,
-          }));
-        }
-
-        // --- BUILD CSV ---
-        const csvRows = [
-          ["Customer", "InvoiceNo", "InvoiceDate", "DueDate", "ServiceDate", "Description", "Amount"],
-        ];
-
-        for (const inv of grouped) {
-          for (const l of inv.lines) {
-
-            const invoiceDate = fmtQboDate(period.split("_")[2] || "");
-            csvRows.push([
-              inv.customer,
-              inv.invoiceNo,
-              invoiceDate,
-              invoiceDate,
-              fmtQboDate(l.rideDateISO || ""),
-              l.lineDescription,
-              l.amount.toFixed(2),
-            ]);
-          }
-        }
-
-        const csv = csvRows.map(r => r.map(x => `"${String(x).replace(/"/g, '""')}"`).join(",")).join("\n");
+        const grouped = buildGroupedInvoicesForSet(baseDir, acct, period, invoiceType);
+        assertNoInvoiceNoCollisions(grouped);
+        const csvRows = buildCsvRowsFromGrouped(grouped, period);
+        const csv = csvFromRows(csvRows);
 
         res.writeHead(200, {
           "Content-Type": "text/csv",
@@ -716,10 +1068,163 @@ const server = http.createServer((req, res) => {
         });
         return res.end(csv);
 
-      } catch (err) {
-        console.error(err);
-        return send(res, 500, { error: "Export failed" });
+        } catch (err) {
+          console.error("Batch export failed:", err);
+          return send(
+            res,
+            500,
+            JSON.stringify({
+              error: "Batch export failed: " + (err?.message || String(err))
+            }),
+            "application/json"
+          );
+        }
+    }
+
+    if (u.pathname === "/api/export-qbo-batch" && req.method === "POST") {
+      let body = "";
+      req.on("data", (c) => (body += c));
+      req.on("end", () => {
+        try {
+          const payload = JSON.parse(body || "{}");
+          const selected = Array.isArray(payload.selected) ? payload.selected : [];
+
+          if (!selected.length) {
+            return send(res, 400, JSON.stringify({ error: "Nothing selected" }), "application/json");
+          }
+
+          const header = ["Customer", "InvoiceNo", "InvoiceDate", "DueDate", "ServiceDate", "Description", "Amount"];
+          const maxDataRowsPerFile = 1000;
+
+          const allInvoiceGroups = [];
+
+          for (const entry of selected) {
+            const acct = String(entry.acct || "").trim();
+            const period = String(entry.period || "").trim();
+
+            if (!acct || !period) continue;
+
+            const overridesPath = safeJoin(acct, period, "overrides.json");
+            const overrides = fs.existsSync(overridesPath)
+              ? readJson(overridesPath)
+              : { invoiceType: "single", reviewed: false };
+
+            if (!overrides.reviewed) continue;
+
+            const grouped = buildGroupedInvoicesForSet(baseDir, acct, period, overrides.invoiceType || "single");
+
+            for (const inv of grouped) {
+              const dataRows = buildCsvRowsFromGrouped([inv], period).slice(1); // no header
+              allInvoiceGroups.push({
+                acct,
+                period,
+                invoiceNo: inv.invoiceNo,
+                rows: dataRows,
+                rowCount: dataRows.length,
+              });
+            }
+          }
+
+          if (!allInvoiceGroups.length) {
+            return send(res, 400, JSON.stringify({ error: "No reviewed exports found in selection" }), "application/json");
+          }
+
+          const invoiceNoOwners = new Map();
+          const invoiceNoCounts = new Map();
+
+          for (const inv of allInvoiceGroups) {
+            const originalInvoiceNo = String(inv.invoiceNo || "").trim();
+            const owner = String(inv.acct || "").trim();
+
+            if (!originalInvoiceNo) continue;
+
+            const prior = invoiceNoOwners.get(originalInvoiceNo);
+
+            if (prior && prior !== owner) {
+              const count = (invoiceNoCounts.get(originalInvoiceNo) || 1) + 1;
+              invoiceNoCounts.set(originalInvoiceNo, count);
+
+              const newInvoiceNo = `${originalInvoiceNo}-${String(count).padStart(2, "0")}`;
+
+              for (const row of inv.rows) {
+                row[1] = newInvoiceNo; // InvoiceNo column
+              }
+
+              inv.invoiceNo = newInvoiceNo;
+              invoiceNoOwners.set(newInvoiceNo, owner);
+            } else {
+              invoiceNoOwners.set(originalInvoiceNo, owner);
+              if (!invoiceNoCounts.has(originalInvoiceNo)) {
+                invoiceNoCounts.set(originalInvoiceNo, 1);
+              }
+            }
+          }
+
+          const files = [];
+          let currentRows = [header];
+          let currentCount = 0;
+          let part = 1;
+          const stamp = new Date().toISOString().replace(/[:.]/g, "-");
+
+          function flushFile() {
+            if (currentRows.length <= 1) return;
+
+            const fileName = `batch_qbo_${stamp}_part_${String(part).padStart(2, "0")}.csv`;
+            const outPath = path.join(batchExportDir, fileName);
+            fs.writeFileSync(outPath, csvFromRows(currentRows), "utf8");
+
+            files.push({
+              fileName,
+              url: "/downloads/" + encodeURIComponent(fileName)
+            });
+
+            part += 1;
+            currentRows = [header];
+            currentCount = 0;
+          }
+
+          for (const inv of allInvoiceGroups) {
+            if (inv.rowCount > maxDataRowsPerFile) {
+              return send(
+                res,
+                400,
+                JSON.stringify({ error: `Invoice ${inv.invoiceNo} exceeds ${maxDataRowsPerFile} rows by itself` }),
+                "application/json"
+              );
+            }
+
+            if (currentCount > 0 && currentCount + inv.rowCount > maxDataRowsPerFile) {
+              flushFile();
+            }
+
+            currentRows.push(...inv.rows);
+            currentCount += inv.rowCount;
+          }
+
+          flushFile();
+
+          return send(res, 200, JSON.stringify({ ok: true, files }), "application/json");
+        } catch (err) {
+          console.error(err);
+          return send(res, 500, JSON.stringify({ error: "Batch export failed" }), "application/json");
+        }
+      });
+      return;
+    }
+
+    if (u.pathname.startsWith("/downloads/")) {
+      const fileName = decodeURIComponent(u.pathname.replace("/downloads/", ""));
+      const p = path.join(batchExportDir, fileName);
+
+      if (!p.startsWith(batchExportDir) || !fs.existsSync(p)) {
+        return send(res, 404, "File not found", "text/plain; charset=utf-8");
       }
+
+      res.writeHead(200, {
+        "Content-Type": "text/csv",
+        "Content-Disposition": `attachment; filename="${fileName}"`,
+      });
+      return res.end(fs.readFileSync(p, "utf8"));
     }
 
     send(res, 404, "not found", "text/plain; charset=utf-8");

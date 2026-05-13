@@ -72,10 +72,15 @@ function normalizeTripForPricing(groupedTrip) {
     .trim()
     .toUpperCase();
 
-  const milesRounded =
+  const rawMiles =
     shape === "ROUND_TRIP"
-      ? roundMiles((legs[0]?.DirectMileage || 0) * 2)
-      : roundMiles(legs.reduce((sum, l) => sum + num(l.DirectMileage), 0));
+      ? (legs[0]?.DirectMileage || 0) * 2
+      : legs.reduce((sum, l) => sum + num(l.DirectMileage), 0);
+
+  const rounded = roundMiles(rawMiles);
+
+  const milesRounded =
+    rawMiles > 0 ? Math.max(1, rounded) : 0;
 
   return {
     status,

@@ -1,3 +1,6 @@
+const { progressiveDeadheadChargeFromMiles } = require("../orgs/CTT/pricing/utils/progressiveDeadhead");
+const { cleanLocationName } = require("./cleanLocationName");
+
 function money(n) {
   return Number(Number(n || 0).toFixed(2));
 }
@@ -26,16 +29,10 @@ function riderLabel(r) {
 }
 
 function tripRouteLabel(r) {
-  const pu = String(r.PickupName || r.PickupAddress1 || "").trim();
-  const doff = String(r.DropoffName || r.DropoffAddress1 || "").trim();
+  const pu = cleanLocationName(r.PickupName || "") || String(r.PickupAddress1 || "").trim();
+  const doff = cleanLocationName(r.DropoffName || "") || String(r.DropoffAddress1 || "").trim();
   if (pu && doff) return `${pu} to ${doff}`;
   return pu || doff || "";
-}
-
-function accessoryAmountByCode(r, code) {
-  const lines = Array.isArray(r.pricing?.accessories) ? r.pricing.accessories : [];
-  const hit = lines.find((x) => String(x.code || "").toUpperCase() === String(code).toUpperCase());
-  return money(hit?.amount || 0);
 }
 
 function automaticTimeCharge(r) {
@@ -91,31 +88,7 @@ function computeDeadheadChargeFromReview(r) {
     return money(flatFee);
   }
 
-  const startMiles = Number(String(cfg.dh_start_miles || "").replace(/\$/g, "").replace(/,/g, "").trim() || 0);
-  if (startMiles > 0 && miles < startMiles) return 0;
-
-  const rate1 = Number(String(cfg.dh_rate_tier1 || "").replace(/\$/g, "").replace(/,/g, "").trim() || 0);
-  const rate2 = Number(String(cfg.dh_rate_tier2 || "").replace(/\$/g, "").replace(/,/g, "").trim() || 0);
-  const rate3 = Number(String(cfg.dh_rate_tier3 || "").replace(/\$/g, "").replace(/,/g, "").trim() || 0);
-
-  const tier2Start = Number(String(cfg.dh_tier2_start_miles || "").replace(/\$/g, "").replace(/,/g, "").trim() || 0);
-  const tier3Start = Number(String(cfg.dh_tier3_start_miles || "").replace(/\$/g, "").replace(/,/g, "").trim() || 0);
-
-  let rate = 0;
-
-  if (tier3Start > 0 && miles >= tier3Start && rate3 > 0) {
-    rate = rate3;
-  } else if (tier2Start > 0 && miles >= tier2Start && rate2 > 0) {
-    rate = rate2;
-  } else if (rate1 > 0) {
-    rate = rate1;
-  } else if (rate2 > 0) {
-    rate = rate2;
-  } else if (rate3 > 0) {
-    rate = rate3;
-  }
-
-  return money(miles * rate);
+  return money(progressiveDeadheadChargeFromMiles(miles, cfg));
 }
 
 function fuelSurchargeAmount(r, globals = {}) {
@@ -139,12 +112,12 @@ function fuelSurchargeAmount(r, globals = {}) {
 
 function addLine(lines, r, kind, description, amount, extra = {}) {
   const amt = money(amount);
-  if (amt <= 0) return;
+  if (amt <= 0 && !extra.forceZero) return;
 
   lines.push({
     lineKind: kind,
     lineDescription: description,
-    amount: amt,
+    amount: extra.forceZero ? 0 : amt,
     lineId: r.LineId,
     rideDateISO: r.RideDateISO || "",
     rider: riderLabel(r),
@@ -153,41 +126,21 @@ function addLine(lines, r, kind, description, amount, extra = {}) {
     route: tripRouteLabel(r),
     ...extra,
   });
+
+  delete lines[lines.length - 1].forceZero;
 }
 
 function buildBillableLines(r, globals = {}) {
+  if ((r.review?.Action || r.Action || "INCLUDE") === "EXCLUDE") {
+    return [];
+  }
+
   const lines = [];
   const dateLabel = fmtDateForLine(r.RideDateISO);
   const rider = riderLabel(r);
   const route = tripRouteLabel(r);
   const prefix = `${rider} ${dateLabel}`.trim();
-
-  if (r.review?.MatchToQuote) {
-    addLine(
-      lines,
-      r,
-      "MATCH_TO_QUOTE",
-      `Match to Quote - ${prefix}${route ? " - " + route : ""}`,
-      Number(r.review?.QuoteAmount || 0)
-    );
-    return lines;
-  }
-
-  if (r.review?.NoCharge) {
-    addLine(
-      lines,
-      r,
-      "NO_CHARGE",
-      `No Charge - ${prefix}${route ? " - " + route : ""}`,
-      0.01
-    );
-
-    // force true zero after addLine's >0 guard
-    lines[lines.length - 1].amount = 0;
-
-    return lines;
-  }
-
+  const forceZeroMode = !!(r.review?.MatchToQuote || r.review?.NoCharge);
   const raw = String(r.RideStatus || "").trim().toLowerCase();
   const tmCancelled = raw === "noshow" || raw === "ridercancel";
   const override = String(r.review?.CancelOverride || "AUTO").toUpperCase();
@@ -212,7 +165,8 @@ function buildBillableLines(r, globals = {}) {
     r,
     "BASE",
     `Transport ${prefix}${route ? " - " + route : ""}`,
-    Number(r.pricing?.base || 0)
+    Number(r.pricing?.base || 0),
+    { forceZero: forceZeroMode }
   );
 
   const mileageAmount = Number(r.pricing?.mileage || 0);
@@ -223,7 +177,7 @@ function buildBillableLines(r, globals = {}) {
     "MILEAGE",
     `Mileage - ${billableMiles} mi`,
     mileageAmount,
-    { miles: billableMiles }
+    { miles: billableMiles, forceZero: forceZeroMode }
   );
 
   const isRtBase =
@@ -236,7 +190,8 @@ function buildBillableLines(r, globals = {}) {
       r,
       "NEED_WC",
       "Need WC",
-      Number(isRtBase ? r.availableWcAccessories?.needwc_rt : r.availableWcAccessories?.needwc_1w) || 0
+      Number(isRtBase ? r.availableWcAccessories?.needwc_rt : r.availableWcAccessories?.needwc_1w) || 0,
+      { forceZero: forceZeroMode }
     );
   }
 
@@ -246,20 +201,21 @@ function buildBillableLines(r, globals = {}) {
       r,
       "RECL",
       "Recliner",
-      Number(isRtBase ? r.availableWcAccessories?.recl_rt : r.availableWcAccessories?.recl_1w) || 0
+      Number(isRtBase ? r.availableWcAccessories?.recl_rt : r.availableWcAccessories?.recl_1w) || 0,
+      { forceZero: forceZeroMode }
     );
   }
 
   if (r.review?.AddHazmat) {
-    addLine(lines, r, "HAZMAT", "Hazmat", Number(r.availableCharges?.hazmat || 0));
+    addLine(lines, r, "HAZMAT", "Hazmat", Number(r.availableCharges?.hazmat || 0), { forceZero: forceZeroMode });
   }
 
   if (r.review?.AddO2) {
-    addLine(lines, r, "O2", "Oxygen", Number(r.availableCharges?.o2 || 0));
+    addLine(lines, r, "O2", "Oxygen", Number(r.availableCharges?.o2 || 0), { forceZero: forceZeroMode });
   }
 
   if (r.review?.AddBari) {
-    addLine(lines, r, "BARI", "Bariatric", Number(r.availableCharges?.bari || 0));
+    addLine(lines, r, "BARI", "Bariatric", Number(r.availableCharges?.bari || 0), { forceZero: forceZeroMode });
   }
 
   if (r.review?.AddDeadhead) {
@@ -269,7 +225,7 @@ function buildBillableLines(r, globals = {}) {
       "DEADHEAD",
       `Deadhead - ${Number(r.review?.DeadheadMiles || 0)} mi`,
       computeDeadheadChargeFromReview(r),
-      { miles: Number(r.review?.DeadheadMiles || 0) }
+      { miles: Number(r.review?.DeadheadMiles || 0), forceZero: forceZeroMode }
     );
   }
 
@@ -280,24 +236,60 @@ function buildBillableLines(r, globals = {}) {
       "WAIT",
       `Wait Time - ${Number(r.review?.WaitTotalMinutes || 0)} min`,
       computeWaitCharge(r),
-      { minutes: Number(r.review?.WaitTotalMinutes || 0) }
+      { minutes: Number(r.review?.WaitTotalMinutes || 0), forceZero: forceZeroMode }
     );
   }
 
   const timeCharge = automaticTimeCharge(r);
-  if (timeCharge && timeCharge.amount > 0) {
+  if (timeCharge && (timeCharge.amount > 0 || forceZeroMode)) {
     addLine(
       lines,
       r,
       timeCharge.code,
       prettyTimeChargeLabel(timeCharge.code),
-      timeCharge.amount
+      timeCharge.amount,
+      { forceZero: forceZeroMode }
     );
   }
 
   const fuel = fuelSurchargeAmount(r, globals);
-  if (fuel > 0) {
-    addLine(lines, r, "FUEL_SURCHARGE", "Fuel Surcharge", fuel);
+  if (fuel > 0 || forceZeroMode) {
+    addLine(lines, r, "FUEL_SURCHARGE", "Fuel Surcharge", fuel, { forceZero: forceZeroMode });
+  }
+
+  if (r.review?.NoCharge) {
+    for (const line of lines) {
+      line.amount = 0;
+    }
+
+    if (!lines.length) {
+      addLine(
+        lines,
+        r,
+        "NO_CHARGE",
+        `No Charge - ${prefix}${route ? " - " + route : ""}`,
+        0,
+        { forceZero: true }
+      );
+    }
+
+    return lines;
+  }
+
+  if (r.review?.MatchToQuote) {
+    for (const line of lines) {
+      line.amount = 0;
+    }
+
+    addLine(
+      lines,
+      r,
+      "MATCH_TO_QUOTE",
+      `Match to Quote - ${prefix}${route ? " - " + route : ""}`,
+      Number(r.review?.QuoteAmount || 0)
+    );
+
+    return lines;
   }
 
   return lines;

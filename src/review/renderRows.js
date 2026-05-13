@@ -1,3 +1,4 @@
+// cleanLocationName is loaded into window by bm-review-server.js
 function renderRows() {
     
   const fuelState = window.BM_GLOBALS || {
@@ -14,8 +15,8 @@ function renderRows() {
     const hay = [
       r.FirstName,
       r.LastName,
-      r.PickupName,
-      r.DropoffName,
+      window.cleanLocationName ? window.cleanLocationName(r.PickupName || "") : r.PickupName,
+      window.cleanLocationName ? window.cleanLocationName(r.DropoffName || "") : r.DropoffName,
       r.PickupCity,
       r.DropoffCity,
       r.notesFull,
@@ -78,11 +79,6 @@ function renderRows() {
       : r.TripShape === "MULTI_STOP" ? "MS"
       : "1W";
   }
-
-  function computeDeadheadCharge(r) {
-    if (!r.review?.AddDeadhead) return 0;
-    return Number(r.deadheadCharge || 0);
-  }
   
   function computeWaitCharge(r) {
     if (!r.review?.AddWait) return 0;
@@ -107,7 +103,7 @@ function renderRows() {
     return rate;
   }
 
-  function computeDeadheadChargeFromReview(r) {
+    function computeDeadheadChargeFromReview(r) {
     if (!r.review?.AddDeadhead) return 0;
 
     const miles = Number(r.review?.DeadheadMiles || 0);
@@ -123,8 +119,6 @@ function renderRows() {
     }
 
     const startMiles = moneyNum(cfg.dh_start_miles);
-    if (startMiles > 0 && miles < startMiles) return 0;
-
     const rate1 = moneyNum(cfg.dh_rate_tier1);
     const rate2 = moneyNum(cfg.dh_rate_tier2);
     const rate3 = moneyNum(cfg.dh_rate_tier3);
@@ -132,21 +126,31 @@ function renderRows() {
     const tier2Start = moneyNum(cfg.dh_tier2_start_miles);
     const tier3Start = moneyNum(cfg.dh_tier3_start_miles);
 
-    let rate = 0;
+    if (miles <= startMiles) return 0;
 
-    if (tier3Start > 0 && miles >= tier3Start && rate3 > 0) {
-      rate = rate3;
-    } else if (tier2Start > 0 && miles >= tier2Start && rate2 > 0) {
-      rate = rate2;
-    } else if (rate1 > 0) {
-      rate = rate1;
-    } else if (rate2 > 0) {
-      rate = rate2;
-    } else if (rate3 > 0) {
-      rate = rate3;
+    let total = 0;
+
+    // Tier 1: after free miles up to tier 2 start
+    const tier1From = startMiles;
+    const tier1To = tier2Start > 0 ? Math.min(miles, tier2Start - 1) : miles;
+    if (rate1 > 0 && tier1To > tier1From) {
+      total += (tier1To - tier1From) * rate1;
     }
 
-    return miles * rate;
+    // Tier 2
+    if (tier2Start > 0 && miles >= tier2Start && rate2 > 0) {
+      const tier2To = tier3Start > 0 ? Math.min(miles, tier3Start - 1) : miles;
+      if (tier2To >= tier2Start) {
+        total += (tier2To - tier2Start + 1) * rate2;
+      }
+    }
+
+    // Tier 3
+    if (tier3Start > 0 && miles >= tier3Start && rate3 > 0) {
+      total += (miles - tier3Start + 1) * rate3;
+    }
+
+    return total;
   }
 
   function fuelSurchargeAmount(r) {
@@ -232,7 +236,6 @@ function renderRows() {
 
     const charges = r.availableCharges || {};
     const wcState = wcAccessoryState(r);
-    const suggestions = window.getPreReviewSuggestions
     let total = 0;
 
     if (r.review?.AddNeedWC) total += wcState.needwcAmount;
@@ -278,6 +281,7 @@ function renderRows() {
         NoCharge: false,
         MatchToQuote: false,
         QuoteAmount: 0,
+        TripTypeOverride: "",
         AddWait: false,
         WaitTotalMinutes: 0,
         AddDeadhead: defaultDeadhead,
@@ -294,6 +298,7 @@ function renderRows() {
       if (!Number.isFinite(Number(r.review.DeadheadMiles))) r.review.DeadheadMiles = defaultDeadheadMiles;
       if (!r.review.CancelOverride) r.review.CancelOverride = "AUTO";
       if (typeof r.review.NoCharge !== "boolean") r.review.NoCharge = false;
+      if (!r.review.TripTypeOverride) r.review.TripTypeOverride = "";
     }
 
     const tr = document.createElement("tr");
@@ -335,12 +340,12 @@ function renderRows() {
 
     // Pick up
     tr.appendChild(makeCell(
-      "<b>" + esc(r.PickupName || "") + "</b><div>" + esc(r.PickupCity || "") + "</div>"
+       "<b>" + esc(window.cleanLocationName ? window.cleanLocationName(r.PickupName || "") : (r.PickupName || "")) + "</b><div>" + esc(r.PickupCity || "") + "</div>"
     ));
 
     // Drop-off
     tr.appendChild(makeCell(
-      "<b>" + esc(r.DropoffName || "") + "</b><div>" + esc(r.DropoffCity || "") + "</div>"
+       "<b>" + esc(window.cleanLocationName ? window.cleanLocationName(r.DropoffName || "") : (r.DropoffName || "")) + "</b><div>" + esc(r.DropoffCity || "") + "</div>"
     ));
 
     // Miles
@@ -358,7 +363,7 @@ function renderRows() {
     const adjTd = makeCell();
     adjTd.style.whiteSpace = "normal";
 
-    function makeCheckMoney(labelText, checked, amountText) {
+    function makeCheckMoney(labelText, checked, _amountText) {
       const label = document.createElement("label");
       label.style.whiteSpace = "nowrap";
       label.style.display = "inline-flex";
@@ -370,13 +375,13 @@ function renderRows() {
       const cb = document.createElement("input");
       cb.type = "checkbox";
       cb.checked = !!checked;
-
-      const text = document.createElement("span");
-      text.textContent = `${labelText} ${amountText}`;
-
       label.appendChild(cb);
-      label.appendChild(text);
-      return { label, cb };
+
+      const txt = document.createElement("span");
+      txt.textContent = labelText;
+      label.appendChild(txt);
+
+      return { label, cb, txt };
     }
 
     const adjWrap = document.createElement("div");
@@ -389,9 +394,23 @@ function renderRows() {
 
     const suggestions = window.getPreReviewSuggestions
       ? window.getPreReviewSuggestions(r)
-      : { flags: { O2: false, RECL: false, BARI: false } };
+      : { flags: { O2: false, RECL: false, BARI: false }, waitSuggestion: null };
 
     const suggestionFlags = suggestions.flags;
+
+    if (suggestions.waitSuggestion) {
+      if (!r.review) r.review = {};
+
+      if (!r.review.AddWait) {
+        r.review.AddWait = true;
+      }
+
+      if (!r.review.WaitTotalMinutes || Number(r.review.WaitTotalMinutes) === 0) {
+        r.review.WaitTotalMinutes = suggestions.waitSuggestion.waitMinutes;
+      }
+
+      r._suggestedWait = suggestions.waitSuggestion.multiplier;
+    }
 
     const needwcCtl = makeCheckMoney("Need WC", wcState.addNeedWC, fmtMoney(wcState.needwcAmount));
     const reclCtl = makeCheckMoney("RECL", wcState.addRECL, fmtMoney(wcState.reclAmount));
@@ -399,10 +418,43 @@ function renderRows() {
     const o2Ctl = makeCheckMoney("O2", !!r.review.AddO2, fmtMoney(r.availableCharges?.o2 || 0));
     const bariCtl = makeCheckMoney("BARI", !!r.review.AddBari, fmtMoney(r.availableCharges?.bari || 0));
       if (window.applySuggestionStyle) {
-        window.applySuggestionStyle(o2Ctl.label, suggestionFlags.O2, r.review.AddO2);
-        window.applySuggestionStyle(reclCtl.label, suggestionFlags.RECL, r.review.AddRECL);
-        window.applySuggestionStyle(bariCtl.label, suggestionFlags.BARI, r.review.AddBari);
+        window.applySuggestionStyle(o2Ctl.txt, suggestionFlags.O2, r.review.AddO2);
+        window.applySuggestionStyle(reclCtl.txt, suggestionFlags.RECL, r.review.AddRECL);
+        window.applySuggestionStyle(bariCtl.txt, suggestionFlags.BARI, r.review.AddBari);
     }
+
+    const typeWrap = document.createElement("label");
+    typeWrap.style.whiteSpace = "nowrap";
+    typeWrap.style.display = "inline-flex";
+    typeWrap.style.alignItems = "center";
+    typeWrap.style.gap = "4px";
+    typeWrap.style.marginRight = "12px";
+    typeWrap.style.marginBottom = "4px";
+
+    const typeText = document.createElement("span");
+    typeText.textContent = "Type";
+    typeWrap.appendChild(typeText);
+
+    const typeSel = document.createElement("select");
+    typeSel.style.border = "1px solid #d6d8ea";
+    typeSel.style.borderRadius = "6px";
+    typeSel.style.padding = "2px 4px";
+
+    [
+      ["", "Auto"],
+      ["AMBU", "AMBU"],
+      ["WC", "WC"],
+      ["STR", "STR"]
+    ].forEach(([value, label]) => {
+      const opt = document.createElement("option");
+      opt.value = value;
+      opt.textContent = label;
+      if ((r.review.TripTypeOverride || "") === value) opt.selected = true;
+      typeSel.appendChild(opt);
+    });
+
+    typeWrap.appendChild(typeSel);
+
     const dhWrap = document.createElement("label");
     dhWrap.style.whiteSpace = "nowrap";
     dhWrap.style.display = "inline-flex";
@@ -431,17 +483,62 @@ function renderRows() {
     dhMilesLabel.textContent = "mi";
     dhWrap.appendChild(dhMilesLabel);
 
-    const dhAmt = document.createElement("span");
-    dhAmt.textContent = fmtMoney(computeDeadheadChargeFromReview(r));
-    dhWrap.appendChild(dhAmt);
     const noChargeCtl = makeCheckMoney("No Charge", !!r.review.NoCharge, "");
 
+    adjWrap.appendChild(typeWrap);
     adjWrap.appendChild(needwcCtl.label);
     adjWrap.appendChild(reclCtl.label);
+    adjWrap.appendChild(hzCtl.label);
     adjWrap.appendChild(o2Ctl.label);
     adjWrap.appendChild(bariCtl.label);
-    adjWrap.appendChild(hzCtl.label);
     adjWrap.appendChild(dhWrap);
+
+    const moveWrap = document.createElement("label");
+    moveWrap.style.whiteSpace = "nowrap";
+    moveWrap.style.display = "inline-flex";
+    moveWrap.style.alignItems = "center";
+    moveWrap.style.gap = "4px";
+    moveWrap.style.marginRight = "12px";
+    moveWrap.style.marginBottom = "4px";
+
+    const moveText = document.createElement("span");
+    moveText.textContent = "Move";
+    moveWrap.appendChild(moveText);
+
+    const moveInput = document.createElement("select");
+    moveInput.style.width = "180px";
+    moveInput.style.border = "1px solid #d6d8ea";
+    moveInput.style.borderRadius = "6px";
+    moveInput.style.padding = "2px 4px";
+    moveInput.style.background = "#fff";
+
+    const blankOpt = document.createElement("option");
+    blankOpt.value = "";
+    blankOpt.textContent = "to account";
+    moveInput.appendChild(blankOpt);
+
+    const accountCodes = Array.isArray(window.BM_ACCOUNT_CODES) ? window.BM_ACCOUNT_CODES : [];
+    const currentMove = String(r.review.MoveToAccountCode || "").trim();
+
+    if (currentMove && !accountCodes.includes(currentMove)) {
+      const currentOpt = document.createElement("option");
+      currentOpt.value = currentMove;
+      currentOpt.textContent = currentMove + " (saved)";
+      moveInput.appendChild(currentOpt);
+    }
+
+    for (const acctCode of accountCodes) {
+      const opt = document.createElement("option");
+      opt.value = acctCode;
+      opt.textContent = acctCode;
+      moveInput.appendChild(opt);
+    }
+
+    moveInput.value = currentMove;
+
+    moveWrap.appendChild(moveInput);
+
+    adjWrap.appendChild(moveWrap);
 
     const waitWrap = document.createElement("label");
     waitWrap.style.whiteSpace = "nowrap";
@@ -459,6 +556,9 @@ function renderRows() {
     const waitText = document.createElement("span");
     waitText.textContent = "WAIT";
     waitWrap.appendChild(waitText);
+    if (window.applySuggestionStyle) {
+      window.applySuggestionStyle(waitText, suggestionFlags.WAIT, r.review.AddWait);
+    }
 
     const waitMinutesInput = document.createElement("input");
     waitMinutesInput.type = "number";
@@ -467,9 +567,9 @@ function renderRows() {
     waitMinutesInput.value = r.review.WaitTotalMinutes || "";
     waitWrap.appendChild(waitMinutesInput);
 
-    const waitAmt = document.createElement("span");
-    waitAmt.textContent = fmtMoney(computeWaitCharge(r));
-    waitWrap.appendChild(waitAmt);
+    const waitUnit = document.createElement("span");
+    waitUnit.textContent = "min";
+    waitWrap.appendChild(waitUnit);
 
     adjWrap.appendChild(waitWrap);
     adjWrap.appendChild(noChargeCtl.label);
@@ -523,7 +623,6 @@ function renderRows() {
     }
 
     function refreshDeadheadUI() {
-      dhAmt.textContent = fmtMoney(computeDeadheadChargeFromReview(r));
       refreshRowTotal();
       refreshDetailPanel();
       if (window.markDirty) window.markDirty();
@@ -617,6 +716,11 @@ function renderRows() {
 
     waitCb.onchange = () => {
       r.review.AddWait = waitCb.checked;
+
+      if (window.applySuggestionStyle) {
+        window.applySuggestionStyle(waitText, suggestionFlags.WAIT, r.review.AddWait);
+      }
+
       refreshRowTotal();
       refreshDetailPanel();
       if (window.markDirty) window.markDirty();
@@ -634,6 +738,16 @@ function renderRows() {
         e.preventDefault();
         waitMinutesInput.blur();
       }
+    };
+
+    typeSel.onchange = () => {
+      r.review.TripTypeOverride = typeSel.value || "";
+      if (window.markDirty) window.markDirty();
+    };
+
+    moveInput.onchange = () => {
+      r.review.MoveToAccountCode = moveInput.value.trim();
+      if (window.markDirty) window.markDirty();
     };
 
     noChargeCtl.cb.onchange = () => {

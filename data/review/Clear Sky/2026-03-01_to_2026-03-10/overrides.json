@@ -1,0 +1,28 @@
+{
+  "invoiceType": "single",
+  "deliveryFormat": "qbo",
+  "reviewed": true,
+  "reviewedAt": "2026-03-26T08:11:32.098Z",
+  "overrides": {
+    "2026-03-09|Clear Sky|Edward_Foxworth|50408": {
+      "Action": "INCLUDE",
+      "Modifier": "NONE",
+      "Note": "",
+      "MoveToAccountCode": "",
+      "AddNeedWC": false,
+      "AddRECL": false,
+      "AddHazmat": false,
+      "AddO2": true,
+      "AddBari": false,
+      "AddDeadhead": true,
+      "DeadheadMiles": 26,
+      "AddWait": false,
+      "WaitTotalMinutes": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
+      "MatchToQuote": false,
+      "QuoteAmount": 0,
+      "TripTypeOverride": ""
+    }
+  }
+}

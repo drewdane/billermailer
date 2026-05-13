@@ -1,4 +1,4 @@
-const { num } = require("../../../pricing/rateLookup");
+const { progressiveDeadheadChargeFromMiles } = require("./utils/progressiveDeadhead");
 
 function money(v) {
   const cleaned = String(v ?? "")
@@ -40,20 +40,36 @@ function computeLegacyDeadheadCharge(groupedTrip, rateRow) {
   }
 
   const flatFee = money(rateRow["dh_flat_fee"]);
+  const flatStartMiles = money(rateRow["dh_start_miles"]);
+
   if (flatFee > 0) {
+    if (dhMiles >= flatStartMiles) {
+      return {
+        deadheadMiles: dhMiles,
+        deadheadCharge: flatFee,
+        reason: "FLAT_FEE",
+        debug: {
+          dhMiles,
+          dh_start_miles: flatStartMiles,
+          dh_flat_fee: flatFee,
+        },
+      };
+    }
+
     return {
       deadheadMiles: dhMiles,
-      deadheadCharge: flatFee,
-      reason: "FLAT_FEE",
+      deadheadCharge: 0,
+      reason: "BELOW_FLAT_FEE_THRESHOLD",
       debug: {
         dhMiles,
+        dh_start_miles: flatStartMiles,
         dh_flat_fee: flatFee,
       },
     };
   }
 
   const startMiles = money(rateRow["dh_start_miles"]);
-  if (startMiles > 0 && dhMiles < startMiles) {
+  if (startMiles > 0 && dhMiles <= startMiles) {
     return {
       deadheadMiles: 0,
       deadheadCharge: 0,
@@ -65,44 +81,29 @@ function computeLegacyDeadheadCharge(groupedTrip, rateRow) {
     };
   }
 
-  const rate1 = money(rateRow["dh_rate_tier1"]);
-  const rate2 = money(rateRow["dh_rate_tier2"]);
-  const rate3 = money(rateRow["dh_rate_tier3"]);
 
-  const tier2Start = money(rateRow["dh_tier2_start_miles"]);
-  const tier3Start = money(rateRow["dh_tier3_start_miles"]);
-
-  let rate = 0;
-  let source = "";
-
-  if (tier3Start > 0 && dhMiles >= tier3Start && rate3 > 0) {
-    rate = rate3;
-    source = "dh_rate_tier3";
-  } else if (tier2Start > 0 && dhMiles >= tier2Start && rate2 > 0) {
-    rate = rate2;
-    source = "dh_rate_tier2";
-  } else if (rate1 > 0) {
-    rate = rate1;
-    source = "dh_rate_tier1";
-  } else if (rate2 > 0) {
-    rate = rate2;
-    source = "dh_rate_tier2_fallback";
-  } else if (rate3 > 0) {
-    rate = rate3;
-    source = "dh_rate_tier3_fallback";
-  }
-
+  const charge = progressiveDeadheadChargeFromMiles(dhMiles, {
+    dh_start_miles: rateRow["dh_start_miles"],
+    dh_rate_tier1: rateRow["dh_rate_tier1"],
+    dh_rate_tier2: rateRow["dh_rate_tier2"],
+    dh_rate_tier3: rateRow["dh_rate_tier3"],
+    dh_tier2_start_miles: rateRow["dh_tier2_start_miles"],
+    dh_tier3_start_miles: rateRow["dh_tier3_start_miles"],
+  });
+  
   return {
     deadheadMiles: dhMiles,
-    deadheadCharge: dhMiles * rate,
-    reason: rate > 0 ? "TIERED_RATE" : "NO_DH_RATE",
+    deadheadCharge: charge,
+    reason: charge > 0 ? "PROGRESSIVE_TIERED_RATE" : "NO_DH_RATE",
     debug: {
       dhMiles,
-      rate,
-      rateSource: source,
       dh_start_miles: startMiles,
-      dh_tier2_start_miles: tier2Start,
-      dh_tier3_start_miles: tier3Start,
+      dh_rate_tier1: money(rateRow["dh_rate_tier1"]),
+      dh_rate_tier2: money(rateRow["dh_rate_tier2"]),
+      dh_rate_tier3: money(rateRow["dh_rate_tier3"]),
+      dh_tier2_start_miles: money(rateRow["dh_tier2_start_miles"]),
+      dh_tier3_start_miles: money(rateRow["dh_tier3_start_miles"]),
+      progressive: true,
     },
   };
 }

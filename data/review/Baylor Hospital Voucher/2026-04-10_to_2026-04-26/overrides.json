@@ -1,0 +1,51 @@
+{
+  "invoiceType": "trip",
+  "deliveryFormat": "qbo",
+  "reviewed": true,
+  "reviewedAt": "2026-05-13T09:40:16.321Z",
+  "fuelSurchargeEnabled": true,
+  "fuelSurchargeStart": "2026-04-10",
+  "fuelSurchargeEnd": "2026-05-26",
+  "overrides": {
+    "2026-04-18|Baylor Hospital Voucher|Harold_Haedrick|51654": {
+      "Action": "INCLUDE",
+      "Modifier": "NONE",
+      "Note": "",
+      "MoveToAccountCode": "",
+      "AddNeedWC": false,
+      "AddRECL": false,
+      "AddHazmat": false,
+      "AddO2": false,
+      "AddBari": false,
+      "AddDeadhead": false,
+      "DeadheadMiles": 0,
+      "AddWait": false,
+      "WaitTotalMinutes": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
+      "MatchToQuote": true,
+      "QuoteAmount": 64,
+      "TripTypeOverride": ""
+    },
+    "2026-04-19|Baylor Hospital Voucher|Terry_Stom|51671": {
+      "Action": "INCLUDE",
+      "Modifier": "NONE",
+      "Note": "",
+      "MoveToAccountCode": "",
+      "AddNeedWC": false,
+      "AddRECL": false,
+      "AddHazmat": false,
+      "AddO2": true,
+      "AddBari": false,
+      "AddDeadhead": false,
+      "DeadheadMiles": 0,
+      "AddWait": false,
+      "WaitTotalMinutes": 0,
+      "CancelOverride": "AUTO",
+      "NoCharge": false,
+      "MatchToQuote": false,
+      "QuoteAmount": 0,
+      "TripTypeOverride": ""
+    }
+  }
+}
