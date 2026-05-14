@@ -336,7 +336,10 @@ function buildGroupedTrip(legs, index) {
   const first = sortedLegs[0];
   const last = sortedLegs[sortedLegs.length - 1];
 
-  const totalMileage = sortedLegs.reduce((sum, leg) => sum + num(leg.DirectMileage), 0);
+  const totalMileage = sortedLegs.reduce(
+    (sum, leg) => sum + Math.round(num(leg.DirectMileage)),
+    0
+  );
   const shape = tripShape(sortedLegs);
   const notesFull = summarizeNotes(sortedLegs);
 
@@ -361,6 +364,9 @@ function buildGroupedTrip(legs, index) {
 
     FirstName: first.FirstName,
     LastName: first.LastName,
+    DOB: first.DOB,
+    DateOfBirth: first.DateOfBirth,
+    BirthDate: first.BirthDate,
     Mobility: normalizeMobility(first.Mobility),
     RideStatus: sortedLegs.every((l) => statusKind(l.RideStatus) === "RODE") ? "Rode" : first.RideStatus,
 

@@ -742,7 +742,7 @@ function csvFromRows(csvRows) {
 
 function buildCsvRowsFromGrouped(grouped, period) {
   const csvRows = [
-    ["Customer", "InvoiceNo", "InvoiceDate", "DueDate", "ServiceDate", "Description", "Amount"],
+    ["Customer", "InvoiceNo", "InvoiceDate", "DueDate", "ServiceDate", "Product/Service", "Description", "Amount"],
   ];
 
   for (const inv of grouped) {
@@ -754,6 +754,7 @@ function buildCsvRowsFromGrouped(grouped, period) {
         invoiceDate,
         invoiceDate,
         fmtQboDate(l.rideDateISO || ""),
+        l.productService || "Services",
         l.lineDescription,
         Number(l.amount || 0).toFixed(2),
       ]);
@@ -1093,7 +1094,7 @@ const server = http.createServer((req, res) => {
             return send(res, 400, JSON.stringify({ error: "Nothing selected" }), "application/json");
           }
 
-          const header = ["Customer", "InvoiceNo", "InvoiceDate", "DueDate", "ServiceDate", "Description", "Amount"];
+          const header = ["Customer", "InvoiceNo", "InvoiceDate", "DueDate", "ServiceDate", "Product/Service", "Description", "Amount"];
           const maxDataRowsPerFile = 1000;
 
           const allInvoiceGroups = [];
