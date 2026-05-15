@@ -2,7 +2,7 @@
   "invoiceType": "trip",
   "deliveryFormat": "qbo",
   "reviewed": true,
-  "reviewedAt": "2026-05-13T09:40:16.321Z",
+  "reviewedAt": "2026-05-15T21:09:32.710Z",
   "fuelSurchargeEnabled": true,
   "fuelSurchargeStart": "2026-04-10",
   "fuelSurchargeEnd": "2026-05-26",
@@ -25,7 +25,10 @@
       "NoCharge": false,
       "MatchToQuote": true,
       "QuoteAmount": 64,
-      "TripTypeOverride": ""
+      "TripTypeOverride": "",
+      "MileageOverride": 10,
+      "ActualPickupTimeOverride": "",
+      "ActualDropoffTimeOverride": ""
     },
     "2026-04-19|Baylor Hospital Voucher|Terry_Stom|51671": {
       "Action": "INCLUDE",
@@ -45,7 +48,10 @@
       "NoCharge": false,
       "MatchToQuote": false,
       "QuoteAmount": 0,
-      "TripTypeOverride": ""
+      "TripTypeOverride": "",
+      "MileageOverride": 11,
+      "ActualPickupTimeOverride": "",
+      "ActualDropoffTimeOverride": ""
     }
   }
 }

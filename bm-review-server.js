@@ -551,6 +551,14 @@ async function openSet(acct, period){
     it.review.CancelOverride = o.CancelOverride || it.review.CancelOverride || "AUTO";
     it.review.NoCharge = typeof o.NoCharge === "boolean" ? o.NoCharge : !!it.review.NoCharge;
     it.review.TripTypeOverride = o.TripTypeOverride || "";
+    it.review.MileageOverride = Number.isFinite(Number(o.MileageOverride))
+      ? Number(o.MileageOverride)
+      : Number(it.DirectMileage || 0);
+    it.review.ActualPickupTimeOverride =
+      o.ActualPickupTimeOverride || "";
+
+    it.review.ActualDropoffTimeOverride =
+      o.ActualDropoffTimeOverride || "";
     if (o.CancelOverride) it.review.CancelOverride = o.CancelOverride;
     if (typeof o.NoCharge === "boolean") it.review.NoCharge = o.NoCharge;
     if (typeof o.AddNeedWC === "boolean") it.review.AddNeedWC = o.AddNeedWC;
@@ -608,6 +616,12 @@ async function save(){
       MatchToQuote: !!r.review?.MatchToQuote,
       QuoteAmount: Number(r.review?.QuoteAmount || 0),
       TripTypeOverride: r.review?.TripTypeOverride || "",
+      MileageOverride: Number(r.review?.MileageOverride || r.DirectMileage || 0),
+      ActualPickupTimeOverride:
+        r.review?.ActualPickupTimeOverride || "",
+
+      ActualDropoffTimeOverride:
+        r.review?.ActualDropoffTimeOverride || "",
     };
   }
 
@@ -674,6 +688,19 @@ function compactDateForDocNum(iso) {
   return m[2] + m[3] + m[1].slice(-2); // MMDDYY
 }
 
+function yesFlag(v) {
+  return String(v || "").trim().toLowerCase() === "y";
+}
+
+function rateRowIncludesActualTimes(rateRow) {
+  return yesFlag(
+    rateRow?.invoice_include_actual_times ||
+    rateRow?.InvoiceIncludeActualTimes ||
+    rateRow?.include_actual_times ||
+    rateRow?.IncludeActualTimes
+  );
+}
+
 function shortAcctCode(acct) {
   const acctKey = String(acct || "").trim();
 
@@ -722,7 +749,7 @@ function csvFromRows(csvRows) {
 
 function buildCsvRowsFromGrouped(grouped, period) {
   const csvRows = [
-    ["Customer", "InvoiceNo", "InvoiceDate", "DueDate", "ServiceDate", "Product/Service", "Description", "Amount"],
+    ["Customer", "InvoiceNo", "InvoiceDate", "DueDate", "ServiceDate", "Product/Service", "Description", "Qty", "Rate", "Amount"],
   ];
 
   for (const inv of grouped) {
@@ -736,6 +763,8 @@ function buildCsvRowsFromGrouped(grouped, period) {
         fmtQboDate(l.rideDateISO || ""),
         l.productService || "Services",
         l.lineDescription,
+        l.qty === "" ? "" : Number(l.qty ?? 1).toFixed(2),
+        l.rate === "" ? "" : Number(l.rate ?? l.amount ?? 0).toFixed(2),
         Number(l.amount || 0).toFixed(2),
       ]);
     }
@@ -798,6 +827,11 @@ function buildGroupedInvoicesForSet(baseDir, acct, period, invoiceType) {
       String(review.MoveToAccountCode || "").trim() ||
       String(r.AccountCode || "").trim();
 
+    const mileageOverride = Number(review.MileageOverride || 0);
+    const effectiveMileage = mileageOverride > 0
+      ? mileageOverride
+      : Number(r.DirectMileage || 0);
+
     const pricingInput = {
       ...r,
       review,
@@ -805,6 +839,7 @@ function buildGroupedInvoicesForSet(baseDir, acct, period, invoiceType) {
       AccountName: effectiveAccountCode,
       Mobility: mobilityOverride,
       BillingClass: r.BillingClass,
+      DirectMileage: String(effectiveMileage),
     };
 
     const rateRow = rateLookupFn(pricingInput);
@@ -816,6 +851,7 @@ function buildGroupedInvoicesForSet(baseDir, acct, period, invoiceType) {
     const repricedRow = {
       ...pricingInput,
       pricing,
+      invoiceIncludeActualTimes: rateRowIncludesActualTimes(rateRow || {}),
       availableCharges,
       deadheadCharge: Number(deadheadResult.deadheadCharge || 0),
       deadheadMiles: Number(deadheadResult.deadheadMiles || 0),
@@ -994,10 +1030,30 @@ const server = http.createServer((req, res) => {
     }
 
     if (u.pathname === "/api/items") {
-      const acct = u.query.acct;
+      const acct = String(u.query.acct || "").trim();
       const period = u.query.period;
       const p = safeJoin(acct, period, "items.json");
-      return send(res, 200, JSON.stringify(readJson(p)), "application/json");
+
+      const rows = readJson(p);
+
+      const { loadRateSheet, makeRateLookup } = require("./src/review/loadRateSheet");
+      const { ratesPath: defaultRatesPath } = require("./src/orgs/CTT/pricing/pricingContext");
+
+      const rateRows = loadRateSheet(defaultRatesPath);
+      const rateLookupFn = makeRateLookup(rateRows);
+
+      const rateRow = rateLookupFn({
+        AccountCode: acct,
+        AccountName: acct,
+      }) || {};
+
+      const includeTimes = rateRowIncludesActualTimes(rateRow);
+
+      for (const row of rows) {
+        row.invoiceIncludeActualTimes = includeTimes;
+      }
+
+      return send(res, 200, JSON.stringify(rows), "application/json");
     }
 
     if (u.pathname === "/api/overrides" && req.method === "GET") {
@@ -1085,7 +1141,7 @@ const server = http.createServer((req, res) => {
             return send(res, 400, JSON.stringify({ error: "Nothing selected" }), "application/json");
           }
 
-          const header = ["Customer", "InvoiceNo", "InvoiceDate", "DueDate", "ServiceDate", "Product/Service", "Description", "Amount"];
+          const header = ["Customer", "InvoiceNo", "InvoiceDate", "DueDate", "ServiceDate", "Product/Service", "Description", "Qty", "Rate", "Amount"];
           const maxDataRowsPerFile = 1000;
 
           const allInvoiceGroups = [];

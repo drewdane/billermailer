@@ -289,7 +289,8 @@ function renderRows() {
         Action: r.Action || "INCLUDE",
         Modifier: r.Modifier || "NONE",
         Note: r.Note || "",
-        MoveToAccountCode: r.MoveToAccountCode || ""
+        MoveToAccountCode: r.MoveToAccountCode || "",
+        MileageOverride: Number(r.DirectMileage || 0)
       };
     } else {
       if (typeof r.review.AddNeedWC !== "boolean") r.review.AddNeedWC = defaultNeedWC;
@@ -299,6 +300,9 @@ function renderRows() {
       if (!r.review.CancelOverride) r.review.CancelOverride = "AUTO";
       if (typeof r.review.NoCharge !== "boolean") r.review.NoCharge = false;
       if (!r.review.TripTypeOverride) r.review.TripTypeOverride = "";
+      if (!Number.isFinite(Number(r.review.MileageOverride))) {
+        r.review.MileageOverride = Number(r.DirectMileage || 0);
+      }
     }
 
     const tr = document.createElement("tr");
@@ -349,7 +353,32 @@ function renderRows() {
     ));
 
     // Miles
-    tr.appendChild(makeCell(esc(r.DirectMileage || "")));
+    const milesTd = makeCell();
+
+    const milesInput = document.createElement("input");
+    milesInput.type = "number";
+    milesInput.step = "1";
+    milesInput.style.width = "52px";
+    milesInput.value = r.review.MileageOverride || 0;
+
+    milesInput.oninput = () => {
+      r.review.MileageOverride = Number(milesInput.value || 0);
+
+      refreshRowTotal();
+      refreshDetailPanel();
+
+      if (window.markDirty) window.markDirty();
+    };
+
+    milesInput.onkeydown = (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        milesInput.blur();
+      }
+    };
+
+    milesTd.appendChild(milesInput);
+    tr.appendChild(milesTd);
 
     // Notes
     const notesTd = makeCell(esc(r.notesPreview || ""));
@@ -803,7 +832,14 @@ function renderRows() {
 
         function renderDetailPanel() {
           const base = Number((r.pricing && r.pricing.base) || 0);
-          const mileage = Number((r.pricing && r.pricing.mileage) || 0);
+          const billableMiles = Number(r.review?.MileageOverride || 0);
+          const mileageRate =
+            billableMiles > 0
+              ? Number((r.pricing && r.pricing.mileage) || 0) /
+                Number((r.pricing?.audit?.billableMiles) || billableMiles)
+              : 0;
+
+          const mileage = billableMiles * mileageRate;
           const wcStateDetail = wcAccessoryState(r);
           const cancelFee = Number((r.pricing && r.pricing.cancelFee) || 0);
           const noChargeHtml = r.review?.NoCharge
@@ -893,6 +929,44 @@ function renderRows() {
               );
           }
 
+          let actualTimesHtml = "";
+
+          if (r.invoiceIncludeActualTimes) {
+            const firstLeg = Array.isArray(r.legs) && r.legs.length ? r.legs[0] : null;
+            const lastLeg = Array.isArray(r.legs) && r.legs.length ? r.legs[r.legs.length - 1] : null;
+
+            const puVal = esc(
+              r.review?.ActualPickupTimeOverride ||
+              firstLeg?.ActualPickupTime ||
+              r.ActualPickupTime ||
+              firstLeg?.PickupArrivalTime ||
+              r.PickupArrivalTime ||
+              ""
+            );
+
+            const doVal = esc(
+              r.review?.ActualDropoffTimeOverride ||
+              lastLeg?.ActualDropoffTime ||
+              r.ActualDropoffTime ||
+              lastLeg?.DropoffArrivalTime ||
+              r.DropoffArrivalTime ||
+              ""
+            );
+
+            actualTimesHtml =
+              "<div style='margin-top:12px;padding-top:8px;border-top:1px solid #e5e7eb'>" +
+                "<div style='margin-bottom:6px'><b>Invoice Times</b></div>" +
+                "<label style='display:flex;align-items:center;gap:6px;margin-bottom:6px'>" +
+                  "<span style='width:70px'>PU Time</span>" +
+                  "<input data-pu-time-override type='text' value='" + puVal + "' style='width:110px;border:1px solid #d6d8ea;border-radius:6px;padding:2px 4px' />" +
+                "</label>" +
+                "<label style='display:flex;align-items:center;gap:6px'>" +
+                  "<span style='width:70px'>DO Time</span>" +
+                  "<input data-do-time-override type='text' value='" + doVal + "' style='width:110px;border:1px solid #d6d8ea;border-radius:6px;padding:2px 4px' />" +
+                "</label>" +
+              "</div>";
+          }
+
           detailBox.innerHTML =
             "<div style='display:grid; grid-template-columns: 240px 320px repeat(auto-fit, minmax(260px, 1fr)); gap:20px; align-items:start'>" +
 
@@ -904,6 +978,7 @@ function renderRows() {
                 noChargeHtml +
                 chargedAccessoryLines.join("") +
                 "<div style='margin-top:6px'><b>Total: $" + grandTotal.toFixed(2) + "</b></div>" +
+                actualTimesHtml +
               "</div>" +
 
               "<div>" +
@@ -915,6 +990,22 @@ function renderRows() {
 
             "</div>";
         }
+
+      const puOverrideInput = detailBox.querySelector("[data-pu-time-override]");
+      if (puOverrideInput) {
+        puOverrideInput.oninput = () => {
+          r.review.ActualPickupTimeOverride = puOverrideInput.value;
+          if (window.markDirty) window.markDirty();
+        };
+      }
+
+      const doOverrideInput = detailBox.querySelector("[data-do-time-override]");
+      if (doOverrideInput) {
+        doOverrideInput.oninput = () => {
+          r.review.ActualDropoffTimeOverride = doOverrideInput.value;
+          if (window.markDirty) window.markDirty();
+        };
+      }
 
       renderDetailPanel();
     

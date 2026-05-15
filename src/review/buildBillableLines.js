@@ -23,6 +23,25 @@ function fmtDateForLine(iso) {
   return `${Number(m)}/${Number(d)}/${String(y).slice(-2)}`;
 }
 
+function cleanTime(v) {
+  const s = String(v || "").trim();
+
+  if (!s) return "";
+
+  const m = s.match(/^(\d{1,2}):(\d{2})/);
+  if (!m) return s;
+
+  let hour = Number(m[1]);
+  const minute = m[2];
+
+  const ampm = hour >= 12 ? "pm" : "am";
+
+  hour = hour % 12;
+  if (hour === 0) hour = 12;
+
+  return `${hour}:${minute} ${ampm}`;
+}
+
 function cleanDob(v) {
   let s = String(v || "").trim();
 
@@ -62,22 +81,67 @@ function locationLabel(name, address1) {
 }
 
 function invoiceRouteLabel(r) {
-  const from = locationLabel(cleanLocationName(r.PickupName || ""), r.PickupAddress1);
-  const to = locationLabel(cleanLocationName(r.DropoffName || ""), r.DropoffAddress1);
+  const puName = cleanLocationName(r.PickupName || "");
+  const puAddr = String(r.PickupAddress1 || "").trim();
 
-  if (from && to) return ` - FROM: ${from} TO ${to}`;
-  if (from) return ` - FROM: ${from}`;
-  if (to) return ` - TO ${to}`;
+  const doName = cleanLocationName(r.DropoffName || "");
+  const doAddr = String(r.DropoffAddress1 || "").trim();
+
+  const includeTimes = !!r.invoiceIncludeActualTimes;
+
+  const firstLeg = Array.isArray(r.legs) && r.legs.length ? r.legs[0] : null;
+  const lastLeg = Array.isArray(r.legs) && r.legs.length ? r.legs[r.legs.length - 1] : null;
+
+  const puTime = cleanTime(
+    r.review?.ActualPickupTimeOverride ||
+    r.ActualPickupTime ||
+    firstLeg?.ActualPickupTime ||
+    r.PickupArrivalTime ||
+    firstLeg?.PickupArrivalTime ||
+    ""
+  );
+
+  const doTime = cleanTime(
+    r.review?.ActualDropoffTimeOverride ||
+    r.ActualDropoffTime ||
+    lastLeg?.ActualDropoffTime ||
+    r.DropoffArrivalTime ||
+    lastLeg?.DropoffArrivalTime ||
+    ""
+  );
+
+  const puSuffix =
+    includeTimes && puTime
+      ? ` (Pick up ${puTime})`
+      : "";
+
+  const doSuffix =
+    includeTimes && doTime
+      ? ` (Drop off ${doTime})`
+      : "";
+
+  const from = [puName, puAddr].filter(Boolean).join(" ");
+  const to = [doName, doAddr].filter(Boolean).join(" ");
+
+  if (from && to) return ` - FROM: ${from}${puSuffix} TO ${to}${doSuffix}`;
+  if (from) return ` - FROM: ${from}${puSuffix}`;
+  if (to) return ` - TO ${to}${doSuffix}`;
   return "";
 }
 
 function tripChargeLabel(r) {
   const shape = String(r.TripShape || "").toUpperCase();
+  const mobility = String(r.Mobility || "").toUpperCase();
 
   if (shape === "ROUND_TRIP") return "Trip Charge - Round Trip";
   if (shape === "MULTI_STOP") return "Trip Charge - Multi-Stop";
 
-  return "Trip Charge - One Way";
+  if (mobility === "STR") return "Trip Charge - 1-Way with Stretcher";
+
+  if (r.review?.AddRECL) return "Trip Charge - 1-Way with Recliner";
+  if (mobility === "WC") return "Trip Charge - 1-Way with Wheelchair";
+
+  return "Trip Charge - 1-Way";
 }
 
 function tripRouteLabel(r) {
@@ -156,7 +220,7 @@ function fuelSurchargeAmount(r, globals = {}) {
   if (!tripDate || !start || !end) return 0;
   if (tripDate < start || tripDate > end) return 0;
 
-  const loadedMiles = Number(r.pricing?.audit?.billableMiles || 0);
+  const loadedMiles = Number(r.review?.MileageOverride || r.pricing?.audit?.billableMiles || r.DirectMileage || 0);
   const dhMiles = r.review?.AddDeadhead ? Number(r.review?.DeadheadMiles || 0) : 0;
 
   return money(rate * (loadedMiles + dhMiles));
@@ -186,12 +250,15 @@ function productServiceForKind(kind) {
 
 function addLine(lines, r, kind, description, amount, extra = {}) {
   const amt = money(amount);
-  if (amt <= 0 && !extra.forceZero) return;
+  if (amt < 0 && !extra.allowNegative) return;
+  if (amt === 0 && !extra.forceZero) return;
 
   lines.push({
     lineKind: kind,
     productService: extra.productService || productServiceForKind(kind),
     lineDescription: description,
+    qty: extra.qty ?? 1,
+    rate: extra.rate ?? amt,
     amount: extra.forceZero ? 0 : amt,
     lineId: r.LineId,
     rideDateISO: r.RideDateISO || "",
@@ -203,6 +270,7 @@ function addLine(lines, r, kind, description, amount, extra = {}) {
   });
 
   delete lines[lines.length - 1].forceZero;
+  delete lines[lines.length - 1].allowNegative;
 }
 
 function buildBillableLines(r, globals = {}) {
@@ -216,7 +284,7 @@ function buildBillableLines(r, globals = {}) {
   const route = tripRouteLabel(r);
   const prefix = invoicePrefix(r);
   const routeText = invoiceRouteLabel(r);
-  const forceZeroMode = !!(r.review?.MatchToQuote || r.review?.NoCharge);
+  const forceZeroMode = !!r.review?.NoCharge;
   const raw = String(r.RideStatus || "").trim().toLowerCase();
   const tmCancelled = raw === "noshow" || raw === "ridercancel";
   const override = String(r.review?.CancelOverride || "AUTO").toUpperCase();
@@ -247,14 +315,19 @@ function buildBillableLines(r, globals = {}) {
   );
 
   const mileageAmount = Number(r.pricing?.mileage || 0);
-  const billableMiles = Number(r.pricing?.audit?.billableMiles || 0);
+  const billableMiles = Number(r.review?.MileageOverride || r.pricing?.audit?.billableMiles || r.DirectMileage || 0);
   addLine(
     lines,
     r,
     "MILEAGE",
     `${prefix} - Mileage - ${billableMiles} mi`,
     mileageAmount,
-    { miles: billableMiles, forceZero: forceZeroMode }
+    {
+      miles: billableMiles,
+      qty: billableMiles,
+      rate: billableMiles > 0 ? money(mileageAmount / billableMiles) : mileageAmount,
+      forceZero: forceZeroMode
+    }
   );
 
   const isRtBase =
@@ -295,7 +368,7 @@ function buildBillableLines(r, globals = {}) {
     addLine(lines, r, "BARI", `${prefix} - Bariatric fee`, Number(r.availableCharges?.bari || 0), { forceZero: forceZeroMode });
   }
 
-  if (r.review?.AddDeadhead) {
+  if (r.review?.AddDeadhead && String(r.TripShape || "").toUpperCase() !== "ROUND_TRIP") {
     addLine(
       lines,
       r,
@@ -323,15 +396,15 @@ function buildBillableLines(r, globals = {}) {
       lines,
       r,
       timeCharge.code,
-      prettyTimeChargeLabel(timeCharge.code),
+      `${prefix} - ${prettyTimeChargeLabel(timeCharge.code)}`,
       timeCharge.amount,
       { forceZero: forceZeroMode }
     );
   }
 
   const fuel = fuelSurchargeAmount(r, globals);
-  if (fuel > 0 || forceZeroMode) {
-    addLine(lines, r, "FUEL_SURCHARGE", `${prefix} - Fuel Surcharge`, fuel, { forceZero: forceZeroMode });
+  if (fuel > 0) {
+    addLine(lines, r, "FUEL_SURCHARGE", `${prefix} - Fuel Surcharge`, fuel);
   }
 
   if (r.review?.NoCharge) {
@@ -353,21 +426,31 @@ function buildBillableLines(r, globals = {}) {
     return lines;
   }
 
-  if (r.review?.MatchToQuote) {
-    for (const line of lines) {
-      line.amount = 0;
+    if (r.review?.MatchToQuote) {
+      const quoteAmount = money(r.review?.QuoteAmount || 0);
+      const actualTotal = money(lines.reduce((sum, line) => sum + Number(line.amount || 0), 0));
+      const variance = money(quoteAmount - actualTotal);
+
+      if (variance !== 0) {
+        addLine(
+          lines,
+          r,
+          "MATCH_TO_QUOTE",
+          variance < 0
+            ? `${prefix} - Discount per quote`
+            : `${prefix} - Match to Quote variance`,
+          variance,
+          {
+            productService: "Transport Miscellaneous Income",
+            allowNegative: true,
+            qty: "",
+            rate: ""
+          }
+        );
+      }
+
+      return lines;
     }
-
-    addLine(
-      lines,
-      r,
-      "MATCH_TO_QUOTE",
-      `${prefix} - Match to Quote`,
-      Number(r.review?.QuoteAmount || 0)
-    );
-
-    return lines;
-  }
 
   return lines;
 }
