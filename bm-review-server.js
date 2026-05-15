@@ -675,34 +675,14 @@ function compactDateForDocNum(iso) {
 }
 
 function shortAcctCode(acct) {
-  const words = String(acct || "")
-    .replace(/[^A-Za-z0-9 ]+/g, " ")
-    .trim()
-    .split(/\s+/)
-    .filter(Boolean)
-    .map((w) => w.toUpperCase().replace(/[^A-Z0-9]/g, ""))
-    .filter(Boolean);
+  const acctKey = String(acct || "").trim();
 
-  if (!words.length) return "INV";
-
-  // One-word account: use up to 8 chars.
-  if (words.length === 1) {
-    return words[0].slice(0, 8) || "INV";
+  if (global.BM_SHORT_CODE_MAP && global.BM_SHORT_CODE_MAP.has(acctKey)) {
+    return global.BM_SHORT_CODE_MAP.get(acctKey);
   }
 
-  // Multi-word account:
-  // first word initial + first 3 chars of each following word.
-  //
-  // Examples:
-  // Encompass Arlington -> EARL
-  // Encompass Abilene   -> EABI
-  // Texas Health Alliance -> THEAALL
-  const prefix = words[0][0] + words.slice(1).map((w) => w.slice(0, 3)).join("");
-
-  return prefix.slice(0, 8) || "INV";
+  throw new Error(`Missing ShortCode in accounts_v2 for account: "${acctKey}"`);
 }
-
-
 
 function buildInvoiceNo(acct, periodEndIso, index = null) {
   const base = shortAcctCode(acct) + "-" + compactDateForDocNum(periodEndIso);
@@ -789,6 +769,17 @@ function buildGroupedInvoicesForSet(baseDir, acct, period, invoiceType) {
 
   const rateRows = loadRateSheet(defaultRatesPath);
   const rateLookupFn = makeRateLookup(rateRows);
+
+  global.BM_SHORT_CODE_MAP = new Map();
+
+  for (const row of rateRows) {
+    const acctCode = String(row.AccountCode || row.account_code || row.account || "").trim();
+    const shortCode = String(row.ShortCode || row.shortcode || row.short_code || "").trim();
+
+    if (acctCode && shortCode) {
+      global.BM_SHORT_CODE_MAP.set(acctCode, shortCode.toUpperCase());
+    }
+  }
 
   const lines = [];
 

@@ -24,12 +24,14 @@ function fmtDateForLine(iso) {
 }
 
 function cleanDob(v) {
-  const s = String(v || "").trim();
+  let s = String(v || "").trim();
 
   if (!s) return "";
   if (s === "/ /") return "";
   if (s === "//") return "";
   if (/^\/\s*\/$/.test(s)) return "";
+
+  s = s.replace(/\s+12:00:00\s+AM$/i, "").trim();
 
   return s;
 }
@@ -228,8 +230,9 @@ function buildBillableLines(r, globals = {}) {
       lines,
       r,
       "CANCEL_FEE",
-      `Cancellation Fee - ${prefix}${route ? " - " + route : ""}`,
-      Number(r.pricing?.cancelFee || 0)
+      `${prefix}${routeText} - Cancellation Fee`,
+      Number(r.pricing?.cancelFee || 0),
+      { forceZero: forceZeroMode }
     );
     return lines;
   }

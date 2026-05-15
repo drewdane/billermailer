@@ -26,6 +26,7 @@ const TARGET_COLUMNS = [
   "FirstName",
   "LastName",
   "MiddleInitial",
+  "DOB",
   "Comments",
   "ConfirmationNumber",
   "RideDate",

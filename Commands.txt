@@ -1,0 +1,2 @@
+node src\cli\bm-price-test.js --trips data\TestEHCV.csv --rate accounts_v2.csv --accountCode "Encompass Health Cityview" --o2 --bari --wait 75 --dh
+
