@@ -28,17 +28,17 @@
     "DropoffZip": "76092",
     "DirectMileage": "6",
     "RideHours": "0.55",
-    "Comments": "rm 4614, 100lbs., STR, left hip fracture, left arm fracture,\nthe carlyle rm 301",
-    "Comments1": "rm 4614, 100lbs., STR, left hip fracture, left arm fracture,\nthe carlyle rm 301",
+    "Comments": "rm 4614, 100lbs., STR, left hip fracture, left arm fracture,\r\nthe carlyle rm 301",
+    "Comments1": "rm 4614, 100lbs., STR, left hip fracture, left arm fracture,\r\nthe carlyle rm 301",
     "notesFull": "rm 4614, 100lbs., STR, left hip fracture, left arm fracture,\nthe carlyle rm 301",
-    "notesPreview": "rm 4614, 100lbs., STR, left hip fracture, left arm fracture,",
+    "notesPreview": "rm 4614, 100lbs., STR, left hip fracture, left arm fracture, | the carlyle rm 301",
     "legs": [
       {
         "FirstName": "Sheri",
         "LastName": "Singleton",
         "MiddleInitial": "",
         "DOB": "2/8/1959 12:00:00 AM",
-        "Comments": "rm 4614, 100lbs., STR, left hip fracture, left arm fracture,\nthe carlyle rm 301",
+        "Comments": "rm 4614, 100lbs., STR, left hip fracture, left arm fracture,\r\nthe carlyle rm 301",
         "ConfirmationNumber": "51836",
         "RideDate": "4/24/2026 12:00:00 AM",
         "ScheduledPickupTime": "15:30",
@@ -52,7 +52,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "6.12",
-        "Comments1": "rm 4614, 100lbs., STR, left hip fracture, left arm fracture,\nthe carlyle rm 301",
+        "Comments1": "rm 4614, 100lbs., STR, left hip fracture, left arm fracture,\r\nthe carlyle rm 301",
         "PickupName": "Baylor Scott & White Hospital - Grapevine ",
         "PickupAddress1": "1650 W College St",
         "PickupCity": "Grapevine",
@@ -65,7 +65,7 @@
         "DropoffZip": "76092",
         "AccountCode": " Carlyle at Stonebridge Park Southlake",
         "AccountName": " Carlyle at Stonebridge Park Southlake",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",

@@ -28,17 +28,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "16",
     "RideHours": "",
-    "Comments": "RM 207 a\n172 lbs\nHas WC\n1100 appt, ste 515, Ukanwoke Akunna\nKelley",
-    "Comments1": "RM 207 a\n172 lbs\nHas WC\n1100 appt, ste 515, Ukanwoke Akunna\nKelley",
+    "Comments": "RM 207 a\r\n172 lbs\r\nHas WC\r\n1100 appt, ste 515, Ukanwoke Akunna\r\nKelley",
+    "Comments1": "RM 207 a\r\n172 lbs\r\nHas WC\r\n1100 appt, ste 515, Ukanwoke Akunna\r\nKelley",
     "notesFull": "RM 207 a\n172 lbs\nHas WC\n1100 appt, ste 515, Ukanwoke Akunna\nKelley",
-    "notesPreview": "RM 207 a",
+    "notesPreview": "RM 207 a | 172 lbs | Has WC | 1100 appt, ste 515, Ukanwoke Akunna | Kelley",
     "legs": [
       {
         "FirstName": "Juanita ",
         "LastName": "Evans ",
         "MiddleInitial": "",
         "DOB": "9/14/1956 12:00:00 AM",
-        "Comments": "RM 207 a\n172 lbs\nHas WC\n1100 appt, ste 515, Ukanwoke Akunna\nKelley",
+        "Comments": "RM 207 a\r\n172 lbs\r\nHas WC\r\n1100 appt, ste 515, Ukanwoke Akunna\r\nKelley",
         "ConfirmationNumber": "51418",
         "RideDate": "4/10/2026 12:00:00 AM",
         "ScheduledPickupTime": "10:15",
@@ -52,7 +52,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "7.94",
-        "Comments1": "RM 207 a\n172 lbs\nHas WC\n1100 appt, ste 515, Ukanwoke Akunna\nKelley",
+        "Comments1": "RM 207 a\r\n172 lbs\r\nHas WC\r\n1100 appt, ste 515, Ukanwoke Akunna\r\nKelley",
         "PickupName": "Encompass Health Rehabilitation Hospital of City View",
         "PickupAddress1": "6701 Oakmont Boulevard",
         "PickupCity": "Fort Worth",
@@ -65,14 +65,14 @@
         "DropoffZip": "76104",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "Juanita ",
         "LastName": "Evans ",
         "MiddleInitial": "",
         "DOB": "9/14/1956 12:00:00 AM",
-        "Comments": "RM 207 a\n172 lbs\nHas WC\n1100 appt, ste 515, Ukanwoke Akunna\nKelley",
+        "Comments": "RM 207 a\r\n172 lbs\r\nHas WC\r\n1100 appt, ste 515, Ukanwoke Akunna\r\nKelley",
         "ConfirmationNumber": "51419",
         "RideDate": "4/10/2026 12:00:00 AM",
         "ScheduledPickupTime": "12:21",
@@ -86,7 +86,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "7.94",
-        "Comments1": "RM 207 a\n172 lbs\nHas WC\n1100 appt, ste 515, Ukanwoke Akunna\nKelley",
+        "Comments1": "RM 207 a\r\n172 lbs\r\nHas WC\r\n1100 appt, ste 515, Ukanwoke Akunna\r\nKelley",
         "PickupName": "Baylor Scott & White Liver Consultants of Texas - Fort Worth",
         "PickupAddress1": "1250 8th Avenue",
         "PickupCity": "Fort Worth",
@@ -99,7 +99,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -232,17 +232,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "11",
     "RideHours": "",
-    "Comments": "**Per Kelley, Cancel on scene**\nRM 209 b\n188 lbs\nHas WC\n1445 arrival for a 1500 appt, ste 100, JPS Cardiac outpatient\nKelley",
-    "Comments1": "**Per Kelley, Cancel on scene**\nRM 209 b\n188 lbs\nHas WC\n1445 arrival for a 1500 appt, ste 100, JPS Cardiac outpatient\nKelley",
+    "Comments": "**Per Kelley, Cancel on scene**\r\nRM 209 b\r\n188 lbs\r\nHas WC\r\n1445 arrival for a 1500 appt, ste 100, JPS Cardiac outpatient\r\nKelley",
+    "Comments1": "**Per Kelley, Cancel on scene**\r\nRM 209 b\r\n188 lbs\r\nHas WC\r\n1445 arrival for a 1500 appt, ste 100, JPS Cardiac outpatient\r\nKelley",
     "notesFull": "**Per Kelley, Cancel on scene**\nRM 209 b\n188 lbs\nHas WC\n1445 arrival for a 1500 appt, ste 100, JPS Cardiac outpatient\nKelley",
-    "notesPreview": "**Per Kelley, Cancel on scene**",
+    "notesPreview": "**Per Kelley, Cancel on scene** | RM 209 b | 188 lbs | Has WC | 1445 arrival for a 1500 appt, ste 100, JPS Cardiac outpatient | Kelley",
     "legs": [
       {
         "FirstName": "Ricardo",
         "LastName": "Maldonado",
         "MiddleInitial": "",
         "DOB": "4/19/1960 12:00:00 AM",
-        "Comments": "**Per Kelley, Cancel on scene**\nRM 209 b\n188 lbs\nHas WC\n1445 arrival for a 1500 appt, ste 100, JPS Cardiac outpatient\nKelley",
+        "Comments": "**Per Kelley, Cancel on scene**\r\nRM 209 b\r\n188 lbs\r\nHas WC\r\n1445 arrival for a 1500 appt, ste 100, JPS Cardiac outpatient\r\nKelley",
         "ConfirmationNumber": "51413",
         "RideDate": "4/10/2026 12:00:00 AM",
         "ScheduledPickupTime": "14:10",
@@ -256,7 +256,7 @@
         "Mobility": "WC",
         "RideStatus": "NoShow ",
         "DirectMileage": "10.59",
-        "Comments1": "**Per Kelley, Cancel on scene**\nRM 209 b\n188 lbs\nHas WC\n1445 arrival for a 1500 appt, ste 100, JPS Cardiac outpatient\nKelley",
+        "Comments1": "**Per Kelley, Cancel on scene**\r\nRM 209 b\r\n188 lbs\r\nHas WC\r\n1445 arrival for a 1500 appt, ste 100, JPS Cardiac outpatient\r\nKelley",
         "PickupName": "Encompass Health Rehabilitation Hospital of City View",
         "PickupAddress1": "6701 Oakmont Boulevard",
         "PickupCity": "Fort Worth",
@@ -269,7 +269,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -379,17 +379,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "22",
     "RideHours": "",
-    "Comments": "279, 193lbs, cn, has wc, +1 pass or family will meet per Kelley, Kelley\n9am appt, Take to registration",
-    "Comments1": "279, 193lbs, cn, has wc, +1 pass or family will meet per Kelley, Kelley\n9am appt, Take to registration",
+    "Comments": "279, 193lbs, cn, has wc, +1 pass or family will meet per Kelley, Kelley\r\n9am appt, Take to registration",
+    "Comments1": "279, 193lbs, cn, has wc, +1 pass or family will meet per Kelley, Kelley\r\n9am appt, Take to registration",
     "notesFull": "279, 193lbs, cn, has wc, +1 pass or family will meet per Kelley, Kelley\n9am appt, Take to registration",
-    "notesPreview": "279, 193lbs, cn, has wc, +1 pass or family will meet per Kelley, Kelley",
+    "notesPreview": "279, 193lbs, cn, has wc, +1 pass or family will meet per Kelley, Kelley | 9am appt, Take to registration",
     "legs": [
       {
         "FirstName": "Betty ",
         "LastName": "Brown ",
         "MiddleInitial": "",
         "DOB": "10/14/1953 12:00:00 AM",
-        "Comments": "279, 193lbs, cn, has wc, +1 pass or family will meet per Kelley, Kelley\n9am appt, Take to registration ",
+        "Comments": "279, 193lbs, cn, has wc, +1 pass or family will meet per Kelley, Kelley\r\n9am appt, Take to registration ",
         "ConfirmationNumber": "51475",
         "RideDate": "4/13/2026 12:00:00 AM",
         "ScheduledPickupTime": "08:30",
@@ -403,7 +403,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "10.70",
-        "Comments1": "279, 193lbs, cn, has wc, +1 pass or family will meet per Kelley, Kelley\n9am appt, Take to registration ",
+        "Comments1": "279, 193lbs, cn, has wc, +1 pass or family will meet per Kelley, Kelley\r\n9am appt, Take to registration ",
         "PickupName": "Encompass Health Rehabilitation Hospital of City View",
         "PickupAddress1": "6701 Oakmont Boulevard",
         "PickupCity": "Fort Worth",
@@ -416,14 +416,14 @@
         "DropoffZip": "76104",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "Betty ",
         "LastName": "Brown ",
         "MiddleInitial": "",
         "DOB": "10/14/1953 12:00:00 AM",
-        "Comments": "279, 193lbs, cn, has wc, +1 pass or family will meet per Kelley, Kelley\n9am appt, Take to registration ",
+        "Comments": "279, 193lbs, cn, has wc, +1 pass or family will meet per Kelley, Kelley\r\n9am appt, Take to registration ",
         "ConfirmationNumber": "51476",
         "RideDate": "4/13/2026 12:00:00 AM",
         "ScheduledPickupTime": "10:07",
@@ -437,7 +437,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "10.70",
-        "Comments1": "279, 193lbs, cn, has wc, +1 pass or family will meet per Kelley, Kelley\n9am appt, Take to registration ",
+        "Comments1": "279, 193lbs, cn, has wc, +1 pass or family will meet per Kelley, Kelley\r\n9am appt, Take to registration ",
         "PickupName": "John Peter Smith Hospital ",
         "PickupAddress1": "1500 South Main Street",
         "PickupCity": "Fort Worth",
@@ -450,7 +450,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -583,17 +583,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "9",
     "RideHours": "",
-    "Comments": "rm 213B, 138 lbs., has wc, alert, either someone will meet or ride with per Kelly\n1045arrival, 11am appt",
-    "Comments1": "rm 213B, 138 lbs., has wc, alert, either someone will meet or ride with per Kelly\n1045arrival, 11am appt",
+    "Comments": "rm 213B, 138 lbs., has wc, alert, either someone will meet or ride with per Kelly\r\n1045arrival, 11am appt",
+    "Comments1": "rm 213B, 138 lbs., has wc, alert, either someone will meet or ride with per Kelly\r\n1045arrival, 11am appt",
     "notesFull": "rm 213B, 138 lbs., has wc, alert, either someone will meet or ride with per Kelly\n1045arrival, 11am appt",
-    "notesPreview": "rm 213B, 138 lbs., has wc, alert, either someone will meet or ride with per Kelly",
+    "notesPreview": "rm 213B, 138 lbs., has wc, alert, either someone will meet or ride with per Kelly | 1045arrival, 11am appt",
     "legs": [
       {
         "FirstName": "Douglas",
         "LastName": "Brown ",
         "MiddleInitial": "",
         "DOB": "8/22/1958 12:00:00 AM",
-        "Comments": "rm 213B, 138 lbs., has wc, alert, either someone will meet or ride with per Kelly\n1045arrival, 11am appt",
+        "Comments": "rm 213B, 138 lbs., has wc, alert, either someone will meet or ride with per Kelly\r\n1045arrival, 11am appt",
         "ConfirmationNumber": "51484",
         "RideDate": "4/13/2026 12:00:00 AM",
         "ScheduledPickupTime": "10:15",
@@ -607,7 +607,7 @@
         "Mobility": "WC",
         "RideStatus": "RiderCancel ",
         "DirectMileage": "8.64",
-        "Comments1": "rm 213B, 138 lbs., has wc, alert, either someone will meet or ride with per Kelly\n1045arrival, 11am appt",
+        "Comments1": "rm 213B, 138 lbs., has wc, alert, either someone will meet or ride with per Kelly\r\n1045arrival, 11am appt",
         "PickupName": "Encompass Health Rehabilitation Hospital of City View",
         "PickupAddress1": "6701 Oakmont Boulevard",
         "PickupCity": "Fort Worth",
@@ -620,7 +620,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -730,17 +730,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "16",
     "RideHours": "",
-    "Comments": "RM 207 a\n172 lbs\nHas WC\n1100 appt, ste 515, Ukanwoke Akunna\nKelley",
-    "Comments1": "RM 207 a\n172 lbs\nHas WC\n1100 appt, ste 515, Ukanwoke Akunna\nKelley",
+    "Comments": "RM 207 a\r\n172 lbs\r\nHas WC\r\n1100 appt, ste 515, Ukanwoke Akunna\r\nKelley",
+    "Comments1": "RM 207 a\r\n172 lbs\r\nHas WC\r\n1100 appt, ste 515, Ukanwoke Akunna\r\nKelley",
     "notesFull": "RM 207 a\n172 lbs\nHas WC\n1100 appt, ste 515, Ukanwoke Akunna\nKelley",
-    "notesPreview": "RM 207 a",
+    "notesPreview": "RM 207 a | 172 lbs | Has WC | 1100 appt, ste 515, Ukanwoke Akunna | Kelley",
     "legs": [
       {
         "FirstName": "Juanita ",
         "LastName": "Evans ",
         "MiddleInitial": "",
         "DOB": "9/14/1956 12:00:00 AM",
-        "Comments": "RM 207 a\n172 lbs\nHas WC\n1100 appt, ste 515, Ukanwoke Akunna\nKelley",
+        "Comments": "RM 207 a\r\n172 lbs\r\nHas WC\r\n1100 appt, ste 515, Ukanwoke Akunna\r\nKelley",
         "ConfirmationNumber": "51421",
         "RideDate": "4/13/2026 12:00:00 AM",
         "ScheduledPickupTime": "10:15",
@@ -754,7 +754,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "7.94",
-        "Comments1": "RM 207 a\n172 lbs\nHas WC\n1100 appt, ste 515, Ukanwoke Akunna\nKelley",
+        "Comments1": "RM 207 a\r\n172 lbs\r\nHas WC\r\n1100 appt, ste 515, Ukanwoke Akunna\r\nKelley",
         "PickupName": "Encompass Health Rehabilitation Hospital of City View",
         "PickupAddress1": "6701 Oakmont Boulevard",
         "PickupCity": "Fort Worth",
@@ -767,14 +767,14 @@
         "DropoffZip": "76104",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "Juanita ",
         "LastName": "Evans ",
         "MiddleInitial": "",
         "DOB": "9/14/1956 12:00:00 AM",
-        "Comments": "RM 207 a\n172 lbs\nHas WC\n1100 appt, ste 515, Ukanwoke Akunna\nKelley",
+        "Comments": "RM 207 a\r\n172 lbs\r\nHas WC\r\n1100 appt, ste 515, Ukanwoke Akunna\r\nKelley",
         "ConfirmationNumber": "51422",
         "RideDate": "4/13/2026 12:00:00 AM",
         "ScheduledPickupTime": "12:31",
@@ -788,7 +788,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "7.94",
-        "Comments1": "RM 207 a\n172 lbs\nHas WC\n1100 appt, ste 515, Ukanwoke Akunna\nKelley",
+        "Comments1": "RM 207 a\r\n172 lbs\r\nHas WC\r\n1100 appt, ste 515, Ukanwoke Akunna\r\nKelley",
         "PickupName": "Baylor Scott & White Liver Consultants of Texas - Fort Worth",
         "PickupAddress1": "1250 8th Avenue",
         "PickupCity": "Fort Worth",
@@ -801,7 +801,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -934,17 +934,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "16",
     "RideHours": "",
-    "Comments": "RM 261\n184 lbs\nHas WC\n1200 appt, ste 206, Dr Wright/ Podiatry\nKelley",
-    "Comments1": "RM 261\n184 lbs\nHas WC\n1200 appt, ste 206, Dr Wright/ Podiatry\nKelley",
+    "Comments": "RM 261\r\n184 lbs\r\nHas WC\r\n1200 appt, ste 206, Dr Wright/ Podiatry\r\nKelley",
+    "Comments1": "RM 261\r\n184 lbs\r\nHas WC\r\n1200 appt, ste 206, Dr Wright/ Podiatry\r\nKelley",
     "notesFull": "RM 261\n184 lbs\nHas WC\n1200 appt, ste 206, Dr Wright/ Podiatry\nKelley",
-    "notesPreview": "RM 261",
+    "notesPreview": "RM 261 | 184 lbs | Has WC | 1200 appt, ste 206, Dr Wright/ Podiatry | Kelley",
     "legs": [
       {
         "FirstName": "Ellis ",
         "LastName": "Minton",
         "MiddleInitial": "",
         "DOB": "2/27/1937 12:00:00 AM",
-        "Comments": "RM 261\n184 lbs\nHas WC\n1200 appt, ste 206, Dr Wright/ Podiatry\nKelley",
+        "Comments": "RM 261\r\n184 lbs\r\nHas WC\r\n1200 appt, ste 206, Dr Wright/ Podiatry\r\nKelley",
         "ConfirmationNumber": "51423",
         "RideDate": "4/13/2026 12:00:00 AM",
         "ScheduledPickupTime": "11:30",
@@ -958,7 +958,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "8.42",
-        "Comments1": "RM 261\n184 lbs\nHas WC\n1200 appt, ste 206, Dr Wright/ Podiatry\nKelley",
+        "Comments1": "RM 261\r\n184 lbs\r\nHas WC\r\n1200 appt, ste 206, Dr Wright/ Podiatry\r\nKelley",
         "PickupName": "Encompass Health Rehabilitation Hospital of City View",
         "PickupAddress1": "6701 Oakmont Boulevard",
         "PickupCity": "Fort Worth",
@@ -971,14 +971,14 @@
         "DropoffZip": "76104",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "Ellis ",
         "LastName": "Minton",
         "MiddleInitial": "",
         "DOB": "2/27/1937 12:00:00 AM",
-        "Comments": "RM 261\n184 lbs\nHas WC\n1200 appt, ste 206, Dr Wright/ Podiatry\nKelley",
+        "Comments": "RM 261\r\n184 lbs\r\nHas WC\r\n1200 appt, ste 206, Dr Wright/ Podiatry\r\nKelley",
         "ConfirmationNumber": "51424",
         "RideDate": "4/13/2026 12:00:00 AM",
         "ScheduledPickupTime": "13:01",
@@ -992,7 +992,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "8.42",
-        "Comments1": "RM 261\n184 lbs\nHas WC\n1200 appt, ste 206, Dr Wright/ Podiatry\nKelley",
+        "Comments1": "RM 261\r\n184 lbs\r\nHas WC\r\n1200 appt, ste 206, Dr Wright/ Podiatry\r\nKelley",
         "PickupName": "Dr. Kurpada ",
         "PickupAddress1": "800 8th Avenue",
         "PickupCity": "Fort Worth",
@@ -1005,7 +1005,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -1138,17 +1138,17 @@
     "DropoffZip": "76132",
     "DirectMileage": "1",
     "RideHours": "0.3",
-    "Comments": "4221, 179lbs, cn, needs str, & 4ltrs o2, Kirbee Hugger 817-433-4100\n# 211.B",
-    "Comments1": "4221, 179lbs, cn, needs str, & 4ltrs o2, Kirbee Hugger 817-433-4100\n# 211.B",
+    "Comments": "4221, 179lbs, cn, needs str, & 4ltrs o2, Kirbee Hugger 817-433-4100\r\n# 211.B",
+    "Comments1": "4221, 179lbs, cn, needs str, & 4ltrs o2, Kirbee Hugger 817-433-4100\r\n# 211.B",
     "notesFull": "4221, 179lbs, cn, needs str, & 4ltrs o2, Kirbee Hugger 817-433-4100\n# 211.B",
-    "notesPreview": "4221, 179lbs, cn, needs str, & 4ltrs o2, Kirbee Hugger 817-433-4100",
+    "notesPreview": "4221, 179lbs, cn, needs str, & 4ltrs o2, Kirbee Hugger 817-433-4100 | # 211.B",
     "legs": [
       {
         "FirstName": "Warren Thomas ",
         "LastName": "Autry ",
         "MiddleInitial": "",
         "DOB": "11/30/1941 12:00:00 AM",
-        "Comments": "4221, 179lbs, cn, needs str, & 4ltrs o2, Kirbee Hugger 817-433-4100\n# 211.B ",
+        "Comments": "4221, 179lbs, cn, needs str, & 4ltrs o2, Kirbee Hugger 817-433-4100\r\n# 211.B ",
         "ConfirmationNumber": "51556",
         "RideDate": "4/14/2026 12:00:00 AM",
         "ScheduledPickupTime": "17:00",
@@ -1162,7 +1162,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "1.07",
-        "Comments1": "4221, 179lbs, cn, needs str, & 4ltrs o2, Kirbee Hugger 817-433-4100\n# 211.B ",
+        "Comments1": "4221, 179lbs, cn, needs str, & 4ltrs o2, Kirbee Hugger 817-433-4100\r\n# 211.B ",
         "PickupName": "Harris Southwest Discharges Stretcher Ambulance Bay ONLY ",
         "PickupAddress1": "6100 Harris Parkway",
         "PickupCity": "Fort Worth",
@@ -1175,7 +1175,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -1310,17 +1310,17 @@
     "DropoffZip": "76132",
     "DirectMileage": "1",
     "RideHours": "0.2833",
-    "Comments": "RM 4229\n273 lbs\nSTR\nEncompass RM TBD\nKirbee 817 433 4106",
-    "Comments1": "RM 4229\n273 lbs\nSTR\nEncompass RM TBD\nKirbee 817 433 4106",
+    "Comments": "RM 4229\r\n273 lbs\r\nSTR\r\nEncompass RM TBD\r\nKirbee 817 433 4106",
+    "Comments1": "RM 4229\r\n273 lbs\r\nSTR\r\nEncompass RM TBD\r\nKirbee 817 433 4106",
     "notesFull": "RM 4229\n273 lbs\nSTR\nEncompass RM TBD\nKirbee 817 433 4106",
-    "notesPreview": "RM 4229",
+    "notesPreview": "RM 4229 | 273 lbs | STR | Encompass RM TBD | Kirbee 817 433 4106",
     "legs": [
       {
         "FirstName": "Diana ",
         "LastName": "Avery ",
         "MiddleInitial": "",
         "DOB": "1/4/1958 12:00:00 AM",
-        "Comments": "RM 4229\n273 lbs\nSTR\nEncompass RM TBD\nKirbee 817 433 4106",
+        "Comments": "RM 4229\r\n273 lbs\r\nSTR\r\nEncompass RM TBD\r\nKirbee 817 433 4106",
         "ConfirmationNumber": "51555",
         "RideDate": "4/14/2026 12:00:00 AM",
         "ScheduledPickupTime": "15:30",
@@ -1334,7 +1334,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "1.07",
-        "Comments1": "RM 4229\n273 lbs\nSTR\nEncompass RM TBD\nKirbee 817 433 4106",
+        "Comments1": "RM 4229\r\n273 lbs\r\nSTR\r\nEncompass RM TBD\r\nKirbee 817 433 4106",
         "PickupName": "Harris Southwest Discharges Stretcher Ambulance Bay ONLY ",
         "PickupAddress1": "6100 Harris Parkway",
         "PickupCity": "Fort Worth",
@@ -1347,7 +1347,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -1482,17 +1482,17 @@
     "DropoffZip": "76063",
     "DirectMileage": "48",
     "RideHours": "",
-    "Comments": "rm 217, 136 lbs., has wc, alert, a family member will meet at appt per Brandi\n2:45pm appt ste 201 Dr. Saruq (817)646-6307",
-    "Comments1": "rm 217, 136 lbs., has wc, alert, a family member will meet at appt per Brandi\n2:45pm appt ste 201 Dr. Saruq (817)646-6307",
+    "Comments": "rm 217, 136 lbs., has wc, alert, a family member will meet at appt per Brandi\r\n2:45pm appt ste 201 Dr. Saruq (817)646-6307",
+    "Comments1": "rm 217, 136 lbs., has wc, alert, a family member will meet at appt per Brandi\r\n2:45pm appt ste 201 Dr. Saruq (817)646-6307",
     "notesFull": "rm 217, 136 lbs., has wc, alert, a family member will meet at appt per Brandi\n2:45pm appt ste 201 Dr. Saruq (817)646-6307",
-    "notesPreview": "rm 217, 136 lbs., has wc, alert, a family member will meet at appt per Brandi",
+    "notesPreview": "rm 217, 136 lbs., has wc, alert, a family member will meet at appt per Brandi | 2:45pm appt ste 201 Dr. Saruq (817)646-6307",
     "legs": [
       {
         "FirstName": "Wayne ",
         "LastName": "Bess",
         "MiddleInitial": "",
         "DOB": "3/24/1959 12:00:00 AM",
-        "Comments": "rm 217, 136 lbs., has wc, alert, a family member will meet at appt per Brandi\n2:45pm appt ste 201 Dr. Saruq (817)646-6307",
+        "Comments": "rm 217, 136 lbs., has wc, alert, a family member will meet at appt per Brandi\r\n2:45pm appt ste 201 Dr. Saruq (817)646-6307",
         "ConfirmationNumber": "51537",
         "RideDate": "4/14/2026 12:00:00 AM",
         "ScheduledPickupTime": "13:45",
@@ -1506,7 +1506,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "24.13",
-        "Comments1": "rm 217, 136 lbs., has wc, alert, a family member will meet at appt per Brandi\n2:45pm appt ste 201 Dr. Saruq (817)646-6307",
+        "Comments1": "rm 217, 136 lbs., has wc, alert, a family member will meet at appt per Brandi\r\n2:45pm appt ste 201 Dr. Saruq (817)646-6307",
         "PickupName": "Encompass Health Rehabilitation Hospital of City View",
         "PickupAddress1": "6701 Oakmont Boulevard",
         "PickupCity": "Fort Worth",
@@ -1519,14 +1519,14 @@
         "DropoffZip": "76063",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "Wayne ",
         "LastName": "Bess",
         "MiddleInitial": "",
         "DOB": "3/24/1959 12:00:00 AM",
-        "Comments": "rm 217, 136 lbs., has wc, alert, a family member will meet at appt per Brandi\n2:45pm appt ste 201 Dr. Saruq (817)646-6307",
+        "Comments": "rm 217, 136 lbs., has wc, alert, a family member will meet at appt per Brandi\r\n2:45pm appt ste 201 Dr. Saruq (817)646-6307",
         "ConfirmationNumber": "51538",
         "RideDate": "4/14/2026 12:00:00 AM",
         "ScheduledPickupTime": "15:15",
@@ -1540,7 +1540,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "24.13",
-        "Comments1": "rm 217, 136 lbs., has wc, alert, a family member will meet at appt per Brandi\n2:45pm appt ste 201 Dr. Saruq (817)646-6307",
+        "Comments1": "rm 217, 136 lbs., has wc, alert, a family member will meet at appt per Brandi\r\n2:45pm appt ste 201 Dr. Saruq (817)646-6307",
         "PickupName": "ID Partners",
         "PickupAddress1": "350 Matlock Road",
         "PickupCity": "Mansfield",
@@ -1553,7 +1553,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -1686,17 +1686,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "8",
     "RideHours": "",
-    "Comments": "RM 207 a \n172 lbs\nhas WC\n1100 appt, ste 515, Akunna Ukanwoke, \nKelley",
-    "Comments1": "RM 207 a \n172 lbs\nhas WC\n1100 appt, ste 515, Akunna Ukanwoke, \nKelley",
-    "notesFull": "RM 207 a \n172 lbs\nhas WC\n1100 appt, ste 515, Akunna Ukanwoke, \nKelley",
-    "notesPreview": "RM 207 a",
+    "Comments": "RM 207 a \r\n172 lbs\r\nhas WC\r\n1100 appt, ste 515, Akunna Ukanwoke, \r\nKelley",
+    "Comments1": "RM 207 a \r\n172 lbs\r\nhas WC\r\n1100 appt, ste 515, Akunna Ukanwoke, \r\nKelley",
+    "notesFull": "RM 207 a\n172 lbs\nhas WC\n1100 appt, ste 515, Akunna Ukanwoke,\nKelley",
+    "notesPreview": "RM 207 a | 172 lbs | has WC | 1100 appt, ste 515, Akunna Ukanwoke, | Kelley",
     "legs": [
       {
         "FirstName": "Juanita ",
         "LastName": "Evans ",
         "MiddleInitial": "",
         "DOB": "9/14/1956 12:00:00 AM",
-        "Comments": "RM 207 a \n172 lbs\nhas WC\n1100 appt, ste 515, Akunna Ukanwoke, \nKelley",
+        "Comments": "RM 207 a \r\n172 lbs\r\nhas WC\r\n1100 appt, ste 515, Akunna Ukanwoke, \r\nKelley",
         "ConfirmationNumber": "51425",
         "RideDate": "4/14/2026 12:00:00 AM",
         "ScheduledPickupTime": "10:30",
@@ -1710,7 +1710,7 @@
         "Mobility": "WC",
         "RideStatus": "NoShow ",
         "DirectMileage": "7.94",
-        "Comments1": "RM 207 a \n172 lbs\nhas WC\n1100 appt, ste 515, Akunna Ukanwoke, \nKelley",
+        "Comments1": "RM 207 a \r\n172 lbs\r\nhas WC\r\n1100 appt, ste 515, Akunna Ukanwoke, \r\nKelley",
         "PickupName": "Encompass Health Rehabilitation Hospital of City View",
         "PickupAddress1": "6701 Oakmont Boulevard",
         "PickupCity": "Fort Worth",
@@ -1723,7 +1723,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -1833,17 +1833,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "22",
     "RideHours": "",
-    "Comments": "224.A, 220lbs, cn, has wc, Kelley via email\n945am arrival for a 3pm appt, #100 Dr. Chandralekta Ashangari, 817-702-6926",
-    "Comments1": "224.A, 220lbs, cn, has wc, Kelley via email\n945am arrival for a 3pm appt, #100 Dr. Chandralekta Ashangari, 817-702-6926",
+    "Comments": "224.A, 220lbs, cn, has wc, Kelley via email\r\n945am arrival for a 3pm appt, #100 Dr. Chandralekta Ashangari, 817-702-6926",
+    "Comments1": "224.A, 220lbs, cn, has wc, Kelley via email\r\n945am arrival for a 3pm appt, #100 Dr. Chandralekta Ashangari, 817-702-6926",
     "notesFull": "224.A, 220lbs, cn, has wc, Kelley via email\n945am arrival for a 3pm appt, #100 Dr. Chandralekta Ashangari, 817-702-6926",
-    "notesPreview": "224.A, 220lbs, cn, has wc, Kelley via email",
+    "notesPreview": "224.A, 220lbs, cn, has wc, Kelley via email | 945am arrival for a 3pm appt, #100 Dr. Chandralekta Ashangari, 817-702-6926",
     "legs": [
       {
         "FirstName": "Dolly",
         "LastName": "Gosnell",
         "MiddleInitial": "",
         "DOB": "9/20/1959 12:00:00 AM",
-        "Comments": "224.A, 220lbs, cn, has wc, Kelley via email\n945am arrival for a 3pm appt, #100 Dr. Chandralekta Ashangari, 817-702-6926",
+        "Comments": "224.A, 220lbs, cn, has wc, Kelley via email\r\n945am arrival for a 3pm appt, #100 Dr. Chandralekta Ashangari, 817-702-6926",
         "ConfirmationNumber": "51462",
         "RideDate": "4/14/2026 12:00:00 AM",
         "ScheduledPickupTime": "09:15",
@@ -1857,7 +1857,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "10.59",
-        "Comments1": "224.A, 220lbs, cn, has wc, Kelley via email\n945am arrival for a 3pm appt, #100 Dr. Chandralekta Ashangari, 817-702-6926",
+        "Comments1": "224.A, 220lbs, cn, has wc, Kelley via email\r\n945am arrival for a 3pm appt, #100 Dr. Chandralekta Ashangari, 817-702-6926",
         "PickupName": "Encompass Health Rehabilitation Hospital of City View",
         "PickupAddress1": "6701 Oakmont Boulevard",
         "PickupCity": "Fort Worth",
@@ -1870,14 +1870,14 @@
         "DropoffZip": "76104",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "Dolly",
         "LastName": "Gosnell",
         "MiddleInitial": "",
         "DOB": "9/20/1959 12:00:00 AM",
-        "Comments": "224.A, 220lbs, cn, has wc, Kelley via email\n945am arrival for a 3pm appt, #100 Dr. Chandralekta Ashangari, 817-702-6926",
+        "Comments": "224.A, 220lbs, cn, has wc, Kelley via email\r\n945am arrival for a 3pm appt, #100 Dr. Chandralekta Ashangari, 817-702-6926",
         "ConfirmationNumber": "51463",
         "RideDate": "4/14/2026 12:00:00 AM",
         "ScheduledPickupTime": "11:26",
@@ -1891,7 +1891,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "10.59",
-        "Comments1": "224.A, 220lbs, cn, has wc, Kelley via email\n945am arrival for a 3pm appt, #100 Dr. Chandralekta Ashangari, 817-702-6926",
+        "Comments1": "224.A, 220lbs, cn, has wc, Kelley via email\r\n945am arrival for a 3pm appt, #100 Dr. Chandralekta Ashangari, 817-702-6926",
         "PickupName": "JPS Professional Building 1 ",
         "PickupAddress1": "1400 South Main Street",
         "PickupCity": "Fort Worth",
@@ -1904,7 +1904,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -2037,17 +2037,17 @@
     "DropoffZip": "76028",
     "DirectMileage": "13",
     "RideHours": "",
-    "Comments": "**4/13, cancel per Brandi\n\n***Someone has to go with patient to appt***\nRM 204 b\n198 lbs\nHas WC\n1000 appt, Dr Gengler/ Ortho\nKelley",
-    "Comments1": "**4/13, cancel per Brandi\n\n***Someone has to go with patient to appt***\nRM 204 b\n198 lbs\nHas WC\n1000 appt, Dr Gengler/ Ortho\nKelley",
-    "notesFull": "**4/13, cancel per Brandi\n\n***Someone has to go with patient to appt***\nRM 204 b\n198 lbs\nHas WC\n1000 appt, Dr Gengler/ Ortho\nKelley",
-    "notesPreview": "**4/13, cancel per Brandi",
+    "Comments": "**4/13, cancel per Brandi\r\n\r\n***Someone has to go with patient to appt***\r\nRM 204 b\r\n198 lbs\r\nHas WC\r\n1000 appt, Dr Gengler/ Ortho\r\nKelley",
+    "Comments1": "**4/13, cancel per Brandi\r\n\r\n***Someone has to go with patient to appt***\r\nRM 204 b\r\n198 lbs\r\nHas WC\r\n1000 appt, Dr Gengler/ Ortho\r\nKelley",
+    "notesFull": "**4/13, cancel per Brandi\n***Someone has to go with patient to appt***\nRM 204 b\n198 lbs\nHas WC\n1000 appt, Dr Gengler/ Ortho\nKelley",
+    "notesPreview": "**4/13, cancel per Brandi | ***Someone has to go with patient to appt*** | RM 204 b | 198 lbs | Has WC | 1000 appt, Dr Gengler/ Ortho | Kelley",
     "legs": [
       {
         "FirstName": "Daniel",
         "LastName": "Hill",
         "MiddleInitial": "",
         "DOB": "2/21/1968 12:00:00 AM",
-        "Comments": "**4/13, cancel per Brandi\n\n***Someone has to go with patient to appt***\nRM 204 b\n198 lbs\nHas WC\n1000 appt, Dr Gengler/ Ortho\nKelley",
+        "Comments": "**4/13, cancel per Brandi\r\n\r\n***Someone has to go with patient to appt***\r\nRM 204 b\r\n198 lbs\r\nHas WC\r\n1000 appt, Dr Gengler/ Ortho\r\nKelley",
         "ConfirmationNumber": "51427",
         "RideDate": "4/14/2026 12:00:00 AM",
         "ScheduledPickupTime": "09:15",
@@ -2061,7 +2061,7 @@
         "Mobility": "WC",
         "RideStatus": "RiderCancel ",
         "DirectMileage": "13.36",
-        "Comments1": "**4/13, cancel per Brandi\n\n***Someone has to go with patient to appt***\nRM 204 b\n198 lbs\nHas WC\n1000 appt, Dr Gengler/ Ortho\nKelley",
+        "Comments1": "**4/13, cancel per Brandi\r\n\r\n***Someone has to go with patient to appt***\r\nRM 204 b\r\n198 lbs\r\nHas WC\r\n1000 appt, Dr Gengler/ Ortho\r\nKelley",
         "PickupName": "Encompass Health Rehabilitation Hospital of City View",
         "PickupAddress1": "6701 Oakmont Boulevard",
         "PickupCity": "Fort Worth",
@@ -2074,7 +2074,7 @@
         "DropoffZip": "76028",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -2184,17 +2184,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "16",
     "RideHours": "0.3333",
-    "Comments": "RM 212 a\n128 lbS\nHas WC\n1230 pickup for a 1300 arrival, 1315 appt, ste 171, Dr Wilson/ NeuroSurg\nKelley\nRM 212 a\n128 lbS\nHas WC\n1315 appt, ste 171, Dr Wilson/ NeuroSurg\nKelley",
-    "Comments1": "RM 212 a\n128 lbS\nHas WC\n1230 pickup for a 1300 arrival, 1315 appt, ste 171, Dr Wilson/ NeuroSurg\nKelley\nRM 212 a\n128 lbS\nHas WC\n1315 appt, ste 171, Dr Wilson/ NeuroSurg\nKelley",
-    "notesFull": "RM 212 a\n128 lbS\nHas WC\n1230 pickup for a 1300 arrival, 1315 appt, ste 171, Dr Wilson/ NeuroSurg\nKelley\nRM 212 a\n128 lbS\nHas WC\n1315 appt, ste 171, Dr Wilson/ NeuroSurg\nKelley",
-    "notesPreview": "RM 212 a",
+    "Comments": "RM 212 a\r\n128 lbS\r\nHas WC\r\n1230 pickup for a 1300 arrival, 1315 appt, ste 171, Dr Wilson/ NeuroSurg\r\nKelley\nRM 212 a\r\n128 lbS\r\nHas WC\r\n1315 appt, ste 171, Dr Wilson/ NeuroSurg\r\nKelley",
+    "Comments1": "RM 212 a\r\n128 lbS\r\nHas WC\r\n1230 pickup for a 1300 arrival, 1315 appt, ste 171, Dr Wilson/ NeuroSurg\r\nKelley\nRM 212 a\r\n128 lbS\r\nHas WC\r\n1315 appt, ste 171, Dr Wilson/ NeuroSurg\r\nKelley",
+    "notesFull": "RM 212 a\n128 lbS\nHas WC\n1230 pickup for a 1300 arrival, 1315 appt, ste 171, Dr Wilson/ NeuroSurg\nKelley\n1315 appt, ste 171, Dr Wilson/ NeuroSurg",
+    "notesPreview": "RM 212 a | 128 lbS | Has WC | 1230 pickup for a 1300 arrival, 1315 appt, ste 171, Dr Wilson/ NeuroSurg | Kelley | 1315 appt, ste 171, Dr Wilson/ NeuroSurg",
     "legs": [
       {
         "FirstName": "Tomi",
         "LastName": "Carroll",
         "MiddleInitial": "",
         "DOB": "11/3/1959 12:00:00 AM",
-        "Comments": "RM 212 a\n128 lbS\nHas WC\n1230 pickup for a 1300 arrival, 1315 appt, ste 171, Dr Wilson/ NeuroSurg\nKelley",
+        "Comments": "RM 212 a\r\n128 lbS\r\nHas WC\r\n1230 pickup for a 1300 arrival, 1315 appt, ste 171, Dr Wilson/ NeuroSurg\r\nKelley",
         "ConfirmationNumber": "51460",
         "RideDate": "4/15/2026 12:00:00 AM",
         "ScheduledPickupTime": "12:15",
@@ -2208,7 +2208,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "7.67",
-        "Comments1": "RM 212 a\n128 lbS\nHas WC\n1230 pickup for a 1300 arrival, 1315 appt, ste 171, Dr Wilson/ NeuroSurg\nKelley",
+        "Comments1": "RM 212 a\r\n128 lbS\r\nHas WC\r\n1230 pickup for a 1300 arrival, 1315 appt, ste 171, Dr Wilson/ NeuroSurg\r\nKelley",
         "PickupName": "Encompass Health Rehabilitation Hospital of City View",
         "PickupAddress1": "6701 Oakmont Boulevard",
         "PickupCity": "Fort Worth",
@@ -2221,14 +2221,14 @@
         "DropoffZip": "76104",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "Tomi",
         "LastName": "Carroll",
         "MiddleInitial": "",
         "DOB": "11/3/1959 12:00:00 AM",
-        "Comments": "RM 212 a\n128 lbS\nHas WC\n1315 appt, ste 171, Dr Wilson/ NeuroSurg\nKelley",
+        "Comments": "RM 212 a\r\n128 lbS\r\nHas WC\r\n1315 appt, ste 171, Dr Wilson/ NeuroSurg\r\nKelley",
         "ConfirmationNumber": "51461",
         "RideDate": "4/15/2026 12:00:00 AM",
         "ScheduledPickupTime": "12:51",
@@ -2242,7 +2242,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "7.67",
-        "Comments1": "RM 212 a\n128 lbS\nHas WC\n1315 appt, ste 171, Dr Wilson/ NeuroSurg\nKelley",
+        "Comments1": "RM 212 a\r\n128 lbS\r\nHas WC\r\n1315 appt, ste 171, Dr Wilson/ NeuroSurg\r\nKelley",
         "PickupName": "Dr. Diana Wilson(Neurosurgical and Spine Health AtLast)",
         "PickupAddress1": "1001 12th Avenue",
         "PickupCity": "Fort Worth",
@@ -2255,7 +2255,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -2388,17 +2388,17 @@
     "DropoffZip": "76132",
     "DirectMileage": "8",
     "RideHours": "",
-    "Comments": "**will be on the first floor, Daughter Carmen wanted to take her back 817-420-0576 Wanted to take her to lunch**\n216.b, 142lbs, cn, has wc, Brandi \n1215pm appr, #200, 817-413-1500",
-    "Comments1": "**will be on the first floor, Daughter Carmen wanted to take her back 817-420-0576 Wanted to take her to lunch**\n216.b, 142lbs, cn, has wc, Brandi \n1215pm appr, #200, 817-413-1500",
-    "notesFull": "**will be on the first floor, Daughter Carmen wanted to take her back 817-420-0576 Wanted to take her to lunch**\n216.b, 142lbs, cn, has wc, Brandi \n1215pm appr, #200, 817-413-1500",
-    "notesPreview": "**will be on the first floor, Daughter Carmen wanted to take her back 817-420-0576 Wanted to take her to lunch**",
+    "Comments": "**will be on the first floor, Daughter Carmen wanted to take her back 817-420-0576 Wanted to take her to lunch**\r\n216.b, 142lbs, cn, has wc, Brandi \r\n1215pm appr, #200, 817-413-1500",
+    "Comments1": "**will be on the first floor, Daughter Carmen wanted to take her back 817-420-0576 Wanted to take her to lunch**\r\n216.b, 142lbs, cn, has wc, Brandi \r\n1215pm appr, #200, 817-413-1500",
+    "notesFull": "**will be on the first floor, Daughter Carmen wanted to take her back 817-420-0576 Wanted to take her to lunch**\n216.b, 142lbs, cn, has wc, Brandi\n1215pm appr, #200, 817-413-1500",
+    "notesPreview": "**will be on the first floor, Daughter Carmen wanted to take her back 817-420-0576 Wanted to take her to lunch** | 216.b, 142lbs, cn, has wc, Brandi | 1215pm...",
     "legs": [
       {
         "FirstName": "Linda ",
         "LastName": "Cluck ",
         "MiddleInitial": "",
         "DOB": "11/25/1953 12:00:00 AM",
-        "Comments": "**will be on the first floor, Daughter Carmen wanted to take her back 817-420-0576 Wanted to take her to lunch**\n216.b, 142lbs, cn, has wc, Brandi \n1215pm appr, #200, 817-413-1500",
+        "Comments": "**will be on the first floor, Daughter Carmen wanted to take her back 817-420-0576 Wanted to take her to lunch**\r\n216.b, 142lbs, cn, has wc, Brandi \r\n1215pm appr, #200, 817-413-1500",
         "ConfirmationNumber": "51553",
         "RideDate": "4/15/2026 12:00:00 AM",
         "ScheduledPickupTime": "13:10",
@@ -2412,7 +2412,7 @@
         "Mobility": "WC",
         "RideStatus": "RiderCancel ",
         "DirectMileage": "8.44",
-        "Comments1": "**will be on the first floor, Daughter Carmen wanted to take her back 817-420-0576 Wanted to take her to lunch**\n216.b, 142lbs, cn, has wc, Brandi \n1215pm appr, #200, 817-413-1500",
+        "Comments1": "**will be on the first floor, Daughter Carmen wanted to take her back 817-420-0576 Wanted to take her to lunch**\r\n216.b, 142lbs, cn, has wc, Brandi \r\n1215pm appr, #200, 817-413-1500",
         "PickupName": "Texas Oncology",
         "PickupAddress1": "500 South Henderson Street",
         "PickupCity": "Fort Worth",
@@ -2425,7 +2425,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -2535,17 +2535,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "8",
     "RideHours": "",
-    "Comments": "216.b, 142lbs, cn, has wc, Brandi \n1215pm appr, #200, 817-413-1500",
-    "Comments1": "216.b, 142lbs, cn, has wc, Brandi \n1215pm appr, #200, 817-413-1500",
-    "notesFull": "216.b, 142lbs, cn, has wc, Brandi \n1215pm appr, #200, 817-413-1500",
-    "notesPreview": "216.b, 142lbs, cn, has wc, Brandi",
+    "Comments": "216.b, 142lbs, cn, has wc, Brandi \r\n1215pm appr, #200, 817-413-1500",
+    "Comments1": "216.b, 142lbs, cn, has wc, Brandi \r\n1215pm appr, #200, 817-413-1500",
+    "notesFull": "216.b, 142lbs, cn, has wc, Brandi\n1215pm appr, #200, 817-413-1500",
+    "notesPreview": "216.b, 142lbs, cn, has wc, Brandi | 1215pm appr, #200, 817-413-1500",
     "legs": [
       {
         "FirstName": "Linda ",
         "LastName": "Cluck ",
         "MiddleInitial": "",
         "DOB": "11/25/1953 12:00:00 AM",
-        "Comments": "216.b, 142lbs, cn, has wc, Brandi \n1215pm appr, #200, 817-413-1500",
+        "Comments": "216.b, 142lbs, cn, has wc, Brandi \r\n1215pm appr, #200, 817-413-1500",
         "ConfirmationNumber": "51552",
         "RideDate": "4/15/2026 12:00:00 AM",
         "ScheduledPickupTime": "11:30",
@@ -2559,7 +2559,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "8.44",
-        "Comments1": "216.b, 142lbs, cn, has wc, Brandi \n1215pm appr, #200, 817-413-1500",
+        "Comments1": "216.b, 142lbs, cn, has wc, Brandi \r\n1215pm appr, #200, 817-413-1500",
         "PickupName": "Encompass Health Rehabilitation Hospital of City View",
         "PickupAddress1": "6701 Oakmont Boulevard",
         "PickupCity": "Fort Worth",
@@ -2572,7 +2572,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -2715,17 +2715,17 @@
     "DropoffZip": "76132",
     "DirectMileage": "1",
     "RideHours": "0.3167",
-    "Comments": "RM 5244\n216 lbs\nSTR\nEncompass RM TBD\nTammy 817 433 3261",
-    "Comments1": "RM 5244\n216 lbs\nSTR\nEncompass RM TBD\nTammy 817 433 3261",
+    "Comments": "RM 5244\r\n216 lbs\r\nSTR\r\nEncompass RM TBD\r\nTammy 817 433 3261",
+    "Comments1": "RM 5244\r\n216 lbs\r\nSTR\r\nEncompass RM TBD\r\nTammy 817 433 3261",
     "notesFull": "RM 5244\n216 lbs\nSTR\nEncompass RM TBD\nTammy 817 433 3261",
-    "notesPreview": "RM 5244",
+    "notesPreview": "RM 5244 | 216 lbs | STR | Encompass RM TBD | Tammy 817 433 3261",
     "legs": [
       {
         "FirstName": "Verdell ",
         "LastName": "Fisher ",
         "MiddleInitial": "",
         "DOB": "11/9/1937 12:00:00 AM",
-        "Comments": "RM 5244\n216 lbs\nSTR\nEncompass RM TBD\nTammy 817 433 3261",
+        "Comments": "RM 5244\r\n216 lbs\r\nSTR\r\nEncompass RM TBD\r\nTammy 817 433 3261",
         "ConfirmationNumber": "51583",
         "RideDate": "4/15/2026 12:00:00 AM",
         "ScheduledPickupTime": "16:00",
@@ -2739,7 +2739,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "1.07",
-        "Comments1": "RM 5244\n216 lbs\nSTR\nEncompass RM TBD\nTammy 817 433 3261",
+        "Comments1": "RM 5244\r\n216 lbs\r\nSTR\r\nEncompass RM TBD\r\nTammy 817 433 3261",
         "PickupName": "Harris Southwest Discharges Stretcher Ambulance Bay ONLY ",
         "PickupAddress1": "6100 Harris Parkway",
         "PickupCity": "Fort Worth",
@@ -2752,7 +2752,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -2887,17 +2887,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "14",
     "RideHours": "0.2167",
-    "Comments": "270, 161lbs, cn, has w, Brandi\n3pm appt, Dr. Mike Lui, #102, 817-924-6200",
-    "Comments1": "270, 161lbs, cn, has w, Brandi\n3pm appt, Dr. Mike Lui, #102, 817-924-6200",
+    "Comments": "270, 161lbs, cn, has w, Brandi\r\n3pm appt, Dr. Mike Lui, #102, 817-924-6200",
+    "Comments1": "270, 161lbs, cn, has w, Brandi\r\n3pm appt, Dr. Mike Lui, #102, 817-924-6200",
     "notesFull": "270, 161lbs, cn, has w, Brandi\n3pm appt, Dr. Mike Lui, #102, 817-924-6200",
-    "notesPreview": "270, 161lbs, cn, has w, Brandi",
+    "notesPreview": "270, 161lbs, cn, has w, Brandi | 3pm appt, Dr. Mike Lui, #102, 817-924-6200",
     "legs": [
       {
         "FirstName": "Robert",
         "LastName": "Korman",
         "MiddleInitial": "",
         "DOB": "5/19/1947 12:00:00 AM",
-        "Comments": "270, 161lbs, cn, has w, Brandi\n3pm appt, Dr. Mike Lui, #102, 817-924-6200",
+        "Comments": "270, 161lbs, cn, has w, Brandi\r\n3pm appt, Dr. Mike Lui, #102, 817-924-6200",
         "ConfirmationNumber": "51560",
         "RideDate": "4/15/2026 12:00:00 AM",
         "ScheduledPickupTime": "14:30",
@@ -2911,7 +2911,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "7.43",
-        "Comments1": "270, 161lbs, cn, has w, Brandi\n3pm appt, Dr. Mike Lui, #102, 817-924-6200",
+        "Comments1": "270, 161lbs, cn, has w, Brandi\r\n3pm appt, Dr. Mike Lui, #102, 817-924-6200",
         "PickupName": "Encompass Health Rehabilitation Hospital of City View",
         "PickupAddress1": "6701 Oakmont Boulevard",
         "PickupCity": "Fort Worth",
@@ -2924,14 +2924,14 @@
         "DropoffZip": "76104",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "Robert",
         "LastName": "Korman",
         "MiddleInitial": "",
         "DOB": "5/19/1947 12:00:00 AM",
-        "Comments": "270, 161lbs, cn, has w, Brandi\n3pm appt, Dr. Mike Lui, #102, 817-924-6200",
+        "Comments": "270, 161lbs, cn, has w, Brandi\r\n3pm appt, Dr. Mike Lui, #102, 817-924-6200",
         "ConfirmationNumber": "51561",
         "RideDate": "4/15/2026 12:00:00 AM",
         "ScheduledPickupTime": "15:47",
@@ -2945,7 +2945,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "7.43",
-        "Comments1": "270, 161lbs, cn, has w, Brandi\n3pm appt, Dr. Mike Lui, #102, 817-924-6200",
+        "Comments1": "270, 161lbs, cn, has w, Brandi\r\n3pm appt, Dr. Mike Lui, #102, 817-924-6200",
         "PickupName": "Jiangping Liu Mike",
         "PickupAddress1": "900 Jerome Street",
         "PickupCity": "Fort Worth",
@@ -2958,7 +2958,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -3091,17 +3091,17 @@
     "DropoffZip": "76132",
     "DirectMileage": "9",
     "RideHours": "",
-    "Comments": "RM 376 // 117 lbs // STR // Encompass RM TBD\nDanielle 817 250 2888",
-    "Comments1": "RM 376 // 117 lbs // STR // Encompass RM TBD\nDanielle 817 250 2888",
+    "Comments": "RM 376 // 117 lbs // STR // Encompass RM TBD\r\nDanielle 817 250 2888",
+    "Comments1": "RM 376 // 117 lbs // STR // Encompass RM TBD\r\nDanielle 817 250 2888",
     "notesFull": "RM 376 // 117 lbs // STR // Encompass RM TBD\nDanielle 817 250 2888",
-    "notesPreview": "RM 376 // 117 lbs // STR // Encompass RM TBD",
+    "notesPreview": "RM 376 // 117 lbs // STR // Encompass RM TBD | Danielle 817 250 2888",
     "legs": [
       {
         "FirstName": "Eleanor ",
         "LastName": "Barber ",
         "MiddleInitial": "",
         "DOB": "5/21/1943 12:00:00 AM",
-        "Comments": "RM 376 // 117 lbs // STR // Encompass RM TBD\nDanielle 817 250 2888",
+        "Comments": "RM 376 // 117 lbs // STR // Encompass RM TBD\r\nDanielle 817 250 2888",
         "ConfirmationNumber": "51606",
         "RideDate": "4/16/2026 12:00:00 AM",
         "ScheduledPickupTime": "16:00",
@@ -3115,7 +3115,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "8.85",
-        "Comments1": "RM 376 // 117 lbs // STR // Encompass RM TBD\nDanielle 817 250 2888",
+        "Comments1": "RM 376 // 117 lbs // STR // Encompass RM TBD\r\nDanielle 817 250 2888",
         "PickupName": "Harris Tower",
         "PickupAddress1": "1301 Pennsylvania Ave",
         "PickupCity": "Fort Worth",
@@ -3128,7 +3128,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -3263,17 +3263,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "16",
     "RideHours": "",
-    "Comments": "212.A, 128lbs, cn, has wc, Kelley\n1pm arrival for a 115pm appt, #171, Dr. Wilson",
-    "Comments1": "212.A, 128lbs, cn, has wc, Kelley\n1pm arrival for a 115pm appt, #171, Dr. Wilson",
+    "Comments": "212.A, 128lbs, cn, has wc, Kelley\r\n1pm arrival for a 115pm appt, #171, Dr. Wilson",
+    "Comments1": "212.A, 128lbs, cn, has wc, Kelley\r\n1pm arrival for a 115pm appt, #171, Dr. Wilson",
     "notesFull": "212.A, 128lbs, cn, has wc, Kelley\n1pm arrival for a 115pm appt, #171, Dr. Wilson",
-    "notesPreview": "212.A, 128lbs, cn, has wc, Kelley",
+    "notesPreview": "212.A, 128lbs, cn, has wc, Kelley | 1pm arrival for a 115pm appt, #171, Dr. Wilson",
     "legs": [
       {
         "FirstName": "Tomi",
         "LastName": "Carroll",
         "MiddleInitial": "",
         "DOB": "11/3/1959 12:00:00 AM",
-        "Comments": "212.A, 128lbs, cn, has wc, Kelley\n1pm arrival for a 115pm appt, #171, Dr. Wilson ",
+        "Comments": "212.A, 128lbs, cn, has wc, Kelley\r\n1pm arrival for a 115pm appt, #171, Dr. Wilson ",
         "ConfirmationNumber": "51585",
         "RideDate": "4/16/2026 12:00:00 AM",
         "ScheduledPickupTime": "12:30",
@@ -3287,7 +3287,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "7.67",
-        "Comments1": "212.A, 128lbs, cn, has wc, Kelley\n1pm arrival for a 115pm appt, #171, Dr. Wilson ",
+        "Comments1": "212.A, 128lbs, cn, has wc, Kelley\r\n1pm arrival for a 115pm appt, #171, Dr. Wilson ",
         "PickupName": "Encompass Health Rehabilitation Hospital of City View",
         "PickupAddress1": "6701 Oakmont Boulevard",
         "PickupCity": "Fort Worth",
@@ -3300,14 +3300,14 @@
         "DropoffZip": "76104",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "Tomi",
         "LastName": "Carroll",
         "MiddleInitial": "",
         "DOB": "11/3/1959 12:00:00 AM",
-        "Comments": "212.A, 128lbs, cn, has wc, Kelley\n1pm arrival for a 115pm appt, #171, Dr. Wilson ",
+        "Comments": "212.A, 128lbs, cn, has wc, Kelley\r\n1pm arrival for a 115pm appt, #171, Dr. Wilson ",
         "ConfirmationNumber": "51586",
         "RideDate": "4/16/2026 12:00:00 AM",
         "ScheduledPickupTime": "14:35",
@@ -3321,7 +3321,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "7.67",
-        "Comments1": "212.A, 128lbs, cn, has wc, Kelley\n1pm arrival for a 115pm appt, #171, Dr. Wilson ",
+        "Comments1": "212.A, 128lbs, cn, has wc, Kelley\r\n1pm arrival for a 115pm appt, #171, Dr. Wilson ",
         "PickupName": "Dr. Diana Wilson(Neurosurgical and Spine Health AtLast)",
         "PickupAddress1": "1001 12th Avenue",
         "PickupCity": "Fort Worth",
@@ -3334,7 +3334,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -3467,17 +3467,17 @@
     "DropoffZip": "76132",
     "DirectMileage": "9",
     "RideHours": "",
-    "Comments": "RM 489\n194 lbs\nSTR\nEncompass RM TBD\nToni 817 250 4674",
-    "Comments1": "RM 489\n194 lbs\nSTR\nEncompass RM TBD\nToni 817 250 4674",
+    "Comments": "RM 489\r\n194 lbs\r\nSTR\r\nEncompass RM TBD\r\nToni 817 250 4674",
+    "Comments1": "RM 489\r\n194 lbs\r\nSTR\r\nEncompass RM TBD\r\nToni 817 250 4674",
     "notesFull": "RM 489\n194 lbs\nSTR\nEncompass RM TBD\nToni 817 250 4674",
-    "notesPreview": "RM 489",
+    "notesPreview": "RM 489 | 194 lbs | STR | Encompass RM TBD | Toni 817 250 4674",
     "legs": [
       {
         "FirstName": "Tommy ",
         "LastName": "Daniel ",
         "MiddleInitial": "D",
         "DOB": "5/8/1948 12:00:00 AM",
-        "Comments": "RM 489\n194 lbs\nSTR\nEncompass RM TBD\nToni 817 250 4674",
+        "Comments": "RM 489\r\n194 lbs\r\nSTR\r\nEncompass RM TBD\r\nToni 817 250 4674",
         "ConfirmationNumber": "51608",
         "RideDate": "4/16/2026 12:00:00 AM",
         "ScheduledPickupTime": "17:00",
@@ -3491,7 +3491,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "8.84",
-        "Comments1": "RM 489\n194 lbs\nSTR\nEncompass RM TBD\nToni 817 250 4674",
+        "Comments1": "RM 489\r\n194 lbs\r\nSTR\r\nEncompass RM TBD\r\nToni 817 250 4674",
         "PickupName": "Harris Richardson Tower",
         "PickupAddress1": "1301 Pennsylvania Avenue",
         "PickupCity": "Fort Worth",
@@ -3504,7 +3504,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -3639,17 +3639,17 @@
     "DropoffZip": "76132",
     "DirectMileage": "8",
     "RideHours": "0.5333",
-    "Comments": "Cardiac RM 401\n251 lbs\nSTR\nEncompass RM 272\nTwila 817 250 3475",
-    "Comments1": "Cardiac RM 401\n251 lbs\nSTR\nEncompass RM 272\nTwila 817 250 3475",
+    "Comments": "Cardiac RM 401\r\n251 lbs\r\nSTR\r\nEncompass RM 272\r\nTwila 817 250 3475",
+    "Comments1": "Cardiac RM 401\r\n251 lbs\r\nSTR\r\nEncompass RM 272\r\nTwila 817 250 3475",
     "notesFull": "Cardiac RM 401\n251 lbs\nSTR\nEncompass RM 272\nTwila 817 250 3475",
-    "notesPreview": "Cardiac RM 401",
+    "notesPreview": "Cardiac RM 401 | 251 lbs | STR | Encompass RM 272 | Twila 817 250 3475",
     "legs": [
       {
         "FirstName": "Michael",
         "LastName": "Peacock",
         "MiddleInitial": "",
         "DOB": "10/2/1970 12:00:00 AM",
-        "Comments": "Cardiac RM 401\n251 lbs\nSTR\nEncompass RM 272\nTwila 817 250 3475",
+        "Comments": "Cardiac RM 401\r\n251 lbs\r\nSTR\r\nEncompass RM 272\r\nTwila 817 250 3475",
         "ConfirmationNumber": "51650",
         "RideDate": "4/17/2026 12:00:00 AM",
         "ScheduledPickupTime": "17:00",
@@ -3663,7 +3663,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "8.49",
-        "Comments1": "Cardiac RM 401\n251 lbs\nSTR\nEncompass RM 272\nTwila 817 250 3475",
+        "Comments1": "Cardiac RM 401\r\n251 lbs\r\nSTR\r\nEncompass RM 272\r\nTwila 817 250 3475",
         "PickupName": "Harris Cardiac Tower",
         "PickupAddress1": "1301 Pennsylvania Ave",
         "PickupCity": "Fort Worth",
@@ -3676,7 +3676,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -3811,17 +3811,17 @@
     "DropoffZip": "76132",
     "DirectMileage": "8",
     "RideHours": "",
-    "Comments": "**double booked, no charge\n\nCardiac rm C401 C40101, 251 lbs., STR/Broda, Severe sepsis, Wound, CN\n#272\n\nper Twila Fisher (817)250-3475",
-    "Comments1": "**double booked, no charge\n\nCardiac rm C401 C40101, 251 lbs., STR/Broda, Severe sepsis, Wound, CN\n#272\n\nper Twila Fisher (817)250-3475",
-    "notesFull": "**double booked, no charge\n\nCardiac rm C401 C40101, 251 lbs., STR/Broda, Severe sepsis, Wound, CN\n#272\n\nper Twila Fisher (817)250-3475",
-    "notesPreview": "**double booked, no charge",
+    "Comments": "**double booked, no charge\r\n\r\nCardiac rm C401 C40101, 251 lbs., STR/Broda, Severe sepsis, Wound, CN\r\n#272\r\n\r\nper Twila Fisher (817)250-3475",
+    "Comments1": "**double booked, no charge\r\n\r\nCardiac rm C401 C40101, 251 lbs., STR/Broda, Severe sepsis, Wound, CN\r\n#272\r\n\r\nper Twila Fisher (817)250-3475",
+    "notesFull": "**double booked, no charge\nCardiac rm C401 C40101, 251 lbs., STR/Broda, Severe sepsis, Wound, CN\n#272\nper Twila Fisher (817)250-3475",
+    "notesPreview": "**double booked, no charge | Cardiac rm C401 C40101, 251 lbs., STR/Broda, Severe sepsis, Wound, CN | #272 | per Twila Fisher (817)250-3475",
     "legs": [
       {
         "FirstName": "Micheal",
         "LastName": "Peacock",
         "MiddleInitial": "D",
         "DOB": "10/2/1970 12:00:00 AM",
-        "Comments": "**double booked, no charge\n\nCardiac rm C401 C40101, 251 lbs., STR/Broda, Severe sepsis, Wound, CN\n#272\n\nper Twila Fisher (817)250-3475",
+        "Comments": "**double booked, no charge\r\n\r\nCardiac rm C401 C40101, 251 lbs., STR/Broda, Severe sepsis, Wound, CN\r\n#272\r\n\r\nper Twila Fisher (817)250-3475",
         "ConfirmationNumber": "51651",
         "RideDate": "4/17/2026 12:00:00 AM",
         "ScheduledPickupTime": "17:00",
@@ -3835,7 +3835,7 @@
         "Mobility": "S",
         "RideStatus": "RiderCancel ",
         "DirectMileage": "8.49",
-        "Comments1": "**double booked, no charge\n\nCardiac rm C401 C40101, 251 lbs., STR/Broda, Severe sepsis, Wound, CN\n#272\n\nper Twila Fisher (817)250-3475",
+        "Comments1": "**double booked, no charge\r\n\r\nCardiac rm C401 C40101, 251 lbs., STR/Broda, Severe sepsis, Wound, CN\r\n#272\r\n\r\nper Twila Fisher (817)250-3475",
         "PickupName": "Harris Cardiac Tower",
         "PickupAddress1": "1301 Pennsylvania Ave",
         "PickupCity": "Fort Worth",
@@ -3848,7 +3848,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -3956,17 +3956,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "23",
     "RideHours": "0.3833",
-    "Comments": "RM 261\n133 lbs\nHas WC\n0845 pickup for 0930 arrival,0945 appt, take to registration desk. Mom will be riding with.\nKelley",
-    "Comments1": "RM 261\n133 lbs\nHas WC\n0845 pickup for 0930 arrival,0945 appt, take to registration desk. Mom will be riding with.\nKelley",
+    "Comments": "RM 261\r\n133 lbs\r\nHas WC\r\n0845 pickup for 0930 arrival,0945 appt, take to registration desk. Mom will be riding with.\r\nKelley",
+    "Comments1": "RM 261\r\n133 lbs\r\nHas WC\r\n0845 pickup for 0930 arrival,0945 appt, take to registration desk. Mom will be riding with.\r\nKelley",
     "notesFull": "RM 261\n133 lbs\nHas WC\n0845 pickup for 0930 arrival,0945 appt, take to registration desk. Mom will be riding with.\nKelley",
-    "notesPreview": "RM 261",
+    "notesPreview": "RM 261 | 133 lbs | Has WC | 0845 pickup for 0930 arrival,0945 appt, take to registration desk. Mom will be riding with. | Kelley",
     "legs": [
       {
         "FirstName": "Monique",
         "LastName": "Piccolo",
         "MiddleInitial": "",
         "DOB": "6/6/2003 12:00:00 AM",
-        "Comments": "RM 261\n133 lbs\nHas WC\n0845 pickup for 0930 arrival,0945 appt, take to registration desk. Mom will be riding with.\nKelley\n",
+        "Comments": "RM 261\r\n133 lbs\r\nHas WC\r\n0845 pickup for 0930 arrival,0945 appt, take to registration desk. Mom will be riding with.\r\nKelley\r\n",
         "ConfirmationNumber": "51612",
         "RideDate": "4/17/2026 12:00:00 AM",
         "ScheduledPickupTime": "08:45",
@@ -3980,7 +3980,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "10.70",
-        "Comments1": "RM 261\n133 lbs\nHas WC\n0845 pickup for 0930 arrival,0945 appt, take to registration desk. Mom will be riding with.\nKelley\n",
+        "Comments1": "RM 261\r\n133 lbs\r\nHas WC\r\n0845 pickup for 0930 arrival,0945 appt, take to registration desk. Mom will be riding with.\r\nKelley\r\n",
         "PickupName": "Encompass Health Rehabilitation Hospital of City View",
         "PickupAddress1": "6701 Oakmont Boulevard",
         "PickupCity": "Fort Worth",
@@ -3993,14 +3993,14 @@
         "DropoffZip": "76104",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "Monique",
         "LastName": "Piccolo",
         "MiddleInitial": "",
         "DOB": "6/6/2003 12:00:00 AM",
-        "Comments": "RM 261\n133 lbs\nHas WC\n0845 pickup for 0930 arrival,0945 appt, take to registration desk. Mom will be riding with.\nKelley\n",
+        "Comments": "RM 261\r\n133 lbs\r\nHas WC\r\n0845 pickup for 0930 arrival,0945 appt, take to registration desk. Mom will be riding with.\r\nKelley\r\n",
         "ConfirmationNumber": "51613",
         "RideDate": "4/17/2026 12:00:00 AM",
         "ScheduledPickupTime": "11:49",
@@ -4014,7 +4014,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "11.67",
-        "Comments1": "RM 261\n133 lbs\nHas WC\n0845 pickup for 0930 arrival,0945 appt, take to registration desk. Mom will be riding with.\nKelley\n",
+        "Comments1": "RM 261\r\n133 lbs\r\nHas WC\r\n0845 pickup for 0930 arrival,0945 appt, take to registration desk. Mom will be riding with.\r\nKelley\r\n",
         "PickupName": "John Peter Smith Hospital ",
         "PickupAddress1": "1500 South Main Street",
         "PickupCity": "Fort Worth",
@@ -4027,7 +4027,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -4160,17 +4160,17 @@
     "DropoffZip": "76132",
     "DirectMileage": "2",
     "RideHours": "0.85",
-    "Comments": "RM 278\n222 lbs\nSTR\n1515 arrival for a 1530 CT scan\nKelley",
-    "Comments1": "RM 278\n222 lbs\nSTR\n1515 arrival for a 1530 CT scan\nKelley",
+    "Comments": "RM 278\r\n222 lbs\r\nSTR\r\n1515 arrival for a 1530 CT scan\r\nKelley",
+    "Comments1": "RM 278\r\n222 lbs\r\nSTR\r\n1515 arrival for a 1530 CT scan\r\nKelley",
     "notesFull": "RM 278\n222 lbs\nSTR\n1515 arrival for a 1530 CT scan\nKelley",
-    "notesPreview": "RM 278",
+    "notesPreview": "RM 278 | 222 lbs | STR | 1515 arrival for a 1530 CT scan | Kelley",
     "legs": [
       {
         "FirstName": "Barbara",
         "LastName": "Slawson",
         "MiddleInitial": "",
         "DOB": "8/11/1963 12:00:00 AM",
-        "Comments": "RM 278\n222 lbs\nSTR\n1515 arrival for a 1530 CT scan\nKelley",
+        "Comments": "RM 278\r\n222 lbs\r\nSTR\r\n1515 arrival for a 1530 CT scan\r\nKelley",
         "ConfirmationNumber": "51647",
         "RideDate": "4/17/2026 12:00:00 AM",
         "ScheduledPickupTime": "14:45",
@@ -4184,7 +4184,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "1.31",
-        "Comments1": "RM 278\n222 lbs\nSTR\n1515 arrival for a 1530 CT scan\nKelley",
+        "Comments1": "RM 278\r\n222 lbs\r\nSTR\r\n1515 arrival for a 1530 CT scan\r\nKelley",
         "PickupName": "Encompass Health Rehabilitation Hospital of City View",
         "PickupAddress1": "6701 Oakmont Boulevard",
         "PickupCity": "Fort Worth",
@@ -4197,14 +4197,14 @@
         "DropoffZip": "76132",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "Barbara",
         "LastName": "Slawson",
         "MiddleInitial": "",
         "DOB": "8/11/1963 12:00:00 AM",
-        "Comments": "RM 278\n222 lbs\nSTR\n1515 arrival for a 1530 CT scan\nKelley",
+        "Comments": "RM 278\r\n222 lbs\r\nSTR\r\n1515 arrival for a 1530 CT scan\r\nKelley",
         "ConfirmationNumber": "51648",
         "RideDate": "4/17/2026 12:00:00 AM",
         "ScheduledPickupTime": "16:15",
@@ -4218,7 +4218,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "1.31",
-        "Comments1": "RM 278\n222 lbs\nSTR\n1515 arrival for a 1530 CT scan\nKelley",
+        "Comments1": "RM 278\r\n222 lbs\r\nSTR\r\n1515 arrival for a 1530 CT scan\r\nKelley",
         "PickupName": "Harris Southwest Main CT Scan/ MRI",
         "PickupAddress1": "6100 Harris Parkway",
         "PickupCity": "Fort Worth",
@@ -4231,7 +4231,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -4362,17 +4362,17 @@
     "DropoffZip": "76132",
     "DirectMileage": "9",
     "RideHours": "0.6",
-    "Comments": "J. 390, 157lbs, cn, needs str, Shawna Maloney (817)250-3092\n#221.A",
-    "Comments1": "J. 390, 157lbs, cn, needs str, Shawna Maloney (817)250-3092\n#221.A",
+    "Comments": "J. 390, 157lbs, cn, needs str, Shawna Maloney (817)250-3092\r\n#221.A",
+    "Comments1": "J. 390, 157lbs, cn, needs str, Shawna Maloney (817)250-3092\r\n#221.A",
     "notesFull": "J. 390, 157lbs, cn, needs str, Shawna Maloney (817)250-3092\n#221.A",
-    "notesPreview": "J. 390, 157lbs, cn, needs str, Shawna Maloney (817)250-3092",
+    "notesPreview": "J. 390, 157lbs, cn, needs str, Shawna Maloney (817)250-3092 | #221.A",
     "legs": [
       {
         "FirstName": "Vickie ",
         "LastName": "Bess ",
         "MiddleInitial": "",
         "DOB": "10/10/1959 12:00:00 AM",
-        "Comments": "J. 390, 157lbs, cn, needs str, Shawna Maloney (817)250-3092\n#221.A",
+        "Comments": "J. 390, 157lbs, cn, needs str, Shawna Maloney (817)250-3092\r\n#221.A",
         "ConfirmationNumber": "51690",
         "RideDate": "4/20/2026 12:00:00 AM",
         "ScheduledPickupTime": "17:03",
@@ -4386,7 +4386,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "8.78",
-        "Comments1": "J. 390, 157lbs, cn, needs str, Shawna Maloney (817)250-3092\n#221.A",
+        "Comments1": "J. 390, 157lbs, cn, needs str, Shawna Maloney (817)250-3092\r\n#221.A",
         "PickupName": "Harris Jones Tower",
         "PickupAddress1": "1301 Pennsylvania Avenue",
         "PickupCity": "Fort Worth",
@@ -4399,7 +4399,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -4534,17 +4534,17 @@
     "DropoffZip": "76132",
     "DirectMileage": "1",
     "RideHours": "0.35",
-    "Comments": "THSW MED/SURG B5 rm 5249 524901, 130 lbs., STR/Broda, left Hip hematoma, Fall, CN\n#TBD\n\nper Patricia Cook (817)433-3282",
-    "Comments1": "THSW MED/SURG B5 rm 5249 524901, 130 lbs., STR/Broda, left Hip hematoma, Fall, CN\n#TBD\n\nper Patricia Cook (817)433-3282",
-    "notesFull": "THSW MED/SURG B5 rm 5249 524901, 130 lbs., STR/Broda, left Hip hematoma, Fall, CN\n#TBD\n\nper Patricia Cook (817)433-3282",
-    "notesPreview": "THSW MED/SURG B5 rm 5249 524901, 130 lbs., STR/Broda, left Hip hematoma, Fall, CN",
+    "Comments": "THSW MED/SURG B5 rm 5249 524901, 130 lbs., STR/Broda, left Hip hematoma, Fall, CN\r\n#TBD\r\n\r\nper Patricia Cook (817)433-3282",
+    "Comments1": "THSW MED/SURG B5 rm 5249 524901, 130 lbs., STR/Broda, left Hip hematoma, Fall, CN\r\n#TBD\r\n\r\nper Patricia Cook (817)433-3282",
+    "notesFull": "THSW MED/SURG B5 rm 5249 524901, 130 lbs., STR/Broda, left Hip hematoma, Fall, CN\n#TBD\nper Patricia Cook (817)433-3282",
+    "notesPreview": "THSW MED/SURG B5 rm 5249 524901, 130 lbs., STR/Broda, left Hip hematoma, Fall, CN | #TBD | per Patricia Cook (817)433-3282",
     "legs": [
       {
         "FirstName": "Carol",
         "LastName": "Schultz",
         "MiddleInitial": "J",
         "DOB": "5/11/1938 12:00:00 AM",
-        "Comments": "THSW MED/SURG B5 rm 5249 524901, 130 lbs., STR/Broda, left Hip hematoma, Fall, CN\n#TBD\n\nper Patricia Cook (817)433-3282",
+        "Comments": "THSW MED/SURG B5 rm 5249 524901, 130 lbs., STR/Broda, left Hip hematoma, Fall, CN\r\n#TBD\r\n\r\nper Patricia Cook (817)433-3282",
         "ConfirmationNumber": "51704",
         "RideDate": "4/20/2026 12:00:00 AM",
         "ScheduledPickupTime": "18:00",
@@ -4558,7 +4558,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "1.07",
-        "Comments1": "THSW MED/SURG B5 rm 5249 524901, 130 lbs., STR/Broda, left Hip hematoma, Fall, CN\n#TBD\n\nper Patricia Cook (817)433-3282",
+        "Comments1": "THSW MED/SURG B5 rm 5249 524901, 130 lbs., STR/Broda, left Hip hematoma, Fall, CN\r\n#TBD\r\n\r\nper Patricia Cook (817)433-3282",
         "PickupName": "Harris Southwest Discharges Stretcher Ambulance Bay ONLY ",
         "PickupAddress1": "6100 Harris Parkway",
         "PickupCity": "Fort Worth",
@@ -4571,7 +4571,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -4743,7 +4743,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -4888,7 +4888,7 @@
         "LastName": "Hill",
         "MiddleInitial": "",
         "DOB": "9/28/1948 12:00:00 AM",
-        "Comments": "Tower RM 838, 163 lbs, Needs Recliner, Miguel 817 250 2000\n",
+        "Comments": "Tower RM 838, 163 lbs, Needs Recliner, Miguel 817 250 2000\r\n",
         "ConfirmationNumber": "51710",
         "RideDate": "4/21/2026 12:00:00 AM",
         "ScheduledPickupTime": "12:00",
@@ -4902,7 +4902,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "8.85",
-        "Comments1": "Tower RM 838, 163 lbs, Needs Recliner, Miguel 817 250 2000\n",
+        "Comments1": "Tower RM 838, 163 lbs, Needs Recliner, Miguel 817 250 2000\r\n",
         "PickupName": "Harris Tower",
         "PickupAddress1": "1301 Pennsylvania Ave",
         "PickupCity": "Fort Worth",
@@ -4915,7 +4915,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -5061,7 +5061,7 @@
     "Comments": "Residence, 175 lbs, patient can walk but unstable, uses walker, Needs Recliner, Encompass RM TBD, Mr Scott 817 905 5988, Aisha (case worker) 469 416 9932",
     "Comments1": "Residence, 175 lbs, patient can walk but unstable, uses walker, Needs Recliner, Encompass RM TBD, Mr Scott 817 905 5988, Aisha (case worker) 469 416 9932",
     "notesFull": "Residence, 175 lbs, patient can walk but unstable, uses walker, Needs Recliner, Encompass RM TBD, Mr Scott 817 905 5988, Aisha (case worker) 469 416 9932",
-    "notesPreview": "Residence, 175 lbs, patient can walk but unstable, uses walker, Needs Recliner, Encompass RM TBD, Mr Scott 817 905 59...",
+    "notesPreview": "Residence, 175 lbs, patient can walk but unstable, uses walker, Needs Recliner, Encompass RM TBD, Mr Scott 817 905 5988, Aisha (case worker) 469 416 9932",
     "legs": [
       {
         "FirstName": "Carey",
@@ -5095,7 +5095,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -5238,17 +5238,17 @@
     "DropoffZip": "76132",
     "DirectMileage": "2",
     "RideHours": "",
-    "Comments": "**charge wait time\nrm 211, 99 lbs., has wc, alert per Brandi\n9:45am appt time for CT scan\n**charge wait time\n\nrm 211, 99 lbs., has wc, alert per Brandi\n9:45am appt time for CT Scan",
-    "Comments1": "**charge wait time\nrm 211, 99 lbs., has wc, alert per Brandi\n9:45am appt time for CT scan\n**charge wait time\n\nrm 211, 99 lbs., has wc, alert per Brandi\n9:45am appt time for CT Scan",
-    "notesFull": "**charge wait time\nrm 211, 99 lbs., has wc, alert per Brandi\n9:45am appt time for CT scan\n**charge wait time\n\nrm 211, 99 lbs., has wc, alert per Brandi\n9:45am appt time for CT Scan",
-    "notesPreview": "**charge wait time",
+    "Comments": "**charge wait time\r\nrm 211, 99 lbs., has wc, alert per Brandi\r\n9:45am appt time for CT scan\n**charge wait time\r\n\r\nrm 211, 99 lbs., has wc, alert per Brandi\r\n9:45am appt time for CT Scan",
+    "Comments1": "**charge wait time\r\nrm 211, 99 lbs., has wc, alert per Brandi\r\n9:45am appt time for CT scan\n**charge wait time\r\n\r\nrm 211, 99 lbs., has wc, alert per Brandi\r\n9:45am appt time for CT Scan",
+    "notesFull": "**charge wait time\nrm 211, 99 lbs., has wc, alert per Brandi\n9:45am appt time for CT scan",
+    "notesPreview": "**charge wait time | rm 211, 99 lbs., has wc, alert per Brandi | 9:45am appt time for CT scan",
     "legs": [
       {
         "FirstName": "Donnita",
         "LastName": "Turner",
         "MiddleInitial": "",
         "DOB": "1/23/1950 12:00:00 AM",
-        "Comments": "**charge wait time\nrm 211, 99 lbs., has wc, alert per Brandi\n9:45am appt time for CT scan",
+        "Comments": "**charge wait time\r\nrm 211, 99 lbs., has wc, alert per Brandi\r\n9:45am appt time for CT scan",
         "ConfirmationNumber": "51698",
         "RideDate": "4/21/2026 12:00:00 AM",
         "ScheduledPickupTime": "09:15",
@@ -5262,7 +5262,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "1.31",
-        "Comments1": "**charge wait time\nrm 211, 99 lbs., has wc, alert per Brandi\n9:45am appt time for CT scan",
+        "Comments1": "**charge wait time\r\nrm 211, 99 lbs., has wc, alert per Brandi\r\n9:45am appt time for CT scan",
         "PickupName": "Encompass Health Rehabilitation Hospital of City View",
         "PickupAddress1": "6701 Oakmont Boulevard",
         "PickupCity": "Fort Worth",
@@ -5275,14 +5275,14 @@
         "DropoffZip": "76132",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "Donnita",
         "LastName": "Turner",
         "MiddleInitial": "",
         "DOB": "1/23/1950 12:00:00 AM",
-        "Comments": "**charge wait time\n\nrm 211, 99 lbs., has wc, alert per Brandi\n9:45am appt time for CT Scan",
+        "Comments": "**charge wait time\r\n\r\nrm 211, 99 lbs., has wc, alert per Brandi\r\n9:45am appt time for CT Scan",
         "ConfirmationNumber": "51699",
         "RideDate": "4/21/2026 12:00:00 AM",
         "ScheduledPickupTime": "10:15",
@@ -5296,7 +5296,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "1.31",
-        "Comments1": "**charge wait time\n\nrm 211, 99 lbs., has wc, alert per Brandi\n9:45am appt time for CT Scan",
+        "Comments1": "**charge wait time\r\n\r\nrm 211, 99 lbs., has wc, alert per Brandi\r\n9:45am appt time for CT Scan",
         "PickupName": "Harris Southwest Main CT Scan/ MRI",
         "PickupAddress1": "6100 Harris Parkway",
         "PickupCity": "Fort Worth",
@@ -5309,7 +5309,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -5479,7 +5479,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "Trina",
@@ -5513,7 +5513,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -5683,7 +5683,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "Barbara",
@@ -5717,7 +5717,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -5850,17 +5850,17 @@
     "DropoffZip": "76132",
     "DirectMileage": "3",
     "RideHours": "0.2833",
-    "Comments": "rm 229 / needs recliner / 208 lbs / has foley catheter, can stand and transfer / please get his stuff in his room, 2 bags, he will be waiting downstairs\napt 137\n\nper Kelly",
-    "Comments1": "rm 229 / needs recliner / 208 lbs / has foley catheter, can stand and transfer / please get his stuff in his room, 2 bags, he will be waiting downstairs\napt 137\n\nper Kelly",
-    "notesFull": "rm 229 / needs recliner / 208 lbs / has foley catheter, can stand and transfer / please get his stuff in his room, 2 bags, he will be waiting downstairs\napt 137\n\nper Kelly",
-    "notesPreview": "rm 229 / needs recliner / 208 lbs / has foley catheter, can stand and transfer / please get his stuff in his room, 2...",
+    "Comments": "rm 229 / needs recliner / 208 lbs / has foley catheter, can stand and transfer / please get his stuff in his room, 2 bags, he will be waiting downstairs\r\napt 137\r\n\r\nper Kelly",
+    "Comments1": "rm 229 / needs recliner / 208 lbs / has foley catheter, can stand and transfer / please get his stuff in his room, 2 bags, he will be waiting downstairs\r\napt 137\r\n\r\nper Kelly",
+    "notesFull": "rm 229 / needs recliner / 208 lbs / has foley catheter, can stand and transfer / please get his stuff in his room, 2 bags, he will be waiting downstairs\napt 137\nper Kelly",
+    "notesPreview": "rm 229 / needs recliner / 208 lbs / has foley catheter, can stand and transfer / please get his stuff in his room, 2 bags, he will be waiting downstairs | ap...",
     "legs": [
       {
         "FirstName": "Thomas",
         "LastName": "Thompson",
         "MiddleInitial": "",
         "DOB": "3/29/1937 12:00:00 AM",
-        "Comments": " rm 229 / needs recliner / 208 lbs / has foley catheter, can stand and transfer / please get his stuff in his room, 2 bags, he will be waiting downstairs\napt 137\n\nper Kelly",
+        "Comments": " rm 229 / needs recliner / 208 lbs / has foley catheter, can stand and transfer / please get his stuff in his room, 2 bags, he will be waiting downstairs\r\napt 137\r\n\r\nper Kelly",
         "ConfirmationNumber": "51766",
         "RideDate": "4/22/2026 12:00:00 AM",
         "ScheduledPickupTime": "19:00",
@@ -5874,7 +5874,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "2.50",
-        "Comments1": " rm 229 / needs recliner / 208 lbs / has foley catheter, can stand and transfer / please get his stuff in his room, 2 bags, he will be waiting downstairs\napt 137\n\nper Kelly",
+        "Comments1": " rm 229 / needs recliner / 208 lbs / has foley catheter, can stand and transfer / please get his stuff in his room, 2 bags, he will be waiting downstairs\r\napt 137\r\n\r\nper Kelly",
         "PickupName": "Encompass Health Rehabilitation Hospital of City View",
         "PickupAddress1": "6701 Oakmont Boulevard",
         "PickupCity": "Fort Worth",
@@ -5887,7 +5887,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -6030,17 +6030,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "18",
     "RideHours": "0.3333",
-    "Comments": "266, 169lbs, cn, has wc, Kelley\n11am appt, #500",
-    "Comments1": "266, 169lbs, cn, has wc, Kelley\n11am appt, #500",
+    "Comments": "266, 169lbs, cn, has wc, Kelley\r\n11am appt, #500",
+    "Comments1": "266, 169lbs, cn, has wc, Kelley\r\n11am appt, #500",
     "notesFull": "266, 169lbs, cn, has wc, Kelley\n11am appt, #500",
-    "notesPreview": "266, 169lbs, cn, has wc, Kelley",
+    "notesPreview": "266, 169lbs, cn, has wc, Kelley | 11am appt, #500",
     "legs": [
       {
         "FirstName": "Connie ",
         "LastName": "Bagley ",
         "MiddleInitial": "",
         "DOB": "4/10/1955 12:00:00 AM",
-        "Comments": "266, 169lbs, cn, has wc, Kelley\n11am appt, #500 ",
+        "Comments": "266, 169lbs, cn, has wc, Kelley\r\n11am appt, #500 ",
         "ConfirmationNumber": "51747",
         "RideDate": "4/23/2026 12:00:00 AM",
         "ScheduledPickupTime": "10:30",
@@ -6054,7 +6054,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "8.63",
-        "Comments1": "266, 169lbs, cn, has wc, Kelley\n11am appt, #500 ",
+        "Comments1": "266, 169lbs, cn, has wc, Kelley\r\n11am appt, #500 ",
         "PickupName": "Encompass Health Rehabilitation Hospital of City View",
         "PickupAddress1": "6701 Oakmont Boulevard",
         "PickupCity": "Fort Worth",
@@ -6067,14 +6067,14 @@
         "DropoffZip": "76104",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "Connie ",
         "LastName": "Bagley ",
         "MiddleInitial": "",
         "DOB": "4/10/1955 12:00:00 AM",
-        "Comments": "266, 169lbs, cn, has wc, Kelley\n11am appt, #500 ",
+        "Comments": "266, 169lbs, cn, has wc, Kelley\r\n11am appt, #500 ",
         "ConfirmationNumber": "51748",
         "RideDate": "4/23/2026 12:00:00 AM",
         "ScheduledPickupTime": "11:37",
@@ -6088,7 +6088,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "8.63",
-        "Comments1": "266, 169lbs, cn, has wc, Kelley\n11am appt, #500 ",
+        "Comments1": "266, 169lbs, cn, has wc, Kelley\r\n11am appt, #500 ",
         "PickupName": "Dr. Cakata or Shaffer ",
         "PickupAddress1": "1300 West Terrell Avenue",
         "PickupCity": "Fort Worth",
@@ -6101,7 +6101,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -6271,7 +6271,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -6409,7 +6409,7 @@
     "Comments": "RM 223 b//  183   lbs // Has WC // 0955 appt, ste 200, Dr Wylie // Kelley\nRM 223 b //    183 lbs // Has WC // 0955 appt, ste 200, Dr Wylie // Kelley",
     "Comments1": "RM 223 b//  183   lbs // Has WC // 0955 appt, ste 200, Dr Wylie // Kelley\nRM 223 b //    183 lbs // Has WC // 0955 appt, ste 200, Dr Wylie // Kelley",
     "notesFull": "RM 223 b//  183   lbs // Has WC // 0955 appt, ste 200, Dr Wylie // Kelley\nRM 223 b //    183 lbs // Has WC // 0955 appt, ste 200, Dr Wylie // Kelley",
-    "notesPreview": "RM 223 b//  183   lbs // Has WC // 0955 appt, ste 200, Dr Wylie // Kelley",
+    "notesPreview": "RM 223 b//  183   lbs // Has WC // 0955 appt, ste 200, Dr Wylie // Kelley | RM 223 b //    183 lbs // Has WC // 0955 appt, ste 200, Dr Wylie // Kelley",
     "legs": [
       {
         "FirstName": "Marilyn",
@@ -6443,7 +6443,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "Marilyn",
@@ -6477,7 +6477,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -6610,17 +6610,17 @@
     "DropoffZip": "76132",
     "DirectMileage": "9",
     "RideHours": "0.45",
-    "Comments": "S. 326, 154lbs, cn, needs str, Jessica Miller 817-250-8656\n#200",
-    "Comments1": "S. 326, 154lbs, cn, needs str, Jessica Miller 817-250-8656\n#200",
+    "Comments": "S. 326, 154lbs, cn, needs str, Jessica Miller 817-250-8656\r\n#200",
+    "Comments1": "S. 326, 154lbs, cn, needs str, Jessica Miller 817-250-8656\r\n#200",
     "notesFull": "S. 326, 154lbs, cn, needs str, Jessica Miller 817-250-8656\n#200",
-    "notesPreview": "S. 326, 154lbs, cn, needs str, Jessica Miller 817-250-8656",
+    "notesPreview": "S. 326, 154lbs, cn, needs str, Jessica Miller 817-250-8656 | #200",
     "legs": [
       {
         "FirstName": "Eula ",
         "LastName": "Martin ",
         "MiddleInitial": "",
         "DOB": "1/27/1941 12:00:00 AM",
-        "Comments": "S. 326, 154lbs, cn, needs str, Jessica Miller 817-250-8656\n#200",
+        "Comments": "S. 326, 154lbs, cn, needs str, Jessica Miller 817-250-8656\r\n#200",
         "ConfirmationNumber": "51782",
         "RideDate": "4/23/2026 12:00:00 AM",
         "ScheduledPickupTime": "14:30",
@@ -6634,7 +6634,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "8.52",
-        "Comments1": "S. 326, 154lbs, cn, needs str, Jessica Miller 817-250-8656\n#200",
+        "Comments1": "S. 326, 154lbs, cn, needs str, Jessica Miller 817-250-8656\r\n#200",
         "PickupName": "Harris Justin Tower",
         "PickupAddress1": "1301 Pennsylvania Ave",
         "PickupCity": "Fort Worth",
@@ -6647,7 +6647,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -6782,17 +6782,17 @@
     "DropoffZip": "76132",
     "DirectMileage": "9",
     "RideHours": "0.3833",
-    "Comments": "Rich 301, 194lbs., STR, \nenc cv rm 269",
-    "Comments1": "Rich 301, 194lbs., STR, \nenc cv rm 269",
-    "notesFull": "Rich 301, 194lbs., STR, \nenc cv rm 269",
-    "notesPreview": "Rich 301, 194lbs., STR,",
+    "Comments": "Rich 301, 194lbs., STR, \r\nenc cv rm 269",
+    "Comments1": "Rich 301, 194lbs., STR, \r\nenc cv rm 269",
+    "notesFull": "Rich 301, 194lbs., STR,\nenc cv rm 269",
+    "notesPreview": "Rich 301, 194lbs., STR, | enc cv rm 269",
     "legs": [
       {
         "FirstName": "William",
         "LastName": "Ayres",
         "MiddleInitial": "",
         "DOB": "6/25/1950 12:00:00 AM",
-        "Comments": "Rich 301, 194lbs., STR, \nenc cv rm 269",
+        "Comments": "Rich 301, 194lbs., STR, \r\nenc cv rm 269",
         "ConfirmationNumber": "51828",
         "RideDate": "4/24/2026 12:00:00 AM",
         "ScheduledPickupTime": "12:45",
@@ -6806,7 +6806,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "8.84",
-        "Comments1": "Rich 301, 194lbs., STR, \nenc cv rm 269",
+        "Comments1": "Rich 301, 194lbs., STR, \r\nenc cv rm 269",
         "PickupName": "Harris Richardson Tower",
         "PickupAddress1": "1301 Pennsylvania Avenue",
         "PickupCity": "Fort Worth",
@@ -6819,7 +6819,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -6954,17 +6954,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "9",
     "RideHours": "",
-    "Comments": "**incorrect appointment date, canceled on scene\n\nrm 219, 126 lbs., has wc, therpist will go with her per Brandi\n1:30pm appt time, check in at admissions on the first floor for swallow study",
-    "Comments1": "**incorrect appointment date, canceled on scene\n\nrm 219, 126 lbs., has wc, therpist will go with her per Brandi\n1:30pm appt time, check in at admissions on the first floor for swallow study",
-    "notesFull": "**incorrect appointment date, canceled on scene\n\nrm 219, 126 lbs., has wc, therpist will go with her per Brandi\n1:30pm appt time, check in at admissions on the first floor for swallow study",
-    "notesPreview": "**incorrect appointment date, canceled on scene",
+    "Comments": "**incorrect appointment date, canceled on scene\r\n\r\nrm 219, 126 lbs., has wc, therpist will go with her per Brandi\r\n1:30pm appt time, check in at admissions on the first floor for swallow study",
+    "Comments1": "**incorrect appointment date, canceled on scene\r\n\r\nrm 219, 126 lbs., has wc, therpist will go with her per Brandi\r\n1:30pm appt time, check in at admissions on the first floor for swallow study",
+    "notesFull": "**incorrect appointment date, canceled on scene\nrm 219, 126 lbs., has wc, therpist will go with her per Brandi\n1:30pm appt time, check in at admissions on the first floor for swallow study",
+    "notesPreview": "**incorrect appointment date, canceled on scene | rm 219, 126 lbs., has wc, therpist will go with her per Brandi | 1:30pm appt time, check in at admissions o...",
     "legs": [
       {
         "FirstName": "Susan",
         "LastName": "O'Neal",
         "MiddleInitial": "",
         "DOB": "7/15/1957 12:00:00 AM",
-        "Comments": "**incorrect appointment date, canceled on scene\n\nrm 219, 126 lbs., has wc, therpist will go with her per Brandi\n1:30pm appt time, check in at admissions on the first floor for swallow study\n",
+        "Comments": "**incorrect appointment date, canceled on scene\r\n\r\nrm 219, 126 lbs., has wc, therpist will go with her per Brandi\r\n1:30pm appt time, check in at admissions on the first floor for swallow study\r\n",
         "ConfirmationNumber": "51700",
         "RideDate": "4/24/2026 12:00:00 AM",
         "ScheduledPickupTime": "13:00",
@@ -6978,7 +6978,7 @@
         "Mobility": "WC",
         "RideStatus": "NoShow ",
         "DirectMileage": "8.65",
-        "Comments1": "**incorrect appointment date, canceled on scene\n\nrm 219, 126 lbs., has wc, therpist will go with her per Brandi\n1:30pm appt time, check in at admissions on the first floor for swallow study\n",
+        "Comments1": "**incorrect appointment date, canceled on scene\r\n\r\nrm 219, 126 lbs., has wc, therpist will go with her per Brandi\r\n1:30pm appt time, check in at admissions on the first floor for swallow study\r\n",
         "PickupName": "Encompass Health Rehabilitation Hospital of City View",
         "PickupAddress1": "6701 Oakmont Boulevard",
         "PickupCity": "Fort Worth",
@@ -6991,7 +6991,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -7101,17 +7101,17 @@
     "DropoffZip": "76132",
     "DirectMileage": "8",
     "RideHours": "0.65",
-    "Comments": "Bldg B rm 433, 210 lbs., STR/ Broda, 4 ltrs O2 NC, had a stroke, doesn't understand or communicate well, he is impulsive so make sure seatbelt is on, he is not combative, CN\n#220\n\nper Sandra 8179224600",
-    "Comments1": "Bldg B rm 433, 210 lbs., STR/ Broda, 4 ltrs O2 NC, had a stroke, doesn't understand or communicate well, he is impulsive so make sure seatbelt is on, he is not combative, CN\n#220\n\nper Sandra 8179224600",
-    "notesFull": "Bldg B rm 433, 210 lbs., STR/ Broda, 4 ltrs O2 NC, had a stroke, doesn't understand or communicate well, he is impulsive so make sure seatbelt is on, he is not combative, CN\n#220\n\nper Sandra 8179224600",
-    "notesPreview": "Bldg B rm 433, 210 lbs., STR/ Broda, 4 ltrs O2 NC, had a stroke, doesn't understand or communicate well, he is impuls...",
+    "Comments": "Bldg B rm 433, 210 lbs., STR/ Broda, 4 ltrs O2 NC, had a stroke, doesn't understand or communicate well, he is impulsive so make sure seatbelt is on, he is not combative, CN\r\n#220\r\n\r\nper Sandra 8179224600",
+    "Comments1": "Bldg B rm 433, 210 lbs., STR/ Broda, 4 ltrs O2 NC, had a stroke, doesn't understand or communicate well, he is impulsive so make sure seatbelt is on, he is not combative, CN\r\n#220\r\n\r\nper Sandra 8179224600",
+    "notesFull": "Bldg B rm 433, 210 lbs., STR/ Broda, 4 ltrs O2 NC, had a stroke, doesn't understand or communicate well, he is impulsive so make sure seatbelt is on, he is not combative, CN\n#220\nper Sandra 8179224600",
+    "notesPreview": "Bldg B rm 433, 210 lbs., STR/ Broda, 4 ltrs O2 NC, had a stroke, doesn't understand or communicate well, he is impulsive so make sure seatbelt is on, he is n...",
     "legs": [
       {
         "FirstName": "Michael",
         "LastName": "Parker",
         "MiddleInitial": "",
         "DOB": "6/8/1971 12:00:00 AM",
-        "Comments": "Bldg B rm 433, 210 lbs., STR/ Broda, 4 ltrs O2 NC, had a stroke, doesn't understand or communicate well, he is impulsive so make sure seatbelt is on, he is not combative, CN\n#220\n\nper Sandra 8179224600",
+        "Comments": "Bldg B rm 433, 210 lbs., STR/ Broda, 4 ltrs O2 NC, had a stroke, doesn't understand or communicate well, he is impulsive so make sure seatbelt is on, he is not combative, CN\r\n#220\r\n\r\nper Sandra 8179224600",
         "ConfirmationNumber": "51842",
         "RideDate": "4/24/2026 12:00:00 AM",
         "ScheduledPickupTime": "19:30",
@@ -7125,7 +7125,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "8.29",
-        "Comments1": "Bldg B rm 433, 210 lbs., STR/ Broda, 4 ltrs O2 NC, had a stroke, doesn't understand or communicate well, he is impulsive so make sure seatbelt is on, he is not combative, CN\n#220\n\nper Sandra 8179224600",
+        "Comments1": "Bldg B rm 433, 210 lbs., STR/ Broda, 4 ltrs O2 NC, had a stroke, doesn't understand or communicate well, he is impulsive so make sure seatbelt is on, he is not combative, CN\r\n#220\r\n\r\nper Sandra 8179224600",
         "PickupName": "Baylor All Saints Fort Worth B Building",
         "PickupAddress1": "1400 8th Avenue",
         "PickupCity": "Fort Worth",
@@ -7138,7 +7138,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -7273,17 +7273,17 @@
     "DropoffZip": "76132",
     "DirectMileage": "2",
     "RideHours": "0.3333",
-    "Comments": "rm 202B, 130lbs., CT scan, has wc\nplease take her to front registration for imaging.",
-    "Comments1": "rm 202B, 130lbs., CT scan, has wc\nplease take her to front registration for imaging.",
+    "Comments": "rm 202B, 130lbs., CT scan, has wc\r\nplease take her to front registration for imaging.",
+    "Comments1": "rm 202B, 130lbs., CT scan, has wc\r\nplease take her to front registration for imaging.",
     "notesFull": "rm 202B, 130lbs., CT scan, has wc\nplease take her to front registration for imaging.",
-    "notesPreview": "rm 202B, 130lbs., CT scan, has wc",
+    "notesPreview": "rm 202B, 130lbs., CT scan, has wc | please take her to front registration for imaging.",
     "legs": [
       {
         "FirstName": "Carol",
         "LastName": "Schultz",
         "MiddleInitial": "J",
         "DOB": "5/11/1938 12:00:00 AM",
-        "Comments": "rm 202B, 130lbs., CT scan, has wc\nplease take her to front registration for imaging.",
+        "Comments": "rm 202B, 130lbs., CT scan, has wc\r\nplease take her to front registration for imaging.",
         "ConfirmationNumber": "51822",
         "RideDate": "4/24/2026 12:00:00 AM",
         "ScheduledPickupTime": "15:15",
@@ -7297,7 +7297,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "0.98",
-        "Comments1": "rm 202B, 130lbs., CT scan, has wc\nplease take her to front registration for imaging.",
+        "Comments1": "rm 202B, 130lbs., CT scan, has wc\r\nplease take her to front registration for imaging.",
         "PickupName": "Encompass Health Rehabilitation Hospital of City View",
         "PickupAddress1": "6701 Oakmont Boulevard",
         "PickupCity": "Fort Worth",
@@ -7310,14 +7310,14 @@
         "DropoffZip": "76132",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "Carol",
         "LastName": "Schultz",
         "MiddleInitial": "J",
         "DOB": "5/11/1938 12:00:00 AM",
-        "Comments": "rm 202B, 130lbs., CT scan, has wc\nplease take her to front registration for imaging.",
+        "Comments": "rm 202B, 130lbs., CT scan, has wc\r\nplease take her to front registration for imaging.",
         "ConfirmationNumber": "51823",
         "RideDate": "4/24/2026 12:00:00 AM",
         "ScheduledPickupTime": "15:30",
@@ -7331,7 +7331,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "0.98",
-        "Comments1": "rm 202B, 130lbs., CT scan, has wc\nplease take her to front registration for imaging.",
+        "Comments1": "rm 202B, 130lbs., CT scan, has wc\r\nplease take her to front registration for imaging.",
         "PickupName": "Texas Health Harris Methodist Hospital Southwest Fort Worth",
         "PickupAddress1": "6100 Harris Parkway",
         "PickupCity": "Fort Worth",
@@ -7344,7 +7344,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -7475,17 +7475,17 @@
     "DropoffZip": "76132",
     "DirectMileage": "1",
     "RideHours": "0.2",
-    "Comments": "THSW INTERMEDIATE B3 rm 3233 323301, 163 lbs., STR/Broda, Unstable angina (HCC), Chest pain, Cn\n#TBD\n\nper Patricia Cook (817)433-3282",
-    "Comments1": "THSW INTERMEDIATE B3 rm 3233 323301, 163 lbs., STR/Broda, Unstable angina (HCC), Chest pain, Cn\n#TBD\n\nper Patricia Cook (817)433-3282",
-    "notesFull": "THSW INTERMEDIATE B3 rm 3233 323301, 163 lbs., STR/Broda, Unstable angina (HCC), Chest pain, Cn\n#TBD\n\nper Patricia Cook (817)433-3282",
-    "notesPreview": "THSW INTERMEDIATE B3 rm 3233 323301, 163 lbs., STR/Broda, Unstable angina (HCC), Chest pain, Cn",
+    "Comments": "THSW INTERMEDIATE B3 rm 3233 323301, 163 lbs., STR/Broda, Unstable angina (HCC), Chest pain, Cn\r\n#TBD\r\n\r\nper Patricia Cook (817)433-3282",
+    "Comments1": "THSW INTERMEDIATE B3 rm 3233 323301, 163 lbs., STR/Broda, Unstable angina (HCC), Chest pain, Cn\r\n#TBD\r\n\r\nper Patricia Cook (817)433-3282",
+    "notesFull": "THSW INTERMEDIATE B3 rm 3233 323301, 163 lbs., STR/Broda, Unstable angina (HCC), Chest pain, Cn\n#TBD\nper Patricia Cook (817)433-3282",
+    "notesPreview": "THSW INTERMEDIATE B3 rm 3233 323301, 163 lbs., STR/Broda, Unstable angina (HCC), Chest pain, Cn | #TBD | per Patricia Cook (817)433-3282",
     "legs": [
       {
         "FirstName": "Robert",
         "LastName": "Burden",
         "MiddleInitial": "",
         "DOB": "7/24/1962 12:00:00 AM",
-        "Comments": "THSW INTERMEDIATE B3 rm 3233 323301, 163 lbs., STR/Broda, Unstable angina (HCC), Chest pain, Cn\n#TBD\n\nper Patricia Cook (817)433-3282",
+        "Comments": "THSW INTERMEDIATE B3 rm 3233 323301, 163 lbs., STR/Broda, Unstable angina (HCC), Chest pain, Cn\r\n#TBD\r\n\r\nper Patricia Cook (817)433-3282",
         "ConfirmationNumber": "51857",
         "RideDate": "4/25/2026 12:00:00 AM",
         "ScheduledPickupTime": "15:00",
@@ -7499,7 +7499,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "1.07",
-        "Comments1": "THSW INTERMEDIATE B3 rm 3233 323301, 163 lbs., STR/Broda, Unstable angina (HCC), Chest pain, Cn\n#TBD\n\nper Patricia Cook (817)433-3282",
+        "Comments1": "THSW INTERMEDIATE B3 rm 3233 323301, 163 lbs., STR/Broda, Unstable angina (HCC), Chest pain, Cn\r\n#TBD\r\n\r\nper Patricia Cook (817)433-3282",
         "PickupName": "Harris Southwest Discharges Stretcher Ambulance Bay ONLY ",
         "PickupAddress1": "6100 Harris Parkway",
         "PickupCity": "Fort Worth",
@@ -7512,7 +7512,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -7653,17 +7653,17 @@
     "DropoffZip": "76132",
     "DirectMileage": "8",
     "RideHours": "0.4",
-    "Comments": "rm 508, 208 lbs., needs recliner, able to s&t, CN\n#231\n\nper Carmen 8173475805",
-    "Comments1": "rm 508, 208 lbs., needs recliner, able to s&t, CN\n#231\n\nper Carmen 8173475805",
-    "notesFull": "rm 508, 208 lbs., needs recliner, able to s&t, CN\n#231\n\nper Carmen 8173475805",
-    "notesPreview": "rm 508, 208 lbs., needs recliner, able to s&t, CN",
+    "Comments": "rm 508, 208 lbs., needs recliner, able to s&t, CN\r\n#231\r\n\r\nper Carmen 8173475805",
+    "Comments1": "rm 508, 208 lbs., needs recliner, able to s&t, CN\r\n#231\r\n\r\nper Carmen 8173475805",
+    "notesFull": "rm 508, 208 lbs., needs recliner, able to s&t, CN\n#231\nper Carmen 8173475805",
+    "notesPreview": "rm 508, 208 lbs., needs recliner, able to s&t, CN | #231 | per Carmen 8173475805",
     "legs": [
       {
         "FirstName": "Melissa",
         "LastName": "Dunivin",
         "MiddleInitial": "",
         "DOB": "10/5/1979 12:00:00 AM",
-        "Comments": "rm 508, 208 lbs., needs recliner, able to s&t, CN\n#231\n\nper Carmen 8173475805",
+        "Comments": "rm 508, 208 lbs., needs recliner, able to s&t, CN\r\n#231\r\n\r\nper Carmen 8173475805",
         "ConfirmationNumber": "51861",
         "RideDate": "4/25/2026 12:00:00 AM",
         "ScheduledPickupTime": "19:15",
@@ -7677,7 +7677,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "8.11",
-        "Comments1": "rm 508, 208 lbs., needs recliner, able to s&t, CN\n#231\n\nper Carmen 8173475805",
+        "Comments1": "rm 508, 208 lbs., needs recliner, able to s&t, CN\r\n#231\r\n\r\nper Carmen 8173475805",
         "PickupName": "Medical City Fort Worth",
         "PickupAddress1": "900 8th Avenue",
         "PickupCity": "Fort Worth",
@@ -7690,7 +7690,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Encompass Health Cityview ",
         "AccountName": "EHCV-Encompass Health Cityview ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",

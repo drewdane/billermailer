@@ -28,17 +28,17 @@
     "DropoffZip": "76021",
     "DirectMileage": "11",
     "RideHours": "0.4167",
-    "Comments": "We are just picking up the WC from RM 111\n\nWe mistakenly used the Bedford Wellness WC to transport patient instead of using our own WC. Comp Trip. Our mistake.\n\nWe transported Mr Gough from Bedford Wellness and Rehab and we used their WC to transport him to Brookdale Watauga. Just The WC needs to be returned.",
-    "Comments1": "We are just picking up the WC from RM 111\n\nWe mistakenly used the Bedford Wellness WC to transport patient instead of using our own WC. Comp Trip. Our mistake.\n\nWe transported Mr Gough from Bedford Wellness and Rehab and we used their WC to transport him to Brookdale Watauga. Just The WC needs to be returned.",
-    "notesFull": "We are just picking up the WC from RM 111\n\nWe mistakenly used the Bedford Wellness WC to transport patient instead of using our own WC. Comp Trip. Our mistake.\n\nWe transported Mr Gough from Bedford Wellness and Rehab and we used their WC to transport him to Brookdale Watauga. Just The WC needs to be returned.",
-    "notesPreview": "We are just picking up the WC from RM 111",
+    "Comments": "We are just picking up the WC from RM 111\r\n\r\nWe mistakenly used the Bedford Wellness WC to transport patient instead of using our own WC. Comp Trip. Our mistake.\r\n\r\nWe transported Mr Gough from Bedford Wellness and Rehab and we used their WC to transport him to Brookdale Watauga. Just The WC needs to be returned.",
+    "Comments1": "We are just picking up the WC from RM 111\r\n\r\nWe mistakenly used the Bedford Wellness WC to transport patient instead of using our own WC. Comp Trip. Our mistake.\r\n\r\nWe transported Mr Gough from Bedford Wellness and Rehab and we used their WC to transport him to Brookdale Watauga. Just The WC needs to be returned.",
+    "notesFull": "We are just picking up the WC from RM 111\nWe mistakenly used the Bedford Wellness WC to transport patient instead of using our own WC. Comp Trip. Our mistake.\nWe transported Mr Gough from Bedford Wellness and Rehab and we used their WC to transport him to Brookdale Watauga. Just The WC needs to be returned.",
+    "notesPreview": "We are just picking up the WC from RM 111 | We mistakenly used the Bedford Wellness WC to transport patient instead of using our own WC. Comp Trip. Our mista...",
     "legs": [
       {
         "FirstName": "Robert",
         "LastName": "Gough",
         "MiddleInitial": "",
         "DOB": "6/23/1932 12:00:00 AM",
-        "Comments": "We are just picking up the WC from RM 111\n\nWe mistakenly used the Bedford Wellness WC to transport patient instead of using our own WC. Comp Trip. Our mistake.\n\nWe transported Mr Gough from Bedford Wellness and Rehab and we used their WC to transport him to Brookdale Watauga. Just The WC needs to be returned. \n",
+        "Comments": "We are just picking up the WC from RM 111\r\n\r\nWe mistakenly used the Bedford Wellness WC to transport patient instead of using our own WC. Comp Trip. Our mistake.\r\n\r\nWe transported Mr Gough from Bedford Wellness and Rehab and we used their WC to transport him to Brookdale Watauga. Just The WC needs to be returned. \r\n",
         "ConfirmationNumber": "51732",
         "RideDate": "4/22/2026 12:00:00 AM",
         "ScheduledPickupTime": "00:00",
@@ -52,7 +52,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "11.24",
-        "Comments1": "We are just picking up the WC from RM 111\n\nWe mistakenly used the Bedford Wellness WC to transport patient instead of using our own WC. Comp Trip. Our mistake.\n\nWe transported Mr Gough from Bedford Wellness and Rehab and we used their WC to transport him to Brookdale Watauga. Just The WC needs to be returned. \n",
+        "Comments1": "We are just picking up the WC from RM 111\r\n\r\nWe mistakenly used the Bedford Wellness WC to transport patient instead of using our own WC. Comp Trip. Our mistake.\r\n\r\nWe transported Mr Gough from Bedford Wellness and Rehab and we used their WC to transport him to Brookdale Watauga. Just The WC needs to be returned. \r\n",
         "PickupName": "Brookdale Watauga",
         "PickupAddress1": "5800 North Park Drive",
         "PickupCity": "Watauga",
@@ -65,7 +65,7 @@
         "DropoffZip": "76021",
         "AccountCode": "CTT Comp",
         "AccountName": "CTT Comp",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "COMP",

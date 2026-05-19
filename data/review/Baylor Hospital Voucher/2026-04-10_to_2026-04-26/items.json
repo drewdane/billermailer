@@ -28,17 +28,17 @@
     "DropoffZip": "76133",
     "DirectMileage": "10",
     "RideHours": "",
-    "Comments": "Quoted $64/ please collect hospital voucher at nurse's station for $64\n\nBldg B rm 318, 220 lbs., has electric wc, no precaution, CN\n#Apt. 603\n\nper Ashley 8179222309",
-    "Comments1": "Quoted $64/ please collect hospital voucher at nurse's station for $64\n\nBldg B rm 318, 220 lbs., has electric wc, no precaution, CN\n#Apt. 603\n\nper Ashley 8179222309",
-    "notesFull": "Quoted $64/ please collect hospital voucher at nurse's station for $64\n\nBldg B rm 318, 220 lbs., has electric wc, no precaution, CN\n#Apt. 603\n\nper Ashley 8179222309",
-    "notesPreview": "Quoted $64/ please collect hospital voucher at nurse's station for $64",
+    "Comments": "Quoted $64/ please collect hospital voucher at nurse's station for $64\r\n\r\nBldg B rm 318, 220 lbs., has electric wc, no precaution, CN\r\n#Apt. 603\r\n\r\nper Ashley 8179222309",
+    "Comments1": "Quoted $64/ please collect hospital voucher at nurse's station for $64\r\n\r\nBldg B rm 318, 220 lbs., has electric wc, no precaution, CN\r\n#Apt. 603\r\n\r\nper Ashley 8179222309",
+    "notesFull": "Quoted $64/ please collect hospital voucher at nurse's station for $64\nBldg B rm 318, 220 lbs., has electric wc, no precaution, CN\n#Apt. 603\nper Ashley 8179222309",
+    "notesPreview": "Quoted $64/ please collect hospital voucher at nurse's station for $64 | Bldg B rm 318, 220 lbs., has electric wc, no precaution, CN | #Apt. 603 | per Ashley...",
     "legs": [
       {
         "FirstName": "Harold",
         "LastName": "Haedrick",
         "MiddleInitial": "",
         "DOB": "8/16/1941 12:00:00 AM",
-        "Comments": "Quoted $64/ please collect hospital voucher at nurse's station for $64\n\nBldg B rm 318, 220 lbs., has electric wc, no precaution, CN\n#Apt. 603\n\nper Ashley 8179222309",
+        "Comments": "Quoted $64/ please collect hospital voucher at nurse's station for $64\r\n\r\nBldg B rm 318, 220 lbs., has electric wc, no precaution, CN\r\n#Apt. 603\r\n\r\nper Ashley 8179222309",
         "ConfirmationNumber": "51654",
         "RideDate": "4/18/2026 12:00:00 AM",
         "ScheduledPickupTime": "12:00",
@@ -52,7 +52,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "10.21",
-        "Comments1": "Quoted $64/ please collect hospital voucher at nurse's station for $64\n\nBldg B rm 318, 220 lbs., has electric wc, no precaution, CN\n#Apt. 603\n\nper Ashley 8179222309",
+        "Comments1": "Quoted $64/ please collect hospital voucher at nurse's station for $64\r\n\r\nBldg B rm 318, 220 lbs., has electric wc, no precaution, CN\r\n#Apt. 603\r\n\r\nper Ashley 8179222309",
         "PickupName": "Baylor All Saints Fort Worth B Building",
         "PickupAddress1": "1400 8th Avenue",
         "PickupCity": "Fort Worth",
@@ -65,7 +65,7 @@
         "DropoffZip": "76133",
         "AccountCode": "Baylor Hospital Voucher",
         "AccountName": "Baylor Hospital Voucher",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -213,17 +213,17 @@
     "DropoffZip": "76108",
     "DirectMileage": "11",
     "RideHours": "0.2667",
-    "Comments": "*** QUOTED $164 / Jessica will send the voucher to Mario's email (her email is jessica.forrestal@bswhealth.org,)\n\nER rm 31 / str / 153 lbs / needs 4 ltrs O2 / no prec, CN\nno stairs, str could fit thru door, drop off at living room\n\nper Jessica from Baylor 817 201 8375\nwife Pam (817)718-1769",
-    "Comments1": "*** QUOTED $164 / Jessica will send the voucher to Mario's email (her email is jessica.forrestal@bswhealth.org,)\n\nER rm 31 / str / 153 lbs / needs 4 ltrs O2 / no prec, CN\nno stairs, str could fit thru door, drop off at living room\n\nper Jessica from Baylor 817 201 8375\nwife Pam (817)718-1769",
-    "notesFull": "*** QUOTED $164 / Jessica will send the voucher to Mario's email (her email is jessica.forrestal@bswhealth.org,)\n\nER rm 31 / str / 153 lbs / needs 4 ltrs O2 / no prec, CN\nno stairs, str could fit thru door, drop off at living room\n\nper Jessica from Baylor 817 201 8375\nwife Pam (817)718-1769",
-    "notesPreview": "*** QUOTED $164 / Jessica will send the voucher to Mario's email (her email is jessica.forrestal@bswhealth.org,)",
+    "Comments": "*** QUOTED $164 / Jessica will send the voucher to Mario's email (her email is jessica.forrestal@bswhealth.org,)\r\n\r\nER rm 31 / str / 153 lbs / needs 4 ltrs O2 / no prec, CN\r\nno stairs, str could fit thru door, drop off at living room\r\n\r\nper Jessica from Baylor 817 201 8375\r\nwife Pam (817)718-1769",
+    "Comments1": "*** QUOTED $164 / Jessica will send the voucher to Mario's email (her email is jessica.forrestal@bswhealth.org,)\r\n\r\nER rm 31 / str / 153 lbs / needs 4 ltrs O2 / no prec, CN\r\nno stairs, str could fit thru door, drop off at living room\r\n\r\nper Jessica from Baylor 817 201 8375\r\nwife Pam (817)718-1769",
+    "notesFull": "*** QUOTED $164 / Jessica will send the voucher to Mario's email (her email is jessica.forrestal@bswhealth.org,)\nER rm 31 / str / 153 lbs / needs 4 ltrs O2 / no prec, CN\nno stairs, str could fit thru door, drop off at living room\nper Jessica from Baylor 817 201 8375\nwife Pam (817)718-1769",
+    "notesPreview": "*** QUOTED $164 / Jessica will send the voucher to Mario's email (her email is jessica.forrestal@bswhealth.org,) | ER rm 31 / str / 153 lbs / needs 4 ltrs O2...",
     "legs": [
       {
         "FirstName": "Terry",
         "LastName": "Stom",
         "MiddleInitial": "",
         "DOB": "5/29/1959 12:00:00 AM",
-        "Comments": "*** QUOTED $164 / Jessica will send the voucher to Mario's email (her email is jessica.forrestal@bswhealth.org,)\n\nER rm 31 / str / 153 lbs / needs 4 ltrs O2 / no prec, CN\nno stairs, str could fit thru door, drop off at living room\n\nper Jessica from Baylor 817 201 8375\nwife Pam (817)718-1769\n",
+        "Comments": "*** QUOTED $164 / Jessica will send the voucher to Mario's email (her email is jessica.forrestal@bswhealth.org,)\r\n\r\nER rm 31 / str / 153 lbs / needs 4 ltrs O2 / no prec, CN\r\nno stairs, str could fit thru door, drop off at living room\r\n\r\nper Jessica from Baylor 817 201 8375\r\nwife Pam (817)718-1769\r\n",
         "ConfirmationNumber": "51671",
         "RideDate": "4/19/2026 12:00:00 AM",
         "ScheduledPickupTime": "17:30",
@@ -237,7 +237,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "10.53",
-        "Comments1": "*** QUOTED $164 / Jessica will send the voucher to Mario's email (her email is jessica.forrestal@bswhealth.org,)\n\nER rm 31 / str / 153 lbs / needs 4 ltrs O2 / no prec, CN\nno stairs, str could fit thru door, drop off at living room\n\nper Jessica from Baylor 817 201 8375\nwife Pam (817)718-1769\n",
+        "Comments1": "*** QUOTED $164 / Jessica will send the voucher to Mario's email (her email is jessica.forrestal@bswhealth.org,)\r\n\r\nER rm 31 / str / 153 lbs / needs 4 ltrs O2 / no prec, CN\r\nno stairs, str could fit thru door, drop off at living room\r\n\r\nper Jessica from Baylor 817 201 8375\r\nwife Pam (817)718-1769\r\n",
         "PickupName": "Baylor All Saints Fort Worth Emergency Room ",
         "PickupAddress1": "1400 8th Avenue",
         "PickupCity": "Fort Worth",
@@ -250,7 +250,7 @@
         "DropoffZip": "76108",
         "AccountCode": "Baylor Hospital Voucher",
         "AccountName": "Baylor Hospital Voucher",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",

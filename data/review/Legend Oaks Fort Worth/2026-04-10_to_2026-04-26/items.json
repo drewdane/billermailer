@@ -28,17 +28,17 @@
     "DropoffZip": "76244",
     "DirectMileage": "1",
     "RideHours": "0.25",
-    "Comments": "THAL MED/SURG M3N rm M338 M33801, 192 lbs., STR/Broda, Fracture of femoral neck, right, closed (HCC), Subcapital fracture of femur (HCC), Fall, CN\n#613A\n\nper Jackie Dickens (682)212-3265",
-    "Comments1": "THAL MED/SURG M3N rm M338 M33801, 192 lbs., STR/Broda, Fracture of femoral neck, right, closed (HCC), Subcapital fracture of femur (HCC), Fall, CN\n#613A\n\nper Jackie Dickens (682)212-3265",
-    "notesFull": "THAL MED/SURG M3N rm M338 M33801, 192 lbs., STR/Broda, Fracture of femoral neck, right, closed (HCC), Subcapital fracture of femur (HCC), Fall, CN\n#613A\n\nper Jackie Dickens (682)212-3265",
-    "notesPreview": "THAL MED/SURG M3N rm M338 M33801, 192 lbs., STR/Broda, Fracture of femoral neck, right, closed (HCC), Subcapital frac...",
+    "Comments": "THAL MED/SURG M3N rm M338 M33801, 192 lbs., STR/Broda, Fracture of femoral neck, right, closed (HCC), Subcapital fracture of femur (HCC), Fall, CN\r\n#613A\r\n\r\nper Jackie Dickens (682)212-3265",
+    "Comments1": "THAL MED/SURG M3N rm M338 M33801, 192 lbs., STR/Broda, Fracture of femoral neck, right, closed (HCC), Subcapital fracture of femur (HCC), Fall, CN\r\n#613A\r\n\r\nper Jackie Dickens (682)212-3265",
+    "notesFull": "THAL MED/SURG M3N rm M338 M33801, 192 lbs., STR/Broda, Fracture of femoral neck, right, closed (HCC), Subcapital fracture of femur (HCC), Fall, CN\n#613A\nper Jackie Dickens (682)212-3265",
+    "notesPreview": "THAL MED/SURG M3N rm M338 M33801, 192 lbs., STR/Broda, Fracture of femoral neck, right, closed (HCC), Subcapital fracture of femur (HCC), Fall, CN | #613A |...",
     "legs": [
       {
         "FirstName": "Winfred",
         "LastName": "Williams",
         "MiddleInitial": "",
         "DOB": "9/21/1949 12:00:00 AM",
-        "Comments": "THAL MED/SURG M3N rm M338 M33801, 192 lbs., STR/Broda, Fracture of femoral neck, right, closed (HCC), Subcapital fracture of femur (HCC), Fall, CN\n#613A\n\nper Jackie Dickens (682)212-3265",
+        "Comments": "THAL MED/SURG M3N rm M338 M33801, 192 lbs., STR/Broda, Fracture of femoral neck, right, closed (HCC), Subcapital fracture of femur (HCC), Fall, CN\r\n#613A\r\n\r\nper Jackie Dickens (682)212-3265",
         "ConfirmationNumber": "51507",
         "RideDate": "4/12/2026 12:00:00 AM",
         "ScheduledPickupTime": "17:30",
@@ -52,7 +52,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "1.31",
-        "Comments1": "THAL MED/SURG M3N rm M338 M33801, 192 lbs., STR/Broda, Fracture of femoral neck, right, closed (HCC), Subcapital fracture of femur (HCC), Fall, CN\n#613A\n\nper Jackie Dickens (682)212-3265",
+        "Comments1": "THAL MED/SURG M3N rm M338 M33801, 192 lbs., STR/Broda, Fracture of femoral neck, right, closed (HCC), Subcapital fracture of femur (HCC), Fall, CN\r\n#613A\r\n\r\nper Jackie Dickens (682)212-3265",
         "PickupName": "Harris Alliance Hospital",
         "PickupAddress1": "10864 Texas Health Trl",
         "PickupCity": "Fort Worth",
@@ -65,7 +65,7 @@
         "DropoffZip": "76244",
         "AccountCode": "Legend Oaks Fort Worth",
         "AccountName": "Legend Oaks Fort Worth",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",

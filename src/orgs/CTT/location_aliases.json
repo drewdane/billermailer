@@ -1,0 +1,14 @@
+{
+  "test place|123 main": {
+    "name": "Clean Test Place",
+    "address1": "123 Main"
+  },
+  "tarrant county b|6565 dan danciger road": {
+    "name": "Tarrant County B'Nai B'Rith",
+    "address1": "6565 Dan Danciger Road"
+  },
+  "baylor all saints fort worth emergency room|1400 8th avenue": {
+    "name": "Baylor All Saints Fort Worth ER",
+    "address1": "1400 8th Avenue"
+  }
+}

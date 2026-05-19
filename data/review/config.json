@@ -2,5 +2,16 @@
   "period": {
     "mode": "biweekly",
     "biweekly_anchor_iso": "2026-01-01"
-  }
+  },
+  "fuelSurchargeEnabled": true,
+  "fuelSurchargeWindows": [
+    {
+      "start": "2026-04-15",
+      "end": "2026-04-16"
+    },
+    {
+      "start": "2026-04-19",
+      "end": "2026-04-20"
+    }
+  ]
 }

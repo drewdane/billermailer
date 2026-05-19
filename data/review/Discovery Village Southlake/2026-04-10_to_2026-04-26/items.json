@@ -28,17 +28,17 @@
     "DropoffZip": "76092",
     "DirectMileage": "27",
     "RideHours": "0.9",
-    "Comments": "RM 1233\n3L O2\n149 lbs\nSTR\nDiscovery RM 422\nLaurel",
-    "Comments1": "RM 1233\n3L O2\n149 lbs\nSTR\nDiscovery RM 422\nLaurel",
+    "Comments": "RM 1233\r\n3L O2\r\n149 lbs\r\nSTR\r\nDiscovery RM 422\r\nLaurel",
+    "Comments1": "RM 1233\r\n3L O2\r\n149 lbs\r\nSTR\r\nDiscovery RM 422\r\nLaurel",
     "notesFull": "RM 1233\n3L O2\n149 lbs\nSTR\nDiscovery RM 422\nLaurel",
-    "notesPreview": "RM 1233",
+    "notesPreview": "RM 1233 | 3L O2 | 149 lbs | STR | Discovery RM 422 | Laurel",
     "legs": [
       {
         "FirstName": "Nathalie",
         "LastName": "Hise",
         "MiddleInitial": "",
         "DOB": "12/26/1936 12:00:00 AM",
-        "Comments": "RM 1233\n3L O2\n149 lbs\nSTR\nDiscovery RM 422\nLaurel",
+        "Comments": "RM 1233\r\n3L O2\r\n149 lbs\r\nSTR\r\nDiscovery RM 422\r\nLaurel",
         "ConfirmationNumber": "51480",
         "RideDate": "4/10/2026 12:00:00 AM",
         "ScheduledPickupTime": "17:00",
@@ -52,7 +52,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "26.75",
-        "Comments1": "RM 1233\n3L O2\n149 lbs\nSTR\nDiscovery RM 422\nLaurel",
+        "Comments1": "RM 1233\r\n3L O2\r\n149 lbs\r\nSTR\r\nDiscovery RM 422\r\nLaurel",
         "PickupName": "UT Southwestern Medical Center",
         "PickupAddress1": "6201 Harry Hines Boulevard",
         "PickupCity": "Dallas",
@@ -65,7 +65,7 @@
         "DropoffZip": "76092",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -206,17 +206,17 @@
     "DropoffZip": "76092",
     "DirectMileage": "24",
     "RideHours": "0.8833",
-    "Comments": "First floor ICU B,05A, 130lbs, cn, needs str, Laurel \n#413.B",
-    "Comments1": "First floor ICU B,05A, 130lbs, cn, needs str, Laurel \n#413.B",
-    "notesFull": "First floor ICU B,05A, 130lbs, cn, needs str, Laurel \n#413.B",
-    "notesPreview": "First floor ICU B,05A, 130lbs, cn, needs str, Laurel",
+    "Comments": "First floor ICU B,05A, 130lbs, cn, needs str, Laurel \r\n#413.B",
+    "Comments1": "First floor ICU B,05A, 130lbs, cn, needs str, Laurel \r\n#413.B",
+    "notesFull": "First floor ICU B,05A, 130lbs, cn, needs str, Laurel\n#413.B",
+    "notesPreview": "First floor ICU B,05A, 130lbs, cn, needs str, Laurel | #413.B",
     "legs": [
       {
         "FirstName": "Sharon ",
         "LastName": "Reid",
         "MiddleInitial": "",
         "DOB": "8/11/1944 12:00:00 AM",
-        "Comments": "First floor ICU B,05A, 130lbs, cn, needs str, Laurel \n#413.B",
+        "Comments": "First floor ICU B,05A, 130lbs, cn, needs str, Laurel \r\n#413.B",
         "ConfirmationNumber": "51466",
         "RideDate": "4/10/2026 12:00:00 AM",
         "ScheduledPickupTime": "13:30",
@@ -230,7 +230,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "23.86",
-        "Comments1": "First floor ICU B,05A, 130lbs, cn, needs str, Laurel \n#413.B",
+        "Comments1": "First floor ICU B,05A, 130lbs, cn, needs str, Laurel \r\n#413.B",
         "PickupName": "Medical City Lewisville",
         "PickupAddress1": "500 West Main Street",
         "PickupCity": "Lewisville",
@@ -243,7 +243,7 @@
         "DropoffZip": "76092",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -378,17 +378,17 @@
     "DropoffZip": "76092",
     "DirectMileage": "22",
     "RideHours": "0.65",
-    "Comments": "rm 3501, 169 lbs., needs recliner, able to s&t, no precaution, CN\n#411\n\nper Loerel 682 227 7726",
-    "Comments1": "rm 3501, 169 lbs., needs recliner, able to s&t, no precaution, CN\n#411\n\nper Loerel 682 227 7726",
-    "notesFull": "rm 3501, 169 lbs., needs recliner, able to s&t, no precaution, CN\n#411\n\nper Loerel 682 227 7726",
-    "notesPreview": "rm 3501, 169 lbs., needs recliner, able to s&t, no precaution, CN",
+    "Comments": "rm 3501, 169 lbs., needs recliner, able to s&t, no precaution, CN\r\n#411\r\n\r\nper Loerel 682 227 7726",
+    "Comments1": "rm 3501, 169 lbs., needs recliner, able to s&t, no precaution, CN\r\n#411\r\n\r\nper Loerel 682 227 7726",
+    "notesFull": "rm 3501, 169 lbs., needs recliner, able to s&t, no precaution, CN\n#411\nper Loerel 682 227 7726",
+    "notesPreview": "rm 3501, 169 lbs., needs recliner, able to s&t, no precaution, CN | #411 | per Loerel 682 227 7726",
     "legs": [
       {
         "FirstName": "Judith",
         "LastName": "Ahranes",
         "MiddleInitial": "",
         "DOB": "5/20/1946 12:00:00 AM",
-        "Comments": "rm 3501, 169 lbs., needs recliner, able to s&t, no precaution, CN\n#411\n\nper Loerel 682 227 7726",
+        "Comments": "rm 3501, 169 lbs., needs recliner, able to s&t, no precaution, CN\r\n#411\r\n\r\nper Loerel 682 227 7726",
         "ConfirmationNumber": "51506",
         "RideDate": "4/12/2026 12:00:00 AM",
         "ScheduledPickupTime": "16:30",
@@ -402,7 +402,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "21.72",
-        "Comments1": "rm 3501, 169 lbs., needs recliner, able to s&t, no precaution, CN\n#411\n\nper Loerel 682 227 7726",
+        "Comments1": "rm 3501, 169 lbs., needs recliner, able to s&t, no precaution, CN\r\n#411\r\n\r\nper Loerel 682 227 7726",
         "PickupName": "Baylor Scott & White Institute for Rehabilitation - Irving",
         "PickupAddress1": "1901 North MacArthur Boulevard",
         "PickupCity": "Irving",
@@ -415,7 +415,7 @@
         "DropoffZip": "76092",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -558,17 +558,17 @@
     "DropoffZip": "76092",
     "DirectMileage": "9",
     "RideHours": "0.5833",
-    "Comments": "Outpatient Medical City (across from Med City Alliance)\nRM 1108\n230 lbs\nSTR\nDiscovery RM 417 b\nLaurel",
-    "Comments1": "Outpatient Medical City (across from Med City Alliance)\nRM 1108\n230 lbs\nSTR\nDiscovery RM 417 b\nLaurel",
+    "Comments": "Outpatient Medical City (across from Med City Alliance)\r\nRM 1108\r\n230 lbs\r\nSTR\r\nDiscovery RM 417 b\r\nLaurel",
+    "Comments1": "Outpatient Medical City (across from Med City Alliance)\r\nRM 1108\r\n230 lbs\r\nSTR\r\nDiscovery RM 417 b\r\nLaurel",
     "notesFull": "Outpatient Medical City (across from Med City Alliance)\nRM 1108\n230 lbs\nSTR\nDiscovery RM 417 b\nLaurel",
-    "notesPreview": "Outpatient Medical City (across from Med City Alliance)",
+    "notesPreview": "Outpatient Medical City (across from Med City Alliance) | RM 1108 | 230 lbs | STR | Discovery RM 417 b | Laurel",
     "legs": [
       {
         "FirstName": "Rita ",
         "LastName": "Balas ",
         "MiddleInitial": "",
         "DOB": "9/24/1946 12:00:00 AM",
-        "Comments": "Outpatient Medical City (across from Med City Alliance)\nRM 1108\n230 lbs\nSTR\nDiscovery RM 417 b\nLaurel",
+        "Comments": "Outpatient Medical City (across from Med City Alliance)\r\nRM 1108\r\n230 lbs\r\nSTR\r\nDiscovery RM 417 b\r\nLaurel",
         "ConfirmationNumber": "51520",
         "RideDate": "4/13/2026 12:00:00 AM",
         "ScheduledPickupTime": "14:45",
@@ -582,7 +582,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "9.40",
-        "Comments1": "Outpatient Medical City (across from Med City Alliance)\nRM 1108\n230 lbs\nSTR\nDiscovery RM 417 b\nLaurel",
+        "Comments1": "Outpatient Medical City (across from Med City Alliance)\r\nRM 1108\r\n230 lbs\r\nSTR\r\nDiscovery RM 417 b\r\nLaurel",
         "PickupName": "Medical City Surgical Hospital Alliance",
         "PickupAddress1": "3200 North Tarrant Parkway",
         "PickupCity": "Fort Worth",
@@ -595,7 +595,7 @@
         "DropoffZip": "76092",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -730,17 +730,17 @@
     "DropoffZip": "76051",
     "DirectMileage": "14",
     "RideHours": "0.3167",
-    "Comments": "414, 170lbs, cn, has wc, Millicent \n730am appt, Dr. Welgien, #230,",
-    "Comments1": "414, 170lbs, cn, has wc, Millicent \n730am appt, Dr. Welgien, #230,",
-    "notesFull": "414, 170lbs, cn, has wc, Millicent \n730am appt, Dr. Welgien, #230,",
-    "notesPreview": "414, 170lbs, cn, has wc, Millicent",
+    "Comments": "414, 170lbs, cn, has wc, Millicent \r\n730am appt, Dr. Welgien, #230,",
+    "Comments1": "414, 170lbs, cn, has wc, Millicent \r\n730am appt, Dr. Welgien, #230,",
+    "notesFull": "414, 170lbs, cn, has wc, Millicent\n730am appt, Dr. Welgien, #230,",
+    "notesPreview": "414, 170lbs, cn, has wc, Millicent | 730am appt, Dr. Welgien, #230,",
     "legs": [
       {
         "FirstName": "Mary",
         "LastName": "Gyarfas",
         "MiddleInitial": "",
         "DOB": "7/23/1947 12:00:00 AM",
-        "Comments": "414, 170lbs, cn, has wc, Millicent \n730am appt, Dr. Welgien, #230,",
+        "Comments": "414, 170lbs, cn, has wc, Millicent \r\n730am appt, Dr. Welgien, #230,",
         "ConfirmationNumber": "50762",
         "RideDate": "4/13/2026 12:00:00 AM",
         "ScheduledPickupTime": "07:00",
@@ -754,7 +754,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "7.09",
-        "Comments1": "414, 170lbs, cn, has wc, Millicent \n730am appt, Dr. Welgien, #230,",
+        "Comments1": "414, 170lbs, cn, has wc, Millicent \r\n730am appt, Dr. Welgien, #230,",
         "PickupName": "Discovery Village Southlake Skilled Nursing 4th floor",
         "PickupAddress1": "201 Watermere Drive",
         "PickupCity": "Southlake",
@@ -767,14 +767,14 @@
         "DropoffZip": "76051",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "Mary",
         "LastName": "Gyarfas",
         "MiddleInitial": "",
         "DOB": "7/23/1947 12:00:00 AM",
-        "Comments": "414, 170lbs, cn, has wc, Millicent \n730am appt, Dr. Welgien, #230,",
+        "Comments": "414, 170lbs, cn, has wc, Millicent \r\n730am appt, Dr. Welgien, #230,",
         "ConfirmationNumber": "50763",
         "RideDate": "4/13/2026 12:00:00 AM",
         "ScheduledPickupTime": "08:32",
@@ -788,7 +788,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "7.09",
-        "Comments1": "414, 170lbs, cn, has wc, Millicent \n730am appt, Dr. Welgien, #230,",
+        "Comments1": "414, 170lbs, cn, has wc, Millicent \r\n730am appt, Dr. Welgien, #230,",
         "PickupName": "Dr Weglein",
         "PickupAddress1": "1631 Lancaster Drive",
         "PickupCity": "Grapevine",
@@ -801,7 +801,7 @@
         "DropoffZip": "76092",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -934,17 +934,17 @@
     "DropoffZip": "76054",
     "DirectMileage": "13",
     "RideHours": "0.3167",
-    "Comments": "rm 409 / has wc / 109 lbs / alert / 10am appt\nBrookshire Dentistry ste A\n\nper Isoma",
-    "Comments1": "rm 409 / has wc / 109 lbs / alert / 10am appt\nBrookshire Dentistry ste A\n\nper Isoma",
-    "notesFull": "rm 409 / has wc / 109 lbs / alert / 10am appt\nBrookshire Dentistry ste A\n\nper Isoma",
-    "notesPreview": "rm 409 / has wc / 109 lbs / alert / 10am appt",
+    "Comments": "rm 409 / has wc / 109 lbs / alert / 10am appt\r\nBrookshire Dentistry ste A\r\n\r\nper Isoma",
+    "Comments1": "rm 409 / has wc / 109 lbs / alert / 10am appt\r\nBrookshire Dentistry ste A\r\n\r\nper Isoma",
+    "notesFull": "rm 409 / has wc / 109 lbs / alert / 10am appt\nBrookshire Dentistry ste A\nper Isoma",
+    "notesPreview": "rm 409 / has wc / 109 lbs / alert / 10am appt | Brookshire Dentistry ste A | per Isoma",
     "legs": [
       {
         "FirstName": "Marian",
         "LastName": "Montalto",
         "MiddleInitial": "",
         "DOB": "12/12/1945 12:00:00 AM",
-        "Comments": "rm 409 / has wc / 109 lbs / alert / 10am appt\nBrookshire Dentistry ste A\n\nper Isoma",
+        "Comments": "rm 409 / has wc / 109 lbs / alert / 10am appt\r\nBrookshire Dentistry ste A\r\n\r\nper Isoma",
         "ConfirmationNumber": "51384",
         "RideDate": "4/13/2026 12:00:00 AM",
         "ScheduledPickupTime": "09:30",
@@ -958,7 +958,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "6.47",
-        "Comments1": "rm 409 / has wc / 109 lbs / alert / 10am appt\nBrookshire Dentistry ste A\n\nper Isoma",
+        "Comments1": "rm 409 / has wc / 109 lbs / alert / 10am appt\r\nBrookshire Dentistry ste A\r\n\r\nper Isoma",
         "PickupName": "Discovery Village Southlake Skilled Nursing 4th floor",
         "PickupAddress1": "201 Watermere Drive",
         "PickupCity": "Southlake",
@@ -971,14 +971,14 @@
         "DropoffZip": "76054",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "Marian",
         "LastName": "Montalto",
         "MiddleInitial": "",
         "DOB": "12/12/1945 12:00:00 AM",
-        "Comments": "rm 409 / has wc / 109 lbs / alert / 10am appt\nBrookshire Dentistry ste A\n\nper Isoma",
+        "Comments": "rm 409 / has wc / 109 lbs / alert / 10am appt\r\nBrookshire Dentistry ste A\r\n\r\nper Isoma",
         "ConfirmationNumber": "51385",
         "RideDate": "4/13/2026 12:00:00 AM",
         "ScheduledPickupTime": "11:50",
@@ -992,7 +992,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "6.60",
-        "Comments1": "rm 409 / has wc / 109 lbs / alert / 10am appt\nBrookshire Dentistry ste A\n\nper Isoma",
+        "Comments1": "rm 409 / has wc / 109 lbs / alert / 10am appt\r\nBrookshire Dentistry ste A\r\n\r\nper Isoma",
         "PickupName": "Brookshire Dentistry",
         "PickupAddress1": "1801 Precinct Line Road",
         "PickupCity": "Hurst",
@@ -1005,7 +1005,7 @@
         "DropoffZip": "76092",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -1138,17 +1138,17 @@
     "DropoffZip": "76092",
     "DirectMileage": "5",
     "RideHours": "0.9667",
-    "Comments": "RM 207\n130 lbs\nSTR\nDiscovery RM 410 a\nLaurel 682 227 7726",
-    "Comments1": "RM 207\n130 lbs\nSTR\nDiscovery RM 410 a\nLaurel 682 227 7726",
+    "Comments": "RM 207\r\n130 lbs\r\nSTR\r\nDiscovery RM 410 a\r\nLaurel 682 227 7726",
+    "Comments1": "RM 207\r\n130 lbs\r\nSTR\r\nDiscovery RM 410 a\r\nLaurel 682 227 7726",
     "notesFull": "RM 207\n130 lbs\nSTR\nDiscovery RM 410 a\nLaurel 682 227 7726",
-    "notesPreview": "RM 207",
+    "notesPreview": "RM 207 | 130 lbs | STR | Discovery RM 410 a | Laurel 682 227 7726",
     "legs": [
       {
         "FirstName": "Hedwig",
         "LastName": "Parker",
         "MiddleInitial": "",
         "DOB": "8/18/1938 12:00:00 AM",
-        "Comments": "RM 207\n130 lbs\nSTR\nDiscovery RM 410 a\nLaurel 682 227 7726",
+        "Comments": "RM 207\r\n130 lbs\r\nSTR\r\nDiscovery RM 410 a\r\nLaurel 682 227 7726",
         "ConfirmationNumber": "51533",
         "RideDate": "4/13/2026 12:00:00 AM",
         "ScheduledPickupTime": "17:30",
@@ -1162,7 +1162,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "5.11",
-        "Comments1": "RM 207\n130 lbs\nSTR\nDiscovery RM 410 a\nLaurel 682 227 7726",
+        "Comments1": "RM 207\r\n130 lbs\r\nSTR\r\nDiscovery RM 410 a\r\nLaurel 682 227 7726",
         "PickupName": "Baylor Scott & White Medical Center - Trophy Club",
         "PickupAddress1": "2850 Texas 114",
         "PickupCity": "Trophy Club",
@@ -1175,7 +1175,7 @@
         "DropoffZip": "76092",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -1316,17 +1316,17 @@
     "DropoffZip": "76092",
     "DirectMileage": "21",
     "RideHours": "0.9333",
-    "Comments": "C. 793, 200lbs, cn, alert, needs str, Laurel\n#TBD",
-    "Comments1": "C. 793, 200lbs, cn, alert, needs str, Laurel\n#TBD",
+    "Comments": "C. 793, 200lbs, cn, alert, needs str, Laurel\r\n#TBD",
+    "Comments1": "C. 793, 200lbs, cn, alert, needs str, Laurel\r\n#TBD",
     "notesFull": "C. 793, 200lbs, cn, alert, needs str, Laurel\n#TBD",
-    "notesPreview": "C. 793, 200lbs, cn, alert, needs str, Laurel",
+    "notesPreview": "C. 793, 200lbs, cn, alert, needs str, Laurel | #TBD",
     "legs": [
       {
         "FirstName": "Jay ",
         "LastName": "Pruitt",
         "MiddleInitial": "",
         "DOB": "7/4/1940 12:00:00 AM",
-        "Comments": "C. 793, 200lbs, cn, alert, needs str, Laurel\n#TBD ",
+        "Comments": "C. 793, 200lbs, cn, alert, needs str, Laurel\r\n#TBD ",
         "ConfirmationNumber": "51522",
         "RideDate": "4/13/2026 12:00:00 AM",
         "ScheduledPickupTime": "16:30",
@@ -1340,7 +1340,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "20.71",
-        "Comments1": "C. 793, 200lbs, cn, alert, needs str, Laurel\n#TBD ",
+        "Comments1": "C. 793, 200lbs, cn, alert, needs str, Laurel\r\n#TBD ",
         "PickupName": "Baylor All Saints  Building  C Building ",
         "PickupAddress1": "1400 8th Ave ",
         "PickupCity": "Fort Worth",
@@ -1353,7 +1353,7 @@
         "DropoffZip": "76092",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -1488,17 +1488,17 @@
     "DropoffZip": "76092",
     "DirectMileage": "7",
     "RideHours": "0.5833",
-    "Comments": "4628, 256lbs, cn, needs str, Laurel \n#407.B",
-    "Comments1": "4628, 256lbs, cn, needs str, Laurel \n#407.B",
-    "notesFull": "4628, 256lbs, cn, needs str, Laurel \n#407.B",
-    "notesPreview": "4628, 256lbs, cn, needs str, Laurel",
+    "Comments": "4628, 256lbs, cn, needs str, Laurel \r\n#407.B",
+    "Comments1": "4628, 256lbs, cn, needs str, Laurel \r\n#407.B",
+    "notesFull": "4628, 256lbs, cn, needs str, Laurel\n#407.B",
+    "notesPreview": "4628, 256lbs, cn, needs str, Laurel | #407.B",
     "legs": [
       {
         "FirstName": "Robert",
         "LastName": "Dixon",
         "MiddleInitial": "",
         "DOB": "5/1/1934 12:00:00 AM",
-        "Comments": "4628, 256lbs, cn, needs str, Laurel \n#407.B ",
+        "Comments": "4628, 256lbs, cn, needs str, Laurel \r\n#407.B ",
         "ConfirmationNumber": "51557",
         "RideDate": "4/14/2026 12:00:00 AM",
         "ScheduledPickupTime": "15:30",
@@ -1512,7 +1512,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "6.81",
-        "Comments1": "4628, 256lbs, cn, needs str, Laurel \n#407.B ",
+        "Comments1": "4628, 256lbs, cn, needs str, Laurel \r\n#407.B ",
         "PickupName": "Baylor Scott & White Hospital - Grapevine ",
         "PickupAddress1": "1650 W College St",
         "PickupCity": "Grapevine",
@@ -1525,7 +1525,7 @@
         "DropoffZip": "76092",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -1660,17 +1660,17 @@
     "DropoffZip": "76092",
     "DirectMileage": "7",
     "RideHours": "0.4667",
-    "Comments": "4504, 166bs, cn, needs str, Laurel \n# 423",
-    "Comments1": "4504, 166bs, cn, needs str, Laurel \n# 423",
-    "notesFull": "4504, 166bs, cn, needs str, Laurel \n# 423",
-    "notesPreview": "4504, 166bs, cn, needs str, Laurel",
+    "Comments": "4504, 166bs, cn, needs str, Laurel \r\n# 423",
+    "Comments1": "4504, 166bs, cn, needs str, Laurel \r\n# 423",
+    "notesFull": "4504, 166bs, cn, needs str, Laurel\n# 423",
+    "notesPreview": "4504, 166bs, cn, needs str, Laurel | # 423",
     "legs": [
       {
         "FirstName": "Ronnie ",
         "LastName": "Gaspard",
         "MiddleInitial": "",
         "DOB": "5/10/1949 12:00:00 AM",
-        "Comments": "4504, 166bs, cn, needs str, Laurel \n# 423",
+        "Comments": "4504, 166bs, cn, needs str, Laurel \r\n# 423",
         "ConfirmationNumber": "51554",
         "RideDate": "4/14/2026 12:00:00 AM",
         "ScheduledPickupTime": "14:30",
@@ -1684,7 +1684,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "6.81",
-        "Comments1": "4504, 166bs, cn, needs str, Laurel \n# 423",
+        "Comments1": "4504, 166bs, cn, needs str, Laurel \r\n# 423",
         "PickupName": "Baylor Scott & White Hospital - Grapevine ",
         "PickupAddress1": "1650 W College St",
         "PickupCity": "Grapevine",
@@ -1697,7 +1697,7 @@
         "DropoffZip": "76092",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -1832,17 +1832,17 @@
     "DropoffZip": "76051",
     "DirectMileage": "7",
     "RideHours": "",
-    "Comments": "**4/13/26, cancel per Joy, patient has been discharged, no fee\n\nrm 428, 200 lbs., ambu, has walker\n1030am appt time per Vivian",
-    "Comments1": "**4/13/26, cancel per Joy, patient has been discharged, no fee\n\nrm 428, 200 lbs., ambu, has walker\n1030am appt time per Vivian",
-    "notesFull": "**4/13/26, cancel per Joy, patient has been discharged, no fee\n\nrm 428, 200 lbs., ambu, has walker\n1030am appt time per Vivian",
-    "notesPreview": "**4/13/26, cancel per Joy, patient has been discharged, no fee",
+    "Comments": "**4/13/26, cancel per Joy, patient has been discharged, no fee\r\n\r\nrm 428, 200 lbs., ambu, has walker\r\n1030am appt time per Vivian",
+    "Comments1": "**4/13/26, cancel per Joy, patient has been discharged, no fee\r\n\r\nrm 428, 200 lbs., ambu, has walker\r\n1030am appt time per Vivian",
+    "notesFull": "**4/13/26, cancel per Joy, patient has been discharged, no fee\nrm 428, 200 lbs., ambu, has walker\n1030am appt time per Vivian",
+    "notesPreview": "**4/13/26, cancel per Joy, patient has been discharged, no fee | rm 428, 200 lbs., ambu, has walker | 1030am appt time per Vivian",
     "legs": [
       {
         "FirstName": "Clemence",
         "LastName": "Nabors ",
         "MiddleInitial": "",
         "DOB": "5/18/1956 12:00:00 AM",
-        "Comments": "**4/13/26, cancel per Joy, patient has been discharged, no fee\n\nrm 428, 200 lbs., ambu, has walker\n1030am appt time per Vivian",
+        "Comments": "**4/13/26, cancel per Joy, patient has been discharged, no fee\r\n\r\nrm 428, 200 lbs., ambu, has walker\r\n1030am appt time per Vivian",
         "ConfirmationNumber": "51162",
         "RideDate": "4/14/2026 12:00:00 AM",
         "ScheduledPickupTime": "10:00",
@@ -1856,7 +1856,7 @@
         "Mobility": "A",
         "RideStatus": "RiderCancel ",
         "DirectMileage": "7.10",
-        "Comments1": "**4/13/26, cancel per Joy, patient has been discharged, no fee\n\nrm 428, 200 lbs., ambu, has walker\n1030am appt time per Vivian",
+        "Comments1": "**4/13/26, cancel per Joy, patient has been discharged, no fee\r\n\r\nrm 428, 200 lbs., ambu, has walker\r\n1030am appt time per Vivian",
         "PickupName": "Discovery Village Southlake Skilled Nursing 4th floor",
         "PickupAddress1": "201 Watermere Drive",
         "PickupCity": "Southlake",
@@ -1869,7 +1869,7 @@
         "DropoffZip": "76051",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -1977,17 +1977,17 @@
     "DropoffZip": "76051",
     "DirectMileage": "14",
     "RideHours": "0.3833",
-    "Comments": "*101 WATERMERE approved by Tracy Boggs: tboggs@discoverymanangementgroup.com to email invoice & they will pay*\nIndependent apt #232, Ambu, 200lbs, cn, alert\n0900 pick up for a 930am appt, #230\n*101 WATERMERE approved by Tracy Boggs: tboggs@discoverymanangementgroup.com to email invoice & they will pay* Tracy Activity director called in \nIndependent apt #232, Ambu, 200lbs, cn, alert\n0915 pick up for a 930am appt, #230",
-    "Comments1": "*101 WATERMERE approved by Tracy Boggs: tboggs@discoverymanangementgroup.com to email invoice & they will pay*\nIndependent apt #232, Ambu, 200lbs, cn, alert\n0900 pick up for a 930am appt, #230\n*101 WATERMERE approved by Tracy Boggs: tboggs@discoverymanangementgroup.com to email invoice & they will pay* Tracy Activity director called in \nIndependent apt #232, Ambu, 200lbs, cn, alert\n0915 pick up for a 930am appt, #230",
-    "notesFull": "*101 WATERMERE approved by Tracy Boggs: tboggs@discoverymanangementgroup.com to email invoice & they will pay*\nIndependent apt #232, Ambu, 200lbs, cn, alert\n0900 pick up for a 930am appt, #230\n*101 WATERMERE approved by Tracy Boggs: tboggs@discoverymanangementgroup.com to email invoice & they will pay* Tracy Activity director called in \nIndependent apt #232, Ambu, 200lbs, cn, alert\n0915 pick up for a 930am appt, #230",
-    "notesPreview": "*101 WATERMERE approved by Tracy Boggs: tboggs@discoverymanangementgroup.com to email invoice & they will pay*",
+    "Comments": "*101 WATERMERE approved by Tracy Boggs: tboggs@discoverymanangementgroup.com to email invoice & they will pay*\r\nIndependent apt #232, Ambu, 200lbs, cn, alert\r\n0900 pick up for a 930am appt, #230\n*101 WATERMERE approved by Tracy Boggs: tboggs@discoverymanangementgroup.com to email invoice & they will pay* Tracy Activity director called in \r\nIndependent apt #232, Ambu, 200lbs, cn, alert\r\n0915 pick up for a 930am appt, #230",
+    "Comments1": "*101 WATERMERE approved by Tracy Boggs: tboggs@discoverymanangementgroup.com to email invoice & they will pay*\r\nIndependent apt #232, Ambu, 200lbs, cn, alert\r\n0900 pick up for a 930am appt, #230\n*101 WATERMERE approved by Tracy Boggs: tboggs@discoverymanangementgroup.com to email invoice & they will pay* Tracy Activity director called in \r\nIndependent apt #232, Ambu, 200lbs, cn, alert\r\n0915 pick up for a 930am appt, #230",
+    "notesFull": "*101 WATERMERE approved by Tracy Boggs: tboggs@discoverymanangementgroup.com to email invoice & they will pay*\nIndependent apt #232, Ambu, 200lbs, cn, alert\n0900 pick up for a 930am appt, #230\n*101 WATERMERE approved by Tracy Boggs: tboggs@discoverymanangementgroup.com to email invoice & they will pay* Tracy Activity director called in\n0915 pick up for a 930am appt, #230",
+    "notesPreview": "*101 WATERMERE approved by Tracy Boggs: tboggs@discoverymanangementgroup.com to email invoice & they will pay* | Independent apt #232, Ambu, 200lbs, cn, aler...",
     "legs": [
       {
         "FirstName": "Charlene ",
         "LastName": "Perry ",
         "MiddleInitial": "",
         "DOB": "6/12/1933 12:00:00 AM",
-        "Comments": "*101 WATERMERE approved by Tracy Boggs: tboggs@discoverymanangementgroup.com to email invoice & they will pay*\nIndependent apt #232, Ambu, 200lbs, cn, alert\n0900 pick up for a 930am appt, #230\n",
+        "Comments": "*101 WATERMERE approved by Tracy Boggs: tboggs@discoverymanangementgroup.com to email invoice & they will pay*\r\nIndependent apt #232, Ambu, 200lbs, cn, alert\r\n0900 pick up for a 930am appt, #230\r\n",
         "ConfirmationNumber": "50859",
         "RideDate": "4/14/2026 12:00:00 AM",
         "ScheduledPickupTime": "09:00",
@@ -2001,7 +2001,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "6.92",
-        "Comments1": "*101 WATERMERE approved by Tracy Boggs: tboggs@discoverymanangementgroup.com to email invoice & they will pay*\nIndependent apt #232, Ambu, 200lbs, cn, alert\n0900 pick up for a 930am appt, #230\n",
+        "Comments1": "*101 WATERMERE approved by Tracy Boggs: tboggs@discoverymanangementgroup.com to email invoice & they will pay*\r\nIndependent apt #232, Ambu, 200lbs, cn, alert\r\n0900 pick up for a 930am appt, #230\r\n",
         "PickupName": "Discovery Village Southlake Independent",
         "PickupAddress1": "101 Watermere Drive",
         "PickupCity": "Southlake",
@@ -2014,14 +2014,14 @@
         "DropoffZip": "76051",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "Charlene ",
         "LastName": "Perry ",
         "MiddleInitial": "",
         "DOB": "6/12/1933 12:00:00 AM",
-        "Comments": "*101 WATERMERE approved by Tracy Boggs: tboggs@discoverymanangementgroup.com to email invoice & they will pay* Tracy Activity director called in \nIndependent apt #232, Ambu, 200lbs, cn, alert\n0915 pick up for a 930am appt, #230\n",
+        "Comments": "*101 WATERMERE approved by Tracy Boggs: tboggs@discoverymanangementgroup.com to email invoice & they will pay* Tracy Activity director called in \r\nIndependent apt #232, Ambu, 200lbs, cn, alert\r\n0915 pick up for a 930am appt, #230\r\n",
         "ConfirmationNumber": "50860",
         "RideDate": "4/14/2026 12:00:00 AM",
         "ScheduledPickupTime": "10:03",
@@ -2035,7 +2035,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "6.92",
-        "Comments1": "*101 WATERMERE approved by Tracy Boggs: tboggs@discoverymanangementgroup.com to email invoice & they will pay* Tracy Activity director called in \nIndependent apt #232, Ambu, 200lbs, cn, alert\n0915 pick up for a 930am appt, #230\n",
+        "Comments1": "*101 WATERMERE approved by Tracy Boggs: tboggs@discoverymanangementgroup.com to email invoice & they will pay* Tracy Activity director called in \r\nIndependent apt #232, Ambu, 200lbs, cn, alert\r\n0915 pick up for a 930am appt, #230\r\n",
         "PickupName": "Baylor Scott White Ortho Trauma Assoc.",
         "PickupAddress1": "1631 Lancaster Drive",
         "PickupCity": "Grapevine",
@@ -2048,7 +2048,7 @@
         "DropoffZip": "76092",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -2181,17 +2181,17 @@
     "DropoffZip": "76051",
     "DirectMileage": "7",
     "RideHours": "0",
-    "Comments": "rm 430, 150lbs., has wc, alert per David\n1pm appt time ste 310, Dr Veley (817)886-8552",
-    "Comments1": "rm 430, 150lbs., has wc, alert per David\n1pm appt time ste 310, Dr Veley (817)886-8552",
+    "Comments": "rm 430, 150lbs., has wc, alert per David\r\n1pm appt time ste 310, Dr Veley (817)886-8552",
+    "Comments1": "rm 430, 150lbs., has wc, alert per David\r\n1pm appt time ste 310, Dr Veley (817)886-8552",
     "notesFull": "rm 430, 150lbs., has wc, alert per David\n1pm appt time ste 310, Dr Veley (817)886-8552",
-    "notesPreview": "rm 430, 150lbs., has wc, alert per David",
+    "notesPreview": "rm 430, 150lbs., has wc, alert per David | 1pm appt time ste 310, Dr Veley (817)886-8552",
     "legs": [
       {
         "FirstName": "Harry ",
         "LastName": "Ross ",
         "MiddleInitial": "",
         "DOB": "10/15/1943 12:00:00 AM",
-        "Comments": "rm 430, 150lbs., has wc, alert per David\n1pm appt time ste 310, Dr Veley (817)886-8552\n",
+        "Comments": "rm 430, 150lbs., has wc, alert per David\r\n1pm appt time ste 310, Dr Veley (817)886-8552\r\n",
         "ConfirmationNumber": "51486",
         "RideDate": "4/14/2026 12:00:00 AM",
         "ScheduledPickupTime": "12:30",
@@ -2205,7 +2205,7 @@
         "Mobility": "WC",
         "RideStatus": "NoShow ",
         "DirectMileage": "6.75",
-        "Comments1": "rm 430, 150lbs., has wc, alert per David\n1pm appt time ste 310, Dr Veley (817)886-8552\n",
+        "Comments1": "rm 430, 150lbs., has wc, alert per David\r\n1pm appt time ste 310, Dr Veley (817)886-8552\r\n",
         "PickupName": "Discovery Village Southlake Skilled Nursing 4th floor",
         "PickupAddress1": "201 Watermere Drive",
         "PickupCity": "Southlake",
@@ -2218,7 +2218,7 @@
         "DropoffZip": "76051",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -2328,17 +2328,17 @@
     "DropoffZip": "76092",
     "DirectMileage": "8",
     "RideHours": "0.65",
-    "Comments": "North Hills 609, 143lbs, cn, needs str, Hip Fracture, Laurel \n#428",
-    "Comments1": "North Hills 609, 143lbs, cn, needs str, Hip Fracture, Laurel \n#428",
-    "notesFull": "North Hills 609, 143lbs, cn, needs str, Hip Fracture, Laurel \n#428",
-    "notesPreview": "North Hills 609, 143lbs, cn, needs str, Hip Fracture, Laurel",
+    "Comments": "North Hills 609, 143lbs, cn, needs str, Hip Fracture, Laurel \r\n#428",
+    "Comments1": "North Hills 609, 143lbs, cn, needs str, Hip Fracture, Laurel \r\n#428",
+    "notesFull": "North Hills 609, 143lbs, cn, needs str, Hip Fracture, Laurel\n#428",
+    "notesPreview": "North Hills 609, 143lbs, cn, needs str, Hip Fracture, Laurel | #428",
     "legs": [
       {
         "FirstName": "Janelle ",
         "LastName": "Cavenall ",
         "MiddleInitial": "",
         "DOB": "10/19/1937 12:00:00 AM",
-        "Comments": "North Hills 609, 143lbs, cn, needs str, Hip Fracture, Laurel \n#428",
+        "Comments": "North Hills 609, 143lbs, cn, needs str, Hip Fracture, Laurel \r\n#428",
         "ConfirmationNumber": "51582",
         "RideDate": "4/15/2026 12:00:00 AM",
         "ScheduledPickupTime": "14:00",
@@ -2352,7 +2352,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "8.35",
-        "Comments1": "North Hills 609, 143lbs, cn, needs str, Hip Fracture, Laurel \n#428",
+        "Comments1": "North Hills 609, 143lbs, cn, needs str, Hip Fracture, Laurel \r\n#428",
         "PickupName": "Medical City North Hills ",
         "PickupAddress1": "4401 Booth Calloway Road",
         "PickupCity": "Fort Worth",
@@ -2365,7 +2365,7 @@
         "DropoffZip": "76092",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -2500,17 +2500,17 @@
     "DropoffZip": "76092",
     "DirectMileage": "4",
     "RideHours": "0.5667",
-    "Comments": "RM 318\n156 lbs\nSTR\nDiscovery RM 417 a\nLaurel",
-    "Comments1": "RM 318\n156 lbs\nSTR\nDiscovery RM 417 a\nLaurel",
+    "Comments": "RM 318\r\n156 lbs\r\nSTR\r\nDiscovery RM 417 a\r\nLaurel",
+    "Comments1": "RM 318\r\n156 lbs\r\nSTR\r\nDiscovery RM 417 a\r\nLaurel",
     "notesFull": "RM 318\n156 lbs\nSTR\nDiscovery RM 417 a\nLaurel",
-    "notesPreview": "RM 318",
+    "notesPreview": "RM 318 | 156 lbs | STR | Discovery RM 417 a | Laurel",
     "legs": [
       {
         "FirstName": "Donna",
         "LastName": "Gowan",
         "MiddleInitial": "",
         "DOB": "1/19/1948 12:00:00 AM",
-        "Comments": "RM 318\n156 lbs\nSTR\nDiscovery RM 417 a\nLaurel",
+        "Comments": "RM 318\r\n156 lbs\r\nSTR\r\nDiscovery RM 417 a\r\nLaurel",
         "ConfirmationNumber": "51603",
         "RideDate": "4/16/2026 12:00:00 AM",
         "ScheduledPickupTime": "16:00",
@@ -2524,7 +2524,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "4.49",
-        "Comments1": "RM 318\n156 lbs\nSTR\nDiscovery RM 417 a\nLaurel",
+        "Comments1": "RM 318\r\n156 lbs\r\nSTR\r\nDiscovery RM 417 a\r\nLaurel",
         "PickupName": "Methodist Southlake Medical Center",
         "PickupAddress1": "421 East State Highway 114",
         "PickupCity": "Southlake",
@@ -2537,7 +2537,7 @@
         "DropoffZip": "76092",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -2672,17 +2672,17 @@
     "DropoffZip": "76210",
     "DirectMileage": "30",
     "RideHours": "",
-    "Comments": "**Per Joy, patient cancelled appt and didn't tell nurse**\nrm 401, 200lbs., has wc,\n11am appt.",
-    "Comments1": "**Per Joy, patient cancelled appt and didn't tell nurse**\nrm 401, 200lbs., has wc,\n11am appt.",
+    "Comments": "**Per Joy, patient cancelled appt and didn't tell nurse**\r\nrm 401, 200lbs., has wc,\r\n11am appt.",
+    "Comments1": "**Per Joy, patient cancelled appt and didn't tell nurse**\r\nrm 401, 200lbs., has wc,\r\n11am appt.",
     "notesFull": "**Per Joy, patient cancelled appt and didn't tell nurse**\nrm 401, 200lbs., has wc,\n11am appt.",
-    "notesPreview": "**Per Joy, patient cancelled appt and didn't tell nurse**",
+    "notesPreview": "**Per Joy, patient cancelled appt and didn't tell nurse** | rm 401, 200lbs., has wc, | 11am appt.",
     "legs": [
       {
         "FirstName": "Arlene",
         "LastName": "McCabe",
         "MiddleInitial": "",
         "DOB": "10/24/1944 12:00:00 AM",
-        "Comments": "**Per Joy, patient cancelled appt and didn't tell nurse**\nrm 401, 200lbs., has wc,\n11am appt.",
+        "Comments": "**Per Joy, patient cancelled appt and didn't tell nurse**\r\nrm 401, 200lbs., has wc,\r\n11am appt.",
         "ConfirmationNumber": "51545",
         "RideDate": "4/16/2026 12:00:00 AM",
         "ScheduledPickupTime": "10:15",
@@ -2696,7 +2696,7 @@
         "Mobility": "WC",
         "RideStatus": "NoShow ",
         "DirectMileage": "29.93",
-        "Comments1": "**Per Joy, patient cancelled appt and didn't tell nurse**\nrm 401, 200lbs., has wc,\n11am appt.",
+        "Comments1": "**Per Joy, patient cancelled appt and didn't tell nurse**\r\nrm 401, 200lbs., has wc,\r\n11am appt.",
         "PickupName": "Discovery Village Southlake Skilled Nursing 4th floor",
         "PickupAddress1": "201 Watermere Drive",
         "PickupCity": "Southlake",
@@ -2709,7 +2709,7 @@
         "DropoffZip": "76210",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -2819,17 +2819,17 @@
     "DropoffZip": "75390",
     "DirectMileage": "52",
     "RideHours": "1.2333",
-    "Comments": "RM 407 a\n180 lbs\nHas WC\n0930 appt, 5th floor, Dr Wang French margaret; 214 645 2020\nVivian",
-    "Comments1": "RM 407 a\n180 lbs\nHas WC\n0930 appt, 5th floor, Dr Wang French margaret; 214 645 2020\nVivian",
+    "Comments": "RM 407 a\r\n180 lbs\r\nHas WC\r\n0930 appt, 5th floor, Dr Wang French margaret; 214 645 2020\r\nVivian",
+    "Comments1": "RM 407 a\r\n180 lbs\r\nHas WC\r\n0930 appt, 5th floor, Dr Wang French margaret; 214 645 2020\r\nVivian",
     "notesFull": "RM 407 a\n180 lbs\nHas WC\n0930 appt, 5th floor, Dr Wang French margaret; 214 645 2020\nVivian",
-    "notesPreview": "RM 407 a",
+    "notesPreview": "RM 407 a | 180 lbs | Has WC | 0930 appt, 5th floor, Dr Wang French margaret; 214 645 2020 | Vivian",
     "legs": [
       {
         "FirstName": "Winston \"Danny\"",
         "LastName": "Monts",
         "MiddleInitial": "",
         "DOB": "7/28/1940 12:00:00 AM",
-        "Comments": "RM 407 a\n180 lbs\nHas WC\n0930 appt, 5th floor, Dr Wang French margaret; 214 645 2020\nVivian",
+        "Comments": "RM 407 a\r\n180 lbs\r\nHas WC\r\n0930 appt, 5th floor, Dr Wang French margaret; 214 645 2020\r\nVivian",
         "ConfirmationNumber": "51252",
         "RideDate": "4/16/2026 12:00:00 AM",
         "ScheduledPickupTime": "08:15",
@@ -2843,7 +2843,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "26.35",
-        "Comments1": "RM 407 a\n180 lbs\nHas WC\n0930 appt, 5th floor, Dr Wang French margaret; 214 645 2020\nVivian",
+        "Comments1": "RM 407 a\r\n180 lbs\r\nHas WC\r\n0930 appt, 5th floor, Dr Wang French margaret; 214 645 2020\r\nVivian",
         "PickupName": "Discovery Village Southlake Skilled Nursing 4th floor",
         "PickupAddress1": "201 Watermere Drive",
         "PickupCity": "Southlake",
@@ -2856,14 +2856,14 @@
         "DropoffZip": "75390",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "Winston \"Danny\"",
         "LastName": "Monts",
         "MiddleInitial": "",
         "DOB": "7/28/1940 12:00:00 AM",
-        "Comments": "RM 407 a\n180 lbs\nHas WC\n0930 appt, 5th floor, Dr Wang French margaret; 214 645 2020\nVivian",
+        "Comments": "RM 407 a\r\n180 lbs\r\nHas WC\r\n0930 appt, 5th floor, Dr Wang French margaret; 214 645 2020\r\nVivian",
         "ConfirmationNumber": "51253",
         "RideDate": "4/16/2026 12:00:00 AM",
         "ScheduledPickupTime": "11:31",
@@ -2877,7 +2877,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "26.35",
-        "Comments1": "RM 407 a\n180 lbs\nHas WC\n0930 appt, 5th floor, Dr Wang French margaret; 214 645 2020\nVivian",
+        "Comments1": "RM 407 a\r\n180 lbs\r\nHas WC\r\n0930 appt, 5th floor, Dr Wang French margaret; 214 645 2020\r\nVivian",
         "PickupName": "UT southwest ",
         "PickupAddress1": "5303 Harry Hines Boulevard",
         "PickupCity": "Dallas",
@@ -2890,7 +2890,7 @@
         "DropoffZip": "76092",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -3023,17 +3023,17 @@
     "DropoffZip": "76092",
     "DirectMileage": "7",
     "RideHours": "0.7833",
-    "Comments": "RM 3401\n229 lbs\nSTR\n2L O2\nDiscovery RM 425\nLaurel",
-    "Comments1": "RM 3401\n229 lbs\nSTR\n2L O2\nDiscovery RM 425\nLaurel",
+    "Comments": "RM 3401\r\n229 lbs\r\nSTR\r\n2L O2\r\nDiscovery RM 425\r\nLaurel",
+    "Comments1": "RM 3401\r\n229 lbs\r\nSTR\r\n2L O2\r\nDiscovery RM 425\r\nLaurel",
     "notesFull": "RM 3401\n229 lbs\nSTR\n2L O2\nDiscovery RM 425\nLaurel",
-    "notesPreview": "RM 3401",
+    "notesPreview": "RM 3401 | 229 lbs | STR | 2L O2 | Discovery RM 425 | Laurel",
     "legs": [
       {
         "FirstName": "Geoffery ",
         "LastName": "Steer",
         "MiddleInitial": "",
         "DOB": "12/13/1941 12:00:00 AM",
-        "Comments": "RM 3401\n229 lbs\nSTR\n2L O2\nDiscovery RM 425\nLaurel",
+        "Comments": "RM 3401\r\n229 lbs\r\nSTR\r\n2L O2\r\nDiscovery RM 425\r\nLaurel",
         "ConfirmationNumber": "51602",
         "RideDate": "4/16/2026 12:00:00 AM",
         "ScheduledPickupTime": "15:00",
@@ -3047,7 +3047,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "6.81",
-        "Comments1": "RM 3401\n229 lbs\nSTR\n2L O2\nDiscovery RM 425\nLaurel",
+        "Comments1": "RM 3401\r\n229 lbs\r\nSTR\r\n2L O2\r\nDiscovery RM 425\r\nLaurel",
         "PickupName": "Baylor Scott & White Hospital - Grapevine ",
         "PickupAddress1": "1650 W College St",
         "PickupCity": "Grapevine",
@@ -3060,7 +3060,7 @@
         "DropoffZip": "76092",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -3195,17 +3195,17 @@
     "DropoffZip": "76177",
     "DirectMileage": "14",
     "RideHours": "0.3333",
-    "Comments": "rm 410 B, has wc, 148 lbs, alert, 11am appt\nTexas Orthopedic Specialists (817)540-4477\n\nper David",
-    "Comments1": "rm 410 B, has wc, 148 lbs, alert, 11am appt\nTexas Orthopedic Specialists (817)540-4477\n\nper David",
-    "notesFull": "rm 410 B, has wc, 148 lbs, alert, 11am appt\nTexas Orthopedic Specialists (817)540-4477\n\nper David",
-    "notesPreview": "rm 410 B, has wc, 148 lbs, alert, 11am appt",
+    "Comments": "rm 410 B, has wc, 148 lbs, alert, 11am appt\r\nTexas Orthopedic Specialists (817)540-4477\r\n\r\nper David",
+    "Comments1": "rm 410 B, has wc, 148 lbs, alert, 11am appt\r\nTexas Orthopedic Specialists (817)540-4477\r\n\r\nper David",
+    "notesFull": "rm 410 B, has wc, 148 lbs, alert, 11am appt\nTexas Orthopedic Specialists (817)540-4477\nper David",
+    "notesPreview": "rm 410 B, has wc, 148 lbs, alert, 11am appt | Texas Orthopedic Specialists (817)540-4477 | per David",
     "legs": [
       {
         "FirstName": "Hedwig",
         "LastName": "Parker",
         "MiddleInitial": "",
         "DOB": "8/18/1938 12:00:00 AM",
-        "Comments": " rm 410 B, has wc, 148 lbs, alert, 11am appt\nTexas Orthopedic Specialists (817)540-4477\n\nper David\n",
+        "Comments": " rm 410 B, has wc, 148 lbs, alert, 11am appt\r\nTexas Orthopedic Specialists (817)540-4477\r\n\r\nper David\r\n",
         "ConfirmationNumber": "51624",
         "RideDate": "4/17/2026 12:00:00 AM",
         "ScheduledPickupTime": "10:30",
@@ -3219,7 +3219,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "7.09",
-        "Comments1": " rm 410 B, has wc, 148 lbs, alert, 11am appt\nTexas Orthopedic Specialists (817)540-4477\n\nper David\n",
+        "Comments1": " rm 410 B, has wc, 148 lbs, alert, 11am appt\r\nTexas Orthopedic Specialists (817)540-4477\r\n\r\nper David\r\n",
         "PickupName": "Discovery Village Southlake Skilled Nursing 4th floor",
         "PickupAddress1": "201 Watermere Drive",
         "PickupCity": "Southlake",
@@ -3232,14 +3232,14 @@
         "DropoffZip": "76177",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "Hedwig",
         "LastName": "Parker",
         "MiddleInitial": "",
         "DOB": "8/18/1938 12:00:00 AM",
-        "Comments": " rm 410 B, has wc, 148 lbs, alert, 11am appt\nTexas Orthopedic Specialists (817)540-4477\n\nper David\n",
+        "Comments": " rm 410 B, has wc, 148 lbs, alert, 11am appt\r\nTexas Orthopedic Specialists (817)540-4477\r\n\r\nper David\r\n",
         "ConfirmationNumber": "51625",
         "RideDate": "4/17/2026 12:00:00 AM",
         "ScheduledPickupTime": "11:13",
@@ -3253,7 +3253,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "7.09",
-        "Comments1": " rm 410 B, has wc, 148 lbs, alert, 11am appt\nTexas Orthopedic Specialists (817)540-4477\n\nper David\n",
+        "Comments1": " rm 410 B, has wc, 148 lbs, alert, 11am appt\r\nTexas Orthopedic Specialists (817)540-4477\r\n\r\nper David\r\n",
         "PickupName": "Texas Orthopedic Specialists",
         "PickupAddress1": "3301 Golden Triangle Boulevard",
         "PickupCity": "Fort Worth",
@@ -3266,7 +3266,7 @@
         "DropoffZip": "76092",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -3399,17 +3399,17 @@
     "DropoffZip": "76092",
     "DirectMileage": "20",
     "RideHours": "0.8667",
-    "Comments": "rm 306, 128 lbs., needs recliner, non weight bearing on one foot but can stand & pivot with assistance, CN\n#404\n\nper Loerel 682 227 7726",
-    "Comments1": "rm 306, 128 lbs., needs recliner, non weight bearing on one foot but can stand & pivot with assistance, CN\n#404\n\nper Loerel 682 227 7726",
-    "notesFull": "rm 306, 128 lbs., needs recliner, non weight bearing on one foot but can stand & pivot with assistance, CN\n#404\n\nper Loerel 682 227 7726",
-    "notesPreview": "rm 306, 128 lbs., needs recliner, non weight bearing on one foot but can stand & pivot with assistance, CN",
+    "Comments": "rm 306, 128 lbs., needs recliner, non weight bearing on one foot but can stand & pivot with assistance, CN\r\n#404\r\n\r\nper Loerel 682 227 7726",
+    "Comments1": "rm 306, 128 lbs., needs recliner, non weight bearing on one foot but can stand & pivot with assistance, CN\r\n#404\r\n\r\nper Loerel 682 227 7726",
+    "notesFull": "rm 306, 128 lbs., needs recliner, non weight bearing on one foot but can stand & pivot with assistance, CN\n#404\nper Loerel 682 227 7726",
+    "notesPreview": "rm 306, 128 lbs., needs recliner, non weight bearing on one foot but can stand & pivot with assistance, CN | #404 | per Loerel 682 227 7726",
     "legs": [
       {
         "FirstName": "Namhee",
         "LastName": "Cho",
         "MiddleInitial": "",
         "DOB": "3/15/1956 12:00:00 AM",
-        "Comments": "rm 306, 128 lbs., needs recliner, non weight bearing on one foot but can stand & pivot with assistance, CN\n#404\n\nper Loerel 682 227 7726",
+        "Comments": "rm 306, 128 lbs., needs recliner, non weight bearing on one foot but can stand & pivot with assistance, CN\r\n#404\r\n\r\nper Loerel 682 227 7726",
         "ConfirmationNumber": "51655",
         "RideDate": "4/20/2026 12:00:00 AM",
         "ScheduledPickupTime": "12:45",
@@ -3423,7 +3423,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "19.89",
-        "Comments1": "rm 306, 128 lbs., needs recliner, non weight bearing on one foot but can stand & pivot with assistance, CN\n#404\n\nper Loerel 682 227 7726",
+        "Comments1": "rm 306, 128 lbs., needs recliner, non weight bearing on one foot but can stand & pivot with assistance, CN\r\n#404\r\n\r\nper Loerel 682 227 7726",
         "PickupName": "ClearSky Rehabilitation Hospital of Flower Mound",
         "PickupAddress1": "3100 Peters Colony Road",
         "PickupCity": "Flower Mound",
@@ -3436,7 +3436,7 @@
         "DropoffZip": "76092",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -3579,17 +3579,17 @@
     "DropoffZip": "76012",
     "DirectMileage": "40",
     "RideHours": "",
-    "Comments": "rm 421 / has bari wc / 252 lbs / alert / 1pm appt\nDr. Saleemi #401 (817)275-8991\n\nper Shamim",
-    "Comments1": "rm 421 / has bari wc / 252 lbs / alert / 1pm appt\nDr. Saleemi #401 (817)275-8991\n\nper Shamim",
-    "notesFull": "rm 421 / has bari wc / 252 lbs / alert / 1pm appt\nDr. Saleemi #401 (817)275-8991\n\nper Shamim",
-    "notesPreview": "rm 421 / has bari wc / 252 lbs / alert / 1pm appt",
+    "Comments": "rm 421 / has bari wc / 252 lbs / alert / 1pm appt\r\nDr. Saleemi #401 (817)275-8991\r\n\r\nper Shamim",
+    "Comments1": "rm 421 / has bari wc / 252 lbs / alert / 1pm appt\r\nDr. Saleemi #401 (817)275-8991\r\n\r\nper Shamim",
+    "notesFull": "rm 421 / has bari wc / 252 lbs / alert / 1pm appt\nDr. Saleemi #401 (817)275-8991\nper Shamim",
+    "notesPreview": "rm 421 / has bari wc / 252 lbs / alert / 1pm appt | Dr. Saleemi #401 (817)275-8991 | per Shamim",
     "legs": [
       {
         "FirstName": "Linda ",
         "LastName": "Christian",
         "MiddleInitial": "",
         "DOB": "7/22/1949 12:00:00 AM",
-        "Comments": "rm 421 / has bari wc / 252 lbs / alert / 1pm appt\nDr. Saleemi #401 (817)275-8991\n\nper Shamim ",
+        "Comments": "rm 421 / has bari wc / 252 lbs / alert / 1pm appt\r\nDr. Saleemi #401 (817)275-8991\r\n\r\nper Shamim ",
         "ConfirmationNumber": "51672",
         "RideDate": "4/20/2026 12:00:00 AM",
         "ScheduledPickupTime": "12:00",
@@ -3603,7 +3603,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "19.96",
-        "Comments1": "rm 421 / has bari wc / 252 lbs / alert / 1pm appt\nDr. Saleemi #401 (817)275-8991\n\nper Shamim ",
+        "Comments1": "rm 421 / has bari wc / 252 lbs / alert / 1pm appt\r\nDr. Saleemi #401 (817)275-8991\r\n\r\nper Shamim ",
         "PickupName": "Discovery Village Southlake Skilled Nursing 4th floor",
         "PickupAddress1": "201 Watermere Drive",
         "PickupCity": "Southlake",
@@ -3616,14 +3616,14 @@
         "DropoffZip": "76012",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "Linda ",
         "LastName": "Christian",
         "MiddleInitial": "",
         "DOB": "7/22/1949 12:00:00 AM",
-        "Comments": "rm 421 / has bari wc / 252 lbs / alert / 1pm appt\nDr. Saleemi #401 (817)275-8991\n\nper Shamim ",
+        "Comments": "rm 421 / has bari wc / 252 lbs / alert / 1pm appt\r\nDr. Saleemi #401 (817)275-8991\r\n\r\nper Shamim ",
         "ConfirmationNumber": "51673",
         "RideDate": "4/20/2026 12:00:00 AM",
         "ScheduledPickupTime": "00:00",
@@ -3637,7 +3637,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "19.96",
-        "Comments1": "rm 421 / has bari wc / 252 lbs / alert / 1pm appt\nDr. Saleemi #401 (817)275-8991\n\nper Shamim ",
+        "Comments1": "rm 421 / has bari wc / 252 lbs / alert / 1pm appt\r\nDr. Saleemi #401 (817)275-8991\r\n\r\nper Shamim ",
         "PickupName": "Anees Saleemi, MD",
         "PickupAddress1": "1001 North Waldrop Drive",
         "PickupCity": "Arlington",
@@ -3650,7 +3650,7 @@
         "DropoffZip": "76092",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -3789,17 +3789,17 @@
     "DropoffZip": "76092",
     "DirectMileage": "10",
     "RideHours": "0.6333",
-    "Comments": "332, 121lbs, cn, needs str, Laurel \n#413.A",
-    "Comments1": "332, 121lbs, cn, needs str, Laurel \n#413.A",
-    "notesFull": "332, 121lbs, cn, needs str, Laurel \n#413.A",
-    "notesPreview": "332, 121lbs, cn, needs str, Laurel",
+    "Comments": "332, 121lbs, cn, needs str, Laurel \r\n#413.A",
+    "Comments1": "332, 121lbs, cn, needs str, Laurel \r\n#413.A",
+    "notesFull": "332, 121lbs, cn, needs str, Laurel\n#413.A",
+    "notesPreview": "332, 121lbs, cn, needs str, Laurel | #413.A",
     "legs": [
       {
         "FirstName": "Mary ",
         "LastName": "Davis ",
         "MiddleInitial": "",
         "DOB": "10/12/1948 12:00:00 AM",
-        "Comments": "332, 121lbs, cn, needs str, Laurel \n#413.A",
+        "Comments": "332, 121lbs, cn, needs str, Laurel \r\n#413.A",
         "ConfirmationNumber": "51680",
         "RideDate": "4/20/2026 12:00:00 AM",
         "ScheduledPickupTime": "14:00",
@@ -3813,7 +3813,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "9.61",
-        "Comments1": "332, 121lbs, cn, needs str, Laurel \n#413.A",
+        "Comments1": "332, 121lbs, cn, needs str, Laurel \r\n#413.A",
         "PickupName": "Medical City Alliance ",
         "PickupAddress1": "3101 N Tarrant Pkwy",
         "PickupCity": "Fort Worth",
@@ -3826,7 +3826,7 @@
         "DropoffZip": "76092",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -3961,17 +3961,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "20",
     "RideHours": "",
-    "Comments": "**CHARGE A FEE, patient refused to go**\n rm 415 A / has wc / under 200 lbs / someone will meet at appt / 1330pm appt\nThe Center for Cancer & Blood Disorders: Dr Asim (817)759-7000\n\nper Caroline",
-    "Comments1": "**CHARGE A FEE, patient refused to go**\n rm 415 A / has wc / under 200 lbs / someone will meet at appt / 1330pm appt\nThe Center for Cancer & Blood Disorders: Dr Asim (817)759-7000\n\nper Caroline",
-    "notesFull": "**CHARGE A FEE, patient refused to go**\n rm 415 A / has wc / under 200 lbs / someone will meet at appt / 1330pm appt\nThe Center for Cancer & Blood Disorders: Dr Asim (817)759-7000\n\nper Caroline",
-    "notesPreview": "**CHARGE A FEE, patient refused to go**",
+    "Comments": "**CHARGE A FEE, patient refused to go**\r\n rm 415 A / has wc / under 200 lbs / someone will meet at appt / 1330pm appt\r\nThe Center for Cancer & Blood Disorders: Dr Asim (817)759-7000\r\n\r\nper Caroline",
+    "Comments1": "**CHARGE A FEE, patient refused to go**\r\n rm 415 A / has wc / under 200 lbs / someone will meet at appt / 1330pm appt\r\nThe Center for Cancer & Blood Disorders: Dr Asim (817)759-7000\r\n\r\nper Caroline",
+    "notesFull": "**CHARGE A FEE, patient refused to go**\nrm 415 A / has wc / under 200 lbs / someone will meet at appt / 1330pm appt\nThe Center for Cancer & Blood Disorders: Dr Asim (817)759-7000\nper Caroline",
+    "notesPreview": "**CHARGE A FEE, patient refused to go** | rm 415 A / has wc / under 200 lbs / someone will meet at appt / 1330pm appt | The Center for Cancer & Blood Disorde...",
     "legs": [
       {
         "FirstName": "Jay",
         "LastName": "Hewitt",
         "MiddleInitial": "",
         "DOB": "7/4/1940 12:00:00 AM",
-        "Comments": "**CHARGE A FEE, patient refused to go**\n rm 415 A / has wc / under 200 lbs / someone will meet at appt / 1330pm appt\nThe Center for Cancer & Blood Disorders: Dr Asim (817)759-7000\n\nper Caroline",
+        "Comments": "**CHARGE A FEE, patient refused to go**\r\n rm 415 A / has wc / under 200 lbs / someone will meet at appt / 1330pm appt\r\nThe Center for Cancer & Blood Disorders: Dr Asim (817)759-7000\r\n\r\nper Caroline",
         "ConfirmationNumber": "51596",
         "RideDate": "4/20/2026 12:00:00 AM",
         "ScheduledPickupTime": "12:50",
@@ -3985,7 +3985,7 @@
         "Mobility": "WC",
         "RideStatus": "NoShow ",
         "DirectMileage": "20.00",
-        "Comments1": "**CHARGE A FEE, patient refused to go**\n rm 415 A / has wc / under 200 lbs / someone will meet at appt / 1330pm appt\nThe Center for Cancer & Blood Disorders: Dr Asim (817)759-7000\n\nper Caroline",
+        "Comments1": "**CHARGE A FEE, patient refused to go**\r\n rm 415 A / has wc / under 200 lbs / someone will meet at appt / 1330pm appt\r\nThe Center for Cancer & Blood Disorders: Dr Asim (817)759-7000\r\n\r\nper Caroline",
         "PickupName": "Discovery Village Southlake Skilled Nursing 4th floor",
         "PickupAddress1": "201 Watermere Drive",
         "PickupCity": "Southlake",
@@ -3998,7 +3998,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -4108,17 +4108,17 @@
     "DropoffZip": "75390",
     "DirectMileage": "26",
     "RideHours": "",
-    "Comments": "RM 407 a\n140 lbs\nHas WC\n1040 appt, Building 3, 5th floor\n214 645 8000, Dr Daniel James Deets\nVivian",
-    "Comments1": "RM 407 a\n140 lbs\nHas WC\n1040 appt, Building 3, 5th floor\n214 645 8000, Dr Daniel James Deets\nVivian",
+    "Comments": "RM 407 a\r\n140 lbs\r\nHas WC\r\n1040 appt, Building 3, 5th floor\r\n214 645 8000, Dr Daniel James Deets\r\nVivian",
+    "Comments1": "RM 407 a\r\n140 lbs\r\nHas WC\r\n1040 appt, Building 3, 5th floor\r\n214 645 8000, Dr Daniel James Deets\r\nVivian",
     "notesFull": "RM 407 a\n140 lbs\nHas WC\n1040 appt, Building 3, 5th floor\n214 645 8000, Dr Daniel James Deets\nVivian",
-    "notesPreview": "RM 407 a",
+    "notesPreview": "RM 407 a | 140 lbs | Has WC | 1040 appt, Building 3, 5th floor | 214 645 8000, Dr Daniel James Deets | Vivian",
     "legs": [
       {
         "FirstName": "Winston \"Danny\"",
         "LastName": "Monts",
         "MiddleInitial": "",
         "DOB": "7/28/1940 12:00:00 AM",
-        "Comments": "RM 407 a\n140 lbs\nHas WC\n1040 appt, Building 3, 5th floor\n214 645 8000, Dr Daniel James Deets\nVivian",
+        "Comments": "RM 407 a\r\n140 lbs\r\nHas WC\r\n1040 appt, Building 3, 5th floor\r\n214 645 8000, Dr Daniel James Deets\r\nVivian",
         "ConfirmationNumber": "51254",
         "RideDate": "4/20/2026 12:00:00 AM",
         "ScheduledPickupTime": "09:40",
@@ -4132,7 +4132,7 @@
         "Mobility": "WC",
         "RideStatus": "NoShow ",
         "DirectMileage": "25.96",
-        "Comments1": "RM 407 a\n140 lbs\nHas WC\n1040 appt, Building 3, 5th floor\n214 645 8000, Dr Daniel James Deets\nVivian",
+        "Comments1": "RM 407 a\r\n140 lbs\r\nHas WC\r\n1040 appt, Building 3, 5th floor\r\n214 645 8000, Dr Daniel James Deets\r\nVivian",
         "PickupName": "Discovery Village Southlake Skilled Nursing 4th floor",
         "PickupAddress1": "201 Watermere Drive",
         "PickupCity": "Southlake",
@@ -4145,7 +4145,7 @@
         "DropoffZip": "75390",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -4255,17 +4255,17 @@
     "DropoffZip": "76092",
     "DirectMileage": "26",
     "RideHours": "",
-    "Comments": "RM 407 a\n140 lbs\nHas WC\n1040 appt, Building 3, 5th floor\n214 645 8000, Dr Daniel James Deets\nVivian",
-    "Comments1": "RM 407 a\n140 lbs\nHas WC\n1040 appt, Building 3, 5th floor\n214 645 8000, Dr Daniel James Deets\nVivian",
+    "Comments": "RM 407 a\r\n140 lbs\r\nHas WC\r\n1040 appt, Building 3, 5th floor\r\n214 645 8000, Dr Daniel James Deets\r\nVivian",
+    "Comments1": "RM 407 a\r\n140 lbs\r\nHas WC\r\n1040 appt, Building 3, 5th floor\r\n214 645 8000, Dr Daniel James Deets\r\nVivian",
     "notesFull": "RM 407 a\n140 lbs\nHas WC\n1040 appt, Building 3, 5th floor\n214 645 8000, Dr Daniel James Deets\nVivian",
-    "notesPreview": "RM 407 a",
+    "notesPreview": "RM 407 a | 140 lbs | Has WC | 1040 appt, Building 3, 5th floor | 214 645 8000, Dr Daniel James Deets | Vivian",
     "legs": [
       {
         "FirstName": "Winston \"Danny\"",
         "LastName": "Monts",
         "MiddleInitial": "",
         "DOB": "7/28/1940 12:00:00 AM",
-        "Comments": "RM 407 a\n140 lbs\nHas WC\n1040 appt, Building 3, 5th floor\n214 645 8000, Dr Daniel James Deets\nVivian",
+        "Comments": "RM 407 a\r\n140 lbs\r\nHas WC\r\n1040 appt, Building 3, 5th floor\r\n214 645 8000, Dr Daniel James Deets\r\nVivian",
         "ConfirmationNumber": "51255",
         "RideDate": "4/20/2026 12:00:00 AM",
         "ScheduledPickupTime": "11:40",
@@ -4279,7 +4279,7 @@
         "Mobility": "WC",
         "RideStatus": "RiderCancel ",
         "DirectMileage": "25.96",
-        "Comments1": "RM 407 a\n140 lbs\nHas WC\n1040 appt, Building 3, 5th floor\n214 645 8000, Dr Daniel James Deets\nVivian",
+        "Comments1": "RM 407 a\r\n140 lbs\r\nHas WC\r\n1040 appt, Building 3, 5th floor\r\n214 645 8000, Dr Daniel James Deets\r\nVivian",
         "PickupName": "Clinical Heart and Vascular Center - Vascular Surgery",
         "PickupAddress1": "2001 Inwood Road",
         "PickupCity": "Dallas",
@@ -4292,7 +4292,7 @@
         "DropoffZip": "76092",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -4402,17 +4402,17 @@
     "DropoffZip": "75077",
     "DirectMileage": "40",
     "RideHours": "",
-    "Comments": "RM 413 b\n130 lbs\nHas WC\n0900, ste 240\nDavid\nRM 413 b\n130 lbs\nHas WC\n0800 pick up for 0845 arrival 0900, ste 240\nDavid",
-    "Comments1": "RM 413 b\n130 lbs\nHas WC\n0900, ste 240\nDavid\nRM 413 b\n130 lbs\nHas WC\n0800 pick up for 0845 arrival 0900, ste 240\nDavid",
-    "notesFull": "RM 413 b\n130 lbs\nHas WC\n0900, ste 240\nDavid\nRM 413 b\n130 lbs\nHas WC\n0800 pick up for 0845 arrival 0900, ste 240\nDavid",
-    "notesPreview": "RM 413 b",
+    "Comments": "RM 413 b\r\n130 lbs\r\nHas WC\r\n0900, ste 240\r\nDavid\nRM 413 b\r\n130 lbs\r\nHas WC\r\n0800 pick up for 0845 arrival 0900, ste 240\r\nDavid",
+    "Comments1": "RM 413 b\r\n130 lbs\r\nHas WC\r\n0900, ste 240\r\nDavid\nRM 413 b\r\n130 lbs\r\nHas WC\r\n0800 pick up for 0845 arrival 0900, ste 240\r\nDavid",
+    "notesFull": "RM 413 b\n130 lbs\nHas WC\n0900, ste 240\nDavid\n0800 pick up for 0845 arrival 0900, ste 240",
+    "notesPreview": "RM 413 b | 130 lbs | Has WC | 0900, ste 240 | David | 0800 pick up for 0845 arrival 0900, ste 240",
     "legs": [
       {
         "FirstName": "Sharon ",
         "LastName": "Reid",
         "MiddleInitial": "",
         "DOB": "8/11/1944 12:00:00 AM",
-        "Comments": "RM 413 b\n130 lbs\nHas WC\n0900, ste 240\nDavid ",
+        "Comments": "RM 413 b\r\n130 lbs\r\nHas WC\r\n0900, ste 240\r\nDavid ",
         "ConfirmationNumber": "51641",
         "RideDate": "4/20/2026 12:00:00 AM",
         "ScheduledPickupTime": "08:00",
@@ -4426,7 +4426,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "20.26",
-        "Comments1": "RM 413 b\n130 lbs\nHas WC\n0900, ste 240\nDavid ",
+        "Comments1": "RM 413 b\r\n130 lbs\r\nHas WC\r\n0900, ste 240\r\nDavid ",
         "PickupName": "Discovery Village Southlake Skilled Nursing 4th floor",
         "PickupAddress1": "201 Watermere Drive",
         "PickupCity": "Southlake",
@@ -4439,14 +4439,14 @@
         "DropoffZip": "75077",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "Sharon ",
         "LastName": "Reid",
         "MiddleInitial": "",
         "DOB": "8/11/1944 12:00:00 AM",
-        "Comments": "RM 413 b\n130 lbs\nHas WC\n0800 pick up for 0845 arrival 0900, ste 240\nDavid ",
+        "Comments": "RM 413 b\r\n130 lbs\r\nHas WC\r\n0800 pick up for 0845 arrival 0900, ste 240\r\nDavid ",
         "ConfirmationNumber": "51642",
         "RideDate": "4/20/2026 12:00:00 AM",
         "ScheduledPickupTime": "10:02",
@@ -4460,7 +4460,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "20.26",
-        "Comments1": "RM 413 b\n130 lbs\nHas WC\n0800 pick up for 0845 arrival 0900, ste 240\nDavid ",
+        "Comments1": "RM 413 b\r\n130 lbs\r\nHas WC\r\n0800 pick up for 0845 arrival 0900, ste 240\r\nDavid ",
         "PickupName": "Baylor Scott & White Cardiovascular Consultants - Highland Village",
         "PickupAddress1": "1401 Shoal Creek",
         "PickupCity": "Highland Village",
@@ -4473,7 +4473,7 @@
         "DropoffZip": "76092",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -4606,17 +4606,17 @@
     "DropoffZip": "76051",
     "DirectMileage": "7",
     "RideHours": "",
-    "Comments": "*Charge A FEE, cancel on scene Per Joy, transportation should have been cancelled, family has taken him**\nrm 430, 150lbs., has wc, alert per David\n2pm appt, follow up, ste 310, Dr Veley (817)886-8552",
-    "Comments1": "*Charge A FEE, cancel on scene Per Joy, transportation should have been cancelled, family has taken him**\nrm 430, 150lbs., has wc, alert per David\n2pm appt, follow up, ste 310, Dr Veley (817)886-8552",
+    "Comments": "*Charge A FEE, cancel on scene Per Joy, transportation should have been cancelled, family has taken him**\r\nrm 430, 150lbs., has wc, alert per David\r\n2pm appt, follow up, ste 310, Dr Veley (817)886-8552",
+    "Comments1": "*Charge A FEE, cancel on scene Per Joy, transportation should have been cancelled, family has taken him**\r\nrm 430, 150lbs., has wc, alert per David\r\n2pm appt, follow up, ste 310, Dr Veley (817)886-8552",
     "notesFull": "*Charge A FEE, cancel on scene Per Joy, transportation should have been cancelled, family has taken him**\nrm 430, 150lbs., has wc, alert per David\n2pm appt, follow up, ste 310, Dr Veley (817)886-8552",
-    "notesPreview": "*Charge A FEE, cancel on scene Per Joy, transportation should have been cancelled, family has taken him**",
+    "notesPreview": "*Charge A FEE, cancel on scene Per Joy, transportation should have been cancelled, family has taken him** | rm 430, 150lbs., has wc, alert per David | 2pm ap...",
     "legs": [
       {
         "FirstName": "Harry ",
         "LastName": "Ross ",
         "MiddleInitial": "",
         "DOB": "10/15/1943 12:00:00 AM",
-        "Comments": "*Charge A FEE, cancel on scene Per Joy, transportation should have been cancelled, family has taken him**\nrm 430, 150lbs., has wc, alert per David\n2pm appt, follow up, ste 310, Dr Veley (817)886-8552\n",
+        "Comments": "*Charge A FEE, cancel on scene Per Joy, transportation should have been cancelled, family has taken him**\r\nrm 430, 150lbs., has wc, alert per David\r\n2pm appt, follow up, ste 310, Dr Veley (817)886-8552\r\n",
         "ConfirmationNumber": "51488",
         "RideDate": "4/20/2026 12:00:00 AM",
         "ScheduledPickupTime": "13:30",
@@ -4630,7 +4630,7 @@
         "Mobility": "WC",
         "RideStatus": "NoShow ",
         "DirectMileage": "6.75",
-        "Comments1": "*Charge A FEE, cancel on scene Per Joy, transportation should have been cancelled, family has taken him**\nrm 430, 150lbs., has wc, alert per David\n2pm appt, follow up, ste 310, Dr Veley (817)886-8552\n",
+        "Comments1": "*Charge A FEE, cancel on scene Per Joy, transportation should have been cancelled, family has taken him**\r\nrm 430, 150lbs., has wc, alert per David\r\n2pm appt, follow up, ste 310, Dr Veley (817)886-8552\r\n",
         "PickupName": "Discovery Village Southlake Skilled Nursing 4th floor",
         "PickupAddress1": "201 Watermere Drive",
         "PickupCity": "Southlake",
@@ -4643,7 +4643,7 @@
         "DropoffZip": "76051",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -4753,17 +4753,17 @@
     "DropoffZip": "76244",
     "DirectMileage": "14",
     "RideHours": "0.5833",
-    "Comments": "Quoted $159/ 06818S\n\nrm 304, 200 lbs., has wc, alert, someone will meet\n4pm appt time per DIL Alyssa Orear 972-670-5160\nQuoted $159/ 06818S\n\nrm 304, 200 lbs., has wc, alert, someone will meet\n4pm appt time per Alyssa Orear 972-670-5160",
-    "Comments1": "Quoted $159/ 06818S\n\nrm 304, 200 lbs., has wc, alert, someone will meet\n4pm appt time per DIL Alyssa Orear 972-670-5160\nQuoted $159/ 06818S\n\nrm 304, 200 lbs., has wc, alert, someone will meet\n4pm appt time per Alyssa Orear 972-670-5160",
-    "notesFull": "Quoted $159/ 06818S\n\nrm 304, 200 lbs., has wc, alert, someone will meet\n4pm appt time per DIL Alyssa Orear 972-670-5160\nQuoted $159/ 06818S\n\nrm 304, 200 lbs., has wc, alert, someone will meet\n4pm appt time per Alyssa Orear 972-670-5160",
-    "notesPreview": "Quoted $159/ 06818S",
+    "Comments": "Quoted $159/ 06818S\r\n\r\nrm 304, 200 lbs., has wc, alert, someone will meet\r\n4pm appt time per DIL Alyssa Orear 972-670-5160\nQuoted $159/ 06818S\r\n\r\nrm 304, 200 lbs., has wc, alert, someone will meet\r\n4pm appt time per Alyssa Orear 972-670-5160",
+    "Comments1": "Quoted $159/ 06818S\r\n\r\nrm 304, 200 lbs., has wc, alert, someone will meet\r\n4pm appt time per DIL Alyssa Orear 972-670-5160\nQuoted $159/ 06818S\r\n\r\nrm 304, 200 lbs., has wc, alert, someone will meet\r\n4pm appt time per Alyssa Orear 972-670-5160",
+    "notesFull": "Quoted $159/ 06818S\nrm 304, 200 lbs., has wc, alert, someone will meet\n4pm appt time per DIL Alyssa Orear 972-670-5160\n4pm appt time per Alyssa Orear 972-670-5160",
+    "notesPreview": "Quoted $159/ 06818S | rm 304, 200 lbs., has wc, alert, someone will meet | 4pm appt time per DIL Alyssa Orear 972-670-5160 | 4pm appt time per Alyssa Orear 9...",
     "legs": [
       {
         "FirstName": "Bettie ",
         "LastName": "Orear ",
         "MiddleInitial": "",
         "DOB": "4/3/1938 12:00:00 AM",
-        "Comments": "Quoted $159/ 06818S\n\nrm 304, 200 lbs., has wc, alert, someone will meet\n4pm appt time per DIL Alyssa Orear 972-670-5160",
+        "Comments": "Quoted $159/ 06818S\r\n\r\nrm 304, 200 lbs., has wc, alert, someone will meet\r\n4pm appt time per DIL Alyssa Orear 972-670-5160",
         "ConfirmationNumber": "51702",
         "RideDate": "4/21/2026 12:00:00 AM",
         "ScheduledPickupTime": "15:30",
@@ -4777,7 +4777,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "6.85",
-        "Comments1": "Quoted $159/ 06818S\n\nrm 304, 200 lbs., has wc, alert, someone will meet\n4pm appt time per DIL Alyssa Orear 972-670-5160",
+        "Comments1": "Quoted $159/ 06818S\r\n\r\nrm 304, 200 lbs., has wc, alert, someone will meet\r\n4pm appt time per DIL Alyssa Orear 972-670-5160",
         "PickupName": "Discovery Village At Southlake-3rd floor Independent ",
         "PickupAddress1": "201 Watermere Drive",
         "PickupCity": "Southlake",
@@ -4790,14 +4790,14 @@
         "DropoffZip": "76244",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "Bettie ",
         "LastName": "Orear ",
         "MiddleInitial": "",
         "DOB": "4/3/1938 12:00:00 AM",
-        "Comments": "Quoted $159/ 06818S\n\nrm 304, 200 lbs., has wc, alert, someone will meet\n4pm appt time per Alyssa Orear 972-670-5160",
+        "Comments": "Quoted $159/ 06818S\r\n\r\nrm 304, 200 lbs., has wc, alert, someone will meet\r\n4pm appt time per Alyssa Orear 972-670-5160",
         "ConfirmationNumber": "51703",
         "RideDate": "4/21/2026 12:00:00 AM",
         "ScheduledPickupTime": "16:20",
@@ -4811,7 +4811,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "6.85",
-        "Comments1": "Quoted $159/ 06818S\n\nrm 304, 200 lbs., has wc, alert, someone will meet\n4pm appt time per Alyssa Orear 972-670-5160",
+        "Comments1": "Quoted $159/ 06818S\r\n\r\nrm 304, 200 lbs., has wc, alert, someone will meet\r\n4pm appt time per Alyssa Orear 972-670-5160",
         "PickupName": "North Texas Orthopedics & Spine Center Dr. Brison",
         "PickupAddress1": "4501 Heritage Trace Parkway",
         "PickupCity": "Fort Worth",
@@ -4824,7 +4824,7 @@
         "DropoffZip": "76092",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -4994,7 +4994,7 @@
         "DropoffZip": "76092",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -5129,17 +5129,17 @@
     "DropoffZip": "75028",
     "DirectMileage": "20",
     "RideHours": "",
-    "Comments": "***CXL per David. Patient in ER. No ChargE***\nRM 413 b\n130 lbs\nHas WC\n1300 appt, ste 270\nDavid",
-    "Comments1": "***CXL per David. Patient in ER. No ChargE***\nRM 413 b\n130 lbs\nHas WC\n1300 appt, ste 270\nDavid",
+    "Comments": "***CXL per David. Patient in ER. No ChargE***\r\nRM 413 b\r\n130 lbs\r\nHas WC\r\n1300 appt, ste 270\r\nDavid",
+    "Comments1": "***CXL per David. Patient in ER. No ChargE***\r\nRM 413 b\r\n130 lbs\r\nHas WC\r\n1300 appt, ste 270\r\nDavid",
     "notesFull": "***CXL per David. Patient in ER. No ChargE***\nRM 413 b\n130 lbs\nHas WC\n1300 appt, ste 270\nDavid",
-    "notesPreview": "***CXL per David. Patient in ER. No ChargE***",
+    "notesPreview": "***CXL per David. Patient in ER. No ChargE*** | RM 413 b | 130 lbs | Has WC | 1300 appt, ste 270 | David",
     "legs": [
       {
         "FirstName": "Sharon ",
         "LastName": "Reid",
         "MiddleInitial": "",
         "DOB": "8/11/1944 12:00:00 AM",
-        "Comments": "***CXL per David. Patient in ER. No ChargE***\nRM 413 b\n130 lbs\nHas WC\n1300 appt, ste 270\nDavid",
+        "Comments": "***CXL per David. Patient in ER. No ChargE***\r\nRM 413 b\r\n130 lbs\r\nHas WC\r\n1300 appt, ste 270\r\nDavid",
         "ConfirmationNumber": "51643",
         "RideDate": "4/22/2026 12:00:00 AM",
         "ScheduledPickupTime": "12:15",
@@ -5153,7 +5153,7 @@
         "Mobility": "WC",
         "RideStatus": "RiderCancel ",
         "DirectMileage": "20.22",
-        "Comments1": "***CXL per David. Patient in ER. No ChargE***\nRM 413 b\n130 lbs\nHas WC\n1300 appt, ste 270\nDavid",
+        "Comments1": "***CXL per David. Patient in ER. No ChargE***\r\nRM 413 b\r\n130 lbs\r\nHas WC\r\n1300 appt, ste 270\r\nDavid",
         "PickupName": "Discovery Village Southlake Skilled Nursing 4th floor",
         "PickupAddress1": "201 Watermere Drive",
         "PickupCity": "Southlake",
@@ -5166,7 +5166,7 @@
         "DropoffZip": "75028",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -5276,17 +5276,17 @@
     "DropoffZip": "76092",
     "DirectMileage": "32",
     "RideHours": "1.1",
-    "Comments": "*Front entry through parking garage, Ms., Cho 214-770-9277*\n404, 128lbs, cn, has wc, Ifoma \n215pm appt, Dr Kristen Royal, 469-800-7200",
-    "Comments1": "*Front entry through parking garage, Ms., Cho 214-770-9277*\n404, 128lbs, cn, has wc, Ifoma \n215pm appt, Dr Kristen Royal, 469-800-7200",
-    "notesFull": "*Front entry through parking garage, Ms., Cho 214-770-9277*\n404, 128lbs, cn, has wc, Ifoma \n215pm appt, Dr Kristen Royal, 469-800-7200",
-    "notesPreview": "*Front entry through parking garage, Ms., Cho 214-770-9277*",
+    "Comments": "*Front entry through parking garage, Ms., Cho 214-770-9277*\r\n404, 128lbs, cn, has wc, Ifoma \r\n215pm appt, Dr Kristen Royal, 469-800-7200",
+    "Comments1": "*Front entry through parking garage, Ms., Cho 214-770-9277*\r\n404, 128lbs, cn, has wc, Ifoma \r\n215pm appt, Dr Kristen Royal, 469-800-7200",
+    "notesFull": "*Front entry through parking garage, Ms., Cho 214-770-9277*\n404, 128lbs, cn, has wc, Ifoma\n215pm appt, Dr Kristen Royal, 469-800-7200",
+    "notesPreview": "*Front entry through parking garage, Ms., Cho 214-770-9277* | 404, 128lbs, cn, has wc, Ifoma | 215pm appt, Dr Kristen Royal, 469-800-7200",
     "legs": [
       {
         "FirstName": "Namhee",
         "LastName": "Cho",
         "MiddleInitial": "",
         "DOB": "3/15/1956 12:00:00 AM",
-        "Comments": "*Front entry through parking garage, Ms., Cho 214-770-9277*\n404, 128lbs, cn, has wc, Ifoma \n215pm appt, Dr Kristen Royal, 469-800-7200",
+        "Comments": "*Front entry through parking garage, Ms., Cho 214-770-9277*\r\n404, 128lbs, cn, has wc, Ifoma \r\n215pm appt, Dr Kristen Royal, 469-800-7200",
         "ConfirmationNumber": "51728",
         "RideDate": "4/23/2026 12:00:00 AM",
         "ScheduledPickupTime": "15:15",
@@ -5300,7 +5300,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "32.08",
-        "Comments1": "*Front entry through parking garage, Ms., Cho 214-770-9277*\n404, 128lbs, cn, has wc, Ifoma \n215pm appt, Dr Kristen Royal, 469-800-7200",
+        "Comments1": "*Front entry through parking garage, Ms., Cho 214-770-9277*\r\n404, 128lbs, cn, has wc, Ifoma \r\n215pm appt, Dr Kristen Royal, 469-800-7200",
         "PickupName": "Baylor Scott & White Orthopedic Associates of Dallas at The Star",
         "PickupAddress1": "3800 Gaylord Parkway",
         "PickupCity": "Frisco",
@@ -5313,7 +5313,7 @@
         "DropoffZip": "76092",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -5462,10 +5462,10 @@
     "DropoffZip": "75225",
     "DirectMileage": "64",
     "RideHours": "",
-    "Comments": "RM 422, 153 lbs, Has WC, 1300 appt, ste 300, David 817 482 1340\nDaughter in law Hollie 512-970-0029\nRM 422, 153 lbs, Has WC, 1300 appt, ste 300, David 817 482 1340",
-    "Comments1": "RM 422, 153 lbs, Has WC, 1300 appt, ste 300, David 817 482 1340\nDaughter in law Hollie 512-970-0029\nRM 422, 153 lbs, Has WC, 1300 appt, ste 300, David 817 482 1340",
-    "notesFull": "RM 422, 153 lbs, Has WC, 1300 appt, ste 300, David 817 482 1340\nDaughter in law Hollie 512-970-0029\nRM 422, 153 lbs, Has WC, 1300 appt, ste 300, David 817 482 1340",
-    "notesPreview": "RM 422, 153 lbs, Has WC, 1300 appt, ste 300, David 817 482 1340",
+    "Comments": "RM 422, 153 lbs, Has WC, 1300 appt, ste 300, David 817 482 1340\nDaughter in law Hollie 512-970-0029\r\nRM 422, 153 lbs, Has WC, 1300 appt, ste 300, David 817 482 1340",
+    "Comments1": "RM 422, 153 lbs, Has WC, 1300 appt, ste 300, David 817 482 1340\nDaughter in law Hollie 512-970-0029\r\nRM 422, 153 lbs, Has WC, 1300 appt, ste 300, David 817 482 1340",
+    "notesFull": "RM 422, 153 lbs, Has WC, 1300 appt, ste 300, David 817 482 1340\nDaughter in law Hollie 512-970-0029",
+    "notesPreview": "RM 422, 153 lbs, Has WC, 1300 appt, ste 300, David 817 482 1340 | Daughter in law Hollie 512-970-0029",
     "legs": [
       {
         "FirstName": "Nathalie",
@@ -5499,14 +5499,14 @@
         "DropoffZip": "75225",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "Nathalie",
         "LastName": "Hise",
         "MiddleInitial": "",
         "DOB": "12/26/1936 12:00:00 AM",
-        "Comments": "Daughter in law Hollie 512-970-0029\nRM 422, 153 lbs, Has WC, 1300 appt, ste 300, David 817 482 1340",
+        "Comments": "Daughter in law Hollie 512-970-0029\r\nRM 422, 153 lbs, Has WC, 1300 appt, ste 300, David 817 482 1340",
         "ConfirmationNumber": "51718",
         "RideDate": "4/23/2026 12:00:00 AM",
         "ScheduledPickupTime": "14:00",
@@ -5520,7 +5520,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "31.64",
-        "Comments1": "Daughter in law Hollie 512-970-0029\nRM 422, 153 lbs, Has WC, 1300 appt, ste 300, David 817 482 1340",
+        "Comments1": "Daughter in law Hollie 512-970-0029\r\nRM 422, 153 lbs, Has WC, 1300 appt, ste 300, David 817 482 1340",
         "PickupName": "UT Southwestern Medical Center @ Park City",
         "PickupAddress1": "8611 Hillcrest Road",
         "PickupCity": "Dallas",
@@ -5533,7 +5533,7 @@
         "DropoffZip": "76092",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -5666,17 +5666,17 @@
     "DropoffZip": "75039",
     "DirectMileage": "17",
     "RideHours": "",
-    "Comments": "***CXL per David. Family is rescheduling appt. No Charge***\n402.B, 180lbs, cn, Joy 817-482-1340\n11am appt, Dr. Douglas Overbeck, #200, 972-253-2505",
-    "Comments1": "***CXL per David. Family is rescheduling appt. No Charge***\n402.B, 180lbs, cn, Joy 817-482-1340\n11am appt, Dr. Douglas Overbeck, #200, 972-253-2505",
+    "Comments": "***CXL per David. Family is rescheduling appt. No Charge***\r\n402.B, 180lbs, cn, Joy 817-482-1340\r\n11am appt, Dr. Douglas Overbeck, #200, 972-253-2505",
+    "Comments1": "***CXL per David. Family is rescheduling appt. No Charge***\r\n402.B, 180lbs, cn, Joy 817-482-1340\r\n11am appt, Dr. Douglas Overbeck, #200, 972-253-2505",
     "notesFull": "***CXL per David. Family is rescheduling appt. No Charge***\n402.B, 180lbs, cn, Joy 817-482-1340\n11am appt, Dr. Douglas Overbeck, #200, 972-253-2505",
-    "notesPreview": "***CXL per David. Family is rescheduling appt. No Charge***",
+    "notesPreview": "***CXL per David. Family is rescheduling appt. No Charge*** | 402.B, 180lbs, cn, Joy 817-482-1340 | 11am appt, Dr. Douglas Overbeck, #200, 972-253-2505",
     "legs": [
       {
         "FirstName": "Duane",
         "LastName": "Levine",
         "MiddleInitial": "",
         "DOB": "7/5/1933 12:00:00 AM",
-        "Comments": "***CXL per David. Family is rescheduling appt. No Charge***\n402.B, 180lbs, cn, Joy 817-482-1340\n11am appt, Dr. Douglas Overbeck, #200, 972-253-2505",
+        "Comments": "***CXL per David. Family is rescheduling appt. No Charge***\r\n402.B, 180lbs, cn, Joy 817-482-1340\r\n11am appt, Dr. Douglas Overbeck, #200, 972-253-2505",
         "ConfirmationNumber": "51617",
         "RideDate": "4/23/2026 12:00:00 AM",
         "ScheduledPickupTime": "10:30",
@@ -5690,7 +5690,7 @@
         "Mobility": "WC",
         "RideStatus": "RiderCancel ",
         "DirectMileage": "17.44",
-        "Comments1": "***CXL per David. Family is rescheduling appt. No Charge***\n402.B, 180lbs, cn, Joy 817-482-1340\n11am appt, Dr. Douglas Overbeck, #200, 972-253-2505",
+        "Comments1": "***CXL per David. Family is rescheduling appt. No Charge***\r\n402.B, 180lbs, cn, Joy 817-482-1340\r\n11am appt, Dr. Douglas Overbeck, #200, 972-253-2505",
         "PickupName": "Discovery Village Southlake Skilled Nursing 4th floor",
         "PickupAddress1": "201 Watermere Drive",
         "PickupCity": "Southlake",
@@ -5703,7 +5703,7 @@
         "DropoffZip": "75039",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -5813,17 +5813,17 @@
     "DropoffZip": "75390",
     "DirectMileage": "26",
     "RideHours": "",
-    "Comments": "RM 407 a\n140 lbs\nHas WC\n1330 appt, 5th floor\nVivian",
-    "Comments1": "RM 407 a\n140 lbs\nHas WC\n1330 appt, 5th floor\nVivian",
+    "Comments": "RM 407 a\r\n140 lbs\r\nHas WC\r\n1330 appt, 5th floor\r\nVivian",
+    "Comments1": "RM 407 a\r\n140 lbs\r\nHas WC\r\n1330 appt, 5th floor\r\nVivian",
     "notesFull": "RM 407 a\n140 lbs\nHas WC\n1330 appt, 5th floor\nVivian",
-    "notesPreview": "RM 407 a",
+    "notesPreview": "RM 407 a | 140 lbs | Has WC | 1330 appt, 5th floor | Vivian",
     "legs": [
       {
         "FirstName": "Winston \"Danny\"",
         "LastName": "Monts",
         "MiddleInitial": "",
         "DOB": "7/28/1940 12:00:00 AM",
-        "Comments": "RM 407 a\n140 lbs\nHas WC\n1330 appt, 5th floor\nVivian",
+        "Comments": "RM 407 a\r\n140 lbs\r\nHas WC\r\n1330 appt, 5th floor\r\nVivian",
         "ConfirmationNumber": "51250",
         "RideDate": "4/23/2026 12:00:00 AM",
         "ScheduledPickupTime": "12:30",
@@ -5837,7 +5837,7 @@
         "Mobility": "WC",
         "RideStatus": "RiderCancel ",
         "DirectMileage": "25.96",
-        "Comments1": "RM 407 a\n140 lbs\nHas WC\n1330 appt, 5th floor\nVivian",
+        "Comments1": "RM 407 a\r\n140 lbs\r\nHas WC\r\n1330 appt, 5th floor\r\nVivian",
         "PickupName": "Discovery Village Southlake Skilled Nursing 4th floor",
         "PickupAddress1": "201 Watermere Drive",
         "PickupCity": "Southlake",
@@ -5850,7 +5850,7 @@
         "DropoffZip": "75390",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -5960,17 +5960,17 @@
     "DropoffZip": "76092",
     "DirectMileage": "26",
     "RideHours": "",
-    "Comments": "RM 407 a\n140 lbs\nHas WC\n1330 appt, 5th floor\nVivian",
-    "Comments1": "RM 407 a\n140 lbs\nHas WC\n1330 appt, 5th floor\nVivian",
+    "Comments": "RM 407 a\r\n140 lbs\r\nHas WC\r\n1330 appt, 5th floor\r\nVivian",
+    "Comments1": "RM 407 a\r\n140 lbs\r\nHas WC\r\n1330 appt, 5th floor\r\nVivian",
     "notesFull": "RM 407 a\n140 lbs\nHas WC\n1330 appt, 5th floor\nVivian",
-    "notesPreview": "RM 407 a",
+    "notesPreview": "RM 407 a | 140 lbs | Has WC | 1330 appt, 5th floor | Vivian",
     "legs": [
       {
         "FirstName": "Winston \"Danny\"",
         "LastName": "Monts",
         "MiddleInitial": "",
         "DOB": "7/28/1940 12:00:00 AM",
-        "Comments": "RM 407 a\n140 lbs\nHas WC\n1330 appt, 5th floor\nVivian",
+        "Comments": "RM 407 a\r\n140 lbs\r\nHas WC\r\n1330 appt, 5th floor\r\nVivian",
         "ConfirmationNumber": "51251",
         "RideDate": "4/23/2026 12:00:00 AM",
         "ScheduledPickupTime": "14:30",
@@ -5984,7 +5984,7 @@
         "Mobility": "WC",
         "RideStatus": "RiderCancel ",
         "DirectMileage": "25.96",
-        "Comments1": "RM 407 a\n140 lbs\nHas WC\n1330 appt, 5th floor\nVivian",
+        "Comments1": "RM 407 a\r\n140 lbs\r\nHas WC\r\n1330 appt, 5th floor\r\nVivian",
         "PickupName": "Clinical Heart and Vascular Center - Vascular Surgery",
         "PickupAddress1": "2001 Inwood Road",
         "PickupCity": "Dallas",
@@ -5997,7 +5997,7 @@
         "DropoffZip": "76092",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -6144,7 +6144,7 @@
         "DropoffZip": "76092",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -6279,17 +6279,17 @@
     "DropoffZip": "76092",
     "DirectMileage": "7",
     "RideHours": "0.6",
-    "Comments": "4503, 199lbs, cn, needs str, Laurel \n#432",
-    "Comments1": "4503, 199lbs, cn, needs str, Laurel \n#432",
-    "notesFull": "4503, 199lbs, cn, needs str, Laurel \n#432",
-    "notesPreview": "4503, 199lbs, cn, needs str, Laurel",
+    "Comments": "4503, 199lbs, cn, needs str, Laurel \r\n#432",
+    "Comments1": "4503, 199lbs, cn, needs str, Laurel \r\n#432",
+    "notesFull": "4503, 199lbs, cn, needs str, Laurel\n#432",
+    "notesPreview": "4503, 199lbs, cn, needs str, Laurel | #432",
     "legs": [
       {
         "FirstName": "Raymond ",
         "LastName": "Wright ",
         "MiddleInitial": "",
         "DOB": "10/14/1936 12:00:00 AM",
-        "Comments": "4503, 199lbs, cn, needs str, Laurel \n#432",
+        "Comments": "4503, 199lbs, cn, needs str, Laurel \r\n#432",
         "ConfirmationNumber": "51777",
         "RideDate": "4/23/2026 12:00:00 AM",
         "ScheduledPickupTime": "14:30",
@@ -6303,7 +6303,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "6.81",
-        "Comments1": "4503, 199lbs, cn, needs str, Laurel \n#432",
+        "Comments1": "4503, 199lbs, cn, needs str, Laurel \r\n#432",
         "PickupName": "Baylor Scott & White Hospital - Grapevine ",
         "PickupAddress1": "1650 W College St",
         "PickupCity": "Grapevine",
@@ -6316,7 +6316,7 @@
         "DropoffZip": "76092",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -6451,17 +6451,17 @@
     "DropoffZip": "76092",
     "DirectMileage": "21",
     "RideHours": "",
-    "Comments": "**please stop by at HQ first and change to van 44 before heading to pick up\n\nBldg A rm 710, 188 lbs., needs recliner, able to s&t, CN\n#416A\n\nper Loerel (Discovery) 682 227 7726\nBaylor Nurse station 817 922 4800",
-    "Comments1": "**please stop by at HQ first and change to van 44 before heading to pick up\n\nBldg A rm 710, 188 lbs., needs recliner, able to s&t, CN\n#416A\n\nper Loerel (Discovery) 682 227 7726\nBaylor Nurse station 817 922 4800",
-    "notesFull": "**please stop by at HQ first and change to van 44 before heading to pick up\n\nBldg A rm 710, 188 lbs., needs recliner, able to s&t, CN\n#416A\n\nper Loerel (Discovery) 682 227 7726\nBaylor Nurse station 817 922 4800",
-    "notesPreview": "**please stop by at HQ first and change to van 44 before heading to pick up",
+    "Comments": "**please stop by at HQ first and change to van 44 before heading to pick up\r\n\r\nBldg A rm 710, 188 lbs., needs recliner, able to s&t, CN\r\n#416A\r\n\r\nper Loerel (Discovery) 682 227 7726\r\nBaylor Nurse station 817 922 4800",
+    "Comments1": "**please stop by at HQ first and change to van 44 before heading to pick up\r\n\r\nBldg A rm 710, 188 lbs., needs recliner, able to s&t, CN\r\n#416A\r\n\r\nper Loerel (Discovery) 682 227 7726\r\nBaylor Nurse station 817 922 4800",
+    "notesFull": "**please stop by at HQ first and change to van 44 before heading to pick up\nBldg A rm 710, 188 lbs., needs recliner, able to s&t, CN\n#416A\nper Loerel (Discovery) 682 227 7726\nBaylor Nurse station 817 922 4800",
+    "notesPreview": "**please stop by at HQ first and change to van 44 before heading to pick up | Bldg A rm 710, 188 lbs., needs recliner, able to s&t, CN | #416A | per Loerel (...",
     "legs": [
       {
         "FirstName": "Jay",
         "LastName": "Hewitt",
         "MiddleInitial": "",
         "DOB": "7/4/1940 12:00:00 AM",
-        "Comments": "**please stop by at HQ first and change to van 44 before heading to pick up\n\nBldg A rm 710, 188 lbs., needs recliner, able to s&t, CN\n#416A\n\nper Loerel (Discovery) 682 227 7726\nBaylor Nurse station 817 922 4800",
+        "Comments": "**please stop by at HQ first and change to van 44 before heading to pick up\r\n\r\nBldg A rm 710, 188 lbs., needs recliner, able to s&t, CN\r\n#416A\r\n\r\nper Loerel (Discovery) 682 227 7726\r\nBaylor Nurse station 817 922 4800",
         "ConfirmationNumber": "51839",
         "RideDate": "4/24/2026 12:00:00 AM",
         "ScheduledPickupTime": "17:30",
@@ -6475,7 +6475,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "20.67",
-        "Comments1": "**please stop by at HQ first and change to van 44 before heading to pick up\n\nBldg A rm 710, 188 lbs., needs recliner, able to s&t, CN\n#416A\n\nper Loerel (Discovery) 682 227 7726\nBaylor Nurse station 817 922 4800",
+        "Comments1": "**please stop by at HQ first and change to van 44 before heading to pick up\r\n\r\nBldg A rm 710, 188 lbs., needs recliner, able to s&t, CN\r\n#416A\r\n\r\nper Loerel (Discovery) 682 227 7726\r\nBaylor Nurse station 817 922 4800",
         "PickupName": "Baylor All Saints Fort Worth  (A Building) Main Entrance ",
         "PickupAddress1": "1400 8th Avenue",
         "PickupCity": "Fort Worth",
@@ -6488,7 +6488,7 @@
         "DropoffZip": "76092",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -6636,17 +6636,17 @@
     "DropoffZip": "76177",
     "DirectMileage": "14",
     "RideHours": "",
-    "Comments": "rm 410A, 135 lbs., has wc, will have a rider per Caroline\n10am appt time",
-    "Comments1": "rm 410A, 135 lbs., has wc, will have a rider per Caroline\n10am appt time",
+    "Comments": "rm 410A, 135 lbs., has wc, will have a rider per Caroline\r\n10am appt time",
+    "Comments1": "rm 410A, 135 lbs., has wc, will have a rider per Caroline\r\n10am appt time",
     "notesFull": "rm 410A, 135 lbs., has wc, will have a rider per Caroline\n10am appt time",
-    "notesPreview": "rm 410A, 135 lbs., has wc, will have a rider per Caroline",
+    "notesPreview": "rm 410A, 135 lbs., has wc, will have a rider per Caroline | 10am appt time",
     "legs": [
       {
         "FirstName": "Hedwig",
         "LastName": "Parker",
         "MiddleInitial": "",
         "DOB": "8/18/1938 12:00:00 AM",
-        "Comments": "rm 410A, 135 lbs., has wc, will have a rider per Caroline\n10am appt time",
+        "Comments": "rm 410A, 135 lbs., has wc, will have a rider per Caroline\r\n10am appt time",
         "ConfirmationNumber": "51798",
         "RideDate": "4/24/2026 12:00:00 AM",
         "ScheduledPickupTime": "09:30",
@@ -6660,7 +6660,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "7.09",
-        "Comments1": "rm 410A, 135 lbs., has wc, will have a rider per Caroline\n10am appt time",
+        "Comments1": "rm 410A, 135 lbs., has wc, will have a rider per Caroline\r\n10am appt time",
         "PickupName": "Discovery Village Southlake Skilled Nursing 4th floor",
         "PickupAddress1": "201 Watermere Drive",
         "PickupCity": "Southlake",
@@ -6673,14 +6673,14 @@
         "DropoffZip": "76177",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "Hedwig",
         "LastName": "Parker",
         "MiddleInitial": "",
         "DOB": "8/18/1938 12:00:00 AM",
-        "Comments": "rm 410A, 135 lbs., has wc, will have a rider per Caroline\n10am appt time",
+        "Comments": "rm 410A, 135 lbs., has wc, will have a rider per Caroline\r\n10am appt time",
         "ConfirmationNumber": "51799",
         "RideDate": "4/24/2026 12:00:00 AM",
         "ScheduledPickupTime": "10:50",
@@ -6694,7 +6694,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "7.11",
-        "Comments1": "rm 410A, 135 lbs., has wc, will have a rider per Caroline\n10am appt time",
+        "Comments1": "rm 410A, 135 lbs., has wc, will have a rider per Caroline\r\n10am appt time",
         "PickupName": "Texas Orthopedic Specialists",
         "PickupAddress1": "3301 Golden Triangle Boulevard",
         "PickupCity": "Fort Worth",
@@ -6707,7 +6707,7 @@
         "DropoffZip": "76092",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -6877,7 +6877,7 @@
         "DropoffZip": "76092",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -7012,17 +7012,17 @@
     "DropoffZip": "76092",
     "DirectMileage": "7",
     "RideHours": "0.55",
-    "Comments": "rm 4623 / str / 120 lbs / had hip fracture, CN\nrm 415 \n\nper Loerel 682 227 7726",
-    "Comments1": "rm 4623 / str / 120 lbs / had hip fracture, CN\nrm 415 \n\nper Loerel 682 227 7726",
-    "notesFull": "rm 4623 / str / 120 lbs / had hip fracture, CN\nrm 415 \n\nper Loerel 682 227 7726",
-    "notesPreview": "rm 4623 / str / 120 lbs / had hip fracture, CN",
+    "Comments": "rm 4623 / str / 120 lbs / had hip fracture, CN\r\nrm 415 \r\n\r\nper Loerel 682 227 7726",
+    "Comments1": "rm 4623 / str / 120 lbs / had hip fracture, CN\r\nrm 415 \r\n\r\nper Loerel 682 227 7726",
+    "notesFull": "rm 4623 / str / 120 lbs / had hip fracture, CN\nrm 415\nper Loerel 682 227 7726",
+    "notesPreview": "rm 4623 / str / 120 lbs / had hip fracture, CN | rm 415 | per Loerel 682 227 7726",
     "legs": [
       {
         "FirstName": "Caroline",
         "LastName": "Chamberline",
         "MiddleInitial": "",
         "DOB": "6/24/1940 12:00:00 AM",
-        "Comments": "rm 4623 / str / 120 lbs / had hip fracture, CN\nrm 415 \n\nper Loerel 682 227 7726",
+        "Comments": "rm 4623 / str / 120 lbs / had hip fracture, CN\r\nrm 415 \r\n\r\nper Loerel 682 227 7726",
         "ConfirmationNumber": "51853",
         "RideDate": "4/25/2026 12:00:00 AM",
         "ScheduledPickupTime": "14:00",
@@ -7036,7 +7036,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "6.81",
-        "Comments1": "rm 4623 / str / 120 lbs / had hip fracture, CN\nrm 415 \n\nper Loerel 682 227 7726",
+        "Comments1": "rm 4623 / str / 120 lbs / had hip fracture, CN\r\nrm 415 \r\n\r\nper Loerel 682 227 7726",
         "PickupName": "Baylor Scott & White Medical Center - Grapevine",
         "PickupAddress1": "1650 West College Street",
         "PickupCity": "Grapevine",
@@ -7049,7 +7049,7 @@
         "DropoffZip": "76092",
         "AccountCode": "Discovery Village Southlake ",
         "AccountName": "Discovery Village Southlake ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",

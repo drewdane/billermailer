@@ -28,17 +28,17 @@
     "DropoffZip": "76021",
     "DirectMileage": "1",
     "RideHours": "0.2667",
-    "Comments": "RM 521\n232 lbs\nSTR\nEncompass RM TBD\nSharda 817 848 4788",
-    "Comments1": "RM 521\n232 lbs\nSTR\nEncompass RM TBD\nSharda 817 848 4788",
+    "Comments": "RM 521\r\n232 lbs\r\nSTR\r\nEncompass RM TBD\r\nSharda 817 848 4788",
+    "Comments1": "RM 521\r\n232 lbs\r\nSTR\r\nEncompass RM TBD\r\nSharda 817 848 4788",
     "notesFull": "RM 521\n232 lbs\nSTR\nEncompass RM TBD\nSharda 817 848 4788",
-    "notesPreview": "RM 521",
+    "notesPreview": "RM 521 | 232 lbs | STR | Encompass RM TBD | Sharda 817 848 4788",
     "legs": [
       {
         "FirstName": "Virginia",
         "LastName": "Washington",
         "MiddleInitial": "",
         "DOB": "2/3/1953 12:00:00 AM",
-        "Comments": "RM 521\n232 lbs\nSTR\nEncompass RM TBD\nSharda 817 848 4788",
+        "Comments": "RM 521\r\n232 lbs\r\nSTR\r\nEncompass RM TBD\r\nSharda 817 848 4788",
         "ConfirmationNumber": "51531",
         "RideDate": "4/13/2026 12:00:00 AM",
         "ScheduledPickupTime": "16:00",
@@ -52,7 +52,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "1.40",
-        "Comments1": "RM 521\n232 lbs\nSTR\nEncompass RM TBD\nSharda 817 848 4788",
+        "Comments1": "RM 521\r\n232 lbs\r\nSTR\r\nEncompass RM TBD\r\nSharda 817 848 4788",
         "PickupName": "Texas Health Harris Methodist Hurst-Euless-Bedford ",
         "PickupAddress1": "1600 Hospital Parkway",
         "PickupCity": "Bedford",
@@ -65,7 +65,7 @@
         "DropoffZip": "76021",
         "AccountCode": "Encompass Health Mid Cities",
         "AccountName": "Encompass Health Mid Cities",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -200,17 +200,17 @@
     "DropoffZip": "76021",
     "DirectMileage": "1",
     "RideHours": "0.3",
-    "Comments": "HEB T515, 146lbs, cn, needs str & 2ltrs o2, Christie James (817)848-4038\n#TBD",
-    "Comments1": "HEB T515, 146lbs, cn, needs str & 2ltrs o2, Christie James (817)848-4038\n#TBD",
+    "Comments": "HEB T515, 146lbs, cn, needs str & 2ltrs o2, Christie James (817)848-4038\r\n#TBD",
+    "Comments1": "HEB T515, 146lbs, cn, needs str & 2ltrs o2, Christie James (817)848-4038\r\n#TBD",
     "notesFull": "HEB T515, 146lbs, cn, needs str & 2ltrs o2, Christie James (817)848-4038\n#TBD",
-    "notesPreview": "HEB T515, 146lbs, cn, needs str & 2ltrs o2, Christie James (817)848-4038",
+    "notesPreview": "HEB T515, 146lbs, cn, needs str & 2ltrs o2, Christie James (817)848-4038 | #TBD",
     "legs": [
       {
         "FirstName": "Karen",
         "LastName": "Harris",
         "MiddleInitial": "M",
         "DOB": "4/1/1950 12:00:00 AM",
-        "Comments": "HEB T515, 146lbs, cn, needs str & 2ltrs o2, Christie James (817)848-4038\n#TBD ",
+        "Comments": "HEB T515, 146lbs, cn, needs str & 2ltrs o2, Christie James (817)848-4038\r\n#TBD ",
         "ConfirmationNumber": "51562",
         "RideDate": "4/14/2026 12:00:00 AM",
         "ScheduledPickupTime": "18:00",
@@ -224,7 +224,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "1.40",
-        "Comments1": "HEB T515, 146lbs, cn, needs str & 2ltrs o2, Christie James (817)848-4038\n#TBD ",
+        "Comments1": "HEB T515, 146lbs, cn, needs str & 2ltrs o2, Christie James (817)848-4038\r\n#TBD ",
         "PickupName": "Texas Health Harris Methodist Hurst-Euless-Bedford ",
         "PickupAddress1": "1600 Hospital Parkway",
         "PickupCity": "Bedford",
@@ -237,7 +237,7 @@
         "DropoffZip": "76021",
         "AccountCode": "Encompass Health Mid Cities",
         "AccountName": "Encompass Health Mid Cities",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -372,17 +372,17 @@
     "DropoffZip": "76021",
     "DirectMileage": "1",
     "RideHours": "",
-    "Comments": "RM 282\n165 lbs\nSTR\nEncompass RM TBD\nJoseph 817 848 3140",
-    "Comments1": "RM 282\n165 lbs\nSTR\nEncompass RM TBD\nJoseph 817 848 3140",
+    "Comments": "RM 282\r\n165 lbs\r\nSTR\r\nEncompass RM TBD\r\nJoseph 817 848 3140",
+    "Comments1": "RM 282\r\n165 lbs\r\nSTR\r\nEncompass RM TBD\r\nJoseph 817 848 3140",
     "notesFull": "RM 282\n165 lbs\nSTR\nEncompass RM TBD\nJoseph 817 848 3140",
-    "notesPreview": "RM 282",
+    "notesPreview": "RM 282 | 165 lbs | STR | Encompass RM TBD | Joseph 817 848 3140",
     "legs": [
       {
         "FirstName": "Carl",
         "LastName": "Spratt",
         "MiddleInitial": "",
         "DOB": "6/23/1946 12:00:00 AM",
-        "Comments": "RM 282\n165 lbs\nSTR\nEncompass RM TBD\nJoseph 817 848 3140",
+        "Comments": "RM 282\r\n165 lbs\r\nSTR\r\nEncompass RM TBD\r\nJoseph 817 848 3140",
         "ConfirmationNumber": "51607",
         "RideDate": "4/16/2026 12:00:00 AM",
         "ScheduledPickupTime": "14:00",
@@ -396,7 +396,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "1.40",
-        "Comments1": "RM 282\n165 lbs\nSTR\nEncompass RM TBD\nJoseph 817 848 3140",
+        "Comments1": "RM 282\r\n165 lbs\r\nSTR\r\nEncompass RM TBD\r\nJoseph 817 848 3140",
         "PickupName": "Texas Health Harris Methodist Hurst-Euless-Bedford ",
         "PickupAddress1": "1600 Hospital Parkway",
         "PickupCity": "Bedford",
@@ -409,7 +409,7 @@
         "DropoffZip": "76021",
         "AccountCode": "Encompass Health Mid Cities",
         "AccountName": "Encompass Health Mid Cities",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -544,17 +544,17 @@
     "DropoffZip": "76021",
     "DirectMileage": "1",
     "RideHours": "0",
-    "Comments": "**patient refuses to go per CTT driver, canceled on scene\n\nTHHEB INTERMEDIATE T3 rm T309 T30901, 128 lbs., STR/Broda, Uremic encephalopathy, Dialysis (Asymptomatic), CN\n#TBD\n\nper Chava Rousch-Carlisle (817)848-4752",
-    "Comments1": "**patient refuses to go per CTT driver, canceled on scene\n\nTHHEB INTERMEDIATE T3 rm T309 T30901, 128 lbs., STR/Broda, Uremic encephalopathy, Dialysis (Asymptomatic), CN\n#TBD\n\nper Chava Rousch-Carlisle (817)848-4752",
-    "notesFull": "**patient refuses to go per CTT driver, canceled on scene\n\nTHHEB INTERMEDIATE T3 rm T309 T30901, 128 lbs., STR/Broda, Uremic encephalopathy, Dialysis (Asymptomatic), CN\n#TBD\n\nper Chava Rousch-Carlisle (817)848-4752",
-    "notesPreview": "**patient refuses to go per CTT driver, canceled on scene",
+    "Comments": "**patient refuses to go per CTT driver, canceled on scene\r\n\r\nTHHEB INTERMEDIATE T3 rm T309 T30901, 128 lbs., STR/Broda, Uremic encephalopathy, Dialysis (Asymptomatic), CN\r\n#TBD\r\n\r\nper Chava Rousch-Carlisle (817)848-4752",
+    "Comments1": "**patient refuses to go per CTT driver, canceled on scene\r\n\r\nTHHEB INTERMEDIATE T3 rm T309 T30901, 128 lbs., STR/Broda, Uremic encephalopathy, Dialysis (Asymptomatic), CN\r\n#TBD\r\n\r\nper Chava Rousch-Carlisle (817)848-4752",
+    "notesFull": "**patient refuses to go per CTT driver, canceled on scene\nTHHEB INTERMEDIATE T3 rm T309 T30901, 128 lbs., STR/Broda, Uremic encephalopathy, Dialysis (Asymptomatic), CN\n#TBD\nper Chava Rousch-Carlisle (817)848-4752",
+    "notesPreview": "**patient refuses to go per CTT driver, canceled on scene | THHEB INTERMEDIATE T3 rm T309 T30901, 128 lbs., STR/Broda, Uremic encephalopathy, Dialysis (Asymp...",
     "legs": [
       {
         "FirstName": "Bonnie",
         "LastName": "Solecki",
         "MiddleInitial": "",
         "DOB": "5/31/1937 12:00:00 AM",
-        "Comments": "**patient refuses to go per CTT driver, canceled on scene\n\nTHHEB INTERMEDIATE T3 rm T309 T30901, 128 lbs., STR/Broda, Uremic encephalopathy, Dialysis (Asymptomatic), CN\n#TBD\n\nper Chava Rousch-Carlisle (817)848-4752",
+        "Comments": "**patient refuses to go per CTT driver, canceled on scene\r\n\r\nTHHEB INTERMEDIATE T3 rm T309 T30901, 128 lbs., STR/Broda, Uremic encephalopathy, Dialysis (Asymptomatic), CN\r\n#TBD\r\n\r\nper Chava Rousch-Carlisle (817)848-4752",
         "ConfirmationNumber": "51659",
         "RideDate": "4/17/2026 12:00:00 AM",
         "ScheduledPickupTime": "19:30",
@@ -568,7 +568,7 @@
         "Mobility": "S",
         "RideStatus": "NoShow ",
         "DirectMileage": "1.40",
-        "Comments1": "**patient refuses to go per CTT driver, canceled on scene\n\nTHHEB INTERMEDIATE T3 rm T309 T30901, 128 lbs., STR/Broda, Uremic encephalopathy, Dialysis (Asymptomatic), CN\n#TBD\n\nper Chava Rousch-Carlisle (817)848-4752",
+        "Comments1": "**patient refuses to go per CTT driver, canceled on scene\r\n\r\nTHHEB INTERMEDIATE T3 rm T309 T30901, 128 lbs., STR/Broda, Uremic encephalopathy, Dialysis (Asymptomatic), CN\r\n#TBD\r\n\r\nper Chava Rousch-Carlisle (817)848-4752",
         "PickupName": "Texas Health Harris Methodist Hurst-Euless-Bedford ",
         "PickupAddress1": "1600 Hospital Parkway",
         "PickupCity": "Bedford",
@@ -581,7 +581,7 @@
         "DropoffZip": "76021",
         "AccountCode": "Encompass Health Mid Cities",
         "AccountName": "Encompass Health Mid Cities",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -689,17 +689,17 @@
     "DropoffZip": "76021",
     "DirectMileage": "1",
     "RideHours": "",
-    "Comments": "T505, 176lbs, cn, needs str, Christie James (817)848-4038\n#TBD",
-    "Comments1": "T505, 176lbs, cn, needs str, Christie James (817)848-4038\n#TBD",
+    "Comments": "T505, 176lbs, cn, needs str, Christie James (817)848-4038\r\n#TBD",
+    "Comments1": "T505, 176lbs, cn, needs str, Christie James (817)848-4038\r\n#TBD",
     "notesFull": "T505, 176lbs, cn, needs str, Christie James (817)848-4038\n#TBD",
-    "notesPreview": "T505, 176lbs, cn, needs str, Christie James (817)848-4038",
+    "notesPreview": "T505, 176lbs, cn, needs str, Christie James (817)848-4038 | #TBD",
     "legs": [
       {
         "FirstName": "Mary ",
         "LastName": "Woods ",
         "MiddleInitial": "",
         "DOB": "4/24/1943 12:00:00 AM",
-        "Comments": "T505, 176lbs, cn, needs str, Christie James (817)848-4038\n#TBD",
+        "Comments": "T505, 176lbs, cn, needs str, Christie James (817)848-4038\r\n#TBD",
         "ConfirmationNumber": "51631",
         "RideDate": "4/17/2026 12:00:00 AM",
         "ScheduledPickupTime": "15:00",
@@ -713,7 +713,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "1.40",
-        "Comments1": "T505, 176lbs, cn, needs str, Christie James (817)848-4038\n#TBD",
+        "Comments1": "T505, 176lbs, cn, needs str, Christie James (817)848-4038\r\n#TBD",
         "PickupName": "Texas Health Harris Methodist Hurst-Euless-Bedford ",
         "PickupAddress1": "1600 Hospital Parkway",
         "PickupCity": "Bedford",
@@ -726,7 +726,7 @@
         "DropoffZip": "76021",
         "AccountCode": "Encompass Health Mid Cities",
         "AccountName": "Encompass Health Mid Cities",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -861,17 +861,17 @@
     "DropoffZip": "76021",
     "DirectMileage": "1",
     "RideHours": "0.2833",
-    "Comments": "ER rm 16 / 119 lbs / hip injury, cn \nrm tbd\n\nper Loretta Plunkett (817)848-4695",
-    "Comments1": "ER rm 16 / 119 lbs / hip injury, cn \nrm tbd\n\nper Loretta Plunkett (817)848-4695",
-    "notesFull": "ER rm 16 / 119 lbs / hip injury, cn \nrm tbd\n\nper Loretta Plunkett (817)848-4695",
-    "notesPreview": "ER rm 16 / 119 lbs / hip injury, cn",
+    "Comments": "ER rm 16 / 119 lbs / hip injury, cn \r\nrm tbd\r\n\r\nper Loretta Plunkett (817)848-4695",
+    "Comments1": "ER rm 16 / 119 lbs / hip injury, cn \r\nrm tbd\r\n\r\nper Loretta Plunkett (817)848-4695",
+    "notesFull": "ER rm 16 / 119 lbs / hip injury, cn\nrm tbd\nper Loretta Plunkett (817)848-4695",
+    "notesPreview": "ER rm 16 / 119 lbs / hip injury, cn | rm tbd | per Loretta Plunkett (817)848-4695",
     "legs": [
       {
         "FirstName": "Norma",
         "LastName": "Lively",
         "MiddleInitial": "",
         "DOB": "12/13/1928 12:00:00 AM",
-        "Comments": "ER rm 16 / 119 lbs / hip injury, cn \nrm tbd\n\nper Loretta Plunkett (817)848-4695",
+        "Comments": "ER rm 16 / 119 lbs / hip injury, cn \r\nrm tbd\r\n\r\nper Loretta Plunkett (817)848-4695",
         "ConfirmationNumber": "51723",
         "RideDate": "4/21/2026 12:00:00 AM",
         "ScheduledPickupTime": "19:00",
@@ -885,7 +885,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "1.40",
-        "Comments1": "ER rm 16 / 119 lbs / hip injury, cn \nrm tbd\n\nper Loretta Plunkett (817)848-4695",
+        "Comments1": "ER rm 16 / 119 lbs / hip injury, cn \r\nrm tbd\r\n\r\nper Loretta Plunkett (817)848-4695",
         "PickupName": "Texas Health Harris Methodist Hurst-Euless-Bedford Emergency Department",
         "PickupAddress1": "1600 Hospital Parkway",
         "PickupCity": "Bedford",
@@ -898,7 +898,7 @@
         "DropoffZip": "76021",
         "AccountCode": "Encompass Health Mid Cities",
         "AccountName": "Encompass Health Mid Cities",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -1033,17 +1033,17 @@
     "DropoffZip": "76021",
     "DirectMileage": "1",
     "RideHours": "0.3",
-    "Comments": "T275, 192lbs, cn, needs str, Terrie Knowles (817)848-4018\n\n#TBD",
-    "Comments1": "T275, 192lbs, cn, needs str, Terrie Knowles (817)848-4018\n\n#TBD",
-    "notesFull": "T275, 192lbs, cn, needs str, Terrie Knowles (817)848-4018\n\n#TBD",
-    "notesPreview": "T275, 192lbs, cn, needs str, Terrie Knowles (817)848-4018",
+    "Comments": "T275, 192lbs, cn, needs str, Terrie Knowles (817)848-4018\r\n\r\n#TBD",
+    "Comments1": "T275, 192lbs, cn, needs str, Terrie Knowles (817)848-4018\r\n\r\n#TBD",
+    "notesFull": "T275, 192lbs, cn, needs str, Terrie Knowles (817)848-4018\n#TBD",
+    "notesPreview": "T275, 192lbs, cn, needs str, Terrie Knowles (817)848-4018 | #TBD",
     "legs": [
       {
         "FirstName": "Leonard ",
         "LastName": "Zimmerer",
         "MiddleInitial": "",
         "DOB": "9/29/1943 12:00:00 AM",
-        "Comments": "T275, 192lbs, cn, needs str, Terrie Knowles (817)848-4018\n\n#TBD ",
+        "Comments": "T275, 192lbs, cn, needs str, Terrie Knowles (817)848-4018\r\n\r\n#TBD ",
         "ConfirmationNumber": "51711",
         "RideDate": "4/21/2026 12:00:00 AM",
         "ScheduledPickupTime": "13:00",
@@ -1057,7 +1057,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "1.40",
-        "Comments1": "T275, 192lbs, cn, needs str, Terrie Knowles (817)848-4018\n\n#TBD ",
+        "Comments1": "T275, 192lbs, cn, needs str, Terrie Knowles (817)848-4018\r\n\r\n#TBD ",
         "PickupName": "Texas Health Harris Methodist Hurst-Euless-Bedford ",
         "PickupAddress1": "1600 Hospital Parkway",
         "PickupCity": "Bedford",
@@ -1070,7 +1070,7 @@
         "DropoffZip": "76021",
         "AccountCode": "Encompass Health Mid Cities",
         "AccountName": "Encompass Health Mid Cities",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -1242,7 +1242,7 @@
         "DropoffZip": "76021",
         "AccountCode": "Encompass Health Mid Cities",
         "AccountName": "Encompass Health Mid Cities",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -1377,17 +1377,17 @@
     "DropoffZip": "76021",
     "DirectMileage": "1",
     "RideHours": "0.3",
-    "Comments": "T520, 119lbs, cn, needs str, broken neck, fall risk, Sharda 817-848-4788\n#TBD",
-    "Comments1": "T520, 119lbs, cn, needs str, broken neck, fall risk, Sharda 817-848-4788\n#TBD",
+    "Comments": "T520, 119lbs, cn, needs str, broken neck, fall risk, Sharda 817-848-4788\r\n#TBD",
+    "Comments1": "T520, 119lbs, cn, needs str, broken neck, fall risk, Sharda 817-848-4788\r\n#TBD",
     "notesFull": "T520, 119lbs, cn, needs str, broken neck, fall risk, Sharda 817-848-4788\n#TBD",
-    "notesPreview": "T520, 119lbs, cn, needs str, broken neck, fall risk, Sharda 817-848-4788",
+    "notesPreview": "T520, 119lbs, cn, needs str, broken neck, fall risk, Sharda 817-848-4788 | #TBD",
     "legs": [
       {
         "FirstName": "Molly",
         "LastName": "Barber ",
         "MiddleInitial": "",
         "DOB": "5/16/1947 12:00:00 AM",
-        "Comments": "T520, 119lbs, cn, needs str, broken neck, fall risk, Sharda 817-848-4788\n#TBD",
+        "Comments": "T520, 119lbs, cn, needs str, broken neck, fall risk, Sharda 817-848-4788\r\n#TBD",
         "ConfirmationNumber": "51783",
         "RideDate": "4/23/2026 12:00:00 AM",
         "ScheduledPickupTime": "15:30",
@@ -1401,7 +1401,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "1.40",
-        "Comments1": "T520, 119lbs, cn, needs str, broken neck, fall risk, Sharda 817-848-4788\n#TBD",
+        "Comments1": "T520, 119lbs, cn, needs str, broken neck, fall risk, Sharda 817-848-4788\r\n#TBD",
         "PickupName": "Texas Health Harris Methodist Hurst-Euless-Bedford ",
         "PickupAddress1": "1600 Hospital Parkway",
         "PickupCity": "Bedford",
@@ -1414,7 +1414,7 @@
         "DropoffZip": "76021",
         "AccountCode": "Encompass Health Mid Cities",
         "AccountName": "Encompass Health Mid Cities",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -1586,7 +1586,7 @@
         "DropoffZip": "76021",
         "AccountCode": "Encompass Health Mid Cities",
         "AccountName": "Encompass Health Mid Cities",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",

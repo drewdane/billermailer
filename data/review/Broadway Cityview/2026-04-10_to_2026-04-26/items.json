@@ -28,17 +28,17 @@
     "DropoffZip": "76132",
     "DirectMileage": "4",
     "RideHours": "0.1667",
-    "Comments": "211, 334lbs, has a power chair, Debbie \n1015am arrival for a 1030am appt, #100",
-    "Comments1": "211, 334lbs, has a power chair, Debbie \n1015am arrival for a 1030am appt, #100",
-    "notesFull": "211, 334lbs, has a power chair, Debbie \n1015am arrival for a 1030am appt, #100",
-    "notesPreview": "211, 334lbs, has a power chair, Debbie",
+    "Comments": "211, 334lbs, has a power chair, Debbie \r\n1015am arrival for a 1030am appt, #100",
+    "Comments1": "211, 334lbs, has a power chair, Debbie \r\n1015am arrival for a 1030am appt, #100",
+    "notesFull": "211, 334lbs, has a power chair, Debbie\n1015am arrival for a 1030am appt, #100",
+    "notesPreview": "211, 334lbs, has a power chair, Debbie | 1015am arrival for a 1030am appt, #100",
     "legs": [
       {
         "FirstName": "Linda ",
         "LastName": "Hill",
         "MiddleInitial": "",
         "DOB": "11/9/1950 12:00:00 AM",
-        "Comments": "211, 334lbs, has a power chair, Debbie \n1015am arrival for a 1030am appt, #100 ",
+        "Comments": "211, 334lbs, has a power chair, Debbie \r\n1015am arrival for a 1030am appt, #100 ",
         "ConfirmationNumber": "51784",
         "RideDate": "4/24/2026 12:00:00 AM",
         "ScheduledPickupTime": "09:30",
@@ -52,7 +52,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "1.84",
-        "Comments1": "211, 334lbs, has a power chair, Debbie \n1015am arrival for a 1030am appt, #100 ",
+        "Comments1": "211, 334lbs, has a power chair, Debbie \r\n1015am arrival for a 1030am appt, #100 ",
         "PickupName": "Broadway Cityview",
         "PickupAddress1": "5301 Bryant Irvin Road",
         "PickupCity": "Fort Worth",
@@ -65,14 +65,14 @@
         "DropoffZip": "76132",
         "AccountCode": "Broadway Cityview",
         "AccountName": " Broadway Cityview",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "Linda ",
         "LastName": "Hill",
         "MiddleInitial": "",
         "DOB": "11/9/1950 12:00:00 AM",
-        "Comments": "211, 334lbs, has a power chair, Debbie \n1015am arrival for a 1030am appt, #100 ",
+        "Comments": "211, 334lbs, has a power chair, Debbie \r\n1015am arrival for a 1030am appt, #100 ",
         "ConfirmationNumber": "51785",
         "RideDate": "4/24/2026 12:00:00 AM",
         "ScheduledPickupTime": "11:03",
@@ -86,7 +86,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "1.84",
-        "Comments1": "211, 334lbs, has a power chair, Debbie \n1015am arrival for a 1030am appt, #100 ",
+        "Comments1": "211, 334lbs, has a power chair, Debbie \r\n1015am arrival for a 1030am appt, #100 ",
         "PickupName": "Touchstone Imaging Southwest Fort Worth",
         "PickupAddress1": "6900 Harris Parkway",
         "PickupCity": "Fort Worth",
@@ -99,7 +99,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Broadway Cityview",
         "AccountName": " Broadway Cityview",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",

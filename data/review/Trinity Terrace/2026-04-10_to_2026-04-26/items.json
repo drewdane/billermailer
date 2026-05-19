@@ -28,17 +28,17 @@
     "DropoffZip": "76102",
     "DirectMileage": "1",
     "RideHours": "0.0833",
-    "Comments": "Jones RM 364\n157 lbs\nSTR\nTrinity RM 208\nAgnes 817 250 4154",
-    "Comments1": "Jones RM 364\n157 lbs\nSTR\nTrinity RM 208\nAgnes 817 250 4154",
+    "Comments": "Jones RM 364\r\n157 lbs\r\nSTR\r\nTrinity RM 208\r\nAgnes 817 250 4154",
+    "Comments1": "Jones RM 364\r\n157 lbs\r\nSTR\r\nTrinity RM 208\r\nAgnes 817 250 4154",
     "notesFull": "Jones RM 364\n157 lbs\nSTR\nTrinity RM 208\nAgnes 817 250 4154",
-    "notesPreview": "Jones RM 364",
+    "notesPreview": "Jones RM 364 | 157 lbs | STR | Trinity RM 208 | Agnes 817 250 4154",
     "legs": [
       {
         "FirstName": "George",
         "LastName": "Hedrick",
         "MiddleInitial": "",
         "DOB": "1/12/1923 12:00:00 AM",
-        "Comments": "Jones RM 364\n157 lbs\nSTR\nTrinity RM 208\nAgnes 817 250 4154",
+        "Comments": "Jones RM 364\r\n157 lbs\r\nSTR\r\nTrinity RM 208\r\nAgnes 817 250 4154",
         "ConfirmationNumber": "51592",
         "RideDate": "4/15/2026 12:00:00 AM",
         "ScheduledPickupTime": "17:00",
@@ -52,7 +52,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "1.24",
-        "Comments1": "Jones RM 364\n157 lbs\nSTR\nTrinity RM 208\nAgnes 817 250 4154",
+        "Comments1": "Jones RM 364\r\n157 lbs\r\nSTR\r\nTrinity RM 208\r\nAgnes 817 250 4154",
         "PickupName": "Harris Jones Tower",
         "PickupAddress1": "1301 Pennsylvania Avenue",
         "PickupCity": "Fort Worth",
@@ -65,7 +65,7 @@
         "DropoffZip": "76102",
         "AccountCode": "Trinity Terrace ",
         "AccountName": "Trinity Terrace ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -206,17 +206,17 @@
     "DropoffZip": "76102",
     "DirectMileage": "2",
     "RideHours": "0.1167",
-    "Comments": "Bldg B rm 303, 122 lbs., STR, broken bones on left side, CN\n#232\n\nper Patrick 8179224985",
-    "Comments1": "Bldg B rm 303, 122 lbs., STR, broken bones on left side, CN\n#232\n\nper Patrick 8179224985",
-    "notesFull": "Bldg B rm 303, 122 lbs., STR, broken bones on left side, CN\n#232\n\nper Patrick 8179224985",
-    "notesPreview": "Bldg B rm 303, 122 lbs., STR, broken bones on left side, CN",
+    "Comments": "Bldg B rm 303, 122 lbs., STR, broken bones on left side, CN\r\n#232\r\n\r\nper Patrick 8179224985",
+    "Comments1": "Bldg B rm 303, 122 lbs., STR, broken bones on left side, CN\r\n#232\r\n\r\nper Patrick 8179224985",
+    "notesFull": "Bldg B rm 303, 122 lbs., STR, broken bones on left side, CN\n#232\nper Patrick 8179224985",
+    "notesPreview": "Bldg B rm 303, 122 lbs., STR, broken bones on left side, CN | #232 | per Patrick 8179224985",
     "legs": [
       {
         "FirstName": "Celia",
         "LastName": "Marsh",
         "MiddleInitial": "",
         "DOB": "6/11/1929 12:00:00 AM",
-        "Comments": "Bldg B rm 303, 122 lbs., STR, broken bones on left side, CN\n#232\n\nper Patrick 8179224985",
+        "Comments": "Bldg B rm 303, 122 lbs., STR, broken bones on left side, CN\r\n#232\r\n\r\nper Patrick 8179224985",
         "ConfirmationNumber": "51652",
         "RideDate": "4/17/2026 12:00:00 AM",
         "ScheduledPickupTime": "17:00",
@@ -230,7 +230,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "2.20",
-        "Comments1": "Bldg B rm 303, 122 lbs., STR, broken bones on left side, CN\n#232\n\nper Patrick 8179224985",
+        "Comments1": "Bldg B rm 303, 122 lbs., STR, broken bones on left side, CN\r\n#232\r\n\r\nper Patrick 8179224985",
         "PickupName": "Baylor All Saints Fort Worth B Building",
         "PickupAddress1": "1400 8th Avenue",
         "PickupCity": "Fort Worth",
@@ -243,7 +243,7 @@
         "DropoffZip": "76102",
         "AccountCode": "Trinity Terrace ",
         "AccountName": "Trinity Terrace ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -391,17 +391,17 @@
     "DropoffZip": "76102",
     "DirectMileage": "1",
     "RideHours": "0.0833",
-    "Comments": "H. 802, 1952lbs, cn, needs str, Cynthia Gorman (817)250-7859\n#232",
-    "Comments1": "H. 802, 1952lbs, cn, needs str, Cynthia Gorman (817)250-7859\n#232",
+    "Comments": "H. 802, 1952lbs, cn, needs str, Cynthia Gorman (817)250-7859\r\n#232",
+    "Comments1": "H. 802, 1952lbs, cn, needs str, Cynthia Gorman (817)250-7859\r\n#232",
     "notesFull": "H. 802, 1952lbs, cn, needs str, Cynthia Gorman (817)250-7859\n#232",
-    "notesPreview": "H. 802, 1952lbs, cn, needs str, Cynthia Gorman (817)250-7859",
+    "notesPreview": "H. 802, 1952lbs, cn, needs str, Cynthia Gorman (817)250-7859 | #232",
     "legs": [
       {
         "FirstName": "Sarah",
         "LastName": "Vance",
         "MiddleInitial": "",
         "DOB": "7/22/1947 12:00:00 AM",
-        "Comments": "H. 802, 1952lbs, cn, needs str, Cynthia Gorman (817)250-7859\n#232",
+        "Comments": "H. 802, 1952lbs, cn, needs str, Cynthia Gorman (817)250-7859\r\n#232",
         "ConfirmationNumber": "51716",
         "RideDate": "4/21/2026 12:00:00 AM",
         "ScheduledPickupTime": "15:30",
@@ -415,7 +415,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "1.31",
-        "Comments1": "H. 802, 1952lbs, cn, needs str, Cynthia Gorman (817)250-7859\n#232",
+        "Comments1": "H. 802, 1952lbs, cn, needs str, Cynthia Gorman (817)250-7859\r\n#232",
         "PickupName": "Harris Tower",
         "PickupAddress1": "1301 Pennsylvania Ave",
         "PickupCity": "Fort Worth",
@@ -428,7 +428,7 @@
         "DropoffZip": "76102",
         "AccountCode": "Trinity Terrace ",
         "AccountName": "Trinity Terrace ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -563,17 +563,17 @@
     "DropoffZip": "76022",
     "DirectMileage": "32",
     "RideHours": "0.3333",
-    "Comments": "235.A, 207lbs, cn, has wc, Tiffany 817-338-8208\n940am appt, new patient, #200, 817-848-4485",
-    "Comments1": "235.A, 207lbs, cn, has wc, Tiffany 817-338-8208\n940am appt, new patient, #200, 817-848-4485",
+    "Comments": "235.A, 207lbs, cn, has wc, Tiffany 817-338-8208\r\n940am appt, new patient, #200, 817-848-4485",
+    "Comments1": "235.A, 207lbs, cn, has wc, Tiffany 817-338-8208\r\n940am appt, new patient, #200, 817-848-4485",
     "notesFull": "235.A, 207lbs, cn, has wc, Tiffany 817-338-8208\n940am appt, new patient, #200, 817-848-4485",
-    "notesPreview": "235.A, 207lbs, cn, has wc, Tiffany 817-338-8208",
+    "notesPreview": "235.A, 207lbs, cn, has wc, Tiffany 817-338-8208 | 940am appt, new patient, #200, 817-848-4485",
     "legs": [
       {
         "FirstName": "Ruby",
         "LastName": "Bradshaw",
         "MiddleInitial": "",
         "DOB": "10/4/1931 12:00:00 AM",
-        "Comments": "235.A, 207lbs, cn, has wc, Tiffany 817-338-8208\n940am appt, new patient, #200, 817-848-4485",
+        "Comments": "235.A, 207lbs, cn, has wc, Tiffany 817-338-8208\r\n940am appt, new patient, #200, 817-848-4485",
         "ConfirmationNumber": "51632",
         "RideDate": "4/22/2026 12:00:00 AM",
         "ScheduledPickupTime": "09:00",
@@ -587,7 +587,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "15.76",
-        "Comments1": "235.A, 207lbs, cn, has wc, Tiffany 817-338-8208\n940am appt, new patient, #200, 817-848-4485",
+        "Comments1": "235.A, 207lbs, cn, has wc, Tiffany 817-338-8208\r\n940am appt, new patient, #200, 817-848-4485",
         "PickupName": "Trinity Terrace ",
         "PickupAddress1": "1600 Texas Street",
         "PickupCity": "Fort Worth",
@@ -600,14 +600,14 @@
         "DropoffZip": "76022",
         "AccountCode": "Trinity Terrace ",
         "AccountName": "Trinity Terrace ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "Ruby",
         "LastName": "Bradshaw",
         "MiddleInitial": "",
         "DOB": "10/4/1931 12:00:00 AM",
-        "Comments": "235.A, 207lbs, cn, has wc, Tiffany 817-338-8208\n940am appt, new patient, #200, 817-848-4485",
+        "Comments": "235.A, 207lbs, cn, has wc, Tiffany 817-338-8208\r\n940am appt, new patient, #200, 817-848-4485",
         "ConfirmationNumber": "51633",
         "RideDate": "4/22/2026 12:00:00 AM",
         "ScheduledPickupTime": "10:35",
@@ -621,7 +621,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "15.76",
-        "Comments1": "235.A, 207lbs, cn, has wc, Tiffany 817-338-8208\n940am appt, new patient, #200, 817-848-4485",
+        "Comments1": "235.A, 207lbs, cn, has wc, Tiffany 817-338-8208\r\n940am appt, new patient, #200, 817-848-4485",
         "PickupName": "Texas Health Neurology Specialists",
         "PickupAddress1": "1604 Hospital Parkway",
         "PickupCity": "Bedford",
@@ -634,7 +634,7 @@
         "DropoffZip": "76102",
         "AccountCode": "Trinity Terrace ",
         "AccountName": "Trinity Terrace ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -767,17 +767,17 @@
     "DropoffZip": "76102",
     "DirectMileage": "2",
     "RideHours": "0.1167",
-    "Comments": "B. 250, 180lbs, cn, ISO: C diff.  needs str, Irma 817-922-4660\n#228",
-    "Comments1": "B. 250, 180lbs, cn, ISO: C diff.  needs str, Irma 817-922-4660\n#228",
+    "Comments": "B. 250, 180lbs, cn, ISO: C diff.  needs str, Irma 817-922-4660\r\n#228",
+    "Comments1": "B. 250, 180lbs, cn, ISO: C diff.  needs str, Irma 817-922-4660\r\n#228",
     "notesFull": "B. 250, 180lbs, cn, ISO: C diff.  needs str, Irma 817-922-4660\n#228",
-    "notesPreview": "B. 250, 180lbs, cn, ISO: C diff.  needs str, Irma 817-922-4660",
+    "notesPreview": "B. 250, 180lbs, cn, ISO: C diff.  needs str, Irma 817-922-4660 | #228",
     "legs": [
       {
         "FirstName": "Darryl ",
         "LastName": "Simmonds ",
         "MiddleInitial": "",
         "DOB": "1/21/1934 12:00:00 AM",
-        "Comments": "B. 250, 180lbs, cn, ISO: C diff.  needs str, Irma 817-922-4660\n#228",
+        "Comments": "B. 250, 180lbs, cn, ISO: C diff.  needs str, Irma 817-922-4660\r\n#228",
         "ConfirmationNumber": "51760",
         "RideDate": "4/22/2026 12:00:00 AM",
         "ScheduledPickupTime": "17:30",
@@ -791,7 +791,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "2.20",
-        "Comments1": "B. 250, 180lbs, cn, ISO: C diff.  needs str, Irma 817-922-4660\n#228",
+        "Comments1": "B. 250, 180lbs, cn, ISO: C diff.  needs str, Irma 817-922-4660\r\n#228",
         "PickupName": "Baylor All Saints Fort Worth B Building",
         "PickupAddress1": "1400 8th Avenue",
         "PickupCity": "Fort Worth",
@@ -804,7 +804,7 @@
         "DropoffZip": "76102",
         "AccountCode": "Trinity Terrace ",
         "AccountName": "Trinity Terrace ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -945,17 +945,17 @@
     "DropoffZip": "76102",
     "DirectMileage": "2",
     "RideHours": "",
-    "Comments": "Bldg C rm 789, 199 lbs., needs recliner, able to s&t, CN\n#224\n\nper Amber 8172529740",
-    "Comments1": "Bldg C rm 789, 199 lbs., needs recliner, able to s&t, CN\n#224\n\nper Amber 8172529740",
-    "notesFull": "Bldg C rm 789, 199 lbs., needs recliner, able to s&t, CN\n#224\n\nper Amber 8172529740",
-    "notesPreview": "Bldg C rm 789, 199 lbs., needs recliner, able to s&t, CN",
+    "Comments": "Bldg C rm 789, 199 lbs., needs recliner, able to s&t, CN\r\n#224\r\n\r\nper Amber 8172529740",
+    "Comments1": "Bldg C rm 789, 199 lbs., needs recliner, able to s&t, CN\r\n#224\r\n\r\nper Amber 8172529740",
+    "notesFull": "Bldg C rm 789, 199 lbs., needs recliner, able to s&t, CN\n#224\nper Amber 8172529740",
+    "notesPreview": "Bldg C rm 789, 199 lbs., needs recliner, able to s&t, CN | #224 | per Amber 8172529740",
     "legs": [
       {
         "FirstName": "Gerald A.K.A. Jerry",
         "LastName": "Marsh",
         "MiddleInitial": "",
         "DOB": "12/3/1928 12:00:00 AM",
-        "Comments": "Bldg C rm 789, 199 lbs., needs recliner, able to s&t, CN\n#224\n\nper Amber 8172529740",
+        "Comments": "Bldg C rm 789, 199 lbs., needs recliner, able to s&t, CN\r\n#224\r\n\r\nper Amber 8172529740",
         "ConfirmationNumber": "51837",
         "RideDate": "4/24/2026 12:00:00 AM",
         "ScheduledPickupTime": "15:30",
@@ -969,7 +969,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "1.65",
-        "Comments1": "Bldg C rm 789, 199 lbs., needs recliner, able to s&t, CN\n#224\n\nper Amber 8172529740",
+        "Comments1": "Bldg C rm 789, 199 lbs., needs recliner, able to s&t, CN\r\n#224\r\n\r\nper Amber 8172529740",
         "PickupName": "Baylor All Saints  Building  C Building ",
         "PickupAddress1": "1400 8th Ave ",
         "PickupCity": "Fort Worth",
@@ -982,7 +982,7 @@
         "DropoffZip": "76102",
         "AccountCode": "Trinity Terrace ",
         "AccountName": "Trinity Terrace ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",

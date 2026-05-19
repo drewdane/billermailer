@@ -79,6 +79,11 @@ function renderRows() {
       : r.TripShape === "MULTI_STOP" ? "MS"
       : "1W";
   }
+
+  function extractMraNumberFromText(text) {
+    const m = String(text || "").match(/MRA\s*(?:#|num|number)?\s*(\d{9})/i);
+    return m ? m[1] : "";
+  }
   
   function computeWaitCharge(r) {
     if (!r.review?.AddWait) return 0;
@@ -160,14 +165,42 @@ function renderRows() {
     if (rate <= 0) return 0;
 
     const tripDate = String(r.RideDateISO || "");
-    const start = String(fuelState.fuelSurchargeStart || "");
-    const end = String(fuelState.fuelSurchargeEnd || "");
+    if (!tripDate) return 0;
 
-    if (!tripDate || !start || !end) return 0;
-    if (tripDate < start || tripDate > end) return 0;
+    const windows = Array.isArray(fuelState.fuelSurchargeWindows)
+      ? fuelState.fuelSurchargeWindows
+      : [];
 
-    const loadedMiles = Number(r.pricing?.audit?.billableMiles || 0);
-    const dhMiles = r.review?.AddDeadhead ? Number(r.deadheadMiles || 0) : 0;
+    const effectiveWindows = windows.length
+      ? windows
+      : [
+          {
+            start: fuelState.fuelSurchargeStart || "",
+            end: fuelState.fuelSurchargeEnd || "",
+          },
+        ];
+
+    const inWindow = effectiveWindows.some((win) => {
+      const start = String(win.start || "");
+      const end = String(win.end || "");
+
+      if (!start || !end) return false;
+
+      return tripDate >= start && tripDate <= end;
+    });
+
+    if (!inWindow) return 0;
+
+    const loadedMiles = Number(
+      r.review?.MileageOverride ||
+      r.pricing?.audit?.billableMiles ||
+      r.DirectMileage ||
+      0
+    );
+
+    const dhMiles = r.review?.AddDeadhead
+      ? Number(r.review?.DeadheadMiles || 0)
+      : 0;
 
     return rate * (loadedMiles + dhMiles);
   }
@@ -470,7 +503,6 @@ function renderRows() {
     typeSel.style.padding = "2px 4px";
 
     [
-      ["", "Auto"],
       ["AMBU", "AMBU"],
       ["WC", "WC"],
       ["STR", "STR"]
@@ -478,11 +510,53 @@ function renderRows() {
       const opt = document.createElement("option");
       opt.value = value;
       opt.textContent = label;
-      if ((r.review.TripTypeOverride || "") === value) opt.selected = true;
+      if ((r.review.TripTypeOverride || r.Mobility || "AMBU") === value) opt.selected = true;
       typeSel.appendChild(opt);
     });
 
     typeWrap.appendChild(typeSel);
+
+    const classWrap = document.createElement("label");
+    classWrap.style.whiteSpace = "nowrap";
+    classWrap.style.display = "inline-flex";
+    classWrap.style.alignItems = "center";
+    classWrap.style.gap = "4px";
+    classWrap.style.marginRight = "12px";
+    classWrap.style.marginBottom = "4px";
+
+    const classText = document.createElement("span");
+    classText.textContent = "Class";
+    classWrap.appendChild(classText);
+
+    const classSel = document.createElement("select");
+    classSel.style.border = "1px solid #d6d8ea";
+    classSel.style.borderRadius = "6px";
+    classSel.style.padding = "2px 4px";
+
+    [
+      "100 Admission",
+      "200 Discharge",
+      "300 Round Trip",
+      "350 Half Round Trip",
+      "375 Private Pay One Way",
+      "380 Private Pay Round Trip",
+      "400 Other",
+      "450 Cancellation"
+    ].forEach((value) => {
+      const opt = document.createElement("option");
+      opt.value = value;
+      opt.textContent = value;
+      classSel.appendChild(opt);
+    });
+
+    classSel.value = r.review?.ClassOverride || r.inferredClass || "400 Other";
+
+    classSel.onchange = () => {
+      r.review.ClassOverride = classSel.value;
+      if (window.markDirty) window.markDirty();
+    };
+
+    classWrap.appendChild(classSel);
 
     const dhWrap = document.createElement("label");
     dhWrap.style.whiteSpace = "nowrap";
@@ -513,61 +587,17 @@ function renderRows() {
     dhWrap.appendChild(dhMilesLabel);
 
     const noChargeCtl = makeCheckMoney("No Charge", !!r.review.NoCharge, "");
+    const mergeCtl = makeCheckMoney("Merge", !!r.review.MergeSelected, "");
 
     adjWrap.appendChild(typeWrap);
+    adjWrap.appendChild(classWrap);
+    adjWrap.appendChild(mergeCtl.label);
     adjWrap.appendChild(needwcCtl.label);
     adjWrap.appendChild(reclCtl.label);
     adjWrap.appendChild(hzCtl.label);
     adjWrap.appendChild(o2Ctl.label);
     adjWrap.appendChild(bariCtl.label);
     adjWrap.appendChild(dhWrap);
-
-    const moveWrap = document.createElement("label");
-    moveWrap.style.whiteSpace = "nowrap";
-    moveWrap.style.display = "inline-flex";
-    moveWrap.style.alignItems = "center";
-    moveWrap.style.gap = "4px";
-    moveWrap.style.marginRight = "12px";
-    moveWrap.style.marginBottom = "4px";
-
-    const moveText = document.createElement("span");
-    moveText.textContent = "Move";
-    moveWrap.appendChild(moveText);
-
-    const moveInput = document.createElement("select");
-    moveInput.style.width = "180px";
-    moveInput.style.border = "1px solid #d6d8ea";
-    moveInput.style.borderRadius = "6px";
-    moveInput.style.padding = "2px 4px";
-    moveInput.style.background = "#fff";
-
-    const blankOpt = document.createElement("option");
-    blankOpt.value = "";
-    blankOpt.textContent = "to account";
-    moveInput.appendChild(blankOpt);
-
-    const accountCodes = Array.isArray(window.BM_ACCOUNT_CODES) ? window.BM_ACCOUNT_CODES : [];
-    const currentMove = String(r.review.MoveToAccountCode || "").trim();
-
-    if (currentMove && !accountCodes.includes(currentMove)) {
-      const currentOpt = document.createElement("option");
-      currentOpt.value = currentMove;
-      currentOpt.textContent = currentMove + " (saved)";
-      moveInput.appendChild(currentOpt);
-    }
-
-    for (const acctCode of accountCodes) {
-      const opt = document.createElement("option");
-      opt.value = acctCode;
-      opt.textContent = acctCode;
-      moveInput.appendChild(opt);
-    }
-
-    moveInput.value = currentMove;
-
-    moveWrap.appendChild(moveInput);
-
-    adjWrap.appendChild(moveWrap);
 
     const waitWrap = document.createElement("label");
     waitWrap.style.whiteSpace = "nowrap";
@@ -636,6 +666,53 @@ function renderRows() {
 
     adjTd.appendChild(adjWrap);
     tr.appendChild(adjTd);
+
+    const moveWrap = document.createElement("label");
+    moveWrap.style.whiteSpace = "nowrap";
+    moveWrap.style.display = "inline-flex";
+    moveWrap.style.alignItems = "center";
+    moveWrap.style.gap = "4px";
+    moveWrap.style.marginRight = "12px";
+    moveWrap.style.marginBottom = "4px";
+
+    const moveText = document.createElement("span");
+    moveText.textContent = "Move";
+    moveWrap.appendChild(moveText);
+
+    const moveInput = document.createElement("select");
+    moveInput.style.width = "180px";
+    moveInput.style.border = "1px solid #d6d8ea";
+    moveInput.style.borderRadius = "6px";
+    moveInput.style.padding = "2px 4px";
+    moveInput.style.background = "#fff";
+
+    const blankOpt = document.createElement("option");
+    blankOpt.value = "";
+    blankOpt.textContent = "to account";
+    moveInput.appendChild(blankOpt);
+
+    const accountCodes = Array.isArray(window.BM_ACCOUNT_CODES) ? window.BM_ACCOUNT_CODES : [];
+    const currentMove = String(r.review.MoveToAccountCode || "").trim();
+
+    if (currentMove && !accountCodes.includes(currentMove)) {
+      const currentOpt = document.createElement("option");
+      currentOpt.value = currentMove;
+      currentOpt.textContent = currentMove + " (saved)";
+      moveInput.appendChild(currentOpt);
+    }
+
+    for (const acctCode of accountCodes) {
+      const opt = document.createElement("option");
+      opt.value = acctCode;
+      opt.textContent = acctCode;
+      moveInput.appendChild(opt);
+    }
+
+    moveInput.value = currentMove;
+
+    moveWrap.appendChild(moveInput);
+
+    adjWrap.appendChild(moveWrap);
 
     // Total
     const totalTd = makeCell();
@@ -770,7 +847,7 @@ function renderRows() {
     };
 
     typeSel.onchange = () => {
-      r.review.TripTypeOverride = typeSel.value || "";
+      r.review.TripTypeOverride = typeSel.value || r.Mobility || "AMBU";
       if (window.markDirty) window.markDirty();
     };
 
@@ -784,6 +861,10 @@ function renderRows() {
       refreshRowTotal();
       refreshDetailPanel();
       if (window.markDirty) window.markDirty();
+    };
+
+    mergeCtl.cb.onchange = () => {
+      r.review.MergeSelected = mergeCtl.cb.checked;
     };
 
     overrideCb.onchange = () => {
@@ -886,23 +967,42 @@ function renderRows() {
             );
           }
 
+          const canSplit =
+            Array.isArray(r.legs) &&
+            r.legs.length > 1;
+          
           const legsHtml = Array.isArray(r.legs) && r.legs.length
             ? r.legs.map((leg, idx) => {
-                const puName = esc(leg.PickupName || "");
-                const puAddr = esc(leg.PickupAddress1 || "");
+                const puNameRaw = leg.PickupName || "";
+                const puAddrRaw = leg.PickupAddress1 || "";
+                const doNameRaw = leg.DropoffName || "";
+                const doAddrRaw = leg.DropoffAddress1 || "";
+
+                const puName = esc(window.cleanLocationName ? window.cleanLocationName(puNameRaw) : puNameRaw);
+                const puAddr = esc(puAddrRaw);
                 const puCity = esc([leg.PickupCity, leg.PickupState, leg.PickupZip].filter(Boolean).join(" "));
-                const doName = esc(leg.DropoffName || "");
-                const doAddr = esc(leg.DropoffAddress1 || "");
+
+                const doName = esc(window.cleanLocationName ? window.cleanLocationName(doNameRaw) : doNameRaw);
+                const doAddr = esc(doAddrRaw);
                 const doCity = esc([leg.DropoffCity, leg.DropoffState, leg.DropoffZip].filter(Boolean).join(" "));
+                const puKey = "pu-" + idx;
+                const doKey = "do-" + idx;
                 return (
                   "<div>" +
-                    "<div style='margin-bottom:6px'><b>Leg " + (idx + 1) + "</b></div>" +
-                    "<div><b>Pick up:</b> " + puName + "</div>" +
-                    "<div style='color:#334155'>" + puAddr + "</div>" +
+                    "<div><b>Pick up:</b></div>" +
+                    "<input data-loc-edit='pu-name' data-loc-key='" + puKey + "' data-original-name='" + esc(puNameRaw) + "' data-original-address='" + esc(puAddrRaw) + "' value='" + puName + "' style='width:100%;box-sizing:border-box;margin-top:3px;border:1px solid #d6d8ea;border-radius:6px;padding:2px 4px' />" +
+                    "<input data-loc-edit='pu-address' data-loc-key='" + puKey + "' data-original-name='" + esc(puNameRaw) + "' data-original-address='" + esc(puAddrRaw) + "' value='" + puAddr + "' style='width:100%;box-sizing:border-box;margin-top:3px;border:1px solid #d6d8ea;border-radius:6px;padding:2px 4px' />" +
                     "<div style='color:#334155'>" + puCity + "</div>" +
-                    "<div style='margin-top:8px'><b>Drop-off:</b> " + doName + "</div>" +
-                    "<div style='color:#334155'>" + doAddr + "</div>" +
+                    "<button data-loc-save-alias='pu' data-loc-key='" + puKey + "' type='button' style='margin-top:6px'>" +
+                      "Save pick up address for future" +
+                    "</button>" +
+                    "<div style='margin-top:8px'><b>Drop-off:</b></div>" +
+                    "<input data-loc-edit='do-name' data-loc-key='" + doKey + "' data-original-name='" + esc(doNameRaw) + "' data-original-address='" + esc(doAddrRaw) + "' value='" + doName + "' style='width:100%;box-sizing:border-box;margin-top:3px;border:1px solid #d6d8ea;border-radius:6px;padding:2px 4px' />" +
+                    "<input data-loc-edit='do-address' data-loc-key='" + doKey + "' data-original-name='" + esc(doNameRaw) + "' data-original-address='" + esc(doAddrRaw) + "' value='" + doAddr + "' style='width:100%;box-sizing:border-box;margin-top:3px;border:1px solid #d6d8ea;border-radius:6px;padding:2px 4px' />" +
                     "<div style='color:#334155'>" + doCity + "</div>" +
+                    "<button data-loc-save-alias='do' data-loc-key='" + doKey + "' type='button' style='margin-top:6px'>" +
+                      "Save drop-off address for future" +
+                    "</button>" +
                   "</div>"
                 );
               }).join("")
@@ -928,6 +1028,62 @@ function renderRows() {
                 "<div>Fuel Surcharge: $" + fuelTotal.toFixed(2) + "</div>"
               );
           }
+
+          let splitHtml = "";
+
+          if (canSplit) {
+            splitHtml =
+              "<label style='display:flex;align-items:center;gap:6px;margin-top:8px'>" +
+                "<input data-split-trip type='checkbox' " +
+                (r.review?.SplitTrip ? "checked" : "") +
+                " />" +
+                "<span>Split this trip into separate 1-ways</span>" +
+              "</label>";
+          }
+          
+          let poHtml = "";
+
+          const poVal = esc(
+            r.review?.PoNumberOverride ||
+            r.poNumber ||
+            ""
+          );
+
+          const mraVal = esc(
+            r.review?.MraNumberOverride ||
+            extractMraNumberFromText(r.notesFull || "") ||
+            ""
+          );
+
+          poHtml =
+            "<div style='margin-top:12px;padding-top:8px;border-top:1px solid #e5e7eb'>" +
+
+              "<label style='display:flex;align-items:center;gap:6px;margin-bottom:6px'>" +
+                "<span style='width:90px'>PO#</span>" +
+                "<input data-po-number-override type='text' value='" + poVal + "' style='width:180px;border:1px solid #d6d8ea;border-radius:6px;padding:2px 4px' />" +
+              "</label>";
+
+          if (String(r.invoiceMethod || "").toLowerCase() === "thr_split") {
+            poHtml +=
+              "<div style='margin:10px 0 6px 0'><b>THR / Invoice Billing</b></div>" +
+
+              "<label style='display:flex;align-items:center;gap:6px;margin-bottom:6px'>" +
+                "<span style='width:90px'>MRA #</span>" +
+                "<input data-mra-number-override type='text' value='" + mraVal + "' style='width:180px;border:1px solid #d6d8ea;border-radius:6px;padding:2px 4px' />" +
+              "</label>" +
+
+              "<label style='display:flex;align-items:center;gap:6px'>" +
+                "<span style='width:90px'>Invoice Split</span>" +
+                "<select data-invoice-split-override style='width:180px;border:1px solid #d6d8ea;border-radius:6px;padding:2px 4px'>" +
+                  "<option value='OTHER'>Other</option>" +
+                  "<option value='ER'>ER</option>" +
+                  "<option value='ADMISSION'>Admission</option>" +
+                  "<option value='DISCHARGE'>Discharge</option>" +
+                "</select>" +
+              "</label>";
+          }
+
+          poHtml += "</div>";
 
           let actualTimesHtml = "";
 
@@ -967,6 +1123,8 @@ function renderRows() {
               "</div>";
           }
 
+          
+
           detailBox.innerHTML =
             "<div style='display:grid; grid-template-columns: 240px 320px repeat(auto-fit, minmax(260px, 1fr)); gap:20px; align-items:start'>" +
 
@@ -979,6 +1137,8 @@ function renderRows() {
                 chargedAccessoryLines.join("") +
                 "<div style='margin-top:6px'><b>Total: $" + grandTotal.toFixed(2) + "</b></div>" +
                 actualTimesHtml +
+                poHtml +
+                splitHtml +
               "</div>" +
 
               "<div>" +
@@ -989,9 +1149,106 @@ function renderRows() {
               legsHtml +
 
             "</div>";
+
+            detailBox.querySelectorAll("[data-loc-edit]").forEach((input) => {
+              input.oninput = () => {
+                const kind = input.dataset.locEdit || "";
+                const isPickup = kind.startsWith("pu");
+
+                if (isPickup) {
+                  if (kind === "pu-name") r.review.PickupNameOverride = input.value;
+                  if (kind === "pu-address") r.review.PickupAddress1Override = input.value;
+                } else {
+                  if (kind === "do-name") r.review.DropoffNameOverride = input.value;
+                  if (kind === "do-address") r.review.DropoffAddress1Override = input.value;
+                }
+
+                if (window.markDirty) window.markDirty();
+              };
+            });
+
+            detailBox.querySelectorAll("[data-loc-save-alias]").forEach((btn) => {
+              btn.onclick = async (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+
+                const side = btn.dataset.locSaveAlias || "";
+                const locKey = btn.dataset.locKey || "";
+                const isPickup = side === "pu";
+
+                const nameInput = detailBox.querySelector(
+                  `[data-loc-key='${locKey}'][data-loc-edit='${isPickup ? "pu-name" : "do-name"}']`
+                );
+
+                const addrInput = detailBox.querySelector(
+                  `[data-loc-key='${locKey}'][data-loc-edit='${isPickup ? "pu-address" : "do-address"}']`
+                );
+
+                const originalName = nameInput?.dataset.originalName || "";
+                const originalAddress1 = nameInput?.dataset.originalAddress || "";
+
+                const name = nameInput?.value || "";
+                const address1 = addrInput?.value || "";
+
+                await fetch("/api/location-alias", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({
+                    originalName,
+                    originalAddress1,
+                    name,
+                    address1
+                  })
+                });
+
+                btn.textContent = "Saved";
+                setTimeout(() => {
+                  btn.textContent = isPickup ? "Save pickup alias" : "Save drop-off alias";
+                }, 1200);
+
+                if (window.markDirty) window.markDirty();
+              };
+            });
+
+            const poInput = detailBox.querySelector("[data-po-number-override]");
+            if (poInput) {
+              poInput.oninput = () => {
+                r.review.PoNumberOverride = poInput.value;
+                if (window.markDirty) window.markDirty();
+              };
+            }
+
+            const splitSelect = detailBox.querySelector("[data-invoice-split-override]");
+            if (splitSelect) {
+              const savedSplit = String(r.review?.InvoiceSplitOverride || "").toUpperCase();
+
+              splitSelect.value = r.invoiceSplit || "OTHER";
+              splitSelect.onchange = () => {
+                r.review.InvoiceSplitOverride = splitSelect.value || "OTHER";
+                if (window.markDirty) window.markDirty();
+              };
+            }
+
+            const splitTripCb = detailBox.querySelector("[data-split-trip]");
+
+            if (splitTripCb) {
+              splitTripCb.onchange = () => {
+                r.review.SplitTrip = !!splitTripCb.checked;
+
+                if (window.markDirty) window.markDirty();
+              };
+            }
         }
 
-      const puOverrideInput = detailBox.querySelector("[data-pu-time-override]");
+      const mraInput = detailBox.querySelector("[data-mra-number-override]");
+      if (mraInput) {
+        mraInput.oninput = () => {
+          r.review.MraNumberOverride = mraInput.value;
+          if (window.markDirty) window.markDirty();
+        };
+      }
+      
+        const puOverrideInput = detailBox.querySelector("[data-pu-time-override]");
       if (puOverrideInput) {
         puOverrideInput.oninput = () => {
           r.review.ActualPickupTimeOverride = puOverrideInput.value;

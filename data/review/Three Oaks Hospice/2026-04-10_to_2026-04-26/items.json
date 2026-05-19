@@ -28,17 +28,17 @@
     "DropoffZip": "76109",
     "DirectMileage": "6",
     "RideHours": "0.3667",
-    "Comments": "ER 19, 123lbs, cn, needs Str & 3-4ltrs o2, Three Oaks Hospice Sharon Norwood 817-296-4411\n#222.B",
-    "Comments1": "ER 19, 123lbs, cn, needs Str & 3-4ltrs o2, Three Oaks Hospice Sharon Norwood 817-296-4411\n#222.B",
+    "Comments": "ER 19, 123lbs, cn, needs Str & 3-4ltrs o2, Three Oaks Hospice Sharon Norwood 817-296-4411\r\n#222.B",
+    "Comments1": "ER 19, 123lbs, cn, needs Str & 3-4ltrs o2, Three Oaks Hospice Sharon Norwood 817-296-4411\r\n#222.B",
     "notesFull": "ER 19, 123lbs, cn, needs Str & 3-4ltrs o2, Three Oaks Hospice Sharon Norwood 817-296-4411\n#222.B",
-    "notesPreview": "ER 19, 123lbs, cn, needs Str & 3-4ltrs o2, Three Oaks Hospice Sharon Norwood 817-296-4411",
+    "notesPreview": "ER 19, 123lbs, cn, needs Str & 3-4ltrs o2, Three Oaks Hospice Sharon Norwood 817-296-4411 | #222.B",
     "legs": [
       {
         "FirstName": "Lilia",
         "LastName": "Ortiz",
         "MiddleInitial": "",
         "DOB": "4/19/1933 12:00:00 AM",
-        "Comments": "ER 19, 123lbs, cn, needs Str & 3-4ltrs o2, Three Oaks Hospice Sharon Norwood 817-296-4411\n#222.B",
+        "Comments": "ER 19, 123lbs, cn, needs Str & 3-4ltrs o2, Three Oaks Hospice Sharon Norwood 817-296-4411\r\n#222.B",
         "ConfirmationNumber": "51519",
         "RideDate": "4/13/2026 12:00:00 AM",
         "ScheduledPickupTime": "12:45",
@@ -52,7 +52,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "6.23",
-        "Comments1": "ER 19, 123lbs, cn, needs Str & 3-4ltrs o2, Three Oaks Hospice Sharon Norwood 817-296-4411\n#222.B",
+        "Comments1": "ER 19, 123lbs, cn, needs Str & 3-4ltrs o2, Three Oaks Hospice Sharon Norwood 817-296-4411\r\n#222.B",
         "PickupName": "Harris Emergency Ambulance Bay ",
         "PickupAddress1": "910 5th Avenue",
         "PickupCity": "Fort Worth",
@@ -65,7 +65,7 @@
         "DropoffZip": "76109",
         "AccountCode": "Three Oaks Hospice",
         "AccountName": "Three Oaks  Hospice",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -206,17 +206,17 @@
     "DropoffZip": "76086",
     "DirectMileage": "19",
     "RideHours": "0.9667",
-    "Comments": "RM 305\nSTR\n210 lbs\nHilltop RM 119\n2L O2",
-    "Comments1": "RM 305\nSTR\n210 lbs\nHilltop RM 119\n2L O2",
+    "Comments": "RM 305\r\nSTR\r\n210 lbs\r\nHilltop RM 119\r\n2L O2",
+    "Comments1": "RM 305\r\nSTR\r\n210 lbs\r\nHilltop RM 119\r\n2L O2",
     "notesFull": "RM 305\nSTR\n210 lbs\nHilltop RM 119\n2L O2",
-    "notesPreview": "RM 305",
+    "notesPreview": "RM 305 | STR | 210 lbs | Hilltop RM 119 | 2L O2",
     "legs": [
       {
         "FirstName": "Roy ",
         "LastName": "Triggs",
         "MiddleInitial": "",
         "DOB": "12/17/1949 12:00:00 AM",
-        "Comments": "RM 305\nSTR\n210 lbs\nHilltop RM 119\n2L O2",
+        "Comments": "RM 305\r\nSTR\r\n210 lbs\r\nHilltop RM 119\r\n2L O2",
         "ConfirmationNumber": "51576",
         "RideDate": "4/15/2026 12:00:00 AM",
         "ScheduledPickupTime": "11:45",
@@ -230,7 +230,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "19.31",
-        "Comments1": "RM 305\nSTR\n210 lbs\nHilltop RM 119\n2L O2",
+        "Comments1": "RM 305\r\nSTR\r\n210 lbs\r\nHilltop RM 119\r\n2L O2",
         "PickupName": "Springtown Nursing & Rehab",
         "PickupAddress1": "201 Williams-Ward Road",
         "PickupCity": "Springtown",
@@ -243,7 +243,7 @@
         "DropoffZip": "76086",
         "AccountCode": "Three Oaks Hospice",
         "AccountName": "Three Oaks  Hospice",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",

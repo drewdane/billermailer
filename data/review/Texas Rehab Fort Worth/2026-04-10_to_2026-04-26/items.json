@@ -28,17 +28,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "1",
     "RideHours": "",
-    "Comments": "RM 117\n92 lbs\nHas WC\nhas uncapped trach, but has been approved per Mario\n1500 Dr Ducic\nKrista",
-    "Comments1": "RM 117\n92 lbs\nHas WC\nhas uncapped trach, but has been approved per Mario\n1500 Dr Ducic\nKrista",
+    "Comments": "RM 117\r\n92 lbs\r\nHas WC\r\nhas uncapped trach, but has been approved per Mario\r\n1500 Dr Ducic\r\nKrista",
+    "Comments1": "RM 117\r\n92 lbs\r\nHas WC\r\nhas uncapped trach, but has been approved per Mario\r\n1500 Dr Ducic\r\nKrista",
     "notesFull": "RM 117\n92 lbs\nHas WC\nhas uncapped trach, but has been approved per Mario\n1500 Dr Ducic\nKrista",
-    "notesPreview": "RM 117",
+    "notesPreview": "RM 117 | 92 lbs | Has WC | has uncapped trach, but has been approved per Mario | 1500 Dr Ducic | Krista",
     "legs": [
       {
         "FirstName": "Katheryn",
         "LastName": "Armstrong",
         "MiddleInitial": "",
         "DOB": "6/2/1955 12:00:00 AM",
-        "Comments": "RM 117\n92 lbs\nHas WC\nhas uncapped trach, but has been approved per Mario\n1500 Dr Ducic\nKrista",
+        "Comments": "RM 117\r\n92 lbs\r\nHas WC\r\nhas uncapped trach, but has been approved per Mario\r\n1500 Dr Ducic\r\nKrista",
         "ConfirmationNumber": "51478",
         "RideDate": "4/10/2026 12:00:00 AM",
         "ScheduledPickupTime": "14:30",
@@ -52,7 +52,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "0.50",
-        "Comments1": "RM 117\n92 lbs\nHas WC\nhas uncapped trach, but has been approved per Mario\n1500 Dr Ducic\nKrista",
+        "Comments1": "RM 117\r\n92 lbs\r\nHas WC\r\nhas uncapped trach, but has been approved per Mario\r\n1500 Dr Ducic\r\nKrista",
         "PickupName": "Texas Rehabilitation Hospital Fort Worth ",
         "PickupAddress1": "425 Alabama Ave",
         "PickupCity": "Fort Worth",
@@ -65,7 +65,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Texas Rehab Fort Worth ",
         "AccountName": "Texas Rehab Fort Worth ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -209,17 +209,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "1",
     "RideHours": "0.15",
-    "Comments": "**at the clinic lobby waiting\n\nRM 117\n92 lbs\nHas WC\nhas uncapped trach, but has been approved per Mario\n1500 Dr Ducic\nKrista",
-    "Comments1": "**at the clinic lobby waiting\n\nRM 117\n92 lbs\nHas WC\nhas uncapped trach, but has been approved per Mario\n1500 Dr Ducic\nKrista",
-    "notesFull": "**at the clinic lobby waiting\n\nRM 117\n92 lbs\nHas WC\nhas uncapped trach, but has been approved per Mario\n1500 Dr Ducic\nKrista",
-    "notesPreview": "**at the clinic lobby waiting",
+    "Comments": "**at the clinic lobby waiting\r\n\r\nRM 117\r\n92 lbs\r\nHas WC\r\nhas uncapped trach, but has been approved per Mario\r\n1500 Dr Ducic\r\nKrista",
+    "Comments1": "**at the clinic lobby waiting\r\n\r\nRM 117\r\n92 lbs\r\nHas WC\r\nhas uncapped trach, but has been approved per Mario\r\n1500 Dr Ducic\r\nKrista",
+    "notesFull": "**at the clinic lobby waiting\nRM 117\n92 lbs\nHas WC\nhas uncapped trach, but has been approved per Mario\n1500 Dr Ducic\nKrista",
+    "notesPreview": "**at the clinic lobby waiting | RM 117 | 92 lbs | Has WC | has uncapped trach, but has been approved per Mario | 1500 Dr Ducic | Krista",
     "legs": [
       {
         "FirstName": "Katheryn",
         "LastName": "Armstrong",
         "MiddleInitial": "",
         "DOB": "6/2/1955 12:00:00 AM",
-        "Comments": "**at the clinic lobby waiting\n\nRM 117\n92 lbs\nHas WC\nhas uncapped trach, but has been approved per Mario\n1500 Dr Ducic\nKrista",
+        "Comments": "**at the clinic lobby waiting\r\n\r\nRM 117\r\n92 lbs\r\nHas WC\r\nhas uncapped trach, but has been approved per Mario\r\n1500 Dr Ducic\r\nKrista",
         "ConfirmationNumber": "51479",
         "RideDate": "4/10/2026 12:00:00 AM",
         "ScheduledPickupTime": "15:26",
@@ -233,7 +233,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "0.50",
-        "Comments1": "**at the clinic lobby waiting\n\nRM 117\n92 lbs\nHas WC\nhas uncapped trach, but has been approved per Mario\n1500 Dr Ducic\nKrista",
+        "Comments1": "**at the clinic lobby waiting\r\n\r\nRM 117\r\n92 lbs\r\nHas WC\r\nhas uncapped trach, but has been approved per Mario\r\n1500 Dr Ducic\r\nKrista",
         "PickupName": "Dr Ducic",
         "PickupAddress1": "923 Pennsylvania Avenue",
         "PickupCity": "Fort Worth",
@@ -246,7 +246,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Texas Rehab Fort Worth ",
         "AccountName": "Texas Rehab Fort Worth ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -390,17 +390,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "1",
     "RideHours": "0.2667",
-    "Comments": "109, 190lbs, cn, needs str, +1 pass, Carrie \n12pm Ct Scan",
-    "Comments1": "109, 190lbs, cn, needs str, +1 pass, Carrie \n12pm Ct Scan",
-    "notesFull": "109, 190lbs, cn, needs str, +1 pass, Carrie \n12pm Ct Scan",
-    "notesPreview": "109, 190lbs, cn, needs str, +1 pass, Carrie",
+    "Comments": "109, 190lbs, cn, needs str, +1 pass, Carrie \r\n12pm Ct Scan",
+    "Comments1": "109, 190lbs, cn, needs str, +1 pass, Carrie \r\n12pm Ct Scan",
+    "notesFull": "109, 190lbs, cn, needs str, +1 pass, Carrie\n12pm Ct Scan",
+    "notesPreview": "109, 190lbs, cn, needs str, +1 pass, Carrie | 12pm Ct Scan",
     "legs": [
       {
         "FirstName": "Gregorio",
         "LastName": "Greene ",
         "MiddleInitial": "",
         "DOB": "1/6/1961 12:00:00 AM",
-        "Comments": "109, 190lbs, cn, needs str, +1 pass, Carrie \n12pm Ct Scan ",
+        "Comments": "109, 190lbs, cn, needs str, +1 pass, Carrie \r\n12pm Ct Scan ",
         "ConfirmationNumber": "51464",
         "RideDate": "4/10/2026 12:00:00 AM",
         "ScheduledPickupTime": "11:30",
@@ -414,7 +414,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "0.65",
-        "Comments1": "109, 190lbs, cn, needs str, +1 pass, Carrie \n12pm Ct Scan ",
+        "Comments1": "109, 190lbs, cn, needs str, +1 pass, Carrie \r\n12pm Ct Scan ",
         "PickupName": "Texas Rehabilitation Hospital Fort Worth ",
         "PickupAddress1": "425 Alabama Ave",
         "PickupCity": "Fort Worth",
@@ -427,7 +427,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Texas Rehab Fort Worth ",
         "AccountName": "Texas Rehab Fort Worth ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -568,17 +568,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "1",
     "RideHours": "0.1833",
-    "Comments": "109, 190lbs, cn, needs str, +1 pass, Carrie \n12pm Ct Scan",
-    "Comments1": "109, 190lbs, cn, needs str, +1 pass, Carrie \n12pm Ct Scan",
-    "notesFull": "109, 190lbs, cn, needs str, +1 pass, Carrie \n12pm Ct Scan",
-    "notesPreview": "109, 190lbs, cn, needs str, +1 pass, Carrie",
+    "Comments": "109, 190lbs, cn, needs str, +1 pass, Carrie \r\n12pm Ct Scan",
+    "Comments1": "109, 190lbs, cn, needs str, +1 pass, Carrie \r\n12pm Ct Scan",
+    "notesFull": "109, 190lbs, cn, needs str, +1 pass, Carrie\n12pm Ct Scan",
+    "notesPreview": "109, 190lbs, cn, needs str, +1 pass, Carrie | 12pm Ct Scan",
     "legs": [
       {
         "FirstName": "Gregorio",
         "LastName": "Greene ",
         "MiddleInitial": "",
         "DOB": "1/6/1961 12:00:00 AM",
-        "Comments": "109, 190lbs, cn, needs str, +1 pass, Carrie \n12pm Ct Scan ",
+        "Comments": "109, 190lbs, cn, needs str, +1 pass, Carrie \r\n12pm Ct Scan ",
         "ConfirmationNumber": "51465",
         "RideDate": "4/10/2026 12:00:00 AM",
         "ScheduledPickupTime": "12:15",
@@ -592,7 +592,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "0.65",
-        "Comments1": "109, 190lbs, cn, needs str, +1 pass, Carrie \n12pm Ct Scan ",
+        "Comments1": "109, 190lbs, cn, needs str, +1 pass, Carrie \r\n12pm Ct Scan ",
         "PickupName": "Harris Emergency CT Scan/ MRI Ambulance Bay ",
         "PickupAddress1": "910 5th Avenue",
         "PickupCity": "Fort Worth",
@@ -605,7 +605,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Texas Rehab Fort Worth ",
         "AccountName": "Texas Rehab Fort Worth ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -746,17 +746,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "1",
     "RideHours": "0.3833",
-    "Comments": "RM 227\n237 lbs\nSTR\n1300 CT\nCarrie",
-    "Comments1": "RM 227\n237 lbs\nSTR\n1300 CT\nCarrie",
+    "Comments": "RM 227\r\n237 lbs\r\nSTR\r\n1300 CT\r\nCarrie",
+    "Comments1": "RM 227\r\n237 lbs\r\nSTR\r\n1300 CT\r\nCarrie",
     "notesFull": "RM 227\n237 lbs\nSTR\n1300 CT\nCarrie",
-    "notesPreview": "RM 227",
+    "notesPreview": "RM 227 | 237 lbs | STR | 1300 CT | Carrie",
     "legs": [
       {
         "FirstName": "Gale",
         "LastName": "Smith",
         "MiddleInitial": "",
         "DOB": "9/23/1948 12:00:00 AM",
-        "Comments": "RM 227\n237 lbs\nSTR\n1300 CT\nCarrie",
+        "Comments": "RM 227\r\n237 lbs\r\nSTR\r\n1300 CT\r\nCarrie",
         "ConfirmationNumber": "51471",
         "RideDate": "4/10/2026 12:00:00 AM",
         "ScheduledPickupTime": "12:30",
@@ -770,7 +770,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "0.65",
-        "Comments1": "RM 227\n237 lbs\nSTR\n1300 CT\nCarrie",
+        "Comments1": "RM 227\r\n237 lbs\r\nSTR\r\n1300 CT\r\nCarrie",
         "PickupName": "Texas Rehabilitation Hospital Fort Worth ",
         "PickupAddress1": "425 Alabama Ave",
         "PickupCity": "Fort Worth",
@@ -783,7 +783,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Texas Rehab Fort Worth ",
         "AccountName": "Texas Rehab Fort Worth ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -924,17 +924,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "1",
     "RideHours": "0.25",
-    "Comments": "RM 227\n237 lbs\nSTR\n1300 CT\nCarrie",
-    "Comments1": "RM 227\n237 lbs\nSTR\n1300 CT\nCarrie",
+    "Comments": "RM 227\r\n237 lbs\r\nSTR\r\n1300 CT\r\nCarrie",
+    "Comments1": "RM 227\r\n237 lbs\r\nSTR\r\n1300 CT\r\nCarrie",
     "notesFull": "RM 227\n237 lbs\nSTR\n1300 CT\nCarrie",
-    "notesPreview": "RM 227",
+    "notesPreview": "RM 227 | 237 lbs | STR | 1300 CT | Carrie",
     "legs": [
       {
         "FirstName": "Gale",
         "LastName": "Smith",
         "MiddleInitial": "",
         "DOB": "9/23/1948 12:00:00 AM",
-        "Comments": "RM 227\n237 lbs\nSTR\n1300 CT\nCarrie",
+        "Comments": "RM 227\r\n237 lbs\r\nSTR\r\n1300 CT\r\nCarrie",
         "ConfirmationNumber": "51472",
         "RideDate": "4/10/2026 12:00:00 AM",
         "ScheduledPickupTime": "13:30",
@@ -948,7 +948,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "0.65",
-        "Comments1": "RM 227\n237 lbs\nSTR\n1300 CT\nCarrie",
+        "Comments1": "RM 227\r\n237 lbs\r\nSTR\r\n1300 CT\r\nCarrie",
         "PickupName": "Harris Emergency CT Scan/ MRI Ambulance Bay ",
         "PickupAddress1": "910 5th Avenue",
         "PickupCity": "Fort Worth",
@@ -961,7 +961,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Texas Rehab Fort Worth ",
         "AccountName": "Texas Rehab Fort Worth ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -1102,17 +1102,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "1",
     "RideHours": "",
-    "Comments": "*** add wait time ***\n\nrm 109 / regular str / 194 lbs / has rider / 12pm appt\nHarris Downtown ER for MRI\n\nper Carrie",
-    "Comments1": "*** add wait time ***\n\nrm 109 / regular str / 194 lbs / has rider / 12pm appt\nHarris Downtown ER for MRI\n\nper Carrie",
-    "notesFull": "*** add wait time ***\n\nrm 109 / regular str / 194 lbs / has rider / 12pm appt\nHarris Downtown ER for MRI\n\nper Carrie",
-    "notesPreview": "*** add wait time ***",
+    "Comments": "*** add wait time ***\r\n\r\nrm 109 / regular str / 194 lbs / has rider / 12pm appt\r\nHarris Downtown ER for MRI\r\n\r\nper Carrie",
+    "Comments1": "*** add wait time ***\r\n\r\nrm 109 / regular str / 194 lbs / has rider / 12pm appt\r\nHarris Downtown ER for MRI\r\n\r\nper Carrie",
+    "notesFull": "*** add wait time ***\nrm 109 / regular str / 194 lbs / has rider / 12pm appt\nHarris Downtown ER for MRI\nper Carrie",
+    "notesPreview": "*** add wait time *** | rm 109 / regular str / 194 lbs / has rider / 12pm appt | Harris Downtown ER for MRI | per Carrie",
     "legs": [
       {
         "FirstName": "Gregorio",
         "LastName": "Greene ",
         "MiddleInitial": "",
         "DOB": "1/6/1961 12:00:00 AM",
-        "Comments": "*** add wait time ***\n\nrm 109 / regular str / 194 lbs / has rider / 12pm appt\nHarris Downtown ER for MRI\n\nper Carrie",
+        "Comments": "*** add wait time ***\r\n\r\nrm 109 / regular str / 194 lbs / has rider / 12pm appt\r\nHarris Downtown ER for MRI\r\n\r\nper Carrie",
         "ConfirmationNumber": "51495",
         "RideDate": "4/11/2026 12:00:00 AM",
         "ScheduledPickupTime": "11:30",
@@ -1126,7 +1126,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "0.65",
-        "Comments1": "*** add wait time ***\n\nrm 109 / regular str / 194 lbs / has rider / 12pm appt\nHarris Downtown ER for MRI\n\nper Carrie",
+        "Comments1": "*** add wait time ***\r\n\r\nrm 109 / regular str / 194 lbs / has rider / 12pm appt\r\nHarris Downtown ER for MRI\r\n\r\nper Carrie",
         "PickupName": "Texas Rehabilitation Hospital Fort Worth ",
         "PickupAddress1": "425 Alabama Ave",
         "PickupCity": "Fort Worth",
@@ -1139,7 +1139,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Texas Rehab Fort Worth ",
         "AccountName": "Texas Rehab Fort Worth ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -1280,17 +1280,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "1",
     "RideHours": "",
-    "Comments": "*** add wait time ***\n\nrm 109 / regular str / 194 lbs / has rider / 12pm appt\nHarris Downtown ER for MRI\n\nper Carrie",
-    "Comments1": "*** add wait time ***\n\nrm 109 / regular str / 194 lbs / has rider / 12pm appt\nHarris Downtown ER for MRI\n\nper Carrie",
-    "notesFull": "*** add wait time ***\n\nrm 109 / regular str / 194 lbs / has rider / 12pm appt\nHarris Downtown ER for MRI\n\nper Carrie",
-    "notesPreview": "*** add wait time ***",
+    "Comments": "*** add wait time ***\r\n\r\nrm 109 / regular str / 194 lbs / has rider / 12pm appt\r\nHarris Downtown ER for MRI\r\n\r\nper Carrie",
+    "Comments1": "*** add wait time ***\r\n\r\nrm 109 / regular str / 194 lbs / has rider / 12pm appt\r\nHarris Downtown ER for MRI\r\n\r\nper Carrie",
+    "notesFull": "*** add wait time ***\nrm 109 / regular str / 194 lbs / has rider / 12pm appt\nHarris Downtown ER for MRI\nper Carrie",
+    "notesPreview": "*** add wait time *** | rm 109 / regular str / 194 lbs / has rider / 12pm appt | Harris Downtown ER for MRI | per Carrie",
     "legs": [
       {
         "FirstName": "Gregorio",
         "LastName": "Greene ",
         "MiddleInitial": "",
         "DOB": "1/6/1961 12:00:00 AM",
-        "Comments": "*** add wait time ***\n\nrm 109 / regular str / 194 lbs / has rider / 12pm appt\nHarris Downtown ER for MRI\n\nper Carrie",
+        "Comments": "*** add wait time ***\r\n\r\nrm 109 / regular str / 194 lbs / has rider / 12pm appt\r\nHarris Downtown ER for MRI\r\n\r\nper Carrie",
         "ConfirmationNumber": "51496",
         "RideDate": "4/11/2026 12:00:00 AM",
         "ScheduledPickupTime": "12:30",
@@ -1304,7 +1304,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "0.69",
-        "Comments1": "*** add wait time ***\n\nrm 109 / regular str / 194 lbs / has rider / 12pm appt\nHarris Downtown ER for MRI\n\nper Carrie",
+        "Comments1": "*** add wait time ***\r\n\r\nrm 109 / regular str / 194 lbs / has rider / 12pm appt\r\nHarris Downtown ER for MRI\r\n\r\nper Carrie",
         "PickupName": "Harris Emergency CT Scan/ MRI Ambulance Bay ",
         "PickupAddress1": "910 5th Avenue",
         "PickupCity": "Fort Worth",
@@ -1317,7 +1317,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Texas Rehab Fort Worth ",
         "AccountName": "Texas Rehab Fort Worth ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -1458,17 +1458,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "1",
     "RideHours": "",
-    "Comments": "**please use regular str for this trip\n\nrm 229, 215 lbs., STR, has a rider\n4:45pm appt per Carrie",
-    "Comments1": "**please use regular str for this trip\n\nrm 229, 215 lbs., STR, has a rider\n4:45pm appt per Carrie",
-    "notesFull": "**please use regular str for this trip\n\nrm 229, 215 lbs., STR, has a rider\n4:45pm appt per Carrie",
-    "notesPreview": "**please use regular str for this trip",
+    "Comments": "**please use regular str for this trip\r\n\r\nrm 229, 215 lbs., STR, has a rider\r\n4:45pm appt per Carrie",
+    "Comments1": "**please use regular str for this trip\r\n\r\nrm 229, 215 lbs., STR, has a rider\r\n4:45pm appt per Carrie",
+    "notesFull": "**please use regular str for this trip\nrm 229, 215 lbs., STR, has a rider\n4:45pm appt per Carrie",
+    "notesPreview": "**please use regular str for this trip | rm 229, 215 lbs., STR, has a rider | 4:45pm appt per Carrie",
     "legs": [
       {
         "FirstName": "Bret Ranister",
         "LastName": "Vickers ",
         "MiddleInitial": "",
         "DOB": "11/21/1958 12:00:00 AM",
-        "Comments": "**please use regular str for this trip\n\nrm 229, 215 lbs., STR, has a rider\n4:45pm appt per Carrie",
+        "Comments": "**please use regular str for this trip\r\n\r\nrm 229, 215 lbs., STR, has a rider\r\n4:45pm appt per Carrie",
         "ConfirmationNumber": "51497",
         "RideDate": "4/11/2026 12:00:00 AM",
         "ScheduledPickupTime": "16:30",
@@ -1482,7 +1482,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "0.65",
-        "Comments1": "**please use regular str for this trip\n\nrm 229, 215 lbs., STR, has a rider\n4:45pm appt per Carrie",
+        "Comments1": "**please use regular str for this trip\r\n\r\nrm 229, 215 lbs., STR, has a rider\r\n4:45pm appt per Carrie",
         "PickupName": "Texas Rehabilitation Hospital Fort Worth ",
         "PickupAddress1": "425 Alabama Ave",
         "PickupCity": "Fort Worth",
@@ -1495,7 +1495,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Texas Rehab Fort Worth ",
         "AccountName": "Texas Rehab Fort Worth ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -1636,17 +1636,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "1",
     "RideHours": "",
-    "Comments": "**please use regular str for this trip\n\nrm 229, 215 lbs., STR, has a rider\n4:45pm appt per Carrie",
-    "Comments1": "**please use regular str for this trip\n\nrm 229, 215 lbs., STR, has a rider\n4:45pm appt per Carrie",
-    "notesFull": "**please use regular str for this trip\n\nrm 229, 215 lbs., STR, has a rider\n4:45pm appt per Carrie",
-    "notesPreview": "**please use regular str for this trip",
+    "Comments": "**please use regular str for this trip\r\n\r\nrm 229, 215 lbs., STR, has a rider\r\n4:45pm appt per Carrie",
+    "Comments1": "**please use regular str for this trip\r\n\r\nrm 229, 215 lbs., STR, has a rider\r\n4:45pm appt per Carrie",
+    "notesFull": "**please use regular str for this trip\nrm 229, 215 lbs., STR, has a rider\n4:45pm appt per Carrie",
+    "notesPreview": "**please use regular str for this trip | rm 229, 215 lbs., STR, has a rider | 4:45pm appt per Carrie",
     "legs": [
       {
         "FirstName": "Bret Ranister",
         "LastName": "Vickers ",
         "MiddleInitial": "",
         "DOB": "11/21/1958 12:00:00 AM",
-        "Comments": "**please use regular str for this trip\n\nrm 229, 215 lbs., STR, has a rider\n4:45pm appt per Carrie",
+        "Comments": "**please use regular str for this trip\r\n\r\nrm 229, 215 lbs., STR, has a rider\r\n4:45pm appt per Carrie",
         "ConfirmationNumber": "51498",
         "RideDate": "4/11/2026 12:00:00 AM",
         "ScheduledPickupTime": "17:15",
@@ -1660,7 +1660,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "0.65",
-        "Comments1": "**please use regular str for this trip\n\nrm 229, 215 lbs., STR, has a rider\n4:45pm appt per Carrie",
+        "Comments1": "**please use regular str for this trip\r\n\r\nrm 229, 215 lbs., STR, has a rider\r\n4:45pm appt per Carrie",
         "PickupName": "Harris Emergency CT Scan/ MRI Ambulance Bay ",
         "PickupAddress1": "910 5th Avenue",
         "PickupCity": "Fort Worth",
@@ -1673,7 +1673,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Texas Rehab Fort Worth ",
         "AccountName": "Texas Rehab Fort Worth ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -1814,17 +1814,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "1",
     "RideHours": "0.2333",
-    "Comments": "RM 129\n127 lbs\nSTR\n1200 CT \nJessica",
-    "Comments1": "RM 129\n127 lbs\nSTR\n1200 CT \nJessica",
-    "notesFull": "RM 129\n127 lbs\nSTR\n1200 CT \nJessica",
-    "notesPreview": "RM 129",
+    "Comments": "RM 129\r\n127 lbs\r\nSTR\r\n1200 CT \r\nJessica",
+    "Comments1": "RM 129\r\n127 lbs\r\nSTR\r\n1200 CT \r\nJessica",
+    "notesFull": "RM 129\n127 lbs\nSTR\n1200 CT\nJessica",
+    "notesPreview": "RM 129 | 127 lbs | STR | 1200 CT | Jessica",
     "legs": [
       {
         "FirstName": "Joyce",
         "LastName": "Dawson",
         "MiddleInitial": "",
         "DOB": "6/7/1958 12:00:00 AM",
-        "Comments": "RM 129\n127 lbs\nSTR\n1200 CT \nJessica",
+        "Comments": "RM 129\r\n127 lbs\r\nSTR\r\n1200 CT \r\nJessica",
         "ConfirmationNumber": "51432",
         "RideDate": "4/13/2026 12:00:00 AM",
         "ScheduledPickupTime": "11:30",
@@ -1838,7 +1838,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "0.65",
-        "Comments1": "RM 129\n127 lbs\nSTR\n1200 CT \nJessica",
+        "Comments1": "RM 129\r\n127 lbs\r\nSTR\r\n1200 CT \r\nJessica",
         "PickupName": "Texas Rehabilitation Hospital Fort Worth ",
         "PickupAddress1": "425 Alabama Ave",
         "PickupCity": "Fort Worth",
@@ -1851,7 +1851,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Texas Rehab Fort Worth ",
         "AccountName": "Texas Rehab Fort Worth ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -1992,17 +1992,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "1",
     "RideHours": "0.1833",
-    "Comments": "RM 129\n127 lbs\nSTR\n1200 CT \nJessica",
-    "Comments1": "RM 129\n127 lbs\nSTR\n1200 CT \nJessica",
-    "notesFull": "RM 129\n127 lbs\nSTR\n1200 CT \nJessica",
-    "notesPreview": "RM 129",
+    "Comments": "RM 129\r\n127 lbs\r\nSTR\r\n1200 CT \r\nJessica",
+    "Comments1": "RM 129\r\n127 lbs\r\nSTR\r\n1200 CT \r\nJessica",
+    "notesFull": "RM 129\n127 lbs\nSTR\n1200 CT\nJessica",
+    "notesPreview": "RM 129 | 127 lbs | STR | 1200 CT | Jessica",
     "legs": [
       {
         "FirstName": "Joyce",
         "LastName": "Dawson",
         "MiddleInitial": "",
         "DOB": "6/7/1958 12:00:00 AM",
-        "Comments": "RM 129\n127 lbs\nSTR\n1200 CT \nJessica",
+        "Comments": "RM 129\r\n127 lbs\r\nSTR\r\n1200 CT \r\nJessica",
         "ConfirmationNumber": "51433",
         "RideDate": "4/13/2026 12:00:00 AM",
         "ScheduledPickupTime": "12:30",
@@ -2016,7 +2016,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "0.65",
-        "Comments1": "RM 129\n127 lbs\nSTR\n1200 CT \nJessica",
+        "Comments1": "RM 129\r\n127 lbs\r\nSTR\r\n1200 CT \r\nJessica",
         "PickupName": "Harris Emergency CT Scan/ MRI Ambulance Bay ",
         "PickupAddress1": "910 5th Avenue",
         "PickupCity": "Fort Worth",
@@ -2029,7 +2029,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Texas Rehab Fort Worth ",
         "AccountName": "Texas Rehab Fort Worth ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -2170,17 +2170,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "1",
     "RideHours": "",
-    "Comments": "***Incorrect Patient. NO CHARGE***\n\n226, 152lbs, needs str, Jessica \nCt Scan",
-    "Comments1": "***Incorrect Patient. NO CHARGE***\n\n226, 152lbs, needs str, Jessica \nCt Scan",
-    "notesFull": "***Incorrect Patient. NO CHARGE***\n\n226, 152lbs, needs str, Jessica \nCt Scan",
-    "notesPreview": "***Incorrect Patient. NO CHARGE***",
+    "Comments": "***Incorrect Patient. NO CHARGE***\r\n\r\n226, 152lbs, needs str, Jessica \r\nCt Scan",
+    "Comments1": "***Incorrect Patient. NO CHARGE***\r\n\r\n226, 152lbs, needs str, Jessica \r\nCt Scan",
+    "notesFull": "***Incorrect Patient. NO CHARGE***\n226, 152lbs, needs str, Jessica\nCt Scan",
+    "notesPreview": "***Incorrect Patient. NO CHARGE*** | 226, 152lbs, needs str, Jessica | Ct Scan",
     "legs": [
       {
         "FirstName": "Virginia ",
         "LastName": "Waddell",
         "MiddleInitial": "",
         "DOB": "1/17/1946 12:00:00 AM",
-        "Comments": "***Incorrect Patient. NO CHARGE***\n\n226, 152lbs, needs str, Jessica \nCt Scan ",
+        "Comments": "***Incorrect Patient. NO CHARGE***\r\n\r\n226, 152lbs, needs str, Jessica \r\nCt Scan ",
         "ConfirmationNumber": "51430",
         "RideDate": "4/13/2026 12:00:00 AM",
         "ScheduledPickupTime": "11:30",
@@ -2194,7 +2194,7 @@
         "Mobility": "S",
         "RideStatus": "RiderCancel ",
         "DirectMileage": "0.65",
-        "Comments1": "***Incorrect Patient. NO CHARGE***\n\n226, 152lbs, needs str, Jessica \nCt Scan ",
+        "Comments1": "***Incorrect Patient. NO CHARGE***\r\n\r\n226, 152lbs, needs str, Jessica \r\nCt Scan ",
         "PickupName": "Texas Rehabilitation Hospital Fort Worth ",
         "PickupAddress1": "425 Alabama Ave",
         "PickupCity": "Fort Worth",
@@ -2207,7 +2207,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Texas Rehab Fort Worth ",
         "AccountName": "Texas Rehab Fort Worth ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -2321,17 +2321,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "1",
     "RideHours": "",
-    "Comments": "226, 152lbs, needs str, Jessica \nCt Scan",
-    "Comments1": "226, 152lbs, needs str, Jessica \nCt Scan",
-    "notesFull": "226, 152lbs, needs str, Jessica \nCt Scan",
-    "notesPreview": "226, 152lbs, needs str, Jessica",
+    "Comments": "226, 152lbs, needs str, Jessica \r\nCt Scan",
+    "Comments1": "226, 152lbs, needs str, Jessica \r\nCt Scan",
+    "notesFull": "226, 152lbs, needs str, Jessica\nCt Scan",
+    "notesPreview": "226, 152lbs, needs str, Jessica | Ct Scan",
     "legs": [
       {
         "FirstName": "Virginia ",
         "LastName": "Waddell",
         "MiddleInitial": "",
         "DOB": "1/17/1946 12:00:00 AM",
-        "Comments": "226, 152lbs, needs str, Jessica \nCt Scan ",
+        "Comments": "226, 152lbs, needs str, Jessica \r\nCt Scan ",
         "ConfirmationNumber": "51431",
         "RideDate": "4/13/2026 12:00:00 AM",
         "ScheduledPickupTime": "12:30",
@@ -2345,7 +2345,7 @@
         "Mobility": "S",
         "RideStatus": "RiderCancel ",
         "DirectMileage": "0.65",
-        "Comments1": "226, 152lbs, needs str, Jessica \nCt Scan ",
+        "Comments1": "226, 152lbs, needs str, Jessica \r\nCt Scan ",
         "PickupName": "Harris Emergency CT Scan/ MRI Ambulance Bay ",
         "PickupAddress1": "910 5th Avenue",
         "PickupCity": "Fort Worth",
@@ -2358,7 +2358,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Texas Rehab Fort Worth ",
         "AccountName": "Texas Rehab Fort Worth ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -2509,7 +2509,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Texas Rehab Fort Worth ",
         "AccountName": "Texas Rehab Fort Worth ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -2687,7 +2687,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Texas Rehab Fort Worth ",
         "AccountName": "Texas Rehab Fort Worth ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -2828,17 +2828,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "0",
     "RideHours": "0.2333",
-    "Comments": "111, 203lbs, cn, has wc, Raquel \nUpper GI",
-    "Comments1": "111, 203lbs, cn, has wc, Raquel \nUpper GI",
-    "notesFull": "111, 203lbs, cn, has wc, Raquel \nUpper GI",
-    "notesPreview": "111, 203lbs, cn, has wc, Raquel",
+    "Comments": "111, 203lbs, cn, has wc, Raquel \r\nUpper GI",
+    "Comments1": "111, 203lbs, cn, has wc, Raquel \r\nUpper GI",
+    "notesFull": "111, 203lbs, cn, has wc, Raquel\nUpper GI",
+    "notesPreview": "111, 203lbs, cn, has wc, Raquel | Upper GI",
     "legs": [
       {
         "FirstName": "Gary ",
         "LastName": "Wedges ",
         "MiddleInitial": "",
         "DOB": "8/14/1956 12:00:00 AM",
-        "Comments": "111, 203lbs, cn, has wc, Raquel \nUpper GI ",
+        "Comments": "111, 203lbs, cn, has wc, Raquel \r\nUpper GI ",
         "ConfirmationNumber": "51567",
         "RideDate": "4/15/2026 12:00:00 AM",
         "ScheduledPickupTime": "13:00",
@@ -2852,7 +2852,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "0.27",
-        "Comments1": "111, 203lbs, cn, has wc, Raquel \nUpper GI ",
+        "Comments1": "111, 203lbs, cn, has wc, Raquel \r\nUpper GI ",
         "PickupName": "Texas Rehabilitation Hospital Fort Worth ",
         "PickupAddress1": "425 Alabama Ave",
         "PickupCity": "Fort Worth",
@@ -2865,7 +2865,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Texas Rehab Fort Worth ",
         "AccountName": "Texas Rehab Fort Worth ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -3001,17 +3001,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "0",
     "RideHours": "0.1167",
-    "Comments": "111, 203lbs, cn, has wc, Raquel \nUpper GI",
-    "Comments1": "111, 203lbs, cn, has wc, Raquel \nUpper GI",
-    "notesFull": "111, 203lbs, cn, has wc, Raquel \nUpper GI",
-    "notesPreview": "111, 203lbs, cn, has wc, Raquel",
+    "Comments": "111, 203lbs, cn, has wc, Raquel \r\nUpper GI",
+    "Comments1": "111, 203lbs, cn, has wc, Raquel \r\nUpper GI",
+    "notesFull": "111, 203lbs, cn, has wc, Raquel\nUpper GI",
+    "notesPreview": "111, 203lbs, cn, has wc, Raquel | Upper GI",
     "legs": [
       {
         "FirstName": "Gary ",
         "LastName": "Wedges ",
         "MiddleInitial": "",
         "DOB": "8/14/1956 12:00:00 AM",
-        "Comments": "111, 203lbs, cn, has wc, Raquel \nUpper GI ",
+        "Comments": "111, 203lbs, cn, has wc, Raquel \r\nUpper GI ",
         "ConfirmationNumber": "51568",
         "RideDate": "4/15/2026 12:00:00 AM",
         "ScheduledPickupTime": "14:00",
@@ -3025,7 +3025,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "0.36",
-        "Comments1": "111, 203lbs, cn, has wc, Raquel \nUpper GI ",
+        "Comments1": "111, 203lbs, cn, has wc, Raquel \r\nUpper GI ",
         "PickupName": "Harris Center",
         "PickupAddress1": "1325 Pennsylvania Avenue",
         "PickupCity": "Fort Worth",
@@ -3038,7 +3038,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Texas Rehab Fort Worth ",
         "AccountName": "Texas Rehab Fort Worth ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -3174,17 +3174,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "0",
     "RideHours": "0.1",
-    "Comments": "RM 204\n216 lbs\nHas WC\n1600 appt\nBridget",
-    "Comments1": "RM 204\n216 lbs\nHas WC\n1600 appt\nBridget",
+    "Comments": "RM 204\r\n216 lbs\r\nHas WC\r\n1600 appt\r\nBridget",
+    "Comments1": "RM 204\r\n216 lbs\r\nHas WC\r\n1600 appt\r\nBridget",
     "notesFull": "RM 204\n216 lbs\nHas WC\n1600 appt\nBridget",
-    "notesPreview": "RM 204",
+    "notesPreview": "RM 204 | 216 lbs | Has WC | 1600 appt | Bridget",
     "legs": [
       {
         "FirstName": "Nancy ",
         "LastName": "Yanni-Brumfield ",
         "MiddleInitial": "",
         "DOB": "11/30/1964 12:00:00 AM",
-        "Comments": "RM 204\n216 lbs\nHas WC\n1600 appt\nBridget",
+        "Comments": "RM 204\r\n216 lbs\r\nHas WC\r\n1600 appt\r\nBridget",
         "ConfirmationNumber": "51580",
         "RideDate": "4/15/2026 12:00:00 AM",
         "ScheduledPickupTime": "15:30",
@@ -3198,7 +3198,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "0.47",
-        "Comments1": "RM 204\n216 lbs\nHas WC\n1600 appt\nBridget",
+        "Comments1": "RM 204\r\n216 lbs\r\nHas WC\r\n1600 appt\r\nBridget",
         "PickupName": "Texas Rehabilitation Hospital Fort Worth ",
         "PickupAddress1": "425 Alabama Ave",
         "PickupCity": "Fort Worth",
@@ -3211,7 +3211,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Texas Rehab Fort Worth ",
         "AccountName": "Texas Rehab Fort Worth ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -3347,17 +3347,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "0",
     "RideHours": "0.2667",
-    "Comments": "*** waiting at the front of building, lobby\n\nRM 204\n216 lbs\nHas WC\n1600 appt\nBridget",
-    "Comments1": "*** waiting at the front of building, lobby\n\nRM 204\n216 lbs\nHas WC\n1600 appt\nBridget",
-    "notesFull": "*** waiting at the front of building, lobby\n\nRM 204\n216 lbs\nHas WC\n1600 appt\nBridget",
-    "notesPreview": "*** waiting at the front of building, lobby",
+    "Comments": "*** waiting at the front of building, lobby\r\n\r\nRM 204\r\n216 lbs\r\nHas WC\r\n1600 appt\r\nBridget",
+    "Comments1": "*** waiting at the front of building, lobby\r\n\r\nRM 204\r\n216 lbs\r\nHas WC\r\n1600 appt\r\nBridget",
+    "notesFull": "*** waiting at the front of building, lobby\nRM 204\n216 lbs\nHas WC\n1600 appt\nBridget",
+    "notesPreview": "*** waiting at the front of building, lobby | RM 204 | 216 lbs | Has WC | 1600 appt | Bridget",
     "legs": [
       {
         "FirstName": "Nancy ",
         "LastName": "Yanni-Brumfield ",
         "MiddleInitial": "",
         "DOB": "11/30/1964 12:00:00 AM",
-        "Comments": "*** waiting at the front of building, lobby\n\nRM 204\n216 lbs\nHas WC\n1600 appt\nBridget",
+        "Comments": "*** waiting at the front of building, lobby\r\n\r\nRM 204\r\n216 lbs\r\nHas WC\r\n1600 appt\r\nBridget",
         "ConfirmationNumber": "51581",
         "RideDate": "4/15/2026 12:00:00 AM",
         "ScheduledPickupTime": "18:01",
@@ -3371,7 +3371,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "0.47",
-        "Comments1": "*** waiting at the front of building, lobby\n\nRM 204\n216 lbs\nHas WC\n1600 appt\nBridget",
+        "Comments1": "*** waiting at the front of building, lobby\r\n\r\nRM 204\r\n216 lbs\r\nHas WC\r\n1600 appt\r\nBridget",
         "PickupName": "Klabzuba Tower",
         "PickupAddress1": "1300 West Terrell Avenue",
         "PickupCity": "Fort Worth",
@@ -3384,7 +3384,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Texas Rehab Fort Worth ",
         "AccountName": "Texas Rehab Fort Worth ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -3520,17 +3520,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "1",
     "RideHours": "0.4667",
-    "Comments": "RM 102\n141 lbs\nSTR\n1200 CT\nJessica",
-    "Comments1": "RM 102\n141 lbs\nSTR\n1200 CT\nJessica",
+    "Comments": "RM 102\r\n141 lbs\r\nSTR\r\n1200 CT\r\nJessica",
+    "Comments1": "RM 102\r\n141 lbs\r\nSTR\r\n1200 CT\r\nJessica",
     "notesFull": "RM 102\n141 lbs\nSTR\n1200 CT\nJessica",
-    "notesPreview": "RM 102",
+    "notesPreview": "RM 102 | 141 lbs | STR | 1200 CT | Jessica",
     "legs": [
       {
         "FirstName": "Arlynne",
         "LastName": "Olk",
         "MiddleInitial": "",
         "DOB": "9/1/1944 12:00:00 AM",
-        "Comments": "RM 102\n141 lbs\nSTR\n1200 CT\nJessica",
+        "Comments": "RM 102\r\n141 lbs\r\nSTR\r\n1200 CT\r\nJessica",
         "ConfirmationNumber": "51628",
         "RideDate": "4/17/2026 12:00:00 AM",
         "ScheduledPickupTime": "11:30",
@@ -3544,7 +3544,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "0.65",
-        "Comments1": "RM 102\n141 lbs\nSTR\n1200 CT\nJessica",
+        "Comments1": "RM 102\r\n141 lbs\r\nSTR\r\n1200 CT\r\nJessica",
         "PickupName": "Texas Rehabilitation Hospital Fort Worth ",
         "PickupAddress1": "425 Alabama Ave",
         "PickupCity": "Fort Worth",
@@ -3557,7 +3557,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Texas Rehab Fort Worth ",
         "AccountName": "Texas Rehab Fort Worth ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -3698,17 +3698,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "1",
     "RideHours": "0.1667",
-    "Comments": "RM 102\n141 lbs\nSTR\n1200 CT\nJessica",
-    "Comments1": "RM 102\n141 lbs\nSTR\n1200 CT\nJessica",
+    "Comments": "RM 102\r\n141 lbs\r\nSTR\r\n1200 CT\r\nJessica",
+    "Comments1": "RM 102\r\n141 lbs\r\nSTR\r\n1200 CT\r\nJessica",
     "notesFull": "RM 102\n141 lbs\nSTR\n1200 CT\nJessica",
-    "notesPreview": "RM 102",
+    "notesPreview": "RM 102 | 141 lbs | STR | 1200 CT | Jessica",
     "legs": [
       {
         "FirstName": "Arlynne",
         "LastName": "Olk",
         "MiddleInitial": "",
         "DOB": "9/1/1944 12:00:00 AM",
-        "Comments": "RM 102\n141 lbs\nSTR\n1200 CT\nJessica",
+        "Comments": "RM 102\r\n141 lbs\r\nSTR\r\n1200 CT\r\nJessica",
         "ConfirmationNumber": "51629",
         "RideDate": "4/17/2026 12:00:00 AM",
         "ScheduledPickupTime": "12:30",
@@ -3722,7 +3722,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "0.65",
-        "Comments1": "RM 102\n141 lbs\nSTR\n1200 CT\nJessica",
+        "Comments1": "RM 102\r\n141 lbs\r\nSTR\r\n1200 CT\r\nJessica",
         "PickupName": "Harris Emergency CT Scan/ MRI Ambulance Bay ",
         "PickupAddress1": "910 5th Avenue",
         "PickupCity": "Fort Worth",
@@ -3735,7 +3735,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Texas Rehab Fort Worth ",
         "AccountName": "Texas Rehab Fort Worth ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -3876,17 +3876,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "1",
     "RideHours": "0.1333",
-    "Comments": "111, 123lbs, cn, has wc, Jessica\n10am appt,",
-    "Comments1": "111, 123lbs, cn, has wc, Jessica\n10am appt,",
+    "Comments": "111, 123lbs, cn, has wc, Jessica\r\n10am appt,",
+    "Comments1": "111, 123lbs, cn, has wc, Jessica\r\n10am appt,",
     "notesFull": "111, 123lbs, cn, has wc, Jessica\n10am appt,",
-    "notesPreview": "111, 123lbs, cn, has wc, Jessica",
+    "notesPreview": "111, 123lbs, cn, has wc, Jessica | 10am appt,",
     "legs": [
       {
         "FirstName": "Gary ",
         "LastName": "Wedges ",
         "MiddleInitial": "",
         "DOB": "8/14/1956 12:00:00 AM",
-        "Comments": "111, 123lbs, cn, has wc, Jessica\n10am appt, ",
+        "Comments": "111, 123lbs, cn, has wc, Jessica\r\n10am appt, ",
         "ConfirmationNumber": "51599",
         "RideDate": "4/17/2026 12:00:00 AM",
         "ScheduledPickupTime": "09:30",
@@ -3900,7 +3900,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "0.52",
-        "Comments1": "111, 123lbs, cn, has wc, Jessica\n10am appt, ",
+        "Comments1": "111, 123lbs, cn, has wc, Jessica\r\n10am appt, ",
         "PickupName": "Texas Rehabilitation Hospital Fort Worth ",
         "PickupAddress1": "425 Alabama Ave",
         "PickupCity": "Fort Worth",
@@ -3913,7 +3913,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Texas Rehab Fort Worth ",
         "AccountName": "Texas Rehab Fort Worth ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -4057,17 +4057,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "1",
     "RideHours": "",
-    "Comments": "111, 123lbs, cn, has wc, Jessica\n10am appt,",
-    "Comments1": "111, 123lbs, cn, has wc, Jessica\n10am appt,",
+    "Comments": "111, 123lbs, cn, has wc, Jessica\r\n10am appt,",
+    "Comments1": "111, 123lbs, cn, has wc, Jessica\r\n10am appt,",
     "notesFull": "111, 123lbs, cn, has wc, Jessica\n10am appt,",
-    "notesPreview": "111, 123lbs, cn, has wc, Jessica",
+    "notesPreview": "111, 123lbs, cn, has wc, Jessica | 10am appt,",
     "legs": [
       {
         "FirstName": "Gary ",
         "LastName": "Wedges ",
         "MiddleInitial": "",
         "DOB": "8/14/1956 12:00:00 AM",
-        "Comments": "111, 123lbs, cn, has wc, Jessica\n10am appt, ",
+        "Comments": "111, 123lbs, cn, has wc, Jessica\r\n10am appt, ",
         "ConfirmationNumber": "51600",
         "RideDate": "4/17/2026 12:00:00 AM",
         "ScheduledPickupTime": "10:40",
@@ -4081,7 +4081,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "0.52",
-        "Comments1": "111, 123lbs, cn, has wc, Jessica\n10am appt, ",
+        "Comments1": "111, 123lbs, cn, has wc, Jessica\r\n10am appt, ",
         "PickupName": "Harris Center",
         "PickupAddress1": "1325 Pennsylvania Avenue",
         "PickupCity": "Fort Worth",
@@ -4094,7 +4094,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Texas Rehab Fort Worth ",
         "AccountName": "Texas Rehab Fort Worth ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -4238,17 +4238,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "1",
     "RideHours": "0",
-    "Comments": "** use van 61, regular str **\n\nrm 211 / str / 122 lbs / has rider / 2pm appt\nHarris Downtown ER Ct Scan\n\nper Jessica\n*** charge waiting time ***",
-    "Comments1": "** use van 61, regular str **\n\nrm 211 / str / 122 lbs / has rider / 2pm appt\nHarris Downtown ER Ct Scan\n\nper Jessica\n*** charge waiting time ***",
-    "notesFull": "** use van 61, regular str **\n\nrm 211 / str / 122 lbs / has rider / 2pm appt\nHarris Downtown ER Ct Scan\n\nper Jessica\n*** charge waiting time ***",
-    "notesPreview": "** use van 61, regular str **",
+    "Comments": "** use van 61, regular str **\r\n\r\nrm 211 / str / 122 lbs / has rider / 2pm appt\r\nHarris Downtown ER Ct Scan\r\n\r\nper Jessica\r\n*** charge waiting time ***",
+    "Comments1": "** use van 61, regular str **\r\n\r\nrm 211 / str / 122 lbs / has rider / 2pm appt\r\nHarris Downtown ER Ct Scan\r\n\r\nper Jessica\r\n*** charge waiting time ***",
+    "notesFull": "** use van 61, regular str **\nrm 211 / str / 122 lbs / has rider / 2pm appt\nHarris Downtown ER Ct Scan\nper Jessica\n*** charge waiting time ***",
+    "notesPreview": "** use van 61, regular str ** | rm 211 / str / 122 lbs / has rider / 2pm appt | Harris Downtown ER Ct Scan | per Jessica | *** charge waiting time ***",
     "legs": [
       {
         "FirstName": "Jane",
         "LastName": "Harmonson",
         "MiddleInitial": "",
         "DOB": "3/14/1943 12:00:00 AM",
-        "Comments": "** use van 61, regular str **\n\nrm 211 / str / 122 lbs / has rider / 2pm appt\nHarris Downtown ER Ct Scan\n\nper Jessica\n*** charge waiting time ***",
+        "Comments": "** use van 61, regular str **\r\n\r\nrm 211 / str / 122 lbs / has rider / 2pm appt\r\nHarris Downtown ER Ct Scan\r\n\r\nper Jessica\r\n*** charge waiting time ***",
         "ConfirmationNumber": "51667",
         "RideDate": "4/19/2026 12:00:00 AM",
         "ScheduledPickupTime": "13:30",
@@ -4262,7 +4262,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "0.65",
-        "Comments1": "** use van 61, regular str **\n\nrm 211 / str / 122 lbs / has rider / 2pm appt\nHarris Downtown ER Ct Scan\n\nper Jessica\n*** charge waiting time ***",
+        "Comments1": "** use van 61, regular str **\r\n\r\nrm 211 / str / 122 lbs / has rider / 2pm appt\r\nHarris Downtown ER Ct Scan\r\n\r\nper Jessica\r\n*** charge waiting time ***",
         "PickupName": "Texas Rehabilitation Hospital Fort Worth ",
         "PickupAddress1": "425 Alabama Ave",
         "PickupCity": "Fort Worth",
@@ -4275,7 +4275,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Texas Rehab Fort Worth ",
         "AccountName": "Texas Rehab Fort Worth ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -4416,17 +4416,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "1",
     "RideHours": "0",
-    "Comments": "** use van 61, regular str **\n\nrm 211 / str / 122 lbs / has rider / 2pm appt\nHarris Downtown ER Ct Scan\n\nper Jessica\n*** charge waiting time ***",
-    "Comments1": "** use van 61, regular str **\n\nrm 211 / str / 122 lbs / has rider / 2pm appt\nHarris Downtown ER Ct Scan\n\nper Jessica\n*** charge waiting time ***",
-    "notesFull": "** use van 61, regular str **\n\nrm 211 / str / 122 lbs / has rider / 2pm appt\nHarris Downtown ER Ct Scan\n\nper Jessica\n*** charge waiting time ***",
-    "notesPreview": "** use van 61, regular str **",
+    "Comments": "** use van 61, regular str **\r\n\r\nrm 211 / str / 122 lbs / has rider / 2pm appt\r\nHarris Downtown ER Ct Scan\r\n\r\nper Jessica\r\n*** charge waiting time ***",
+    "Comments1": "** use van 61, regular str **\r\n\r\nrm 211 / str / 122 lbs / has rider / 2pm appt\r\nHarris Downtown ER Ct Scan\r\n\r\nper Jessica\r\n*** charge waiting time ***",
+    "notesFull": "** use van 61, regular str **\nrm 211 / str / 122 lbs / has rider / 2pm appt\nHarris Downtown ER Ct Scan\nper Jessica\n*** charge waiting time ***",
+    "notesPreview": "** use van 61, regular str ** | rm 211 / str / 122 lbs / has rider / 2pm appt | Harris Downtown ER Ct Scan | per Jessica | *** charge waiting time ***",
     "legs": [
       {
         "FirstName": "Jane",
         "LastName": "Harmonson",
         "MiddleInitial": "",
         "DOB": "3/14/1943 12:00:00 AM",
-        "Comments": "** use van 61, regular str **\n\nrm 211 / str / 122 lbs / has rider / 2pm appt\nHarris Downtown ER Ct Scan\n\nper Jessica\n*** charge waiting time ***",
+        "Comments": "** use van 61, regular str **\r\n\r\nrm 211 / str / 122 lbs / has rider / 2pm appt\r\nHarris Downtown ER Ct Scan\r\n\r\nper Jessica\r\n*** charge waiting time ***",
         "ConfirmationNumber": "51668",
         "RideDate": "4/19/2026 12:00:00 AM",
         "ScheduledPickupTime": "14:30",
@@ -4440,7 +4440,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "0.65",
-        "Comments1": "** use van 61, regular str **\n\nrm 211 / str / 122 lbs / has rider / 2pm appt\nHarris Downtown ER Ct Scan\n\nper Jessica\n*** charge waiting time ***",
+        "Comments1": "** use van 61, regular str **\r\n\r\nrm 211 / str / 122 lbs / has rider / 2pm appt\r\nHarris Downtown ER Ct Scan\r\n\r\nper Jessica\r\n*** charge waiting time ***",
         "PickupName": "Harris Emergency CT Scan/ MRI Ambulance Bay ",
         "PickupAddress1": "910 5th Avenue",
         "PickupCity": "Fort Worth",
@@ -4453,7 +4453,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Texas Rehab Fort Worth ",
         "AccountName": "Texas Rehab Fort Worth ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -4594,17 +4594,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "0",
     "RideHours": "",
-    "Comments": "rm 129, 118 lbs., has wc, alert, either sister Dina will ride with or a family will meet at appt per Bridgette\n9:15am appt time, ste 500 Dr. Bhansali (817)250-4280",
-    "Comments1": "rm 129, 118 lbs., has wc, alert, either sister Dina will ride with or a family will meet at appt per Bridgette\n9:15am appt time, ste 500 Dr. Bhansali (817)250-4280",
+    "Comments": "rm 129, 118 lbs., has wc, alert, either sister Dina will ride with or a family will meet at appt per Bridgette\r\n9:15am appt time, ste 500 Dr. Bhansali (817)250-4280",
+    "Comments1": "rm 129, 118 lbs., has wc, alert, either sister Dina will ride with or a family will meet at appt per Bridgette\r\n9:15am appt time, ste 500 Dr. Bhansali (817)250-4280",
     "notesFull": "rm 129, 118 lbs., has wc, alert, either sister Dina will ride with or a family will meet at appt per Bridgette\n9:15am appt time, ste 500 Dr. Bhansali (817)250-4280",
-    "notesPreview": "rm 129, 118 lbs., has wc, alert, either sister Dina will ride with or a family will meet at appt per Bridgette",
+    "notesPreview": "rm 129, 118 lbs., has wc, alert, either sister Dina will ride with or a family will meet at appt per Bridgette | 9:15am appt time, ste 500 Dr. Bhansali (817)...",
     "legs": [
       {
         "FirstName": "Joyce",
         "LastName": "Dawson",
         "MiddleInitial": "",
         "DOB": "6/7/1958 12:00:00 AM",
-        "Comments": "rm 129, 118 lbs., has wc, alert, either sister Dina will ride with or a family will meet at appt per Bridgette\n9:15am appt time, ste 500 Dr. Bhansali (817)250-4280",
+        "Comments": "rm 129, 118 lbs., has wc, alert, either sister Dina will ride with or a family will meet at appt per Bridgette\r\n9:15am appt time, ste 500 Dr. Bhansali (817)250-4280",
         "ConfirmationNumber": "51656",
         "RideDate": "4/20/2026 12:00:00 AM",
         "ScheduledPickupTime": "08:45",
@@ -4618,7 +4618,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "0.48",
-        "Comments1": "rm 129, 118 lbs., has wc, alert, either sister Dina will ride with or a family will meet at appt per Bridgette\n9:15am appt time, ste 500 Dr. Bhansali (817)250-4280",
+        "Comments1": "rm 129, 118 lbs., has wc, alert, either sister Dina will ride with or a family will meet at appt per Bridgette\r\n9:15am appt time, ste 500 Dr. Bhansali (817)250-4280",
         "PickupName": "Texas Rehabilitation Hospital Fort Worth ",
         "PickupAddress1": "425 Alabama Ave",
         "PickupCity": "Fort Worth",
@@ -4631,7 +4631,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Texas Rehab Fort Worth ",
         "AccountName": "Texas Rehab Fort Worth ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -4767,17 +4767,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "0",
     "RideHours": "",
-    "Comments": "rm 129, 118 lbs., has wc, alert, either sister Dina will ride with or a family will meet at appt per Bridgette\n9:15am appt time, ste 500 Dr. Bhansali (817)250-4280",
-    "Comments1": "rm 129, 118 lbs., has wc, alert, either sister Dina will ride with or a family will meet at appt per Bridgette\n9:15am appt time, ste 500 Dr. Bhansali (817)250-4280",
+    "Comments": "rm 129, 118 lbs., has wc, alert, either sister Dina will ride with or a family will meet at appt per Bridgette\r\n9:15am appt time, ste 500 Dr. Bhansali (817)250-4280",
+    "Comments1": "rm 129, 118 lbs., has wc, alert, either sister Dina will ride with or a family will meet at appt per Bridgette\r\n9:15am appt time, ste 500 Dr. Bhansali (817)250-4280",
     "notesFull": "rm 129, 118 lbs., has wc, alert, either sister Dina will ride with or a family will meet at appt per Bridgette\n9:15am appt time, ste 500 Dr. Bhansali (817)250-4280",
-    "notesPreview": "rm 129, 118 lbs., has wc, alert, either sister Dina will ride with or a family will meet at appt per Bridgette",
+    "notesPreview": "rm 129, 118 lbs., has wc, alert, either sister Dina will ride with or a family will meet at appt per Bridgette | 9:15am appt time, ste 500 Dr. Bhansali (817)...",
     "legs": [
       {
         "FirstName": "Joyce",
         "LastName": "Dawson",
         "MiddleInitial": "",
         "DOB": "6/7/1958 12:00:00 AM",
-        "Comments": "rm 129, 118 lbs., has wc, alert, either sister Dina will ride with or a family will meet at appt per Bridgette\n9:15am appt time, ste 500 Dr. Bhansali (817)250-4280",
+        "Comments": "rm 129, 118 lbs., has wc, alert, either sister Dina will ride with or a family will meet at appt per Bridgette\r\n9:15am appt time, ste 500 Dr. Bhansali (817)250-4280",
         "ConfirmationNumber": "51657",
         "RideDate": "4/20/2026 12:00:00 AM",
         "ScheduledPickupTime": "10:05",
@@ -4791,7 +4791,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "0.48",
-        "Comments1": "rm 129, 118 lbs., has wc, alert, either sister Dina will ride with or a family will meet at appt per Bridgette\n9:15am appt time, ste 500 Dr. Bhansali (817)250-4280",
+        "Comments1": "rm 129, 118 lbs., has wc, alert, either sister Dina will ride with or a family will meet at appt per Bridgette\r\n9:15am appt time, ste 500 Dr. Bhansali (817)250-4280",
         "PickupName": "Ben Hogan Anita Bhansali, MD/ Dr. Sanchez/ Dr. Wong Nuero ",
         "PickupAddress1": "800 5th Avenue",
         "PickupCity": "Fort Worth",
@@ -4804,7 +4804,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Texas Rehab Fort Worth ",
         "AccountName": "Texas Rehab Fort Worth ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -4940,17 +4940,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "1",
     "RideHours": "0.3167",
-    "Comments": "rm 103, 153 lbs., has wc, has a rider\n1pm appt time for MRI per Jessica",
-    "Comments1": "rm 103, 153 lbs., has wc, has a rider\n1pm appt time for MRI per Jessica",
+    "Comments": "rm 103, 153 lbs., has wc, has a rider\r\n1pm appt time for MRI per Jessica",
+    "Comments1": "rm 103, 153 lbs., has wc, has a rider\r\n1pm appt time for MRI per Jessica",
     "notesFull": "rm 103, 153 lbs., has wc, has a rider\n1pm appt time for MRI per Jessica",
-    "notesPreview": "rm 103, 153 lbs., has wc, has a rider",
+    "notesPreview": "rm 103, 153 lbs., has wc, has a rider | 1pm appt time for MRI per Jessica",
     "legs": [
       {
         "FirstName": "Guyler",
         "LastName": "Allbright",
         "MiddleInitial": "",
         "DOB": "5/26/1943 12:00:00 AM",
-        "Comments": "rm 103, 153 lbs., has wc, has a rider\n1pm appt time for MRI per Jessica",
+        "Comments": "rm 103, 153 lbs., has wc, has a rider\r\n1pm appt time for MRI per Jessica",
         "ConfirmationNumber": "51674",
         "RideDate": "4/22/2026 12:00:00 AM",
         "ScheduledPickupTime": "12:30",
@@ -4964,7 +4964,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "0.65",
-        "Comments1": "rm 103, 153 lbs., has wc, has a rider\n1pm appt time for MRI per Jessica",
+        "Comments1": "rm 103, 153 lbs., has wc, has a rider\r\n1pm appt time for MRI per Jessica",
         "PickupName": "Texas Rehabilitation Hospital Fort Worth ",
         "PickupAddress1": "425 Alabama Ave",
         "PickupCity": "Fort Worth",
@@ -4977,7 +4977,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Texas Rehab Fort Worth ",
         "AccountName": "Texas Rehab Fort Worth ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -5121,17 +5121,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "1",
     "RideHours": "0.15",
-    "Comments": "rm 103, 153 lbs., has wc, has a rider\n1pm appt time for MRI per Jessica",
-    "Comments1": "rm 103, 153 lbs., has wc, has a rider\n1pm appt time for MRI per Jessica",
+    "Comments": "rm 103, 153 lbs., has wc, has a rider\r\n1pm appt time for MRI per Jessica",
+    "Comments1": "rm 103, 153 lbs., has wc, has a rider\r\n1pm appt time for MRI per Jessica",
     "notesFull": "rm 103, 153 lbs., has wc, has a rider\n1pm appt time for MRI per Jessica",
-    "notesPreview": "rm 103, 153 lbs., has wc, has a rider",
+    "notesPreview": "rm 103, 153 lbs., has wc, has a rider | 1pm appt time for MRI per Jessica",
     "legs": [
       {
         "FirstName": "Guyler",
         "LastName": "Allbright",
         "MiddleInitial": "",
         "DOB": "5/26/1943 12:00:00 AM",
-        "Comments": "rm 103, 153 lbs., has wc, has a rider\n1pm appt time for MRI per Jessica",
+        "Comments": "rm 103, 153 lbs., has wc, has a rider\r\n1pm appt time for MRI per Jessica",
         "ConfirmationNumber": "51675",
         "RideDate": "4/22/2026 12:00:00 AM",
         "ScheduledPickupTime": "13:30",
@@ -5145,7 +5145,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "0.65",
-        "Comments1": "rm 103, 153 lbs., has wc, has a rider\n1pm appt time for MRI per Jessica",
+        "Comments1": "rm 103, 153 lbs., has wc, has a rider\r\n1pm appt time for MRI per Jessica",
         "PickupName": "Harris Emergency CT Scan/ MRI Ambulance Bay ",
         "PickupAddress1": "910 5th Avenue",
         "PickupCity": "Fort Worth",
@@ -5158,7 +5158,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Texas Rehab Fort Worth ",
         "AccountName": "Texas Rehab Fort Worth ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -5339,7 +5339,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Texas Rehab Fort Worth ",
         "AccountName": "Texas Rehab Fort Worth ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -5517,7 +5517,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Texas Rehab Fort Worth ",
         "AccountName": "Texas Rehab Fort Worth ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -5658,17 +5658,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "2",
     "RideHours": "0.3667",
-    "Comments": "rm 113, 175lbs., has wc, wife riding with, they both speak French but son will meet at appt.,\ntake to main clinic and check them in if possible, dob 04/11/1948. last minute appt.",
-    "Comments1": "rm 113, 175lbs., has wc, wife riding with, they both speak French but son will meet at appt.,\ntake to main clinic and check them in if possible, dob 04/11/1948. last minute appt.",
+    "Comments": "rm 113, 175lbs., has wc, wife riding with, they both speak French but son will meet at appt.,\r\ntake to main clinic and check them in if possible, dob 04/11/1948. last minute appt.",
+    "Comments1": "rm 113, 175lbs., has wc, wife riding with, they both speak French but son will meet at appt.,\r\ntake to main clinic and check them in if possible, dob 04/11/1948. last minute appt.",
     "notesFull": "rm 113, 175lbs., has wc, wife riding with, they both speak French but son will meet at appt.,\ntake to main clinic and check them in if possible, dob 04/11/1948. last minute appt.",
-    "notesPreview": "rm 113, 175lbs., has wc, wife riding with, they both speak French but son will meet at appt.,",
+    "notesPreview": "rm 113, 175lbs., has wc, wife riding with, they both speak French but son will meet at appt., | take to main clinic and check them in if possible, dob 04/11/...",
     "legs": [
       {
         "FirstName": "Cleophfe",
         "LastName": "Kambilala",
         "MiddleInitial": "",
         "DOB": "4/11/1948 12:00:00 AM",
-        "Comments": "rm 113, 175lbs., has wc, wife riding with, they both speak French but son will meet at appt.,\ntake to main clinic and check them in if possible, dob 04/11/1948. last minute appt.",
+        "Comments": "rm 113, 175lbs., has wc, wife riding with, they both speak French but son will meet at appt.,\r\ntake to main clinic and check them in if possible, dob 04/11/1948. last minute appt.",
         "ConfirmationNumber": "51800",
         "RideDate": "4/24/2026 12:00:00 AM",
         "ScheduledPickupTime": "10:15",
@@ -5682,7 +5682,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "1.91",
-        "Comments1": "rm 113, 175lbs., has wc, wife riding with, they both speak French but son will meet at appt.,\ntake to main clinic and check them in if possible, dob 04/11/1948. last minute appt.",
+        "Comments1": "rm 113, 175lbs., has wc, wife riding with, they both speak French but son will meet at appt.,\r\ntake to main clinic and check them in if possible, dob 04/11/1948. last minute appt.",
         "PickupName": "Texas Rehabilitation Hospital Fort Worth ",
         "PickupAddress1": "425 Alabama Ave",
         "PickupCity": "Fort Worth",
@@ -5695,7 +5695,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Texas Rehab Fort Worth ",
         "AccountName": "Texas Rehab Fort Worth ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -5839,17 +5839,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "2",
     "RideHours": "",
-    "Comments": "pickup at 2nd floor ortho clinic please\nrm 113, 175lbs., has wc, wife riding with, they both speak French but son will meet at appt.,\ntake to main clinic and check them in if possible, dob 04/11/1948. last minute appt.",
-    "Comments1": "pickup at 2nd floor ortho clinic please\nrm 113, 175lbs., has wc, wife riding with, they both speak French but son will meet at appt.,\ntake to main clinic and check them in if possible, dob 04/11/1948. last minute appt.",
+    "Comments": "pickup at 2nd floor ortho clinic please\r\nrm 113, 175lbs., has wc, wife riding with, they both speak French but son will meet at appt.,\r\ntake to main clinic and check them in if possible, dob 04/11/1948. last minute appt.",
+    "Comments1": "pickup at 2nd floor ortho clinic please\r\nrm 113, 175lbs., has wc, wife riding with, they both speak French but son will meet at appt.,\r\ntake to main clinic and check them in if possible, dob 04/11/1948. last minute appt.",
     "notesFull": "pickup at 2nd floor ortho clinic please\nrm 113, 175lbs., has wc, wife riding with, they both speak French but son will meet at appt.,\ntake to main clinic and check them in if possible, dob 04/11/1948. last minute appt.",
-    "notesPreview": "pickup at 2nd floor ortho clinic please",
+    "notesPreview": "pickup at 2nd floor ortho clinic please | rm 113, 175lbs., has wc, wife riding with, they both speak French but son will meet at appt., | take to main clinic...",
     "legs": [
       {
         "FirstName": "Cleophfe",
         "LastName": "Kambilala",
         "MiddleInitial": "",
         "DOB": "4/11/1948 12:00:00 AM",
-        "Comments": "pickup at 2nd floor ortho clinic please\nrm 113, 175lbs., has wc, wife riding with, they both speak French but son will meet at appt.,\ntake to main clinic and check them in if possible, dob 04/11/1948. last minute appt.",
+        "Comments": "pickup at 2nd floor ortho clinic please\r\nrm 113, 175lbs., has wc, wife riding with, they both speak French but son will meet at appt.,\r\ntake to main clinic and check them in if possible, dob 04/11/1948. last minute appt.",
         "ConfirmationNumber": "51801",
         "RideDate": "4/24/2026 12:00:00 AM",
         "ScheduledPickupTime": "13:15",
@@ -5863,7 +5863,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "1.91",
-        "Comments1": "pickup at 2nd floor ortho clinic please\nrm 113, 175lbs., has wc, wife riding with, they both speak French but son will meet at appt.,\ntake to main clinic and check them in if possible, dob 04/11/1948. last minute appt.",
+        "Comments1": "pickup at 2nd floor ortho clinic please\r\nrm 113, 175lbs., has wc, wife riding with, they both speak French but son will meet at appt.,\r\ntake to main clinic and check them in if possible, dob 04/11/1948. last minute appt.",
         "PickupName": "JPS Main Hospital Ortho Clinic- Red to 2nd floor ",
         "PickupAddress1": "1500 South Main Street",
         "PickupCity": "Fort Worth",
@@ -5876,7 +5876,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Texas Rehab Fort Worth ",
         "AccountName": "Texas Rehab Fort Worth ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -6020,17 +6020,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "1",
     "RideHours": "0",
-    "Comments": "rm 105, STR, going to MRI, 160lbs.\nnoon appt.",
-    "Comments1": "rm 105, STR, going to MRI, 160lbs.\nnoon appt.",
+    "Comments": "rm 105, STR, going to MRI, 160lbs.\r\nnoon appt.",
+    "Comments1": "rm 105, STR, going to MRI, 160lbs.\r\nnoon appt.",
     "notesFull": "rm 105, STR, going to MRI, 160lbs.\nnoon appt.",
-    "notesPreview": "rm 105, STR, going to MRI, 160lbs.",
+    "notesPreview": "rm 105, STR, going to MRI, 160lbs. | noon appt.",
     "legs": [
       {
         "FirstName": "Julei",
         "LastName": "Kelley",
         "MiddleInitial": "",
         "DOB": "6/12/1966 12:00:00 AM",
-        "Comments": "rm 105, STR, going to MRI, 160lbs.\nnoon appt.",
+        "Comments": "rm 105, STR, going to MRI, 160lbs.\r\nnoon appt.",
         "ConfirmationNumber": "51806",
         "RideDate": "4/25/2026 12:00:00 AM",
         "ScheduledPickupTime": "11:30",
@@ -6044,7 +6044,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "0.66",
-        "Comments1": "rm 105, STR, going to MRI, 160lbs.\nnoon appt.",
+        "Comments1": "rm 105, STR, going to MRI, 160lbs.\r\nnoon appt.",
         "PickupName": "Texas Rehabilitation Hospital Fort Worth ",
         "PickupAddress1": "425 Alabama Ave",
         "PickupCity": "Fort Worth",
@@ -6057,7 +6057,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Texas Rehab Fort Worth ",
         "AccountName": "Texas Rehab Fort Worth ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -6198,17 +6198,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "1",
     "RideHours": "0",
-    "Comments": "rm 105, STR, going to MRI, 160lbs.\nnoon appt.",
-    "Comments1": "rm 105, STR, going to MRI, 160lbs.\nnoon appt.",
+    "Comments": "rm 105, STR, going to MRI, 160lbs.\r\nnoon appt.",
+    "Comments1": "rm 105, STR, going to MRI, 160lbs.\r\nnoon appt.",
     "notesFull": "rm 105, STR, going to MRI, 160lbs.\nnoon appt.",
-    "notesPreview": "rm 105, STR, going to MRI, 160lbs.",
+    "notesPreview": "rm 105, STR, going to MRI, 160lbs. | noon appt.",
     "legs": [
       {
         "FirstName": "Julei",
         "LastName": "Kelley",
         "MiddleInitial": "",
         "DOB": "6/12/1966 12:00:00 AM",
-        "Comments": "rm 105, STR, going to MRI, 160lbs.\nnoon appt.",
+        "Comments": "rm 105, STR, going to MRI, 160lbs.\r\nnoon appt.",
         "ConfirmationNumber": "51807",
         "RideDate": "4/25/2026 12:00:00 AM",
         "ScheduledPickupTime": "12:45",
@@ -6222,7 +6222,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "0.66",
-        "Comments1": "rm 105, STR, going to MRI, 160lbs.\nnoon appt.",
+        "Comments1": "rm 105, STR, going to MRI, 160lbs.\r\nnoon appt.",
         "PickupName": "Texas Health Harris Methodist Hospital Fort Worth Emergency Room",
         "PickupAddress1": "910 5th Avenue",
         "PickupCity": "Fort Worth",
@@ -6235,7 +6235,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Texas Rehab Fort Worth ",
         "AccountName": "Texas Rehab Fort Worth ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -6376,17 +6376,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "1",
     "RideHours": "0",
-    "Comments": "rm 119, 110lbs., USE VAN 61 or 62 please he needs to go via regular STR NOT BRODA\n1pm CT",
-    "Comments1": "rm 119, 110lbs., USE VAN 61 or 62 please he needs to go via regular STR NOT BRODA\n1pm CT",
+    "Comments": "rm 119, 110lbs., USE VAN 61 or 62 please he needs to go via regular STR NOT BRODA\r\n1pm CT",
+    "Comments1": "rm 119, 110lbs., USE VAN 61 or 62 please he needs to go via regular STR NOT BRODA\r\n1pm CT",
     "notesFull": "rm 119, 110lbs., USE VAN 61 or 62 please he needs to go via regular STR NOT BRODA\n1pm CT",
-    "notesPreview": "rm 119, 110lbs., USE VAN 61 or 62 please he needs to go via regular STR NOT BRODA",
+    "notesPreview": "rm 119, 110lbs., USE VAN 61 or 62 please he needs to go via regular STR NOT BRODA | 1pm CT",
     "legs": [
       {
         "FirstName": "Homer",
         "LastName": "Whisenhunt",
         "MiddleInitial": "",
         "DOB": "1/30/1949 12:00:00 AM",
-        "Comments": "rm 119, 110lbs., USE VAN 61 or 62 please he needs to go via regular STR NOT BRODA\n1pm CT",
+        "Comments": "rm 119, 110lbs., USE VAN 61 or 62 please he needs to go via regular STR NOT BRODA\r\n1pm CT",
         "ConfirmationNumber": "51832",
         "RideDate": "4/26/2026 12:00:00 AM",
         "ScheduledPickupTime": "12:30",
@@ -6400,7 +6400,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "0.65",
-        "Comments1": "rm 119, 110lbs., USE VAN 61 or 62 please he needs to go via regular STR NOT BRODA\n1pm CT",
+        "Comments1": "rm 119, 110lbs., USE VAN 61 or 62 please he needs to go via regular STR NOT BRODA\r\n1pm CT",
         "PickupName": "Texas Rehabilitation Hospital Fort Worth ",
         "PickupAddress1": "425 Alabama Ave",
         "PickupCity": "Fort Worth",
@@ -6413,7 +6413,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Texas Rehab Fort Worth ",
         "AccountName": "Texas Rehab Fort Worth ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -6554,17 +6554,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "1",
     "RideHours": "0",
-    "Comments": "rm 119, 110lbs., USE VAN 61 or 62 please he needs to go via regular STR NOT BRODA\n1pm CT",
-    "Comments1": "rm 119, 110lbs., USE VAN 61 or 62 please he needs to go via regular STR NOT BRODA\n1pm CT",
+    "Comments": "rm 119, 110lbs., USE VAN 61 or 62 please he needs to go via regular STR NOT BRODA\r\n1pm CT",
+    "Comments1": "rm 119, 110lbs., USE VAN 61 or 62 please he needs to go via regular STR NOT BRODA\r\n1pm CT",
     "notesFull": "rm 119, 110lbs., USE VAN 61 or 62 please he needs to go via regular STR NOT BRODA\n1pm CT",
-    "notesPreview": "rm 119, 110lbs., USE VAN 61 or 62 please he needs to go via regular STR NOT BRODA",
+    "notesPreview": "rm 119, 110lbs., USE VAN 61 or 62 please he needs to go via regular STR NOT BRODA | 1pm CT",
     "legs": [
       {
         "FirstName": "Homer",
         "LastName": "Whisenhunt",
         "MiddleInitial": "",
         "DOB": "1/30/1949 12:00:00 AM",
-        "Comments": "rm 119, 110lbs., USE VAN 61 or 62 please he needs to go via regular STR NOT BRODA\n1pm CT",
+        "Comments": "rm 119, 110lbs., USE VAN 61 or 62 please he needs to go via regular STR NOT BRODA\r\n1pm CT",
         "ConfirmationNumber": "51833",
         "RideDate": "4/26/2026 12:00:00 AM",
         "ScheduledPickupTime": "13:30",
@@ -6578,7 +6578,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "0.65",
-        "Comments1": "rm 119, 110lbs., USE VAN 61 or 62 please he needs to go via regular STR NOT BRODA\n1pm CT",
+        "Comments1": "rm 119, 110lbs., USE VAN 61 or 62 please he needs to go via regular STR NOT BRODA\r\n1pm CT",
         "PickupName": "Harris Emergency CT Scan/ MRI Ambulance Bay ",
         "PickupAddress1": "910 5th Avenue",
         "PickupCity": "Fort Worth",
@@ -6591,7 +6591,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Texas Rehab Fort Worth ",
         "AccountName": "Texas Rehab Fort Worth ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",

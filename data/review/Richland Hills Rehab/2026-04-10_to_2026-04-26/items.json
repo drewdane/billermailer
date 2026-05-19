@@ -28,17 +28,17 @@
     "DropoffZip": "76118",
     "DirectMileage": "9",
     "RideHours": "0.5",
-    "Comments": "Orange 311 bed 1, 224lbs, cn, needs recliner, 817-702-3431\n#33. A",
-    "Comments1": "Orange 311 bed 1, 224lbs, cn, needs recliner, 817-702-3431\n#33. A",
+    "Comments": "Orange 311 bed 1, 224lbs, cn, needs recliner, 817-702-3431\r\n#33. A",
+    "Comments1": "Orange 311 bed 1, 224lbs, cn, needs recliner, 817-702-3431\r\n#33. A",
     "notesFull": "Orange 311 bed 1, 224lbs, cn, needs recliner, 817-702-3431\n#33. A",
-    "notesPreview": "Orange 311 bed 1, 224lbs, cn, needs recliner, 817-702-3431",
+    "notesPreview": "Orange 311 bed 1, 224lbs, cn, needs recliner, 817-702-3431 | #33. A",
     "legs": [
       {
         "FirstName": "Tammy ",
         "LastName": "Gillman ",
         "MiddleInitial": "",
         "DOB": "11/12/1959 12:00:00 AM",
-        "Comments": "Orange 311 bed 1, 224lbs, cn, needs recliner, 817-702-3431\n#33. A",
+        "Comments": "Orange 311 bed 1, 224lbs, cn, needs recliner, 817-702-3431\r\n#33. A",
         "ConfirmationNumber": "51697",
         "RideDate": "4/20/2026 12:00:00 AM",
         "ScheduledPickupTime": "17:00",
@@ -52,7 +52,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "9.45",
-        "Comments1": "Orange 311 bed 1, 224lbs, cn, needs recliner, 817-702-3431\n#33. A",
+        "Comments1": "Orange 311 bed 1, 224lbs, cn, needs recliner, 817-702-3431\r\n#33. A",
         "PickupName": "JPS MAIN ENTERANCE ",
         "PickupAddress1": "1500 South Main Street",
         "PickupCity": "Fort Worth",
@@ -65,7 +65,7 @@
         "DropoffZip": "76118",
         "AccountCode": "Richland Hills Rehab ",
         "AccountName": "Richland Hills Rehab ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -213,17 +213,17 @@
     "DropoffZip": "76118",
     "DirectMileage": "9",
     "RideHours": "0.4167",
-    "Comments": "ICU rm 23701, 225lbs., STR\nrm 26B at RHHC",
-    "Comments1": "ICU rm 23701, 225lbs., STR\nrm 26B at RHHC",
+    "Comments": "ICU rm 23701, 225lbs., STR\r\nrm 26B at RHHC",
+    "Comments1": "ICU rm 23701, 225lbs., STR\r\nrm 26B at RHHC",
     "notesFull": "ICU rm 23701, 225lbs., STR\nrm 26B at RHHC",
-    "notesPreview": "ICU rm 23701, 225lbs., STR",
+    "notesPreview": "ICU rm 23701, 225lbs., STR | rm 26B at RHHC",
     "legs": [
       {
         "FirstName": "Douglas",
         "LastName": "Cornell",
         "MiddleInitial": "P",
         "DOB": "8/23/1963 12:00:00 AM",
-        "Comments": "ICU rm 23701, 225lbs., STR\nrm 26B at RHHC",
+        "Comments": "ICU rm 23701, 225lbs., STR\r\nrm 26B at RHHC",
         "ConfirmationNumber": "51830",
         "RideDate": "4/24/2026 12:00:00 AM",
         "ScheduledPickupTime": "14:00",
@@ -237,7 +237,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "9.30",
-        "Comments1": "ICU rm 23701, 225lbs., STR\nrm 26B at RHHC",
+        "Comments1": "ICU rm 23701, 225lbs., STR\r\nrm 26B at RHHC",
         "PickupName": "Texas Health Harris Methodist Hurst-Euless-Bedford",
         "PickupAddress1": "1600 Hospital Parkway",
         "PickupCity": "Bedford",
@@ -250,7 +250,7 @@
         "DropoffZip": "76118",
         "AccountCode": "Richland Hills Rehab ",
         "AccountName": "Richland Hills Rehab ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",

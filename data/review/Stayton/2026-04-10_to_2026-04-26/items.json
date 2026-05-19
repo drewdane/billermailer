@@ -28,17 +28,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "1",
     "RideHours": "0.2",
-    "Comments": "Justin rm S336, 181 lbs., STR/Broda, 4ltrs O2, Postoperative complication of skin involving drainage from surgical wound, Prosthetic joint infection, Surgical Problem Re-Evaluation, CN\n#TBD\n\nper Dawn Allison (817)250-3943",
-    "Comments1": "Justin rm S336, 181 lbs., STR/Broda, 4ltrs O2, Postoperative complication of skin involving drainage from surgical wound, Prosthetic joint infection, Surgical Problem Re-Evaluation, CN\n#TBD\n\nper Dawn Allison (817)250-3943",
-    "notesFull": "Justin rm S336, 181 lbs., STR/Broda, 4ltrs O2, Postoperative complication of skin involving drainage from surgical wound, Prosthetic joint infection, Surgical Problem Re-Evaluation, CN\n#TBD\n\nper Dawn Allison (817)250-3943",
-    "notesPreview": "Justin rm S336, 181 lbs., STR/Broda, 4ltrs O2, Postoperative complication of skin involving drainage from surgical wo...",
+    "Comments": "Justin rm S336, 181 lbs., STR/Broda, 4ltrs O2, Postoperative complication of skin involving drainage from surgical wound, Prosthetic joint infection, Surgical Problem Re-Evaluation, CN\r\n#TBD\r\n\r\nper Dawn Allison (817)250-3943",
+    "Comments1": "Justin rm S336, 181 lbs., STR/Broda, 4ltrs O2, Postoperative complication of skin involving drainage from surgical wound, Prosthetic joint infection, Surgical Problem Re-Evaluation, CN\r\n#TBD\r\n\r\nper Dawn Allison (817)250-3943",
+    "notesFull": "Justin rm S336, 181 lbs., STR/Broda, 4ltrs O2, Postoperative complication of skin involving drainage from surgical wound, Prosthetic joint infection, Surgical Problem Re-Evaluation, CN\n#TBD\nper Dawn Allison (817)250-3943",
+    "notesPreview": "Justin rm S336, 181 lbs., STR/Broda, 4ltrs O2, Postoperative complication of skin involving drainage from surgical wound, Prosthetic joint infection, Surgica...",
     "legs": [
       {
         "FirstName": "Guillermina ",
         "LastName": "Fernandez ",
         "MiddleInitial": "",
         "DOB": "2/10/1935 12:00:00 AM",
-        "Comments": "Justin rm S336, 181 lbs., STR/Broda, 4ltrs O2, Postoperative complication of skin involving drainage from surgical wound, Prosthetic joint infection, Surgical Problem Re-Evaluation, CN\n#TBD\n\nper Dawn Allison (817)250-3943",
+        "Comments": "Justin rm S336, 181 lbs., STR/Broda, 4ltrs O2, Postoperative complication of skin involving drainage from surgical wound, Prosthetic joint infection, Surgical Problem Re-Evaluation, CN\r\n#TBD\r\n\r\nper Dawn Allison (817)250-3943",
         "ConfirmationNumber": "51494",
         "RideDate": "4/10/2026 12:00:00 AM",
         "ScheduledPickupTime": "20:30",
@@ -52,7 +52,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "0.60",
-        "Comments1": "Justin rm S336, 181 lbs., STR/Broda, 4ltrs O2, Postoperative complication of skin involving drainage from surgical wound, Prosthetic joint infection, Surgical Problem Re-Evaluation, CN\n#TBD\n\nper Dawn Allison (817)250-3943",
+        "Comments1": "Justin rm S336, 181 lbs., STR/Broda, 4ltrs O2, Postoperative complication of skin involving drainage from surgical wound, Prosthetic joint infection, Surgical Problem Re-Evaluation, CN\r\n#TBD\r\n\r\nper Dawn Allison (817)250-3943",
         "PickupName": "Harris Justin Tower",
         "PickupAddress1": "1301 Pennsylvania Ave",
         "PickupCity": "Fort Worth",
@@ -65,7 +65,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Stayton",
         "AccountName": "The Stayton at Museum Way",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -206,17 +206,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "6",
     "RideHours": "",
-    "Comments": "319, 200lbs, cn, has wc, Zachary \n1130am appt, Take to registration",
-    "Comments1": "319, 200lbs, cn, has wc, Zachary \n1130am appt, Take to registration",
-    "notesFull": "319, 200lbs, cn, has wc, Zachary \n1130am appt, Take to registration",
-    "notesPreview": "319, 200lbs, cn, has wc, Zachary",
+    "Comments": "319, 200lbs, cn, has wc, Zachary \r\n1130am appt, Take to registration",
+    "Comments1": "319, 200lbs, cn, has wc, Zachary \r\n1130am appt, Take to registration",
+    "notesFull": "319, 200lbs, cn, has wc, Zachary\n1130am appt, Take to registration",
+    "notesPreview": "319, 200lbs, cn, has wc, Zachary | 1130am appt, Take to registration",
     "legs": [
       {
         "FirstName": "Dorothy ",
         "LastName": "West ",
         "MiddleInitial": "",
         "DOB": "8/28/1950 12:00:00 AM",
-        "Comments": "319, 200lbs, cn, has wc, Zachary \n1130am appt, Take to registration \n",
+        "Comments": "319, 200lbs, cn, has wc, Zachary \r\n1130am appt, Take to registration \r\n",
         "ConfirmationNumber": "51416",
         "RideDate": "4/10/2026 12:00:00 AM",
         "ScheduledPickupTime": "11:00",
@@ -230,7 +230,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "2.83",
-        "Comments1": "319, 200lbs, cn, has wc, Zachary \n1130am appt, Take to registration \n",
+        "Comments1": "319, 200lbs, cn, has wc, Zachary \r\n1130am appt, Take to registration \r\n",
         "PickupName": "3rd  Floor- Stayton Skilled living ",
         "PickupAddress1": "2501 Museum Way",
         "PickupCity": "Fort Worth",
@@ -243,14 +243,14 @@
         "DropoffZip": "76104",
         "AccountCode": "Stayton",
         "AccountName": "The Stayton at Museum Way",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "Dorothy ",
         "LastName": "West ",
         "MiddleInitial": "",
         "DOB": "8/28/1950 12:00:00 AM",
-        "Comments": "319, 200lbs, cn, has wc, Zachary \n1130am appt, Take to registration \n",
+        "Comments": "319, 200lbs, cn, has wc, Zachary \r\n1130am appt, Take to registration \r\n",
         "ConfirmationNumber": "51417",
         "RideDate": "4/10/2026 12:00:00 AM",
         "ScheduledPickupTime": "12:31",
@@ -264,7 +264,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "2.83",
-        "Comments1": "319, 200lbs, cn, has wc, Zachary \n1130am appt, Take to registration \n",
+        "Comments1": "319, 200lbs, cn, has wc, Zachary \r\n1130am appt, Take to registration \r\n",
         "PickupName": "The Center for Cancer & Blood Disorders: Fort Worth",
         "PickupAddress1": "800 West Magnolia Avenue",
         "PickupCity": "Fort Worth",
@@ -277,7 +277,7 @@
         "DropoffZip": "76107",
         "AccountCode": "Stayton",
         "AccountName": "The Stayton at Museum Way",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -410,17 +410,17 @@
     "DropoffZip": "76107",
     "DirectMileage": "2",
     "RideHours": "",
-    "Comments": "Cardiac tower rm C408 C40801, 121 lbs., needs recliner, Rapid Heart Rate\n#301A\n\nper Dawn Allison (817)250-3943",
-    "Comments1": "Cardiac tower rm C408 C40801, 121 lbs., needs recliner, Rapid Heart Rate\n#301A\n\nper Dawn Allison (817)250-3943",
-    "notesFull": "Cardiac tower rm C408 C40801, 121 lbs., needs recliner, Rapid Heart Rate\n#301A\n\nper Dawn Allison (817)250-3943",
-    "notesPreview": "Cardiac tower rm C408 C40801, 121 lbs., needs recliner, Rapid Heart Rate",
+    "Comments": "Cardiac tower rm C408 C40801, 121 lbs., needs recliner, Rapid Heart Rate\r\n#301A\r\n\r\nper Dawn Allison (817)250-3943",
+    "Comments1": "Cardiac tower rm C408 C40801, 121 lbs., needs recliner, Rapid Heart Rate\r\n#301A\r\n\r\nper Dawn Allison (817)250-3943",
+    "notesFull": "Cardiac tower rm C408 C40801, 121 lbs., needs recliner, Rapid Heart Rate\n#301A\nper Dawn Allison (817)250-3943",
+    "notesPreview": "Cardiac tower rm C408 C40801, 121 lbs., needs recliner, Rapid Heart Rate | #301A | per Dawn Allison (817)250-3943",
     "legs": [
       {
         "FirstName": "Eljean",
         "LastName": "Wood",
         "MiddleInitial": "B",
         "DOB": "10/6/1931 12:00:00 AM",
-        "Comments": "Cardiac tower rm C408 C40801, 121 lbs., needs recliner, Rapid Heart Rate\n#301A\n\nper Dawn Allison (817)250-3943",
+        "Comments": "Cardiac tower rm C408 C40801, 121 lbs., needs recliner, Rapid Heart Rate\r\n#301A\r\n\r\nper Dawn Allison (817)250-3943",
         "ConfirmationNumber": "51500",
         "RideDate": "4/11/2026 12:00:00 AM",
         "ScheduledPickupTime": "19:00",
@@ -434,7 +434,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "2.23",
-        "Comments1": "Cardiac tower rm C408 C40801, 121 lbs., needs recliner, Rapid Heart Rate\n#301A\n\nper Dawn Allison (817)250-3943",
+        "Comments1": "Cardiac tower rm C408 C40801, 121 lbs., needs recliner, Rapid Heart Rate\r\n#301A\r\n\r\nper Dawn Allison (817)250-3943",
         "PickupName": "Harris Cardiac Tower",
         "PickupAddress1": "1301 Pennsylvania Ave",
         "PickupCity": "Fort Worth",
@@ -447,7 +447,7 @@
         "DropoffZip": "76107",
         "AccountCode": "Stayton",
         "AccountName": "The Stayton at Museum Way",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -595,17 +595,17 @@
     "DropoffZip": "76107",
     "DirectMileage": "3",
     "RideHours": "0.4",
-    "Comments": "B Building RM 245\n203 lbs\nSTR\nhip surgery\nStayton RM 310\n817 922 4660",
-    "Comments1": "B Building RM 245\n203 lbs\nSTR\nhip surgery\nStayton RM 310\n817 922 4660",
+    "Comments": "B Building RM 245\r\n203 lbs\r\nSTR\r\nhip surgery\r\nStayton RM 310\r\n817 922 4660",
+    "Comments1": "B Building RM 245\r\n203 lbs\r\nSTR\r\nhip surgery\r\nStayton RM 310\r\n817 922 4660",
     "notesFull": "B Building RM 245\n203 lbs\nSTR\nhip surgery\nStayton RM 310\n817 922 4660",
-    "notesPreview": "B Building RM 245",
+    "notesPreview": "B Building RM 245 | 203 lbs | STR | hip surgery | Stayton RM 310 | 817 922 4660",
     "legs": [
       {
         "FirstName": "Marion",
         "LastName": "Knight",
         "MiddleInitial": "",
         "DOB": "8/26/1952 12:00:00 AM",
-        "Comments": "B Building RM 245\n203 lbs\nSTR\nhip surgery\nStayton RM 310\n817 922 4660",
+        "Comments": "B Building RM 245\r\n203 lbs\r\nSTR\r\nhip surgery\r\nStayton RM 310\r\n817 922 4660",
         "ConfirmationNumber": "51521",
         "RideDate": "4/13/2026 12:00:00 AM",
         "ScheduledPickupTime": "13:30",
@@ -619,7 +619,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "2.84",
-        "Comments1": "B Building RM 245\n203 lbs\nSTR\nhip surgery\nStayton RM 310\n817 922 4660",
+        "Comments1": "B Building RM 245\r\n203 lbs\r\nSTR\r\nhip surgery\r\nStayton RM 310\r\n817 922 4660",
         "PickupName": "Baylor All Saints Fort Worth B Building",
         "PickupAddress1": "1400 8th Avenue",
         "PickupCity": "Fort Worth",
@@ -632,7 +632,7 @@
         "DropoffZip": "76107",
         "AccountCode": "Stayton",
         "AccountName": "The Stayton at Museum Way",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -767,17 +767,17 @@
     "DropoffZip": "76177",
     "DirectMileage": "25",
     "RideHours": "1.25",
-    "Comments": "rm 318 / has wc / 147 lbs / alert / 1030am appt\nste 140 (817)332-7867\n\nper Armstrong",
-    "Comments1": "rm 318 / has wc / 147 lbs / alert / 1030am appt\nste 140 (817)332-7867\n\nper Armstrong",
-    "notesFull": "rm 318 / has wc / 147 lbs / alert / 1030am appt\nste 140 (817)332-7867\n\nper Armstrong",
-    "notesPreview": "rm 318 / has wc / 147 lbs / alert / 1030am appt",
+    "Comments": "rm 318 / has wc / 147 lbs / alert / 1030am appt\r\nste 140 (817)332-7867\r\n\r\nper Armstrong",
+    "Comments1": "rm 318 / has wc / 147 lbs / alert / 1030am appt\r\nste 140 (817)332-7867\r\n\r\nper Armstrong",
+    "notesFull": "rm 318 / has wc / 147 lbs / alert / 1030am appt\nste 140 (817)332-7867\nper Armstrong",
+    "notesPreview": "rm 318 / has wc / 147 lbs / alert / 1030am appt | ste 140 (817)332-7867 | per Armstrong",
     "legs": [
       {
         "FirstName": "Virginia ",
         "LastName": "Schlarb ",
         "MiddleInitial": "",
         "DOB": "1/29/1937 12:00:00 AM",
-        "Comments": "rm 318 / has wc / 147 lbs / alert / 1030am appt\nste 140 (817)332-7867\n\nper Armstrong",
+        "Comments": "rm 318 / has wc / 147 lbs / alert / 1030am appt\r\nste 140 (817)332-7867\r\n\r\nper Armstrong",
         "ConfirmationNumber": "50421",
         "RideDate": "4/13/2026 12:00:00 AM",
         "ScheduledPickupTime": "10:15",
@@ -791,7 +791,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "12.46",
-        "Comments1": "rm 318 / has wc / 147 lbs / alert / 1030am appt\nste 140 (817)332-7867\n\nper Armstrong",
+        "Comments1": "rm 318 / has wc / 147 lbs / alert / 1030am appt\r\nste 140 (817)332-7867\r\n\r\nper Armstrong",
         "PickupName": "3rd  Floor- Stayton Skilled living ",
         "PickupAddress1": "2501 Museum Way",
         "PickupCity": "Fort Worth",
@@ -804,14 +804,14 @@
         "DropoffZip": "76177",
         "AccountCode": "Stayton",
         "AccountName": "The Stayton at Museum Way",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "Virginia ",
         "LastName": "Schlarb ",
         "MiddleInitial": "",
         "DOB": "1/29/1937 12:00:00 AM",
-        "Comments": "rm 318 / has wc / 147 lbs / alert / 1030am appt\nste 140 (817)332-7867\n\nper Armstrong",
+        "Comments": "rm 318 / has wc / 147 lbs / alert / 1030am appt\r\nste 140 (817)332-7867\r\n\r\nper Armstrong",
         "ConfirmationNumber": "50425",
         "RideDate": "4/13/2026 12:00:00 AM",
         "ScheduledPickupTime": "13:36",
@@ -825,7 +825,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "12.64",
-        "Comments1": "rm 318 / has wc / 147 lbs / alert / 1030am appt\nste 140 (817)332-7867\n\nper Armstrong",
+        "Comments1": "rm 318 / has wc / 147 lbs / alert / 1030am appt\r\nste 140 (817)332-7867\r\n\r\nper Armstrong",
         "PickupName": "Alliance Specialty Clinic with Dr. Syed Hussain",
         "PickupAddress1": "3412 North Tarrant Parkway",
         "PickupCity": "Fort Worth",
@@ -838,7 +838,7 @@
         "DropoffZip": "76107",
         "AccountCode": "Stayton",
         "AccountName": "The Stayton at Museum Way",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -971,17 +971,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "2",
     "RideHours": "",
-    "Comments": "CHARGE A FEE< CANCEL ON SCENE, rm 300A, 215 lbs., has wc, alert per Armstrong\n1130am appt time",
-    "Comments1": "CHARGE A FEE< CANCEL ON SCENE, rm 300A, 215 lbs., has wc, alert per Armstrong\n1130am appt time",
+    "Comments": "CHARGE A FEE< CANCEL ON SCENE, rm 300A, 215 lbs., has wc, alert per Armstrong\r\n1130am appt time",
+    "Comments1": "CHARGE A FEE< CANCEL ON SCENE, rm 300A, 215 lbs., has wc, alert per Armstrong\r\n1130am appt time",
     "notesFull": "CHARGE A FEE< CANCEL ON SCENE, rm 300A, 215 lbs., has wc, alert per Armstrong\n1130am appt time",
-    "notesPreview": "CHARGE A FEE< CANCEL ON SCENE, rm 300A, 215 lbs., has wc, alert per Armstrong",
+    "notesPreview": "CHARGE A FEE< CANCEL ON SCENE, rm 300A, 215 lbs., has wc, alert per Armstrong | 1130am appt time",
     "legs": [
       {
         "FirstName": "Bret Ranister",
         "LastName": "Vickers ",
         "MiddleInitial": "",
         "DOB": "11/21/1958 12:00:00 AM",
-        "Comments": "CHARGE A FEE< CANCEL ON SCENE, rm 300A, 215 lbs., has wc, alert per Armstrong\n1130am appt time",
+        "Comments": "CHARGE A FEE< CANCEL ON SCENE, rm 300A, 215 lbs., has wc, alert per Armstrong\r\n1130am appt time",
         "ConfirmationNumber": "50925",
         "RideDate": "4/13/2026 12:00:00 AM",
         "ScheduledPickupTime": "11:00",
@@ -995,7 +995,7 @@
         "Mobility": "WC",
         "RideStatus": "NoShow ",
         "DirectMileage": "2.29",
-        "Comments1": "CHARGE A FEE< CANCEL ON SCENE, rm 300A, 215 lbs., has wc, alert per Armstrong\n1130am appt time",
+        "Comments1": "CHARGE A FEE< CANCEL ON SCENE, rm 300A, 215 lbs., has wc, alert per Armstrong\r\n1130am appt time",
         "PickupName": "3rd  Floor- Stayton Skilled living ",
         "PickupAddress1": "2501 Museum Way",
         "PickupCity": "Fort Worth",
@@ -1008,7 +1008,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Stayton",
         "AccountName": "The Stayton at Museum Way",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -1118,17 +1118,17 @@
     "DropoffZip": "76015",
     "DirectMileage": "38",
     "RideHours": "",
-    "Comments": "317, 169lbs, cn, has wc, Zachary \n9am appt, Dr. Greene, 817-314-8990",
-    "Comments1": "317, 169lbs, cn, has wc, Zachary \n9am appt, Dr. Greene, 817-314-8990",
-    "notesFull": "317, 169lbs, cn, has wc, Zachary \n9am appt, Dr. Greene, 817-314-8990",
-    "notesPreview": "317, 169lbs, cn, has wc, Zachary",
+    "Comments": "317, 169lbs, cn, has wc, Zachary \r\n9am appt, Dr. Greene, 817-314-8990",
+    "Comments1": "317, 169lbs, cn, has wc, Zachary \r\n9am appt, Dr. Greene, 817-314-8990",
+    "notesFull": "317, 169lbs, cn, has wc, Zachary\n9am appt, Dr. Greene, 817-314-8990",
+    "notesPreview": "317, 169lbs, cn, has wc, Zachary | 9am appt, Dr. Greene, 817-314-8990",
     "legs": [
       {
         "FirstName": "Margaret ",
         "LastName": "Walker ",
         "MiddleInitial": "",
         "DOB": "6/24/1935 12:00:00 AM",
-        "Comments": "317, 169lbs, cn, has wc, Zachary \n9am appt, Dr. Greene, 817-314-8990",
+        "Comments": "317, 169lbs, cn, has wc, Zachary \r\n9am appt, Dr. Greene, 817-314-8990",
         "ConfirmationNumber": "51440",
         "RideDate": "4/13/2026 12:00:00 AM",
         "ScheduledPickupTime": "08:15",
@@ -1142,7 +1142,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "19.12",
-        "Comments1": "317, 169lbs, cn, has wc, Zachary \n9am appt, Dr. Greene, 817-314-8990",
+        "Comments1": "317, 169lbs, cn, has wc, Zachary \r\n9am appt, Dr. Greene, 817-314-8990",
         "PickupName": "3rd  Floor- Stayton Skilled living ",
         "PickupAddress1": "2501 Museum Way",
         "PickupCity": "Fort Worth",
@@ -1155,14 +1155,14 @@
         "DropoffZip": "76015",
         "AccountCode": "Stayton",
         "AccountName": "The Stayton at Museum Way",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "Margaret ",
         "LastName": "Walker ",
         "MiddleInitial": "",
         "DOB": "6/24/1935 12:00:00 AM",
-        "Comments": "317, 169lbs, cn, has wc, Zachary \n9am appt, Dr. Greene, 817-314-8990",
+        "Comments": "317, 169lbs, cn, has wc, Zachary \r\n9am appt, Dr. Greene, 817-314-8990",
         "ConfirmationNumber": "51441",
         "RideDate": "4/13/2026 12:00:00 AM",
         "ScheduledPickupTime": "10:37",
@@ -1176,7 +1176,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "19.12",
-        "Comments1": "317, 169lbs, cn, has wc, Zachary \n9am appt, Dr. Greene, 817-314-8990",
+        "Comments1": "317, 169lbs, cn, has wc, Zachary \r\n9am appt, Dr. Greene, 817-314-8990",
         "PickupName": "Texas Bone and Joint - Arlington",
         "PickupAddress1": "3125 Matlock Road",
         "PickupCity": "Arlington",
@@ -1189,7 +1189,7 @@
         "DropoffZip": "76107",
         "AccountCode": "Stayton",
         "AccountName": "The Stayton at Museum Way",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -1359,7 +1359,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Stayton",
         "AccountName": "The Stayton at Museum Way",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -1502,17 +1502,17 @@
     "DropoffZip": "76132",
     "DirectMileage": "18",
     "RideHours": "",
-    "Comments": "rm 305 / has wc / 207 lbs / alert / 1545pm appt\nCardiologist Dr. Anderson #1200 (817)263-3724\n\nper Armstrong",
-    "Comments1": "rm 305 / has wc / 207 lbs / alert / 1545pm appt\nCardiologist Dr. Anderson #1200 (817)263-3724\n\nper Armstrong",
-    "notesFull": "rm 305 / has wc / 207 lbs / alert / 1545pm appt\nCardiologist Dr. Anderson #1200 (817)263-3724\n\nper Armstrong",
-    "notesPreview": "rm 305 / has wc / 207 lbs / alert / 1545pm appt",
+    "Comments": "rm 305 / has wc / 207 lbs / alert / 1545pm appt\r\nCardiologist Dr. Anderson #1200 (817)263-3724\r\n\r\nper Armstrong",
+    "Comments1": "rm 305 / has wc / 207 lbs / alert / 1545pm appt\r\nCardiologist Dr. Anderson #1200 (817)263-3724\r\n\r\nper Armstrong",
+    "notesFull": "rm 305 / has wc / 207 lbs / alert / 1545pm appt\nCardiologist Dr. Anderson #1200 (817)263-3724\nper Armstrong",
+    "notesPreview": "rm 305 / has wc / 207 lbs / alert / 1545pm appt | Cardiologist Dr. Anderson #1200 (817)263-3724 | per Armstrong",
     "legs": [
       {
         "FirstName": "James",
         "LastName": "Butler",
         "MiddleInitial": "",
         "DOB": "7/24/1957 12:00:00 AM",
-        "Comments": "rm 305 / has wc / 207 lbs / alert / 1545pm appt\nCardiologist Dr. Anderson #1200 (817)263-3724\n\nper Armstrong",
+        "Comments": "rm 305 / has wc / 207 lbs / alert / 1545pm appt\r\nCardiologist Dr. Anderson #1200 (817)263-3724\r\n\r\nper Armstrong",
         "ConfirmationNumber": "51394",
         "RideDate": "4/15/2026 12:00:00 AM",
         "ScheduledPickupTime": "15:15",
@@ -1526,7 +1526,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "9.48",
-        "Comments1": "rm 305 / has wc / 207 lbs / alert / 1545pm appt\nCardiologist Dr. Anderson #1200 (817)263-3724\n\nper Armstrong",
+        "Comments1": "rm 305 / has wc / 207 lbs / alert / 1545pm appt\r\nCardiologist Dr. Anderson #1200 (817)263-3724\r\n\r\nper Armstrong",
         "PickupName": "3rd  Floor- Stayton Skilled living ",
         "PickupAddress1": "2501 Museum Way",
         "PickupCity": "Fort Worth",
@@ -1539,14 +1539,14 @@
         "DropoffZip": "76132",
         "AccountCode": "Stayton",
         "AccountName": "The Stayton at Museum Way",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "James",
         "LastName": "Butler",
         "MiddleInitial": "",
         "DOB": "7/24/1957 12:00:00 AM",
-        "Comments": "rm 305 / has wc / 207 lbs / alert / 1545pm appt\nCardiologist Dr. Anderson #1200 (817)263-3724\n\nper Armstrong",
+        "Comments": "rm 305 / has wc / 207 lbs / alert / 1545pm appt\r\nCardiologist Dr. Anderson #1200 (817)263-3724\r\n\r\nper Armstrong",
         "ConfirmationNumber": "51395",
         "RideDate": "4/15/2026 12:00:00 AM",
         "ScheduledPickupTime": "16:36",
@@ -1560,7 +1560,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "9.48",
-        "Comments1": "rm 305 / has wc / 207 lbs / alert / 1545pm appt\nCardiologist Dr. Anderson #1200 (817)263-3724\n\nper Armstrong",
+        "Comments1": "rm 305 / has wc / 207 lbs / alert / 1545pm appt\r\nCardiologist Dr. Anderson #1200 (817)263-3724\r\n\r\nper Armstrong",
         "PickupName": "Peace Tower #1200 Cardiologist-Dr. Anderson/ Dr. Kristin Shaffer",
         "PickupAddress1": "6100 Harris Parkway",
         "PickupCity": "Fort Worth",
@@ -1573,7 +1573,7 @@
         "DropoffZip": "76107",
         "AccountCode": "Stayton",
         "AccountName": "The Stayton at Museum Way",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -1706,17 +1706,17 @@
     "DropoffZip": "76110",
     "DirectMileage": "4",
     "RideHours": "",
-    "Comments": "302, 164 lbs., has wc, alert per Armstrong\n1:30pm appt ste 600 Dr. Caton (817)702-9100\nThey will be waiting in the lobby on the ground floor\n\n302, 164 lbs., has wc, alert per Armstrong\n1:30pm appt ste 600 Dr. Caton (817)702-9100",
-    "Comments1": "302, 164 lbs., has wc, alert per Armstrong\n1:30pm appt ste 600 Dr. Caton (817)702-9100\nThey will be waiting in the lobby on the ground floor\n\n302, 164 lbs., has wc, alert per Armstrong\n1:30pm appt ste 600 Dr. Caton (817)702-9100",
-    "notesFull": "302, 164 lbs., has wc, alert per Armstrong\n1:30pm appt ste 600 Dr. Caton (817)702-9100\nThey will be waiting in the lobby on the ground floor\n\n302, 164 lbs., has wc, alert per Armstrong\n1:30pm appt ste 600 Dr. Caton (817)702-9100",
-    "notesPreview": "302, 164 lbs., has wc, alert per Armstrong",
+    "Comments": "302, 164 lbs., has wc, alert per Armstrong\r\n1:30pm appt ste 600 Dr. Caton (817)702-9100\nThey will be waiting in the lobby on the ground floor\r\n\r\n302, 164 lbs., has wc, alert per Armstrong\r\n1:30pm appt ste 600 Dr. Caton (817)702-9100",
+    "Comments1": "302, 164 lbs., has wc, alert per Armstrong\r\n1:30pm appt ste 600 Dr. Caton (817)702-9100\nThey will be waiting in the lobby on the ground floor\r\n\r\n302, 164 lbs., has wc, alert per Armstrong\r\n1:30pm appt ste 600 Dr. Caton (817)702-9100",
+    "notesFull": "302, 164 lbs., has wc, alert per Armstrong\n1:30pm appt ste 600 Dr. Caton (817)702-9100\nThey will be waiting in the lobby on the ground floor",
+    "notesPreview": "302, 164 lbs., has wc, alert per Armstrong | 1:30pm appt ste 600 Dr. Caton (817)702-9100 | They will be waiting in the lobby on the ground floor",
     "legs": [
       {
         "FirstName": "Joann",
         "LastName": "Crites",
         "MiddleInitial": "",
         "DOB": "8/7/1933 12:00:00 AM",
-        "Comments": "302, 164 lbs., has wc, alert per Armstrong\n1:30pm appt ste 600 Dr. Caton (817)702-9100",
+        "Comments": "302, 164 lbs., has wc, alert per Armstrong\r\n1:30pm appt ste 600 Dr. Caton (817)702-9100",
         "ConfirmationNumber": "50980",
         "RideDate": "4/15/2026 12:00:00 AM",
         "ScheduledPickupTime": "13:00",
@@ -1730,7 +1730,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "2.23",
-        "Comments1": "302, 164 lbs., has wc, alert per Armstrong\n1:30pm appt ste 600 Dr. Caton (817)702-9100",
+        "Comments1": "302, 164 lbs., has wc, alert per Armstrong\r\n1:30pm appt ste 600 Dr. Caton (817)702-9100",
         "PickupName": "3rd  Floor- Stayton Skilled living ",
         "PickupAddress1": "2501 Museum Way",
         "PickupCity": "Fort Worth",
@@ -1743,14 +1743,14 @@
         "DropoffZip": "76110",
         "AccountCode": "Stayton",
         "AccountName": "The Stayton at Museum Way",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "Joann",
         "LastName": "Crites",
         "MiddleInitial": "",
         "DOB": "8/7/1933 12:00:00 AM",
-        "Comments": "They will be waiting in the lobby on the ground floor\n\n302, 164 lbs., has wc, alert per Armstrong\n1:30pm appt ste 600 Dr. Caton (817)702-9100",
+        "Comments": "They will be waiting in the lobby on the ground floor\r\n\r\n302, 164 lbs., has wc, alert per Armstrong\r\n1:30pm appt ste 600 Dr. Caton (817)702-9100",
         "ConfirmationNumber": "50981",
         "RideDate": "4/15/2026 12:00:00 AM",
         "ScheduledPickupTime": "13:58",
@@ -1764,7 +1764,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "2.23",
-        "Comments1": "They will be waiting in the lobby on the ground floor\n\n302, 164 lbs., has wc, alert per Armstrong\n1:30pm appt ste 600 Dr. Caton (817)702-9100",
+        "Comments1": "They will be waiting in the lobby on the ground floor\r\n\r\n302, 164 lbs., has wc, alert per Armstrong\r\n1:30pm appt ste 600 Dr. Caton (817)702-9100",
         "PickupName": "Tyler Caton, MD",
         "PickupAddress1": "1250 8th Avenue",
         "PickupCity": "Fort Worth",
@@ -1777,7 +1777,7 @@
         "DropoffZip": "76107",
         "AccountCode": "Stayton",
         "AccountName": "The Stayton at Museum Way",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -1910,17 +1910,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "4",
     "RideHours": "",
-    "Comments": "rm 326 / has wc / 157 lbs / wife will ride with / 1315pm appt\nTexas Health Heart & Vascular Specialists #500\n\nper Cici",
-    "Comments1": "rm 326 / has wc / 157 lbs / wife will ride with / 1315pm appt\nTexas Health Heart & Vascular Specialists #500\n\nper Cici",
-    "notesFull": "rm 326 / has wc / 157 lbs / wife will ride with / 1315pm appt\nTexas Health Heart & Vascular Specialists #500\n\nper Cici",
-    "notesPreview": "rm 326 / has wc / 157 lbs / wife will ride with / 1315pm appt",
+    "Comments": "rm 326 / has wc / 157 lbs / wife will ride with / 1315pm appt\r\nTexas Health Heart & Vascular Specialists #500\r\n\r\nper Cici",
+    "Comments1": "rm 326 / has wc / 157 lbs / wife will ride with / 1315pm appt\r\nTexas Health Heart & Vascular Specialists #500\r\n\r\nper Cici",
+    "notesFull": "rm 326 / has wc / 157 lbs / wife will ride with / 1315pm appt\nTexas Health Heart & Vascular Specialists #500\nper Cici",
+    "notesPreview": "rm 326 / has wc / 157 lbs / wife will ride with / 1315pm appt | Texas Health Heart & Vascular Specialists #500 | per Cici",
     "legs": [
       {
         "FirstName": "George",
         "LastName": "Harrell",
         "MiddleInitial": "",
         "DOB": "1/5/1950 12:00:00 AM",
-        "Comments": "rm 326 / has wc / 157 lbs / wife will ride with / 1315pm appt\nTexas Health Heart & Vascular Specialists #500\n\nper Cici\n ",
+        "Comments": "rm 326 / has wc / 157 lbs / wife will ride with / 1315pm appt\r\nTexas Health Heart & Vascular Specialists #500\r\n\r\nper Cici\r\n ",
         "ConfirmationNumber": "51388",
         "RideDate": "4/15/2026 12:00:00 AM",
         "ScheduledPickupTime": "12:30",
@@ -1934,7 +1934,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "2.29",
-        "Comments1": "rm 326 / has wc / 157 lbs / wife will ride with / 1315pm appt\nTexas Health Heart & Vascular Specialists #500\n\nper Cici\n ",
+        "Comments1": "rm 326 / has wc / 157 lbs / wife will ride with / 1315pm appt\r\nTexas Health Heart & Vascular Specialists #500\r\n\r\nper Cici\r\n ",
         "PickupName": "3rd  Floor- Stayton Skilled living ",
         "PickupAddress1": "2501 Museum Way",
         "PickupCity": "Fort Worth",
@@ -1947,14 +1947,14 @@
         "DropoffZip": "76104",
         "AccountCode": "Stayton",
         "AccountName": "The Stayton at Museum Way",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "George",
         "LastName": "Harrell",
         "MiddleInitial": "",
         "DOB": "1/5/1950 12:00:00 AM",
-        "Comments": "rm 326 / has wc / 157 lbs / wife will ride with / 1315pm appt\nTexas Health Heart & Vascular Specialists #500\n\nper Cici\n ",
+        "Comments": "rm 326 / has wc / 157 lbs / wife will ride with / 1315pm appt\r\nTexas Health Heart & Vascular Specialists #500\r\n\r\nper Cici\r\n ",
         "ConfirmationNumber": "51389",
         "RideDate": "4/15/2026 12:00:00 AM",
         "ScheduledPickupTime": "13:49",
@@ -1968,7 +1968,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "2.29",
-        "Comments1": "rm 326 / has wc / 157 lbs / wife will ride with / 1315pm appt\nTexas Health Heart & Vascular Specialists #500\n\nper Cici\n ",
+        "Comments1": "rm 326 / has wc / 157 lbs / wife will ride with / 1315pm appt\r\nTexas Health Heart & Vascular Specialists #500\r\n\r\nper Cici\r\n ",
         "PickupName": "Texas Health Heart & Vascular Specialists",
         "PickupAddress1": "1300 West Terrell Avenue",
         "PickupCity": "Fort Worth",
@@ -1981,7 +1981,7 @@
         "DropoffZip": "76107",
         "AccountCode": "Stayton",
         "AccountName": "The Stayton at Museum Way",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -2114,17 +2114,17 @@
     "DropoffZip": "76123",
     "DirectMileage": "24",
     "RideHours": "0.3667",
-    "Comments": "300.A, 178lbs, cn, has wc, Armstrong \n8am arrival for an 810am appt, #312",
-    "Comments1": "300.A, 178lbs, cn, has wc, Armstrong \n8am arrival for an 810am appt, #312",
-    "notesFull": "300.A, 178lbs, cn, has wc, Armstrong \n8am arrival for an 810am appt, #312",
-    "notesPreview": "300.A, 178lbs, cn, has wc, Armstrong",
+    "Comments": "300.A, 178lbs, cn, has wc, Armstrong \r\n8am arrival for an 810am appt, #312",
+    "Comments1": "300.A, 178lbs, cn, has wc, Armstrong \r\n8am arrival for an 810am appt, #312",
+    "notesFull": "300.A, 178lbs, cn, has wc, Armstrong\n8am arrival for an 810am appt, #312",
+    "notesPreview": "300.A, 178lbs, cn, has wc, Armstrong | 8am arrival for an 810am appt, #312",
     "legs": [
       {
         "FirstName": " Ailleen",
         "LastName": "Horan",
         "MiddleInitial": "",
         "DOB": "12/11/1934 12:00:00 AM",
-        "Comments": "300.A, 178lbs, cn, has wc, Armstrong \n8am arrival for an 810am appt, #312",
+        "Comments": "300.A, 178lbs, cn, has wc, Armstrong \r\n8am arrival for an 810am appt, #312",
         "ConfirmationNumber": "51565",
         "RideDate": "4/15/2026 12:00:00 AM",
         "ScheduledPickupTime": "07:30",
@@ -2138,7 +2138,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "11.62",
-        "Comments1": "300.A, 178lbs, cn, has wc, Armstrong \n8am arrival for an 810am appt, #312",
+        "Comments1": "300.A, 178lbs, cn, has wc, Armstrong \r\n8am arrival for an 810am appt, #312",
         "PickupName": "3rd  Floor- Stayton Skilled living ",
         "PickupAddress1": "2501 Museum Way",
         "PickupCity": "Fort Worth",
@@ -2151,14 +2151,14 @@
         "DropoffZip": "76123",
         "AccountCode": "Stayton",
         "AccountName": "The Stayton at Museum Way",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": " Ailleen",
         "LastName": "Horan",
         "MiddleInitial": "",
         "DOB": "12/11/1934 12:00:00 AM",
-        "Comments": "300.A, 178lbs, cn, has wc, Armstrong \n8am arrival for an 810am appt, #312",
+        "Comments": "300.A, 178lbs, cn, has wc, Armstrong \r\n8am arrival for an 810am appt, #312",
         "ConfirmationNumber": "51566",
         "RideDate": "4/15/2026 12:00:00 AM",
         "ScheduledPickupTime": "10:12",
@@ -2172,7 +2172,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "11.62",
-        "Comments1": "300.A, 178lbs, cn, has wc, Armstrong \n8am arrival for an 810am appt, #312",
+        "Comments1": "300.A, 178lbs, cn, has wc, Armstrong \r\n8am arrival for an 810am appt, #312",
         "PickupName": "Chisholm Trail Orthopedics & Sports Medicine Fort Worth (Sycamore School Road)",
         "PickupAddress1": "5540 Sycamore School Road",
         "PickupCity": "Fort Worth",
@@ -2185,7 +2185,7 @@
         "DropoffZip": "76107",
         "AccountCode": "Stayton",
         "AccountName": "The Stayton at Museum Way",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -2318,17 +2318,17 @@
     "DropoffZip": "76132",
     "DirectMileage": "11",
     "RideHours": "",
-    "Comments": "**Per Linda/ Tech Patient went to the hospital**\nrm 304 / has wc / 190 lbs / daughter will ride with / 1415pm appt\nDr. Patel Ste 100 (817)338-1300\n\nper Armstrong",
-    "Comments1": "**Per Linda/ Tech Patient went to the hospital**\nrm 304 / has wc / 190 lbs / daughter will ride with / 1415pm appt\nDr. Patel Ste 100 (817)338-1300\n\nper Armstrong",
-    "notesFull": "**Per Linda/ Tech Patient went to the hospital**\nrm 304 / has wc / 190 lbs / daughter will ride with / 1415pm appt\nDr. Patel Ste 100 (817)338-1300\n\nper Armstrong",
-    "notesPreview": "**Per Linda/ Tech Patient went to the hospital**",
+    "Comments": "**Per Linda/ Tech Patient went to the hospital**\r\nrm 304 / has wc / 190 lbs / daughter will ride with / 1415pm appt\r\nDr. Patel Ste 100 (817)338-1300\r\n\r\nper Armstrong",
+    "Comments1": "**Per Linda/ Tech Patient went to the hospital**\r\nrm 304 / has wc / 190 lbs / daughter will ride with / 1415pm appt\r\nDr. Patel Ste 100 (817)338-1300\r\n\r\nper Armstrong",
+    "notesFull": "**Per Linda/ Tech Patient went to the hospital**\nrm 304 / has wc / 190 lbs / daughter will ride with / 1415pm appt\nDr. Patel Ste 100 (817)338-1300\nper Armstrong",
+    "notesPreview": "**Per Linda/ Tech Patient went to the hospital** | rm 304 / has wc / 190 lbs / daughter will ride with / 1415pm appt | Dr. Patel Ste 100 (817)338-1300 | per...",
     "legs": [
       {
         "FirstName": "Sharma",
         "LastName": "Shyam",
         "MiddleInitial": "",
         "DOB": "11/1/1944 12:00:00 AM",
-        "Comments": "**Per Linda/ Tech Patient went to the hospital**\nrm 304 / has wc / 190 lbs / daughter will ride with / 1415pm appt\nDr. Patel Ste 100 (817)338-1300\n\nper Armstrong\n\n",
+        "Comments": "**Per Linda/ Tech Patient went to the hospital**\r\nrm 304 / has wc / 190 lbs / daughter will ride with / 1415pm appt\r\nDr. Patel Ste 100 (817)338-1300\r\n\r\nper Armstrong\r\n\r\n",
         "ConfirmationNumber": "51396",
         "RideDate": "4/15/2026 12:00:00 AM",
         "ScheduledPickupTime": "13:45",
@@ -2342,7 +2342,7 @@
         "Mobility": "WC",
         "RideStatus": "NoShow ",
         "DirectMileage": "11.10",
-        "Comments1": "**Per Linda/ Tech Patient went to the hospital**\nrm 304 / has wc / 190 lbs / daughter will ride with / 1415pm appt\nDr. Patel Ste 100 (817)338-1300\n\nper Armstrong\n\n",
+        "Comments1": "**Per Linda/ Tech Patient went to the hospital**\r\nrm 304 / has wc / 190 lbs / daughter will ride with / 1415pm appt\r\nDr. Patel Ste 100 (817)338-1300\r\n\r\nper Armstrong\r\n\r\n",
         "PickupName": "3rd  Floor- Stayton Skilled living ",
         "PickupAddress1": "2501 Museum Way",
         "PickupCity": "Fort Worth",
@@ -2355,7 +2355,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Stayton",
         "AccountName": "The Stayton at Museum Way",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -2465,17 +2465,17 @@
     "DropoffZip": "76015",
     "DirectMileage": "38",
     "RideHours": "",
-    "Comments": "344, 166lbs, cn, has wc, Zachary \n330pm appt",
-    "Comments1": "344, 166lbs, cn, has wc, Zachary \n330pm appt",
-    "notesFull": "344, 166lbs, cn, has wc, Zachary \n330pm appt",
-    "notesPreview": "344, 166lbs, cn, has wc, Zachary",
+    "Comments": "344, 166lbs, cn, has wc, Zachary \r\n330pm appt",
+    "Comments1": "344, 166lbs, cn, has wc, Zachary \r\n330pm appt",
+    "notesFull": "344, 166lbs, cn, has wc, Zachary\n330pm appt",
+    "notesPreview": "344, 166lbs, cn, has wc, Zachary | 330pm appt",
     "legs": [
       {
         "FirstName": "April ",
         "LastName": "Vasquez ",
         "MiddleInitial": "",
         "DOB": "3/24/1940 12:00:00 AM",
-        "Comments": "344, 166lbs, cn, has wc, Zachary \n330pm appt",
+        "Comments": "344, 166lbs, cn, has wc, Zachary \r\n330pm appt",
         "ConfirmationNumber": "51438",
         "RideDate": "4/15/2026 12:00:00 AM",
         "ScheduledPickupTime": "14:45",
@@ -2489,7 +2489,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "19.35",
-        "Comments1": "344, 166lbs, cn, has wc, Zachary \n330pm appt",
+        "Comments1": "344, 166lbs, cn, has wc, Zachary \r\n330pm appt",
         "PickupName": "3rd  Floor- Stayton Skilled living ",
         "PickupAddress1": "2501 Museum Way",
         "PickupCity": "Fort Worth",
@@ -2502,14 +2502,14 @@
         "DropoffZip": "76015",
         "AccountCode": "Stayton",
         "AccountName": "The Stayton at Museum Way",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "April ",
         "LastName": "Vasquez ",
         "MiddleInitial": "",
         "DOB": "3/24/1940 12:00:00 AM",
-        "Comments": "344, 166lbs, cn, has wc, Zachary \n330pm appt",
+        "Comments": "344, 166lbs, cn, has wc, Zachary \r\n330pm appt",
         "ConfirmationNumber": "51439",
         "RideDate": "4/15/2026 12:00:00 AM",
         "ScheduledPickupTime": "00:00",
@@ -2523,7 +2523,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "19.35",
-        "Comments1": "344, 166lbs, cn, has wc, Zachary \n330pm appt",
+        "Comments1": "344, 166lbs, cn, has wc, Zachary \r\n330pm appt",
         "PickupName": "Arlington Orthopedic Assocation",
         "PickupAddress1": "800 Orthopedic Way",
         "PickupCity": "Arlington",
@@ -2536,7 +2536,7 @@
         "DropoffZip": "76107",
         "AccountCode": "Stayton",
         "AccountName": "The Stayton at Museum Way",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -2675,17 +2675,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "6",
     "RideHours": "",
-    "Comments": "RM 319\n200 lbs\nHas WC\n1445 appt\nZachary",
-    "Comments1": "RM 319\n200 lbs\nHas WC\n1445 appt\nZachary",
+    "Comments": "RM 319\r\n200 lbs\r\nHas WC\r\n1445 appt\r\nZachary",
+    "Comments1": "RM 319\r\n200 lbs\r\nHas WC\r\n1445 appt\r\nZachary",
     "notesFull": "RM 319\n200 lbs\nHas WC\n1445 appt\nZachary",
-    "notesPreview": "RM 319",
+    "notesPreview": "RM 319 | 200 lbs | Has WC | 1445 appt | Zachary",
     "legs": [
       {
         "FirstName": "Dorothy ",
         "LastName": "West ",
         "MiddleInitial": "",
         "DOB": "8/28/1950 12:00:00 AM",
-        "Comments": "RM 319\n200 lbs\nHas WC\n1445 appt\nZachary",
+        "Comments": "RM 319\r\n200 lbs\r\nHas WC\r\n1445 appt\r\nZachary",
         "ConfirmationNumber": "51574",
         "RideDate": "4/15/2026 12:00:00 AM",
         "ScheduledPickupTime": "14:15",
@@ -2699,7 +2699,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "2.81",
-        "Comments1": "RM 319\n200 lbs\nHas WC\n1445 appt\nZachary",
+        "Comments1": "RM 319\r\n200 lbs\r\nHas WC\r\n1445 appt\r\nZachary",
         "PickupName": "3rd  Floor- Stayton Skilled living ",
         "PickupAddress1": "2501 Museum Way",
         "PickupCity": "Fort Worth",
@@ -2712,14 +2712,14 @@
         "DropoffZip": "76104",
         "AccountCode": "Stayton",
         "AccountName": "The Stayton at Museum Way",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "Dorothy ",
         "LastName": "West ",
         "MiddleInitial": "",
         "DOB": "8/28/1950 12:00:00 AM",
-        "Comments": "RM 319\n200 lbs\nHas WC\n1445 appt\nZachary",
+        "Comments": "RM 319\r\n200 lbs\r\nHas WC\r\n1445 appt\r\nZachary",
         "ConfirmationNumber": "51575",
         "RideDate": "4/15/2026 12:00:00 AM",
         "ScheduledPickupTime": "14:58",
@@ -2733,7 +2733,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "2.81",
-        "Comments1": "RM 319\n200 lbs\nHas WC\n1445 appt\nZachary",
+        "Comments1": "RM 319\r\n200 lbs\r\nHas WC\r\n1445 appt\r\nZachary",
         "PickupName": "The Lung & Sleep Center of North Texas",
         "PickupAddress1": "915 South Main Street",
         "PickupCity": "Fort Worth",
@@ -2746,7 +2746,7 @@
         "DropoffZip": "76107",
         "AccountCode": "Stayton",
         "AccountName": "The Stayton at Museum Way",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -2879,17 +2879,17 @@
     "DropoffZip": "76107",
     "DirectMileage": "2",
     "RideHours": "0.4",
-    "Comments": "Cardiac RM 414\n187 lbs\n2L O2\nNeeds Recliner\nStayton RM 322\nTwila 817 250 3475",
-    "Comments1": "Cardiac RM 414\n187 lbs\n2L O2\nNeeds Recliner\nStayton RM 322\nTwila 817 250 3475",
+    "Comments": "Cardiac RM 414\r\n187 lbs\r\n2L O2\r\nNeeds Recliner\r\nStayton RM 322\r\nTwila 817 250 3475",
+    "Comments1": "Cardiac RM 414\r\n187 lbs\r\n2L O2\r\nNeeds Recliner\r\nStayton RM 322\r\nTwila 817 250 3475",
     "notesFull": "Cardiac RM 414\n187 lbs\n2L O2\nNeeds Recliner\nStayton RM 322\nTwila 817 250 3475",
-    "notesPreview": "Cardiac RM 414",
+    "notesPreview": "Cardiac RM 414 | 187 lbs | 2L O2 | Needs Recliner | Stayton RM 322 | Twila 817 250 3475",
     "legs": [
       {
         "FirstName": "James",
         "LastName": "Stryker",
         "MiddleInitial": "",
         "DOB": "1/17/1943 12:00:00 AM",
-        "Comments": "Cardiac RM 414\n187 lbs\n2L O2\nNeeds Recliner\nStayton RM 322\nTwila 817 250 3475\n",
+        "Comments": "Cardiac RM 414\r\n187 lbs\r\n2L O2\r\nNeeds Recliner\r\nStayton RM 322\r\nTwila 817 250 3475\r\n",
         "ConfirmationNumber": "51614",
         "RideDate": "4/16/2026 12:00:00 AM",
         "ScheduledPickupTime": "17:00",
@@ -2903,7 +2903,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "2.23",
-        "Comments1": "Cardiac RM 414\n187 lbs\n2L O2\nNeeds Recliner\nStayton RM 322\nTwila 817 250 3475\n",
+        "Comments1": "Cardiac RM 414\r\n187 lbs\r\n2L O2\r\nNeeds Recliner\r\nStayton RM 322\r\nTwila 817 250 3475\r\n",
         "PickupName": "Harris Cardiac Tower",
         "PickupAddress1": "1301 Pennsylvania Ave",
         "PickupCity": "Fort Worth",
@@ -2916,7 +2916,7 @@
         "DropoffZip": "76107",
         "AccountCode": "Stayton",
         "AccountName": "The Stayton at Museum Way",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -3057,17 +3057,17 @@
     "DropoffZip": "76014",
     "DirectMileage": "38",
     "RideHours": "",
-    "Comments": "317, 169lbs, cn, has wc, Zachary\n230pm appt, suite 200\n317, 169lbs, cn, has wc, Zachary\n2pm appt, suite 200",
-    "Comments1": "317, 169lbs, cn, has wc, Zachary\n230pm appt, suite 200\n317, 169lbs, cn, has wc, Zachary\n2pm appt, suite 200",
-    "notesFull": "317, 169lbs, cn, has wc, Zachary\n230pm appt, suite 200\n317, 169lbs, cn, has wc, Zachary\n2pm appt, suite 200",
-    "notesPreview": "317, 169lbs, cn, has wc, Zachary",
+    "Comments": "317, 169lbs, cn, has wc, Zachary\r\n230pm appt, suite 200\n317, 169lbs, cn, has wc, Zachary\r\n2pm appt, suite 200",
+    "Comments1": "317, 169lbs, cn, has wc, Zachary\r\n230pm appt, suite 200\n317, 169lbs, cn, has wc, Zachary\r\n2pm appt, suite 200",
+    "notesFull": "317, 169lbs, cn, has wc, Zachary\n230pm appt, suite 200\n2pm appt, suite 200",
+    "notesPreview": "317, 169lbs, cn, has wc, Zachary | 230pm appt, suite 200 | 2pm appt, suite 200",
     "legs": [
       {
         "FirstName": "Margaret ",
         "LastName": "Walker ",
         "MiddleInitial": "",
         "DOB": "6/24/1935 12:00:00 AM",
-        "Comments": "317, 169lbs, cn, has wc, Zachary\n230pm appt, suite 200",
+        "Comments": "317, 169lbs, cn, has wc, Zachary\r\n230pm appt, suite 200",
         "ConfirmationNumber": "51578",
         "RideDate": "4/16/2026 12:00:00 AM",
         "ScheduledPickupTime": "13:15",
@@ -3081,7 +3081,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "19.47",
-        "Comments1": "317, 169lbs, cn, has wc, Zachary\n230pm appt, suite 200",
+        "Comments1": "317, 169lbs, cn, has wc, Zachary\r\n230pm appt, suite 200",
         "PickupName": "3rd  Floor- Stayton Skilled living ",
         "PickupAddress1": "2501 Museum Way",
         "PickupCity": "Fort Worth",
@@ -3094,14 +3094,14 @@
         "DropoffZip": "76014",
         "AccountCode": "Stayton",
         "AccountName": "The Stayton at Museum Way",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "Margaret ",
         "LastName": "Walker ",
         "MiddleInitial": "",
         "DOB": "6/24/1935 12:00:00 AM",
-        "Comments": "317, 169lbs, cn, has wc, Zachary\n2pm appt, suite 200",
+        "Comments": "317, 169lbs, cn, has wc, Zachary\r\n2pm appt, suite 200",
         "ConfirmationNumber": "51579",
         "RideDate": "4/16/2026 12:00:00 AM",
         "ScheduledPickupTime": "00:00",
@@ -3115,7 +3115,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "19.47",
-        "Comments1": "317, 169lbs, cn, has wc, Zachary\n2pm appt, suite 200",
+        "Comments1": "317, 169lbs, cn, has wc, Zachary\r\n2pm appt, suite 200",
         "PickupName": "Professional Building A- Texas Cardiovascular Specialists - Arlington",
         "PickupAddress1": "515 West Mayfield Road",
         "PickupCity": "Arlington",
@@ -3128,7 +3128,7 @@
         "DropoffZip": "76107",
         "AccountCode": "Stayton",
         "AccountName": "The Stayton at Museum Way",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -3267,17 +3267,17 @@
     "DropoffZip": "76132",
     "DirectMileage": "9",
     "RideHours": "",
-    "Comments": "*Per Monique, no charge*\n324, 162lbs, has wc\nRM 324",
-    "Comments1": "*Per Monique, no charge*\n324, 162lbs, has wc\nRM 324",
+    "Comments": "*Per Monique, no charge*\r\n324, 162lbs, has wc\r\nRM 324",
+    "Comments1": "*Per Monique, no charge*\r\n324, 162lbs, has wc\r\nRM 324",
     "notesFull": "*Per Monique, no charge*\n324, 162lbs, has wc\nRM 324",
-    "notesPreview": "*Per Monique, no charge*",
+    "notesPreview": "*Per Monique, no charge* | 324, 162lbs, has wc | RM 324",
     "legs": [
       {
         "FirstName": "Marilyn",
         "LastName": "Peters",
         "MiddleInitial": "",
         "DOB": "1/20/1938 12:00:00 AM",
-        "Comments": "*Per Monique, no charge*\n324, 162lbs, has wc\nRM 324",
+        "Comments": "*Per Monique, no charge*\r\n324, 162lbs, has wc\r\nRM 324",
         "ConfirmationNumber": "51517",
         "RideDate": "4/17/2026 12:00:00 AM",
         "ScheduledPickupTime": "09:30",
@@ -3291,7 +3291,7 @@
         "Mobility": "WC",
         "RideStatus": "NoShow ",
         "DirectMileage": "9.48",
-        "Comments1": "*Per Monique, no charge*\n324, 162lbs, has wc\nRM 324",
+        "Comments1": "*Per Monique, no charge*\r\n324, 162lbs, has wc\r\nRM 324",
         "PickupName": "3rd  Floor- Stayton Skilled living ",
         "PickupAddress1": "2501 Museum Way",
         "PickupCity": "Fort Worth",
@@ -3304,7 +3304,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Stayton",
         "AccountName": "The Stayton at Museum Way",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -3414,17 +3414,17 @@
     "DropoffZip": "76015",
     "DirectMileage": "19",
     "RideHours": "0",
-    "Comments": "*No charge**\nRM 317 b\n122 lbs\nHas WC\n0900 appt, Dr Reuben\nZach",
-    "Comments1": "*No charge**\nRM 317 b\n122 lbs\nHas WC\n0900 appt, Dr Reuben\nZach",
+    "Comments": "*No charge**\r\nRM 317 b\r\n122 lbs\r\nHas WC\r\n0900 appt, Dr Reuben\r\nZach",
+    "Comments1": "*No charge**\r\nRM 317 b\r\n122 lbs\r\nHas WC\r\n0900 appt, Dr Reuben\r\nZach",
     "notesFull": "*No charge**\nRM 317 b\n122 lbs\nHas WC\n0900 appt, Dr Reuben\nZach",
-    "notesPreview": "*No charge**",
+    "notesPreview": "*No charge** | RM 317 b | 122 lbs | Has WC | 0900 appt, Dr Reuben | Zach",
     "legs": [
       {
         "FirstName": "Paula",
         "LastName": "Davenport",
         "MiddleInitial": "",
         "DOB": "8/2/1950 12:00:00 AM",
-        "Comments": "*No charge**\nRM 317 b\n122 lbs\nHas WC\n0900 appt, Dr Reuben\nZach",
+        "Comments": "*No charge**\r\nRM 317 b\r\n122 lbs\r\nHas WC\r\n0900 appt, Dr Reuben\r\nZach",
         "ConfirmationNumber": "51244",
         "RideDate": "4/22/2026 12:00:00 AM",
         "ScheduledPickupTime": "08:00",
@@ -3438,7 +3438,7 @@
         "Mobility": "WC",
         "RideStatus": "NoShow ",
         "DirectMileage": "19.35",
-        "Comments1": "*No charge**\nRM 317 b\n122 lbs\nHas WC\n0900 appt, Dr Reuben\nZach",
+        "Comments1": "*No charge**\r\nRM 317 b\r\n122 lbs\r\nHas WC\r\n0900 appt, Dr Reuben\r\nZach",
         "PickupName": "3rd  Floor- Stayton Skilled living ",
         "PickupAddress1": "2501 Museum Way",
         "PickupCity": "Fort Worth",
@@ -3451,7 +3451,7 @@
         "DropoffZip": "76015",
         "AccountCode": "Stayton",
         "AccountName": "The Stayton at Museum Way",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -3561,17 +3561,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "6",
     "RideHours": "",
-    "Comments": "RM 326\n174 lbs\nHas WC\n1130 appt, Dr Moreland\nZach",
-    "Comments1": "RM 326\n174 lbs\nHas WC\n1130 appt, Dr Moreland\nZach",
+    "Comments": "RM 326\r\n174 lbs\r\nHas WC\r\n1130 appt, Dr Moreland\r\nZach",
+    "Comments1": "RM 326\r\n174 lbs\r\nHas WC\r\n1130 appt, Dr Moreland\r\nZach",
     "notesFull": "RM 326\n174 lbs\nHas WC\n1130 appt, Dr Moreland\nZach",
-    "notesPreview": "RM 326",
+    "notesPreview": "RM 326 | 174 lbs | Has WC | 1130 appt, Dr Moreland | Zach",
     "legs": [
       {
         "FirstName": "George",
         "LastName": "Harrell",
         "MiddleInitial": "",
         "DOB": "1/5/1950 12:00:00 AM",
-        "Comments": "RM 326\n174 lbs\nHas WC\n1130 appt, Dr Moreland\nZach",
+        "Comments": "RM 326\r\n174 lbs\r\nHas WC\r\n1130 appt, Dr Moreland\r\nZach",
         "ConfirmationNumber": "51219",
         "RideDate": "4/22/2026 12:00:00 AM",
         "ScheduledPickupTime": "11:00",
@@ -3585,7 +3585,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "2.90",
-        "Comments1": "RM 326\n174 lbs\nHas WC\n1130 appt, Dr Moreland\nZach",
+        "Comments1": "RM 326\r\n174 lbs\r\nHas WC\r\n1130 appt, Dr Moreland\r\nZach",
         "PickupName": "3rd  Floor- Stayton Skilled living ",
         "PickupAddress1": "2501 Museum Way",
         "PickupCity": "Fort Worth",
@@ -3598,14 +3598,14 @@
         "DropoffZip": "76104",
         "AccountCode": "Stayton",
         "AccountName": "The Stayton at Museum Way",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "George",
         "LastName": "Harrell",
         "MiddleInitial": "",
         "DOB": "1/5/1950 12:00:00 AM",
-        "Comments": "RM 326\n174 lbs\nHas WC\n1130 appt, Dr Moreland\nZach",
+        "Comments": "RM 326\r\n174 lbs\r\nHas WC\r\n1130 appt, Dr Moreland\r\nZach",
         "ConfirmationNumber": "51220",
         "RideDate": "4/22/2026 12:00:00 AM",
         "ScheduledPickupTime": "11:45",
@@ -3619,7 +3619,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "2.90",
-        "Comments1": "RM 326\n174 lbs\nHas WC\n1130 appt, Dr Moreland\nZach",
+        "Comments1": "RM 326\r\n174 lbs\r\nHas WC\r\n1130 appt, Dr Moreland\r\nZach",
         "PickupName": "Texas Pulmonary & Critical Care Consultants, PA",
         "PickupAddress1": "1201 Fairmount Avenue",
         "PickupCity": "Fort Worth",
@@ -3632,7 +3632,7 @@
         "DropoffZip": "76107",
         "AccountCode": "Stayton",
         "AccountName": "The Stayton at Museum Way",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -3802,7 +3802,7 @@
         "DropoffZip": "76107",
         "AccountCode": "Stayton",
         "AccountName": "The Stayton at Museum Way",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -3943,17 +3943,17 @@
     "DropoffZip": "76011",
     "DirectMileage": "16",
     "RideHours": "",
-    "Comments": "***CXL per Linda. No Charge***\n\n318, 148lbs, cn, has wc, Armstrong \n315pm appt",
-    "Comments1": "***CXL per Linda. No Charge***\n\n318, 148lbs, cn, has wc, Armstrong \n315pm appt",
-    "notesFull": "***CXL per Linda. No Charge***\n\n318, 148lbs, cn, has wc, Armstrong \n315pm appt",
-    "notesPreview": "***CXL per Linda. No Charge***",
+    "Comments": "***CXL per Linda. No Charge***\r\n\r\n318, 148lbs, cn, has wc, Armstrong \r\n315pm appt",
+    "Comments1": "***CXL per Linda. No Charge***\r\n\r\n318, 148lbs, cn, has wc, Armstrong \r\n315pm appt",
+    "notesFull": "***CXL per Linda. No Charge***\n318, 148lbs, cn, has wc, Armstrong\n315pm appt",
+    "notesPreview": "***CXL per Linda. No Charge*** | 318, 148lbs, cn, has wc, Armstrong | 315pm appt",
     "legs": [
       {
         "FirstName": "Virginia ",
         "LastName": "Schlarb ",
         "MiddleInitial": "",
         "DOB": "1/29/1937 12:00:00 AM",
-        "Comments": "***CXL per Linda. No Charge***\n\n318, 148lbs, cn, has wc, Armstrong \n315pm appt",
+        "Comments": "***CXL per Linda. No Charge***\r\n\r\n318, 148lbs, cn, has wc, Armstrong \r\n315pm appt",
         "ConfirmationNumber": "51594",
         "RideDate": "4/22/2026 12:00:00 AM",
         "ScheduledPickupTime": "14:30",
@@ -3967,7 +3967,7 @@
         "Mobility": "WC",
         "RideStatus": "RiderCancel ",
         "DirectMileage": "16.45",
-        "Comments1": "***CXL per Linda. No Charge***\n\n318, 148lbs, cn, has wc, Armstrong \n315pm appt",
+        "Comments1": "***CXL per Linda. No Charge***\r\n\r\n318, 148lbs, cn, has wc, Armstrong \r\n315pm appt",
         "PickupName": "3rd  Floor- Stayton Skilled living ",
         "PickupAddress1": "2501 Museum Way",
         "PickupCity": "Fort Worth",
@@ -3980,7 +3980,7 @@
         "DropoffZip": "76011",
         "AccountCode": "Stayton",
         "AccountName": "The Stayton at Museum Way",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -4127,7 +4127,7 @@
         "DropoffZip": "76107",
         "AccountCode": "Stayton",
         "AccountName": "The Stayton at Museum Way",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -4299,7 +4299,7 @@
         "DropoffZip": "76164",
         "AccountCode": "Stayton",
         "AccountName": "The Stayton at Museum Way",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "Sulema",
@@ -4333,7 +4333,7 @@
         "DropoffZip": "76107",
         "AccountCode": "Stayton",
         "AccountName": "The Stayton at Museum Way",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -4466,17 +4466,17 @@
     "DropoffZip": "76104",
     "DirectMileage": "4",
     "RideHours": "",
-    "Comments": "rm 303 / has wc / 168lbs / alert / 845am appt, \n*Per Linda new ppt time is 1045am appt needs a 1015am pick up* \nDr. De La Fuente #300 (817)250-5690\n\nper Armstrong\nrm 303 / has wc / 168 lbs / alert / 1045am appt\nDr. De La Fuente #300 (817)250-5690\n\nper Armstrong",
-    "Comments1": "rm 303 / has wc / 168lbs / alert / 845am appt, \n*Per Linda new ppt time is 1045am appt needs a 1015am pick up* \nDr. De La Fuente #300 (817)250-5690\n\nper Armstrong\nrm 303 / has wc / 168 lbs / alert / 1045am appt\nDr. De La Fuente #300 (817)250-5690\n\nper Armstrong",
-    "notesFull": "rm 303 / has wc / 168lbs / alert / 845am appt, \n*Per Linda new ppt time is 1045am appt needs a 1015am pick up* \nDr. De La Fuente #300 (817)250-5690\n\nper Armstrong\nrm 303 / has wc / 168 lbs / alert / 1045am appt\nDr. De La Fuente #300 (817)250-5690\n\nper Armstrong",
-    "notesPreview": "rm 303 / has wc / 168lbs / alert / 845am appt,",
+    "Comments": "rm 303 / has wc / 168lbs / alert / 845am appt, \r\n*Per Linda new ppt time is 1045am appt needs a 1015am pick up* \r\nDr. De La Fuente #300 (817)250-5690\r\n\r\nper Armstrong\nrm 303 / has wc / 168 lbs / alert / 1045am appt\r\nDr. De La Fuente #300 (817)250-5690\r\n\r\nper Armstrong",
+    "Comments1": "rm 303 / has wc / 168lbs / alert / 845am appt, \r\n*Per Linda new ppt time is 1045am appt needs a 1015am pick up* \r\nDr. De La Fuente #300 (817)250-5690\r\n\r\nper Armstrong\nrm 303 / has wc / 168 lbs / alert / 1045am appt\r\nDr. De La Fuente #300 (817)250-5690\r\n\r\nper Armstrong",
+    "notesFull": "rm 303 / has wc / 168lbs / alert / 845am appt,\n*Per Linda new ppt time is 1045am appt needs a 1015am pick up*\nDr. De La Fuente #300 (817)250-5690\nper Armstrong\nrm 303 / has wc / 168 lbs / alert / 1045am appt",
+    "notesPreview": "rm 303 / has wc / 168lbs / alert / 845am appt, | *Per Linda new ppt time is 1045am appt needs a 1015am pick up* | Dr. De La Fuente #300 (817)250-5690 | per A...",
     "legs": [
       {
         "FirstName": "Linda",
         "LastName": "Stotts",
         "MiddleInitial": "",
         "DOB": "3/13/1943 12:00:00 AM",
-        "Comments": "rm 303 / has wc / 168lbs / alert / 845am appt, \n*Per Linda new ppt time is 1045am appt needs a 1015am pick up* \nDr. De La Fuente #300 (817)250-5690\n\nper Armstrong",
+        "Comments": "rm 303 / has wc / 168lbs / alert / 845am appt, \r\n*Per Linda new ppt time is 1045am appt needs a 1015am pick up* \r\nDr. De La Fuente #300 (817)250-5690\r\n\r\nper Armstrong",
         "ConfirmationNumber": "51458",
         "RideDate": "4/23/2026 12:00:00 AM",
         "ScheduledPickupTime": "10:15",
@@ -4490,7 +4490,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "2.11",
-        "Comments1": "rm 303 / has wc / 168lbs / alert / 845am appt, \n*Per Linda new ppt time is 1045am appt needs a 1015am pick up* \nDr. De La Fuente #300 (817)250-5690\n\nper Armstrong",
+        "Comments1": "rm 303 / has wc / 168lbs / alert / 845am appt, \r\n*Per Linda new ppt time is 1045am appt needs a 1015am pick up* \r\nDr. De La Fuente #300 (817)250-5690\r\n\r\nper Armstrong",
         "PickupName": "3rd  Floor- Stayton Skilled living ",
         "PickupAddress1": "2501 Museum Way",
         "PickupCity": "Fort Worth",
@@ -4503,14 +4503,14 @@
         "DropoffZip": "76104",
         "AccountCode": "Stayton",
         "AccountName": "The Stayton at Museum Way",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "Linda",
         "LastName": "Stotts",
         "MiddleInitial": "",
         "DOB": "3/13/1943 12:00:00 AM",
-        "Comments": "rm 303 / has wc / 168 lbs / alert / 1045am appt\nDr. De La Fuente #300 (817)250-5690\n\nper Armstrong",
+        "Comments": "rm 303 / has wc / 168 lbs / alert / 1045am appt\r\nDr. De La Fuente #300 (817)250-5690\r\n\r\nper Armstrong",
         "ConfirmationNumber": "51459",
         "RideDate": "4/23/2026 12:00:00 AM",
         "ScheduledPickupTime": "12:23",
@@ -4524,7 +4524,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "2.11",
-        "Comments1": "rm 303 / has wc / 168 lbs / alert / 1045am appt\nDr. De La Fuente #300 (817)250-5690\n\nper Armstrong",
+        "Comments1": "rm 303 / has wc / 168 lbs / alert / 1045am appt\r\nDr. De La Fuente #300 (817)250-5690\r\n\r\nper Armstrong",
         "PickupName": "#300 Ben Hogan-Ortho & Trauma ",
         "PickupAddress1": "800 5th Avenue",
         "PickupCity": "Fort Worth",
@@ -4537,7 +4537,7 @@
         "DropoffZip": "76107",
         "AccountCode": "Stayton",
         "AccountName": "The Stayton at Museum Way",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -4680,7 +4680,7 @@
         "LastName": "Williams ",
         "MiddleInitial": "",
         "DOB": "10/27/1948 12:00:00 AM",
-        "Comments": "rm340, 146lbs., has wc, 1030 am appt.\n",
+        "Comments": "rm340, 146lbs., has wc, 1030 am appt.\r\n",
         "ConfirmationNumber": "50581",
         "RideDate": "4/23/2026 12:00:00 AM",
         "ScheduledPickupTime": "10:00",
@@ -4694,7 +4694,7 @@
         "Mobility": "WC",
         "RideStatus": "NoShow ",
         "DirectMileage": "2.11",
-        "Comments1": "rm340, 146lbs., has wc, 1030 am appt.\n",
+        "Comments1": "rm340, 146lbs., has wc, 1030 am appt.\r\n",
         "PickupName": "3rd  Floor- Stayton Skilled living ",
         "PickupAddress1": "2501 Museum Way",
         "PickupCity": "Fort Worth",
@@ -4707,7 +4707,7 @@
         "DropoffZip": "76104",
         "AccountCode": "Stayton",
         "AccountName": "The Stayton at Museum Way",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -4817,17 +4817,17 @@
     "DropoffZip": "76107",
     "DirectMileage": "2",
     "RideHours": "0.35",
-    "Comments": "rm 318, 90lbs., STR, \nrm 317A at the Stayton",
-    "Comments1": "rm 318, 90lbs., STR, \nrm 317A at the Stayton",
-    "notesFull": "rm 318, 90lbs., STR, \nrm 317A at the Stayton",
-    "notesPreview": "rm 318, 90lbs., STR,",
+    "Comments": "rm 318, 90lbs., STR, \r\nrm 317A at the Stayton",
+    "Comments1": "rm 318, 90lbs., STR, \r\nrm 317A at the Stayton",
+    "notesFull": "rm 318, 90lbs., STR,\nrm 317A at the Stayton",
+    "notesPreview": "rm 318, 90lbs., STR, | rm 317A at the Stayton",
     "legs": [
       {
         "FirstName": "Diane ",
         "LastName": "Rutledge ",
         "MiddleInitial": "",
         "DOB": "6/28/1943 12:00:00 AM",
-        "Comments": "rm 318, 90lbs., STR, \nrm 317A at the Stayton",
+        "Comments": "rm 318, 90lbs., STR, \r\nrm 317A at the Stayton",
         "ConfirmationNumber": "51829",
         "RideDate": "4/24/2026 12:00:00 AM",
         "ScheduledPickupTime": "13:30",
@@ -4841,7 +4841,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "2.06",
-        "Comments1": "rm 318, 90lbs., STR, \nrm 317A at the Stayton",
+        "Comments1": "rm 318, 90lbs., STR, \r\nrm 317A at the Stayton",
         "PickupName": "Harris Richardson Tower",
         "PickupAddress1": "1301 Pennsylvania Avenue",
         "PickupCity": "Fort Worth",
@@ -4854,7 +4854,7 @@
         "DropoffZip": "76107",
         "AccountCode": "Stayton",
         "AccountName": "The Stayton at Museum Way",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -4997,17 +4997,17 @@
     "DropoffZip": "76107",
     "DirectMileage": "10",
     "RideHours": "0.4833",
-    "Comments": "INTERMEDIATE rm B3230 / str / 216 lbs / Weakness, Lethargy, CN\nrm 348\n\nper Patricia Cook (817)433-3282",
-    "Comments1": "INTERMEDIATE rm B3230 / str / 216 lbs / Weakness, Lethargy, CN\nrm 348\n\nper Patricia Cook (817)433-3282",
-    "notesFull": "INTERMEDIATE rm B3230 / str / 216 lbs / Weakness, Lethargy, CN\nrm 348\n\nper Patricia Cook (817)433-3282",
-    "notesPreview": "INTERMEDIATE rm B3230 / str / 216 lbs / Weakness, Lethargy, CN",
+    "Comments": "INTERMEDIATE rm B3230 / str / 216 lbs / Weakness, Lethargy, CN\r\nrm 348\r\n\r\nper Patricia Cook (817)433-3282",
+    "Comments1": "INTERMEDIATE rm B3230 / str / 216 lbs / Weakness, Lethargy, CN\r\nrm 348\r\n\r\nper Patricia Cook (817)433-3282",
+    "notesFull": "INTERMEDIATE rm B3230 / str / 216 lbs / Weakness, Lethargy, CN\nrm 348\nper Patricia Cook (817)433-3282",
+    "notesPreview": "INTERMEDIATE rm B3230 / str / 216 lbs / Weakness, Lethargy, CN | rm 348 | per Patricia Cook (817)433-3282",
     "legs": [
       {
         "FirstName": "Judith",
         "LastName": "Hill",
         "MiddleInitial": "",
         "DOB": "10/18/1940 12:00:00 AM",
-        "Comments": "INTERMEDIATE rm B3230 / str / 216 lbs / Weakness, Lethargy, CN\nrm 348\n\nper Patricia Cook (817)433-3282",
+        "Comments": "INTERMEDIATE rm B3230 / str / 216 lbs / Weakness, Lethargy, CN\r\nrm 348\r\n\r\nper Patricia Cook (817)433-3282",
         "ConfirmationNumber": "51867",
         "RideDate": "4/26/2026 12:00:00 AM",
         "ScheduledPickupTime": "16:00",
@@ -5021,7 +5021,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "9.64",
-        "Comments1": "INTERMEDIATE rm B3230 / str / 216 lbs / Weakness, Lethargy, CN\nrm 348\n\nper Patricia Cook (817)433-3282",
+        "Comments1": "INTERMEDIATE rm B3230 / str / 216 lbs / Weakness, Lethargy, CN\r\nrm 348\r\n\r\nper Patricia Cook (817)433-3282",
         "PickupName": "Harris Southwest Discharges Stretcher Ambulance Bay ONLY ",
         "PickupAddress1": "6100 Harris Parkway",
         "PickupCity": "Fort Worth",
@@ -5034,7 +5034,7 @@
         "DropoffZip": "76107",
         "AccountCode": "Stayton",
         "AccountName": "The Stayton at Museum Way",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",

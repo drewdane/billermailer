@@ -28,17 +28,17 @@
     "DropoffZip": "76132",
     "DirectMileage": "8",
     "RideHours": "0.45",
-    "Comments": "B, 440, 163lbs, cn, confused to time, but can tell you his name, needs str, Joannah 817-922-4620\n#103",
-    "Comments1": "B, 440, 163lbs, cn, confused to time, but can tell you his name, needs str, Joannah 817-922-4620\n#103",
+    "Comments": "B, 440, 163lbs, cn, confused to time, but can tell you his name, needs str, Joannah 817-922-4620\r\n#103",
+    "Comments1": "B, 440, 163lbs, cn, confused to time, but can tell you his name, needs str, Joannah 817-922-4620\r\n#103",
     "notesFull": "B, 440, 163lbs, cn, confused to time, but can tell you his name, needs str, Joannah 817-922-4620\n#103",
-    "notesPreview": "B, 440, 163lbs, cn, confused to time, but can tell you his name, needs str, Joannah 817-922-4620",
+    "notesPreview": "B, 440, 163lbs, cn, confused to time, but can tell you his name, needs str, Joannah 817-922-4620 | #103",
     "legs": [
       {
         "FirstName": "Edward",
         "LastName": "Milligan",
         "MiddleInitial": "D",
         "DOB": "11/1/1944 12:00:00 AM",
-        "Comments": "B, 440, 163lbs, cn, confused to time, but can tell you his name, needs str, Joannah 817-922-4620\n#103",
+        "Comments": "B, 440, 163lbs, cn, confused to time, but can tell you his name, needs str, Joannah 817-922-4620\r\n#103",
         "ConfirmationNumber": "51601",
         "RideDate": "4/16/2026 12:00:00 AM",
         "ScheduledPickupTime": "11:45",
@@ -52,7 +52,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "8.37",
-        "Comments1": "B, 440, 163lbs, cn, confused to time, but can tell you his name, needs str, Joannah 817-922-4620\n#103",
+        "Comments1": "B, 440, 163lbs, cn, confused to time, but can tell you his name, needs str, Joannah 817-922-4620\r\n#103",
         "PickupName": "Baylor All Saints Fort Worth B Building",
         "PickupAddress1": "1400 8th Avenue",
         "PickupCity": "Fort Worth",
@@ -65,7 +65,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Garden Terrace ",
         "AccountName": "GT-Garden Terrace ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",

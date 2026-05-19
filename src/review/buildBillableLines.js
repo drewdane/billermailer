@@ -55,22 +55,61 @@ function cleanDob(v) {
   return s;
 }
 
-function formatDobPart(r) {
-  const dob = cleanDob(r.DOB || r.DateOfBirth || r.BirthDate || "");
-  return dob ? ` (DOB: ${dob})` : "";
-}
-
 function riderLabel(r) {
   const fullName = [r.FirstName, r.LastName].filter(Boolean).join(" ").trim();
   return fullName || "Unknown Rider";
 }
 
+function formatDobPart(r) {
+  const dob = cleanDob(r.DOB || r.DateOfBirth || r.BirthDate || "");
+  return dob ? ` (DOB: ${dob})` : "";
+}
+
+function extractMraNumber(r) {
+  const text = [
+    r.Comments,
+    r.Comments1,
+    r.SpecialDirections,
+    r.notesFull,
+  ]
+    .filter(Boolean)
+    .join("\n");
+
+  const m = text.match(/MRA\s*(?:#|num|number)?\s*(\d{9})/i);
+
+  return m ? m[1] : "";
+}
+
+function formatMraPart(r) {
+  const mra = String(
+    r.review?.MraNumberOverride ||
+    extractMraNumber(r) ||
+    ""
+  ).trim();
+
+  return mra ? ` - MRA# ${mra}` : "";
+}
+
+function formatPoPart(r) {
+  const po = String(
+    r.review?.PoNumberOverride ||
+    r.poNumber ||
+    r.PONumber ||
+    r.po_number ||
+    ""
+  ).trim();
+
+  return po ? ` - PO# ${po}` : "";
+}
+
 function invoicePrefix(r) {
   const rider = riderLabel(r);
   const dob = formatDobPart(r);
+  const mra = formatMraPart(r);
+  const po = formatPoPart(r);
   const date = fmtDateForLine(r.RideDateISO);
 
-  return `${rider}${dob} - TRIP DATE: ${date}`;
+  return `${rider}${dob}${mra}${po} - TRIP DATE: ${date}`;
 }
 
 function locationLabel(name, address1) {
@@ -81,11 +120,11 @@ function locationLabel(name, address1) {
 }
 
 function invoiceRouteLabel(r) {
-  const puName = cleanLocationName(r.PickupName || "");
-  const puAddr = String(r.PickupAddress1 || "").trim();
+  const puName = cleanLocationName(r.review?.PickupNameOverride || r.PickupName || "");
+  const puAddr = String(r.review?.PickupAddress1Override || r.PickupAddress1 || "").trim();
 
-  const doName = cleanLocationName(r.DropoffName || "");
-  const doAddr = String(r.DropoffAddress1 || "").trim();
+  const doName = cleanLocationName(r.review?.DropoffNameOverride || r.DropoffName || "");
+  const doAddr = String(r.review?.DropoffAddress1Override || r.DropoffAddress1 || "").trim();
 
   const includeTimes = !!r.invoiceIncludeActualTimes;
 
@@ -133,14 +172,12 @@ function tripChargeLabel(r) {
   const shape = String(r.TripShape || "").toUpperCase();
   const mobility = String(r.Mobility || "").toUpperCase();
 
-  if (shape === "ROUND_TRIP") return "Trip Charge - Round Trip";
-  if (shape === "MULTI_STOP") return "Trip Charge - Multi-Stop";
-
-  if (mobility === "STR") return "Trip Charge - 1-Way with Stretcher";
-
-  if (r.review?.AddRECL) return "Trip Charge - 1-Way with Recliner";
-  if (mobility === "WC") return "Trip Charge - 1-Way with Wheelchair";
-
+  if (shape === "ROUND_TRIP") {return "Trip Charge - Round Trip";}
+  if (shape === "MULTI_STOP") {return "Trip Charge - Multi-Stop";}
+  
+  if (mobility === "STR") {return "Trip Charge - 1-Way with Stretcher";}
+  if (r.review?.AddRECL) {return "Trip Charge - 1-Way with Recliner";}
+  if (r.review?.AddNeedWC || mobility === "WC") {return "Trip Charge - 1-Way with Wheelchair";}
   return "Trip Charge - 1-Way";
 }
 
@@ -214,14 +251,42 @@ function fuelSurchargeAmount(r, globals = {}) {
   if (rate <= 0) return 0;
 
   const tripDate = String(r.RideDateISO || "");
-  const start = String(globals.fuelSurchargeStart || "");
-  const end = String(globals.fuelSurchargeEnd || "");
+  if (!tripDate) return 0;
 
-  if (!tripDate || !start || !end) return 0;
-  if (tripDate < start || tripDate > end) return 0;
+  const windows = Array.isArray(globals.fuelSurchargeWindows)
+    ? globals.fuelSurchargeWindows
+    : [];
 
-  const loadedMiles = Number(r.review?.MileageOverride || r.pricing?.audit?.billableMiles || r.DirectMileage || 0);
-  const dhMiles = r.review?.AddDeadhead ? Number(r.review?.DeadheadMiles || 0) : 0;
+  const effectiveWindows = windows.length
+    ? windows
+    : [
+        {
+          start: globals.fuelSurchargeStart || "",
+          end: globals.fuelSurchargeEnd || "",
+        },
+      ];
+
+  const inWindow = effectiveWindows.some((win) => {
+    const start = String(win.start || "");
+    const end = String(win.end || "");
+
+    if (!start || !end) return false;
+
+    return tripDate >= start && tripDate <= end;
+  });
+
+  if (!inWindow) return 0;
+
+  const loadedMiles = Number(
+    r.review?.MileageOverride ||
+    r.pricing?.audit?.billableMiles ||
+    r.DirectMileage ||
+    0
+  );
+
+  const dhMiles = r.review?.AddDeadhead
+    ? Number(r.review?.DeadheadMiles || 0)
+    : 0;
 
   return money(rate * (loadedMiles + dhMiles));
 }
@@ -232,20 +297,21 @@ function productServiceForKind(kind) {
   if (k === "BASE") return "Trip Charge";
   if (k === "MILEAGE") return "Mileage";
   if (k === "CANCEL_FEE") return "Cancellation Fee";
-  if (k === "AFTER_HOURS" || k === "THIRD_SHIFT") return "After Hours";
-  if (k === "WEEKEND") return "Weekend";
+  if (k === "AFTER_HOURS") return "After Hours Fee";
+  if (k === "THIRD_SHIFT" || k === "WEEKEND") {
+    return "3rd Shift/Holiday";
+  }
   if (k === "O2") return "Oxygen";
-  if (k === "DEADHEAD") return "Deadhead";
-
-  if (k === "MATCH_TO_QUOTE") return "Transport Miscellaneous Income";
-  if (k === "FUEL_SURCHARGE") return "Transport Miscellaneous Income";
-  if (k === "WAIT") return "Transport Miscellaneous Income";
-  if (k === "ATTENDANT") return "Transport Miscellaneous Income";
-  if (k === "NEED_WC" || k === "RECL" || k === "BARI" || k === "HAZMAT") {
+  if (k === "DEADHEAD") return "Dry Run";
+  if (k === "WAIT") return "Wait Time";
+  if (k === "ATTENDANT") return "Attendant/Aide";
+  if (k === "HAZMAT") return "HazMat Handling Fee";
+  if (k === "BARI") return "Bariatric Surcharge";
+  if (k === "MATCH_TO_QUOTE") {
     return "Transport Miscellaneous Income";
   }
 
-  return "Services";
+  return "Trip Charge";
 }
 
 function addLine(lines, r, kind, description, amount, extra = {}) {
@@ -293,6 +359,30 @@ function buildBillableLines(r, globals = {}) {
     override === "NO" ? false :
     tmCancelled;
 
+  if (r.review?.NoCharge && isCancelled) {
+    addLine(
+      lines,
+      r,
+      "CANCEL_FEE",
+      `${prefix}${routeText} - Cancellation Fee - No Charge`,
+      0,
+      { forceZero: true }
+    );
+    return lines;
+  }
+
+  if (r.review?.NoCharge) {
+    addLine(
+      lines,
+      r,
+      "BASE",
+      `${prefix}${routeText} - ${tripChargeLabel(r)} - No Charge`,
+      0,
+      { forceZero: true }
+    );
+    return lines;
+  }
+
   if (isCancelled) {
     addLine(
       lines,
@@ -333,28 +423,6 @@ function buildBillableLines(r, globals = {}) {
   const isRtBase =
     String(r.TripShape || "").toUpperCase() === "ROUND_TRIP" ||
     String(r.TripShape || "").toUpperCase() === "MULTI_STOP";
-
-  if (r.review?.AddNeedWC) {
-    addLine(
-      lines,
-      r,
-      "NEED_WC",
-      `${prefix} - Provide WC`,
-      Number(isRtBase ? r.availableWcAccessories?.needwc_rt : r.availableWcAccessories?.needwc_1w) || 0,
-      { forceZero: forceZeroMode }
-    );
-  }
-
-  if (r.review?.AddRECL) {
-    addLine(
-      lines,
-      r,
-      "RECL",
-      `${prefix} - Reclining WC`,
-      Number(isRtBase ? r.availableWcAccessories?.recl_rt : r.availableWcAccessories?.recl_1w) || 0,
-      { forceZero: forceZeroMode }
-    );
-  }
 
   if (r.review?.AddHazmat) {
     addLine(lines, r, "HAZMAT", `${prefix} - HAZMAT`, Number(r.availableCharges?.hazmat || 0), { forceZero: forceZeroMode });
@@ -407,37 +475,42 @@ function buildBillableLines(r, globals = {}) {
     addLine(lines, r, "FUEL_SURCHARGE", `${prefix} - Fuel Surcharge`, fuel);
   }
 
-  if (r.review?.NoCharge) {
-    for (const line of lines) {
-      line.amount = 0;
-    }
-
-    if (!lines.length) {
-      addLine(
-        lines,
-        r,
-        "NO_CHARGE",
-        `${prefix} - No Charge`,
-        0,
-        { forceZero: true }
-      );
-    }
-
-    return lines;
-  }
-
     if (r.review?.MatchToQuote) {
       const quoteAmount = money(r.review?.QuoteAmount || 0);
       const actualTotal = money(lines.reduce((sum, line) => sum + Number(line.amount || 0), 0));
       const variance = money(quoteAmount - actualTotal);
+      const billingClass = String(r.BillingClass || "").toUpperCase();
 
+      // Contract/client overquote:
+      // Collapse everything to one Trip Charge line at quoted amount.
+      if (billingClass !== "PRIVATE_PAY" && variance > 0) {
+        return [
+          {
+            lineKind: "BASE",
+            productService: "Trip Charge",
+            lineDescription: `${prefix}${routeText} - ${tripChargeLabel(r)}, per Quote`,
+            qty: 1,
+            rate: quoteAmount,
+            amount: quoteAmount,
+            lineId: r.LineId,
+            rideDateISO: r.RideDateISO || "",
+            rider: riderLabel(r),
+            tripShape: r.TripShape || "",
+            mobility: r.Mobility || "",
+            route: tripRouteLabel(r),
+          }
+        ];
+      }
+
+      // Contract underquote OR any Private Pay MTQ:
+      // Keep itemized lines and put variance in Transport Miscellaneous Income.
       if (variance !== 0) {
         addLine(
           lines,
           r,
           "MATCH_TO_QUOTE",
           variance < 0
-            ? `${prefix} - Discount per quote`
+            ? `${prefix} - Discount per Quote`
             : `${prefix} - Match to Quote variance`,
           variance,
           {

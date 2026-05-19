@@ -28,17 +28,17 @@
     "DropoffZip": "76102",
     "DirectMileage": "1",
     "RideHours": "0.8",
-    "Comments": "R. 485, 165lbs, cn, alert, needs str & 3ltrs o2, +1 pass wife, Toni 817-250-2440\n#420",
-    "Comments1": "R. 485, 165lbs, cn, alert, needs str & 3ltrs o2, +1 pass wife, Toni 817-250-2440\n#420",
+    "Comments": "R. 485, 165lbs, cn, alert, needs str & 3ltrs o2, +1 pass wife, Toni 817-250-2440\r\n#420",
+    "Comments1": "R. 485, 165lbs, cn, alert, needs str & 3ltrs o2, +1 pass wife, Toni 817-250-2440\r\n#420",
     "notesFull": "R. 485, 165lbs, cn, alert, needs str & 3ltrs o2, +1 pass wife, Toni 817-250-2440\n#420",
-    "notesPreview": "R. 485, 165lbs, cn, alert, needs str & 3ltrs o2, +1 pass wife, Toni 817-250-2440",
+    "notesPreview": "R. 485, 165lbs, cn, alert, needs str & 3ltrs o2, +1 pass wife, Toni 817-250-2440 | #420",
     "legs": [
       {
         "FirstName": "Bobby ",
         "LastName": "Arnold ",
         "MiddleInitial": "",
         "DOB": "6/12/1934 12:00:00 AM",
-        "Comments": "R. 485, 165lbs, cn, alert, needs str & 3ltrs o2, +1 pass wife, Toni 817-250-2440\n#420",
+        "Comments": "R. 485, 165lbs, cn, alert, needs str & 3ltrs o2, +1 pass wife, Toni 817-250-2440\r\n#420",
         "ConfirmationNumber": "51720",
         "RideDate": "4/21/2026 12:00:00 AM",
         "ScheduledPickupTime": "17:30",
@@ -52,7 +52,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "1.00",
-        "Comments1": "R. 485, 165lbs, cn, alert, needs str & 3ltrs o2, +1 pass wife, Toni 817-250-2440\n#420",
+        "Comments1": "R. 485, 165lbs, cn, alert, needs str & 3ltrs o2, +1 pass wife, Toni 817-250-2440\r\n#420",
         "PickupName": "Harris Richardson Tower",
         "PickupAddress1": "1301 Pennsylvania Avenue",
         "PickupCity": "Fort Worth",
@@ -65,7 +65,7 @@
         "DropoffZip": "76102",
         "AccountCode": "James L West ",
         "AccountName": "James L West ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",

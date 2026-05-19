@@ -28,17 +28,17 @@
     "DropoffZip": "76244",
     "DirectMileage": "16",
     "RideHours": "0.9167",
-    "Comments": "B RM 428\n210 lbs\nSTR\n3L O2\nHarrison RM 212\nKoi 817 922 4600",
-    "Comments1": "B RM 428\n210 lbs\nSTR\n3L O2\nHarrison RM 212\nKoi 817 922 4600",
+    "Comments": "B RM 428\r\n210 lbs\r\nSTR\r\n3L O2\r\nHarrison RM 212\r\nKoi 817 922 4600",
+    "Comments1": "B RM 428\r\n210 lbs\r\nSTR\r\n3L O2\r\nHarrison RM 212\r\nKoi 817 922 4600",
     "notesFull": "B RM 428\n210 lbs\nSTR\n3L O2\nHarrison RM 212\nKoi 817 922 4600",
-    "notesPreview": "B RM 428",
+    "notesPreview": "B RM 428 | 210 lbs | STR | 3L O2 | Harrison RM 212 | Koi 817 922 4600",
     "legs": [
       {
         "FirstName": "Pamela",
         "LastName": "Bailey",
         "MiddleInitial": "",
         "DOB": "11/14/1953 12:00:00 AM",
-        "Comments": "B RM 428\n210 lbs\nSTR\n3L O2\nHarrison RM 212\nKoi 817 922 4600",
+        "Comments": "B RM 428\r\n210 lbs\r\nSTR\r\n3L O2\r\nHarrison RM 212\r\nKoi 817 922 4600",
         "ConfirmationNumber": "51474",
         "RideDate": "4/10/2026 12:00:00 AM",
         "ScheduledPickupTime": "14:00",
@@ -52,7 +52,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "15.90",
-        "Comments1": "B RM 428\n210 lbs\nSTR\n3L O2\nHarrison RM 212\nKoi 817 922 4600",
+        "Comments1": "B RM 428\r\n210 lbs\r\nSTR\r\n3L O2\r\nHarrison RM 212\r\nKoi 817 922 4600",
         "PickupName": "Baylor All Saints Fort Worth B Building",
         "PickupAddress1": "1400 8th Avenue",
         "PickupCity": "Fort Worth",
@@ -65,7 +65,7 @@
         "DropoffZip": "76244",
         "AccountCode": "Harrison at Heritage ",
         "AccountName": "Harrison at Heritage",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -200,17 +200,17 @@
     "DropoffZip": "76244",
     "DirectMileage": "19",
     "RideHours": "",
-    "Comments": "rm 266, 290 lbs., about 5'10 tall, STR/broda, no precaution, CN\n#701\n\nper Diana 4698594615",
-    "Comments1": "rm 266, 290 lbs., about 5'10 tall, STR/broda, no precaution, CN\n#701\n\nper Diana 4698594615",
-    "notesFull": "rm 266, 290 lbs., about 5'10 tall, STR/broda, no precaution, CN\n#701\n\nper Diana 4698594615",
-    "notesPreview": "rm 266, 290 lbs., about 5'10 tall, STR/broda, no precaution, CN",
+    "Comments": "rm 266, 290 lbs., about 5'10 tall, STR/broda, no precaution, CN\r\n#701\r\n\r\nper Diana 4698594615",
+    "Comments1": "rm 266, 290 lbs., about 5'10 tall, STR/broda, no precaution, CN\r\n#701\r\n\r\nper Diana 4698594615",
+    "notesFull": "rm 266, 290 lbs., about 5'10 tall, STR/broda, no precaution, CN\n#701\nper Diana 4698594615",
+    "notesPreview": "rm 266, 290 lbs., about 5'10 tall, STR/broda, no precaution, CN | #701 | per Diana 4698594615",
     "legs": [
       {
         "FirstName": "Theresa",
         "LastName": "Tryon",
         "MiddleInitial": "",
         "DOB": "9/5/1958 12:00:00 AM",
-        "Comments": "rm 266, 290 lbs., about 5'10 tall, STR/broda, no precaution, CN\n#701\n\nper Diana 4698594615",
+        "Comments": "rm 266, 290 lbs., about 5'10 tall, STR/broda, no precaution, CN\r\n#701\r\n\r\nper Diana 4698594615",
         "ConfirmationNumber": "51499",
         "RideDate": "4/11/2026 12:00:00 AM",
         "ScheduledPickupTime": "18:00",
@@ -224,7 +224,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "19.33",
-        "Comments1": "rm 266, 290 lbs., about 5'10 tall, STR/broda, no precaution, CN\n#701\n\nper Diana 4698594615",
+        "Comments1": "rm 266, 290 lbs., about 5'10 tall, STR/broda, no precaution, CN\r\n#701\r\n\r\nper Diana 4698594615",
         "PickupName": "Texas Health Harris Methodist Hurst-Euless-Bedford ",
         "PickupAddress1": "1600 Hospital Parkway",
         "PickupCity": "Bedford",
@@ -237,7 +237,7 @@
         "DropoffZip": "76244",
         "AccountCode": "Harrison at Heritage ",
         "AccountName": "Harrison at Heritage",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -378,17 +378,17 @@
     "DropoffZip": "76244",
     "DirectMileage": "16",
     "RideHours": "0.6833",
-    "Comments": "RM 2330, 3rd floor\n184 lbs\nNeeds Recliner\nHarrison RM 700\nRN station 682 264 7098",
-    "Comments1": "RM 2330, 3rd floor\n184 lbs\nNeeds Recliner\nHarrison RM 700\nRN station 682 264 7098",
+    "Comments": "RM 2330, 3rd floor\r\n184 lbs\r\nNeeds Recliner\r\nHarrison RM 700\r\nRN station 682 264 7098",
+    "Comments1": "RM 2330, 3rd floor\r\n184 lbs\r\nNeeds Recliner\r\nHarrison RM 700\r\nRN station 682 264 7098",
     "notesFull": "RM 2330, 3rd floor\n184 lbs\nNeeds Recliner\nHarrison RM 700\nRN station 682 264 7098",
-    "notesPreview": "RM 2330, 3rd floor",
+    "notesPreview": "RM 2330, 3rd floor | 184 lbs | Needs Recliner | Harrison RM 700 | RN station 682 264 7098",
     "legs": [
       {
         "FirstName": "Sharon ",
         "LastName": "Ketchem",
         "MiddleInitial": "",
         "DOB": "8/29/1946 12:00:00 AM",
-        "Comments": "RM 2330, 3rd floor\n184 lbs\nNeeds Recliner\nHarrison RM 700\nRN station 682 264 7098",
+        "Comments": "RM 2330, 3rd floor\r\n184 lbs\r\nNeeds Recliner\r\nHarrison RM 700\r\nRN station 682 264 7098",
         "ConfirmationNumber": "51535",
         "RideDate": "4/13/2026 12:00:00 AM",
         "ScheduledPickupTime": "17:30",
@@ -402,7 +402,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "15.63",
-        "Comments1": "RM 2330, 3rd floor\n184 lbs\nNeeds Recliner\nHarrison RM 700\nRN station 682 264 7098",
+        "Comments1": "RM 2330, 3rd floor\r\n184 lbs\r\nNeeds Recliner\r\nHarrison RM 700\r\nRN station 682 264 7098",
         "PickupName": "Medical City Fort Worth ",
         "PickupAddress1": "900 8th Avenue",
         "PickupCity": "Fort Worth",
@@ -415,7 +415,7 @@
         "DropoffZip": "76244",
         "AccountCode": "Harrison at Heritage ",
         "AccountName": "Harrison at Heritage",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -563,17 +563,17 @@
     "DropoffZip": "76244",
     "DirectMileage": "3",
     "RideHours": "0.3",
-    "Comments": "RM 354\n187 lbs\nSTR\n2L O2\nDeanna 682 212 3387",
-    "Comments1": "RM 354\n187 lbs\nSTR\n2L O2\nDeanna 682 212 3387",
+    "Comments": "RM 354\r\n187 lbs\r\nSTR\r\n2L O2\r\nDeanna 682 212 3387",
+    "Comments1": "RM 354\r\n187 lbs\r\nSTR\r\n2L O2\r\nDeanna 682 212 3387",
     "notesFull": "RM 354\n187 lbs\nSTR\n2L O2\nDeanna 682 212 3387",
-    "notesPreview": "RM 354",
+    "notesPreview": "RM 354 | 187 lbs | STR | 2L O2 | Deanna 682 212 3387",
     "legs": [
       {
         "FirstName": "Julia",
         "LastName": "Gilbreath",
         "MiddleInitial": "",
         "DOB": "7/1/1955 12:00:00 AM",
-        "Comments": "RM 354\n187 lbs\nSTR\n2L O2\nDeanna 682 212 3387",
+        "Comments": "RM 354\r\n187 lbs\r\nSTR\r\n2L O2\r\nDeanna 682 212 3387",
         "ConfirmationNumber": "51584",
         "RideDate": "4/15/2026 12:00:00 AM",
         "ScheduledPickupTime": "14:45",
@@ -587,7 +587,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "2.62",
-        "Comments1": "RM 354\n187 lbs\nSTR\n2L O2\nDeanna 682 212 3387",
+        "Comments1": "RM 354\r\n187 lbs\r\nSTR\r\n2L O2\r\nDeanna 682 212 3387",
         "PickupName": "Harris Alliance Hospital",
         "PickupAddress1": "10864 Texas Health Trl",
         "PickupCity": "Fort Worth",
@@ -600,7 +600,7 @@
         "DropoffZip": "76244",
         "AccountCode": "Harrison at Heritage ",
         "AccountName": "Harrison at Heritage",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -772,7 +772,7 @@
         "DropoffZip": "76244",
         "AccountCode": "Harrison at Heritage ",
         "AccountName": "Harrison at Heritage",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -907,17 +907,17 @@
     "DropoffZip": "76244",
     "DirectMileage": "46",
     "RideHours": "",
-    "Comments": "Hammond Building RM 409 // 120 lbs // Needs Recliner\nCan walk w/ walker // Harrison RM 108\n\nChristine 214 726 2111",
-    "Comments1": "Hammond Building RM 409 // 120 lbs // Needs Recliner\nCan walk w/ walker // Harrison RM 108\n\nChristine 214 726 2111",
-    "notesFull": "Hammond Building RM 409 // 120 lbs // Needs Recliner\nCan walk w/ walker // Harrison RM 108\n\nChristine 214 726 2111",
-    "notesPreview": "Hammond Building RM 409 // 120 lbs // Needs Recliner",
+    "Comments": "Hammond Building RM 409 // 120 lbs // Needs Recliner\r\nCan walk w/ walker // Harrison RM 108\r\n\r\nChristine 214 726 2111",
+    "Comments1": "Hammond Building RM 409 // 120 lbs // Needs Recliner\r\nCan walk w/ walker // Harrison RM 108\r\n\r\nChristine 214 726 2111",
+    "notesFull": "Hammond Building RM 409 // 120 lbs // Needs Recliner\nCan walk w/ walker // Harrison RM 108\nChristine 214 726 2111",
+    "notesPreview": "Hammond Building RM 409 // 120 lbs // Needs Recliner | Can walk w/ walker // Harrison RM 108 | Christine 214 726 2111",
     "legs": [
       {
         "FirstName": "Misty",
         "LastName": "Ramsey",
         "MiddleInitial": "",
         "DOB": "8/30/1959 12:00:00 AM",
-        "Comments": "Hammond Building RM 409 // 120 lbs // Needs Recliner\nCan walk w/ walker // Harrison RM 108\n\nChristine 214 726 2111",
+        "Comments": "Hammond Building RM 409 // 120 lbs // Needs Recliner\r\nCan walk w/ walker // Harrison RM 108\r\n\r\nChristine 214 726 2111",
         "ConfirmationNumber": "51649",
         "RideDate": "4/17/2026 12:00:00 AM",
         "ScheduledPickupTime": "16:00",
@@ -931,7 +931,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "45.90",
-        "Comments1": "Hammond Building RM 409 // 120 lbs // Needs Recliner\nCan walk w/ walker // Harrison RM 108\n\nChristine 214 726 2111",
+        "Comments1": "Hammond Building RM 409 // 120 lbs // Needs Recliner\r\nCan walk w/ walker // Harrison RM 108\r\n\r\nChristine 214 726 2111",
         "PickupName": "Texas Health Presbyterian Hospital Dallas",
         "PickupAddress1": "8200 Walnut Hill Lane",
         "PickupCity": "Dallas",
@@ -944,7 +944,7 @@
         "DropoffZip": "76244",
         "AccountCode": "Harrison at Heritage ",
         "AccountName": "Harrison at Heritage",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -1093,17 +1093,17 @@
     "DropoffZip": "76244",
     "DirectMileage": "3",
     "RideHours": "0.3667",
-    "Comments": "THAL MED/SURG M2 rm M217 M21701, 152 lbs., STR/Broda, Hyperglycemia, High Blood Sugar (Symptomatic), CN\n#TBD\n\nper Lauren Rogan (682)212-3387",
-    "Comments1": "THAL MED/SURG M2 rm M217 M21701, 152 lbs., STR/Broda, Hyperglycemia, High Blood Sugar (Symptomatic), CN\n#TBD\n\nper Lauren Rogan (682)212-3387",
-    "notesFull": "THAL MED/SURG M2 rm M217 M21701, 152 lbs., STR/Broda, Hyperglycemia, High Blood Sugar (Symptomatic), CN\n#TBD\n\nper Lauren Rogan (682)212-3387",
-    "notesPreview": "THAL MED/SURG M2 rm M217 M21701, 152 lbs., STR/Broda, Hyperglycemia, High Blood Sugar (Symptomatic), CN",
+    "Comments": "THAL MED/SURG M2 rm M217 M21701, 152 lbs., STR/Broda, Hyperglycemia, High Blood Sugar (Symptomatic), CN\r\n#TBD\r\n\r\nper Lauren Rogan (682)212-3387",
+    "Comments1": "THAL MED/SURG M2 rm M217 M21701, 152 lbs., STR/Broda, Hyperglycemia, High Blood Sugar (Symptomatic), CN\r\n#TBD\r\n\r\nper Lauren Rogan (682)212-3387",
+    "notesFull": "THAL MED/SURG M2 rm M217 M21701, 152 lbs., STR/Broda, Hyperglycemia, High Blood Sugar (Symptomatic), CN\n#TBD\nper Lauren Rogan (682)212-3387",
+    "notesPreview": "THAL MED/SURG M2 rm M217 M21701, 152 lbs., STR/Broda, Hyperglycemia, High Blood Sugar (Symptomatic), CN | #TBD | per Lauren Rogan (682)212-3387",
     "legs": [
       {
         "FirstName": "Deborah",
         "LastName": "Rust",
         "MiddleInitial": "",
         "DOB": "11/17/1953 12:00:00 AM",
-        "Comments": "THAL MED/SURG M2 rm M217 M21701, 152 lbs., STR/Broda, Hyperglycemia, High Blood Sugar (Symptomatic), CN\n#TBD\n\nper Lauren Rogan (682)212-3387",
+        "Comments": "THAL MED/SURG M2 rm M217 M21701, 152 lbs., STR/Broda, Hyperglycemia, High Blood Sugar (Symptomatic), CN\r\n#TBD\r\n\r\nper Lauren Rogan (682)212-3387",
         "ConfirmationNumber": "51646",
         "RideDate": "4/17/2026 12:00:00 AM",
         "ScheduledPickupTime": "16:00",
@@ -1117,7 +1117,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "2.70",
-        "Comments1": "THAL MED/SURG M2 rm M217 M21701, 152 lbs., STR/Broda, Hyperglycemia, High Blood Sugar (Symptomatic), CN\n#TBD\n\nper Lauren Rogan (682)212-3387",
+        "Comments1": "THAL MED/SURG M2 rm M217 M21701, 152 lbs., STR/Broda, Hyperglycemia, High Blood Sugar (Symptomatic), CN\r\n#TBD\r\n\r\nper Lauren Rogan (682)212-3387",
         "PickupName": "Harris Alliance Hospital",
         "PickupAddress1": "10864 Texas Health Trl",
         "PickupCity": "Fort Worth",
@@ -1130,7 +1130,7 @@
         "DropoffZip": "76244",
         "AccountCode": "Harrison at Heritage ",
         "AccountName": "Harrison at Heritage",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -1265,17 +1265,17 @@
     "DropoffZip": "76244",
     "DirectMileage": "3",
     "RideHours": "0.3833",
-    "Comments": "THAL INTERMEDIATE M3 rm M323 M32301, 88 lbs., STR/Broda, Intertrochanteric fracture of right femur, closed, initial encounter, Altered Mental Status, Fall, CN\n#106A\n\nper Jasmin Pag-Ong (682)212-3267",
-    "Comments1": "THAL INTERMEDIATE M3 rm M323 M32301, 88 lbs., STR/Broda, Intertrochanteric fracture of right femur, closed, initial encounter, Altered Mental Status, Fall, CN\n#106A\n\nper Jasmin Pag-Ong (682)212-3267",
-    "notesFull": "THAL INTERMEDIATE M3 rm M323 M32301, 88 lbs., STR/Broda, Intertrochanteric fracture of right femur, closed, initial encounter, Altered Mental Status, Fall, CN\n#106A\n\nper Jasmin Pag-Ong (682)212-3267",
-    "notesPreview": "THAL INTERMEDIATE M3 rm M323 M32301, 88 lbs., STR/Broda, Intertrochanteric fracture of right femur, closed, initial e...",
+    "Comments": "THAL INTERMEDIATE M3 rm M323 M32301, 88 lbs., STR/Broda, Intertrochanteric fracture of right femur, closed, initial encounter, Altered Mental Status, Fall, CN\r\n#106A\r\n\r\nper Jasmin Pag-Ong (682)212-3267",
+    "Comments1": "THAL INTERMEDIATE M3 rm M323 M32301, 88 lbs., STR/Broda, Intertrochanteric fracture of right femur, closed, initial encounter, Altered Mental Status, Fall, CN\r\n#106A\r\n\r\nper Jasmin Pag-Ong (682)212-3267",
+    "notesFull": "THAL INTERMEDIATE M3 rm M323 M32301, 88 lbs., STR/Broda, Intertrochanteric fracture of right femur, closed, initial encounter, Altered Mental Status, Fall, CN\n#106A\nper Jasmin Pag-Ong (682)212-3267",
+    "notesPreview": "THAL INTERMEDIATE M3 rm M323 M32301, 88 lbs., STR/Broda, Intertrochanteric fracture of right femur, closed, initial encounter, Altered Mental Status, Fall, C...",
     "legs": [
       {
         "FirstName": "Khue",
         "LastName": "Tran",
         "MiddleInitial": "",
         "DOB": "10/10/1942 12:00:00 AM",
-        "Comments": "THAL INTERMEDIATE M3 rm M323 M32301, 88 lbs., STR/Broda, Intertrochanteric fracture of right femur, closed, initial encounter, Altered Mental Status, Fall, CN\n#106A\n\nper Jasmin Pag-Ong (682)212-3267",
+        "Comments": "THAL INTERMEDIATE M3 rm M323 M32301, 88 lbs., STR/Broda, Intertrochanteric fracture of right femur, closed, initial encounter, Altered Mental Status, Fall, CN\r\n#106A\r\n\r\nper Jasmin Pag-Ong (682)212-3267",
         "ConfirmationNumber": "51645",
         "RideDate": "4/17/2026 12:00:00 AM",
         "ScheduledPickupTime": "15:00",
@@ -1289,7 +1289,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "2.70",
-        "Comments1": "THAL INTERMEDIATE M3 rm M323 M32301, 88 lbs., STR/Broda, Intertrochanteric fracture of right femur, closed, initial encounter, Altered Mental Status, Fall, CN\n#106A\n\nper Jasmin Pag-Ong (682)212-3267",
+        "Comments1": "THAL INTERMEDIATE M3 rm M323 M32301, 88 lbs., STR/Broda, Intertrochanteric fracture of right femur, closed, initial encounter, Altered Mental Status, Fall, CN\r\n#106A\r\n\r\nper Jasmin Pag-Ong (682)212-3267",
         "PickupName": "Harris Alliance Hospital",
         "PickupAddress1": "10864 Texas Health Trl",
         "PickupCity": "Fort Worth",
@@ -1302,7 +1302,7 @@
         "DropoffZip": "76244",
         "AccountCode": "Harrison at Heritage ",
         "AccountName": "Harrison at Heritage",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -1437,17 +1437,17 @@
     "DropoffZip": "76244",
     "DirectMileage": "3",
     "RideHours": "0.2667",
-    "Comments": "M214, 150lbs, cn, needs str.  Lauren Rogan (682)212-3387\n#708",
-    "Comments1": "M214, 150lbs, cn, needs str.  Lauren Rogan (682)212-3387\n#708",
+    "Comments": "M214, 150lbs, cn, needs str.  Lauren Rogan (682)212-3387\r\n#708",
+    "Comments1": "M214, 150lbs, cn, needs str.  Lauren Rogan (682)212-3387\r\n#708",
     "notesFull": "M214, 150lbs, cn, needs str.  Lauren Rogan (682)212-3387\n#708",
-    "notesPreview": "M214, 150lbs, cn, needs str.  Lauren Rogan (682)212-3387",
+    "notesPreview": "M214, 150lbs, cn, needs str.  Lauren Rogan (682)212-3387 | #708",
     "legs": [
       {
         "FirstName": "Denard ",
         "LastName": "Mosby",
         "MiddleInitial": "",
         "DOB": "7/31/1950 12:00:00 AM",
-        "Comments": "M214, 150lbs, cn, needs str.  Lauren Rogan (682)212-3387\n#708",
+        "Comments": "M214, 150lbs, cn, needs str.  Lauren Rogan (682)212-3387\r\n#708",
         "ConfirmationNumber": "51681",
         "RideDate": "4/20/2026 12:00:00 AM",
         "ScheduledPickupTime": "15:30",
@@ -1461,7 +1461,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "2.70",
-        "Comments1": "M214, 150lbs, cn, needs str.  Lauren Rogan (682)212-3387\n#708",
+        "Comments1": "M214, 150lbs, cn, needs str.  Lauren Rogan (682)212-3387\r\n#708",
         "PickupName": "Harris Alliance Hospital",
         "PickupAddress1": "10864 Texas Health Trl",
         "PickupCity": "Fort Worth",
@@ -1474,7 +1474,7 @@
         "DropoffZip": "76244",
         "AccountCode": "Harrison at Heritage ",
         "AccountName": "Harrison at Heritage",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -1609,17 +1609,17 @@
     "DropoffZip": "76244",
     "DirectMileage": "3",
     "RideHours": "1.35",
-    "Comments": "M311, 212lbs, cn, needs str & 4ltrs o2, Jasmin Pag-Ong (682)212-3267\n#802.B",
-    "Comments1": "M311, 212lbs, cn, needs str & 4ltrs o2, Jasmin Pag-Ong (682)212-3267\n#802.B",
+    "Comments": "M311, 212lbs, cn, needs str & 4ltrs o2, Jasmin Pag-Ong (682)212-3267\r\n#802.B",
+    "Comments1": "M311, 212lbs, cn, needs str & 4ltrs o2, Jasmin Pag-Ong (682)212-3267\r\n#802.B",
     "notesFull": "M311, 212lbs, cn, needs str & 4ltrs o2, Jasmin Pag-Ong (682)212-3267\n#802.B",
-    "notesPreview": "M311, 212lbs, cn, needs str & 4ltrs o2, Jasmin Pag-Ong (682)212-3267",
+    "notesPreview": "M311, 212lbs, cn, needs str & 4ltrs o2, Jasmin Pag-Ong (682)212-3267 | #802.B",
     "legs": [
       {
         "FirstName": "Massee",
         "LastName": "McDaniel ",
         "MiddleInitial": "",
         "DOB": "9/25/1949 12:00:00 AM",
-        "Comments": "M311, 212lbs, cn, needs str & 4ltrs o2, Jasmin Pag-Ong (682)212-3267\n#802.B ",
+        "Comments": "M311, 212lbs, cn, needs str & 4ltrs o2, Jasmin Pag-Ong (682)212-3267\r\n#802.B ",
         "ConfirmationNumber": "51737",
         "RideDate": "4/22/2026 12:00:00 AM",
         "ScheduledPickupTime": "16:00",
@@ -1633,7 +1633,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "2.62",
-        "Comments1": "M311, 212lbs, cn, needs str & 4ltrs o2, Jasmin Pag-Ong (682)212-3267\n#802.B ",
+        "Comments1": "M311, 212lbs, cn, needs str & 4ltrs o2, Jasmin Pag-Ong (682)212-3267\r\n#802.B ",
         "PickupName": "Harris Alliance Hospital",
         "PickupAddress1": "10864 Texas Health Trl",
         "PickupCity": "Fort Worth",
@@ -1646,7 +1646,7 @@
         "DropoffZip": "76244",
         "AccountCode": "Harrison at Heritage ",
         "AccountName": "Harrison at Heritage",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -1781,17 +1781,17 @@
     "DropoffZip": "76244",
     "DirectMileage": "15",
     "RideHours": "",
-    "Comments": "***CXL per Rogena. No Charge***\nBloxom RM 305 // 110 lbs // STR // Rogena 817 250 4070",
-    "Comments1": "***CXL per Rogena. No Charge***\nBloxom RM 305 // 110 lbs // STR // Rogena 817 250 4070",
+    "Comments": "***CXL per Rogena. No Charge***\r\nBloxom RM 305 // 110 lbs // STR // Rogena 817 250 4070",
+    "Comments1": "***CXL per Rogena. No Charge***\r\nBloxom RM 305 // 110 lbs // STR // Rogena 817 250 4070",
     "notesFull": "***CXL per Rogena. No Charge***\nBloxom RM 305 // 110 lbs // STR // Rogena 817 250 4070",
-    "notesPreview": "***CXL per Rogena. No Charge***",
+    "notesPreview": "***CXL per Rogena. No Charge*** | Bloxom RM 305 // 110 lbs // STR // Rogena 817 250 4070",
     "legs": [
       {
         "FirstName": "Margaret ",
         "LastName": "Wilburn",
         "MiddleInitial": "",
         "DOB": "6/18/1935 12:00:00 AM",
-        "Comments": "***CXL per Rogena. No Charge***\nBloxom RM 305 // 110 lbs // STR // Rogena 817 250 4070",
+        "Comments": "***CXL per Rogena. No Charge***\r\nBloxom RM 305 // 110 lbs // STR // Rogena 817 250 4070",
         "ConfirmationNumber": "51729",
         "RideDate": "4/22/2026 12:00:00 AM",
         "ScheduledPickupTime": "12:30",
@@ -1805,7 +1805,7 @@
         "Mobility": "S",
         "RideStatus": "RiderCancel ",
         "DirectMileage": "15.48",
-        "Comments1": "***CXL per Rogena. No Charge***\nBloxom RM 305 // 110 lbs // STR // Rogena 817 250 4070",
+        "Comments1": "***CXL per Rogena. No Charge***\r\nBloxom RM 305 // 110 lbs // STR // Rogena 817 250 4070",
         "PickupName": "Harris Bloxom Tower",
         "PickupAddress1": "1301 Pennsylvania Avenue",
         "PickupCity": "Fort Worth",
@@ -1818,7 +1818,7 @@
         "DropoffZip": "76244",
         "AccountCode": "Harrison at Heritage ",
         "AccountName": "Harrison at Heritage",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",

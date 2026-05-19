@@ -28,17 +28,17 @@
     "DropoffZip": "76086",
     "DirectMileage": "83",
     "RideHours": "0.3667",
-    "Comments": "603, 120lbs, cn, alert, Back Fracture, needs str, Lindsey 682-262-3131\n#TBD or 101",
-    "Comments1": "603, 120lbs, cn, alert, Back Fracture, needs str, Lindsey 682-262-3131\n#TBD or 101",
+    "Comments": "603, 120lbs, cn, alert, Back Fracture, needs str, Lindsey 682-262-3131\r\n#TBD or 101",
+    "Comments1": "603, 120lbs, cn, alert, Back Fracture, needs str, Lindsey 682-262-3131\r\n#TBD or 101",
     "notesFull": "603, 120lbs, cn, alert, Back Fracture, needs str, Lindsey 682-262-3131\n#TBD or 101",
-    "notesPreview": "603, 120lbs, cn, alert, Back Fracture, needs str, Lindsey 682-262-3131",
+    "notesPreview": "603, 120lbs, cn, alert, Back Fracture, needs str, Lindsey 682-262-3131 | #TBD or 101",
     "legs": [
       {
         "FirstName": "Jess ",
         "LastName": "Maxwell ",
         "MiddleInitial": "",
         "DOB": "11/4/1957 12:00:00 AM",
-        "Comments": "603, 120lbs, cn, alert, Back Fracture, needs str, Lindsey 682-262-3131\n#TBD or 101",
+        "Comments": "603, 120lbs, cn, alert, Back Fracture, needs str, Lindsey 682-262-3131\r\n#TBD or 101",
         "ConfirmationNumber": "51564",
         "RideDate": "4/14/2026 12:00:00 AM",
         "ScheduledPickupTime": "16:00",
@@ -52,7 +52,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "82.52",
-        "Comments1": "603, 120lbs, cn, alert, Back Fracture, needs str, Lindsey 682-262-3131\n#TBD or 101",
+        "Comments1": "603, 120lbs, cn, alert, Back Fracture, needs str, Lindsey 682-262-3131\r\n#TBD or 101",
         "PickupName": "Baylor Scott & White Medical Center - Frisco at PGA Parkway",
         "PickupAddress1": "7600 Better Way",
         "PickupCity": "Frisco",
@@ -65,7 +65,7 @@
         "DropoffZip": "76086",
         "AccountCode": "Clear Sky",
         "AccountName": "Clear Sky",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -206,17 +206,17 @@
     "DropoffZip": "76086",
     "DirectMileage": "1",
     "RideHours": "0.2333",
-    "Comments": "rm 212 / needs recliner / has dementia but pleasant, cn\nrm 101\n\nper Brandi 817 304 9349",
-    "Comments1": "rm 212 / needs recliner / has dementia but pleasant, cn\nrm 101\n\nper Brandi 817 304 9349",
-    "notesFull": "rm 212 / needs recliner / has dementia but pleasant, cn\nrm 101\n\nper Brandi 817 304 9349",
-    "notesPreview": "rm 212 / needs recliner / has dementia but pleasant, cn",
+    "Comments": "rm 212 / needs recliner / has dementia but pleasant, cn\r\nrm 101\r\n\r\nper Brandi 817 304 9349",
+    "Comments1": "rm 212 / needs recliner / has dementia but pleasant, cn\r\nrm 101\r\n\r\nper Brandi 817 304 9349",
+    "notesFull": "rm 212 / needs recliner / has dementia but pleasant, cn\nrm 101\nper Brandi 817 304 9349",
+    "notesPreview": "rm 212 / needs recliner / has dementia but pleasant, cn | rm 101 | per Brandi 817 304 9349",
     "legs": [
       {
         "FirstName": "Janice",
         "LastName": "Leos",
         "MiddleInitial": "",
         "DOB": "6/12/1943 12:00:00 AM",
-        "Comments": "rm 212 / needs recliner / has dementia but pleasant, cn\nrm 101\n\nper Brandi 817 304 9349",
+        "Comments": "rm 212 / needs recliner / has dementia but pleasant, cn\r\nrm 101\r\n\r\nper Brandi 817 304 9349",
         "ConfirmationNumber": "51670",
         "RideDate": "4/19/2026 12:00:00 AM",
         "ScheduledPickupTime": "16:30",
@@ -230,7 +230,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "1.07",
-        "Comments1": "rm 212 / needs recliner / has dementia but pleasant, cn\nrm 101\n\nper Brandi 817 304 9349",
+        "Comments1": "rm 212 / needs recliner / has dementia but pleasant, cn\r\nrm 101\r\n\r\nper Brandi 817 304 9349",
         "PickupName": "College Park Rehabilitation and Care Center",
         "PickupAddress1": "1715 Martin Drive",
         "PickupCity": "Weatherford",
@@ -243,7 +243,7 @@
         "DropoffZip": "76086",
         "AccountCode": "Clear Sky",
         "AccountName": "Clear Sky",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -397,17 +397,17 @@
     "DropoffZip": "76086",
     "DirectMileage": "28",
     "RideHours": "1.5167",
-    "Comments": "Jones. 374, 170lbs, cn, needs str, Kimberly Aguilar 817-250-2663\n#101",
-    "Comments1": "Jones. 374, 170lbs, cn, needs str, Kimberly Aguilar 817-250-2663\n#101",
+    "Comments": "Jones. 374, 170lbs, cn, needs str, Kimberly Aguilar 817-250-2663\r\n#101",
+    "Comments1": "Jones. 374, 170lbs, cn, needs str, Kimberly Aguilar 817-250-2663\r\n#101",
     "notesFull": "Jones. 374, 170lbs, cn, needs str, Kimberly Aguilar 817-250-2663\n#101",
-    "notesPreview": "Jones. 374, 170lbs, cn, needs str, Kimberly Aguilar 817-250-2663",
+    "notesPreview": "Jones. 374, 170lbs, cn, needs str, Kimberly Aguilar 817-250-2663 | #101",
     "legs": [
       {
         "FirstName": "Jeanne ",
         "LastName": "Cates ",
         "MiddleInitial": "",
         "DOB": "3/4/1938 12:00:00 AM",
-        "Comments": "Jones. 374, 170lbs, cn, needs str, Kimberly Aguilar 817-250-2663\n#101",
+        "Comments": "Jones. 374, 170lbs, cn, needs str, Kimberly Aguilar 817-250-2663\r\n#101",
         "ConfirmationNumber": "51787",
         "RideDate": "4/23/2026 12:00:00 AM",
         "ScheduledPickupTime": "15:00",
@@ -421,7 +421,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "28.22",
-        "Comments1": "Jones. 374, 170lbs, cn, needs str, Kimberly Aguilar 817-250-2663\n#101",
+        "Comments1": "Jones. 374, 170lbs, cn, needs str, Kimberly Aguilar 817-250-2663\r\n#101",
         "PickupName": "Harris Jones Tower",
         "PickupAddress1": "1301 Pennsylvania Avenue",
         "PickupCity": "Fort Worth",
@@ -434,7 +434,7 @@
         "DropoffZip": "76086",
         "AccountCode": "Clear Sky",
         "AccountName": "Clear Sky",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",

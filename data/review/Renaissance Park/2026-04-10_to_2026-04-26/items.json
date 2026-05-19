@@ -28,17 +28,17 @@
     "DropoffZip": "76107",
     "DirectMileage": "3",
     "RideHours": "0.4833",
-    "Comments": "Quoted $153 (159.10 w/ tax)/ 889012\n\nrm 119, 220 lbs., STR, had a stroke but she's alert and oriented, CN\nat residence dtr will be there to receive her, has ramp, front door, str will fit per Ms. Simpson (817)902-6711",
-    "Comments1": "Quoted $153 (159.10 w/ tax)/ 889012\n\nrm 119, 220 lbs., STR, had a stroke but she's alert and oriented, CN\nat residence dtr will be there to receive her, has ramp, front door, str will fit per Ms. Simpson (817)902-6711",
-    "notesFull": "Quoted $153 (159.10 w/ tax)/ 889012\n\nrm 119, 220 lbs., STR, had a stroke but she's alert and oriented, CN\nat residence dtr will be there to receive her, has ramp, front door, str will fit per Ms. Simpson (817)902-6711",
-    "notesPreview": "Quoted $153 (159.10 w/ tax)/ 889012",
+    "Comments": "Quoted $153 (159.10 w/ tax)/ 889012\r\n\r\nrm 119, 220 lbs., STR, had a stroke but she's alert and oriented, CN\r\nat residence dtr will be there to receive her, has ramp, front door, str will fit per Ms. Simpson (817)902-6711",
+    "Comments1": "Quoted $153 (159.10 w/ tax)/ 889012\r\n\r\nrm 119, 220 lbs., STR, had a stroke but she's alert and oriented, CN\r\nat residence dtr will be there to receive her, has ramp, front door, str will fit per Ms. Simpson (817)902-6711",
+    "notesFull": "Quoted $153 (159.10 w/ tax)/ 889012\nrm 119, 220 lbs., STR, had a stroke but she's alert and oriented, CN\nat residence dtr will be there to receive her, has ramp, front door, str will fit per Ms. Simpson (817)902-6711",
+    "notesPreview": "Quoted $153 (159.10 w/ tax)/ 889012 | rm 119, 220 lbs., STR, had a stroke but she's alert and oriented, CN | at residence dtr will be there to receive her, h...",
     "legs": [
       {
         "FirstName": "Juanita",
         "LastName": "Simpson",
         "MiddleInitial": "",
         "DOB": "2/5/1952 12:00:00 AM",
-        "Comments": "Quoted $153 (159.10 w/ tax)/ 889012\n\nrm 119, 220 lbs., STR, had a stroke but she's alert and oriented, CN\nat residence dtr will be there to receive her, has ramp, front door, str will fit per Ms. Simpson (817)902-6711",
+        "Comments": "Quoted $153 (159.10 w/ tax)/ 889012\r\n\r\nrm 119, 220 lbs., STR, had a stroke but she's alert and oriented, CN\r\nat residence dtr will be there to receive her, has ramp, front door, str will fit per Ms. Simpson (817)902-6711",
         "ConfirmationNumber": "51501",
         "RideDate": "4/12/2026 12:00:00 AM",
         "ScheduledPickupTime": "13:30",
@@ -52,7 +52,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "2.93",
-        "Comments1": "Quoted $153 (159.10 w/ tax)/ 889012\n\nrm 119, 220 lbs., STR, had a stroke but she's alert and oriented, CN\nat residence dtr will be there to receive her, has ramp, front door, str will fit per Ms. Simpson (817)902-6711",
+        "Comments1": "Quoted $153 (159.10 w/ tax)/ 889012\r\n\r\nrm 119, 220 lbs., STR, had a stroke but she's alert and oriented, CN\r\nat residence dtr will be there to receive her, has ramp, front door, str will fit per Ms. Simpson (817)902-6711",
         "PickupName": "Renaissance Park Multi Care Center",
         "PickupAddress1": "4252 Bryant Irvin Road",
         "PickupCity": "Fort Worth",
@@ -65,7 +65,7 @@
         "DropoffZip": "76107",
         "AccountCode": "Renaissance Park ",
         "AccountName": "Renaissance Park ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -200,17 +200,17 @@
     "DropoffZip": "76109",
     "DirectMileage": "4",
     "RideHours": "",
-    "Comments": "RM 274\nHas Power Chair\n370 lbs\nRen Park RM TBD\n682 218 8330\nrequesting btw 11-12 pickup from Encompass",
-    "Comments1": "RM 274\nHas Power Chair\n370 lbs\nRen Park RM TBD\n682 218 8330\nrequesting btw 11-12 pickup from Encompass",
+    "Comments": "RM 274\r\nHas Power Chair\r\n370 lbs\r\nRen Park RM TBD\r\n682 218 8330\r\nrequesting btw 11-12 pickup from Encompass",
+    "Comments1": "RM 274\r\nHas Power Chair\r\n370 lbs\r\nRen Park RM TBD\r\n682 218 8330\r\nrequesting btw 11-12 pickup from Encompass",
     "notesFull": "RM 274\nHas Power Chair\n370 lbs\nRen Park RM TBD\n682 218 8330\nrequesting btw 11-12 pickup from Encompass",
-    "notesPreview": "RM 274",
+    "notesPreview": "RM 274 | Has Power Chair | 370 lbs | Ren Park RM TBD | 682 218 8330 | requesting btw 11-12 pickup from Encompass",
     "legs": [
       {
         "FirstName": "Charles ",
         "LastName": "Young",
         "MiddleInitial": "",
         "DOB": "6/24/1954 12:00:00 AM",
-        "Comments": "RM 274\nHas Power Chair\n370 lbs\nRen Park RM TBD\n682 218 8330\nrequesting btw 11-12 pickup from Encompass",
+        "Comments": "RM 274\r\nHas Power Chair\r\n370 lbs\r\nRen Park RM TBD\r\n682 218 8330\r\nrequesting btw 11-12 pickup from Encompass",
         "ConfirmationNumber": "51536",
         "RideDate": "4/14/2026 12:00:00 AM",
         "ScheduledPickupTime": "11:00",
@@ -224,7 +224,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "3.79",
-        "Comments1": "RM 274\nHas Power Chair\n370 lbs\nRen Park RM TBD\n682 218 8330\nrequesting btw 11-12 pickup from Encompass",
+        "Comments1": "RM 274\r\nHas Power Chair\r\n370 lbs\r\nRen Park RM TBD\r\n682 218 8330\r\nrequesting btw 11-12 pickup from Encompass",
         "PickupName": "Encompass Health Rehabilitation Hospital of City View",
         "PickupAddress1": "6701 Oakmont Boulevard",
         "PickupCity": "Fort Worth",
@@ -237,7 +237,7 @@
         "DropoffZip": "76109",
         "AccountCode": "Renaissance Park ",
         "AccountName": "Renaissance Park ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -380,17 +380,17 @@
     "DropoffZip": "76109",
     "DirectMileage": "13",
     "RideHours": "0.5167",
-    "Comments": "RM 6604\n142 lbs\nSTR\nRen Park RM 105\nAlly 817 551 2626",
-    "Comments1": "RM 6604\n142 lbs\nSTR\nRen Park RM 105\nAlly 817 551 2626",
+    "Comments": "RM 6604\r\n142 lbs\r\nSTR\r\nRen Park RM 105\r\nAlly 817 551 2626",
+    "Comments1": "RM 6604\r\n142 lbs\r\nSTR\r\nRen Park RM 105\r\nAlly 817 551 2626",
     "notesFull": "RM 6604\n142 lbs\nSTR\nRen Park RM 105\nAlly 817 551 2626",
-    "notesPreview": "RM 6604",
+    "notesPreview": "RM 6604 | 142 lbs | STR | Ren Park RM 105 | Ally 817 551 2626",
     "legs": [
       {
         "FirstName": "Oren",
         "LastName": "Allen",
         "MiddleInitial": "",
         "DOB": "7/28/1935 12:00:00 AM",
-        "Comments": "RM 6604\n142 lbs\nSTR\nRen Park RM 105\nAlly 817 551 2626",
+        "Comments": "RM 6604\r\n142 lbs\r\nSTR\r\nRen Park RM 105\r\nAlly 817 551 2626",
         "ConfirmationNumber": "51593",
         "RideDate": "4/15/2026 12:00:00 AM",
         "ScheduledPickupTime": "17:30",
@@ -404,7 +404,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "12.81",
-        "Comments1": "RM 6604\n142 lbs\nSTR\nRen Park RM 105\nAlly 817 551 2626",
+        "Comments1": "RM 6604\r\n142 lbs\r\nSTR\r\nRen Park RM 105\r\nAlly 817 551 2626",
         "PickupName": "Texas Health Huguley Hospital",
         "PickupAddress1": "11801 South Freeway",
         "PickupCity": "Burleson",
@@ -417,7 +417,7 @@
         "DropoffZip": "76109",
         "AccountCode": "Renaissance Park ",
         "AccountName": "Renaissance Park ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -558,17 +558,17 @@
     "DropoffZip": "76177",
     "DirectMileage": "36",
     "RideHours": "0.4667",
-    "Comments": "114, 178lbs, cn, has wc, \n845am appt, Orthopedic surgery office",
-    "Comments1": "114, 178lbs, cn, has wc, \n845am appt, Orthopedic surgery office",
-    "notesFull": "114, 178lbs, cn, has wc, \n845am appt, Orthopedic surgery office",
-    "notesPreview": "114, 178lbs, cn, has wc,",
+    "Comments": "114, 178lbs, cn, has wc, \r\n845am appt, Orthopedic surgery office",
+    "Comments1": "114, 178lbs, cn, has wc, \r\n845am appt, Orthopedic surgery office",
+    "notesFull": "114, 178lbs, cn, has wc,\n845am appt, Orthopedic surgery office",
+    "notesPreview": "114, 178lbs, cn, has wc, | 845am appt, Orthopedic surgery office",
     "legs": [
       {
         "FirstName": "Tony",
         "LastName": "Castillo",
         "MiddleInitial": "",
         "DOB": "4/26/1957 12:00:00 AM",
-        "Comments": "114, 178lbs, cn, has wc, \n845am appt, Orthopedic surgery office ",
+        "Comments": "114, 178lbs, cn, has wc, \r\n845am appt, Orthopedic surgery office ",
         "ConfirmationNumber": "51572",
         "RideDate": "4/15/2026 12:00:00 AM",
         "ScheduledPickupTime": "08:15",
@@ -582,7 +582,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "18.43",
-        "Comments1": "114, 178lbs, cn, has wc, \n845am appt, Orthopedic surgery office ",
+        "Comments1": "114, 178lbs, cn, has wc, \r\n845am appt, Orthopedic surgery office ",
         "PickupName": "Renaissance Park Multi Care Center",
         "PickupAddress1": "4252 Bryant Irvin Road",
         "PickupCity": "Fort Worth",
@@ -595,14 +595,14 @@
         "DropoffZip": "76177",
         "AccountCode": "Renaissance Park ",
         "AccountName": "Renaissance Park ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "Tony",
         "LastName": "Castillo",
         "MiddleInitial": "",
         "DOB": "4/26/1957 12:00:00 AM",
-        "Comments": "114, 178lbs, cn, has wc, \n845am appt, Orthopedic surgery office ",
+        "Comments": "114, 178lbs, cn, has wc, \r\n845am appt, Orthopedic surgery office ",
         "ConfirmationNumber": "51573",
         "RideDate": "4/15/2026 12:00:00 AM",
         "ScheduledPickupTime": "09:28",
@@ -616,7 +616,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "18.43",
-        "Comments1": "114, 178lbs, cn, has wc, \n845am appt, Orthopedic surgery office ",
+        "Comments1": "114, 178lbs, cn, has wc, \r\n845am appt, Orthopedic surgery office ",
         "PickupName": "Texas Bone and Joint - Alliance",
         "PickupAddress1": "8800 Medical City Way",
         "PickupCity": "Fort Worth",
@@ -629,7 +629,7 @@
         "DropoffZip": "76109",
         "AccountCode": "Renaissance Park ",
         "AccountName": "Renaissance Park ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -762,17 +762,17 @@
     "DropoffZip": "76109",
     "DirectMileage": "6",
     "RideHours": "0.5333",
-    "Comments": "Building B rm 311 / str / 201 lbs / has catheter, cn\nrm 113 \n\nper Kathy 817 922 4985",
-    "Comments1": "Building B rm 311 / str / 201 lbs / has catheter, cn\nrm 113 \n\nper Kathy 817 922 4985",
-    "notesFull": "Building B rm 311 / str / 201 lbs / has catheter, cn\nrm 113 \n\nper Kathy 817 922 4985",
-    "notesPreview": "Building B rm 311 / str / 201 lbs / has catheter, cn",
+    "Comments": "Building B rm 311 / str / 201 lbs / has catheter, cn\r\nrm 113 \r\n\r\nper Kathy 817 922 4985",
+    "Comments1": "Building B rm 311 / str / 201 lbs / has catheter, cn\r\nrm 113 \r\n\r\nper Kathy 817 922 4985",
+    "notesFull": "Building B rm 311 / str / 201 lbs / has catheter, cn\nrm 113\nper Kathy 817 922 4985",
+    "notesPreview": "Building B rm 311 / str / 201 lbs / has catheter, cn | rm 113 | per Kathy 817 922 4985",
     "legs": [
       {
         "FirstName": "James \"Gary\" ",
         "LastName": "Johnson",
         "MiddleInitial": "",
         "DOB": "10/6/1948 12:00:00 AM",
-        "Comments": "Building B rm 311 / str / 201 lbs / has catheter, cn\nrm 113 \n\nper Kathy 817 922 4985",
+        "Comments": "Building B rm 311 / str / 201 lbs / has catheter, cn\r\nrm 113 \r\n\r\nper Kathy 817 922 4985",
         "ConfirmationNumber": "51619",
         "RideDate": "4/16/2026 12:00:00 AM",
         "ScheduledPickupTime": "17:30",
@@ -786,7 +786,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "6.03",
-        "Comments1": "Building B rm 311 / str / 201 lbs / has catheter, cn\nrm 113 \n\nper Kathy 817 922 4985",
+        "Comments1": "Building B rm 311 / str / 201 lbs / has catheter, cn\r\nrm 113 \r\n\r\nper Kathy 817 922 4985",
         "PickupName": "Baylor All Saints Fort Worth B Building",
         "PickupAddress1": "1400 8th Avenue",
         "PickupCity": "Fort Worth",
@@ -799,7 +799,7 @@
         "DropoffZip": "76109",
         "AccountCode": "Renaissance Park ",
         "AccountName": "Renaissance Park ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -940,17 +940,17 @@
     "DropoffZip": "76177",
     "DirectMileage": "18",
     "RideHours": "",
-    "Comments": "*CHARGE A FEE< CANCEL ON SCENE*\nRM 114\n171 lbs\nHas WC\nDr Bodylanjohn\n0915 appt\nNicole 817 738 2975",
-    "Comments1": "*CHARGE A FEE< CANCEL ON SCENE*\nRM 114\n171 lbs\nHas WC\nDr Bodylanjohn\n0915 appt\nNicole 817 738 2975",
+    "Comments": "*CHARGE A FEE< CANCEL ON SCENE*\r\nRM 114\r\n171 lbs\r\nHas WC\r\nDr Bodylanjohn\r\n0915 appt\r\nNicole 817 738 2975",
+    "Comments1": "*CHARGE A FEE< CANCEL ON SCENE*\r\nRM 114\r\n171 lbs\r\nHas WC\r\nDr Bodylanjohn\r\n0915 appt\r\nNicole 817 738 2975",
     "notesFull": "*CHARGE A FEE< CANCEL ON SCENE*\nRM 114\n171 lbs\nHas WC\nDr Bodylanjohn\n0915 appt\nNicole 817 738 2975",
-    "notesPreview": "*CHARGE A FEE< CANCEL ON SCENE*",
+    "notesPreview": "*CHARGE A FEE< CANCEL ON SCENE* | RM 114 | 171 lbs | Has WC | Dr Bodylanjohn | 0915 appt | Nicole 817 738 2975",
     "legs": [
       {
         "FirstName": "Tony",
         "LastName": "Castillo",
         "MiddleInitial": "",
         "DOB": "4/26/1957 12:00:00 AM",
-        "Comments": "*CHARGE A FEE< CANCEL ON SCENE*\nRM 114\n171 lbs\nHas WC\nDr Bodylanjohn\n0915 appt\nNicole 817 738 2975",
+        "Comments": "*CHARGE A FEE< CANCEL ON SCENE*\r\nRM 114\r\n171 lbs\r\nHas WC\r\nDr Bodylanjohn\r\n0915 appt\r\nNicole 817 738 2975",
         "ConfirmationNumber": "51525",
         "RideDate": "4/20/2026 12:00:00 AM",
         "ScheduledPickupTime": "08:30",
@@ -964,7 +964,7 @@
         "Mobility": "WC",
         "RideStatus": "NoShow ",
         "DirectMileage": "18.43",
-        "Comments1": "*CHARGE A FEE< CANCEL ON SCENE*\nRM 114\n171 lbs\nHas WC\nDr Bodylanjohn\n0915 appt\nNicole 817 738 2975",
+        "Comments1": "*CHARGE A FEE< CANCEL ON SCENE*\r\nRM 114\r\n171 lbs\r\nHas WC\r\nDr Bodylanjohn\r\n0915 appt\r\nNicole 817 738 2975",
         "PickupName": "Renaissance Park Multi Care Center",
         "PickupAddress1": "4252 Bryant Irvin Road",
         "PickupCity": "Fort Worth",
@@ -977,7 +977,7 @@
         "DropoffZip": "76177",
         "AccountCode": "Renaissance Park ",
         "AccountName": "Renaissance Park ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -1087,17 +1087,17 @@
     "DropoffZip": "76033",
     "DirectMileage": "48",
     "RideHours": "0.5333",
-    "Comments": "108.B, 174lbs, cn, has wc, \n130pm appt, #300",
-    "Comments1": "108.B, 174lbs, cn, has wc, \n130pm appt, #300",
-    "notesFull": "108.B, 174lbs, cn, has wc, \n130pm appt, #300",
-    "notesPreview": "108.B, 174lbs, cn, has wc,",
+    "Comments": "108.B, 174lbs, cn, has wc, \r\n130pm appt, #300",
+    "Comments1": "108.B, 174lbs, cn, has wc, \r\n130pm appt, #300",
+    "notesFull": "108.B, 174lbs, cn, has wc,\n130pm appt, #300",
+    "notesPreview": "108.B, 174lbs, cn, has wc, | 130pm appt, #300",
     "legs": [
       {
         "FirstName": "Judy",
         "LastName": "Morris",
         "MiddleInitial": "",
         "DOB": "12/22/1954 12:00:00 AM",
-        "Comments": "108.B, 174lbs, cn, has wc, \n130pm appt, #300 ",
+        "Comments": "108.B, 174lbs, cn, has wc, \r\n130pm appt, #300 ",
         "ConfirmationNumber": "51676",
         "RideDate": "4/20/2026 12:00:00 AM",
         "ScheduledPickupTime": "12:45",
@@ -1111,7 +1111,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "24.40",
-        "Comments1": "108.B, 174lbs, cn, has wc, \n130pm appt, #300 ",
+        "Comments1": "108.B, 174lbs, cn, has wc, \r\n130pm appt, #300 ",
         "PickupName": "Renaissance Park Multi Care Center",
         "PickupAddress1": "4252 Bryant Irvin Road",
         "PickupCity": "Fort Worth",
@@ -1124,14 +1124,14 @@
         "DropoffZip": "76033",
         "AccountCode": "Renaissance Park ",
         "AccountName": "Renaissance Park ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "Judy",
         "LastName": "Morris",
         "MiddleInitial": "",
         "DOB": "12/22/1954 12:00:00 AM",
-        "Comments": "108.B, 174lbs, cn, has wc, \n130pm appt, #300 ",
+        "Comments": "108.B, 174lbs, cn, has wc, \r\n130pm appt, #300 ",
         "ConfirmationNumber": "51677",
         "RideDate": "4/20/2026 12:00:00 AM",
         "ScheduledPickupTime": "14:37",
@@ -1145,7 +1145,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "24.40",
-        "Comments1": "108.B, 174lbs, cn, has wc, \n130pm appt, #300 ",
+        "Comments1": "108.B, 174lbs, cn, has wc, \r\n130pm appt, #300 ",
         "PickupName": "Chisholm Trail Orthopedics and Sports Medicine (Cleburne Location)",
         "PickupAddress1": "2010 West Katherine P Raines Road",
         "PickupCity": "Cleburne",
@@ -1158,7 +1158,7 @@
         "DropoffZip": "76109",
         "AccountCode": "Renaissance Park ",
         "AccountName": "Renaissance Park ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -1291,17 +1291,17 @@
     "DropoffZip": "76109",
     "DirectMileage": "6",
     "RideHours": "0.4",
-    "Comments": "bldg. B, rm 234, 212lbs., STR, no precautions\nrm 121 at Ren Park",
-    "Comments1": "bldg. B, rm 234, 212lbs., STR, no precautions\nrm 121 at Ren Park",
+    "Comments": "bldg. B, rm 234, 212lbs., STR, no precautions\r\nrm 121 at Ren Park",
+    "Comments1": "bldg. B, rm 234, 212lbs., STR, no precautions\r\nrm 121 at Ren Park",
     "notesFull": "bldg. B, rm 234, 212lbs., STR, no precautions\nrm 121 at Ren Park",
-    "notesPreview": "bldg. B, rm 234, 212lbs., STR, no precautions",
+    "notesPreview": "bldg. B, rm 234, 212lbs., STR, no precautions | rm 121 at Ren Park",
     "legs": [
       {
         "FirstName": "Charles",
         "LastName": "Castle",
         "MiddleInitial": "",
         "DOB": "5/16/1947 12:00:00 AM",
-        "Comments": "bldg. B, rm 234, 212lbs., STR, no precautions\nrm 121 at Ren Park",
+        "Comments": "bldg. B, rm 234, 212lbs., STR, no precautions\r\nrm 121 at Ren Park",
         "ConfirmationNumber": "51834",
         "RideDate": "4/24/2026 12:00:00 AM",
         "ScheduledPickupTime": "14:30",
@@ -1315,7 +1315,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "6.03",
-        "Comments1": "bldg. B, rm 234, 212lbs., STR, no precautions\nrm 121 at Ren Park",
+        "Comments1": "bldg. B, rm 234, 212lbs., STR, no precautions\r\nrm 121 at Ren Park",
         "PickupName": "Baylor All Saints Fort Worth B Building",
         "PickupAddress1": "1400 8th Avenue",
         "PickupCity": "Fort Worth",
@@ -1328,7 +1328,7 @@
         "DropoffZip": "76109",
         "AccountCode": "Renaissance Park ",
         "AccountName": "Renaissance Park ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -1463,17 +1463,17 @@
     "DropoffZip": "76109",
     "DirectMileage": "6",
     "RideHours": "0.7",
-    "Comments": "Bldg C 3rd floor rm 379, 107 lbs., STR, CN\n#201B\n\nper Aaliyah 8176988651",
-    "Comments1": "Bldg C 3rd floor rm 379, 107 lbs., STR, CN\n#201B\n\nper Aaliyah 8176988651",
-    "notesFull": "Bldg C 3rd floor rm 379, 107 lbs., STR, CN\n#201B\n\nper Aaliyah 8176988651",
-    "notesPreview": "Bldg C 3rd floor rm 379, 107 lbs., STR, CN",
+    "Comments": "Bldg C 3rd floor rm 379, 107 lbs., STR, CN\r\n#201B\r\n\r\nper Aaliyah 8176988651",
+    "Comments1": "Bldg C 3rd floor rm 379, 107 lbs., STR, CN\r\n#201B\r\n\r\nper Aaliyah 8176988651",
+    "notesFull": "Bldg C 3rd floor rm 379, 107 lbs., STR, CN\n#201B\nper Aaliyah 8176988651",
+    "notesPreview": "Bldg C 3rd floor rm 379, 107 lbs., STR, CN | #201B | per Aaliyah 8176988651",
     "legs": [
       {
         "FirstName": "Rollin",
         "LastName": "Graham ",
         "MiddleInitial": "",
         "DOB": "2/18/1969 12:00:00 AM",
-        "Comments": "Bldg C 3rd floor rm 379, 107 lbs., STR, CN\n#201B\n\nper Aaliyah 8176988651",
+        "Comments": "Bldg C 3rd floor rm 379, 107 lbs., STR, CN\r\n#201B\r\n\r\nper Aaliyah 8176988651",
         "ConfirmationNumber": "51838",
         "RideDate": "4/24/2026 12:00:00 AM",
         "ScheduledPickupTime": "18:30",
@@ -1487,7 +1487,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "6.15",
-        "Comments1": "Bldg C 3rd floor rm 379, 107 lbs., STR, CN\n#201B\n\nper Aaliyah 8176988651",
+        "Comments1": "Bldg C 3rd floor rm 379, 107 lbs., STR, CN\r\n#201B\r\n\r\nper Aaliyah 8176988651",
         "PickupName": "Baylor All Saints  Building  C Building ",
         "PickupAddress1": "1400 8th Ave ",
         "PickupCity": "Fort Worth",
@@ -1500,7 +1500,7 @@
         "DropoffZip": "76109",
         "AccountCode": "Renaissance Park ",
         "AccountName": "Renaissance Park ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -1641,17 +1641,17 @@
     "DropoffZip": "76109",
     "DirectMileage": "6",
     "RideHours": "0.5833",
-    "Comments": "A 813, 199lbs., STR, no precautions\nrm 104 at Ren Park",
-    "Comments1": "A 813, 199lbs., STR, no precautions\nrm 104 at Ren Park",
+    "Comments": "A 813, 199lbs., STR, no precautions\r\nrm 104 at Ren Park",
+    "Comments1": "A 813, 199lbs., STR, no precautions\r\nrm 104 at Ren Park",
     "notesFull": "A 813, 199lbs., STR, no precautions\nrm 104 at Ren Park",
-    "notesPreview": "A 813, 199lbs., STR, no precautions",
+    "notesPreview": "A 813, 199lbs., STR, no precautions | rm 104 at Ren Park",
     "legs": [
       {
         "FirstName": "Juanita",
         "LastName": "Simpson",
         "MiddleInitial": "",
         "DOB": "2/5/1952 12:00:00 AM",
-        "Comments": "A 813, 199lbs., STR, no precautions\nrm 104 at Ren Park",
+        "Comments": "A 813, 199lbs., STR, no precautions\r\nrm 104 at Ren Park",
         "ConfirmationNumber": "51835",
         "RideDate": "4/24/2026 12:00:00 AM",
         "ScheduledPickupTime": "17:30",
@@ -1665,7 +1665,7 @@
         "Mobility": "S",
         "RideStatus": "Rode ",
         "DirectMileage": "6.03",
-        "Comments1": "A 813, 199lbs., STR, no precautions\nrm 104 at Ren Park",
+        "Comments1": "A 813, 199lbs., STR, no precautions\r\nrm 104 at Ren Park",
         "PickupName": "Baylor All Saints Fort Worth  (A Building) ",
         "PickupAddress1": "1400 8th Ave ",
         "PickupCity": "Fort Worth",
@@ -1678,7 +1678,7 @@
         "DropoffZip": "76109",
         "AccountCode": "Renaissance Park ",
         "AccountName": "Renaissance Park ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -1819,17 +1819,17 @@
     "DropoffZip": "76114",
     "DirectMileage": "18",
     "RideHours": "0.4667",
-    "Comments": "122, 212lbs, Nicole \n630am chair time",
-    "Comments1": "122, 212lbs, Nicole \n630am chair time",
-    "notesFull": "122, 212lbs, Nicole \n630am chair time",
-    "notesPreview": "122, 212lbs, Nicole",
+    "Comments": "122, 212lbs, Nicole \r\n630am chair time",
+    "Comments1": "122, 212lbs, Nicole \r\n630am chair time",
+    "notesFull": "122, 212lbs, Nicole\n630am chair time",
+    "notesPreview": "122, 212lbs, Nicole | 630am chair time",
     "legs": [
       {
         "FirstName": "Winter",
         "LastName": "Butler",
         "MiddleInitial": "",
         "DOB": "12/24/1979 12:00:00 AM",
-        "Comments": "122, 212lbs, Nicole \n630am chair time ",
+        "Comments": "122, 212lbs, Nicole \r\n630am chair time ",
         "ConfirmationNumber": "51771",
         "RideDate": "4/25/2026 12:00:00 AM",
         "ScheduledPickupTime": "06:00",
@@ -1843,7 +1843,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "9.48",
-        "Comments1": "122, 212lbs, Nicole \n630am chair time ",
+        "Comments1": "122, 212lbs, Nicole \r\n630am chair time ",
         "PickupName": "Renaissance Park Multi Care Center",
         "PickupAddress1": "4252 Bryant Irvin Road",
         "PickupCity": "Fort Worth",
@@ -1856,14 +1856,14 @@
         "DropoffZip": "76114",
         "AccountCode": "Renaissance Park ",
         "AccountName": "Renaissance Park ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       },
       {
         "FirstName": "Winter",
         "LastName": "Butler",
         "MiddleInitial": "",
         "DOB": "12/24/1979 12:00:00 AM",
-        "Comments": "122, 212lbs, Nicole \n630am chair time ",
+        "Comments": "122, 212lbs, Nicole \r\n630am chair time ",
         "ConfirmationNumber": "51772",
         "RideDate": "4/25/2026 12:00:00 AM",
         "ScheduledPickupTime": "11:10",
@@ -1877,7 +1877,7 @@
         "Mobility": "WC",
         "RideStatus": "Rode ",
         "DirectMileage": "9.48",
-        "Comments1": "122, 212lbs, Nicole \n630am chair time ",
+        "Comments1": "122, 212lbs, Nicole \r\n630am chair time ",
         "PickupName": "Fresenius Kidney Care Northside",
         "PickupAddress1": "2532 Jacksboro Highway",
         "PickupCity": "Fort Worth",
@@ -1890,7 +1890,7 @@
         "DropoffZip": "76109",
         "AccountCode": "Renaissance Park ",
         "AccountName": "Renaissance Park ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -2029,17 +2029,17 @@
     "DropoffZip": "76110",
     "DirectMileage": "7",
     "RideHours": "",
-    "Comments": "*** Tabitha cancelled the trips, patient's discharged; no charge\n\n415pm chair time",
-    "Comments1": "*** Tabitha cancelled the trips, patient's discharged; no charge\n\n415pm chair time",
-    "notesFull": "*** Tabitha cancelled the trips, patient's discharged; no charge\n\n415pm chair time",
-    "notesPreview": "*** Tabitha cancelled the trips, patient's discharged; no charge",
+    "Comments": "*** Tabitha cancelled the trips, patient's discharged; no charge\r\n\r\n415pm chair time",
+    "Comments1": "*** Tabitha cancelled the trips, patient's discharged; no charge\r\n\r\n415pm chair time",
+    "notesFull": "*** Tabitha cancelled the trips, patient's discharged; no charge\n415pm chair time",
+    "notesPreview": "*** Tabitha cancelled the trips, patient's discharged; no charge | 415pm chair time",
     "legs": [
       {
         "FirstName": "Sharon ",
         "LastName": "Rogers ",
         "MiddleInitial": "",
         "DOB": "5/4/1959 12:00:00 AM",
-        "Comments": "*** Tabitha cancelled the trips, patient's discharged; no charge\n\n415pm chair time ",
+        "Comments": "*** Tabitha cancelled the trips, patient's discharged; no charge\r\n\r\n415pm chair time ",
         "ConfirmationNumber": "51773",
         "RideDate": "4/25/2026 12:00:00 AM",
         "ScheduledPickupTime": "15:30",
@@ -2053,7 +2053,7 @@
         "Mobility": "WC",
         "RideStatus": "RiderCancel ",
         "DirectMileage": "6.60",
-        "Comments1": "*** Tabitha cancelled the trips, patient's discharged; no charge\n\n415pm chair time ",
+        "Comments1": "*** Tabitha cancelled the trips, patient's discharged; no charge\r\n\r\n415pm chair time ",
         "PickupName": "Renaissance Park Multi Care Center",
         "PickupAddress1": "4252 Bryant Irvin Road",
         "PickupCity": "Fort Worth",
@@ -2066,7 +2066,7 @@
         "DropoffZip": "76110",
         "AccountCode": "Renaissance Park ",
         "AccountName": "Renaissance Park ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -2176,17 +2176,17 @@
     "DropoffZip": "76109",
     "DirectMileage": "7",
     "RideHours": "",
-    "Comments": "*** Tabitha cancelled the trips, patient's discharged; no charge\n\n415pm chair time",
-    "Comments1": "*** Tabitha cancelled the trips, patient's discharged; no charge\n\n415pm chair time",
-    "notesFull": "*** Tabitha cancelled the trips, patient's discharged; no charge\n\n415pm chair time",
-    "notesPreview": "*** Tabitha cancelled the trips, patient's discharged; no charge",
+    "Comments": "*** Tabitha cancelled the trips, patient's discharged; no charge\r\n\r\n415pm chair time",
+    "Comments1": "*** Tabitha cancelled the trips, patient's discharged; no charge\r\n\r\n415pm chair time",
+    "notesFull": "*** Tabitha cancelled the trips, patient's discharged; no charge\n415pm chair time",
+    "notesPreview": "*** Tabitha cancelled the trips, patient's discharged; no charge | 415pm chair time",
     "legs": [
       {
         "FirstName": "Sharon ",
         "LastName": "Rogers ",
         "MiddleInitial": "",
         "DOB": "5/4/1959 12:00:00 AM",
-        "Comments": "*** Tabitha cancelled the trips, patient's discharged; no charge\n\n415pm chair time ",
+        "Comments": "*** Tabitha cancelled the trips, patient's discharged; no charge\r\n\r\n415pm chair time ",
         "ConfirmationNumber": "51774",
         "RideDate": "4/25/2026 12:00:00 AM",
         "ScheduledPickupTime": "20:30",
@@ -2200,7 +2200,7 @@
         "Mobility": "WC",
         "RideStatus": "RiderCancel ",
         "DirectMileage": "6.60",
-        "Comments1": "*** Tabitha cancelled the trips, patient's discharged; no charge\n\n415pm chair time ",
+        "Comments1": "*** Tabitha cancelled the trips, patient's discharged; no charge\r\n\r\n415pm chair time ",
         "PickupName": "US Renal Care Bluebonnet",
         "PickupAddress1": "1902 Windsor Place",
         "PickupCity": "Fort Worth",
@@ -2213,7 +2213,7 @@
         "DropoffZip": "76109",
         "AccountCode": "Renaissance Park ",
         "AccountName": "Renaissance Park ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",
@@ -2360,7 +2360,7 @@
         "DropoffZip": "76132",
         "AccountCode": "Renaissance Park ",
         "AccountName": "Renaissance Park ",
-        "SourceFileHash": "95ed7a619b34"
+        "SourceFileHash": "a17575863f81"
       }
     ],
     "BillingClass": "FACILITY",

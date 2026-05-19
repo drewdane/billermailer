@@ -1,3 +1,4 @@
+const { getLocationAlias } = require("../orgs/CTT/locationAliases");
 function cleanLocationName(name) {
   let s = String(name || "").trim();
   if (!s) return "";
@@ -15,8 +16,8 @@ function cleanLocationName(name) {
     /\bMAIN ENTRANCE\b/giu,
     /\bBUILDING\s+[A-Z]\s+BUILDING\b/giu,
     /\bMUST HAVE A RIDER FOR THIS OFFICE\b/giu,
-    /\bDISCHARGES?\s+STRETCHER\s+AMBULANCE\s+BAY\s+ONLY\b/giu,
-    /\bEMERGENCY\s+CT\s+SCAN\s*\/\s*MRI\s+AMBULANCE\s+BAY\b/giu,
+    /\bs+STRETCHER\s+AMBULANCE\s+BAY\s+ONLY\b/giu,
+    /\bs+CT\s+SCAN\s*\/\s*MRI\s+AMBULANCE\s+BAY\b/giu,
     /\bLEAVE PAPERWORK\b/giu,
     /\bDON'T FORGET\b/giu,
     /\bDO NOT FORGET\b/giu,
@@ -47,6 +48,12 @@ function cleanLocationName(name) {
   s = s.replace(/\s+-\s*$/u, "").trim();
   s = s.replace(/\s{2,}/gu, " ").trim();
 
+  const alias = getLocationAlias(s);
+
+  if (alias?.name) {
+    s = alias.name;
+  }
+  
   return s;
 }
 
