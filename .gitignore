@@ -13,3 +13,13 @@ Thumbs.db
 
 # Editor / IDE
 .vscode/
+
+# Generated review packets
+data/review/**
+
+# Keep metadata
+!data/review/config.json
+!data/review/index.json
+
+# Exports
+data/review/_batch_exports/
