@@ -148,11 +148,49 @@ function priceGroupedTrip(groupedTrip, rateRow, opts = {}) {
 
   const baseFromRate = num(rateRow[bKey]);
 
+  let multiStopBaseComponents = [];
   let base = baseFromRate;
 
   if (shape === "MULTI_STOP") {
     const legCount = Number(groupedTrip.LegCount || legs.length || 0);
-    base = (baseFromRate / 2) * legCount;
+
+    const oneWayKey = baseColumn({
+      isRoundTrip: false,
+      tripType,
+      inLoop: false,
+      rateRow,
+    });
+
+    const oneWayBase = num(rateRow[oneWayKey]);
+
+    const rtCount = Math.floor(legCount / 2);
+    const hasOddLeg = legCount % 2 === 1;
+
+    multiStopBaseComponents = [];
+
+    for (let i = 0; i < rtCount; i++) {
+      const partStart = (i * 2) + 1;
+      const partEnd = partStart + 1;
+
+      multiStopBaseComponents.push({
+        kind: "RT",
+        componentIndex: i,
+        amount: baseFromRate,
+      });
+    }
+
+    if (hasOddLeg) {
+      multiStopBaseComponents.push({
+        kind: "1W",
+        componentIndex: rtCount,
+        amount: oneWayBase,
+      });
+    }
+
+    base = multiStopBaseComponents.reduce(
+      (sum, x) => sum + Number(x.amount || 0),
+      0
+    );
   }
 
   const { perMile, source: perMileSource } = resolvePerMile({
@@ -235,6 +273,7 @@ function priceGroupedTrip(groupedTrip, rateRow, opts = {}) {
       includedMiles,
       billableMiles,
       baseKey: bKey,
+      multiStopBaseComponents,
       perMileRate: perMile,
       perMileSource,
       legCount: groupedTrip.LegCount || legs.length,

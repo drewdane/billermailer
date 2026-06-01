@@ -591,12 +591,25 @@ function renderRows() {
 
     adjWrap.appendChild(typeWrap);
     adjWrap.appendChild(classWrap);
+    adjWrap.appendChild(typeWrap);
+    adjWrap.appendChild(classWrap);
+
+    if (r.addressMismatch) {
+      const addressWarn = document.createElement("span");
+      addressWarn.className = "pill";
+      addressWarn.style.background = "#fef3c7";
+      addressWarn.style.color = "#92400e";
+      addressWarn.style.marginRight = "8px";
+      addressWarn.textContent = "⚠ Address mismatch";
+      adjWrap.appendChild(addressWarn);
+    }
     adjWrap.appendChild(mergeCtl.label);
     adjWrap.appendChild(needwcCtl.label);
     adjWrap.appendChild(reclCtl.label);
     adjWrap.appendChild(hzCtl.label);
     adjWrap.appendChild(o2Ctl.label);
     adjWrap.appendChild(bariCtl.label);
+    adjWrap.appendChild(noChargeCtl.label);
     adjWrap.appendChild(dhWrap);
 
     const waitWrap = document.createElement("label");
@@ -631,7 +644,6 @@ function renderRows() {
     waitWrap.appendChild(waitUnit);
 
     adjWrap.appendChild(waitWrap);
-    adjWrap.appendChild(noChargeCtl.label);
 
     const overrideWrap = document.createElement("label");
     overrideWrap.style.whiteSpace = "nowrap";

@@ -55,9 +55,33 @@ function cleanDob(v) {
   return s;
 }
 
+function isPrivatePayTrip(r) {
+  const billingClass = String(r.BillingClass || "").trim().toUpperCase();
+  const accountCode = String(r.AccountCode || "").trim().toLowerCase();
+  const accountName = String(r.AccountName || "").trim().toLowerCase();
+  const customer = String(r.customer || "").trim().toLowerCase();
+
+  return (
+    billingClass === "PRIVATE_PAY" ||
+    billingClass === "PRIVATE PAY" ||
+    accountCode.includes("private pay") ||
+    accountName.includes("private pay") ||
+    accountCode === "ctt comp" ||
+    accountName === "ctt comp" ||
+    customer.includes("private pay") ||
+    customer === "ctt comp"
+  );
+}
+
 function riderLabel(r) {
-  const fullName = [r.FirstName, r.LastName].filter(Boolean).join(" ").trim();
-  return fullName || "Unknown Rider";
+  const first = String(r.FirstName || "").trim();
+  const last = String(r.LastName || "").trim();
+
+  if (last && first) return `${last}, ${first}`;
+  if (last) return last;
+  if (first) return first;
+
+  return "Unknown Rider";
 }
 
 function formatDobPart(r) {
@@ -104,7 +128,11 @@ function formatPoPart(r) {
 
 function invoicePrefix(r) {
   const rider = riderLabel(r);
-  const dob = formatDobPart(r);
+
+  const dob = isPrivatePayTrip(r)
+    ? ""
+    : formatDobPart(r);
+
   const mra = formatMraPart(r);
   const po = formatPoPart(r);
   const date = fmtDateForLine(r.RideDateISO);
@@ -182,10 +210,97 @@ function tripChargeLabel(r) {
 }
 
 function tripRouteLabel(r) {
-  const pu = cleanLocationName(r.PickupName || "") || String(r.PickupAddress1 || "").trim();
-  const doff = cleanLocationName(r.DropoffName || "") || String(r.DropoffAddress1 || "").trim();
+  const legs = Array.isArray(r.legs) ? r.legs : [];
+  const shape = String(r.TripShape || "").toUpperCase();
+
+  if (legs.length && shape === "ROUND_TRIP") {
+    const first = legs[0];
+
+    const pu =
+      cleanLocationName(first.PickupName || "") ||
+      String(first.PickupAddress1 || "").trim();
+
+    const doff =
+      cleanLocationName(first.DropoffName || "") ||
+      String(first.DropoffAddress1 || "").trim();
+
+    if (pu && doff) return `${pu} to ${doff} and return`;
+    return pu || doff || "";
+  }
+
+  if (legs.length && shape === "MULTI_STOP") {
+    return legs
+      .map((leg, idx) => {
+        const pu =
+          cleanLocationName(leg.PickupName || "") ||
+          String(leg.PickupAddress1 || "").trim();
+
+        const doff =
+          cleanLocationName(leg.DropoffName || "") ||
+          String(leg.DropoffAddress1 || "").trim();
+
+        if (!pu && !doff) return "";
+        return idx === 0 ? `${pu} to ${doff}` : `then ${doff}`;
+      })
+      .filter(Boolean)
+      .join(" ");
+  }
+
+  const pu =
+    cleanLocationName(r.PickupName || "") ||
+    String(r.PickupAddress1 || "").trim();
+
+  const doff =
+    cleanLocationName(r.DropoffName || "") ||
+    String(r.DropoffAddress1 || "").trim();
+
   if (pu && doff) return `${pu} to ${doff}`;
   return pu || doff || "";
+}
+
+function msComponentRouteText(r, componentIndex, componentKind) {
+  const legs = Array.isArray(r.legs) ? r.legs : [];
+  const legStart = componentIndex * 2;
+
+  if (componentKind === "RT") {
+    const first = legs[legStart];
+    const second = legs[legStart + 1];
+
+    if (!first || !second) return invoiceRouteLabel(r);
+
+    const from = locationLabel(
+      cleanLocationName(first.PickupName || ""),
+      first.PickupAddress1 || ""
+    );
+
+    const to1 = locationLabel(
+      cleanLocationName(first.DropoffName || ""),
+      first.DropoffAddress1 || ""
+    );
+
+    const to2 = locationLabel(
+      cleanLocationName(second.DropoffName || ""),
+      second.DropoffAddress1 || ""
+    );
+
+    return ` - FROM: ${from} TO ${to1}, THEN ${to2}`;
+  }
+
+  const leg = legs[legStart];
+
+  if (!leg) return invoiceRouteLabel(r);
+
+  const from = locationLabel(
+    cleanLocationName(leg.PickupName || ""),
+    leg.PickupAddress1 || ""
+  );
+
+  const to = locationLabel(
+    cleanLocationName(leg.DropoffName || ""),
+    leg.DropoffAddress1 || ""
+  );
+
+  return ` - FROM: ${from} TO ${to}`;
 }
 
 function automaticTimeCharge(r) {
@@ -228,6 +343,9 @@ function computeWaitCharge(r) {
 
 function computeDeadheadChargeFromReview(r) {
   if (!r.review?.AddDeadhead) return 0;
+
+  const shape = String(r.TripShape || "").toUpperCase();
+  if (shape !== "ONE_WAY") return 0;
 
   const miles = Number(r.review?.DeadheadMiles || 0);
   if (miles <= 0) return 0;
@@ -288,7 +406,7 @@ function fuelSurchargeAmount(r, globals = {}) {
     ? Number(r.review?.DeadheadMiles || 0)
     : 0;
 
-  return money(rate * (loadedMiles + dhMiles));
+  return money(rate * (loadedMiles));
 }
 
 function productServiceForKind(kind) {
@@ -298,9 +416,9 @@ function productServiceForKind(kind) {
   if (k === "MILEAGE") return "Mileage";
   if (k === "CANCEL_FEE") return "Cancellation Fee";
   if (k === "AFTER_HOURS") return "After Hours Fee";
-  if (k === "THIRD_SHIFT" || k === "WEEKEND") {
-    return "3rd Shift/Holiday";
-  }
+  if (k === "THIRD_SHIFT") return "3rd Shift";
+  if (k === "HOLIDAY") return "Holiday";
+  if (k === "WEEKEND") return "Weekend";
   if (k === "O2") return "Oxygen";
   if (k === "DEADHEAD") return "Dry Run";
   if (k === "WAIT") return "Wait Time";
@@ -395,17 +513,68 @@ function buildBillableLines(r, globals = {}) {
     return lines;
   }
 
-  addLine(
-    lines,
-    r,
-    "BASE",
-    `${prefix}${routeText} - ${tripChargeLabel(r)}`,
-    Number(r.pricing?.base || 0),
-    { forceZero: forceZeroMode }
-  );
+  const msComponents = Array.isArray(r.pricing?.audit?.multiStopBaseComponents)
+    ? r.pricing.audit.multiStopBaseComponents
+    : [];
+
+  if (
+    String(r.TripShape || "").toUpperCase() === "MULTI_STOP" &&
+    msComponents.length
+  ) {
+    for (const comp of msComponents) {
+      const compRouteText = msComponentRouteText(
+        r,
+        Number(comp.componentIndex || 0),
+        comp.kind
+      );
+
+      const totalLegs = Number(r.LegCount || r.legs?.length || 0);
+
+      const legStart = (Number(comp.componentIndex || 0) * 2) + 1;
+      const legEnd = comp.kind === "RT"
+        ? Math.min(legStart + 1, totalLegs)
+        : legStart;
+
+      const legLabel = legStart === legEnd
+        ? `Leg ${legStart} of ${totalLegs}`
+        : `Legs ${legStart} & ${legEnd} of ${totalLegs}`;
+
+      const mobilityLabel =
+        String(r.Mobility || "").toUpperCase() === "STR"
+          ? " with Stretcher"
+          : r.review?.AddRECL
+            ? " with Recliner"
+            : String(r.Mobility || "").toUpperCase() === "WC"
+              ? " with Wheelchair"
+              : "";
+
+      const label = `Trip Charge - ${legLabel}${mobilityLabel}`;
+
+      addLine(
+        lines,
+        r,
+        "BASE",
+        `${prefix}${compRouteText} - ${label}`,
+        Number(comp.amount || 0),
+        { forceZero: forceZeroMode }
+      );
+    }
+  } else {
+    addLine(
+      lines,
+      r,
+      "BASE",
+      `${prefix}${routeText} - ${tripChargeLabel(r)}`,
+      Number(r.pricing?.base || 0),
+      { forceZero: forceZeroMode }
+    );
+  }
 
   const mileageAmount = Number(r.pricing?.mileage || 0);
-  const billableMiles = Number(r.review?.MileageOverride || r.pricing?.audit?.billableMiles || r.DirectMileage || 0);
+  const billableMiles = Math.ceil(
+    Number(r.pricing?.audit?.billableMiles || r.review?.MileageOverride || r.DirectMileage || 0)
+  );
+
   addLine(
     lines,
     r,
@@ -436,7 +605,10 @@ function buildBillableLines(r, globals = {}) {
     addLine(lines, r, "BARI", `${prefix} - Bariatric fee`, Number(r.availableCharges?.bari || 0), { forceZero: forceZeroMode });
   }
 
-  if (r.review?.AddDeadhead && String(r.TripShape || "").toUpperCase() !== "ROUND_TRIP") {
+  if (
+    r.review?.AddDeadhead &&
+    String(r.TripShape || "").toUpperCase() === "ONE_WAY"
+  ) {
     addLine(
       lines,
       r,

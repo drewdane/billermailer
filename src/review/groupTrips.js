@@ -269,6 +269,23 @@ function canChain(prevLeg, nextLeg) {
   return true;
 }
 
+function isCancelledLeg(leg) {
+  return statusKind(leg.RideStatus) === "NON_RODE";
+}
+
+function isRodeLeg(leg) {
+  return statusKind(leg.RideStatus) === "RODE";
+}
+
+function legsAreReversePair(a, b) {
+  return (
+    rideDateISO(a) === rideDateISO(b) &&
+    riderKey(a) === riderKey(b) &&
+    pickupKey(a) === dropoffKey(b) &&
+    dropoffKey(a) === pickupKey(b)
+  );
+}
+
 function tripShape(legs) {
   if (legs.length <= 1) return "ONE_WAY";
 
@@ -337,7 +354,7 @@ function buildGroupedTrip(legs, index) {
   const last = sortedLegs[sortedLegs.length - 1];
 
   const totalMileage = sortedLegs.reduce(
-    (sum, leg) => sum + Math.round(num(leg.DirectMileage)),
+    (sum, leg) => sum + Math.ceil(num(leg.DirectMileage)),
     0
   );
   const shape = tripShape(sortedLegs);
@@ -351,6 +368,8 @@ function buildGroupedTrip(legs, index) {
     IsMultiStop: shape === "MULTI_STOP",
     LegCount: sortedLegs.length,
     AdditionalStopCount: Math.max(0, sortedLegs.length - 2),
+    HalfRoundTripCandidate: sortedLegs.some((l) => !!l.HalfRoundTripCandidate),
+    InferredClassHint: sortedLegs.find((l) => l.InferredClassHint)?.InferredClassHint || "",
 
     // Carry main trip identity forward
     AccountCode: first.AccountCode,
@@ -383,7 +402,7 @@ function buildGroupedTrip(legs, index) {
     DropoffState: first.DropoffState,
     DropoffZip: first.DropoffZip,
 
-    DirectMileage: String(Math.round(totalMileage)),
+    DirectMileage: String(Math.ceil(totalMileage)),
     RideHours: first.RideHours, // keep original for now; pricing can switch to grouped duration later
 
     Comments: notesFull,
@@ -486,7 +505,50 @@ function groupTrips(rawLegs, options = {}) {
         continue;
       }
 
+      // If this rode leg has a matching cancelled return/outbound leg,
+      // it is effectively the billable half of a round trip.
+      const cancelledPairIdx = [...unusedIndexes].find((idx) => {
+        if (idx === startIdx) return false;
+
+        const other = bucketLegs[idx];
+
+        return (
+          isCancelledLeg(other) &&
+          legsAreReversePair(seed, other)
+        );
+      });
+
+      if (cancelledPairIdx != null) {
+        seed.HalfRoundTripCandidate = true;
+        seed.InferredClassHint = "350 Half Round Trip";
+      }
+
       if (!canGroupRoundTrip(seed)) {
+        // This account has no usable RT rate, so we do not group the trip.
+        // But if this leg has a natural return leg, mark both halves as 350 Half Round Trip candidates.
+        const returnIdx = [...unusedIndexes].find((idx) => {
+          if (idx === startIdx) return false;
+
+          const other = bucketLegs[idx];
+
+          if (statusKind(other.RideStatus) !== "RODE") return false;
+          if (rideDateISO(other) !== rideDateISO(seed)) return false;
+          if (riderKey(other) !== riderKey(seed)) return false;
+
+          return (
+            pickupKey(seed) === dropoffKey(other) &&
+            dropoffKey(seed) === pickupKey(other)
+          );
+        });
+
+        if (returnIdx != null) {
+          seed.HalfRoundTripCandidate = true;
+          seed.InferredClassHint = "350 Half Round Trip";
+
+          bucketLegs[returnIdx].HalfRoundTripCandidate = true;
+          bucketLegs[returnIdx].InferredClassHint = "350 Half Round Trip";
+        }
+
         unusedIndexes.delete(startIdx);
         groups.push(buildGroupedTrip([seed], groups.length));
         continue;

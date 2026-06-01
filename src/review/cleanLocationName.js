@@ -3,6 +3,10 @@ function cleanLocationName(name) {
   let s = String(name || "").trim();
   if (!s) return "";
 
+  if (s === "-" || s === "–" || s === "—") return "";
+  // Expand common facility abbreviations
+  s = s.replace(/\bJPS\b\.?/giu, "John Peter Smith");
+
   // Anything after ** is definitely note junk
   s = s.replace(/\s*\*\*.*$/u, "").trim();
 
@@ -54,7 +58,7 @@ function cleanLocationName(name) {
     s = alias.name;
   }
   
-  return s;
+  return String(s || "").trim().replace(/\s+/gu, " ");
 }
 
 module.exports = {

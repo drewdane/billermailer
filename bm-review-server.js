@@ -48,6 +48,46 @@ function safeJoin(...parts) {
   return joined;
 }
 
+function normalizeAddress(s) {
+  return String(s || "")
+    .toUpperCase()
+    .replace(/\bAVENUE\b/g, "AVE")
+    .replace(/\bBOULEVARD\b/g, "BLVD")
+    .replace(/\bPARKWAY\b/g, "PKWY")
+    .replace(/\bDRIVE\b/g, "DR")
+    .replace(/\bLANE\b/g, "LN")
+    .replace(/\bROAD\b/g, "RD")
+    .replace(/\bSTREET\b/g, "ST")
+    .replace(/\bCOURT\b/g, "CT")
+    .replace(/\bCIRCLE\b/g, "CIR")
+    .replace(/\bPLACE\b/g, "PL")
+    .replace(/\bTRAIL\b/g, "TRL")
+    .replace(/\bHIGHWAY\b/g, "HWY")
+    .replace(/[.,]/g, "")
+    .replace(/\bTX\b.*$/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function streetAddressKey(s) {
+  const normalized = normalizeAddress(s);
+
+  const m = normalized.match(
+    /^(\d+\s+[A-Z0-9\s]+?\b(?:AVE|BLVD|PKWY|DR|LN|RD|ST|CT|CIR|PL|TRL|HWY)\b)/
+  );
+
+  return m ? m[1].trim() : normalized;
+}
+
+function addressMatches(a, b) {
+  const x = streetAddressKey(a);
+  const y = streetAddressKey(b);
+
+  if (!x || !y) return false;
+
+  return x === y || x.includes(y) || y.includes(x);
+}
+
 function applyLocationAliasToPlace(name, address1) {
   const alias = getLocationAlias(name, address1);
 
@@ -79,6 +119,66 @@ function applyLocationAliasesToRow(row) {
   }
 
   return row;
+}
+
+function moveRowsToAccount(baseDir, fromAcct, toAcct, period, lineIds) {
+  if (!toAcct || toAcct === fromAcct || !Array.isArray(lineIds) || !lineIds.length) {
+    return;
+  }
+
+  const fromItemsPath = safeJoin(fromAcct, period, "items.json");
+  const fromOverridesPath = safeJoin(fromAcct, period, "overrides.json");
+
+  const toItemsPath = safeJoin(toAcct, period, "items.json");
+  const toOverridesPath = safeJoin(toAcct, period, "overrides.json");
+
+  const fromItems = readJson(fromItemsPath, []);
+  const toItems = readJson(toItemsPath, []);
+  const fromOverrides = readJson(fromOverridesPath, { overrides: {} });
+  const toOverrides = readJson(toOverridesPath, { overrides: {} });
+
+  const moveSet = new Set(lineIds.map(String));
+
+  const moving = [];
+  const staying = [];
+
+  for (const row of fromItems) {
+    if (moveSet.has(String(row.LineId || ""))) {
+      moving.push({
+        ...row,
+        AccountCode: toAcct,
+        AccountName: toAcct,
+      });
+    } else {
+      staying.push(row);
+    }
+  }
+
+  if (!moving.length) return;
+
+  const existingToIds = new Set(toItems.map((r) => String(r.LineId || "")));
+  const mergedToItems = [
+    ...toItems.filter((r) => !moveSet.has(String(r.LineId || ""))),
+    ...moving.filter((r) => !existingToIds.has(String(r.LineId || ""))),
+  ];
+
+  for (const id of moveSet) {
+    const o = fromOverrides.overrides?.[id];
+    if (!o) continue;
+
+    if (!toOverrides.overrides) toOverrides.overrides = {};
+    toOverrides.overrides[id] = {
+      ...o,
+      MoveToAccountCode: "",
+    };
+
+    delete fromOverrides.overrides[id];
+  }
+
+  writeJson(fromItemsPath, staying);
+  writeJson(toItemsPath, mergedToItems);
+  writeJson(fromOverridesPath, fromOverrides);
+  writeJson(toOverridesPath, toOverrides);
 }
 
 const HTML = `<!doctype html>
@@ -826,6 +926,26 @@ function rateRowIncludesActualTimes(rateRow) {
   );
 }
 
+function exportCustomerName(repricedRow, rateRow, fallbackAccountCode) {
+  if (isPrivatePayTrip(repricedRow)) {
+    return String(
+      (
+        (repricedRow.FirstName || "") +
+        " " +
+        (repricedRow.LastName || "")
+      ).trim() || fallbackAccountCode
+    );
+  }
+
+  return String(
+    rateRow?.billingName ||
+    rateRow?.billing_name ||
+    rateRow?.BillingName ||
+    fallbackAccountCode ||
+    ""
+  ).trim();
+}
+
 function shortAcctCode(acct) {
   const acctKey = String(acct || "").trim();
 
@@ -881,8 +1001,8 @@ function normAddr(v) {
 }
 
 function addressMatches(a, b) {
-  const x = normAddr(a);
-  const y = normAddr(b);
+  const x = normalizeAddress(a);
+  const y = normalizeAddress(b);
 
   if (!x || !y) return false;
 
@@ -929,6 +1049,13 @@ function inferQboClass(r) {
     cancelOverride === "YES" ? true :
     cancelOverride === "NO" ? false :
     rawStatus === "noshow" || rawStatus === "ridercancel";
+
+  if (
+    r.HalfRoundTripCandidate ||
+    r.InferredClassHint === "350 Half Round Trip"
+  ) {
+    return "350 Half Round Trip";
+  }
 
   if (isCancelled) return "450 Cancellation";
 
@@ -1001,6 +1128,29 @@ function inferThrSplit(r) {
   return "OTHER";
 }
 
+function pickPoNumber(rateRow, invoiceSplit) {
+  const split = String(invoiceSplit || "").toUpperCase();
+
+  if (split === "ER") {
+    return (
+      rateRow?.er_po_number ||
+      rateRow?.ErPONumber ||
+      rateRow?.erPoNumber ||
+      rateRow?.po_number ||
+      rateRow?.PONumber ||
+      rateRow?.poNumber ||
+      ""
+    );
+  }
+
+  return (
+    rateRow?.po_number ||
+    rateRow?.PONumber ||
+    rateRow?.poNumber ||
+    ""
+  );
+}
+
 function invoiceSplitSuffix(split) {
   const s = normalizeInvoiceSplit(split);
 
@@ -1038,14 +1188,63 @@ function csvFromRows(csvRows) {
   return csvRows.map(r => r.map(csvEscape).join(",")).join("\n");
 }
 
+function lineKindRank(l) {
+  const kind = String(l.lineKind || "").toUpperCase();
+
+  if (kind === "BASE") return 10;
+  if (kind === "CANCEL_FEE") return 10;
+
+  if (
+    kind === "AFTER_HOURS" ||
+    kind === "THIRD_SHIFT" ||
+    kind === "WEEKEND" ||
+    kind === "HOLIDAY" ||
+    kind === "O2" ||
+    kind === "BARI" ||
+    kind === "HAZMAT" ||
+    kind === "WAIT" ||
+    kind === "DEADHEAD" ||
+    kind === "ATTENDANT" ||
+    kind === "MATCH_TO_QUOTE"
+  ) return 20;
+
+  if (kind === "MILEAGE") return 30;
+
+  return 50;
+}
+
+function compareInvoiceLines(a, b) {
+  const riderA = String(a.rider || "").trim().toUpperCase();
+  const riderB = String(b.rider || "").trim().toUpperCase();
+
+  if (riderA !== riderB) return riderA.localeCompare(riderB);
+
+  const dateA = String(a.rideDateISO || "");
+  const dateB = String(b.rideDateISO || "");
+
+  if (dateA !== dateB) return dateA.localeCompare(dateB);
+
+  const idA = String(a.lineId || "");
+  const idB = String(b.lineId || "");
+
+  if (idA !== idB) return idA.localeCompare(idB);
+
+  return lineKindRank(a) - lineKindRank(b);
+}
+
 function buildCsvRowsFromGrouped(grouped, period) {
   const csvRows = [
     ["Customer", "InvoiceNo", "InvoiceDate", "DueDate", "ServiceDate", "Product/Service", "Description", "Qty", "Rate", "Amount", "Class"],
   ];
 
   for (const inv of grouped) {
-    for (const l of inv.lines) {
-      const invoiceDate = fmtQboDate(period.split("_")[2] || "");
+    const sortedLines = [...inv.lines].sort(compareInvoiceLines);
+
+    for (const l of sortedLines) {
+      const invoiceDate = l.isPrivatePay
+        ? fmtQboDate(l.rideDateISO || "")
+        : fmtQboDate(period.split("_")[2] || "");
+
       csvRows.push([
         inv.customer,
         inv.invoiceNo,
@@ -1227,11 +1426,12 @@ function buildGroupedInvoicesForSet(baseDir, acct, period, invoiceType) {
         rateRow?.billing_address ||
         rateRow?.BillingAddress ||
         "",
-      poNumber:
-        rateRow?.po_number ||
-        rateRow?.PONumber ||
-        rateRow?.poNumber ||
-        "",
+      poNumber: pickPoNumber(
+        rateRow,
+        String(review.InvoiceSplitOverride || "AUTO").toUpperCase() === "AUTO"
+          ? inferThrSplit(pricingInput)
+          : normalizeInvoiceSplit(review.InvoiceSplitOverride)
+      ),
       availableCharges,
       deadheadCharge: Number(deadheadResult.deadheadCharge || 0),
       deadheadMiles: Number(deadheadResult.deadheadMiles || 0),
@@ -1268,87 +1468,6 @@ function buildGroupedInvoicesForSet(baseDir, acct, period, invoiceType) {
         : []
     };
 
-    for (const [groupId, members] of Object.entries(manualMergeGroups)) {
-
-      const first = members[0];
-      const firstRow = first.row;
-      const firstReview = first.review;
-
-      const mergedMileage = members.reduce((sum, m) => {
-        return sum + Number(m.row.DirectMileage || 0);
-      }, 0);
-
-      const mergedRow = {
-        ...firstRow,
-        TripShape: "MULTI_STOP",
-        DirectMileage: mergedMileage,
-        review: firstReview,
-        legs: members.map((m) => m.row),
-      };
-
-      const effectiveAccountCode =
-        String(firstReview.MoveToAccountCode || "").trim() ||
-        String(firstRow.AccountCode || "").trim();
-
-      const pricingInput = {
-        ...mergedRow,
-        review: firstReview,
-        AccountCode: effectiveAccountCode,
-        AccountName: effectiveAccountCode,
-      };
-
-      const rateRow = rateLookupFn(pricingInput);
-
-      const pricingContext = buildPricingContext(pricingInput);
-
-      const pricing = priceGroupedTrip(
-        pricingInput,
-        rateRow,
-        pricingContext
-      );
-
-      const repricedRow = {
-        ...pricingInput,
-        pricing,
-        invoiceMethod:
-          rateRow?.invoice_method ||
-          rateRow?.InvoiceMethod ||
-          "single",
-      };
-
-      const exportGlobals = {
-        fuelSurchargeEnabled: !!reviewConfig.fuelSurchargeEnabled,
-        fuelSurchargeWindows: Array.isArray(reviewConfig.fuelSurchargeWindows)
-          ? reviewConfig.fuelSurchargeWindows
-          : []
-      };
-
-      const className =
-        firstReview.ClassOverride ||
-        inferQboClass(repricedRow);
-
-      const exportCustomer = isPrivatePayTrip(repricedRow)
-        ? String(
-            (
-              (repricedRow.FirstName || "") +
-              " " +
-              (repricedRow.LastName || "")
-            ).trim() || effectiveAccountCode
-          )
-        : effectiveAccountCode;
-
-      const built = buildBillableLines(repricedRow, exportGlobals).map((line) => ({
-        ...line,
-        customer: exportCustomer,
-        invoiceSplit,
-        className,
-        isPrivatePay: isPrivatePayTrip(repricedRow),
-        ppInitials: riderInitials(repricedRow),
-      }));
-
-      lines.push(...built);
-    }
-
     for (const exportRow of exportRows) {
       const repricedRow = exportRow.repricedRow;
 
@@ -1362,15 +1481,11 @@ function buildGroupedInvoicesForSet(baseDir, acct, period, invoiceType) {
         review.ClassOverride ||
         inferQboClass(repricedRow);
 
-      const exportCustomer = isPrivatePayTrip(repricedRow)
-        ? String(
-            (
-              (repricedRow.FirstName || "") +
-              " " +
-              (repricedRow.LastName || "")
-            ).trim() || effectiveAccountCode
-          )
-        : effectiveAccountCode;
+      const exportCustomer = exportCustomerName(
+        repricedRow,
+        rateRow,
+        effectiveAccountCode
+      );
 
       const built = buildBillableLines(repricedRow, exportGlobals).map((line) => ({
         ...line,
@@ -1384,6 +1499,83 @@ function buildGroupedInvoicesForSet(baseDir, acct, period, invoiceType) {
 
       lines.push(...built);
     }
+  }
+
+  for (const [groupId, members] of Object.entries(manualMergeGroups)) {
+
+    const first = members[0];
+    const firstRow = first.row;
+    const firstReview = first.review;
+
+    const mergedMileage = members.reduce((sum, m) => {
+      return sum + Number(m.row.DirectMileage || 0);
+    }, 0);
+
+    const mergedRow = {
+      ...firstRow,
+      TripShape: "MULTI_STOP",
+      DirectMileage: mergedMileage,
+      review: firstReview,
+      legs: members.map((m) => m.row),
+    };
+
+    const effectiveAccountCode =
+      String(firstReview.MoveToAccountCode || "").trim() ||
+      String(firstRow.AccountCode || "").trim();
+
+    const pricingInput = {
+      ...mergedRow,
+      review: firstReview,
+      AccountCode: effectiveAccountCode,
+      AccountName: effectiveAccountCode,
+    };
+
+    const rateRow = rateLookupFn(pricingInput);
+
+    const pricingContext = buildPricingContext(pricingInput);
+
+    const pricing = priceGroupedTrip(
+      pricingInput,
+      rateRow,
+      pricingContext
+    );
+
+    const repricedRow = {
+      ...pricingInput,
+      pricing,
+      invoiceMethod:
+        rateRow?.invoice_method ||
+        rateRow?.InvoiceMethod ||
+        "single",
+    };
+
+    const exportGlobals = {
+      fuelSurchargeEnabled: !!reviewConfig.fuelSurchargeEnabled,
+      fuelSurchargeWindows: Array.isArray(reviewConfig.fuelSurchargeWindows)
+        ? reviewConfig.fuelSurchargeWindows
+        : []
+    };
+
+    const className =
+      firstReview.ClassOverride ||
+      inferQboClass(repricedRow);
+
+    const exportCustomer = exportCustomerName(
+      repricedRow,
+      rateRow,
+      effectiveAccountCode
+    );
+
+    const built = buildBillableLines(repricedRow, exportGlobals).map((line) => ({
+      ...line,
+      customer: exportCustomer,
+      invoiceSplit: "OTHER",
+      className,
+      isPrivatePay: isPrivatePayTrip(repricedRow),
+      ppInitials: riderInitials(repricedRow),
+    }));
+
+    lines.push(...built);
   }
 
   let grouped = [];
@@ -1400,48 +1592,32 @@ function buildGroupedInvoicesForSet(baseDir, acct, period, invoiceType) {
   }
 
   grouped = Object.entries(byCustomer).map(([customer, customerLines]) => ({
-    invoiceNo: (() => {
-      const sampleLine = customerLines[0] || {};
-
-      if (sampleLine.isPrivatePay) {
-        return buildPrivatePayInvoiceNo(
-          sampleLine,
-          sampleLine.serviceDate,
-          null
-        );
-      }
-
-      return buildInvoiceNo(
-        customer,
-        period.split("_")[2] || "",
-        null
-      );
-    })(),
+    invoiceNo: "PENDING",
     customer,
     lines: customerLines,
   }));
 
   } else if (effectiveInvoiceType === "thr_split") {
-  const bySplit = {};
+    const bySplit = {};
 
-  for (const l of lines) {
-    const customer = String(l.customer || acct).trim();
-    const split = normalizeInvoiceSplit(l.invoiceSplit || "OTHER");
-    const key = customer + "||" + split;
+    for (const l of lines) {
+      const customer = String(l.customer || acct).trim();
+      const split = normalizeInvoiceSplit(l.invoiceSplit || "OTHER");
+      const key = customer + "||" + split;
 
-    if (!bySplit[key]) bySplit[key] = [];
-    bySplit[key].push(l);
-  }
+      if (!bySplit[key]) bySplit[key] = [];
+      bySplit[key].push(l);
+    }
 
-  grouped = Object.entries(bySplit).map(([key, splitLines]) => {
-    const [customer, split] = key.split("||");
+    grouped = Object.entries(bySplit).map(([key, splitLines]) => {
+      const [customer, split] = key.split("||");
 
-    return {
-      invoiceNo: buildInvoiceNo(customer, period.split("_")[2] || "", invoiceSplitSuffix(split)),
-      customer,
-      lines: splitLines,
-    };
-  });
+      return {
+        invoiceNo: "PENDING",
+        customer,
+        lines: splitLines,
+      };
+    });
 
   } else if (effectiveInvoiceType === "individual") {
     const byTrip = {};
@@ -1453,26 +1629,11 @@ function buildGroupedInvoicesForSet(baseDir, acct, period, invoiceType) {
       byTrip[key].push(l);
     }
 
-    grouped = Object.entries(byTrip).map(([k, v], i) => {
+    grouped = Object.entries(byTrip).map(([k, v]) => {
       const customer = String(v[0]?.customer || acct).trim();
+
       return {
-        invoiceNo: (() => {
-          const sampleLine = v[0] || {};
-
-          if (sampleLine.isPrivatePay) {
-            return buildPrivatePayInvoiceNo(
-              sampleLine,
-              sampleLine.serviceDate,
-              null
-            );
-          }
-
-          return buildInvoiceNo(
-            customer,
-            period.split("_")[2] || "",
-            i + 1
-          );
-        })(),
+        invoiceNo: "PENDING",
         customer,
         lines: v,
       };
@@ -1686,7 +1847,27 @@ const server = http.createServer((req, res) => {
         rateRow?.billing_address ||
         rateRow?.BillingAddress ||
         "";
+        const billingAddr = normalizeAddress(row.billingAddress);
+
+        const pickupAddr = normalizeAddress(
+          row.PickupAddress1 ||
+          row.PickupAddress ||
+          ""
+        );
+
+        const dropoffAddr = normalizeAddress(
+          row.DropoffAddress1 ||
+          row.DropoffAddress ||
+          ""
+        );
+
+        row.addressMismatch =
+          !!row.billingAddress &&
+          !addressMatches(row.billingAddress, row.PickupAddress1 || row.PickupAddress || "") &&
+          !addressMatches(row.billingAddress, row.DropoffAddress1 || row.DropoffAddress || "");
+
         row.inferredClass = inferQboClass(row);
+        row.poNumber = pickPoNumber(rateRow, row.invoiceSplit);
       }
 
       return send(res, 200, JSON.stringify(rows), "application/json");
@@ -1726,6 +1907,21 @@ const server = http.createServer((req, res) => {
           fuelSurchargeEnd,
           overrides
         });
+
+        const movesByAccount = {};
+
+        for (const [lineId, o] of Object.entries(overrides || {})) {
+          const toAcct = String(o.MoveToAccountCode || "").trim();
+          if (!toAcct || toAcct === acct) continue;
+
+          if (!movesByAccount[toAcct]) movesByAccount[toAcct] = [];
+          movesByAccount[toAcct].push(lineId);
+        }
+
+        for (const [toAcct, lineIds] of Object.entries(movesByAccount)) {
+          moveRowsToAccount(baseDir, acct, toAcct, period, lineIds);
+        }
+
         send(res, 200, JSON.stringify({ ok: true }), "application/json");
       });
       return;
@@ -1814,34 +2010,22 @@ const server = http.createServer((req, res) => {
             return send(res, 400, JSON.stringify({ error: "No reviewed exports found in selection" }), "application/json");
           }
 
-          const invoiceNoOwners = new Map();
-          const invoiceNoCounts = new Map();
+          const invoiceSeqByPeriod = new Map();
 
           for (const inv of allInvoiceGroups) {
-            const originalInvoiceNo = String(inv.invoiceNo || "").trim();
-            const owner = String(inv.acct || "").trim();
+            const periodEndIso = String(inv.period || "").split("_")[2] || "";
+            const prefix = compactDateForDocNum(periodEndIso);
 
-            if (!originalInvoiceNo) continue;
+            const nextSeq = (invoiceSeqByPeriod.get(periodEndIso) || 0) + 1;
+            invoiceSeqByPeriod.set(periodEndIso, nextSeq);
 
-            const prior = invoiceNoOwners.get(originalInvoiceNo);
+            const newInvoiceNo =
+              prefix + String(nextSeq).padStart(3, "0");
 
-            if (prior && prior !== owner) {
-              const count = (invoiceNoCounts.get(originalInvoiceNo) || 1) + 1;
-              invoiceNoCounts.set(originalInvoiceNo, count);
+            inv.invoiceNo = newInvoiceNo;
 
-              const newInvoiceNo = `${originalInvoiceNo}-${String(count).padStart(2, "0")}`;
-
-              for (const row of inv.rows) {
-                row[1] = newInvoiceNo; // InvoiceNo column
-              }
-
-              inv.invoiceNo = newInvoiceNo;
-              invoiceNoOwners.set(newInvoiceNo, owner);
-            } else {
-              invoiceNoOwners.set(originalInvoiceNo, owner);
-              if (!invoiceNoCounts.has(originalInvoiceNo)) {
-                invoiceNoCounts.set(originalInvoiceNo, 1);
-              }
+            for (const row of inv.rows) {
+              row[1] = newInvoiceNo;
             }
           }
 

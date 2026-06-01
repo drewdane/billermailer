@@ -1,44 +1,60 @@
 {
-  "generatedAt": "2026-05-19T06:20:31.885Z",
+  "generatedAt": "2026-06-01T07:08:12.447Z",
   "inputFile": "D:\\BillerMailer\\data\\output\\bm_harvest_latest.csv",
   "periodMode": "import_batch",
   "facilities": {
-    "Private Pay": {
-      "AccountName": "Private Pay",
+    "Discovery Village Southlake": {
+      "AccountName": "Discovery Village Southlake",
       "periods": {
-        "2026-04-10_to_2026-04-26": {
-          "count": 57
-        }
-      }
-    },
-    "Texas Rehab Fort Worth": {
-      "AccountName": "Texas Rehab Fort Worth",
-      "periods": {
-        "2026-04-10_to_2026-04-26": {
-          "count": 38
-        }
-      }
-    },
-    "Harrison at Heritage": {
-      "AccountName": "Harrison at Heritage",
-      "periods": {
-        "2026-04-10_to_2026-04-26": {
-          "count": 11
+        "2026-03-25_to_2026-04-09": {
+          "count": 35
         }
       }
     },
     "Lifecare Haltom City": {
       "AccountName": "Lifecare Haltom City",
       "periods": {
-        "2026-04-10_to_2026-04-26": {
-          "count": 16
+        "2026-03-25_to_2026-04-09": {
+          "count": 29
+        }
+      }
+    },
+    "Harrison at Heritage": {
+      "AccountName": "Harrison at Heritage",
+      "periods": {
+        "2026-03-25_to_2026-04-09": {
+          "count": 14
+        }
+      }
+    },
+    "Texas Rehab Fort Worth": {
+      "AccountName": "Texas Rehab Fort Worth",
+      "periods": {
+        "2026-03-25_to_2026-04-09": {
+          "count": 23
+        }
+      }
+    },
+    "Baylor Institute Rehab SW": {
+      "AccountName": "Baylor Rehab Institute Southwest",
+      "periods": {
+        "2026-03-25_to_2026-04-09": {
+          "count": 8
+        }
+      }
+    },
+    "Private Pay": {
+      "AccountName": "Private Pay",
+      "periods": {
+        "2026-03-25_to_2026-04-09": {
+          "count": 49
         }
       }
     },
     "Encompass Health Cityview": {
       "AccountName": "EHCV-Encompass Health Cityview",
       "periods": {
-        "2026-04-10_to_2026-04-26": {
+        "2026-03-25_to_2026-04-09": {
           "count": 43
         }
       }
@@ -46,79 +62,95 @@
     "Stayton": {
       "AccountName": "The Stayton at Museum Way",
       "periods": {
-        "2026-04-10_to_2026-04-26": {
-          "count": 28
-        }
-      }
-    },
-    "Discovery Village Southlake": {
-      "AccountName": "Discovery Village Southlake",
-      "periods": {
-        "2026-04-10_to_2026-04-26": {
-          "count": 41
-        }
-      }
-    },
-    "Heart to Heart Hospice": {
-      "AccountName": "Heart to Heart Hospice",
-      "periods": {
-        "2026-04-10_to_2026-04-26": {
-          "count": 1
-        }
-      }
-    },
-    "Renaissance Park": {
-      "AccountName": "Renaissance Park",
-      "periods": {
-        "2026-04-10_to_2026-04-26": {
-          "count": 14
-        }
-      }
-    },
-    "Legend Oaks Fort Worth": {
-      "AccountName": "Legend Oaks Fort Worth",
-      "periods": {
-        "2026-04-10_to_2026-04-26": {
-          "count": 1
-        }
-      }
-    },
-    "Baylor Institute Rehab SW": {
-      "AccountName": "Baylor Rehab Institute Southwest",
-      "periods": {
-        "2026-04-10_to_2026-04-26": {
-          "count": 15
-        }
-      }
-    },
-    "Three Oaks Hospice": {
-      "AccountName": "Three Oaks  Hospice",
-      "periods": {
-        "2026-04-10_to_2026-04-26": {
-          "count": 2
-        }
-      }
-    },
-    "Encompass Health Mid Cities": {
-      "AccountName": "Encompass Health Mid Cities",
-      "periods": {
-        "2026-04-10_to_2026-04-26": {
-          "count": 10
-        }
-      }
-    },
-    "Clear Sky": {
-      "AccountName": "Clear Sky",
-      "periods": {
-        "2026-04-10_to_2026-04-26": {
-          "count": 3
+        "2026-03-25_to_2026-04-09": {
+          "count": 48
         }
       }
     },
     "Trinity Terrace": {
       "AccountName": "Trinity Terrace",
       "periods": {
-        "2026-04-10_to_2026-04-26": {
+        "2026-03-25_to_2026-04-09": {
+          "count": 5
+        }
+      }
+    },
+    "Clear Sky": {
+      "AccountName": "Clear Sky",
+      "periods": {
+        "2026-03-25_to_2026-04-09": {
+          "count": 6
+        }
+      }
+    },
+    "North Pointe Nursing & Rehab": {
+      "AccountName": "North Pointe Nursing & Rehab",
+      "periods": {
+        "2026-03-25_to_2026-04-09": {
+          "count": 1
+        }
+      }
+    },
+    "Richland Hills Rehab": {
+      "AccountName": "Richland Hills Rehab",
+      "periods": {
+        "2026-03-25_to_2026-04-09": {
+          "count": 3
+        }
+      }
+    },
+    "Carlyle at Stonebridge Park Southlake": {
+      "AccountName": "Carlyle at Stonebridge Park Southlake",
+      "periods": {
+        "2026-03-25_to_2026-04-09": {
+          "count": 6
+        }
+      }
+    },
+    "Encompass Arlington": {
+      "AccountName": "Encompass Arlington",
+      "periods": {
+        "2026-03-25_to_2026-04-09": {
+          "count": 1
+        }
+      }
+    },
+    "THR Alliance": {
+      "AccountName": "THR Alliance",
+      "periods": {
+        "2026-03-25_to_2026-04-09": {
+          "count": 9
+        }
+      }
+    },
+    "Renaissance Park": {
+      "AccountName": "Renaissance Park",
+      "periods": {
+        "2026-03-25_to_2026-04-09": {
+          "count": 13
+        }
+      }
+    },
+    "Allegiant Wellness Rehab": {
+      "AccountName": "Allegiant Wellness Rehab",
+      "periods": {
+        "2026-03-25_to_2026-04-09": {
+          "count": 1
+        }
+      }
+    },
+    "James L West": {
+      "AccountName": "James L West",
+      "periods": {
+        "2026-03-25_to_2026-04-09": {
+          "count": 3
+        }
+      }
+    },
+    "Encompass Health Mid Cities": {
+      "AccountName": "Encompass Health Mid Cities",
+      "periods": {
+        "2026-03-25_to_2026-04-09": {
           "count": 6
         }
       }
@@ -126,55 +158,71 @@
     "Garden Terrace": {
       "AccountName": "GT-Garden Terrace",
       "periods": {
-        "2026-04-10_to_2026-04-26": {
-          "count": 1
+        "2026-03-25_to_2026-04-09": {
+          "count": 3
         }
       }
     },
     "Baylor Hospital Voucher": {
       "AccountName": "Baylor Hospital Voucher",
       "periods": {
-        "2026-04-10_to_2026-04-26": {
+        "2026-03-25_to_2026-04-09": {
           "count": 2
         }
       }
     },
-    "Richland Hills Rehab": {
-      "AccountName": "Richland Hills Rehab",
+    "Encompass Health Richardson": {
+      "AccountName": "Encompass Health Richardson",
       "periods": {
-        "2026-04-10_to_2026-04-26": {
+        "2026-03-25_to_2026-04-09": {
+          "count": 1
+        }
+      }
+    },
+    "Encompass Abilene": {
+      "AccountName": "Encompass Abilene",
+      "periods": {
+        "2026-03-25_to_2026-04-09": {
+          "count": 1
+        }
+      }
+    },
+    "Southwest Nursing and Rehab": {
+      "AccountName": "Southwest Nursing and Rehab",
+      "periods": {
+        "2026-03-25_to_2026-04-09": {
+          "count": 1
+        }
+      }
+    },
+    "Encompass Wichita Falls": {
+      "AccountName": "Encompass Wichita Falls",
+      "periods": {
+        "2026-03-25_to_2026-04-09": {
+          "count": 1
+        }
+      }
+    },
+    "Three Oaks Hospice": {
+      "AccountName": "Three Oaks  Hospice",
+      "periods": {
+        "2026-03-25_to_2026-04-09": {
+          "count": 1
+        }
+      }
+    },
+    "Heart to Heart Hospice": {
+      "AccountName": "Heart to Heart Hospice",
+      "periods": {
+        "2026-03-25_to_2026-04-09": {
           "count": 2
         }
       }
     },
-    "James L West": {
-      "AccountName": "James L West",
+    "Encompass Health Waco": {
+      "AccountName": "Encompass Health Waco",
       "periods": {
-        "2026-04-10_to_2026-04-26": {
-          "count": 1
-        }
-      }
-    },
-    "CTT Comp": {
-      "AccountName": "CTT Comp",
-      "periods": {
-        "2026-04-10_to_2026-04-26": {
-          "count": 1
-        }
-      }
-    },
-    "Broadway Cityview": {
-      "AccountName": "Broadway Cityview",
-      "periods": {
-        "2026-04-10_to_2026-04-26": {
-          "count": 1
-        }
-      }
-    },
-    "Carlyle at Stonebridge Park Southlake": {
-      "AccountName": "Carlyle at Stonebridge Park Southlake",
-      "periods": {
-        "2026-04-10_to_2026-04-26": {
+        "2026-03-25_to_2026-04-09": {
           "count": 1
         }
       }
