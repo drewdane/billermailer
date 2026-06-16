@@ -33,17 +33,6 @@ function mapMobility(mobilityRaw, groupedTrip) {
   }
 
   if (raw === "WC" || raw.includes("WC")) {
-    const shape = String(groupedTrip.TripShape || "").trim().toUpperCase();
-
-    if (shape === "ONE_WAY") {
-      accessories.NeedWC = true;
-      flags.push("DEFAULTED_NEEDWC_FROM_WC_ONE_WAY");
-    } else if (shape === "ROUND_TRIP") {
-      flags.push("DEFAULTED_HASWC_FROM_WC_ROUND_TRIP");
-    } else {
-      flags.push("DEFAULTED_HASWC_FROM_WC_OTHER");
-    }
-
     return { tripType: "WC", accessories, flags };
   }
 

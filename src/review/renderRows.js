@@ -108,7 +108,7 @@ function renderRows() {
     return rate;
   }
 
-    function computeDeadheadChargeFromReview(r) {
+  function computeDeadheadChargeFromReview(r) {
     if (!r.review?.AddDeadhead) return 0;
 
     const miles = Number(r.review?.DeadheadMiles || 0);
@@ -220,6 +220,41 @@ function renderRows() {
     return Number(hit?.amount || 0);
   }
 
+  function automaticTimeCharge(r) {
+    const lines = Array.isArray(r.pricing?.accessories) ? r.pricing.accessories : [];
+    return lines.find((x) => {
+      const code = String(x.code || "").toUpperCase();
+      return code === "HOLIDAY" || code === "WEEKEND" || code === "THIRD_SHIFT" || code === "AFTER_HOURS";
+    }) || null;
+  }
+
+  function timeChargeAmountForCode(r, code) {
+    const c = String(code || "").toUpperCase();
+    const auto = automaticTimeCharge(r);
+
+    if (auto && String(auto.code || "").toUpperCase() === c) {
+      return Number(auto.amount || 0);
+    }
+
+    const charges = r.availableCharges || {};
+
+    if (c === "AFTER_HOURS") return Number(charges.after_hours || 0);
+    if (c === "THIRD_SHIFT") return Number(charges.third_shift || 0);
+    if (c === "WEEKEND") return Number(charges.weekend || 0);
+    if (c === "HOLIDAY") return Number(charges.holiday || 0);
+
+    return 0;
+  }
+
+  function selectedTimeChargeAmount(r) {
+    if (r.review?.AddHoliday) return timeChargeAmountForCode(r, "HOLIDAY");
+    if (r.review?.AddThirdShift) return timeChargeAmountForCode(r, "THIRD_SHIFT");
+    if (r.review?.AddWeekend) return timeChargeAmountForCode(r, "WEEKEND");
+    if (r.review?.AddAfterHours) return timeChargeAmountForCode(r, "AFTER_HOURS");
+
+    return 0;
+  }
+
   function wcAccessoryState(r) {
     const shape = String(r.TripShape || "").toUpperCase();
     const isRt = shape === "ROUND_TRIP" || shape === "MULTI_STOP";
@@ -257,7 +292,7 @@ function renderRows() {
   
   function baseTripTotal(r) {
     if (isCancelled(r)) {
-      return Number(r.pricing?.cancelFee || 0);
+      return Number(r.pricing?.cancelFee || r.availableCharges?.cancel_fee || 0);
     }
 
     return Number(r.pricing?.base || 0)
@@ -280,7 +315,7 @@ function renderRows() {
 
       total += computeDeadheadChargeFromReview(r);
       total += computeWaitCharge(r);
-      total += automaticTimeChargeAmount(r);
+      total += selectedTimeChargeAmount(r);
       total += fuelSurchargeAmount(r);
       return total;
   }
@@ -302,6 +337,7 @@ function renderRows() {
     const defaultRECL = pricedAccessoryAmount(r, "RECL") > 0;
     const defaultDeadhead = Number(r.deadheadCharge || 0) > 0;
     const defaultDeadheadMiles = Number(r.deadheadMiles || 0);
+    const autoTime = automaticTimeCharge(r);
 
     if (!r.review) {
       r.review = {
@@ -311,6 +347,10 @@ function renderRows() {
         AddO2: false,
         AddBari: false,
         CancelOverride: "AUTO",
+        AddAfterHours: autoTime?.code === "AFTER_HOURS",
+        AddThirdShift: autoTime?.code === "THIRD_SHIFT",
+        AddWeekend: autoTime?.code === "WEEKEND",
+        AddHoliday: autoTime?.code === "HOLIDAY",
         NoCharge: false,
         MatchToQuote: false,
         QuoteAmount: 0,
@@ -331,6 +371,15 @@ function renderRows() {
       if (typeof r.review.AddDeadhead !== "boolean") r.review.AddDeadhead = defaultDeadhead;
       if (!Number.isFinite(Number(r.review.DeadheadMiles))) r.review.DeadheadMiles = defaultDeadheadMiles;
       if (!r.review.CancelOverride) r.review.CancelOverride = "AUTO";
+      const autoTime = automaticTimeCharge(r);
+      if (typeof r.review.AddAfterHours !== "boolean") {
+        r.review.AddAfterHours = autoTime?.code === "AFTER_HOURS";}
+      if (typeof r.review.AddThirdShift !== "boolean") {
+        r.review.AddThirdShift = autoTime?.code === "THIRD_SHIFT";}
+      if (typeof r.review.AddWeekend !== "boolean") {
+        r.review.AddWeekend = autoTime?.code === "WEEKEND";}
+      if (typeof r.review.AddHoliday !== "boolean") {
+        r.review.AddHoliday = autoTime?.code === "HOLIDAY";}
       if (typeof r.review.NoCharge !== "boolean") r.review.NoCharge = false;
       if (!r.review.TripTypeOverride) r.review.TripTypeOverride = "";
       if (!Number.isFinite(Number(r.review.MileageOverride))) {
@@ -484,6 +533,29 @@ function renderRows() {
         window.applySuggestionStyle(reclCtl.txt, suggestionFlags.RECL, r.review.AddRECL);
         window.applySuggestionStyle(bariCtl.txt, suggestionFlags.BARI, r.review.AddBari);
     }
+    const ahCtl = makeCheckMoney("AH", !!r.review.AddAfterHours, fmtMoney(timeChargeAmountForCode(r, "AFTER_HOURS")));
+    const thirdCtl = makeCheckMoney("3rd", !!r.review.AddThirdShift, fmtMoney(timeChargeAmountForCode(r, "THIRD_SHIFT")));
+    const wkndCtl = makeCheckMoney("WKND", !!r.review.AddWeekend, fmtMoney(timeChargeAmountForCode(r, "WEEKEND")));
+    const holCtl = makeCheckMoney("HOL", !!r.review.AddHoliday, fmtMoney(timeChargeAmountForCode(r, "HOLIDAY")));
+
+    const cancelCtl = makeCheckMoney("Cancel", isCancelled(r), "");
+    adjWrap.appendChild(cancelCtl.label);
+
+    cancelCtl.cb.onchange = () => {
+      r.review.CancelOverride = cancelCtl.cb.checked ? "YES" : "NO";
+
+      if (cancelCtl.cb.checked) {
+        r.review.ClassOverride = "450 Cancellation";
+        classSel.value = "450 Cancellation";
+      } else {
+        r.review.ClassOverride = "";
+        classSel.value = r.inferredClass || "400 Other";
+      }
+
+      refreshRowTotal();
+      refreshDetailPanel();
+      if (window.markDirty) window.markDirty();
+    };
 
     const typeWrap = document.createElement("label");
     typeWrap.style.whiteSpace = "nowrap";
@@ -609,6 +681,11 @@ function renderRows() {
     adjWrap.appendChild(hzCtl.label);
     adjWrap.appendChild(o2Ctl.label);
     adjWrap.appendChild(bariCtl.label);
+    adjWrap.appendChild(ahCtl.label);
+    adjWrap.appendChild(thirdCtl.label);
+    adjWrap.appendChild(wkndCtl.label);
+    adjWrap.appendChild(holCtl.label);
+    adjWrap.appendChild(cancelCtl.label);
     adjWrap.appendChild(noChargeCtl.label);
     adjWrap.appendChild(dhWrap);
 
@@ -815,6 +892,80 @@ function renderRows() {
       if (window.markDirty) window.markDirty();
     };
 
+    function clearOtherTimeCharges(except) {
+      if (except !== "AH") {
+        r.review.AddAfterHours = false;
+        ahCtl.cb.checked = false;
+      }
+
+      if (except !== "THIRD") {
+        r.review.AddThirdShift = false;
+        thirdCtl.cb.checked = false;
+      }
+
+      if (except !== "WKND") {
+        r.review.AddWeekend = false;
+        wkndCtl.cb.checked = false;
+      }
+
+      if (except !== "HOL") {
+        r.review.AddHoliday = false;
+        holCtl.cb.checked = false;
+      }
+    }
+
+    ahCtl.cb.onchange = () => {
+      r.review.AddAfterHours = ahCtl.cb.checked;
+      if (ahCtl.cb.checked) clearOtherTimeCharges("AH");
+
+      refreshRowTotal();
+      refreshDetailPanel();
+      if (window.markDirty) window.markDirty();
+    };
+
+    thirdCtl.cb.onchange = () => {
+      r.review.AddThirdShift = thirdCtl.cb.checked;
+      if (thirdCtl.cb.checked) clearOtherTimeCharges("THIRD");
+
+      refreshRowTotal();
+      refreshDetailPanel();
+      if (window.markDirty) window.markDirty();
+    };
+
+    wkndCtl.cb.onchange = () => {
+      r.review.AddWeekend = wkndCtl.cb.checked;
+      if (wkndCtl.cb.checked) clearOtherTimeCharges("WKND");
+
+      refreshRowTotal();
+      refreshDetailPanel();
+      if (window.markDirty) window.markDirty();
+    };
+
+    holCtl.cb.onchange = () => {
+      r.review.AddHoliday = holCtl.cb.checked;
+      if (holCtl.cb.checked) clearOtherTimeCharges("HOL");
+
+      refreshRowTotal();
+      refreshDetailPanel();
+      if (window.markDirty) window.markDirty();
+    };
+
+    cancelCtl.cb.onchange = () => {
+      r.review.CancelOverride = cancelCtl.cb.checked ? "YES" : "NO";
+
+      if (cancelCtl.cb.checked) {
+        r.review.ClassOverride = "450 Cancellation";
+        classSel.value = "450 Cancellation";
+      } else if (r.review.ClassOverride === "450 Cancellation") {
+        r.review.ClassOverride = "";
+        classSel.value = r.inferredClass || "400 Other";
+      }
+
+      refreshRowTotal();
+      refreshDetailPanel();
+      if (window.markDirty) window.markDirty();
+    };
+
     dhCb.onchange = () => {
       r.review.AddDeadhead = dhCb.checked;
       refreshDeadheadUI();
@@ -934,7 +1085,7 @@ function renderRows() {
 
           const mileage = billableMiles * mileageRate;
           const wcStateDetail = wcAccessoryState(r);
-          const cancelFee = Number((r.pricing && r.pricing.cancelFee) || 0);
+          const cancelFee = Number(r.pricing?.cancelFee || r.availableCharges?.cancel_fee || 0);
           const noChargeHtml = r.review?.NoCharge
             ? "<div style='margin-top:6px;color:#991b1b;font-weight:600'>No Charge</div>"
             : "";
@@ -1020,17 +1171,29 @@ function renderRows() {
               }).join("")
             : "<div style='color:#64748b'>No leg detail available.</div>";
 
-          const autoTimeCharge = automaticTimeChargeAmount(r);
-          const autoTimeLine = Array.isArray(r.pricing?.accessories)
-            ? r.pricing.accessories.find((x) => {
-                const code = String(x.code || "").toUpperCase();
-                return code === "HOLIDAY" || code === "WEEKEND" || code === "THIRD_SHIFT" || code === "AFTER_HOURS";
-              })
-            : null;
+          const selectedTimeCharge = (() => {
+            if (r.review?.AddHoliday) {
+              return { label: "Holiday", amount: selectedTimeChargeAmount(r) };
+            }
 
-          if (autoTimeCharge > 0 && autoTimeLine) {
+            if (r.review?.AddThirdShift) {
+              return { label: "3rd Shift", amount: selectedTimeChargeAmount(r) };
+            }
+
+            if (r.review?.AddWeekend) {
+              return { label: "Weekend", amount: selectedTimeChargeAmount(r) };
+            }
+
+            if (r.review?.AddAfterHours) {
+              return { label: "After Hours", amount: selectedTimeChargeAmount(r) };
+            }
+
+            return null;
+          })();
+
+          if (selectedTimeCharge && selectedTimeCharge.amount > 0) {
             chargedAccessoryLines.push(
-              "<div>" + esc(String(autoTimeLine.label || "Time Charge")) + ": $" + autoTimeCharge.toFixed(2) + "</div>"
+              "<div>" + esc(selectedTimeCharge.label) + ": $" + selectedTimeCharge.amount.toFixed(2) + "</div>"
             );
           }
           
@@ -1142,11 +1305,16 @@ function renderRows() {
 
               "<div>" +
                 "<div style='margin-bottom:8px'><b>Pricing</b></div>" +
-                "<div>Base: $" + base.toFixed(2) + "</div>" +
-                "<div>Mileage: $" + mileage.toFixed(2) + "</div>" +
-                (cancelFee > 0 ? "<div>Cancel Fee: $" + cancelFee.toFixed(2) + "</div>" : "") +
+                (
+                  isCancelled(r)
+                    ? "<div>Cancellation Fee: $" + cancelFee.toFixed(2) + "</div>"
+                    : (
+                        "<div>Base: $" + base.toFixed(2) + "</div>" +
+                        "<div>Mileage: $" + mileage.toFixed(2) + "</div>" +
+                        chargedAccessoryLines.join("")
+                      )
+                ) +
                 noChargeHtml +
-                chargedAccessoryLines.join("") +
                 "<div style='margin-top:6px'><b>Total: $" + grandTotal.toFixed(2) + "</b></div>" +
                 actualTimesHtml +
                 poHtml +

@@ -138,5 +138,77 @@
   "clinical heart and vascular center - vascular surgery|2001 inwood road": {
     "name": "Clinical Heart and Vascular Center",
     "address1": "2001 Inwood Road"
+  },
+  "3005 clover lane|3005 clover lane": {
+    "name": "Residence",
+    "address1": "3005 Clover Lane"
+  },
+  "baylor scott & white medical center — temple|2401 south 31st street": {
+    "name": "Baylor Scott & White Medical Center, Temple",
+    "address1": "2401 South 31st Street"
+  },
+  "baylor university medical center part of baylor scott & white health|3500 gaston avenue": {
+    "name": "Baylor University Medical Center",
+    "address1": "3500 Gaston Avenue"
+  },
+  "baylor scott & white medical center - grapevine|1650 west college street": {
+    "name": "Baylor Scott & White Medical Center, Grapevine",
+    "address1": "1650 West College Street"
+  },
+  "baylor scott & white hospital - grapevine|1650 w college st": {
+    "name": "Baylor Scott & White Medical Center, Grapevine",
+    "address1": "1650 W College St"
+  },
+  "discovery village southlake|201 watermere drive": {
+    "name": "Discovery Village Southlake Skilled Nursing",
+    "address1": "101 Watermere Drive"
+  },
+  "discovery village at southlake-3rd floor independent|201 watermere drive": {
+    "name": "Discovery Village At Southlake- Independent",
+    "address1": "101 Watermere Drive"
+  },
+  "encompass health rehabilitation hospital of abilene|6401 directors pkwy": {
+    "name": "Encompass Health Rehabilitation Abilene",
+    "address1": "6401 Directors Pkwy"
+  },
+  "cardiovascular|1300 west terrell avenue": {
+    "name": "Klabzuba Tower",
+    "address1": "1300 West Terrell Avenue"
+  },
+  "#300 ben hogan-ortho & trauma|800 5th avenue": {
+    "name": "Ben Hogan Center",
+    "address1": "800 5th Avenue"
+  },
+  "harris southwest main wheelchair admission office ct scan/ mri check in|6100 harris parkway": {
+    "name": "Harris Southwest CT Scan",
+    "address1": "6100 Harris Parkway"
+  },
+  "texas pulmonary & critical care consultants, pa|1201 fairmount avenue": {
+    "name": "Texas Pulmonary & Critical Care",
+    "address1": "1201 Fairmount Avenue"
+  },
+  "connected to cooks children dr. jay carpenter|136 el chico trail": {
+    "name": "Texas Center for Urology",
+    "address1": "136 El Chico Trail"
+  },
+  "chisholm trail orthopedics and sports medicine (cleburne location)|2010 west katherine p raines road": {
+    "name": "Chisholm Trail Orthopedics and Sports Medicine",
+    "address1": "2010 West Katherine P Raines Road"
+  },
+  "acclaim multi-specialty clinic | fort worth, tx|1250 8th avenue": {
+    "name": "Acclaim Multi-Specialty Clinic",
+    "address1": "1250 8th Avenue"
+  },
+  "chisholm trail orthopedics & sports medicine fort worth (sycamore school road)|5540 sycamore school road": {
+    "name": "Chisholm Trail Orthopedics & Sports Medicine",
+    "address1": "5540 Sycamore School Road"
+  },
+  "harris emergency ct scan/ mri ambulance bay|910 5th avenue": {
+    "name": "Harris ER CT Scan",
+    "address1": "910 5th Avenue"
+  },
+  "ben hogan bldg olaide ajayi, md|800 5th avenue": {
+    "name": "Ben Hogan Center",
+    "address1": "800 5th Avenue"
   }
 }

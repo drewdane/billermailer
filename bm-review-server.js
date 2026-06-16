@@ -747,6 +747,10 @@ async function openSet(acct, period){
     it.review.AddHazmat = !!o.AddHazmat;
     it.review.AddO2 = !!o.AddO2;
     it.review.AddBari = !!o.AddBari;
+    it.review.AddAfterHours = !!o.AddAfterHours;
+    it.review.AddThirdShift = !!o.AddThirdShift;
+    it.review.AddWeekend = !!o.AddWeekend;
+    it.review.AddHoliday = !!o.AddHoliday;
     it.review.AddDeadhead = !!o.AddDeadhead;
     it.review.DeadheadMiles = Number(o.DeadheadMiles || 0);
     it.review.PoNumberOverride = o.PoNumberOverride || "";
@@ -825,6 +829,10 @@ async function save(){
       AddHazmat: !!r.review?.AddHazmat,
       AddO2: !!r.review?.AddO2,
       AddBari: !!r.review?.AddBari,
+      AddAfterHours: !!r.review?.AddAfterHours,
+      AddThirdShift: !!r.review?.AddThirdShift,
+      AddWeekend: !!r.review?.AddWeekend,
+      AddHoliday: !!r.review?.AddHoliday,
       AddDeadhead: !!r.review?.AddDeadhead,
       DeadheadMiles: Number(r.review?.DeadheadMiles || 0),
       PoNumberOverride: r.review?.PoNumberOverride || "",

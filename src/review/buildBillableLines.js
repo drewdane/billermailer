@@ -318,6 +318,44 @@ function automaticTimeCharge(r) {
     : null;
 }
 
+function timeChargeAmountForCode(r, code) {
+  const c = String(code || "").toUpperCase();
+  const auto = automaticTimeCharge(r);
+
+  if (auto && auto.code === c) return money(auto.amount || 0);
+
+  const charges = r.availableCharges || {};
+
+  if (c === "AFTER_HOURS") return money(charges.after_hours || 0);
+  if (c === "THIRD_SHIFT") return money(charges.third_shift || 0);
+  if (c === "WEEKEND") return money(charges.weekend || 0);
+  if (c === "HOLIDAY") return money(charges.holiday || 0);
+
+  return 0;
+}
+
+function selectedTimeCharge(r) {
+  const review = r.review || {};
+
+  if (review.AddHoliday) {
+    return { code: "HOLIDAY", amount: timeChargeAmountForCode(r, "HOLIDAY") };
+  }
+
+  if (review.AddThirdShift) {
+    return { code: "THIRD_SHIFT", amount: timeChargeAmountForCode(r, "THIRD_SHIFT") };
+  }
+
+  if (review.AddWeekend) {
+    return { code: "WEEKEND", amount: timeChargeAmountForCode(r, "WEEKEND") };
+  }
+
+  if (review.AddAfterHours) {
+    return { code: "AFTER_HOURS", amount: timeChargeAmountForCode(r, "AFTER_HOURS") };
+  }
+
+  return null;
+}
+
 function computeWaitCharge(r) {
   if (!r.review?.AddWait) return 0;
 
@@ -507,7 +545,7 @@ function buildBillableLines(r, globals = {}) {
       r,
       "CANCEL_FEE",
       `${prefix}${routeText} - Cancellation Fee`,
-      Number(r.pricing?.cancelFee || 0),
+      Number(r.pricing?.cancelFee || r.availableCharges?.cancel_fee || 0),
       { forceZero: forceZeroMode }
     );
     return lines;
@@ -630,7 +668,7 @@ function buildBillableLines(r, globals = {}) {
     );
   }
 
-  const timeCharge = automaticTimeCharge(r);
+  const timeCharge = selectedTimeCharge(r);
   if (timeCharge && (timeCharge.amount > 0 || forceZeroMode)) {
     addLine(
       lines,

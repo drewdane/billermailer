@@ -31,7 +31,7 @@ function priceGroupedTrip(groupedTrip, rateRow, opts = {}) {
       base: 0,
       mileage: 0,
       accessories: [],
-      cancelFee: 0,
+      cancelFee: num(rateRow.cancel_fee),
       total: 0,
       flags: ["NO_RATE_MATCH", ...flags],
       debug: {},
@@ -52,21 +52,6 @@ function priceGroupedTrip(groupedTrip, rateRow, opts = {}) {
     };
   }
 
-  if (status.kind === "CANCEL_FEE") {
-    const cancelFee = num(rateRow.cancel_fee);
-    return {
-      pricingType: "CANCEL_FEE",
-      status: groupedTrip.RideStatus,
-      base: 0,
-      mileage: 0,
-      accessories: [],
-      cancelFee,
-      total: cancelFee,
-      flags,
-      debug: {},
-    };
-  }
-
   if (status.kind === "UNKNOWN") {
     flags.push(`UNKNOWN_STATUS:${groupedTrip.RideStatus || ""}`);
     return {
@@ -75,7 +60,7 @@ function priceGroupedTrip(groupedTrip, rateRow, opts = {}) {
       base: 0,
       mileage: 0,
       accessories: [],
-      cancelFee: 0,
+      cancelFee: num(rateRow.cancel_fee),
       total: 0,
       flags,
       debug: {},

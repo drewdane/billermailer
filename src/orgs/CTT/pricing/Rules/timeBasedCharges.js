@@ -1,11 +1,7 @@
 function num(v) {
   if (v === null || v === undefined) return 0;
 
-  const s = String(v)
-    .trim()
-    .replace(/\$/g, "")
-    .replace(/,/g, "");
-
+  const s = String(v).trim().replace(/\$/g, "").replace(/,/g, "");
   if (!s || s.toLowerCase() === "nan") return 0;
 
   const x = Number(s);
@@ -31,20 +27,23 @@ function parseTimeToMinutes(v) {
   const mm = Number(m[2]);
 
   if (!Number.isFinite(hh) || !Number.isFinite(mm)) return null;
+  if (hh < 0 || hh > 23 || mm < 0 || mm > 59) return null;
+
   return hh * 60 + mm;
 }
 
 function isWindowHit(minutes, startRaw, endRaw) {
   const start = parseTimeToMinutes(startRaw);
   const end = parseTimeToMinutes(endRaw);
+
   if (minutes == null || start == null || end == null) return false;
 
-  // SAME-DAY window (e.g. 17:00 → 22:00)
+  if (start === end) return true; // all day
+
   if (start < end) {
     return minutes >= start && minutes < end;
   }
 
-  // OVERNIGHT window (e.g. 20:00 → 08:00)
   return minutes >= start || minutes < end;
 }
 
@@ -54,11 +53,7 @@ function parseRideDate(rideDateRaw) {
   const m = datePart.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
   if (!m) return null;
 
-  const month = Number(m[1]);
-  const day = Number(m[2]);
-  const year = Number(m[3]);
-
-  return new Date(year, month - 1, day);
+  return new Date(Number(m[3]), Number(m[1]) - 1, Number(m[2]));
 }
 
 function nthWeekdayOfMonth(year, monthIndex, weekday, nth) {
@@ -96,159 +91,184 @@ function isHoliday(dateObj) {
 
   const year = dateObj.getFullYear();
 
-  // Fixed-date holidays
-  if (isSameMonthDay(dateObj, 0, 1)) return true;   // New Year's Day
-  if (isSameMonthDay(dateObj, 6, 4)) return true;   // Independence Day
-  if (isSameMonthDay(dateObj, 10, 11)) return true; // Veteran's Day
-  if (isSameMonthDay(dateObj, 11, 25)) return true; // Christmas Day
+  if (isSameMonthDay(dateObj, 0, 1)) return true;
+  if (isSameMonthDay(dateObj, 6, 4)) return true;
+  if (isSameMonthDay(dateObj, 10, 11)) return true;
+  if (isSameMonthDay(dateObj, 11, 25)) return true;
 
-  // Memorial Day = last Monday in May
   const memorial = lastWeekdayOfMonth(year, 4, 1);
   if (memorial && memorial.toDateString() === dateObj.toDateString()) return true;
 
-  // Labor Day = first Monday in September
   const labor = nthWeekdayOfMonth(year, 8, 1, 1);
   if (labor && labor.toDateString() === dateObj.toDateString()) return true;
 
-  // Thanksgiving = fourth Thursday in November
   const thanksgiving = nthWeekdayOfMonth(year, 10, 4, 4);
   if (thanksgiving && thanksgiving.toDateString() === dateObj.toDateString()) return true;
 
   return false;
 }
 
-function getFirstScheduledPickup(groupedTrip) {
-  const legs = Array.isArray(groupedTrip.legs) && groupedTrip.legs.length
+function getChargeEvaluationLegs(groupedTrip) {
+  return Array.isArray(groupedTrip.legs) && groupedTrip.legs.length
     ? groupedTrip.legs
     : [groupedTrip];
+}
 
-  const sorted = [...legs].sort((a, b) =>
-    String(a.ScheduledPickupTime || "").localeCompare(String(b.ScheduledPickupTime || ""))
-  );
+function addCandidate(candidates, kind, amount, source, debug) {
+  if (!kind || amount <= 0) return;
 
-  return sorted[0] || groupedTrip;
+  candidates.push({
+    kind,
+    amount,
+    source,
+    debug,
+  });
+}
+
+function pickHighestCandidate(candidates) {
+  if (!candidates.length) return null;
+
+  return candidates.sort((a, b) => {
+    if (b.amount !== a.amount) return b.amount - a.amount;
+
+    const priority = {
+      HOLIDAY: 4,
+      THIRD_SHIFT: 3,
+      WEEKEND: 2,
+      AFTER_HOURS: 1,
+    };
+
+    return (priority[b.kind] || 0) - (priority[a.kind] || 0);
+  })[0];
 }
 
 function computeTimeBasedCharge(groupedTrip, rateRow = {}) {
-    const firstLeg = getFirstScheduledPickup(groupedTrip);
-    const rideDate = parseRideDate(firstLeg.RideDate || groupedTrip.RideDate);
-    const pickupMinutes = parseTimeToMinutes(firstLeg.ScheduledPickupTime);
+  const legs = getChargeEvaluationLegs(groupedTrip);
 
-    const day = rideDate ? rideDate.getDay() : null; // 0=sun, 6=sat
+  const candidates = [];
 
-    const weekendRate = num(rateRow.weekend_rate);
-    const holidayRate = num(rateRow.holiday_rate);
-    const thirdShiftRate = num(rateRow.third_shift_rate);
-    const afterHoursRate = num(rateRow.after_hours_rate);
+  const weekdayAfterHoursRate = num(rateRow.after_hours_rate);
+  const weekdayThirdShiftRate = num(rateRow.third_shift_rate);
+  const weekendRate = num(rateRow.weekend_rate);
+  const holidayRate = num(rateRow.holiday_rate);
 
-    const afterHoursHit = isWindowHit(
-        pickupMinutes,
-        rateRow.after_hours_start,
-        rateRow.after_hours_end
-    );
+  for (const leg of legs) {
+    const rideDate = parseRideDate(leg.RideDate || groupedTrip.RideDate);
+    const pickupMinutes = parseTimeToMinutes(leg.ScheduledPickupTime);
+    const day = rideDate ? rideDate.getDay() : null;
 
-    const thirdShiftHit = isWindowHit(
-        pickupMinutes,
-        rateRow.third_shift_start,
-        rateRow.third_shift_end
-    );
+    const isSat = day === 6;
+    const isSun = day === 0;
+    const isWeekend = isSat || isSun;
 
-  // 1) HOLIDAY
-  if (isHoliday(rideDate) && holidayRate > 0) {
+    const regularWeekend =
+      (isSat && hasY(rateRow.regular_includes_sat || rateRow.regular_includes_saturday)) ||
+      (isSun && hasY(rateRow.regular_includes_sun || rateRow.regular_includes_sunday));
+
+    const prefix = isSat ? "sat" : isSun ? "sun" : null;
+
+    if (isHoliday(rideDate) && holidayRate > 0) {
+      const hasHolidayWindow =
+        String(rateRow.holiday_start || "").trim() ||
+        String(rateRow.holiday_end || "").trim();
+
+      const holidayHit = hasHolidayWindow
+        ? isWindowHit(pickupMinutes, rateRow.holiday_start, rateRow.holiday_end)
+        : true;
+
+      if (holidayHit) {
+        addCandidate(candidates, "HOLIDAY", holidayRate, "holiday_rate", {
+          rideDate: leg.RideDate || groupedTrip.RideDate || "",
+          scheduledPickupTime: leg.ScheduledPickupTime || "",
+          holidayStart: rateRow.holiday_start || "",
+          holidayEnd: rateRow.holiday_end || "",
+        });
+      }
+    }
+
+    if (isWeekend && prefix) {
+      const weekendAfterHoursStart = rateRow[`${prefix}_after_hours_start`];
+      const weekendAfterHoursEnd = rateRow[`${prefix}_after_hours_end`];
+      const weekendAfterHoursRate =
+        num(rateRow[`${prefix}_after_hours_rate`]) || weekdayAfterHoursRate;
+
+      const weekendThirdShiftStart = rateRow[`${prefix}_third_shift_start`];
+      const weekendThirdShiftEnd = rateRow[`${prefix}_third_shift_end`];
+      const weekendThirdShiftRate =
+        num(rateRow[`${prefix}_third_shift_rate`]) || weekdayThirdShiftRate;
+
+      if (
+        isWindowHit(pickupMinutes, weekendThirdShiftStart, weekendThirdShiftEnd) &&
+        weekendThirdShiftRate > 0
+      ) {
+        addCandidate(candidates, "THIRD_SHIFT", weekendThirdShiftRate, `${prefix}_third_shift_rate`, {
+          legId: leg.ConfirmationNumber || "",
+          day: isSat ? "SATURDAY" : "SUNDAY",
+          scheduledPickupTime: leg.ScheduledPickupTime || "",
+          start: weekendThirdShiftStart || "",
+          end: weekendThirdShiftEnd || "",
+        });
+      }
+
+      if (
+        isWindowHit(pickupMinutes, weekendAfterHoursStart, weekendAfterHoursEnd) &&
+        weekendAfterHoursRate > 0
+      ) {
+        addCandidate(candidates, "AFTER_HOURS", weekendAfterHoursRate, `${prefix}_after_hours_rate`, {
+          legId: leg.ConfirmationNumber || "",
+          day: isSat ? "SATURDAY" : "SUNDAY",
+          scheduledPickupTime: leg.ScheduledPickupTime || "",
+          start: weekendAfterHoursStart || "",
+          end: weekendAfterHoursEnd || "",
+        });
+      }
+
+      if (!regularWeekend && weekendRate > 0) {
+        addCandidate(candidates, "WEEKEND", weekendRate, "weekend_rate", {
+          legId: leg.ConfirmationNumber || "",
+          day: isSat ? "SATURDAY" : "SUNDAY",
+          scheduledPickupTime: leg.ScheduledPickupTime || "",
+          regularWeekend: false,
+        });
+      }
+    }
+
+    if (!isWeekend) {
+      if (
+        isWindowHit(pickupMinutes, rateRow.third_shift_start, rateRow.third_shift_end) &&
+        weekdayThirdShiftRate > 0
+      ) {
+        addCandidate(candidates, "THIRD_SHIFT", weekdayThirdShiftRate, "third_shift_rate", {
+          legId: leg.ConfirmationNumber || "",
+          scheduledPickupTime: leg.ScheduledPickupTime || "",
+          start: rateRow.third_shift_start || "",
+          end: rateRow.third_shift_end || "",
+        });
+      }
+
+      if (
+        isWindowHit(pickupMinutes, rateRow.after_hours_start, rateRow.after_hours_end) &&
+        weekdayAfterHoursRate > 0
+      ) {
+        addCandidate(candidates, "AFTER_HOURS", weekdayAfterHoursRate, "after_hours_rate", {
+          legId: leg.ConfirmationNumber || "",
+          scheduledPickupTime: leg.ScheduledPickupTime || "",
+          start: rateRow.after_hours_start || "",
+          end: rateRow.after_hours_end || "",
+        });
+      }
+    }
+  }
+
+  const winner = pickHighestCandidate(candidates);
+
+  if (winner) {
     return {
-      kind: "HOLIDAY",
-      amount: holidayRate,
-      source: "holiday_rate",
+      ...winner,
       debug: {
-        scheduledPickupTime: firstLeg.ScheduledPickupTime || "",
-        rideDate: firstLeg.RideDate || groupedTrip.RideDate || "",
-      },
-    };
-  }
-
-  // 2) WEEKEND
-  if (day === 6) {
-    const regularSat = hasY(rateRow.regular_includes_saturday);
-
-    if (!regularSat && weekendRate > 0) {
-      return {
-        kind: "WEEKEND",
-        amount: weekendRate,
-        source: "weekend_rate",
-        debug: {
-          day: "SATURDAY",
-          regularIncludesSaturday: false,
-          afterHoursHit,
-        },
-      };
-    }
-
-    if (regularSat && afterHoursHit && weekendRate > 0) {
-      return {
-        kind: "WEEKEND",
-        amount: weekendRate,
-        source: "weekend_rate",
-        debug: {
-          day: "SATURDAY",
-          regularIncludesSaturday: true,
-          afterHoursHit,
-        },
-      };
-    }
-  }
-
-  if (day === 0) {
-    const regularSun = hasY(rateRow.regular_includes_sunday);
-
-    if (!regularSun && weekendRate > 0) {
-      return {
-        kind: "WEEKEND",
-        amount: weekendRate,
-        source: "weekend_rate",
-        debug: {
-          day: "SUNDAY",
-          regularIncludesSunday: false,
-          afterHoursHit,
-        },
-      };
-    }
-
-    if (regularSun && afterHoursHit && weekendRate > 0) {
-      return {
-        kind: "WEEKEND",
-        amount: weekendRate,
-        source: "weekend_rate",
-        debug: {
-          day: "SUNDAY",
-          regularIncludesSunday: true,
-          afterHoursHit,
-        },
-      };
-    }
-  }
-
-  // 3) THIRD SHIFT
-  if (thirdShiftHit && thirdShiftRate > 0) {
-    return {
-      kind: "THIRD_SHIFT",
-      amount: thirdShiftRate,
-      source: "third_shift_rate",
-      debug: {
-        scheduledPickupTime: firstLeg.ScheduledPickupTime || "",
-        thirdShiftHit,
-      },
-    };
-  }
-
-  // 4) AFTER HOURS
-  if (afterHoursHit && afterHoursRate > 0) {
-    return {
-      kind: "AFTER_HOURS",
-      amount: afterHoursRate,
-      source: "after_hours_rate",
-      debug: {
-        scheduledPickupTime: firstLeg.ScheduledPickupTime || "",
-        afterHoursHit,
+        ...(winner.debug || {}),
+        evaluatedLegs: legs.length,
+        candidates,
       },
     };
   }
@@ -258,11 +278,8 @@ function computeTimeBasedCharge(groupedTrip, rateRow = {}) {
     amount: 0,
     source: null,
     debug: {
-      scheduledPickupTime: firstLeg.ScheduledPickupTime || "",
-      rideDate: firstLeg.RideDate || groupedTrip.RideDate || "",
-      afterHoursHit,
-      thirdShiftHit,
-      day,
+      evaluatedLegs: legs.length,
+      candidates,
     },
   };
 }

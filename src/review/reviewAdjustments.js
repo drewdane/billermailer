@@ -79,6 +79,22 @@ function computeAvailableCharges(groupedTrip, rateRow) {
     hazmat: computeHazmatCharge(groupedTrip, rateRow),
     o2: computeO2Charge(groupedTrip, rateRow),
     bari: computeBariCharge(groupedTrip, rateRow),
+
+    after_hours: Math.max(
+      money(rateRow.after_hours_rate),
+      money(rateRow.sat_after_hours_rate),
+      money(rateRow.sun_after_hours_rate)
+    ),
+
+    third_shift: Math.max(
+      money(rateRow.third_shift_rate),
+      money(rateRow.sat_third_shift_rate),
+      money(rateRow.sun_third_shift_rate)
+    ),
+
+    weekend: money(rateRow.weekend_rate),
+    holiday: money(rateRow.holiday_rate),
+    cancel_fee: money(rateRow.cancel_fee),
   };
 }
 
