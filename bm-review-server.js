@@ -5,6 +5,13 @@ const path = require("path");
 const url = require("url");
 const { setLocationAlias , getLocationAlias } = require("./src/orgs/CTT/locationAliases");
 const { inferQboClass, isPrivatePayTrip } = require("./src/orgs/CTT/qboClass");
+const { scrubStaleTimeChargeOverride, } = require("./src/review/reviewOverrides");
+const {
+  normalizeInvoiceSplit,
+  inferThrSplit,
+  pickPoNumber,
+  invoiceSplitSuffix,
+} = require("./src/orgs/CTT/invoiceSplit");
 
 function arg(name, fallback = null) {
   const idx = process.argv.indexOf(name);
@@ -27,6 +34,7 @@ function writeReviewConfigPatch(patch) {
     ...patch
   });
 }
+
 const batchExportDir = path.join(baseDir, "_batch_exports");
 fs.mkdirSync(batchExportDir, { recursive: true });
 
@@ -47,19 +55,6 @@ function safeJoin(...parts) {
   const joined = path.resolve(baseDir, ...parts);
   if (!joined.startsWith(baseDir)) throw new Error("Invalid path");
   return joined;
-}
-
-function scrubStaleTimeChargeOverride(o = {}) {
-  const out = { ...o };
-
-  if (!out.TimeChargeManual) {
-    delete out.AddAfterHours;
-    delete out.AddThirdShift;
-    delete out.AddWeekend;
-    delete out.AddHoliday;
-  }
-
-  return out;
 }
 
 function normalizeAddress(s) {
@@ -358,6 +353,7 @@ const HTML = `<!doctype html>
 
 <script src="/preReviewSuggestions.js"></script>
 <script src="/cleanLocationName.js"></script>
+<script src="/reviewOverridesClient.js"></script>
 <script src="/renderRows.js"></script>
 <script>
 let INDEX=null;
@@ -692,69 +688,18 @@ async function openSet(acct, period){
   OVERRIDES.reviewedAt = OVERRIDES.reviewedAt || null;
   OVERRIDES.deliveryFormat = OVERRIDES.deliveryFormat || "qbo";
 
-  for(const it of ITEMS){
-    const o = (OVERRIDES.overrides||{})[it.LineId];
-    if(!o) continue;
-
-    it.Action = o.Action ?? it.Action;
-    it.Modifier = o.Modifier ?? it.Modifier;
-    it.Note = o.Note ?? it.Note;
-    it.MoveToAccountCode = o.MoveToAccountCode ?? it.MoveToAccountCode;
-    if (!it.review) it.review = {};
-    it.review.ClassOverride = o.ClassOverride || "";
-    it.review.Action = o.Action ?? it.review.Action ?? "INCLUDE";
-    it.review.Modifier = o.Modifier ?? it.review.Modifier ?? "NONE";
-    it.review.Note = o.Note ?? it.review.Note ?? "";
-    it.review.MoveToAccountCode = o.MoveToAccountCode ?? it.review.MoveToAccountCode ?? "";
-
-    it.review.SplitTrip = !!o.SplitTrip;
-    it.review.MergeGroupId = o.MergeGroupId || "";
-    it.review.MergeShape = o.MergeShape || "";
-    it.review.AddHazmat = !!o.AddHazmat;
-    it.review.AddO2 = !!o.AddO2;
-    it.review.AddBari = !!o.AddBari;
-    it.review.AddAfterHours = !!o.AddAfterHours;
-    it.review.AddThirdShift = !!o.AddThirdShift;
-    it.review.AddWeekend = !!o.AddWeekend;
-    it.review.AddHoliday = !!o.AddHoliday;
-    it.review.AddDeadhead = !!o.AddDeadhead;
-    it.review.DeadheadMiles = Number(o.DeadheadMiles || 0);
-    it.review.PoNumberOverride = o.PoNumberOverride || "";
-    it.review.AddWait = !!o.AddWait;
-    it.review.WaitTotalMinutes = Number(o.WaitTotalMinutes || 0);
-    it.review.MatchToQuote = !!o.MatchToQuote;
-    it.review.QuoteAmount = Number(o.QuoteAmount || 0);
-    it.review.AddNeedWC = typeof o.AddNeedWC === "boolean" ? o.AddNeedWC : it.review.AddNeedWC;
-    it.review.AddRECL = typeof o.AddRECL === "boolean" ? o.AddRECL : it.review.AddRECL;
-    it.review.CancelOverride = o.CancelOverride || it.review.CancelOverride || "AUTO";
-    it.review.NoCharge = typeof o.NoCharge === "boolean" ? o.NoCharge : !!it.review.NoCharge;
-    it.review.TripTypeOverride = o.TripTypeOverride || "";
-    it.review.MileageOverride = Number.isFinite(Number(o.MileageOverride))
-      ? Number(o.MileageOverride)
-      : Number(it.DirectMileage || 0);
-    it.review.ActualPickupTimeOverride =
-      o.ActualPickupTimeOverride || "";
-
-    it.review.ActualDropoffTimeOverride =
-      o.ActualDropoffTimeOverride || "";
-    it.review.PickupNameOverride = o.PickupNameOverride || "";
-    it.review.PickupAddress1Override = o.PickupAddress1Override || "";
-    it.review.DropoffNameOverride = o.DropoffNameOverride || "";
-    it.review.DropoffAddress1Override = o.DropoffAddress1Override || "";
-    it.review.MraNumberOverride = o.MraNumberOverride || "";
-    it.review.InvoiceSplitOverride = o.InvoiceSplitOverride || "AUTO";
-    if (o.CancelOverride) it.review.CancelOverride = o.CancelOverride;
-    if (typeof o.NoCharge === "boolean") it.review.NoCharge = o.NoCharge;
-    if (typeof o.AddNeedWC === "boolean") it.review.AddNeedWC = o.AddNeedWC;
-    if (typeof o.AddRECL === "boolean") it.review.AddRECL = o.AddRECL;
+  for (const it of ITEMS) {
+    const o = (OVERRIDES.overrides || {})[it.LineId];
+    if (!o) continue;
+    window.applyOverrideToItem(it, o);
   }
 
-    const deliveryFormatEl = document.getElementById("deliveryFormat");
-    deliveryFormatEl.value = OVERRIDES.deliveryFormat || "qbo";
+  const deliveryFormatEl = document.getElementById("deliveryFormat");
+  deliveryFormatEl.value = OVERRIDES.deliveryFormat || "qbo";
 
-    renderRows();
-    renderFacilityReviewState();
-    }
+  renderRows();
+  renderFacilityReviewState();
+  }
 
 function mergeSelectedTrips() {
   const selected = ITEMS.filter((r) => r.review?.MergeSelected);
@@ -956,17 +901,6 @@ function buildInvoiceNo(acct, periodEndIso, suffix = null) {
   return base + "-" + String(suffix).trim().toUpperCase();
 }
 
-function normalizeInvoiceSplit(v) {
-  const s = String(v || "").trim().toUpperCase();
-
-  if (s === "ER") return "ER";
-  if (s === "ADMISSION") return "ADMISSION";
-  if (s === "DISCHARGE") return "DISCHARGE";
-  if (s === "OTHER") return "OTHER";
-
-  return "OTHER";
-}
-
 function normAddr(v) {
   return String(v || "")
     .toLowerCase()
@@ -991,78 +925,6 @@ function riderInitials(r) {
     (first[0] || "X") +
     (last[0] || "X")
   ).toUpperCase();
-}
-
-function inferThrSplit(r) {
-  const text = [
-    r.PickupName,
-    r.PickupAddress1,
-    r.DropoffName,
-    r.DropoffAddress1,
-    r.notesFull
-  ].map(v => String(v || "").toLowerCase()).join(" ");
-
-  const erText = [
-    r.PickupName,
-    r.DropoffName,
-    r.notesFull
-  ].map(v => String(v || "").toLowerCase()).join(" ");
-
-  if (
-    /\bemergency\s+(room|department)\b/i.test(erText) ||
-    /\bfrom\s+er\b/i.test(erText) ||
-    /\bto\s+er\b/i.test(erText) ||
-    /\bER\s+pickup\b/i.test(erText)
-  ) {
-    return "ER";
-  }
-
-  const pu = [r.PickupName, r.PickupAddress1].map(v => String(v || "").toLowerCase()).join(" ");
-  const drop = [r.DropoffName, r.DropoffAddress1].map(v => String(v || "").toLowerCase()).join(" ");
-
-  const hospitalRx = /\b(harris|texas health|THR|huguley|hospital|methodist)\b/i;
-
-  if (hospitalRx.test(drop) && !hospitalRx.test(pu)) {
-    return "ADMISSION";
-  }
-
-  if (hospitalRx.test(pu) && !hospitalRx.test(drop)) {
-    return "DISCHARGE";
-  }
-
-  return "OTHER";
-}
-
-function pickPoNumber(rateRow, invoiceSplit) {
-  const split = String(invoiceSplit || "").toUpperCase();
-
-  if (split === "ER") {
-    return (
-      rateRow?.er_po_number ||
-      rateRow?.ErPONumber ||
-      rateRow?.erPoNumber ||
-      rateRow?.po_number ||
-      rateRow?.PONumber ||
-      rateRow?.poNumber ||
-      ""
-    );
-  }
-
-  return (
-    rateRow?.po_number ||
-    rateRow?.PONumber ||
-    rateRow?.poNumber ||
-    ""
-  );
-}
-
-function invoiceSplitSuffix(split) {
-  const s = normalizeInvoiceSplit(split);
-
-  if (s === "ER") return "ER";
-  if (s === "ADMISSION") return "ADM";
-  if (s === "DISCHARGE") return "DIS";
-  return "OTH";
 }
 
 function assertNoInvoiceNoCollisions(grouped) {
@@ -1589,6 +1451,11 @@ const server = http.createServer((req, res) => {
 
     if (u.pathname === "/preReviewSuggestions.js") {
       const p = path.resolve(process.cwd(), "src", "review", "preReviewSuggestions.js");
+      return send(res, 200, fs.readFileSync(p, "utf8"), "application/javascript; charset=utf-8");
+    }
+
+    if (u.pathname === "/reviewOverridesClient.js") {
+      const p = path.resolve(process.cwd(), "src", "review", "reviewOverridesClient.js");
       return send(res, 200, fs.readFileSync(p, "utf8"), "application/javascript; charset=utf-8");
     }
 
