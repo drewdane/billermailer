@@ -9,6 +9,22 @@ function renderRows() {
 
   const q = (document.getElementById("search").value || "").toLowerCase().trim();
 
+  function selectedQboClass(r) {
+    return r.review?.ClassOverride || r.inferredClass || "400 Other";
+  }
+
+  const QBO_CLASS_OPTIONS = [
+    "100 Admission",
+    "200 Discharge",
+    "300 Round Trip",
+    "350 Half Round Trip",
+    "375 Private Pay One Way",
+    "380 Private Pay Round Trip",
+    "390 GMTD",
+    "400 Other",
+    "450 Cancellation",
+  ];
+
   const rows = ITEMS.filter((r) => {
     if (!q) return true;
 
@@ -124,38 +140,26 @@ function renderRows() {
     }
 
     const startMiles = moneyNum(cfg.dh_start_miles);
-    const rate1 = moneyNum(cfg.dh_rate_tier1);
-    const rate2 = moneyNum(cfg.dh_rate_tier2);
-    const rate3 = moneyNum(cfg.dh_rate_tier3);
+    if (startMiles > 0 && miles < startMiles) return 0;
 
     const tier2Start = moneyNum(cfg.dh_tier2_start_miles);
     const tier3Start = moneyNum(cfg.dh_tier3_start_miles);
 
-    if (miles <= startMiles) return 0;
+    const rate1 = moneyNum(cfg.dh_rate_tier1);
+    const rate2 = moneyNum(cfg.dh_rate_tier2);
+    const rate3 = moneyNum(cfg.dh_rate_tier3);
 
-    let total = 0;
+    let rate = 0;
 
-    // Tier 1: after free miles up to tier 2 start
-    const tier1From = startMiles;
-    const tier1To = tier2Start > 0 ? Math.min(miles, tier2Start - 1) : miles;
-    if (rate1 > 0 && tier1To > tier1From) {
-      total += (tier1To - tier1From) * rate1;
-    }
-
-    // Tier 2
-    if (tier2Start > 0 && miles >= tier2Start && rate2 > 0) {
-      const tier2To = tier3Start > 0 ? Math.min(miles, tier3Start - 1) : miles;
-      if (tier2To >= tier2Start) {
-        total += (tier2To - tier2Start + 1) * rate2;
-      }
-    }
-
-    // Tier 3
     if (tier3Start > 0 && miles >= tier3Start && rate3 > 0) {
-      total += (miles - tier3Start + 1) * rate3;
+      rate = rate3;
+    } else if (tier2Start > 0 && miles >= tier2Start && rate2 > 0) {
+      rate = rate2;
+    } else if (rate1 > 0) {
+      rate = rate1;
     }
 
-    return total;
+    return miles * rate;
   }
 
   function fuelSurchargeAmount(r) {
@@ -289,6 +293,22 @@ function renderRows() {
     if (override === "NO") return false;
     return tmCancelled;
   }
+
+  function foldedWcAccessoryAmount(r) {
+    const shape = String(r.TripShape || "").toUpperCase();
+    const isRt = shape === "ROUND_TRIP" || shape === "MULTI_STOP";
+    const src = r.availableWcAccessories || {};
+
+    if (r.review?.AddRECL) {
+      return Number(isRt ? (src.recl_rt || 0) : (src.recl_1w || 0));
+    }
+
+    if (r.review?.AddNeedWC) {
+      return Number(isRt ? (src.needwc_rt || 0) : (src.needwc_1w || 0));
+    }
+
+    return 0;
+  }
   
   function baseTripTotal(r) {
     if (isCancelled(r)) {
@@ -296,6 +316,7 @@ function renderRows() {
     }
 
     return Number(r.pricing?.base || 0)
+      + foldedWcAccessoryAmount(r)
       + Number(r.pricing?.mileage || 0);
   }
 
@@ -305,9 +326,6 @@ function renderRows() {
     const charges = r.availableCharges || {};
     const wcState = wcAccessoryState(r);
     let total = 0;
-
-    if (r.review?.AddNeedWC) total += wcState.needwcAmount;
-    if (r.review?.AddRECL) total += wcState.reclAmount;
 
     if (r.review?.AddHazmat) total += Number(charges.hazmat || 0);
     if (r.review?.AddO2) total += Number(charges.o2 || 0);
@@ -372,14 +390,17 @@ function renderRows() {
       if (!Number.isFinite(Number(r.review.DeadheadMiles))) r.review.DeadheadMiles = defaultDeadheadMiles;
       if (!r.review.CancelOverride) r.review.CancelOverride = "AUTO";
       const autoTime = automaticTimeCharge(r);
-      if (typeof r.review.AddAfterHours !== "boolean") {
-        r.review.AddAfterHours = autoTime?.code === "AFTER_HOURS";}
-      if (typeof r.review.AddThirdShift !== "boolean") {
-        r.review.AddThirdShift = autoTime?.code === "THIRD_SHIFT";}
-      if (typeof r.review.AddWeekend !== "boolean") {
-        r.review.AddWeekend = autoTime?.code === "WEEKEND";}
-      if (typeof r.review.AddHoliday !== "boolean") {
-        r.review.AddHoliday = autoTime?.code === "HOLIDAY";}
+      if (!r.review.TimeChargeManual) {
+        r.review.AddAfterHours = autoTime?.code === "AFTER_HOURS";
+        r.review.AddThirdShift = autoTime?.code === "THIRD_SHIFT";
+        r.review.AddWeekend = autoTime?.code === "WEEKEND";
+        r.review.AddHoliday = autoTime?.code === "HOLIDAY";
+      } else {
+        if (typeof r.review.AddAfterHours !== "boolean") r.review.AddAfterHours = false;
+        if (typeof r.review.AddThirdShift !== "boolean") r.review.AddThirdShift = false;
+        if (typeof r.review.AddWeekend !== "boolean") r.review.AddWeekend = false;
+        if (typeof r.review.AddHoliday !== "boolean") r.review.AddHoliday = false;
+      }
       if (typeof r.review.NoCharge !== "boolean") r.review.NoCharge = false;
       if (!r.review.TripTypeOverride) r.review.TripTypeOverride = "";
       if (!Number.isFinite(Number(r.review.MileageOverride))) {
@@ -541,22 +562,6 @@ function renderRows() {
     const cancelCtl = makeCheckMoney("Cancel", isCancelled(r), "");
     adjWrap.appendChild(cancelCtl.label);
 
-    cancelCtl.cb.onchange = () => {
-      r.review.CancelOverride = cancelCtl.cb.checked ? "YES" : "NO";
-
-      if (cancelCtl.cb.checked) {
-        r.review.ClassOverride = "450 Cancellation";
-        classSel.value = "450 Cancellation";
-      } else {
-        r.review.ClassOverride = "";
-        classSel.value = r.inferredClass || "400 Other";
-      }
-
-      refreshRowTotal();
-      refreshDetailPanel();
-      if (window.markDirty) window.markDirty();
-    };
-
     const typeWrap = document.createElement("label");
     typeWrap.style.whiteSpace = "nowrap";
     typeWrap.style.display = "inline-flex";
@@ -612,6 +617,7 @@ function renderRows() {
       "350 Half Round Trip",
       "375 Private Pay One Way",
       "380 Private Pay Round Trip",
+      "390 GMTD",
       "400 Other",
       "450 Cancellation"
     ].forEach((value) => {
@@ -621,7 +627,7 @@ function renderRows() {
       classSel.appendChild(opt);
     });
 
-    classSel.value = r.review?.ClassOverride || r.inferredClass || "400 Other";
+    classSel.value = selectedQboClass(r);
 
     classSel.onchange = () => {
       r.review.ClassOverride = classSel.value;
@@ -661,8 +667,6 @@ function renderRows() {
     const noChargeCtl = makeCheckMoney("No Charge", !!r.review.NoCharge, "");
     const mergeCtl = makeCheckMoney("Merge", !!r.review.MergeSelected, "");
 
-    adjWrap.appendChild(typeWrap);
-    adjWrap.appendChild(classWrap);
     adjWrap.appendChild(typeWrap);
     adjWrap.appendChild(classWrap);
 
@@ -915,6 +919,7 @@ function renderRows() {
     }
 
     ahCtl.cb.onchange = () => {
+      r.review.TimeChargeManual = true;
       r.review.AddAfterHours = ahCtl.cb.checked;
       if (ahCtl.cb.checked) clearOtherTimeCharges("AH");
 
@@ -924,6 +929,7 @@ function renderRows() {
     };
 
     thirdCtl.cb.onchange = () => {
+      r.review.TimeChargeManual = true;
       r.review.AddThirdShift = thirdCtl.cb.checked;
       if (thirdCtl.cb.checked) clearOtherTimeCharges("THIRD");
 
@@ -933,6 +939,7 @@ function renderRows() {
     };
 
     wkndCtl.cb.onchange = () => {
+      r.review.TimeChargeManual = true;
       r.review.AddWeekend = wkndCtl.cb.checked;
       if (wkndCtl.cb.checked) clearOtherTimeCharges("WKND");
 
@@ -942,6 +949,7 @@ function renderRows() {
     };
 
     holCtl.cb.onchange = () => {
+      r.review.TimeChargeManual = true;
       r.review.AddHoliday = holCtl.cb.checked;
       if (holCtl.cb.checked) clearOtherTimeCharges("HOL");
 
@@ -1141,13 +1149,35 @@ function renderRows() {
                 const doNameRaw = leg.DropoffName || "";
                 const doAddrRaw = leg.DropoffAddress1 || "";
 
-                const puName = esc(window.cleanLocationName ? window.cleanLocationName(puNameRaw) : puNameRaw);
-                const puAddr = esc(puAddrRaw);
+                const puNameClean = window.cleanLocationName ? window.cleanLocationName(puNameRaw) : puNameRaw;
+                const puAddrClean = puAddrRaw;
                 const puCity = esc([leg.PickupCity, leg.PickupState, leg.PickupZip].filter(Boolean).join(" "));
 
-                const doName = esc(window.cleanLocationName ? window.cleanLocationName(doNameRaw) : doNameRaw);
-                const doAddr = esc(doAddrRaw);
+                const doNameClean = window.cleanLocationName ? window.cleanLocationName(doNameRaw) : doNameRaw;
+                const doAddrClean = doAddrRaw;
                 const doCity = esc([leg.DropoffCity, leg.DropoffState, leg.DropoffZip].filter(Boolean).join(" "));
+                  if (idx === 0) {
+                  if (!r.review.PickupNameOverride) r.review.PickupNameOverride = puNameClean;
+                  if (!r.review.PickupAddress1Override) r.review.PickupAddress1Override = puAddrClean;
+                  if (!r.review.DropoffNameOverride) r.review.DropoffNameOverride = doNameClean;
+                  if (!r.review.DropoffAddress1Override) r.review.DropoffAddress1Override = doAddrClean;
+                }
+
+                const puName = esc(idx === 0
+                  ? (r.review.PickupNameOverride || puNameClean)
+                  : puNameClean);
+
+                const puAddr = esc(idx === 0
+                  ? (r.review.PickupAddress1Override || puAddrClean)
+                  : puAddrClean);
+
+                const doName = esc(idx === 0
+                  ? (r.review.DropoffNameOverride || doNameClean)
+                  : doNameClean);
+
+                const doAddr = esc(idx === 0
+                  ? (r.review.DropoffAddress1Override || doAddrClean)
+                  : doAddrClean);
                 const puKey = "pu-" + idx;
                 const doKey = "do-" + idx;
                 return (

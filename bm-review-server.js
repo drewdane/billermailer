@@ -4,6 +4,7 @@ const fs = require("fs");
 const path = require("path");
 const url = require("url");
 const { setLocationAlias , getLocationAlias } = require("./src/orgs/CTT/locationAliases");
+const { inferQboClass, isPrivatePayTrip } = require("./src/orgs/CTT/qboClass");
 
 function arg(name, fallback = null) {
   const idx = process.argv.indexOf(name);
@@ -48,6 +49,19 @@ function safeJoin(...parts) {
   return joined;
 }
 
+function scrubStaleTimeChargeOverride(o = {}) {
+  const out = { ...o };
+
+  if (!out.TimeChargeManual) {
+    delete out.AddAfterHours;
+    delete out.AddThirdShift;
+    delete out.AddWeekend;
+    delete out.AddHoliday;
+  }
+
+  return out;
+}
+
 function normalizeAddress(s) {
   return String(s || "")
     .toUpperCase()
@@ -88,6 +102,18 @@ function addressMatches(a, b) {
   return x === y || x.includes(y) || y.includes(x);
 }
 
+function matchesAnyBillingAddress(addr, r) {
+  return [
+    r.billingAddress,
+    r.billing_address,
+    r.alt_address_1,
+    r.alt_address_2,
+    r.alt_address_3,
+  ]
+    .filter(Boolean)
+    .some(a => addressMatches(addr, a));
+}
+
 function applyLocationAliasToPlace(name, address1) {
   const alias = getLocationAlias(name, address1);
 
@@ -119,66 +145,6 @@ function applyLocationAliasesToRow(row) {
   }
 
   return row;
-}
-
-function moveRowsToAccount(baseDir, fromAcct, toAcct, period, lineIds) {
-  if (!toAcct || toAcct === fromAcct || !Array.isArray(lineIds) || !lineIds.length) {
-    return;
-  }
-
-  const fromItemsPath = safeJoin(fromAcct, period, "items.json");
-  const fromOverridesPath = safeJoin(fromAcct, period, "overrides.json");
-
-  const toItemsPath = safeJoin(toAcct, period, "items.json");
-  const toOverridesPath = safeJoin(toAcct, period, "overrides.json");
-
-  const fromItems = readJson(fromItemsPath, []);
-  const toItems = readJson(toItemsPath, []);
-  const fromOverrides = readJson(fromOverridesPath, { overrides: {} });
-  const toOverrides = readJson(toOverridesPath, { overrides: {} });
-
-  const moveSet = new Set(lineIds.map(String));
-
-  const moving = [];
-  const staying = [];
-
-  for (const row of fromItems) {
-    if (moveSet.has(String(row.LineId || ""))) {
-      moving.push({
-        ...row,
-        AccountCode: toAcct,
-        AccountName: toAcct,
-      });
-    } else {
-      staying.push(row);
-    }
-  }
-
-  if (!moving.length) return;
-
-  const existingToIds = new Set(toItems.map((r) => String(r.LineId || "")));
-  const mergedToItems = [
-    ...toItems.filter((r) => !moveSet.has(String(r.LineId || ""))),
-    ...moving.filter((r) => !existingToIds.has(String(r.LineId || ""))),
-  ];
-
-  for (const id of moveSet) {
-    const o = fromOverrides.overrides?.[id];
-    if (!o) continue;
-
-    if (!toOverrides.overrides) toOverrides.overrides = {};
-    toOverrides.overrides[id] = {
-      ...o,
-      MoveToAccountCode: "",
-    };
-
-    delete fromOverrides.overrides[id];
-  }
-
-  writeJson(fromItemsPath, staying);
-  writeJson(toItemsPath, mergedToItems);
-  writeJson(fromOverridesPath, fromOverrides);
-  writeJson(toOverridesPath, toOverrides);
 }
 
 const HTML = `<!doctype html>
@@ -1017,24 +983,6 @@ function addressMatches(a, b) {
   return x.includes(y) || y.includes(x);
 }
 
-function isPrivatePayTrip(r) {
-  const billingClass = String(r.BillingClass || "").trim().toUpperCase();
-  const accountCode = String(r.AccountCode || "").trim().toLowerCase();
-  const accountName = String(r.AccountName || "").trim().toLowerCase();
-  const customer = String(r.customer || "").trim().toLowerCase();
-
-  return (
-    billingClass === "PRIVATE_PAY" ||
-    billingClass === "PRIVATE PAY" ||
-    accountCode.includes("private pay") ||
-    accountName.includes("private pay") ||
-    accountCode === "ctt comp" ||
-    accountName === "ctt comp" ||
-    customer.includes("private pay") ||
-    customer === "ctt comp"
-  );
-}
-
 function riderInitials(r) {
   const first = String(r.FirstName || "").trim();
   const last = String(r.LastName || "").trim();
@@ -1043,57 +991,6 @@ function riderInitials(r) {
     (first[0] || "X") +
     (last[0] || "X")
   ).toUpperCase();
-}
-
-function inferQboClass(r) {
-  const shape = String(r.TripShape || "").toUpperCase();
-  const billingClass = String(r.BillingClass || "").toUpperCase();
-  const accountCode = String(r.AccountCode || "").toLowerCase();
-
-  const rawStatus = String(r.RideStatus || "").trim().toLowerCase();
-  const cancelOverride = String(r.review?.CancelOverride || "AUTO").toUpperCase();
-
-  const isCancelled =
-    cancelOverride === "YES" ? true :
-    cancelOverride === "NO" ? false :
-    rawStatus === "noshow" || rawStatus === "ridercancel";
-
-  if (
-    r.HalfRoundTripCandidate ||
-    r.InferredClassHint === "350 Half Round Trip"
-  ) {
-    return "350 Half Round Trip";
-  }
-
-  if (isCancelled) return "450 Cancellation";
-
-  const isPrivatePay = isPrivatePayTrip(r);
-
-  if (
-    isPrivatePay &&
-    (shape === "ROUND_TRIP" || shape === "MULTI_STOP")
-  ) {
-    return "380 Private Pay Round Trip";
-  }
-
-  if (isPrivatePay) return "375 Private Pay One Way";
-
-  if (shape === "ROUND_TRIP") return "300 Round Trip";
-  if (shape === "MULTI_STOP") return "300 Round Trip";
-
-  const billingAddress = r.billingAddress || r.billing_address || "";
-  const puAddr = r.PickupAddress1 || "";
-  const doAddr = r.DropoffAddress1 || "";
-
-  if (addressMatches(doAddr, billingAddress)) {
-    return "100 Admission";
-  }
-
-  if (addressMatches(puAddr, billingAddress)) {
-    return "200 Discharge";
-  }
-
-  return "400 Other";
 }
 
 function inferThrSplit(r) {
@@ -1315,7 +1212,8 @@ function buildGroupedInvoicesForSet(baseDir, acct, period, invoiceType) {
   const manualMergeGroups = {};
 
   for (const r of rows) {
-    const o = overrides.overrides?.[r.LineId] || {};
+    const rawOverride = overrides.overrides?.[r.LineId] || {};
+    const o = scrubStaleTimeChargeOverride(rawOverride);
     const review = { ...(r.review || {}), ...o };
 
     if (review.MergeGroupId) {
@@ -1487,7 +1385,7 @@ function buildGroupedInvoicesForSet(baseDir, acct, period, invoiceType) {
 
       const className =
         review.ClassOverride ||
-        inferQboClass(repricedRow);
+        inferQboClass(repricedRow, { matchesAnyBillingAddress })
 
       const exportCustomer = exportCustomerName(
         repricedRow,
@@ -1511,20 +1409,50 @@ function buildGroupedInvoicesForSet(baseDir, acct, period, invoiceType) {
 
   for (const [groupId, members] of Object.entries(manualMergeGroups)) {
 
-    const first = members[0];
+    const sortedMembers = members.slice().sort((a, b) => {
+      const da = String(a.row.RideDateISO || a.row.RideDate || "");
+      const db = String(b.row.RideDateISO || b.row.RideDate || "");
+      const ta = String(a.row.ScheduledPickupTime || "");
+      const tb = String(b.row.ScheduledPickupTime || "");
+      return (da + " " + ta).localeCompare(db + " " + tb);
+    });
+
+    const first = sortedMembers[0];
     const firstRow = first.row;
-    const firstReview = first.review;
+    const firstReview = {
+      ...first.review,
+      ClassOverride: "",
+    };
 
     const mergedMileage = members.reduce((sum, m) => {
       return sum + Number(m.row.DirectMileage || 0);
     }, 0);
 
+    const mergedLegs = members
+      .map((m) => m.row)
+      .sort((a, b) => {
+        const da = String(a.RideDateISO || a.RideDate || "");
+        const db = String(b.RideDateISO || b.RideDate || "");
+        const ta = String(a.ScheduledPickupTime || "");
+        const tb = String(b.ScheduledPickupTime || "");
+        return (da + " " + ta).localeCompare(db + " " + tb);
+      });
+
+    const routeReview = {
+      ...firstReview,
+      PickupNameOverride: "",
+      PickupAddress1Override: "",
+      DropoffNameOverride: "",
+      DropoffAddress1Override: "",
+    };
+
     const mergedRow = {
-      ...firstRow,
+      ...mergedLegs[0],
       TripShape: "MULTI_STOP",
+      LegCount: mergedLegs.length,
       DirectMileage: mergedMileage,
-      review: firstReview,
-      legs: members.map((m) => m.row),
+      review: routeReview,
+      legs: mergedLegs,
     };
 
     const effectiveAccountCode =
@@ -1533,7 +1461,7 @@ function buildGroupedInvoicesForSet(baseDir, acct, period, invoiceType) {
 
     const pricingInput = {
       ...mergedRow,
-      review: firstReview,
+      review: routeReview,
       AccountCode: effectiveAccountCode,
       AccountName: effectiveAccountCode,
     };
@@ -1564,9 +1492,7 @@ function buildGroupedInvoicesForSet(baseDir, acct, period, invoiceType) {
         : []
     };
 
-    const className =
-      firstReview.ClassOverride ||
-      inferQboClass(repricedRow);
+    const className = "300 Round Trip";
 
     const exportCustomer = exportCustomerName(
       repricedRow,
@@ -1651,6 +1577,7 @@ function buildGroupedInvoicesForSet(baseDir, acct, period, invoiceType) {
   return grouped;
 }
 
+///One function from here to eternity...
 const server = http.createServer((req, res) => {
   try {
     const u = url.parse(req.url, true);
@@ -1855,6 +1782,10 @@ const server = http.createServer((req, res) => {
         rateRow?.billing_address ||
         rateRow?.BillingAddress ||
         "";
+        row.billing_address = row.billingAddress;
+        row.alt_address_1 = rateRow?.alt_address_1 || "";
+        row.alt_address_2 = rateRow?.alt_address_2 || "";
+        row.alt_address_3 = rateRow?.alt_address_3 || "";
         const billingAddr = normalizeAddress(row.billingAddress);
 
         const pickupAddr = normalizeAddress(
@@ -1871,10 +1802,16 @@ const server = http.createServer((req, res) => {
 
         row.addressMismatch =
           !!row.billingAddress &&
-          !addressMatches(row.billingAddress, row.PickupAddress1 || row.PickupAddress || "") &&
-          !addressMatches(row.billingAddress, row.DropoffAddress1 || row.DropoffAddress || "");
+          !matchesAnyBillingAddress(
+            row.PickupAddress1 || row.PickupAddress || "",
+            row
+          ) &&
+          !matchesAnyBillingAddress(
+            row.DropoffAddress1 || row.DropoffAddress || "",
+            row
+          );
 
-        row.inferredClass = inferQboClass(row);
+        row.inferredClass = inferQboClass(row, { matchesAnyBillingAddress });
         row.poNumber = pickPoNumber(rateRow, row.invoiceSplit);
       }
 
@@ -1927,7 +1864,14 @@ const server = http.createServer((req, res) => {
         }
 
         for (const [toAcct, lineIds] of Object.entries(movesByAccount)) {
-          moveRowsToAccount(baseDir, acct, toAcct, period, lineIds);
+          moveRowsToAccount({
+            baseDir,
+            fromAcct: acct,
+            toAcct,
+            period,
+            lineIds,
+            safeJoin,
+          });
         }
 
         send(res, 200, JSON.stringify({ ok: true }), "application/json");
