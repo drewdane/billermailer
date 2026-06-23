@@ -1,5 +1,3 @@
-const { progressiveDeadheadChargeFromMiles } = require("./utils/progressiveDeadhead");
-
 function money(v) {
   const cleaned = String(v ?? "")
     .replace(/\$/g, "")
@@ -82,28 +80,44 @@ function computeLegacyDeadheadCharge(groupedTrip, rateRow) {
   }
 
 
-  const charge = progressiveDeadheadChargeFromMiles(dhMiles, {
-    dh_start_miles: rateRow["dh_start_miles"],
-    dh_rate_tier1: rateRow["dh_rate_tier1"],
-    dh_rate_tier2: rateRow["dh_rate_tier2"],
-    dh_rate_tier3: rateRow["dh_rate_tier3"],
-    dh_tier2_start_miles: rateRow["dh_tier2_start_miles"],
-    dh_tier3_start_miles: rateRow["dh_tier3_start_miles"],
-  });
-  
+  const tier2Start = money(rateRow["dh_tier2_start_miles"]);
+  const tier3Start = money(rateRow["dh_tier3_start_miles"]);
+
+  const rate1 = money(rateRow["dh_rate_tier1"]);
+  const rate2 = money(rateRow["dh_rate_tier2"]);
+  const rate3 = money(rateRow["dh_rate_tier3"]);
+
+  let rate = 0;
+  let tier = "";
+
+  if (tier3Start > 0 && dhMiles >= tier3Start && rate3 > 0) {
+    rate = rate3;
+    tier = "TIER_3";
+  } else if (tier2Start > 0 && dhMiles >= tier2Start && rate2 > 0) {
+    rate = rate2;
+    tier = "TIER_2";
+  } else if (rate1 > 0) {
+    rate = rate1;
+    tier = "TIER_1";
+  }
+
+  const charge = dhMiles * rate;
+
   return {
     deadheadMiles: dhMiles,
     deadheadCharge: charge,
-    reason: charge > 0 ? "PROGRESSIVE_TIERED_RATE" : "NO_DH_RATE",
+    reason: charge > 0 ? "HIGHEST_QUALIFYING_TIER_FULL_MILES" : "NO_DH_RATE",
     debug: {
       dhMiles,
       dh_start_miles: startMiles,
-      dh_rate_tier1: money(rateRow["dh_rate_tier1"]),
-      dh_rate_tier2: money(rateRow["dh_rate_tier2"]),
-      dh_rate_tier3: money(rateRow["dh_rate_tier3"]),
-      dh_tier2_start_miles: money(rateRow["dh_tier2_start_miles"]),
-      dh_tier3_start_miles: money(rateRow["dh_tier3_start_miles"]),
-      progressive: true,
+      dh_rate_tier1: rate1,
+      dh_rate_tier2: rate2,
+      dh_rate_tier3: rate3,
+      dh_tier2_start_miles: tier2Start,
+      dh_tier3_start_miles: tier3Start,
+      selectedTier: tier,
+      selectedRate: rate,
+      progressive: false,
     },
   };
 }

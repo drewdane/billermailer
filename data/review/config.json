@@ -6,8 +6,8 @@
   "fuelSurchargeEnabled": true,
   "fuelSurchargeWindows": [
     {
-      "start": "2026-04-27",
-      "end": "2026-05-11"
+      "start": "2026-06-09",
+      "end": "2026-06-11"
     }
   ]
 }

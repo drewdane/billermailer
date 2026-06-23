@@ -35,10 +35,6 @@
     "name": "Texas Digestive Disease Consultants",
     "address1": "6317 Harris Parkway"
   },
-  "discovery village southlake skilled nursing 4th floor|201 watermere drive": {
-    "name": "Discovery Village Southlake Skilled Nursing",
-    "address1": "101 Watermere Drive"
-  },
   "3rd floor- stayton skilled living|2501 museum way": {
     "name": "Stayton Skilled Living",
     "address1": "2501 Museum Way"
@@ -163,10 +159,6 @@
     "name": "Discovery Village Southlake Skilled Nursing",
     "address1": "101 Watermere Drive"
   },
-  "discovery village at southlake-3rd floor independent|201 watermere drive": {
-    "name": "Discovery Village At Southlake- Independent",
-    "address1": "101 Watermere Drive"
-  },
   "encompass health rehabilitation hospital of abilene|6401 directors pkwy": {
     "name": "Encompass Health Rehabilitation Abilene",
     "address1": "6401 Directors Pkwy"
@@ -210,5 +202,77 @@
   "ben hogan bldg olaide ajayi, md|800 5th avenue": {
     "name": "Ben Hogan Center",
     "address1": "800 5th Avenue"
+  },
+  "residence|5401 regal drive": {
+    "name": "Broadway Cityview",
+    "address1": "5401 Regal Drive"
+  },
+  "harris southwest|6100 harris parkway": {
+    "name": "Harris Southwest",
+    "address1": "6100 Harris Parkway"
+  },
+  "encompass health rehabilitation hospital of city view|6701 oakmont boulevard": {
+    "name": "Encompass Health Rehabilitation Hospital of City View",
+    "address1": "6701 Oakmont Boulevard"
+  },
+  "encompass health rehabilitation hospital of waco|3600 south loop 340": {
+    "name": "Encompass Health Waco",
+    "address1": "3600 S Loop 340"
+  },
+  "professional building a|515 west mayfield road": {
+    "name": "Professional Building A",
+    "address1": "515 West Mayfield Road"
+  },
+  "stayton skilled living|2501 museum way": {
+    "name": "Stayton Skilled Living",
+    "address1": "2501 Museum Way"
+  },
+  "allegiant wellness and rehab|724 west rendon crowley road": {
+    "name": "Allegiant Wellness and Rehab",
+    "address1": "724 W Rendon Crowley Road"
+  },
+  "bristol park at eagle mountain assisted living & memory care|3141 dalhart drive": {
+    "name": "Bristol Park at Eagle Mountain",
+    "address1": "3141 Dalhart Drive"
+  },
+  "baylor scott & white surgical hospital - fort worth|1800 park place avenue": {
+    "name": "Baylor Scott & White Surgical Hospital",
+    "address1": "1800 Park Place Avenue"
+  },
+  "thomas heil, md - pain management physician | ppoa|4364 heritage trace parkway": {
+    "name": "Texas Pain Relief Group",
+    "address1": "4364 Heritage Trace Parkway"
+  },
+  "professional bldg. 2/ urology partners of north texas|1604 hospital parkway": {
+    "name": "Urology Partners of North Texas",
+    "address1": "1604 Hospital Parkway"
+  },
+  "north hills professional bldg- must have a rider for this office!!|4375 booth calloway road": {
+    "name": "North Hills Professional Bldg",
+    "address1": "4375 Booth Calloway Road"
+  },
+  "texas orthopedic surgeon|815 ira e. woods avenue": {
+    "name": "Texas Institute of Orthopedic Surgery",
+    "address1": "815 Ira E. Woods Avenue"
+  },
+  "professional bldg.|1250 8th avenue": {
+    "name": "Professional Bldg",
+    "address1": "1250 8th Avenue"
+  },
+  "lone star orthopaedic and spine specialists in burleson|215 old highway 1187": {
+    "name": "Lone Star Orthopedic",
+    "address1": "215 Old Highway 1187"
+  },
+  "advanced heart failure and transplant cardiology dr. salman gohar, md|1420 8th avenue": {
+    "name": "Dr. Salman Gohar, MD",
+    "address1": "1420 8th Avenue"
+  },
+  "sw endoscopy pick up around parking garage pick up|6317 harris parkway": {
+    "name": "SW Endoscopy",
+    "address1": "6317 Harris Parkway"
+  },
+  "southwest fort worth endoscopy center pick up|6317 harris parkway": {
+    "name": "Southwest Fort Worth Endoscopy Center",
+    "address1": "6317 Harris Parkway"
   }
 }

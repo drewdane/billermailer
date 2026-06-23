@@ -147,36 +147,25 @@ function isZeroTimeValue(v) {
 }
 
 function sortTimeValue(leg) {
-  // Best available real-world ordering:
-  // 1) Actual pickup
-  const actualPickup =
-    localDateTimeValue(leg, leg.ActualPickupTime) ??
-    parseDateTimeMaybe(leg.ActualPickupTime)?.getTime();
-  if (actualPickup != null) return actualPickup;
+  const candidates = [
+    leg.ScheduledPickupTime,
+    leg.ActualPickupTime,
+    leg.PickupArrivalTime,
+    leg.ActualDropoffTime,
+    leg.DropoffArrivalTime,
+    leg.ScheduledDropoffTime,
+  ];
 
-  // 2) Dropoff arrival
-  const dropoffArrival =
-    localDateTimeValue(leg, leg.DropoffArrivalTime) ??
-    parseDateTimeMaybe(leg.DropoffArrivalTime)?.getTime();
-  if (dropoffArrival != null) return dropoffArrival;
+  for (const t of candidates) {
+    if (isZeroTimeValue(t)) continue;
 
-  // 3) Scheduled pickup, but ignore midnight placeholders for will-calls
-  if (!isZeroTimeValue(leg.ScheduledPickupTime)) {
-    const scheduledPickup =
-      localDateTimeValue(leg, leg.ScheduledPickupTime) ??
-      parseDateTimeMaybe(leg.ScheduledPickupTime)?.getTime();
-    if (scheduledPickup != null) return scheduledPickup;
+    const value =
+      localDateTimeValue(leg, t) ??
+      parseDateTimeMaybe(t)?.getTime();
+
+    if (value != null) return value;
   }
 
-  // 4) Scheduled dropoff if usable
-  if (!isZeroTimeValue(leg.ScheduledDropoffTime)) {
-    const scheduledDropoff =
-      localDateTimeValue(leg, leg.ScheduledDropoffTime) ??
-      parseDateTimeMaybe(leg.ScheduledDropoffTime)?.getTime();
-    if (scheduledDropoff != null) return scheduledDropoff;
-  }
-
-  // 5) Last resort only
   const c = confNum(leg);
   if (c != null) return c;
 
@@ -495,7 +484,8 @@ function groupTrips(rawLegs, options = {}) {
     const unusedIndexes = new Set(bucketLegs.map((_, i) => i));
 
     while (unusedIndexes.size > 0) {
-      const startIdx = findLikelyStartIndex(bucketLegs, unusedIndexes);
+      const startIdx = Array.from(unusedIndexes)
+        .sort((a, b) => sortTimeValue(bucketLegs[a]) - sortTimeValue(bucketLegs[b]))[0];
       const seed = bucketLegs[startIdx];
 
       // Non-rode stays single-leg

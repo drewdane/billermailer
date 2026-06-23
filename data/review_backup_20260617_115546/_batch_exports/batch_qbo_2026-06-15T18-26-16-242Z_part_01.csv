@@ -1,0 +1,3 @@
+"Customer","InvoiceNo","InvoiceDate","DueDate","ServiceDate","Product/Service","Description","Qty","Rate","Amount","Class"
+"Allegiant Wellness and Rehab","052626001","5/26/2026","5/26/2026","5/20/2026","Cancellation Fee","Jackson, Edna (DOB: 4/7/1943) - TRIP DATE: 5/20/26 - FROM: Harris Richardson Tower 1301 Pennsylvania Avenue TO Allegiant Wellness and Rehab 724 West Rendon Crowley Road - Cancellation Fee","1.00","25.50","25.50","100 Admission"
+"Allegiant Wellness and Rehab","052626001","5/26/2026","5/26/2026","5/21/2026","Cancellation Fee","Sanders, John (DOB: 7/18/1942) - TRIP DATE: 5/21/26 - FROM: Harris Justin Tower 1301 Pennsylvania Ave TO Allegiant Wellness and Rehab 724 West Rendon Crowley Road - Cancellation Fee","1.00","25.50","25.50","450 Cancellation"

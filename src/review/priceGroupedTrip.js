@@ -67,6 +67,8 @@ function priceGroupedTrip(groupedTrip, rateRow, opts = {}) {
     };
   }
 
+  const timeCharge = computeTimeBasedCharge(groupedTrip, rateRow);
+
   const specialPrice = applySpecialPricingRules(groupedTrip, rateRow, tripType, opts);
   if (specialPrice) {
     const accessoryLines = [];
@@ -104,6 +106,16 @@ function priceGroupedTrip(groupedTrip, rateRow, opts = {}) {
       }
     }
 
+    if (timeCharge.amount > 0) {
+      accessoryLines.push({
+        code: timeCharge.kind,
+        label: timeCharge.kind.replace(/_/g, " "),
+        amount: num(timeCharge.amount),
+      });
+
+      accessoryTotal += num(timeCharge.amount);
+    }
+
     specialPrice.status = groupedTrip.RideStatus;
     specialPrice.flags = [...(specialPrice.flags || []), ...flags];
     specialPrice.accessories = [...(specialPrice.accessories || []), ...accessoryLines];
@@ -118,8 +130,6 @@ function priceGroupedTrip(groupedTrip, rateRow, opts = {}) {
     };
     return specialPrice;
   }
-
-  const timeCharge = computeTimeBasedCharge(groupedTrip, rateRow);
 
   const includedMiles = num(rateRow.included_miles);
   const billableMiles = Math.max(0, milesRounded - includedMiles);

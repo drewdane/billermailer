@@ -610,17 +610,7 @@ function renderRows() {
     classSel.style.borderRadius = "6px";
     classSel.style.padding = "2px 4px";
 
-    [
-      "100 Admission",
-      "200 Discharge",
-      "300 Round Trip",
-      "350 Half Round Trip",
-      "375 Private Pay One Way",
-      "380 Private Pay Round Trip",
-      "390 GMTD",
-      "400 Other",
-      "450 Cancellation"
-    ].forEach((value) => {
+    QBO_CLASS_OPTIONS.forEach((value) => {
       const opt = document.createElement("option");
       opt.value = value;
       opt.textContent = value;

@@ -155,6 +155,13 @@ function computeTimeBasedCharge(groupedTrip, rateRow = {}) {
   for (const leg of legs) {
     const rideDate = parseRideDate(leg.RideDate || groupedTrip.RideDate);
     const pickupMinutes = parseTimeToMinutes(leg.ScheduledPickupTime);
+    const dropoffMinutes = parseTimeToMinutes(
+      leg.ActualDropoffTime && leg.ActualDropoffTime !== "00:00"
+        ? leg.ActualDropoffTime
+        : leg.DropoffArrivalTime && leg.DropoffArrivalTime !== "00:00"
+          ? leg.DropoffArrivalTime
+          : leg.ScheduledDropoffTime
+    );
     const day = rideDate ? rideDate.getDay() : null;
 
     const isSat = day === 6;
@@ -173,7 +180,10 @@ function computeTimeBasedCharge(groupedTrip, rateRow = {}) {
         String(rateRow.holiday_end || "").trim();
 
       const holidayHit = hasHolidayWindow
-        ? isWindowHit(pickupMinutes, rateRow.holiday_start, rateRow.holiday_end)
+        ? (
+            isWindowHit(pickupMinutes, rateRow.holiday_start, rateRow.holiday_end) ||
+            isWindowHit(dropoffMinutes, rateRow.holiday_start, rateRow.holiday_end)
+          )
         : true;
 
       if (holidayHit) {
@@ -198,7 +208,10 @@ function computeTimeBasedCharge(groupedTrip, rateRow = {}) {
         num(rateRow[`${prefix}_third_shift_rate`]) || weekdayThirdShiftRate;
 
       if (
-        isWindowHit(pickupMinutes, weekendThirdShiftStart, weekendThirdShiftEnd) &&
+        (
+          isWindowHit(pickupMinutes, weekendThirdShiftStart, weekendThirdShiftEnd) ||
+          isWindowHit(dropoffMinutes, weekendThirdShiftStart, weekendThirdShiftEnd)
+        ) &&
         weekendThirdShiftRate > 0
       ) {
         addCandidate(candidates, "THIRD_SHIFT", weekendThirdShiftRate, `${prefix}_third_shift_rate`, {
@@ -211,7 +224,10 @@ function computeTimeBasedCharge(groupedTrip, rateRow = {}) {
       }
 
       if (
-        isWindowHit(pickupMinutes, weekendAfterHoursStart, weekendAfterHoursEnd) &&
+        (
+          isWindowHit(pickupMinutes, weekendAfterHoursStart, weekendAfterHoursEnd) ||
+          isWindowHit(dropoffMinutes, weekendAfterHoursStart, weekendAfterHoursEnd)
+        ) &&
         weekendAfterHoursRate > 0
       ) {
         addCandidate(candidates, "AFTER_HOURS", weekendAfterHoursRate, `${prefix}_after_hours_rate`, {
@@ -235,7 +251,10 @@ function computeTimeBasedCharge(groupedTrip, rateRow = {}) {
 
     if (!isWeekend) {
       if (
-        isWindowHit(pickupMinutes, rateRow.third_shift_start, rateRow.third_shift_end) &&
+        (
+          isWindowHit(pickupMinutes, rateRow.third_shift_start, rateRow.third_shift_end) ||
+          isWindowHit(dropoffMinutes, rateRow.third_shift_start, rateRow.third_shift_end)
+        ) &&
         weekdayThirdShiftRate > 0
       ) {
         addCandidate(candidates, "THIRD_SHIFT", weekdayThirdShiftRate, "third_shift_rate", {
@@ -247,7 +266,10 @@ function computeTimeBasedCharge(groupedTrip, rateRow = {}) {
       }
 
       if (
-        isWindowHit(pickupMinutes, rateRow.after_hours_start, rateRow.after_hours_end) &&
+        (
+          isWindowHit(pickupMinutes, rateRow.after_hours_start, rateRow.after_hours_end) ||
+          isWindowHit(dropoffMinutes, rateRow.after_hours_start, rateRow.after_hours_end)
+        ) &&
         weekdayAfterHoursRate > 0
       ) {
         addCandidate(candidates, "AFTER_HOURS", weekdayAfterHoursRate, "after_hours_rate", {
@@ -261,7 +283,6 @@ function computeTimeBasedCharge(groupedTrip, rateRow = {}) {
   }
 
   const winner = pickHighestCandidate(candidates);
-
   if (winner) {
     return {
       ...winner,

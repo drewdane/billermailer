@@ -1,4 +1,3 @@
-const { progressiveDeadheadChargeFromMiles } = require("../orgs/CTT/pricing/utils/progressiveDeadhead");
 const { cleanLocationName } = require("./cleanLocationName");
 
 function money(n) {
@@ -148,16 +147,64 @@ function locationLabel(name, address1) {
 }
 
 function invoiceRouteLabel(r) {
-  const puName = cleanLocationName(r.review?.PickupNameOverride || r.PickupName || "");
-  const puAddr = String(r.review?.PickupAddress1Override || r.PickupAddress1 || "").trim();
+  function legSortTime(leg) {
+    const src =
+      Array.isArray(leg.legs) && leg.legs.length
+        ? leg.legs[0]
+        : leg;
 
-  const doName = cleanLocationName(r.review?.DropoffNameOverride || r.DropoffName || "");
-  const doAddr = String(r.review?.DropoffAddress1Override || r.DropoffAddress1 || "").trim();
+    return [
+      String(src.RideDateISO || src.RideDate || ""),
+      String(
+        src.ActualPickupTime ||
+        src.PickupArrivalTime ||
+        src.ScheduledPickupTime ||
+        src.PickupTime ||
+        ""
+      )
+    ].join(" ");
+  }
+
+  const sortedLegs = Array.isArray(r.legs)
+    ? r.legs.slice().sort((a, b) =>
+        legSortTime(a).localeCompare(legSortTime(b))
+      )
+    : [];
+
+const firstLeg = sortedLegs.length ? sortedLegs[0] : null;
+const lastLeg = sortedLegs.length ? sortedLegs[sortedLegs.length - 1] : null;
+
+  const shape = String(r.TripShape || "").toUpperCase();
+
+  const useLegRoute =
+    (shape === "ROUND_TRIP" || shape === "MULTI_STOP") &&
+    firstLeg &&
+    lastLeg;
+
+  const puSource = useLegRoute ? firstLeg : r;
+
+  const doSource =
+    shape === "ROUND_TRIP" && firstLeg
+      ? firstLeg
+      : useLegRoute
+        ? lastLeg
+        : r;
+
+  const puName = cleanLocationName(
+    r.review?.PickupNameOverride || puSource.PickupName || ""
+  );
+  const puAddr = String(
+    r.review?.PickupAddress1Override || puSource.PickupAddress1 || ""
+  ).trim();
+
+  const doName = cleanLocationName(
+    r.review?.DropoffNameOverride || doSource.DropoffName || ""
+  );
+  const doAddr = String(
+    r.review?.DropoffAddress1Override || doSource.DropoffAddress1 || ""
+  ).trim();
 
   const includeTimes = !!r.invoiceIncludeActualTimes;
-
-  const firstLeg = Array.isArray(r.legs) && r.legs.length ? r.legs[0] : null;
-  const lastLeg = Array.isArray(r.legs) && r.legs.length ? r.legs[r.legs.length - 1] : null;
 
   const puTime = cleanTime(
     r.review?.ActualPickupTimeOverride ||
@@ -196,6 +243,22 @@ function invoiceRouteLabel(r) {
   return "";
 }
 
+function foldedWcAccessoryAmount(r) {
+  const shape = String(r.TripShape || "").toUpperCase();
+  const isRt = shape === "ROUND_TRIP" || shape === "MULTI_STOP";
+  const src = r.availableWcAccessories || {};
+
+  if (r.review?.AddRECL) {
+    return Number(isRt ? (src.recl_rt || 0) : (src.recl_1w || 0));
+  }
+
+  if (r.review?.AddNeedWC) {
+    return Number(isRt ? (src.needwc_rt || 0) : (src.needwc_1w || 0));
+  }
+
+  return 0;
+}
+
 function tripChargeLabel(r) {
   const shape = String(r.TripShape || "").toUpperCase();
   const mobility = String(r.Mobility || "").toUpperCase();
@@ -205,102 +268,27 @@ function tripChargeLabel(r) {
   
   if (mobility === "STR") {return "Trip Charge - 1-Way with Stretcher";}
   if (r.review?.AddRECL) {return "Trip Charge - 1-Way with Recliner";}
-  if (r.review?.AddNeedWC || mobility === "WC") {return "Trip Charge - 1-Way with Wheelchair";}
+
+  if (r.review?.AddNeedWC) {
+    return "Trip Charge - 1-Way with Wheelchair";}
   return "Trip Charge - 1-Way";
 }
 
 function tripRouteLabel(r) {
-  const legs = Array.isArray(r.legs) ? r.legs : [];
-  const shape = String(r.TripShape || "").toUpperCase();
-
-  if (legs.length && shape === "ROUND_TRIP") {
-    const first = legs[0];
-
-    const pu =
-      cleanLocationName(first.PickupName || "") ||
-      String(first.PickupAddress1 || "").trim();
-
-    const doff =
-      cleanLocationName(first.DropoffName || "") ||
-      String(first.DropoffAddress1 || "").trim();
-
-    if (pu && doff) return `${pu} to ${doff} and return`;
-    return pu || doff || "";
-  }
-
-  if (legs.length && shape === "MULTI_STOP") {
-    return legs
-      .map((leg, idx) => {
-        const pu =
-          cleanLocationName(leg.PickupName || "") ||
-          String(leg.PickupAddress1 || "").trim();
-
-        const doff =
-          cleanLocationName(leg.DropoffName || "") ||
-          String(leg.DropoffAddress1 || "").trim();
-
-        if (!pu && !doff) return "";
-        return idx === 0 ? `${pu} to ${doff}` : `then ${doff}`;
-      })
-      .filter(Boolean)
-      .join(" ");
-  }
-
   const pu =
-    cleanLocationName(r.PickupName || "") ||
-    String(r.PickupAddress1 || "").trim();
+    cleanLocationName(r.review?.PickupNameOverride || r.PickupName || "") ||
+    String(r.review?.PickupAddress1Override || r.PickupAddress1 || "").trim();
 
   const doff =
-    cleanLocationName(r.DropoffName || "") ||
-    String(r.DropoffAddress1 || "").trim();
+    cleanLocationName(r.review?.DropoffNameOverride || r.DropoffName || "") ||
+    String(r.review?.DropoffAddress1Override || r.DropoffAddress1 || "").trim();
 
   if (pu && doff) return `${pu} to ${doff}`;
   return pu || doff || "";
 }
 
 function msComponentRouteText(r, componentIndex, componentKind) {
-  const legs = Array.isArray(r.legs) ? r.legs : [];
-  const legStart = componentIndex * 2;
-
-  if (componentKind === "RT") {
-    const first = legs[legStart];
-    const second = legs[legStart + 1];
-
-    if (!first || !second) return invoiceRouteLabel(r);
-
-    const from = locationLabel(
-      cleanLocationName(first.PickupName || ""),
-      first.PickupAddress1 || ""
-    );
-
-    const to1 = locationLabel(
-      cleanLocationName(first.DropoffName || ""),
-      first.DropoffAddress1 || ""
-    );
-
-    const to2 = locationLabel(
-      cleanLocationName(second.DropoffName || ""),
-      second.DropoffAddress1 || ""
-    );
-
-    return ` - FROM: ${from} TO ${to1}, THEN ${to2}`;
-  }
-
-  const leg = legs[legStart];
-
-  if (!leg) return invoiceRouteLabel(r);
-
-  const from = locationLabel(
-    cleanLocationName(leg.PickupName || ""),
-    leg.PickupAddress1 || ""
-  );
-
-  const to = locationLabel(
-    cleanLocationName(leg.DropoffName || ""),
-    leg.DropoffAddress1 || ""
-  );
-
-  return ` - FROM: ${from} TO ${to}`;
+  return invoiceRouteLabel(r);
 }
 
 function automaticTimeCharge(r) {
@@ -353,6 +341,11 @@ function selectedTimeCharge(r) {
     return { code: "AFTER_HOURS", amount: timeChargeAmountForCode(r, "AFTER_HOURS") };
   }
 
+  if (!review.TimeChargeManual) {
+    const auto = automaticTimeCharge(r);
+    if (auto?.code) return auto;
+  }
+
   return null;
 }
 
@@ -397,7 +390,27 @@ function computeDeadheadChargeFromReview(r) {
     return money(flatFee);
   }
 
-  return money(progressiveDeadheadChargeFromMiles(miles, cfg));
+  const startMiles = Number(String(cfg.dh_start_miles || "").replace(/\$/g, "").replace(/,/g, "").trim() || 0);
+  if (startMiles > 0 && miles < startMiles) return 0;
+
+  const tier2Start = Number(String(cfg.dh_tier2_start_miles || "").replace(/\$/g, "").replace(/,/g, "").trim() || 0);
+  const tier3Start = Number(String(cfg.dh_tier3_start_miles || "").replace(/\$/g, "").replace(/,/g, "").trim() || 0);
+
+  const rate1 = Number(String(cfg.dh_rate_tier1 || "").replace(/\$/g, "").replace(/,/g, "").trim() || 0);
+  const rate2 = Number(String(cfg.dh_rate_tier2 || "").replace(/\$/g, "").replace(/,/g, "").trim() || 0);
+  const rate3 = Number(String(cfg.dh_rate_tier3 || "").replace(/\$/g, "").replace(/,/g, "").trim() || 0);
+
+  let rate = 0;
+
+  if (tier3Start > 0 && miles >= tier3Start && rate3 > 0) {
+    rate = rate3;
+  } else if (tier2Start > 0 && miles >= tier2Start && rate2 > 0) {
+    rate = rate2;
+  } else if (rate1 > 0) {
+    rate = rate1;
+  }
+
+  return money(miles * rate);
 }
 
 function fuelSurchargeAmount(r, globals = {}) {
@@ -582,7 +595,7 @@ function buildBillableLines(r, globals = {}) {
           ? " with Stretcher"
           : r.review?.AddRECL
             ? " with Recliner"
-            : String(r.Mobility || "").toUpperCase() === "WC"
+            : r.review?.AddNeedWC
               ? " with Wheelchair"
               : "";
 
@@ -603,7 +616,7 @@ function buildBillableLines(r, globals = {}) {
       r,
       "BASE",
       `${prefix}${routeText} - ${tripChargeLabel(r)}`,
-      Number(r.pricing?.base || 0),
+      Number(r.pricing?.base || 0) + foldedWcAccessoryAmount(r),
       { forceZero: forceZeroMode }
     );
   }

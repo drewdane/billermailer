@@ -1,0 +1,10 @@
+{
+  "invoiceType": "single",
+  "deliveryFormat": "qbo",
+  "reviewed": true,
+  "reviewedAt": "2026-06-01T10:01:07.694Z",
+  "fuelSurchargeEnabled": false,
+  "fuelSurchargeStart": "",
+  "fuelSurchargeEnd": "",
+  "overrides": {}
+}

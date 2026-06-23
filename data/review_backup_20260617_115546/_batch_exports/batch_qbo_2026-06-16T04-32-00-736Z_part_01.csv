@@ -1,0 +1,5 @@
+"Customer","InvoiceNo","InvoiceDate","DueDate","ServiceDate","Product/Service","Description","Qty","Rate","Amount","Class"
+"Trinity Terrace","052626001","5/26/2026","5/26/2026","5/18/2026","Cancellation Fee","Corder, Frances (DOB: 2/27/1943) - TRIP DATE: 5/18/26 - FROM: Harris Jones Tower 1301 Pennsylvania Avenue TO Trinity Terrace 1600 Texas Street - Cancellation Fee","1.00","35.00","35.00","450 Cancellation"
+"Trinity Terrace","052626001","5/26/2026","5/26/2026","5/14/2026","Trip Charge","Vance, Sarah (DOB: 7/22/1947) - TRIP DATE: 5/14/26 - FROM: Harris Richardson Tower 1301 Pennsylvania Avenue TO Trinity Terrace 1600 Texas Street - Trip Charge - 1-Way with Stretcher","1.00","85.00","85.00","100 Admission"
+"Trinity Terrace","052626001","5/26/2026","5/26/2026","5/14/2026","Oxygen","Vance, Sarah (DOB: 7/22/1947) - TRIP DATE: 5/14/26 - Provide Oxygen","1.00","20.00","20.00","100 Admission"
+"Trinity Terrace","052626001","5/26/2026","5/26/2026","5/14/2026","Mileage","Vance, Sarah (DOB: 7/22/1947) - TRIP DATE: 5/14/26 - Mileage - 2 mi","2.00","5.00","10.00","100 Admission"

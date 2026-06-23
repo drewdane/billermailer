@@ -1,0 +1,670 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>BM Review</title>
+  <style>
+    body{
+      font-family:system-ui,Segoe UI,Arial;
+      margin:0;
+      display:flex;
+      height:100vh;
+      background:#fafbff;
+      color:#111827;
+    }
+
+    #left{
+      width:340px;
+      border-right:1px solid #d6d8ea;
+      padding:12px;
+      overflow:auto;
+      background:#e4e4f0;
+    }
+
+    #main{
+      flex:1;
+      padding:12px;
+      overflow:auto;
+      background:#fafbff;
+    }
+
+        #mainHeader{
+      position:sticky;
+      top:0;
+      z-index:5;
+      background:#fafbff;
+      padding-bottom:10px;
+      border-bottom:1px solid #d6d8ea;
+    }
+
+    .toolbar{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:8px;
+    }
+
+    .globalbar{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:8px;
+      padding:8px 0;
+    }
+
+    .globalbar input[type="date"]{
+      padding:7px 10px;
+      border:1px solid #d6d8ea;
+      border-radius:10px;
+      background:#fff;
+    }
+
+    .toolbar input[type="text"],
+    .toolbar input:not([type]),
+    .toolbar select{
+      padding:7px 10px;
+      border:1px solid #d6d8ea;
+      border-radius:10px;
+      background:#fff;
+    }
+
+    .fac{
+      padding:8px;
+      border:1px solid #d6d8ea;
+      border-radius:10px;
+      margin:8px 0;
+      background:#ffffff;
+      box-shadow:0 1px 2px rgba(0,0,0,0.04);
+    }
+
+    .pill{
+      display:inline-block;
+      padding:2px 6px;
+      border-radius:6px;
+      background:#e4e4f0;
+      font-size:12px;
+      color:#64748b;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+    }
+
+    th,td{
+      border-bottom:1px solid #e4e4f0;
+      padding:6px 8px;
+      vertical-align:top;
+    }
+
+    th{
+      position:sticky;
+      top:96px;
+      background:#e4e4f0;
+      z-index:2;
+      font-weight:600;
+    }
+
+    tr:hover{
+      background:#f1f2fb;
+    }
+
+    .row-exclude td{
+      text-decoration:line-through;
+      color:#64748b;
+      background:#f3f4fa;
+    }
+
+    button{
+      padding:6px 10px;
+      border:1px solid #d6d8ea;
+      border-radius:8px;
+      background:#ffffff;
+      cursor:pointer;
+    }
+
+    button:hover{
+      background:#f1f2fb;
+    }
+
+    input[type="number"]{
+      border:1px solid #d6d8ea;
+      border-radius:6px;
+      padding:2px 4px;
+    }
+
+    input[type="checkbox"]{
+      transform:scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <div id="left">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
+      <h3 style="margin:6px 0">Facilities</h3>
+    </div>
+
+    <div style="margin:8px 0 12px 0">
+      <label style="display:flex;align-items:center;gap:6px;color:#374151">
+        <input type="checkbox" id="selectAllReviewed" onchange="toggleAllReviewed(this.checked)" />
+        <span>Select all reviewed</span>
+      </label>
+    </div>
+
+    <div id="facList">Loading…</div>
+  </div>
+    <div id="main">
+      <div id="mainHeader">
+        <h2 style="margin:6px 0">BM Review</h2>
+
+        <div id="status" style="color:#666;margin-bottom:8px">Select a facility + period.</div>
+
+        <div class="globalbar" id="globalBar">
+          <label style="display:flex;align-items:center;gap:6px;color:#374151">
+            <input type="checkbox" id="fuelToggle" onchange="updateFuelGlobals()" />
+            <span>Fuel SC</span>
+          </label>
+
+          <label style="display:flex;align-items:center;gap:6px;color:#374151">
+            <span>From</span>
+            <input type="date" id="fuelStart" onchange="updateFuelGlobals()" />
+          </label>
+
+          <label style="display:flex;align-items:center;gap:6px;color:#374151">
+            <span>To</span>
+            <input type="date" id="fuelEnd" onchange="updateFuelGlobals()" />
+          </label>
+          <button type="button" onclick="addFuelWindowRow()">Add another period</button>
+          <div id="fuelExtraWindows" style="display:flex;flex-direction:column;gap:6px;width:100%;margin-left:84px"></div>
+        </div>
+
+        <div class="toolbar" id="toolbar" style="display:none">
+          <input
+            id="search"
+            placeholder="Search…"
+            oninput="renderRows()"
+            style="min-width:240px"
+          />
+
+          <button onclick="mergeSelectedTrips()">Merge selected</button>
+
+          <label style="display:flex;align-items:center;gap:6px;color:#374151">
+            <span>Output</span>
+            <select id="deliveryFormat">
+              <option value="qbo">QBO</option>
+              <option value="pdf">PDF</option>
+            </select>
+          </label>
+
+          <button onclick="save()">Save</button>
+          <button onclick="runBatchExport()">Batch Export</button>
+          <span id="saveMsg" style="color:#666"></span>
+        </div>
+      </div>
+
+      <div id="tableWrap"></div>
+  </div>
+
+<script src="/preReviewSuggestions.js"></script>
+<script src="/cleanLocationName.js"></script>
+<script src="/reviewOverridesClient.js"></script>
+<script src="/renderRows.js"></script>
+<script>
+let INDEX=null;
+let current = { acct:null, period:null };
+let ITEMS=[];
+let OVERRIDES={ invoiceType:"single", deliveryFormat:"qbo", reviewed:false, reviewedAt:null, overrides:{} };
+let REVIEW_CONFIG = {};
+let DIRTY = false;
+let BATCH_SELECTED = {};
+window.BM_ACCOUNT_CODES = [];
+
+window.BM_GLOBALS = {
+  fuelSurchargeEnabled: false,
+  fuelSurchargeStart: "",
+  fuelSurchargeEnd: ""
+};
+
+function getFuelWindowsFromUi() {
+  const windows = [];
+
+  const start = document.getElementById("fuelStart")?.value || "";
+  const end = document.getElementById("fuelEnd")?.value || "";
+
+  if (start || end) {
+    windows.push({ start, end });
+  }
+
+  document.querySelectorAll("[data-fuel-window-row]").forEach((row) => {
+    const s = row.querySelector("[data-fuel-start]")?.value || "";
+    const e = row.querySelector("[data-fuel-end]")?.value || "";
+
+    if (s || e) {
+      windows.push({ start: s, end: e });
+    }
+  });
+
+  return windows;
+}
+
+function updateFuelGlobals() {
+  const enabled = document.getElementById("fuelToggle")?.checked;
+
+  window.BM_GLOBALS = {
+    fuelSurchargeEnabled: !!enabled,
+    fuelSurchargeStart: document.getElementById("fuelStart")?.value || "",
+    fuelSurchargeEnd: document.getElementById("fuelEnd")?.value || "",
+    fuelSurchargeWindows: getFuelWindowsFromUi()
+  };
+
+  renderRows();
+  if (window.markDirty) window.markDirty();
+  fetch("/api/config", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(window.BM_GLOBALS)
+  }).catch(err => console.error("Failed to save FSC config", err));
+}
+
+function addFuelWindowRow(start = "", end = "", shouldUpdate = true) {
+  const wrap = document.getElementById("fuelExtraWindows");
+  if (!wrap) return;
+
+  const row = document.createElement("div");
+  row.dataset.fuelWindowRow = "1";
+  row.style.display = "flex";
+  row.style.alignItems = "center";
+  row.style.gap = "8px";
+
+  row.innerHTML =
+    "<span>From</span>" +
+    "<input type='date' data-fuel-start value='" + esc(start) + "' />" +
+    "<span>To</span>" +
+    "<input type='date' data-fuel-end value='" + esc(end) + "' />" +
+    "<button type='button' data-remove-fuel-window>Remove</button>";
+
+  row.querySelector("[data-fuel-start]").onchange = updateFuelGlobals;
+  row.querySelector("[data-fuel-end]").onchange = updateFuelGlobals;
+
+  row.querySelector("[data-remove-fuel-window]").onclick = () => {
+    row.remove();
+    updateFuelGlobals();
+  };
+
+  wrap.appendChild(row);
+  if (shouldUpdate) updateFuelGlobals();
+}
+
+function esc(s){ return String(s??"").replace(/[&<>"]/g, c=>({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;" }[c])); }
+
+function markDirty() {
+  DIRTY = true;
+  renderFacilityReviewState();
+}
+
+function renderFacilityReviewState() {
+  if (!INDEX || !current.acct || !current.period) return;
+
+  const link = document.querySelector(
+    'a[data-acct="' + current.acct + '"][data-period="' + current.period + '"]'
+  );
+  if (!link) return;
+
+  const row = link.parentElement;
+  const card = row?.parentElement;
+  if (!row || !card) return;
+
+  let pill = row.querySelector(".review-state-pill");
+  if (!pill) {
+    pill = document.createElement("span");
+    pill.className = "pill review-state-pill";
+    pill.style.marginLeft = "6px";
+    row.appendChild(pill);
+  }
+
+  if (DIRTY) {
+    pill.textContent = "Unsaved Changes";
+    pill.style.background = "#fee2e2";
+    pill.style.color = "#991b1b";
+    card.style.background = "#fff7ed";
+  } else if (OVERRIDES.reviewed) {
+    pill.textContent = "Reviewed";
+    pill.style.background = "#dcfce7";
+    pill.style.color = "#166534";
+    card.style.background = "#f0fdf4";
+  } else {
+    pill.textContent = "";
+    pill.style.background = "";
+    pill.style.color = "";
+    card.style.background = "";
+  }
+}
+
+window.markDirty = markDirty;
+
+async function loadReviewConfig() {
+  try {
+    REVIEW_CONFIG = await (await fetch("/api/config")).json();
+  } catch (err) {
+    console.error("Failed to load review config", err);
+  }
+}
+
+async function runExport() {
+  if (!current.acct || !current.period) return;
+
+  const invoiceType = document.getElementById("invoiceType").value || "single";
+  const deliveryFormat = document.getElementById("deliveryFormat").value || "qbo";
+
+  if (deliveryFormat !== "qbo") {
+    alert("PDF export not implemented yet");
+    return;
+  }
+
+  const exportUrl =
+    "/api/export-qbo?acct=" +
+    encodeURIComponent(current.acct) +
+    "&period=" +
+    encodeURIComponent(current.period) +
+    "&invoiceType=" +
+    encodeURIComponent(invoiceType);
+
+  window.location.href = exportUrl;
+}
+
+function setBatchSelected(acct, period, checked) {
+  const key = acct + "||" + period;
+  if (checked) BATCH_SELECTED[key] = true;
+  else delete BATCH_SELECTED[key];
+}
+
+function isBatchSelected(acct, period) {
+  return !!BATCH_SELECTED[acct + "||" + period];
+}
+
+function toggleAllReviewed(checked) {
+  if (!INDEX || !INDEX.facilities) return;
+
+  if (!checked) {
+    BATCH_SELECTED = {};
+    loadIndex();
+    return;
+  }
+
+  const next = {};
+  for (const acct of Object.keys(INDEX.facilities || {})) {
+    const fac = INDEX.facilities[acct];
+    for (const period of Object.keys(fac.periods || {})) {
+      const meta = fac.periods[period] || {};
+      if (meta.reviewed) {
+        next[acct + "||" + period] = true;
+      }
+    }
+  }
+
+  BATCH_SELECTED = next;
+  loadIndex();
+}
+
+async function runBatchExport() {
+  const selected = Object.keys(BATCH_SELECTED).map((key) => {
+    const [acct, period] = key.split("||");
+    return { acct, period };
+  });
+
+  if (!selected.length) {
+    alert("Select at least one reviewed facility.");
+    return;
+  }
+
+  const resp = await fetch("/api/export-qbo-batch", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ selected })
+  });
+
+  const data = await resp.json();
+
+  if (!resp.ok) {
+    alert(data?.error || "Batch export failed");
+    return;
+  }
+
+  if (!Array.isArray(data.files) || !data.files.length) {
+    alert("No export files were generated.");
+    return;
+  }
+
+  for (const file of data.files) {
+    window.open(file.url, "_blank");
+  }
+}
+
+async function loadAccountCodes(){
+  try {
+    const resp = await fetch("/api/accounts");
+    const data = await resp.json();
+    window.BM_ACCOUNT_CODES = Array.isArray(data.accounts) ? data.accounts : [];
+  } catch (err) {
+    console.error("Failed to load account codes", err);
+    window.BM_ACCOUNT_CODES = [];
+  }
+}
+
+async function loadIndex(){
+  const facList = document.getElementById("facList");
+  facList.textContent = "Loading…";
+  await loadAccountCodes();
+
+  try{
+    const resp = await fetch("/api/index");
+    const txt = await resp.text();
+    if(!resp.ok){
+      facList.innerHTML = "<div style='color:#b00'><b>Failed to load index</b><div style='margin-top:6px;white-space:pre-wrap'>"+esc(txt)+"</div></div>";
+      return;
+    }
+    INDEX = JSON.parse(txt);
+
+    facList.innerHTML = "";
+    const keys = Object.keys(INDEX.facilities || {}).sort();
+    if(!keys.length){
+      facList.innerHTML = "<div style='color:#b00'><b>No facilities found</b><div style='margin-top:6px'>Index loaded but facilities is empty.</div></div>";
+      return;
+    }
+
+    for(const acct of keys){
+      const f = INDEX.facilities[acct];
+      const div = document.createElement("div");
+      div.className="fac";
+
+      const title = document.createElement("div");
+      title.innerHTML = "<b>"+esc(acct)+"</b><div style='color:#666'>"+esc(f.AccountName||"")+"</div>";
+      div.appendChild(title);
+
+      const periods = Object.keys(f.periods || {}).sort();
+      for(const p of periods){
+        const row = document.createElement("div");
+        row.style.marginTop = "6px";
+
+        const a = document.createElement("a");
+        a.href = "#";
+        a.textContent = p;
+        a.dataset.acct = acct;
+        a.dataset.period = p;
+        a.onclick = (e) => {
+          e.preventDefault();
+          openSet(a.dataset.acct, a.dataset.period);
+        };
+
+        const meta = f.periods[p] || {};
+
+        const tripPill = document.createElement("span");
+        tripPill.className = "pill";
+        tripPill.textContent = (meta.count || 0) + " trips";
+
+        const cb = document.createElement("input");
+        cb.type = "checkbox";
+        cb.style.marginLeft = "8px";
+        cb.checked = isBatchSelected(acct, p);
+        cb.disabled = !meta.reviewed;
+        cb.onchange = () => {
+          setBatchSelected(acct, p, cb.checked);
+        };
+
+        row.appendChild(a);
+        row.appendChild(document.createTextNode(" "));
+        row.appendChild(tripPill);
+        row.appendChild(cb);
+
+        div.appendChild(row);
+      }
+
+      facList.appendChild(div);
+    }
+  }catch(e){
+    facList.innerHTML = "<div style='color:#b00'><b>Failed to load index</b><div style='margin-top:6px;white-space:pre-wrap'>"+esc(e.message||String(e))+"</div></div>";
+  }
+}
+
+async function openSet(acct, period){
+  current = { acct, period };
+  DIRTY = false;
+  document.getElementById("status").textContent = acct + " / " + period;
+  document.getElementById("toolbar").style.display = "flex";
+  document.getElementById("deliveryFormat").onchange = () => {
+    markDirty();
+  };
+  document.getElementById("deliveryFormat").value = OVERRIDES.deliveryFormat || "qbo";
+  ITEMS = await (await fetch("/api/items?acct="+encodeURIComponent(acct)+"&period="+encodeURIComponent(period))).json();
+  OVERRIDES = await (await fetch("/api/overrides?acct="+encodeURIComponent(acct)+"&period="+encodeURIComponent(period))).json();
+
+  OVERRIDES.reviewed = !!OVERRIDES.reviewed;
+  OVERRIDES.reviewedAt = OVERRIDES.reviewedAt || null;
+  OVERRIDES.deliveryFormat = OVERRIDES.deliveryFormat || "qbo";
+
+  for (const it of ITEMS) {
+    const o = (OVERRIDES.overrides || {})[it.LineId];
+    if (!o) continue;
+    window.applyOverrideToItem(it, o);
+  }
+
+  const deliveryFormatEl = document.getElementById("deliveryFormat");
+  deliveryFormatEl.value = OVERRIDES.deliveryFormat || "qbo";
+
+  renderRows();
+  renderFacilityReviewState();
+  }
+
+function mergeSelectedTrips() {
+  const selected = ITEMS.filter((r) => r.review?.MergeSelected);
+
+  if (selected.length < 2) {
+    alert("Select at least two trips to merge.");
+    return;
+  }
+
+  const groupId = "manual_" + Date.now();
+
+  for (const r of selected) {
+    if (!r.review) r.review = {};
+    r.review.MergeGroupId = groupId;
+    r.review.MergeShape = "MULTI_STOP";
+    r.review.MergeSelected = false;
+  }
+
+  if (window.markDirty) window.markDirty();
+  renderRows();
+}
+
+async function save(){
+  const overrides = {};
+  for(const r of ITEMS){
+    overrides[r.LineId] = {
+      Action: r.Action,
+      Modifier: r.Modifier,
+      Note: r.Note,
+      MoveToAccountCode: r.review?.MoveToAccountCode || "",
+
+      SplitTrip: !!r.review?.SplitTrip,
+      MergeGroupId: r.review?.MergeGroupId || "",
+      MergeShape: r.review?.MergeShape || "",
+      ClassOverride: r.review?.ClassOverride || "",
+      AddNeedWC: !!r.review?.AddNeedWC,
+      AddRECL: !!r.review?.AddRECL,
+      AddHazmat: !!r.review?.AddHazmat,
+      AddO2: !!r.review?.AddO2,
+      AddBari: !!r.review?.AddBari,
+      AddAfterHours: !!r.review?.AddAfterHours,
+      AddThirdShift: !!r.review?.AddThirdShift,
+      AddWeekend: !!r.review?.AddWeekend,
+      AddHoliday: !!r.review?.AddHoliday,
+      AddDeadhead: !!r.review?.AddDeadhead,
+      DeadheadMiles: Number(r.review?.DeadheadMiles || 0),
+      PoNumberOverride: r.review?.PoNumberOverride || "",
+      AddWait: !!r.review?.AddWait,
+      WaitTotalMinutes: Number(r.review?.WaitTotalMinutes || 0),
+      CancelOverride: r.review?.CancelOverride || "AUTO",
+      NoCharge: !!r.review?.NoCharge,
+      MatchToQuote: !!r.review?.MatchToQuote,
+      QuoteAmount: Number(r.review?.QuoteAmount || 0),
+      TripTypeOverride: r.review?.TripTypeOverride || "",
+      MileageOverride: Number(r.review?.MileageOverride || r.DirectMileage || 0),
+      ActualPickupTimeOverride:
+        r.review?.ActualPickupTimeOverride || "",
+
+      ActualDropoffTimeOverride:
+        r.review?.ActualDropoffTimeOverride || "",
+      MraNumberOverride: r.review?.MraNumberOverride || "",
+      InvoiceSplitOverride: r.review?.InvoiceSplitOverride || "AUTO",
+      PickupNameOverride: r.review?.PickupNameOverride || "",
+      PickupAddress1Override: r.review?.PickupAddress1Override || "",
+      DropoffNameOverride: r.review?.DropoffNameOverride || "",
+      DropoffAddress1Override: r.review?.DropoffAddress1Override || "",
+    };
+  }
+
+  const resp = await fetch("/api/overrides", {
+    method:"POST",
+    headers:{ "Content-Type":"application/json" },
+    body: JSON.stringify({
+      acct: current.acct,
+      period: current.period,
+      deliveryFormat: document.getElementById("deliveryFormat").value || "qbo",
+      reviewed: true,
+      reviewedAt: new Date().toISOString(),
+      fuelSurchargeEnabled: !!window.BM_GLOBALS?.fuelSurchargeEnabled,
+      fuelSurchargeWindows: getFuelWindowsFromUi(),
+      fuelSurchargeStart: window.BM_GLOBALS?.fuelSurchargeStart || "",
+      fuelSurchargeEnd: window.BM_GLOBALS?.fuelSurchargeEnd || "",
+      overrides
+    })
+  });
+
+  const msg = document.getElementById("saveMsg");
+
+  if (resp.ok) {
+    OVERRIDES.reviewed = true;
+    OVERRIDES.reviewedAt = new Date().toISOString();
+    OVERRIDES.fuelSurchargeEnabled = !!window.BM_GLOBALS?.fuelSurchargeEnabled;
+    OVERRIDES.fuelSurchargeStart = window.BM_GLOBALS?.fuelSurchargeStart || "";
+    OVERRIDES.fuelSurchargeEnd = window.BM_GLOBALS?.fuelSurchargeEnd || "";
+    DIRTY = false;
+    renderFacilityReviewState();
+  }
+
+  msg.textContent = resp.ok ? "Saved." : "Save failed.";
+  setTimeout(()=>msg.textContent="", 1500);
+}
+
+function toggleDetails(id) {
+  const row = document.getElementById("detail_" + id);
+  if (!row) return;
+  row.style.display = row.style.display === "none" ? "" : "none";
+}
+
+loadReviewConfig().then(loadIndex);
+</script>
+</body>
+</html>
