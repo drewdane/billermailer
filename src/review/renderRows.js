@@ -1,6 +1,10 @@
-// cleanLocationName is loaded into window by bm-review-server.js
 function renderRows() {
     
+  const {
+    moneyNum: sharedMoneyNum,
+    automaticTimeCharge: sharedAutomaticTimeCharge,
+  } = window.BM_REVIEW_PRICING || {};
+
   const fuelState = window.BM_GLOBALS || {
     fuelSurchargeEnabled: false,
     fuelSurchargeStart: "",
@@ -80,6 +84,10 @@ function renderRows() {
   }
 
   function moneyNum(v) {
+    if (typeof sharedMoneyNum === "function") {
+      return sharedMoneyNum(v);
+    }
+
     const cleaned = String(v ?? "")
       .replace(/\$/g, "")
       .replace(/,/g, "")
@@ -225,11 +233,26 @@ function renderRows() {
   }
 
   function automaticTimeCharge(r) {
-    const lines = Array.isArray(r.pricing?.accessories) ? r.pricing.accessories : [];
-    return lines.find((x) => {
-      const code = String(x.code || "").toUpperCase();
-      return code === "HOLIDAY" || code === "WEEKEND" || code === "THIRD_SHIFT" || code === "AFTER_HOURS";
-    }) || null;
+    if (typeof sharedAutomaticTimeCharge === "function") {
+      return sharedAutomaticTimeCharge(r);
+    }
+
+    const lines = Array.isArray(r.pricing?.accessories)
+      ? r.pricing.accessories
+      : [];
+
+    return (
+      lines.find((x) => {
+        const code = String(x.code || "").toUpperCase();
+
+        return (
+          code === "HOLIDAY" ||
+          code === "WEEKEND" ||
+          code === "THIRD_SHIFT" ||
+          code === "AFTER_HOURS"
+        );
+      }) || null
+    );
   }
 
   function timeChargeAmountForCode(r, code) {

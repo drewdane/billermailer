@@ -63,7 +63,6 @@ function safeJoin(...parts) {
 
 const reviewPagePath = path.resolve(process.cwd(), "src", "review", "reviewPage.html");
 
-///One function from here to eternity...
 const server = http.createServer((req, res) => {
   try {
     const u = url.parse(req.url, true);
@@ -80,6 +79,11 @@ const server = http.createServer((req, res) => {
 
     if (u.pathname === "/reviewOverridesClient.js") {
       const p = path.resolve(process.cwd(), "src", "review", "reviewOverridesClient.js");
+      return send(res, 200, fs.readFileSync(p, "utf8"), "application/javascript; charset=utf-8");
+    }
+
+    if (u.pathname === "/reviewPricing.js") {
+      const p = path.resolve(process.cwd(), "src", "review", "reviewPricing.js");
       return send(res, 200, fs.readFileSync(p, "utf8"), "application/javascript; charset=utf-8");
     }
 
