@@ -211,6 +211,7 @@
 <script src="/cleanLocationName.js"></script>
 <script src="/reviewOverridesClient.js"></script>
 <script src="/reviewPricing.js"></script>
+<script src="/detailPanel.js"></script>
 <script src="/renderRows.js"></script>
 <script>
 let INDEX=null;
@@ -597,6 +598,7 @@ async function save(){
       AddHazmat: !!r.review?.AddHazmat,
       AddO2: !!r.review?.AddO2,
       AddBari: !!r.review?.AddBari,
+      TimeChargeManual: !!r.review?.TimeChargeManual,
       AddAfterHours: !!r.review?.AddAfterHours,
       AddThirdShift: !!r.review?.AddThirdShift,
       AddWeekend: !!r.review?.AddWeekend,

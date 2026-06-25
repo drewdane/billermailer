@@ -87,6 +87,11 @@ const server = http.createServer((req, res) => {
       return send(res, 200, fs.readFileSync(p, "utf8"), "application/javascript; charset=utf-8");
     }
 
+    if (u.pathname === "/detailPanel.js") {
+      const p = path.resolve(process.cwd(), "src", "review", "detailPanel.js");
+      return send(res, 200, fs.readFileSync(p, "utf8"), "application/javascript; charset=utf-8");
+    }
+
     if (u.pathname === "/cleanLocationName.js") {
       const p = path.resolve(process.cwd(), "src", "review", "cleanLocationName.js");
 

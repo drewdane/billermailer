@@ -2,7 +2,20 @@ function renderRows() {
     
   const {
     moneyNum: sharedMoneyNum,
+    automaticTimeChargeAmount: sharedAutomaticTimeChargeAmount,
     automaticTimeCharge: sharedAutomaticTimeCharge,
+    pricedAccessoryAmount: sharedPricedAccessoryAmount,
+    timeChargeAmountForCode: sharedTimeChargeAmountForCode,
+    selectedTimeChargeAmount: sharedSelectedTimeChargeAmount,
+    wcAccessoryState: sharedWcAccessoryState,
+    isCancelled: sharedIsCancelled,
+    foldedWcAccessoryAmount: sharedFoldedWcAccessoryAmount,
+    baseTripTotal: sharedBaseTripTotal,
+    rowAccessoryTotal: sharedRowAccessoryTotal,
+    rowDisplayTotal: sharedRowDisplayTotal,
+    computeWaitCharge: sharedComputeWaitCharge,
+    computeDeadheadChargeFromReview: sharedComputeDeadheadChargeFromReview,
+    fuelSurchargeAmount: sharedFuelSurchargeAmount,
   } = window.BM_REVIEW_PRICING || {};
 
   const fuelState = window.BM_GLOBALS || {
@@ -84,17 +97,7 @@ function renderRows() {
   }
 
   function moneyNum(v) {
-    if (typeof sharedMoneyNum === "function") {
-      return sharedMoneyNum(v);
-    }
-
-    const cleaned = String(v ?? "")
-      .replace(/\$/g, "")
-      .replace(/,/g, "")
-      .trim();
-
-    const n = Number(cleaned || 0);
-    return Number.isFinite(n) ? n : 0;
+    return sharedMoneyNum(v);
   }
 
   function tripShapeLabel(r) {
@@ -110,267 +113,67 @@ function renderRows() {
   }
   
   function computeWaitCharge(r) {
-    if (!r.review?.AddWait) return 0;
-
-    const cfg = r.waitConfig || {};
-    const waitMinutes = Number(r.review?.WaitTotalMinutes || 0);
-    if (waitMinutes <= 0) return 0;
-
-    const rate = moneyNum(cfg.wait_rate);
-    if (rate <= 0) return 0;
-
-    const blockMin = moneyNum(cfg.wait_block_min);
-    const graceMin = moneyNum(cfg.wait_grace_min);
-
-    const chargedMinutes = Math.max(0, waitMinutes - graceMin);
-    if (chargedMinutes <= 0) return 0;
-
-    if (blockMin > 0) {
-      return Math.ceil(chargedMinutes / blockMin) * rate;
-    }
-
-    return rate;
+    return sharedComputeWaitCharge(r);
   }
 
   function computeDeadheadChargeFromReview(r) {
-    if (!r.review?.AddDeadhead) return 0;
-
-    const miles = Number(r.review?.DeadheadMiles || 0);
-    if (miles <= 0) return 0;
-
-    const cfg = r.deadheadConfig || {};
-
-    const flatRaw = String(cfg.dh_flat_fee ?? "").trim();
-    const flatFee = moneyNum(cfg.dh_flat_fee);
-
-    if (flatRaw && flatFee > 0) {
-      return flatFee;
-    }
-
-    const startMiles = moneyNum(cfg.dh_start_miles);
-    if (startMiles > 0 && miles < startMiles) return 0;
-
-    const tier2Start = moneyNum(cfg.dh_tier2_start_miles);
-    const tier3Start = moneyNum(cfg.dh_tier3_start_miles);
-
-    const rate1 = moneyNum(cfg.dh_rate_tier1);
-    const rate2 = moneyNum(cfg.dh_rate_tier2);
-    const rate3 = moneyNum(cfg.dh_rate_tier3);
-
-    let rate = 0;
-
-    if (tier3Start > 0 && miles >= tier3Start && rate3 > 0) {
-      rate = rate3;
-    } else if (tier2Start > 0 && miles >= tier2Start && rate2 > 0) {
-      rate = rate2;
-    } else if (rate1 > 0) {
-      rate = rate1;
-    }
-
-    return miles * rate;
+    return sharedComputeDeadheadChargeFromReview(r);
   }
 
   function fuelSurchargeAmount(r) {
-    if (!fuelState.fuelSurchargeEnabled) return 0;
-
-    const rate = Number(r.fuelSurchargeRate || 0);
-    if (rate <= 0) return 0;
-
-    const tripDate = String(r.RideDateISO || "");
-    if (!tripDate) return 0;
-
-    const windows = Array.isArray(fuelState.fuelSurchargeWindows)
-      ? fuelState.fuelSurchargeWindows
-      : [];
-
-    const effectiveWindows = windows.length
-      ? windows
-      : [
-          {
-            start: fuelState.fuelSurchargeStart || "",
-            end: fuelState.fuelSurchargeEnd || "",
-          },
-        ];
-
-    const inWindow = effectiveWindows.some((win) => {
-      const start = String(win.start || "");
-      const end = String(win.end || "");
-
-      if (!start || !end) return false;
-
-      return tripDate >= start && tripDate <= end;
-    });
-
-    if (!inWindow) return 0;
-
-    const loadedMiles = Number(
-      r.review?.MileageOverride ||
-      r.pricing?.audit?.billableMiles ||
-      r.DirectMileage ||
-      0
-    );
-
-    const dhMiles = r.review?.AddDeadhead
-      ? Number(r.review?.DeadheadMiles || 0)
-      : 0;
-
-    return rate * (loadedMiles + dhMiles);
+    return sharedFuelSurchargeAmount(r, fuelState);
   }
 
   function pricedAccessoryAmount(r, code) {
-    const lines = Array.isArray(r.pricing?.accessories) ? r.pricing.accessories : [];
-    const hit = lines.find((x) => String(x.code || "").toUpperCase() === String(code).toUpperCase());
-    return Number(hit?.amount || 0);
+    return sharedPricedAccessoryAmount(r, code);
   }
 
   function automaticTimeChargeAmount(r) {
-    const lines = Array.isArray(r.pricing?.accessories) ? r.pricing.accessories : [];
-    const hit = lines.find((x) => {
-      const code = String(x.code || "").toUpperCase();
-      return code === "HOLIDAY" || code === "WEEKEND" || code === "THIRD_SHIFT" || code === "AFTER_HOURS";
-    });
-    return Number(hit?.amount || 0);
+    return sharedAutomaticTimeChargeAmount(r);
   }
 
   function automaticTimeCharge(r) {
-    if (typeof sharedAutomaticTimeCharge === "function") {
-      return sharedAutomaticTimeCharge(r);
-    }
-
-    const lines = Array.isArray(r.pricing?.accessories)
-      ? r.pricing.accessories
-      : [];
-
-    return (
-      lines.find((x) => {
-        const code = String(x.code || "").toUpperCase();
-
-        return (
-          code === "HOLIDAY" ||
-          code === "WEEKEND" ||
-          code === "THIRD_SHIFT" ||
-          code === "AFTER_HOURS"
-        );
-      }) || null
-    );
+    return sharedAutomaticTimeCharge(r);
   }
 
   function timeChargeAmountForCode(r, code) {
-    const c = String(code || "").toUpperCase();
-    const auto = automaticTimeCharge(r);
-
-    if (auto && String(auto.code || "").toUpperCase() === c) {
-      return Number(auto.amount || 0);
-    }
-
-    const charges = r.availableCharges || {};
-
-    if (c === "AFTER_HOURS") return Number(charges.after_hours || 0);
-    if (c === "THIRD_SHIFT") return Number(charges.third_shift || 0);
-    if (c === "WEEKEND") return Number(charges.weekend || 0);
-    if (c === "HOLIDAY") return Number(charges.holiday || 0);
-
-    return 0;
+    return sharedTimeChargeAmountForCode(r, code);
   }
 
   function selectedTimeChargeAmount(r) {
-    if (r.review?.AddHoliday) return timeChargeAmountForCode(r, "HOLIDAY");
-    if (r.review?.AddThirdShift) return timeChargeAmountForCode(r, "THIRD_SHIFT");
-    if (r.review?.AddWeekend) return timeChargeAmountForCode(r, "WEEKEND");
-    if (r.review?.AddAfterHours) return timeChargeAmountForCode(r, "AFTER_HOURS");
-
-    return 0;
+    return sharedSelectedTimeChargeAmount(r);
   }
 
   function wcAccessoryState(r) {
-    const shape = String(r.TripShape || "").toUpperCase();
-    const isRt = shape === "ROUND_TRIP" || shape === "MULTI_STOP";
-
-    const src = r.availableWcAccessories || {};
-
-    const needwcAmount = Number(isRt ? (src.needwc_rt || 0) : (src.needwc_1w || 0));
-    const reclAmount = Number(isRt ? (src.recl_rt || 0) : (src.recl_1w || 0));
-
-    let addNeedWC = !!r.review?.AddNeedWC;
-    let addRECL = !!r.review?.AddRECL;
-
-    if (addNeedWC && addRECL) {
-      addNeedWC = false;
-    }
-
-    return {
-      needwcAmount,
-      reclAmount,
-      addNeedWC,
-      addRECL
-    };
+    return sharedWcAccessoryState(r);
   }
 
   function isCancelled(r) {
-    const raw = String(r.RideStatus || "").trim().toLowerCase();
-    const tmCancelled = raw === "noshow" || raw === "ridercancel";
-
-    const override = String(r.review?.CancelOverride || "AUTO").toUpperCase();
-
-    if (override === "YES") return true;
-    if (override === "NO") return false;
-    return tmCancelled;
+    return sharedIsCancelled(r);
   }
 
   function foldedWcAccessoryAmount(r) {
-    const shape = String(r.TripShape || "").toUpperCase();
-    const isRt = shape === "ROUND_TRIP" || shape === "MULTI_STOP";
-    const src = r.availableWcAccessories || {};
-
-    if (r.review?.AddRECL) {
-      return Number(isRt ? (src.recl_rt || 0) : (src.recl_1w || 0));
-    }
-
-    if (r.review?.AddNeedWC) {
-      return Number(isRt ? (src.needwc_rt || 0) : (src.needwc_1w || 0));
-    }
-
-    return 0;
+    return sharedFoldedWcAccessoryAmount(r);
   }
   
   function baseTripTotal(r) {
-    if (isCancelled(r)) {
-      return Number(r.pricing?.cancelFee || r.availableCharges?.cancel_fee || 0);
-    }
-
-    return Number(r.pricing?.base || 0)
-      + foldedWcAccessoryAmount(r)
-      + Number(r.pricing?.mileage || 0);
+    return sharedBaseTripTotal(r);
   }
 
   function rowAccessoryTotal(r) {
-    if (isCancelled(r)) return 0;
-
-    const charges = r.availableCharges || {};
-    const wcState = wcAccessoryState(r);
-    let total = 0;
-
-    if (r.review?.AddHazmat) total += Number(charges.hazmat || 0);
-    if (r.review?.AddO2) total += Number(charges.o2 || 0);
-    if (r.review?.AddBari) total += Number(charges.bari || 0);
-
-      total += computeDeadheadChargeFromReview(r);
-      total += computeWaitCharge(r);
-      total += selectedTimeChargeAmount(r);
-      total += fuelSurchargeAmount(r);
-      return total;
+    return sharedRowAccessoryTotal(r, {
+      computeDeadheadChargeFromReview,
+      computeWaitCharge,
+      selectedTimeChargeAmount,
+      fuelSurchargeAmount,
+    });
   }
 
   function rowDisplayTotal(r) {
-    if (r.review?.MatchToQuote) {
-      return Number(r.review?.QuoteAmount || 0);
-    }
-
-    if (r.review?.NoCharge) {
-      return 0;
-    }
-
-    return baseTripTotal(r) + rowAccessoryTotal(r);
+    return sharedRowDisplayTotal(r, {
+      baseTripTotal,
+      rowAccessoryTotal,
+    });
   }
 
   for (const r of rows) {
@@ -842,7 +645,22 @@ function renderRows() {
 
     function refreshDetailPanel() {
       try {
-        renderDetailPanel();
+        const handled = window.BM_DETAIL_PANEL?.renderDetailPanel?.({
+          r,
+          detailBox,
+          esc,
+          fmtMoney,
+          rowDisplayTotal,
+          wcAccessoryState,
+          isCancelled,
+          computeDeadheadChargeFromReview,
+          computeWaitCharge,
+          selectedTimeChargeAmount,
+          fuelSurchargeAmount,
+          extractMraNumberFromText,
+        });
+
+        if (!handled) renderDetailPanel();
       } catch (err) {
         console.error("refreshDetailPanel failed", err);
       }
@@ -1096,156 +914,23 @@ function renderRows() {
     detailBox.style.background = "#fafafa";
 
         function renderDetailPanel() {
-          const base = Number((r.pricing && r.pricing.base) || 0);
-          const billableMiles = Number(r.review?.MileageOverride || 0);
-          const mileageRate =
-            billableMiles > 0
-              ? Number((r.pricing && r.pricing.mileage) || 0) /
-                Number((r.pricing?.audit?.billableMiles) || billableMiles)
-              : 0;
+          const pricingHtml = window.BM_DETAIL_PANEL.buildPricingHtml({
+            r,
+            esc,
+            rowDisplayTotal,
+            wcAccessoryState,
+            isCancelled,
+            computeDeadheadChargeFromReview,
+            computeWaitCharge,
+            selectedTimeChargeAmount,
+            fuelSurchargeAmount,
+          });
 
-          const mileage = billableMiles * mileageRate;
-          const wcStateDetail = wcAccessoryState(r);
-          const cancelFee = Number(r.pricing?.cancelFee || r.availableCharges?.cancel_fee || 0);
-          const noChargeHtml = r.review?.NoCharge
-            ? "<div style='margin-top:6px;color:#991b1b;font-weight:600'>No Charge</div>"
-            : "";
-
-          const grandTotal = Number(rowDisplayTotal(r));
-
-          const chargedAccessoryLines = [];
-
-          if (r.review?.AddNeedWC) {
-            chargedAccessoryLines.push(
-              "<div>Need WC: $" + wcStateDetail.needwcAmount.toFixed(2) + "</div>"
-            );
-          }
-          if (r.review?.AddRECL) {
-            chargedAccessoryLines.push(
-              "<div>RECL: $" + wcStateDetail.reclAmount.toFixed(2) + "</div>"
-            );
-          }
-          if (r.review?.AddHazmat) {
-            chargedAccessoryLines.push(
-              "<div>Hazmat: $" + Number(r.availableCharges?.hazmat || 0).toFixed(2) + "</div>"
-            );
-          }
-          if (r.review?.AddO2) {
-            chargedAccessoryLines.push(
-              "<div>Oxygen: $" + Number(r.availableCharges?.o2 || 0).toFixed(2) + "</div>"
-            );
-          }
-          if (r.review?.AddBari) {
-            chargedAccessoryLines.push(
-              "<div>Bariatric: $" + Number(r.availableCharges?.bari || 0).toFixed(2) + "</div>"
-            );
-          }
-          if (r.review?.AddDeadhead) {
-            chargedAccessoryLines.push(
-              "<div>Deadhead (" + Number(r.review?.DeadheadMiles || 0).toFixed(0) + " mi): <span data-dh-total>$" + computeDeadheadChargeFromReview(r).toFixed(2) + "</span></div>"
-            );
-          }
-          if (r.review?.AddWait) {
-            chargedAccessoryLines.push(
-              "<div>Wait Time: <span data-wait-total>$" + computeWaitCharge(r).toFixed(2) + "</span></div>"
-            );
-          }
+          const noChargeHtml = "";
 
           const canSplit =
             Array.isArray(r.legs) &&
             r.legs.length > 1;
-          
-          const legsHtml = Array.isArray(r.legs) && r.legs.length
-            ? r.legs.map((leg, idx) => {
-                const puNameRaw = leg.PickupName || "";
-                const puAddrRaw = leg.PickupAddress1 || "";
-                const doNameRaw = leg.DropoffName || "";
-                const doAddrRaw = leg.DropoffAddress1 || "";
-
-                const puNameClean = window.cleanLocationName ? window.cleanLocationName(puNameRaw) : puNameRaw;
-                const puAddrClean = puAddrRaw;
-                const puCity = esc([leg.PickupCity, leg.PickupState, leg.PickupZip].filter(Boolean).join(" "));
-
-                const doNameClean = window.cleanLocationName ? window.cleanLocationName(doNameRaw) : doNameRaw;
-                const doAddrClean = doAddrRaw;
-                const doCity = esc([leg.DropoffCity, leg.DropoffState, leg.DropoffZip].filter(Boolean).join(" "));
-                  if (idx === 0) {
-                  if (!r.review.PickupNameOverride) r.review.PickupNameOverride = puNameClean;
-                  if (!r.review.PickupAddress1Override) r.review.PickupAddress1Override = puAddrClean;
-                  if (!r.review.DropoffNameOverride) r.review.DropoffNameOverride = doNameClean;
-                  if (!r.review.DropoffAddress1Override) r.review.DropoffAddress1Override = doAddrClean;
-                }
-
-                const puName = esc(idx === 0
-                  ? (r.review.PickupNameOverride || puNameClean)
-                  : puNameClean);
-
-                const puAddr = esc(idx === 0
-                  ? (r.review.PickupAddress1Override || puAddrClean)
-                  : puAddrClean);
-
-                const doName = esc(idx === 0
-                  ? (r.review.DropoffNameOverride || doNameClean)
-                  : doNameClean);
-
-                const doAddr = esc(idx === 0
-                  ? (r.review.DropoffAddress1Override || doAddrClean)
-                  : doAddrClean);
-                const puKey = "pu-" + idx;
-                const doKey = "do-" + idx;
-                return (
-                  "<div>" +
-                    "<div><b>Pick up:</b></div>" +
-                    "<input data-loc-edit='pu-name' data-loc-key='" + puKey + "' data-original-name='" + esc(puNameRaw) + "' data-original-address='" + esc(puAddrRaw) + "' value='" + puName + "' style='width:100%;box-sizing:border-box;margin-top:3px;border:1px solid #d6d8ea;border-radius:6px;padding:2px 4px' />" +
-                    "<input data-loc-edit='pu-address' data-loc-key='" + puKey + "' data-original-name='" + esc(puNameRaw) + "' data-original-address='" + esc(puAddrRaw) + "' value='" + puAddr + "' style='width:100%;box-sizing:border-box;margin-top:3px;border:1px solid #d6d8ea;border-radius:6px;padding:2px 4px' />" +
-                    "<div style='color:#334155'>" + puCity + "</div>" +
-                    "<button data-loc-save-alias='pu' data-loc-key='" + puKey + "' type='button' style='margin-top:6px'>" +
-                      "Save pick up address for future" +
-                    "</button>" +
-                    "<div style='margin-top:8px'><b>Drop-off:</b></div>" +
-                    "<input data-loc-edit='do-name' data-loc-key='" + doKey + "' data-original-name='" + esc(doNameRaw) + "' data-original-address='" + esc(doAddrRaw) + "' value='" + doName + "' style='width:100%;box-sizing:border-box;margin-top:3px;border:1px solid #d6d8ea;border-radius:6px;padding:2px 4px' />" +
-                    "<input data-loc-edit='do-address' data-loc-key='" + doKey + "' data-original-name='" + esc(doNameRaw) + "' data-original-address='" + esc(doAddrRaw) + "' value='" + doAddr + "' style='width:100%;box-sizing:border-box;margin-top:3px;border:1px solid #d6d8ea;border-radius:6px;padding:2px 4px' />" +
-                    "<div style='color:#334155'>" + doCity + "</div>" +
-                    "<button data-loc-save-alias='do' data-loc-key='" + doKey + "' type='button' style='margin-top:6px'>" +
-                      "Save drop-off address for future" +
-                    "</button>" +
-                  "</div>"
-                );
-              }).join("")
-            : "<div style='color:#64748b'>No leg detail available.</div>";
-
-          const selectedTimeCharge = (() => {
-            if (r.review?.AddHoliday) {
-              return { label: "Holiday", amount: selectedTimeChargeAmount(r) };
-            }
-
-            if (r.review?.AddThirdShift) {
-              return { label: "3rd Shift", amount: selectedTimeChargeAmount(r) };
-            }
-
-            if (r.review?.AddWeekend) {
-              return { label: "Weekend", amount: selectedTimeChargeAmount(r) };
-            }
-
-            if (r.review?.AddAfterHours) {
-              return { label: "After Hours", amount: selectedTimeChargeAmount(r) };
-            }
-
-            return null;
-          })();
-
-          if (selectedTimeCharge && selectedTimeCharge.amount > 0) {
-            chargedAccessoryLines.push(
-              "<div>" + esc(selectedTimeCharge.label) + ": $" + selectedTimeCharge.amount.toFixed(2) + "</div>"
-            );
-          }
-          
-            const fuelTotal = fuelSurchargeAmount(r);
-            if (fuelTotal > 0) {
-              chargedAccessoryLines.push(
-                "<div>Fuel Surcharge: $" + fuelTotal.toFixed(2) + "</div>"
-              );
-          }
 
           let splitHtml = "";
 
@@ -1341,24 +1026,16 @@ function renderRows() {
               "</div>";
           }
 
-          
+          const legsHtml = window.BM_DETAIL_PANEL.buildLegsHtml({
+            r,
+            esc,
+          });
 
           detailBox.innerHTML =
             "<div style='display:grid; grid-template-columns: 240px 320px repeat(auto-fit, minmax(260px, 1fr)); gap:20px; align-items:start'>" +
 
               "<div>" +
-                "<div style='margin-bottom:8px'><b>Pricing</b></div>" +
-                (
-                  isCancelled(r)
-                    ? "<div>Cancellation Fee: $" + cancelFee.toFixed(2) + "</div>"
-                    : (
-                        "<div>Base: $" + base.toFixed(2) + "</div>" +
-                        "<div>Mileage: $" + mileage.toFixed(2) + "</div>" +
-                        chargedAccessoryLines.join("")
-                      )
-                ) +
-                noChargeHtml +
-                "<div style='margin-top:6px'><b>Total: $" + grandTotal.toFixed(2) + "</b></div>" +
+                pricingHtml +
                 actualTimesHtml +
                 poHtml +
                 splitHtml +
