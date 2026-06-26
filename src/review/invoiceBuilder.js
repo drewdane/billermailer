@@ -140,19 +140,33 @@ function buildGroupedInvoicesForSet({ baseDir, acct, period, invoiceType, safeJo
       r.legs.length > 1
     ) {
       exportRows = r.legs.map((leg, idx) => {
-        const splitMiles = Math.round(
-          Number(r.DirectMileage || 0) / Math.max(1, r.legs.length)
-        );
+        const splitMiles = Number(leg.DirectMileage || 0);
 
         const splitReview = {
           ...review,
-          MileageOverride: splitMiles
+
+          // This is now a real 1W leg, not the grouped route.
+          SplitTrip: false,
+          MileageOverride: splitMiles,
+          ClassOverride: "",
+
+          // Do not reuse grouped route edits on each split leg.
+          PickupNameOverride: "",
+          PickupAddress1Override: "",
+          DropoffNameOverride: "",
+          DropoffAddress1Override: "",
+
+          // Do not reuse grouped time edits on each split leg.
+          ActualPickupTimeOverride: "",
+          ActualDropoffTimeOverride: "",
         };
 
         const singleRow = {
           ...r,
           ...leg,
           TripShape: "ONE_WAY",
+          LegCount: 1,
+          legs: [leg],
           pricing: null,
           LineId: String(r.LineId || "") + "_split_" + idx,
           review: splitReview
@@ -180,6 +194,10 @@ function buildGroupedInvoicesForSet({ baseDir, acct, period, invoiceType, safeJo
           repricedRow: {
             ...singlePricingInput,
             pricing: singlePricing,
+            billingAddress:
+              rateRow?.billing_address ||
+              rateRow?.BillingAddress ||
+              "",
           }
         };
       });
@@ -252,9 +270,11 @@ function buildGroupedInvoicesForSet({ baseDir, acct, period, invoiceType, safeJo
         ? inferThrSplit(repricedRow)
         : normalizeInvoiceSplit(splitOverride);
 
+      const rowReview = repricedRow.review || review;
+
       const className =
-        review.ClassOverride ||
-        inferQboClass(repricedRow, { matchesAnyBillingAddress })
+        rowReview.ClassOverride ||
+        inferQboClass(repricedRow, { matchesAnyBillingAddress });
 
       const exportCustomer = exportCustomerName(
         repricedRow,

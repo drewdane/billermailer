@@ -251,11 +251,7 @@ function renderRows() {
     const inclCb = document.createElement("input");
     inclCb.type = "checkbox";
     inclCb.checked = (r.Action || "INCLUDE") !== "EXCLUDE";
-    inclCb.onchange = () => {
-      r.Action = inclCb.checked ? "INCLUDE" : "EXCLUDE";
-      r.review.Action = r.Action;
-      tr.className = inclCb.checked ? "" : "row-exclude";
-    };
+    
     inclTd.appendChild(inclCb);
     tr.appendChild(inclTd);
 
@@ -445,11 +441,6 @@ function renderRows() {
 
     classSel.value = selectedQboClass(r);
 
-    classSel.onchange = () => {
-      r.review.ClassOverride = classSel.value;
-      if (window.markDirty) window.markDirty();
-    };
-
     classWrap.appendChild(classSel);
 
     const dhWrap = document.createElement("label");
@@ -623,6 +614,17 @@ function renderRows() {
 
     adjWrap.appendChild(moveWrap);
 
+    window.BM_ROW_CONTROLS.wireBasicRowControls({
+      r,
+      tr,
+      inclCb,
+      moveInput,
+      mergeCtl,
+      typeSel,
+      classSel,
+      markDirty: window.markDirty,
+    });
+
     // Total
     const totalTd = makeCell();
     totalTd.style.whiteSpace = "nowrap";
@@ -645,22 +647,7 @@ function renderRows() {
 
     function refreshDetailPanel() {
       try {
-        const handled = window.BM_DETAIL_PANEL?.renderDetailPanel?.({
-          r,
-          detailBox,
-          esc,
-          fmtMoney,
-          rowDisplayTotal,
-          wcAccessoryState,
-          isCancelled,
-          computeDeadheadChargeFromReview,
-          computeWaitCharge,
-          selectedTimeChargeAmount,
-          fuelSurchargeAmount,
-          extractMraNumberFromText,
-        });
-
-        if (!handled) renderDetailPanel();
+        renderDetailPanel();
       } catch (err) {
         console.error("refreshDetailPanel failed", err);
       }
@@ -848,25 +835,11 @@ function renderRows() {
       }
     };
 
-    typeSel.onchange = () => {
-      r.review.TripTypeOverride = typeSel.value || r.Mobility || "AMBU";
-      if (window.markDirty) window.markDirty();
-    };
-
-    moveInput.onchange = () => {
-      r.review.MoveToAccountCode = moveInput.value.trim();
-      if (window.markDirty) window.markDirty();
-    };
-
     noChargeCtl.cb.onchange = () => {
       r.review.NoCharge = noChargeCtl.cb.checked;
       refreshRowTotal();
       refreshDetailPanel();
       if (window.markDirty) window.markDirty();
-    };
-
-    mergeCtl.cb.onchange = () => {
-      r.review.MergeSelected = mergeCtl.cb.checked;
     };
 
     overrideCb.onchange = () => {
@@ -913,259 +886,71 @@ function renderRows() {
     detailBox.style.borderTop = "1px solid #ddd";
     detailBox.style.background = "#fafafa";
 
-        function renderDetailPanel() {
-          const pricingHtml = window.BM_DETAIL_PANEL.buildPricingHtml({
-            r,
-            esc,
-            rowDisplayTotal,
-            wcAccessoryState,
-            isCancelled,
-            computeDeadheadChargeFromReview,
-            computeWaitCharge,
-            selectedTimeChargeAmount,
-            fuelSurchargeAmount,
-          });
+    function renderDetailPanel() {
+      const pricingHtml = window.BM_DETAIL_PANEL.buildPricingHtml({
+        r,
+        esc,
+        rowDisplayTotal,
+        wcAccessoryState,
+        isCancelled,
+        computeDeadheadChargeFromReview,
+        computeWaitCharge,
+        selectedTimeChargeAmount,
+        fuelSurchargeAmount,
+      });
 
-          const noChargeHtml = "";
+      const noChargeHtml = "";
 
-          const canSplit =
-            Array.isArray(r.legs) &&
-            r.legs.length > 1;
-
-          let splitHtml = "";
-
-          if (canSplit) {
-            splitHtml =
-              "<label style='display:flex;align-items:center;gap:6px;margin-top:8px'>" +
-                "<input data-split-trip type='checkbox' " +
-                (r.review?.SplitTrip ? "checked" : "") +
-                " />" +
-                "<span>Split this trip into separate 1-ways</span>" +
-              "</label>";
-          }
-          
-          let poHtml = "";
-
-          const poVal = esc(
-            r.review?.PoNumberOverride ||
-            r.poNumber ||
-            ""
-          );
-
-          const mraVal = esc(
-            r.review?.MraNumberOverride ||
-            extractMraNumberFromText(r.notesFull || "") ||
-            ""
-          );
-
-          poHtml =
-            "<div style='margin-top:12px;padding-top:8px;border-top:1px solid #e5e7eb'>" +
-
-              "<label style='display:flex;align-items:center;gap:6px;margin-bottom:6px'>" +
-                "<span style='width:90px'>PO#</span>" +
-                "<input data-po-number-override type='text' value='" + poVal + "' style='width:180px;border:1px solid #d6d8ea;border-radius:6px;padding:2px 4px' />" +
-              "</label>";
-
-          if (String(r.invoiceMethod || "").toLowerCase() === "thr_split") {
-            poHtml +=
-              "<div style='margin:10px 0 6px 0'><b>THR / Invoice Billing</b></div>" +
-
-              "<label style='display:flex;align-items:center;gap:6px;margin-bottom:6px'>" +
-                "<span style='width:90px'>MRA #</span>" +
-                "<input data-mra-number-override type='text' value='" + mraVal + "' style='width:180px;border:1px solid #d6d8ea;border-radius:6px;padding:2px 4px' />" +
-              "</label>" +
-
-              "<label style='display:flex;align-items:center;gap:6px'>" +
-                "<span style='width:90px'>Invoice Split</span>" +
-                "<select data-invoice-split-override style='width:180px;border:1px solid #d6d8ea;border-radius:6px;padding:2px 4px'>" +
-                  "<option value='OTHER'>Other</option>" +
-                  "<option value='ER'>ER</option>" +
-                  "<option value='ADMISSION'>Admission</option>" +
-                  "<option value='DISCHARGE'>Discharge</option>" +
-                "</select>" +
-              "</label>";
-          }
-
-          poHtml += "</div>";
-
-          let actualTimesHtml = "";
-
-          if (r.invoiceIncludeActualTimes) {
-            const firstLeg = Array.isArray(r.legs) && r.legs.length ? r.legs[0] : null;
-            const lastLeg = Array.isArray(r.legs) && r.legs.length ? r.legs[r.legs.length - 1] : null;
-
-            const puVal = esc(
-              r.review?.ActualPickupTimeOverride ||
-              firstLeg?.ActualPickupTime ||
-              r.ActualPickupTime ||
-              firstLeg?.PickupArrivalTime ||
-              r.PickupArrivalTime ||
-              ""
-            );
-
-            const doVal = esc(
-              r.review?.ActualDropoffTimeOverride ||
-              lastLeg?.ActualDropoffTime ||
-              r.ActualDropoffTime ||
-              lastLeg?.DropoffArrivalTime ||
-              r.DropoffArrivalTime ||
-              ""
-            );
-
-            actualTimesHtml =
-              "<div style='margin-top:12px;padding-top:8px;border-top:1px solid #e5e7eb'>" +
-                "<div style='margin-bottom:6px'><b>Invoice Times</b></div>" +
-                "<label style='display:flex;align-items:center;gap:6px;margin-bottom:6px'>" +
-                  "<span style='width:70px'>PU Time</span>" +
-                  "<input data-pu-time-override type='text' value='" + puVal + "' style='width:110px;border:1px solid #d6d8ea;border-radius:6px;padding:2px 4px' />" +
-                "</label>" +
-                "<label style='display:flex;align-items:center;gap:6px'>" +
-                  "<span style='width:70px'>DO Time</span>" +
-                  "<input data-do-time-override type='text' value='" + doVal + "' style='width:110px;border:1px solid #d6d8ea;border-radius:6px;padding:2px 4px' />" +
-                "</label>" +
-              "</div>";
-          }
-
-          const legsHtml = window.BM_DETAIL_PANEL.buildLegsHtml({
-            r,
-            esc,
-          });
-
-          detailBox.innerHTML =
-            "<div style='display:grid; grid-template-columns: 240px 320px repeat(auto-fit, minmax(260px, 1fr)); gap:20px; align-items:start'>" +
-
-              "<div>" +
-                pricingHtml +
-                actualTimesHtml +
-                poHtml +
-                splitHtml +
-              "</div>" +
-
-              "<div>" +
-                "<div style='margin-bottom:8px'><b>Notes</b></div>" +
-                "<div style='white-space:pre-line'>" + esc(r.notesFull || "") + "</div>" +
-              "</div>" +
-
-              legsHtml +
-
-            "</div>";
-
-            detailBox.querySelectorAll("[data-loc-edit]").forEach((input) => {
-              input.oninput = () => {
-                const kind = input.dataset.locEdit || "";
-                const isPickup = kind.startsWith("pu");
-
-                if (isPickup) {
-                  if (kind === "pu-name") r.review.PickupNameOverride = input.value;
-                  if (kind === "pu-address") r.review.PickupAddress1Override = input.value;
-                } else {
-                  if (kind === "do-name") r.review.DropoffNameOverride = input.value;
-                  if (kind === "do-address") r.review.DropoffAddress1Override = input.value;
-                }
-
-                if (window.markDirty) window.markDirty();
-              };
-            });
-
-            detailBox.querySelectorAll("[data-loc-save-alias]").forEach((btn) => {
-              btn.onclick = async (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-
-                const side = btn.dataset.locSaveAlias || "";
-                const locKey = btn.dataset.locKey || "";
-                const isPickup = side === "pu";
-
-                const nameInput = detailBox.querySelector(
-                  `[data-loc-key='${locKey}'][data-loc-edit='${isPickup ? "pu-name" : "do-name"}']`
-                );
-
-                const addrInput = detailBox.querySelector(
-                  `[data-loc-key='${locKey}'][data-loc-edit='${isPickup ? "pu-address" : "do-address"}']`
-                );
-
-                const originalName = nameInput?.dataset.originalName || "";
-                const originalAddress1 = nameInput?.dataset.originalAddress || "";
-
-                const name = nameInput?.value || "";
-                const address1 = addrInput?.value || "";
-
-                await fetch("/api/location-alias", {
-                  method: "POST",
-                  headers: { "Content-Type": "application/json" },
-                  body: JSON.stringify({
-                    originalName,
-                    originalAddress1,
-                    name,
-                    address1
-                  })
-                });
-
-                btn.textContent = "Saved";
-                setTimeout(() => {
-                  btn.textContent = isPickup ? "Save pickup alias" : "Save drop-off alias";
-                }, 1200);
-
-                if (window.markDirty) window.markDirty();
-              };
-            });
-
-            const poInput = detailBox.querySelector("[data-po-number-override]");
-            if (poInput) {
-              poInput.oninput = () => {
-                r.review.PoNumberOverride = poInput.value;
-                if (window.markDirty) window.markDirty();
-              };
-            }
-
-            const splitSelect = detailBox.querySelector("[data-invoice-split-override]");
-            if (splitSelect) {
-              const savedSplit = String(r.review?.InvoiceSplitOverride || "").toUpperCase();
-
-              splitSelect.value = r.invoiceSplit || "OTHER";
-              splitSelect.onchange = () => {
-                r.review.InvoiceSplitOverride = splitSelect.value || "OTHER";
-                if (window.markDirty) window.markDirty();
-              };
-            }
-
-            const splitTripCb = detailBox.querySelector("[data-split-trip]");
-
-            if (splitTripCb) {
-              splitTripCb.onchange = () => {
-                r.review.SplitTrip = !!splitTripCb.checked;
-
-                if (window.markDirty) window.markDirty();
-              };
-            }
-        }
-
-      const mraInput = detailBox.querySelector("[data-mra-number-override]");
-      if (mraInput) {
-        mraInput.oninput = () => {
-          r.review.MraNumberOverride = mraInput.value;
-          if (window.markDirty) window.markDirty();
-        };
-      }
+      const splitHtml = window.BM_DETAIL_PANEL.buildSplitHtml({
+        r,
+      });
       
-        const puOverrideInput = detailBox.querySelector("[data-pu-time-override]");
-      if (puOverrideInput) {
-        puOverrideInput.oninput = () => {
-          r.review.ActualPickupTimeOverride = puOverrideInput.value;
-          if (window.markDirty) window.markDirty();
-        };
-      }
+      const poHtml = window.BM_DETAIL_PANEL.buildPoHtml({
+        r,
+        esc,
+        extractMraNumberFromText,
+      });
 
-      const doOverrideInput = detailBox.querySelector("[data-do-time-override]");
-      if (doOverrideInput) {
-        doOverrideInput.oninput = () => {
-          r.review.ActualDropoffTimeOverride = doOverrideInput.value;
-          if (window.markDirty) window.markDirty();
-        };
-      }
+      const actualTimesHtml = window.BM_DETAIL_PANEL.buildActualTimesHtml({
+        r,
+        esc,
+      });
 
-      renderDetailPanel();
-    
+      const legsHtml = window.BM_DETAIL_PANEL.buildLegsHtml({
+        r,
+        esc,
+      });
+
+      const notesHtml = window.BM_DETAIL_PANEL.buildNotesHtml({
+        r,
+        esc,
+      });
+
+      detailBox.innerHTML = window.BM_DETAIL_PANEL.buildDetailPanelHtml({
+        pricingHtml,
+        actualTimesHtml,
+        poHtml,
+        splitHtml,
+        notesHtml,
+        legsHtml,
+      });
+
+      window.BM_DETAIL_PANEL.wireLocationEditors({
+        r,
+        detailBox,
+      });
+
+      window.BM_DETAIL_PANEL.wireAliasButtons({
+        detailBox,
+      });
+
+      window.BM_DETAIL_PANEL.wireSimpleDetailControls({
+        r,
+        detailBox,
+      });
+    }
+
+  renderDetailPanel();
     detailCell.appendChild(detailBox);
     detailRow.appendChild(detailCell);
     tb.appendChild(detailRow);

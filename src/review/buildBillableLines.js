@@ -288,7 +288,81 @@ function tripRouteLabel(r) {
 }
 
 function msComponentRouteText(r, componentIndex, componentKind) {
-  return invoiceRouteLabel(r);
+  const legs = Array.isArray(r.legs) ? r.legs : [];
+  if (!legs.length) return invoiceRouteLabel(r);
+
+  function legSortTime(leg) {
+    return [
+      String(leg.RideDateISO || leg.RideDate || ""),
+      String(
+        leg.ActualPickupTime ||
+        leg.PickupArrivalTime ||
+        leg.ScheduledPickupTime ||
+        leg.PickupTime ||
+        ""
+      )
+    ].join(" ");
+  }
+
+  const sortedLegs = legs.slice().sort((a, b) =>
+    legSortTime(a).localeCompare(legSortTime(b))
+  );
+
+  const kind = String(componentKind || "").toUpperCase();
+
+  const startIdx =
+    kind === "RT"
+      ? Number(componentIndex || 0) * 2
+      : Number(componentIndex || 0);
+
+  const endIdx =
+    kind === "RT"
+      ? Math.min(startIdx + 1, sortedLegs.length - 1)
+      : startIdx;
+
+  const firstLeg = sortedLegs[startIdx];
+  const lastLeg = sortedLegs[endIdx];
+
+  if (!firstLeg) return invoiceRouteLabel(r);
+
+  const puName = cleanLocationName(firstLeg.PickupName || "");
+  const puAddr = String(firstLeg.PickupAddress1 || "").trim();
+
+  const doName = cleanLocationName((lastLeg || firstLeg).DropoffName || "");
+  const doAddr = String((lastLeg || firstLeg).DropoffAddress1 || "").trim();
+
+  const includeTimes = !!r.invoiceIncludeActualTimes;
+
+  const puTime = cleanTime(
+    firstLeg.ActualPickupTime ||
+    firstLeg.PickupArrivalTime ||
+    firstLeg.ScheduledPickupTime ||
+    ""
+  );
+
+  const doTime = cleanTime(
+    (lastLeg || firstLeg).ActualDropoffTime ||
+    (lastLeg || firstLeg).DropoffArrivalTime ||
+    ""
+  );
+
+  const puSuffix =
+    includeTimes && puTime
+      ? ` (Pick up ${puTime})`
+      : "";
+
+  const doSuffix =
+    includeTimes && doTime
+      ? ` (Drop off ${doTime})`
+      : "";
+
+  const from = [puName, puAddr].filter(Boolean).join(" ");
+  const to = [doName, doAddr].filter(Boolean).join(" ");
+
+  if (from && to) return ` - FROM: ${from}${puSuffix} TO ${to}${doSuffix}`;
+  if (from) return ` - FROM: ${from}${puSuffix}`;
+  if (to) return ` - TO ${to}${doSuffix}`;
+  return "";
 }
 
 function automaticTimeCharge(r) {

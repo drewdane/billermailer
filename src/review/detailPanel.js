@@ -111,17 +111,29 @@
         const doAddrClean = doAddrRaw;
         const doCity = esc([leg.DropoffCity, leg.DropoffState, leg.DropoffZip].filter(Boolean).join(" "));
 
-        if (idx === 0) {
-          if (!r.review.PickupNameOverride) r.review.PickupNameOverride = puNameClean;
-          if (!r.review.PickupAddress1Override) r.review.PickupAddress1Override = puAddrClean;
-          if (!r.review.DropoffNameOverride) r.review.DropoffNameOverride = doNameClean;
-          if (!r.review.DropoffAddress1Override) r.review.DropoffAddress1Override = doAddrClean;
-        }
+        const puName = esc(
+          idx === 0 && r.review?.PickupNameOverride
+            ? r.review.PickupNameOverride
+            : puNameClean
+        );
 
-        const puName = esc(idx === 0 ? (r.review.PickupNameOverride || puNameClean) : puNameClean);
-        const puAddr = esc(idx === 0 ? (r.review.PickupAddress1Override || puAddrClean) : puAddrClean);
-        const doName = esc(idx === 0 ? (r.review.DropoffNameOverride || doNameClean) : doNameClean);
-        const doAddr = esc(idx === 0 ? (r.review.DropoffAddress1Override || doAddrClean) : doAddrClean);
+        const puAddr = esc(
+          idx === 0 && r.review?.PickupAddress1Override
+            ? r.review.PickupAddress1Override
+            : puAddrClean
+        );
+
+        const doName = esc(
+          idx === 0 && r.review?.DropoffNameOverride
+            ? r.review.DropoffNameOverride
+            : doNameClean
+        );
+
+        const doAddr = esc(
+          idx === 0 && r.review?.DropoffAddress1Override
+            ? r.review.DropoffAddress1Override
+            : doAddrClean
+        );
 
         const puKey = "pu-" + idx;
         const doKey = "do-" + idx;
@@ -144,6 +156,282 @@
     : "<div style='color:#64748b'>No leg detail available.</div>";
 }
 
+function buildPoHtml(ctx) {
+  const { r, esc, extractMraNumberFromText } = ctx;
+
+  const poVal = esc(
+    r.review?.PoNumberOverride ||
+    r.poNumber ||
+    ""
+  );
+
+  const mraVal = esc(
+    r.review?.MraNumberOverride ||
+    extractMraNumberFromText(r.notesFull || "") ||
+    ""
+  );
+
+  let poHtml =
+    "<div style='margin-top:12px;padding-top:8px;border-top:1px solid #e5e7eb'>" +
+      "<label style='display:flex;align-items:center;gap:6px;margin-bottom:6px'>" +
+        "<span style='width:90px'>PO#</span>" +
+        "<input data-po-number-override type='text' value='" + poVal + "' style='width:180px;border:1px solid #d6d8ea;border-radius:6px;padding:2px 4px' />" +
+      "</label>";
+
+  if (String(r.invoiceMethod || "").toLowerCase() === "thr_split") {
+    poHtml +=
+      "<div style='margin:10px 0 6px 0'><b>THR / Invoice Billing</b></div>" +
+      "<label style='display:flex;align-items:center;gap:6px;margin-bottom:6px'>" +
+        "<span style='width:90px'>MRA #</span>" +
+        "<input data-mra-number-override type='text' value='" + mraVal + "' style='width:180px;border:1px solid #d6d8ea;border-radius:6px;padding:2px 4px' />" +
+      "</label>" +
+      "<label style='display:flex;align-items:center;gap:6px'>" +
+        "<span style='width:90px'>Invoice Split</span>" +
+        "<select data-invoice-split-override style='width:180px;border:1px solid #d6d8ea;border-radius:6px;padding:2px 4px'>" +
+          "<option value='OTHER'>Other</option>" +
+          "<option value='ER'>ER</option>" +
+          "<option value='ADMISSION'>Admission</option>" +
+          "<option value='DISCHARGE'>Discharge</option>" +
+        "</select>" +
+      "</label>";
+  }
+
+  poHtml += "</div>";
+
+  return poHtml;
+}
+
+function buildActualTimesHtml(ctx) {
+  const { r, esc } = ctx;
+
+  if (!r.invoiceIncludeActualTimes) return "";
+
+  const firstLeg = Array.isArray(r.legs) && r.legs.length ? r.legs[0] : null;
+  const lastLeg = Array.isArray(r.legs) && r.legs.length ? r.legs[r.legs.length - 1] : null;
+
+  const puVal = esc(
+    r.review?.ActualPickupTimeOverride ||
+    firstLeg?.ActualPickupTime ||
+    r.ActualPickupTime ||
+    firstLeg?.PickupArrivalTime ||
+    r.PickupArrivalTime ||
+    ""
+  );
+
+  const doVal = esc(
+    r.review?.ActualDropoffTimeOverride ||
+    lastLeg?.ActualDropoffTime ||
+    r.ActualDropoffTime ||
+    lastLeg?.DropoffArrivalTime ||
+    r.DropoffArrivalTime ||
+    ""
+  );
+
+  return (
+    "<div style='margin-top:12px;padding-top:8px;border-top:1px solid #e5e7eb'>" +
+      "<div style='margin-bottom:6px'><b>Invoice Times</b></div>" +
+      "<label style='display:flex;align-items:center;gap:6px;margin-bottom:6px'>" +
+        "<span style='width:70px'>PU Time</span>" +
+        "<input data-pu-time-override type='text' value='" + puVal + "' style='width:110px;border:1px solid #d6d8ea;border-radius:6px;padding:2px 4px' />" +
+      "</label>" +
+      "<label style='display:flex;align-items:center;gap:6px'>" +
+        "<span style='width:70px'>DO Time</span>" +
+        "<input data-do-time-override type='text' value='" + doVal + "' style='width:110px;border:1px solid #d6d8ea;border-radius:6px;padding:2px 4px' />" +
+      "</label>" +
+    "</div>"
+  );
+}
+
+function buildDetailPanelHtml(ctx) {
+  const {
+    pricingHtml,
+    actualTimesHtml,
+    poHtml,
+    splitHtml,
+    notesHtml,
+    legsHtml,
+  } = ctx;
+
+  return (
+    "<div style='display:grid; grid-template-columns: 240px 320px repeat(auto-fit, minmax(260px, 1fr)); gap:20px; align-items:start'>" +
+
+      "<div>" +
+        pricingHtml +
+        actualTimesHtml +
+        poHtml +
+        splitHtml +
+      "</div>" +
+
+      notesHtml +
+
+      legsHtml +
+
+    "</div>"
+  );
+}
+
+function buildSplitHtml(ctx) {
+  const { r } = ctx;
+
+  const canSplit =
+    Array.isArray(r.legs) &&
+    r.legs.length > 1;
+
+  if (!canSplit) return "";
+
+  return (
+    "<label style='display:flex;align-items:center;gap:6px;margin-top:8px'>" +
+      "<input data-split-trip type='checkbox' " +
+      (r.review?.SplitTrip ? "checked" : "") +
+      " />" +
+      "<span>Split this trip into separate 1-ways</span>" +
+    "</label>"
+  );
+}
+
+function buildNotesHtml(ctx) {
+  const { r, esc } = ctx;
+
+  return (
+    "<div>" +
+      "<div style='margin-bottom:8px'><b>Notes</b></div>" +
+      "<div style='white-space:pre-line'>" +
+        esc(r.notesFull || "") +
+      "</div>" +
+    "</div>"
+  );
+}
+
+function wireSimpleDetailControls(ctx) {
+  const { r, detailBox } = ctx;
+
+  const poInput = detailBox.querySelector("[data-po-number-override]");
+  if (poInput) {
+    poInput.oninput = () => {
+      r.review.PoNumberOverride = poInput.value;
+      if (window.markDirty) window.markDirty();
+    };
+  }
+
+  const splitSelect = detailBox.querySelector("[data-invoice-split-override]");
+  if (splitSelect) {
+    splitSelect.value = r.invoiceSplit || "OTHER";
+    splitSelect.onchange = () => {
+      r.review.InvoiceSplitOverride = splitSelect.value || "OTHER";
+      if (window.markDirty) window.markDirty();
+    };
+  }
+
+  const splitTripCb = detailBox.querySelector("[data-split-trip]");
+  if (splitTripCb) {
+    splitTripCb.onchange = () => {
+      r.review.SplitTrip = !!splitTripCb.checked;
+      if (window.markDirty) window.markDirty();
+    };
+  }
+
+  const mraInput = detailBox.querySelector("[data-mra-number-override]");
+  if (mraInput) {
+    mraInput.oninput = () => {
+      r.review.MraNumberOverride = mraInput.value;
+      if (window.markDirty) window.markDirty();
+    };
+  }
+
+  const puOverrideInput = detailBox.querySelector("[data-pu-time-override]");
+  if (puOverrideInput) {
+    puOverrideInput.oninput = () => {
+      r.review.ActualPickupTimeOverride = puOverrideInput.value;
+      if (window.markDirty) window.markDirty();
+    };
+  }
+
+  const doOverrideInput = detailBox.querySelector("[data-do-time-override]");
+  if (doOverrideInput) {
+    doOverrideInput.oninput = () => {
+      r.review.ActualDropoffTimeOverride = doOverrideInput.value;
+      if (window.markDirty) window.markDirty();
+    };
+  }
+}
+
+function wireLocationEditors(ctx) {
+  const { r, detailBox } = ctx;
+
+  detailBox.querySelectorAll("[data-loc-edit]").forEach((input) => {
+    input.oninput = () => {
+      const locKey = input.dataset.locKey || "";
+
+      // Current override model only supports the first displayed route.
+      // Do not let return-leg edits overwrite the export route overrides.
+      if (locKey !== "pu-0" && locKey !== "do-0") {
+        return;
+      }
+
+      const kind = input.dataset.locEdit || "";
+      const isPickup = kind.startsWith("pu");
+
+      if (isPickup) {
+        if (kind === "pu-name") r.review.PickupNameOverride = input.value;
+        if (kind === "pu-address") r.review.PickupAddress1Override = input.value;
+      } else {
+        if (kind === "do-name") r.review.DropoffNameOverride = input.value;
+        if (kind === "do-address") r.review.DropoffAddress1Override = input.value;
+      }
+
+      if (window.markDirty) window.markDirty();
+    };
+  });
+}
+
+function wireAliasButtons(ctx) {
+  const { detailBox } = ctx;
+
+  detailBox.querySelectorAll("[data-loc-save-alias]").forEach((btn) => {
+    btn.onclick = async (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const side = btn.dataset.locSaveAlias || "";
+      const locKey = btn.dataset.locKey || "";
+      const isPickup = side === "pu";
+
+      const nameInput = detailBox.querySelector(
+        `[data-loc-key='${locKey}'][data-loc-edit='${isPickup ? "pu-name" : "do-name"}']`
+      );
+
+      const addrInput = detailBox.querySelector(
+        `[data-loc-key='${locKey}'][data-loc-edit='${isPickup ? "pu-address" : "do-address"}']`
+      );
+
+      const originalName = nameInput?.dataset.originalName || "";
+      const originalAddress1 = nameInput?.dataset.originalAddress || "";
+
+      const name = nameInput?.value || "";
+      const address1 = addrInput?.value || "";
+
+      await fetch("/api/location-alias", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          originalName,
+          originalAddress1,
+          name,
+          address1,
+        }),
+      });
+
+      btn.textContent = "Saved";
+
+      setTimeout(() => {
+        btn.textContent = isPickup ? "Save pick up address for future" : "Save drop-off address for future";
+      }, 1200);
+
+      if (window.markDirty) window.markDirty();
+    };
+  });
+}
+
 function renderDetailPanel() {
   return false;
 }
@@ -152,5 +440,13 @@ window.BM_DETAIL_PANEL = {
   renderDetailPanel,
   buildPricingHtml,
   buildLegsHtml,
+  buildPoHtml,
+  buildActualTimesHtml,
+  buildSplitHtml,
+  buildDetailPanelHtml,
+  buildNotesHtml,
+  wireSimpleDetailControls,
+  wireLocationEditors,
+  wireAliasButtons,
 };
 })();
