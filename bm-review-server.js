@@ -9,7 +9,15 @@ const { scrubStaleTimeChargeOverride, } = require("./src/review/reviewOverrides"
 const { csvFromRows, buildCsvRowsFromGrouped, } = require("./src/review/csvExport");
 const { normalizeAddress, matchesAnyBillingAddress, applyLocationAliasesToRow, } = require("./src/orgs/CTT/addressUtils");
 const { buildGroupedInvoicesForSet, rateRowIncludesActualTimes, } = require("./src/review/invoiceBuilder");
-const { inferThrSplit, pickPoNumber, } = require("./src/orgs/CTT/invoiceSplit");
+const { resolveReviewedRowsForExport } = require("./src/review/resolveReviewedRow");
+const { buildBillableLines } = require("./src/review/buildBillableLines");
+const { loadRateSheet, makeRateLookup } = require("./src/review/loadRateSheet");
+const { priceGroupedTrip } = require("./src/review/priceGroupedTrip");
+const { computeAvailableCharges } = require("./src/review/reviewAdjustments");
+const { buildPricingContext, ratesPath: defaultRatesPath } = require("./src/orgs/CTT/pricing/pricingContext");
+const { computeDeadheadCharge } = require("./src/orgs/CTT/pricing/computeDeadheadCharge");
+const { normalizeInvoiceSplit, inferThrSplit, pickPoNumber } = require("./src/orgs/CTT/invoiceSplit");
+const { num } = require("./src/pricing/rateLookup");
 const { fmtQboDate, compactDateForDocNum, assertNoInvoiceNoCollisions, } = require("./src/orgs/CTT/invoiceNumbers");
 const { handleItemsRoute, } = require("./src/review/routes/itemRoutes");
 const { handleGetConfig, handlePostConfig, } = require("./src/review/routes/configRoutes");
@@ -25,6 +33,8 @@ function arg(name, fallback = null) {
 
 const baseDir = path.resolve(process.cwd(), arg("--dir", "data\\output\\review"));
 const reviewConfigPath = path.join(baseDir, "config.json");
+const rateRows = loadRateSheet(defaultRatesPath);
+const rateLookupFn = makeRateLookup(rateRows);
 
 function readReviewConfig() {
   if (!fs.existsSync(reviewConfigPath)) return {};
