@@ -24,6 +24,7 @@ const { handleGetConfig, handlePostConfig, } = require("./src/review/routes/conf
 const { handleGetOverrides, handlePostOverrides, } = require("./src/review/routes/overrideRoutes");
 const { handleAccountsRoute, } = require("./src/review/routes/accountRoutes");
 const { handleIndexRoute, } = require("./src/review/routes/indexRoutes");
+const { handlePreviewLinesRoute } = require("./src/review/routes/previewRoutes");
 
 function arg(name, fallback = null) {
   const idx = process.argv.indexOf(name);
