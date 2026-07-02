@@ -136,16 +136,14 @@ function buildGroupedInvoicesForSet({ baseDir, acct, period, invoiceType, safeJo
     for (const exportRow of exportRows) {
       const repricedRow = exportRow.repricedRow;
 
-      const splitOverride = String(review.InvoiceSplitOverride || "AUTO").toUpperCase();
-
-      const invoiceSplit = splitOverride === "AUTO"
-        ? inferThrSplit(repricedRow)
-        : normalizeInvoiceSplit(splitOverride);
+      const invoiceSplit = normalizeInvoiceSplit(
+        repricedRow.InvoiceSplit || "OTHER"
+      );
 
       const rowReview = repricedRow.review || review;
 
       const className =
-        rowReview.ClassOverride ||
+        repricedRow.BillingClass ||
         inferQboClass(repricedRow, { matchesAnyBillingAddress });
 
       const exportCustomer = exportCustomerName(

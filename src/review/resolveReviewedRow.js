@@ -117,6 +117,57 @@ function resolveReviewedRowsForExport({
         rateRow?.InvoiceMethod ||
         "single",
       ...pricingInput,
+
+      FirstName:
+        review.FirstNameOverride ||
+        pricingInput.FirstName,
+
+      LastName:
+        review.LastNameOverride ||
+        pricingInput.LastName,
+
+      PickupName:
+        review.PickupNameOverride ||
+        pricingInput.PickupName,
+
+      PickupAddress1:
+        review.PickupAddress1Override ||
+        pricingInput.PickupAddress1,
+
+      DropoffName:
+        review.DropoffNameOverride ||
+        pricingInput.DropoffName,
+
+      DropoffAddress1:
+        review.DropoffAddress1Override ||
+        pricingInput.DropoffAddress1,
+
+      ActualPickupTime:
+        review.ActualPickupTimeOverride ||
+        pricingInput.ActualPickupTime,
+
+      ActualDropoffTime:
+        review.ActualDropoffTimeOverride ||
+        pricingInput.ActualDropoffTime,
+
+      PoNumber:
+        review.PoNumberOverride ||
+        pricingInput.PoNumber,
+
+      MraNumber:
+        review.MraNumberOverride ||
+        pricingInput.MraNumber,
+
+      InvoiceSplit:
+        review.InvoiceSplitOverride &&
+        review.InvoiceSplitOverride !== "AUTO"
+          ? review.InvoiceSplitOverride
+          : inferThrSplit(pricingInput),
+
+      BillingClass:
+        review.ClassOverride ||
+        pricingInput.BillingClass,
+
       pricing,
       invoiceIncludeActualTimes: rateRowIncludesActualTimes(rateRow || {}),
       invoiceFullStopList: yesFlag(
