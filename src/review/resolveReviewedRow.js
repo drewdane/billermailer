@@ -164,9 +164,17 @@ function resolveReviewedRowsForExport({
           ? review.InvoiceSplitOverride
           : inferThrSplit(pricingInput),
 
-      BillingClass:
-        review.ClassOverride ||
-        pricingInput.BillingClass,
+      QboClass:
+        review.ClassOverride || "",
+
+      AccountCode: effectiveAccountCode,
+      AccountName: effectiveAccountCode,
+
+      AddAfterHours: !!review.AddAfterHours,
+      AddThirdShift: !!review.AddThirdShift,
+      AddWeekend: !!review.AddWeekend,
+      AddHoliday: !!review.AddHoliday,
+      TimeChargeManual: !!review.TimeChargeManual,
 
       pricing,
       invoiceIncludeActualTimes: rateRowIncludesActualTimes(rateRow || {}),

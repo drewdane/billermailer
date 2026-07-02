@@ -478,23 +478,23 @@ function timeChargeAmountForCode(r, code) {
 function selectedTimeCharge(r) {
   const review = r.review || {};
 
-  if (review.AddHoliday) {
+  if (r.AddHoliday) {
     return { code: "HOLIDAY", amount: timeChargeAmountForCode(r, "HOLIDAY") };
   }
 
-  if (review.AddThirdShift) {
+  if (r.AddThirdShift) {
     return { code: "THIRD_SHIFT", amount: timeChargeAmountForCode(r, "THIRD_SHIFT") };
   }
 
-  if (review.AddWeekend) {
+  if (r.AddWeekend) {
     return { code: "WEEKEND", amount: timeChargeAmountForCode(r, "WEEKEND") };
   }
 
-  if (review.AddAfterHours) {
+  if (r.AddAfterHours) {
     return { code: "AFTER_HOURS", amount: timeChargeAmountForCode(r, "AFTER_HOURS") };
   }
 
-  if (!review.TimeChargeManual) {
+  if (!r.TimeChargeManual) {
     const auto = automaticTimeCharge(r);
     if (auto?.code) return auto;
   }

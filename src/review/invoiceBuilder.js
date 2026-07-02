@@ -143,13 +143,13 @@ function buildGroupedInvoicesForSet({ baseDir, acct, period, invoiceType, safeJo
       const rowReview = repricedRow.review || review;
 
       const className =
-        repricedRow.BillingClass ||
+        repricedRow.QboClass ||
         inferQboClass(repricedRow, { matchesAnyBillingAddress });
 
       const exportCustomer = exportCustomerName(
         repricedRow,
         rateRow,
-        effectiveAccountCode,
+        repricedRow.AccountCode,
         isPrivatePayTrip
       );
 
