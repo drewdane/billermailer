@@ -948,6 +948,8 @@ function renderRows() {
         r,
         detailBox,
       });
+
+      window.BM_DETAIL_PANEL.loadExportPreviewLines(r, detailBox);
     }
 
   renderDetailPanel();

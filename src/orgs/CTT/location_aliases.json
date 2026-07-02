@@ -36,7 +36,7 @@
     "address1": "6317 Harris Parkway"
   },
   "3rd floor- stayton skilled living|2501 museum way": {
-    "name": "Stayton Skilled Living",
+    "name": "Stayton Skilled living",
     "address1": "2501 Museum Way"
   },
   "jps main enterance|1500 south main street": {
@@ -52,7 +52,7 @@
     "address1": "1325 Pennsylvania Avenue"
   },
   "ben hogan anita bhansali, md/ dr. sanchez/ dr. wong nuero|800 5th avenue": {
-    "name": "Ben Hogan Center",
+    "name": "Ben Hogan",
     "address1": "800 5th Avenue"
   },
   "harris southwest er ambulance bay str- ct scan/ mri enterance|6100 harris parkway": {
@@ -112,7 +112,7 @@
     "address1": "800 5th Avenue"
   },
   "baylor all saints fort worth b building|1400 8th avenue": {
-    "name": "Baylor All Saints Fort Worth",
+    "name": "Baylor All Saints",
     "address1": "1400 8th Avenue"
   },
   "baylor all saints fort worth (a building) main entrance pcu floor # 817-922-4680|1400 8th avenue": {
@@ -120,7 +120,7 @@
     "address1": "1400 8th Avenue"
   },
   "clearsky rehabilitation hospital of weatherford|703 eureka street": {
-    "name": "ClearSky Rehab",
+    "name": "Clear Sky Rehab",
     "address1": "703 Eureka Street"
   },
   "clear sky rehab|703 eureka street": {
@@ -148,11 +148,11 @@
     "address1": "3500 Gaston Avenue"
   },
   "baylor scott & white medical center - grapevine|1650 west college street": {
-    "name": "Baylor Scott & White Medical Center, Grapevine",
+    "name": "Baylor Scott & White Medical Center",
     "address1": "1650 West College Street"
   },
   "baylor scott & white hospital - grapevine|1650 w college st": {
-    "name": "Baylor Scott & White Medical Center, Grapevine",
+    "name": "Baylor Scott & White Hospital",
     "address1": "1650 W College St"
   },
   "discovery village southlake|201 watermere drive": {
@@ -168,7 +168,7 @@
     "address1": "1300 West Terrell Avenue"
   },
   "#300 ben hogan-ortho & trauma|800 5th avenue": {
-    "name": "Ben Hogan Center",
+    "name": "Ben Hogan",
     "address1": "800 5th Avenue"
   },
   "harris southwest main wheelchair admission office ct scan/ mri check in|6100 harris parkway": {
@@ -196,7 +196,7 @@
     "address1": "5540 Sycamore School Road"
   },
   "harris emergency ct scan/ mri ambulance bay|910 5th avenue": {
-    "name": "Harris ER CT Scan",
+    "name": "Harris CT Scan/ MRI",
     "address1": "910 5th Avenue"
   },
   "ben hogan bldg olaide ajayi, md|800 5th avenue": {
@@ -268,7 +268,7 @@
     "address1": "1420 8th Avenue"
   },
   "sw endoscopy pick up around parking garage pick up|6317 harris parkway": {
-    "name": "SW Endoscopy",
+    "name": "Southwest Fort Worth Endoscopy Center",
     "address1": "6317 Harris Parkway"
   },
   "southwest fort worth endoscopy center pick up|6317 harris parkway": {
@@ -282,5 +282,93 @@
   "texas oncology-grapevine|1631 lancaster drive": {
     "name": "Texas Oncology-Grapevine",
     "address1": "1631 Lancaster Drive"
+  },
+  "residence|7729 stanley court": {
+    "name": "Residence",
+    "address1": "7729 Stanley Court"
+  },
+  "baylor all saints fort worth (a building) main entrance|1400 8th avenue": {
+    "name": "Baylor All Saints",
+    "address1": "1400 8th Avenue"
+  },
+  "chu eye institute|3017 west 7th street": {
+    "name": "EyeWorks",
+    "address1": "3017 West 7th Street"
+  },
+  "texas health harris methodist hurst-euless-bedford|1600 hospital parkway": {
+    "name": "Texas Health HEB",
+    "address1": "1600 Hospital Parkway"
+  },
+  "baylor scott & white family medicine - keller|620 south main street": {
+    "name": "Baylor Scott & White Family Medicine",
+    "address1": "620 South Main Street"
+  },
+  "baylor scott & white medical center - grapevine|1650 w college st": {
+    "name": "Baylor Scott & White Medical Center",
+    "address1": "1650 W College St"
+  },
+  "harris southwest main ct scan/ mri|6100 harris parkway": {
+    "name": "Harris Southwest CT Scan/ MRI",
+    "address1": "6100 Harris Parkway"
+  },
+  "texas health harris methodist hospital southwest fort worth|6100 harris parkway": {
+    "name": "Harris Southwest",
+    "address1": "6100 Harris Parkway"
+  },
+  "baylor all saints fort worth a building-registration|1400 8th avenue": {
+    "name": "Baylor All Saints",
+    "address1": "1400 8th Avenue"
+  },
+  "ophthalmology associates|1201 summit avenue": {
+    "name": "Ophthalmology Associates",
+    "address1": "1201 Summit Avenue"
+  },
+  "the center for cancer & blood disorders: fort worth|800 west magnolia avenue": {
+    "name": "Center for Cancer & Blood Disorders",
+    "address1": "800 West Magnolia Avenue"
+  },
+  "dr. morgan- vascular|1300 west terrell avenue": {
+    "name": "Dr. Morgan - Vascular",
+    "address1": "1300 West Terrell Avenue"
+  },
+  "mashrin lira chowdhury, do|6801 oakmont boulevard": {
+    "name": "Mashrin Lira Chowdhury",
+    "address1": "6801 Oakmont Boulevard"
+  },
+  "bedford wellness and rehab (real)|2001 forest ridge drive": {
+    "name": "Bedford Wellness and Rehab",
+    "address1": "2001 Forest Ridge Drive"
+  },
+  "front entrance gastro endoscopy|900 west magnolia avenue": {
+    "name": "Fort Worth Endoscopy Center",
+    "address1": "900 West Magnolia Avenue"
+  },
+  "randall todd richwine, do|5750 west vickery boulevard": {
+    "name": "Randall Todd Richwine",
+    "address1": "5750 West Vickery Boulevard"
+  },
+  "the center for cancer & blood disorders - southlake|630 texas highway 114": {
+    "name": "The Center for Cancer & Blood Disorders",
+    "address1": "630 Texas Highway 114"
+  },
+  "discovery village at southlake-3rd floor independent|201 watermere drive": {
+    "name": "Discovery Village At Southlake",
+    "address1": "201 Watermere Drive"
+  },
+  "baylor scott & white urology|1101 6th avenue": {
+    "name": "Baylor Scott & White",
+    "address1": "1101 6th Avenue"
+  },
+  "senior care health & rehabilitation of wichita falls, tx|910 midwestern parkway": {
+    "name": "Senior Care Health & Rehabilitation",
+    "address1": "910 Midwestern Parkway"
+  },
+  "laura baker do|5612 edwards ranch road": {
+    "name": "Laura Baker",
+    "address1": "5612 Edwards Ranch Road"
+  },
+  "jane and john justin surgical tower registration|801 5th avenue": {
+    "name": "Harris Justin Tower",
+    "address1": "801 5th Avenue"
   }
 }

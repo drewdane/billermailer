@@ -73,6 +73,16 @@
       chargedAccessoryLines.push("<div>Fuel Surcharge: $" + fuelTotal.toFixed(2) + "</div>");
     }
 
+    if (r.review?.MatchToQuote) {
+      const quoteAmount = Number(r.review?.QuoteAmount || 0);
+      const currentTotal = Number(grandTotal || 0);
+      const variance = quoteAmount - currentTotal;
+
+      chargedAccessoryLines.push(
+        "<div>Match To Quote: $" + variance.toFixed(2) + "</div>"
+      );
+    }
+
     const noChargeHtml = r.review?.NoCharge
       ? "<div style='margin-top:6px;color:#991b1b;font-weight:600'>No Charge</div>"
       : "";
@@ -257,6 +267,10 @@ function buildDetailPanelHtml(ctx) {
 
       "<div>" +
         pricingHtml +
+        "<div data-export-preview-lines style='margin-top:12px;padding-top:8px;border-top:1px solid #e5e7eb'>" +
+          "<div style='margin-bottom:6px'><b>Export Preview</b></div>" +
+          "<div style='color:#64748b'>Loading...</div>" +
+        "</div>" +
         actualTimesHtml +
         poHtml +
         splitHtml +
@@ -432,12 +446,57 @@ function wireAliasButtons(ctx) {
   });
 }
 
+async function loadExportPreviewLines(r, detailBox) {
+  const host = detailBox.querySelector("[data-export-preview-lines]");
+  if (!host) return;
+
+  try {
+    const resp = await fetch("/api/preview-lines", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        row: r,
+        review: r.review || {}
+      })
+    });
+
+    const data = await resp.json();
+
+    if (!data.ok) {
+      host.innerHTML =
+        "<div style='margin-bottom:6px'><b>Export Preview</b></div>" +
+        "<div style='color:#991b1b'>" + String(data.error || "Preview failed") + "</div>";
+      return;
+    }
+
+    const summary = data.pricingSummary || {};
+    const accessories = Array.isArray(summary.accessories) ? summary.accessories : [];
+
+    host.innerHTML =
+      "<div style='margin-bottom:6px'><b>Server Pricing</b></div>" +
+      "<div>Base: $" + Number(summary.base || 0).toFixed(2) + "</div>" +
+      "<div>Mileage: $" + Number(summary.mileage || 0).toFixed(2) + "</div>" +
+      accessories.map((line) => {
+        return "<div>" + String(line.label || "") + ": $" + Number(line.amount || 0).toFixed(2) + "</div>";
+      }).join("") +
+      "<div style='margin-top:6px'><b>Total: $" + Number(summary.total || 0).toFixed(2) + "</b></div>";
+
+  } catch (err) {
+    host.innerHTML =
+      "<div style='margin-bottom:6px'><b>Export Preview</b></div>" +
+      "<div style='color:#991b1b'>" + String(err?.message || err) + "</div>";
+  }
+}
+
 function renderDetailPanel() {
   return false;
 }
 
 window.BM_DETAIL_PANEL = {
   renderDetailPanel,
+  loadExportPreviewLines,
   buildPricingHtml,
   buildLegsHtml,
   buildPoHtml,

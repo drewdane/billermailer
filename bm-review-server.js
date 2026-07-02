@@ -42,6 +42,10 @@ function readReviewConfig() {
   return readJson(reviewConfigPath);
 }
 
+function yesFlag(v) {
+  return String(v || "").trim().toLowerCase() === "y";
+}
+
 function writeReviewConfigPatch(patch) {
   const current = readReviewConfig();
   writeJson(reviewConfigPath, {
@@ -241,6 +245,28 @@ const server = http.createServer((req, res) => {
         safeJoin,
         writeJson,
         baseDir,
+      });
+    }
+
+    if (u.pathname === "/api/preview-lines" && req.method === "POST") {
+      return handlePreviewLinesRoute({
+        req,
+        res,
+        send,
+        buildBillableLines,
+        resolveReviewedRowsForExport,
+        rateLookupFn,
+        buildPricingContext,
+        priceGroupedTrip,
+        computeAvailableCharges,
+        computeDeadheadCharge,
+        rateRowIncludesActualTimes,
+        yesFlag,
+        pickPoNumber,
+        inferThrSplit,
+        normalizeInvoiceSplit,
+        num,
+        readReviewConfig,
       });
     }
 

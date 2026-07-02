@@ -146,7 +146,86 @@ function locationLabel(name, address1) {
     .join(" ");
 }
 
+function invoiceFullStopListLabel(r) {
+  const legs = Array.isArray(r.legs) ? r.legs : [];
+  if (!legs.length) return "";
+
+  function legSortTime(leg) {
+    return [
+      String(leg.RideDateISO || leg.RideDate || ""),
+      String(
+        leg.ActualPickupTime ||
+        leg.PickupArrivalTime ||
+        leg.ScheduledPickupTime ||
+        leg.PickupTime ||
+        ""
+      )
+    ].join(" ");
+  }
+
+  const sortedLegs = legs.slice().sort((a, b) =>
+    legSortTime(a).localeCompare(legSortTime(b))
+  );
+
+  const parts = [];
+
+  for (const leg of sortedLegs) {
+    const isFirstLeg = sortedLegs.indexOf(leg) === 0;
+
+    const puName = cleanLocationName(
+      isFirstLeg
+        ? (r.review?.PickupNameOverride || leg.PickupName || "")
+        : (leg.PickupName || "")
+    );
+    const puAddr = String(
+      isFirstLeg
+        ? (r.review?.PickupAddress1Override || leg.PickupAddress1 || "")
+        : (leg.PickupAddress1 || "")
+    ).trim();
+
+    const doName = cleanLocationName(
+      isFirstLeg
+        ? (r.review?.DropoffNameOverride || leg.DropoffName || "")
+        : (leg.DropoffName || "")
+    );
+    const doAddr = String(
+      isFirstLeg
+        ? (r.review?.DropoffAddress1Override || leg.DropoffAddress1 || "")
+        : (leg.DropoffAddress1 || "")
+    ).trim();
+
+    const puTime = cleanTime(
+      leg.ActualPickupTime ||
+      leg.PickupArrivalTime ||
+      leg.ScheduledPickupTime ||
+      ""
+    );
+
+    const doTime = cleanTime(
+      leg.ActualDropoffTime ||
+      leg.DropoffArrivalTime ||
+      ""
+    );
+
+    const puSuffix = puTime ? ` (Pick up ${puTime})` : "";
+    const doSuffix = doTime ? ` (Drop off ${doTime})` : "";
+
+    const from = [puName, puAddr].filter(Boolean).join(" ");
+    const to = [doName, doAddr].filter(Boolean).join(" ");
+
+    if (from && to) parts.push(`FROM: ${from}${puSuffix} TO ${to}${doSuffix}`);
+    else if (from) parts.push(`FROM: ${from}${puSuffix}`);
+    else if (to) parts.push(`TO ${to}${doSuffix}`);
+  }
+
+  return parts.length ? " - " + parts.join("; ") : "";
+}
+
 function invoiceRouteLabel(r) {
+  if (r.invoiceFullStopList && Array.isArray(r.legs) && r.legs.length) {
+    return invoiceFullStopListLabel(r);
+  }
+
   function legSortTime(leg) {
     const src =
       Array.isArray(leg.legs) && leg.legs.length
@@ -635,84 +714,84 @@ function buildBillableLines(r, globals = {}) {
       Number(r.pricing?.cancelFee || r.availableCharges?.cancel_fee || 0),
       { forceZero: forceZeroMode }
     );
-    return lines;
-  }
+  } else {
 
-  const msComponents = Array.isArray(r.pricing?.audit?.multiStopBaseComponents)
-    ? r.pricing.audit.multiStopBaseComponents
-    : [];
+    const msComponents = Array.isArray(r.pricing?.audit?.multiStopBaseComponents)
+      ? r.pricing.audit.multiStopBaseComponents
+      : [];
 
-  if (
-    String(r.TripShape || "").toUpperCase() === "MULTI_STOP" &&
-    msComponents.length
-  ) {
-    for (const comp of msComponents) {
-      const compRouteText = msComponentRouteText(
-        r,
-        Number(comp.componentIndex || 0),
-        comp.kind
-      );
+    if (
+      String(r.TripShape || "").toUpperCase() === "MULTI_STOP" &&
+      msComponents.length
+    ) {
+      for (const comp of msComponents) {
+        const compRouteText = msComponentRouteText(
+          r,
+          Number(comp.componentIndex || 0),
+          comp.kind
+        );
 
-      const totalLegs = Number(r.LegCount || r.legs?.length || 0);
+        const totalLegs = Number(r.LegCount || r.legs?.length || 0);
 
-      const legStart = (Number(comp.componentIndex || 0) * 2) + 1;
-      const legEnd = comp.kind === "RT"
-        ? Math.min(legStart + 1, totalLegs)
-        : legStart;
+        const legStart = (Number(comp.componentIndex || 0) * 2) + 1;
+        const legEnd = comp.kind === "RT"
+          ? Math.min(legStart + 1, totalLegs)
+          : legStart;
 
-      const legLabel = legStart === legEnd
-        ? `Leg ${legStart} of ${totalLegs}`
-        : `Legs ${legStart} & ${legEnd} of ${totalLegs}`;
+        const legLabel = legStart === legEnd
+          ? `Leg ${legStart} of ${totalLegs}`
+          : `Legs ${legStart} & ${legEnd} of ${totalLegs}`;
 
-      const mobilityLabel =
-        String(r.Mobility || "").toUpperCase() === "STR"
-          ? " with Stretcher"
-          : r.review?.AddRECL
-            ? " with Recliner"
-            : r.review?.AddNeedWC
-              ? " with Wheelchair"
-              : "";
+        const mobilityLabel =
+          String(r.Mobility || "").toUpperCase() === "STR"
+            ? " with Stretcher"
+            : r.review?.AddRECL
+              ? " with Recliner"
+              : r.review?.AddNeedWC
+                ? " with Wheelchair"
+                : "";
 
-      const label = `Trip Charge - ${legLabel}${mobilityLabel}`;
+        const label = `Trip Charge - ${legLabel}${mobilityLabel}`;
 
+        addLine(
+          lines,
+          r,
+          "BASE",
+          `${prefix}${compRouteText} - ${label}`,
+          Number(comp.amount || 0),
+          { forceZero: forceZeroMode }
+        );
+      }
+    } else {
       addLine(
         lines,
         r,
         "BASE",
-        `${prefix}${compRouteText} - ${label}`,
-        Number(comp.amount || 0),
+        `${prefix}${routeText} - ${tripChargeLabel(r)}`,
+        Number(r.pricing?.base || 0) + foldedWcAccessoryAmount(r),
         { forceZero: forceZeroMode }
       );
     }
-  } else {
+
+    const mileageAmount = Number(r.pricing?.mileage || 0);
+    const billableMiles = Math.ceil(
+      Number(r.pricing?.audit?.billableMiles || r.review?.MileageOverride || r.DirectMileage || 0)
+    );
+
     addLine(
       lines,
       r,
-      "BASE",
-      `${prefix}${routeText} - ${tripChargeLabel(r)}`,
-      Number(r.pricing?.base || 0) + foldedWcAccessoryAmount(r),
-      { forceZero: forceZeroMode }
+      "MILEAGE",
+      `${prefix} - Mileage - ${billableMiles} mi`,
+      mileageAmount,
+      {
+        miles: billableMiles,
+        qty: billableMiles,
+        rate: billableMiles > 0 ? money(mileageAmount / billableMiles) : mileageAmount,
+        forceZero: forceZeroMode
+      }
     );
   }
-
-  const mileageAmount = Number(r.pricing?.mileage || 0);
-  const billableMiles = Math.ceil(
-    Number(r.pricing?.audit?.billableMiles || r.review?.MileageOverride || r.DirectMileage || 0)
-  );
-
-  addLine(
-    lines,
-    r,
-    "MILEAGE",
-    `${prefix} - Mileage - ${billableMiles} mi`,
-    mileageAmount,
-    {
-      miles: billableMiles,
-      qty: billableMiles,
-      rate: billableMiles > 0 ? money(mileageAmount / billableMiles) : mileageAmount,
-      forceZero: forceZeroMode
-    }
-  );
 
   const isRtBase =
     String(r.TripShape || "").toUpperCase() === "ROUND_TRIP" ||
@@ -779,24 +858,15 @@ function buildBillableLines(r, globals = {}) {
       const billingClass = String(r.BillingClass || "").toUpperCase();
 
       // Contract/client overquote:
-      // Collapse everything to one Trip Charge line at quoted amount.
+      // Hide positive quote variance by adding it to the Trip Charge line.
       if (billingClass !== "PRIVATE_PAY" && variance > 0) {
-        return [
-          {
-            lineKind: "BASE",
-            productService: "Trip Charge",
-            lineDescription: `${prefix}${routeText} - ${tripChargeLabel(r)}, per Quote`,
-            qty: 1,
-            rate: quoteAmount,
-            amount: quoteAmount,
-            lineId: r.LineId,
-            rideDateISO: r.RideDateISO || "",
-            rider: riderLabel(r),
-            tripShape: r.TripShape || "",
-            mobility: r.Mobility || "",
-            route: tripRouteLabel(r),
-          }
-        ];
+        const baseLine = lines.find((line) => line.lineKind === "BASE");
+
+        if (baseLine) {
+          baseLine.amount = money(Number(baseLine.amount || 0) + variance);
+          baseLine.rate = money(Number(baseLine.rate || 0) + variance);
+          return lines;
+        }
       }
 
       // Contract underquote OR any Private Pay MTQ:
