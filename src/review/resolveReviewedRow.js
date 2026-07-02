@@ -78,6 +78,15 @@ function resolveReviewedRowsForExport({
       const singlePricingInput = {
         ...singleRow,
         review: splitReview,
+
+        FirstName:
+          review.FirstNameOverride ||
+          singleRow.FirstName,
+
+        LastName:
+          review.LastNameOverride ||
+          singleRow.LastName,
+
         AccountCode: effectiveAccountCode,
         AccountName: effectiveAccountCode,
         Mobility: mobilityOverride,

@@ -103,6 +103,38 @@
     );
   }
 
+  function buildPassengerHtml(ctx) {
+    const { r, esc } = ctx;
+
+    const first = esc(
+      r.review?.FirstNameOverride ||
+      r.FirstName ||
+      ""
+    );
+
+    const last = esc(
+      r.review?.LastNameOverride ||
+      r.LastName ||
+      ""
+    );
+
+    return (
+      "<div style='margin-bottom:12px'>" +
+        "<div style='margin-bottom:6px'><b>Passenger</b></div>" +
+
+        "<label style='display:flex;align-items:center;gap:6px;margin-bottom:6px'>" +
+          "<span style='width:70px'>First</span>" +
+          "<input data-passenger-first type='text' value='" + first + "' style='flex:1;border:1px solid #d6d8ea;border-radius:6px;padding:2px 4px' />" +
+        "</label>" +
+
+        "<label style='display:flex;align-items:center;gap:6px'>" +
+          "<span style='width:70px'>Last</span>" +
+          "<input data-passenger-last type='text' value='" + last + "' style='flex:1;border:1px solid #d6d8ea;border-radius:6px;padding:2px 4px' />" +
+        "</label>" +
+      "</div>"
+    );
+  }
+
   function buildLegsHtml(ctx) {
   const { r, esc } = ctx;
 
@@ -255,6 +287,7 @@ function buildActualTimesHtml(ctx) {
 function buildDetailPanelHtml(ctx) {
   const {
     pricingHtml,
+    passengerHtml,
     actualTimesHtml,
     poHtml,
     splitHtml,
@@ -271,6 +304,7 @@ function buildDetailPanelHtml(ctx) {
           "<div style='margin-bottom:6px'><b>Export Preview</b></div>" +
           "<div style='color:#64748b'>Loading...</div>" +
         "</div>" +
+        passengerHtml +
         actualTimesHtml +
         poHtml +
         splitHtml +
@@ -364,6 +398,26 @@ function wireSimpleDetailControls(ctx) {
   if (doOverrideInput) {
     doOverrideInput.oninput = () => {
       r.review.ActualDropoffTimeOverride = doOverrideInput.value;
+      if (window.markDirty) window.markDirty();
+    };
+  }
+}
+
+function wirePassengerEditors(ctx) {
+  const { r, detailBox } = ctx;
+
+  const first = detailBox.querySelector("[data-passenger-first]");
+  if (first) {
+    first.oninput = () => {
+      r.review.FirstNameOverride = first.value;
+      if (window.markDirty) window.markDirty();
+    };
+  }
+
+  const last = detailBox.querySelector("[data-passenger-last]");
+  if (last) {
+    last.oninput = () => {
+      r.review.LastNameOverride = last.value;
       if (window.markDirty) window.markDirty();
     };
   }
@@ -497,6 +551,7 @@ function renderDetailPanel() {
 window.BM_DETAIL_PANEL = {
   renderDetailPanel,
   loadExportPreviewLines,
+  buildPassengerHtml,
   buildPricingHtml,
   buildLegsHtml,
   buildPoHtml,
@@ -507,5 +562,6 @@ window.BM_DETAIL_PANEL = {
   wireSimpleDetailControls,
   wireLocationEditors,
   wireAliasButtons,
+  wirePassengerEditors,
 };
 })();

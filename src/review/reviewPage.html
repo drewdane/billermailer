@@ -583,49 +583,12 @@ function mergeSelectedTrips() {
 
 async function save(){
   const overrides = {};
-  for(const r of ITEMS){
+  for (const r of ITEMS) {
     overrides[r.LineId] = {
+      ...(r.review || {}),
       Action: r.Action,
       Modifier: r.Modifier,
       Note: r.Note,
-      MoveToAccountCode: r.review?.MoveToAccountCode || "",
-
-      SplitTrip: !!r.review?.SplitTrip,
-      MergeGroupId: r.review?.MergeGroupId || "",
-      MergeShape: r.review?.MergeShape || "",
-      ClassOverride: r.review?.ClassOverride || "",
-      AddNeedWC: !!r.review?.AddNeedWC,
-      AddRECL: !!r.review?.AddRECL,
-      AddHazmat: !!r.review?.AddHazmat,
-      AddO2: !!r.review?.AddO2,
-      AddBari: !!r.review?.AddBari,
-      TimeChargeManual: !!r.review?.TimeChargeManual,
-      AddAfterHours: !!r.review?.AddAfterHours,
-      AddThirdShift: !!r.review?.AddThirdShift,
-      AddWeekend: !!r.review?.AddWeekend,
-      AddHoliday: !!r.review?.AddHoliday,
-      AddDeadhead: !!r.review?.AddDeadhead,
-      DeadheadMiles: Number(r.review?.DeadheadMiles || 0),
-      PoNumberOverride: r.review?.PoNumberOverride || "",
-      AddWait: !!r.review?.AddWait,
-      WaitTotalMinutes: Number(r.review?.WaitTotalMinutes || 0),
-      CancelOverride: r.review?.CancelOverride || "AUTO",
-      NoCharge: !!r.review?.NoCharge,
-      MatchToQuote: !!r.review?.MatchToQuote,
-      QuoteAmount: Number(r.review?.QuoteAmount || 0),
-      TripTypeOverride: r.review?.TripTypeOverride || "",
-      MileageOverride: Number(r.review?.MileageOverride || r.DirectMileage || 0),
-      ActualPickupTimeOverride:
-        r.review?.ActualPickupTimeOverride || "",
-
-      ActualDropoffTimeOverride:
-        r.review?.ActualDropoffTimeOverride || "",
-      MraNumberOverride: r.review?.MraNumberOverride || "",
-      InvoiceSplitOverride: r.review?.InvoiceSplitOverride || "AUTO",
-      PickupNameOverride: r.review?.PickupNameOverride || "",
-      PickupAddress1Override: r.review?.PickupAddress1Override || "",
-      DropoffNameOverride: r.review?.DropoffNameOverride || "",
-      DropoffAddress1Override: r.review?.DropoffAddress1Override || "",
     };
   }
 

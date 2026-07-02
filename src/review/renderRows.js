@@ -927,6 +927,10 @@ function renderRows() {
       });
 
       detailBox.innerHTML = window.BM_DETAIL_PANEL.buildDetailPanelHtml({
+        passengerHtml: window.BM_DETAIL_PANEL.buildPassengerHtml({
+          r,
+          esc,
+        }),
         pricingHtml,
         actualTimesHtml,
         poHtml,
@@ -945,6 +949,11 @@ function renderRows() {
       });
 
       window.BM_DETAIL_PANEL.wireSimpleDetailControls({
+        r,
+        detailBox,
+      });
+
+      window.BM_DETAIL_PANEL.wirePassengerEditors({
         r,
         detailBox,
       });

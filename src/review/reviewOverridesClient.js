@@ -54,6 +54,9 @@ function applyOverrideToItem(item, o = {}) {
   item.review.ActualPickupTimeOverride = o.ActualPickupTimeOverride || "";
   item.review.ActualDropoffTimeOverride = o.ActualDropoffTimeOverride || "";
 
+  item.review.FirstNameOverride = o.FirstNameOverride || "";
+  item.review.LastNameOverride = o.LastNameOverride || "";
+
   item.review.PickupNameOverride = o.PickupNameOverride || "";
   item.review.PickupAddress1Override = o.PickupAddress1Override || "";
   item.review.DropoffNameOverride = o.DropoffNameOverride || "";

@@ -68,6 +68,9 @@ function applyOverrideToItem(item, rawOverride = {}) {
   review.ActualPickupTimeOverride = o.ActualPickupTimeOverride || "";
   review.ActualDropoffTimeOverride = o.ActualDropoffTimeOverride || "";
 
+  review.FirstNameOverride = o.FirstNameOverride || "";
+  review.LastNameOverride = o.LastNameOverride || "";
+
   review.PickupNameOverride = o.PickupNameOverride || "";
   review.PickupAddress1Override = o.PickupAddress1Override || "";
   review.DropoffNameOverride = o.DropoffNameOverride || "";
@@ -140,6 +143,9 @@ function serializeReviewOverride(row) {
 
     MraNumberOverride: review.MraNumberOverride || "",
     InvoiceSplitOverride: review.InvoiceSplitOverride || "AUTO",
+
+    FirstNameOverride: review.FirstNameOverride || "",
+    LastNameOverride: review.LastNameOverride || "",
 
     PickupNameOverride: review.PickupNameOverride || "",
     PickupAddress1Override: review.PickupAddress1Override || "",
