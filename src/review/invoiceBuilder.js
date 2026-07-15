@@ -57,7 +57,7 @@ function buildGroupedInvoicesForSet({ baseDir, acct, period, invoiceType, safeJo
     const { ratesPath: defaultRatesPath, buildPricingContext } = require("../orgs/CTT/pricing/pricingContext");
     const { computeDeadheadCharge } = require("../orgs/CTT/pricing/computeDeadheadCharge");
     const { inferQboClass, isPrivatePayTrip } = require("../orgs/CTT/qboClass");
-    const { matchesAnyBillingAddress } = require("../orgs/CTT/addressUtils");
+    const { matchesAnyBillingAddress, applyLocationAliasesToRow, } = require("../orgs/CTT/addressUtils");
     const { normalizeInvoiceSplit, inferThrSplit, pickPoNumber } = require("../orgs/CTT/invoiceSplit");
     const { riderInitials } = require("../orgs/CTT/invoiceNumbers");
     const { num } = require("../pricing/rateLookup");
@@ -82,6 +82,8 @@ function buildGroupedInvoicesForSet({ baseDir, acct, period, invoiceType, safeJo
   const manualMergeGroups = {};
 
   for (const r of rows) {
+    applyLocationAliasesToRow(r);
+
     const rawOverride = overrides.overrides?.[r.LineId] || {};
     const o = scrubStaleTimeChargeOverride(rawOverride);
     const review = { ...(r.review || {}), ...o };

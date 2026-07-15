@@ -163,9 +163,7 @@ function invoiceFullStopListLabel(r) {
     ].join(" ");
   }
 
-  const sortedLegs = legs.slice().sort((a, b) =>
-    legSortTime(a).localeCompare(legSortTime(b))
-  );
+  const sortedLegs = legs.slice();
 
   const parts = [];
 
@@ -245,9 +243,7 @@ function invoiceRouteLabel(r) {
   }
 
   const sortedLegs = Array.isArray(r.legs)
-    ? r.legs.slice().sort((a, b) =>
-        legSortTime(a).localeCompare(legSortTime(b))
-      )
+    ? r.legs.slice()
     : [];
 
 const firstLeg = sortedLegs.length ? sortedLegs[0] : null;
@@ -370,22 +366,7 @@ function msComponentRouteText(r, componentIndex, componentKind) {
   const legs = Array.isArray(r.legs) ? r.legs : [];
   if (!legs.length) return invoiceRouteLabel(r);
 
-  function legSortTime(leg) {
-    return [
-      String(leg.RideDateISO || leg.RideDate || ""),
-      String(
-        leg.ActualPickupTime ||
-        leg.PickupArrivalTime ||
-        leg.ScheduledPickupTime ||
-        leg.PickupTime ||
-        ""
-      )
-    ].join(" ");
-  }
-
-  const sortedLegs = legs.slice().sort((a, b) =>
-    legSortTime(a).localeCompare(legSortTime(b))
-  );
+  const sortedLegs = legs.slice();
 
   const kind = String(componentKind || "").toUpperCase();
 

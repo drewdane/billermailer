@@ -1,3 +1,5 @@
+const { getLocationAlias } = require("./locationAliases");
+
 function normalizeAddress(s) {
   return String(s || "")
     .toUpperCase()
@@ -56,15 +58,55 @@ function matchesAnyBillingAddress(addr, r) {
 }
 
 function applyLocationAliasToPlace(name, address1) {
+  const originalName = String(name || "");
+  const originalAddress1 = String(address1 || "");
+
+  const alias = getLocationAlias(originalName, originalAddress1);
+
   return {
-    name,
-    address1,
+    name: alias?.name || originalName,
+    address1: alias?.address1 || originalAddress1,
+
+    // Preserve the TripMaster values as the permanent alias key.
+    originalName,
+    originalAddress1,
   };
 }
 
+function applyAliasesToLeg(leg) {
+  if (!leg) return leg;
+
+  const pickup = applyLocationAliasToPlace(
+    leg.OriginalPickupName || leg.PickupName,
+    leg.OriginalPickupAddress1 || leg.PickupAddress1
+  );
+
+  const dropoff = applyLocationAliasToPlace(
+    leg.OriginalDropoffName || leg.DropoffName,
+    leg.OriginalDropoffAddress1 || leg.DropoffAddress1
+  );
+
+  leg.OriginalPickupName = pickup.originalName;
+  leg.OriginalPickupAddress1 = pickup.originalAddress1;
+  leg.OriginalDropoffName = dropoff.originalName;
+  leg.OriginalDropoffAddress1 = dropoff.originalAddress1;
+
+  leg.PickupName = pickup.name;
+  leg.PickupAddress1 = pickup.address1;
+  leg.DropoffName = dropoff.name;
+  leg.DropoffAddress1 = dropoff.address1;
+
+  return leg;
+}
+
 function applyLocationAliasesToRow(row) {
-  row.PickupName = row.PickupName || "";
-  row.DropoffName = row.DropoffName || "";
+  if (!row) return row;
+
+  if (Array.isArray(row.legs)) {
+    row.legs.forEach(applyAliasesToLeg);
+  }
+
+  applyAliasesToLeg(row);
 
   return row;
 }

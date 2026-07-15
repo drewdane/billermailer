@@ -256,15 +256,54 @@ function renderRows() {
     tr.appendChild(inclTd);
 
     // Rider
-    const riderTd = makeCell(
-      "<div>" + esc(((r.FirstName || "") + " " + (r.LastName || "")).trim()) + "</div>" +
-      "<div style='display:flex; gap:8px; align-items:center; margin-top:2px'>" +
-        "<span style='color:#64748b'>" + esc(r.Mobility || "") + "</span>" +
-        "<span style='padding:1px 6px;border-radius:6px;background:#e4e4f0;color:#334155;font-size:11px;font-weight:600'>" +
-          esc(tripShapeLabel(r)) +
-        "</span>" +
-      "</div>"
-    );
+    const riderTd = makeCell();
+
+    const firstNameInput = document.createElement("input");
+    firstNameInput.type = "text";
+    firstNameInput.value =
+      r.review?.FirstNameOverride ||
+      r.FirstName ||
+      "";
+    firstNameInput.style.width = "100%";
+    firstNameInput.style.boxSizing = "border-box";
+    firstNameInput.style.marginBottom = "3px";
+
+    const lastNameInput = document.createElement("input");
+    lastNameInput.type = "text";
+    lastNameInput.value =
+      r.review?.LastNameOverride ||
+      r.LastName ||
+      "";
+    lastNameInput.style.width = "100%";
+    lastNameInput.style.boxSizing = "border-box";
+    lastNameInput.style.marginBottom = "3px";
+
+    const riderMeta = document.createElement("div");
+    riderMeta.style.display = "flex";
+    riderMeta.style.gap = "8px";
+    riderMeta.style.alignItems = "center";
+    riderMeta.innerHTML =
+      "<span style='color:#64748b'>" + esc(r.Mobility || "") + "</span>" +
+      "<span style='padding:1px 6px;border-radius:6px;background:#e4e4f0;color:#334155;font-size:11px;font-weight:600'>" +
+        esc(tripShapeLabel(r)) +
+      "</span>";
+
+    firstNameInput.oninput = () => {
+      r.review.FirstNameOverride = firstNameInput.value;
+      refreshDetailPanel();
+      if (window.markDirty) window.markDirty();
+    };
+
+    lastNameInput.oninput = () => {
+      r.review.LastNameOverride = lastNameInput.value;
+      refreshDetailPanel();
+      if (window.markDirty) window.markDirty();
+    };
+
+    riderTd.appendChild(firstNameInput);
+    riderTd.appendChild(lastNameInput);
+    riderTd.appendChild(riderMeta);
+
     tr.appendChild(riderTd);
 
     // Pick up
@@ -927,10 +966,6 @@ function renderRows() {
       });
 
       detailBox.innerHTML = window.BM_DETAIL_PANEL.buildDetailPanelHtml({
-        passengerHtml: window.BM_DETAIL_PANEL.buildPassengerHtml({
-          r,
-          esc,
-        }),
         pricingHtml,
         actualTimesHtml,
         poHtml,
@@ -949,11 +984,6 @@ function renderRows() {
       });
 
       window.BM_DETAIL_PANEL.wireSimpleDetailControls({
-        r,
-        detailBox,
-      });
-
-      window.BM_DETAIL_PANEL.wirePassengerEditors({
         r,
         detailBox,
       });

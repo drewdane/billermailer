@@ -166,10 +166,17 @@ function sortTimeValue(leg) {
     if (value != null) return value;
   }
 
-  const c = confNum(leg);
-  if (c != null) return c;
+    // Unknown / will-call pickup times belong after known times on the same day.
+    // Confirmation number may break ties, but must not be compared directly
+    // against Unix timestamps.
+    const endOfDay = localDateTimeValue(leg, "23:59");
+    const c = confNum(leg);
 
-  return Number.MAX_SAFE_INTEGER;
+    if (endOfDay != null) {
+      return endOfDay + (c != null ? c / 1000000 : 0);
+    }
+
+    return Number.MAX_SAFE_INTEGER;
 }
 
 function compactAddress(address1, city, state, zip) {

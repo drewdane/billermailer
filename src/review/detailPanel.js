@@ -75,8 +75,21 @@
 
     if (r.review?.MatchToQuote) {
       const quoteAmount = Number(r.review?.QuoteAmount || 0);
-      const currentTotal = Number(grandTotal || 0);
-      const variance = quoteAmount - currentTotal;
+
+      const preQuoteTotal =
+        Number(base || 0) +
+        Number(mileage || 0) +
+        Number(wcStateDetail.needwcAmount || 0) * (r.review?.AddNeedWC ? 1 : 0) +
+        Number(wcStateDetail.reclAmount || 0) * (r.review?.AddRECL ? 1 : 0) +
+        Number(r.review?.AddHazmat ? (r.availableCharges?.hazmat || 0) : 0) +
+        Number(r.review?.AddO2 ? (r.availableCharges?.o2 || 0) : 0) +
+        Number(r.review?.AddBari ? (r.availableCharges?.bari || 0) : 0) +
+        Number(r.review?.AddDeadhead ? computeDeadheadChargeFromReview(r) : 0) +
+        Number(r.review?.AddWait ? computeWaitCharge(r) : 0) +
+        Number(selectedTimeCharge?.amount || 0) +
+        Number(fuelTotal || 0);
+
+      const variance = quoteAmount - preQuoteTotal;
 
       chargedAccessoryLines.push(
         "<div>Match To Quote: $" + variance.toFixed(2) + "</div>"
@@ -103,47 +116,30 @@
     );
   }
 
-  function buildPassengerHtml(ctx) {
-    const { r, esc } = ctx;
-
-    const first = esc(
-      r.review?.FirstNameOverride ||
-      r.FirstName ||
-      ""
-    );
-
-    const last = esc(
-      r.review?.LastNameOverride ||
-      r.LastName ||
-      ""
-    );
-
-    return (
-      "<div style='margin-bottom:12px'>" +
-        "<div style='margin-bottom:6px'><b>Passenger</b></div>" +
-
-        "<label style='display:flex;align-items:center;gap:6px;margin-bottom:6px'>" +
-          "<span style='width:70px'>First</span>" +
-          "<input data-passenger-first type='text' value='" + first + "' style='flex:1;border:1px solid #d6d8ea;border-radius:6px;padding:2px 4px' />" +
-        "</label>" +
-
-        "<label style='display:flex;align-items:center;gap:6px'>" +
-          "<span style='width:70px'>Last</span>" +
-          "<input data-passenger-last type='text' value='" + last + "' style='flex:1;border:1px solid #d6d8ea;border-radius:6px;padding:2px 4px' />" +
-        "</label>" +
-      "</div>"
-    );
-  }
-
   function buildLegsHtml(ctx) {
   const { r, esc } = ctx;
 
   return Array.isArray(r.legs) && r.legs.length
     ? r.legs.map((leg, idx) => {
-        const puNameRaw = leg.PickupName || "";
-        const puAddrRaw = leg.PickupAddress1 || "";
-        const doNameRaw = leg.DropoffName || "";
-        const doAddrRaw = leg.DropoffAddress1 || "";
+        const puNameRaw =
+          leg.OriginalPickupName ||
+          leg.PickupName ||
+          "";
+
+        const puAddrRaw =
+          leg.OriginalPickupAddress1 ||
+          leg.PickupAddress1 ||
+          "";
+
+        const doNameRaw =
+          leg.OriginalDropoffName ||
+          leg.DropoffName ||
+          "";
+
+        const doAddrRaw =
+          leg.OriginalDropoffAddress1 ||
+          leg.DropoffAddress1 ||
+          "";
 
         const puNameClean = window.cleanLocationName ? window.cleanLocationName(puNameRaw) : puNameRaw;
         const puAddrClean = puAddrRaw;
@@ -287,7 +283,6 @@ function buildActualTimesHtml(ctx) {
 function buildDetailPanelHtml(ctx) {
   const {
     pricingHtml,
-    passengerHtml,
     actualTimesHtml,
     poHtml,
     splitHtml,
@@ -304,7 +299,6 @@ function buildDetailPanelHtml(ctx) {
           "<div style='margin-bottom:6px'><b>Export Preview</b></div>" +
           "<div style='color:#64748b'>Loading...</div>" +
         "</div>" +
-        passengerHtml +
         actualTimesHtml +
         poHtml +
         splitHtml +
@@ -551,7 +545,6 @@ function renderDetailPanel() {
 window.BM_DETAIL_PANEL = {
   renderDetailPanel,
   loadExportPreviewLines,
-  buildPassengerHtml,
   buildPricingHtml,
   buildLegsHtml,
   buildPoHtml,

@@ -18,7 +18,16 @@ function hasY(v) {
 
 function parseTimeToMinutes(v) {
   const s = String(v || "").trim();
-  if (!s) return null;
+
+  if (
+    !s ||
+    s === "00:00" ||
+    s === "0:00" ||
+    s === "12:00 AM" ||
+    s === "12:00AM"
+  ) {
+    return null;
+  }
 
   const m = s.match(/^(\d{1,2}):(\d{2})$/);
   if (!m) return null;
@@ -155,13 +164,20 @@ function computeTimeBasedCharge(groupedTrip, rateRow = {}) {
   for (const leg of legs) {
     const rideDate = parseRideDate(leg.RideDate || groupedTrip.RideDate);
     const pickupMinutes = parseTimeToMinutes(leg.ScheduledPickupTime);
-    const dropoffMinutes = parseTimeToMinutes(
-      leg.ActualDropoffTime && leg.ActualDropoffTime !== "00:00"
-        ? leg.ActualDropoffTime
-        : leg.DropoffArrivalTime && leg.DropoffArrivalTime !== "00:00"
-          ? leg.DropoffArrivalTime
-          : leg.ScheduledDropoffTime
-    );
+
+    const rideStatus = norm(leg.RideStatus || groupedTrip.RideStatus);
+    const isCancelled =
+      rideStatus === "noshow" ||
+      rideStatus === "ridercancel";
+
+    const dropoffMinutes = isCancelled
+      ? null
+      : (
+          parseTimeToMinutes(leg.ActualDropoffTime) ??
+          parseTimeToMinutes(leg.DropoffArrivalTime) ??
+          parseTimeToMinutes(leg.ScheduledDropoffTime)
+        );
+
     const day = rideDate ? rideDate.getDay() : null;
 
     const isSat = day === 6;

@@ -617,7 +617,17 @@ async function save(){
     OVERRIDES.fuelSurchargeEnabled = !!window.BM_GLOBALS?.fuelSurchargeEnabled;
     OVERRIDES.fuelSurchargeStart = window.BM_GLOBALS?.fuelSurchargeStart || "";
     OVERRIDES.fuelSurchargeEnd = window.BM_GLOBALS?.fuelSurchargeEnd || "";
+
+    const meta =
+      INDEX?.facilities?.[current.acct]?.periods?.[current.period];
+
+    if (meta) {
+      meta.reviewed = true;
+      meta.reviewedAt = OVERRIDES.reviewedAt;
+    }
+
     DIRTY = false;
+    await loadIndex();
     renderFacilityReviewState();
   }
 
@@ -626,9 +636,34 @@ async function save(){
 }
 
 function toggleDetails(id) {
-  const row = document.getElementById("detail_" + id);
-  if (!row) return;
-  row.style.display = row.style.display === "none" ? "" : "none";
+  const detailRow = document.getElementById("detail_" + id);
+  const main = document.getElementById("main");
+
+  if (!detailRow || !main) return;
+
+  // The normal trip row is immediately above its detail row.
+  const tripRow = detailRow.previousElementSibling;
+  const beforeTop = tripRow
+    ? tripRow.getBoundingClientRect().top
+    : null;
+
+  detailRow.style.display =
+    detailRow.style.display === "none" ? "" : "none";
+
+  // Wait for the table layout and browser scroll anchoring to settle,
+  // then restore the trip row to its previous screen position.
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      if (!tripRow || beforeTop == null) return;
+
+      const afterTop = tripRow.getBoundingClientRect().top;
+      const difference = afterTop - beforeTop;
+
+      if (Math.abs(difference) > 0.5) {
+        main.scrollTop += difference;
+      }
+    });
+  });
 }
 
 loadReviewConfig().then(loadIndex);

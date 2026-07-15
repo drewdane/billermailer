@@ -56,7 +56,7 @@
     "address1": "800 5th Avenue"
   },
   "harris southwest er ambulance bay str- ct scan/ mri enterance|6100 harris parkway": {
-    "name": "Harris Southwest",
+    "name": "Harris Southwest CT Scan",
     "address1": "6100 Harris Parkway"
   },
   "encompass health mid cities|2304 highway 121": {
@@ -112,7 +112,7 @@
     "address1": "800 5th Avenue"
   },
   "baylor all saints fort worth b building|1400 8th avenue": {
-    "name": "Baylor All Saints",
+    "name": "Baylor All Saints Fort Worth",
     "address1": "1400 8th Avenue"
   },
   "baylor all saints fort worth (a building) main entrance pcu floor # 817-922-4680|1400 8th avenue": {
@@ -212,7 +212,7 @@
     "address1": "6100 Harris Parkway"
   },
   "encompass health rehabilitation hospital of city view|6701 oakmont boulevard": {
-    "name": "Encompass Health Rehabilitation Hospital of City View",
+    "name": "Encompass Health City View",
     "address1": "6701 Oakmont Boulevard"
   },
   "encompass health rehabilitation hospital of waco|3600 south loop 340": {
@@ -240,7 +240,7 @@
     "address1": "1800 Park Place Avenue"
   },
   "thomas heil, md - pain management physician | ppoa|4364 heritage trace parkway": {
-    "name": "Texas Pain Relief Group",
+    "name": "Thomas Heil, MD",
     "address1": "4364 Heritage Trace Parkway"
   },
   "professional bldg. 2/ urology partners of north texas|1604 hospital parkway": {
@@ -370,5 +370,53 @@
   "jane and john justin surgical tower registration|801 5th avenue": {
     "name": "Harris Justin Tower",
     "address1": "801 5th Avenue"
+  },
+  "jps patient care pavilion|1575 south main street": {
+    "name": "John Peter Smith Hospital",
+    "address1": "1575 South Main Street"
+  },
+  "neuro eye team- alex conley, o.d.|6612 north riverside drive": {
+    "name": "Neuro Eye Team",
+    "address1": "6612 North Riverside Drive"
+  },
+  "arlington nephrology, pa|3295 south cooper street": {
+    "name": "Arlington Nephrology",
+    "address1": "3295 South Cooper Street"
+  },
+  "baylor scott & white medical center - trophy club|2850 texas 114": {
+    "name": "Baylor Scott & White Medical Center",
+    "address1": "2850 Texas 114"
+  },
+  "discovery village southlake skilled nursing 4th floor|201 watermere drive": {
+    "name": "Discovery Village Southlake",
+    "address1": "201 Watermere Drive"
+  },
+  "north texas orthopedics & spine center dr. brison|4501 heritage trace parkway": {
+    "name": "North Texas Orthopedics & Spine",
+    "address1": "4501 Heritage Trace Parkway"
+  },
+  "urology|1631 lancaster drive": {
+    "name": "Urology",
+    "address1": "1631 Lancaster Drive"
+  },
+  "medical city surgical hospital alliance|3200 north tarrant parkway": {
+    "name": "Medical City Surgical Hospital",
+    "address1": "3200 North Tarrant Parkway"
+  },
+  "texas health neurosurgery & spine specialists|800 5th avenue": {
+    "name": "Texas Health Neurosurgery & Spine",
+    "address1": "800 5th Avenue"
+  },
+  "head & neck oncologic, reconstructive & skull base surgery : yadro ducic, md|923 pennsylvania avenue": {
+    "name": "Head & Neck Oncologic",
+    "address1": "923 Pennsylvania Avenue"
+  },
+  "dr. sri kurapati / plastic surgeon|800 8th avenue": {
+    "name": "Dr. Sri Kurapati",
+    "address1": "800 8th Avenue"
+  },
+  "residence|3313 forest creek drive": {
+    "name": "Home",
+    "address1": "3313 Forest Creek Dr"
   }
 }
