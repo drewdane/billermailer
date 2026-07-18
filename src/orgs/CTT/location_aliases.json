@@ -64,8 +64,8 @@
     "address1": "2304 State Hwy 121"
   },
   "harris emergency ambulance bay|910 5th avenue": {
-    "name": "THR Harris Methodist ER",
-    "address1": "1301 Pennsylvania Avenue"
+    "name": "Harris Methodist ER",
+    "address1": "910 5th Avenue"
   },
   "harrison at heritage|4600 heritage trace parkway": {
     "name": "The Harrison at Heritage Trace",
@@ -196,7 +196,7 @@
     "address1": "5540 Sycamore School Road"
   },
   "harris emergency ct scan/ mri ambulance bay|910 5th avenue": {
-    "name": "Harris CT Scan/ MRI",
+    "name": "Harris Methodist",
     "address1": "910 5th Avenue"
   },
   "ben hogan bldg olaide ajayi, md|800 5th avenue": {
@@ -217,7 +217,7 @@
   },
   "encompass health rehabilitation hospital of waco|3600 south loop 340": {
     "name": "Encompass Health Waco",
-    "address1": "3600 S Loop 340"
+    "address1": "3600 South Loop 340"
   },
   "professional building a|515 west mayfield road": {
     "name": "Professional Building A",
@@ -268,7 +268,7 @@
     "address1": "1420 8th Avenue"
   },
   "sw endoscopy pick up around parking garage pick up|6317 harris parkway": {
-    "name": "Southwest Fort Worth Endoscopy Center",
+    "name": "SW Endoscopy",
     "address1": "6317 Harris Parkway"
   },
   "southwest fort worth endoscopy center pick up|6317 harris parkway": {
@@ -296,7 +296,7 @@
     "address1": "3017 West 7th Street"
   },
   "texas health harris methodist hurst-euless-bedford|1600 hospital parkway": {
-    "name": "Texas Health HEB",
+    "name": "Harris Methodist HEB",
     "address1": "1600 Hospital Parkway"
   },
   "baylor scott & white family medicine - keller|620 south main street": {
@@ -418,5 +418,69 @@
   "residence|3313 forest creek drive": {
     "name": "Home",
     "address1": "3313 Forest Creek Dr"
+  },
+  "kindred hospital tarrant county - fort worth southwest|7800 oakmont boulevard": {
+    "name": "Kindred Hospital Southwest",
+    "address1": "7800 Oakmont Boulevard"
+  },
+  "encompass health rehabilitation hospital of arlington|3200 matlock road": {
+    "name": "Encompass Health Arlington",
+    "address1": "3200 Matlock Road"
+  },
+  "encompass health rehabilitation hospital of the mid-cities|2304 state highway 121": {
+    "name": "Encompass Health Mid Cities",
+    "address1": "2304 Highway 121"
+  },
+  "john peter smith hospital emergency department|1575 south main street": {
+    "name": "John Peter Smith Hospital",
+    "address1": "1575 South Main Street"
+  },
+  "american renal associates - eastchase dialysis center|1451 eastchase parkway": {
+    "name": "Eastchase Dialysis Center",
+    "address1": "1451 Eastchase Parkway"
+  },
+  "dr. office|3701 hulen street": {
+    "name": "Dr. Office",
+    "address1": "3701 Hulen Street"
+  },
+  "the center for cancer and blood disorders-|800 west magnolia avenue": {
+    "name": "The Center for Cancer and Blood Disorders",
+    "address1": "800 West Magnolia Avenue"
+  },
+  "800 5th ave ste 500|800 5th avenue": {
+    "name": "Ben Hogan Center",
+    "address1": "800 5th Avenue"
+  },
+  "jps pavilion main entrance|1575 south main street": {
+    "name": "John Peter Smith Hospital",
+    "address1": "1575 South Main Street"
+  },
+  "baylor scott & white all saints medical center - fort worth emergency room|1400 8th avenue": {
+    "name": "Baylor All Saints Medical Center",
+    "address1": "1400 8th Avenue"
+  },
+  "encompass health rehabilitation hospital of midland odessa|1800 heritage boulevard": {
+    "name": "Encompass Health Midland Odessa",
+    "address1": "1800 Heritage Boulevard"
+  },
+  "the tradition-clearfork assisted living and memory care|3033 acme brick plaza": {
+    "name": "The Tradition - Clearfork",
+    "address1": "3033 Acme Brick Plaza"
+  },
+  "residence|3217 princess street": {
+    "name": "Residence",
+    "address1": "3217 Princess Street"
+  },
+  "harris alliance hospital emergency room|10864 texas health trl": {
+    "name": "Harris Alliance Hospital",
+    "address1": "10864 Texas Health Trl"
+  },
+  "apartments|4858 river ranch boulevard": {
+    "name": "Residence",
+    "address1": "4858 River Ranch Boulevard"
+  },
+  "greenwood funeral homes and cremation|3100 white settlement road": {
+    "name": "Greenwood Funeral Home",
+    "address1": "3100 White Settlement Road"
   }
 }
